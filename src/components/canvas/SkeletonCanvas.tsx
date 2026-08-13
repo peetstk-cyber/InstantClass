@@ -18,17 +18,12 @@ export function SkeletonCanvas({
   onHoverBone,
   onSelectBone,
 }: SkeletonCanvasProps) {
-  const getDefaultZoom = () => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      return 0.8;
-    }
-    return 1.0;
-  };
+  const getDefaultZoom = () => 1.0;
 
   const [zoom, setZoom] = useState(getDefaultZoom);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [showZoomSlider, setShowZoomSlider] = useState(false);
-  const canPan = zoom > 0.8;
+  const canPan = zoom > 1.0;
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
@@ -41,7 +36,7 @@ export function SkeletonCanvas({
   };
 
   useEffect(() => {
-    if (zoom <= 0.8 && (pan.x !== 0 || pan.y !== 0)) {
+    if (zoom <= 1.0 && (pan.x !== 0 || pan.y !== 0)) {
       setPan({ x: 0, y: 0 });
     }
   }, [zoom, pan.x, pan.y]);
