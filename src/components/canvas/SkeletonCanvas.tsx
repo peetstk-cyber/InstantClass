@@ -18,7 +18,14 @@ export function SkeletonCanvas({
   onHoverBone,
   onSelectBone,
 }: SkeletonCanvasProps) {
-  const [zoom, setZoom] = useState(0.75);
+  const getDefaultZoom = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      return 0.8;
+    }
+    return 1.0;
+  };
+
+  const [zoom, setZoom] = useState(getDefaultZoom);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [showZoomSlider, setShowZoomSlider] = useState(false);
   const canPan = zoom > 0.8;
@@ -29,7 +36,7 @@ export function SkeletonCanvas({
   const gridColor = darkMode ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)";
 
   const handleResetZoom = () => {
-    setZoom(0.75);
+    setZoom(getDefaultZoom());
     setPan({ x: 0, y: 0 });
   };
 
@@ -102,7 +109,7 @@ export function SkeletonCanvas({
           justifyContent: "center",
         }}
       >
-        <div style={{ height: "calc(100vh - 60px)", width: "100%", maxHeight: 720, display: "flex", justifyContent: "center" }}>
+        <div style={{ height: "100%", width: "100%", maxHeight: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <InteractiveSkeleton 
             selectedBoneId={selectedBoneId}
             hoveredBoneId={hoveredBoneId}

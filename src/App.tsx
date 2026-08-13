@@ -48,7 +48,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-screen overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#F0F4F8] text-[#2C3E50]"}`}>
+    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#F0F4F8] text-[#2C3E50]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
