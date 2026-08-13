@@ -950,21 +950,15 @@ export function DetailPanel({
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
         transition: touchStartY === null ? "transform 0.2s ease" : "none",
       }}
-      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[88vh] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[70vh] h-[70vh] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
-      } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
+      } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:h-full md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
     >
-      {/* ── Fixed Sticky Top Header Block (Drag handle + Title + Region tabs) ── */}
-      <div
-        style={{
-          background: bg,
-          borderBottom: `1px solid ${border}`,
-        }}
-        className="flex-shrink-0 z-20 rounded-t-3xl"
-      >
+      {/* ── Fixed Top Header (Non-scrolling) ── */}
+      <div className="flex-shrink-0 z-20" style={{ background: bg }}>
         {/* Mobile Top Drag Handle */}
         <div 
-          className="md:hidden flex justify-center pt-3 pb-1 cursor-pointer select-none active:bg-white/5 transition-colors" 
+          className="md:hidden flex justify-center py-2.5 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
           onClick={handleAnimatedClose}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
@@ -973,8 +967,14 @@ export function DetailPanel({
           <div className="w-12 h-1.5 rounded-full bg-slate-400/50 hover:bg-slate-400/80 transition-colors" />
         </div>
 
-        {/* Title & Close Button */}
-        <div className="px-4 py-3">
+        {/* Title & Controls Header */}
+        <div
+          style={{
+            padding: "14px 18px 12px",
+            borderBottom: `1px solid ${border}`,
+            background: bg,
+          }}
+        >
           <div className="flex items-start justify-between">
             <div>
               <div style={{ color: "#00CED1", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>
@@ -1037,7 +1037,7 @@ export function DetailPanel({
       </div>
 
       {/* ── Scrollable Body Content ── */}
-      <div className="flex-1 overflow-y-auto px-4 py-3 flex flex-col">
+      <div className="flex-1 overflow-y-auto" style={{ padding: "14px 18px" }}>
         {/* Main Tabs: Classifications vs Investigations */}
         <div className="flex p-1 mb-3" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 8 }}>
           <button
