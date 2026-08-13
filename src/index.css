@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ── New OrthoClass palette ── */
+  --color-oc-bg:          #F0F4F8;
+  --color-oc-bg-dark:     #0E1117;
+  --color-oc-surface:     #FFFFFF;
+  --color-oc-surface-dark:#161B27;
+  --color-oc-panel:       #F7F9FC;
+  --color-oc-panel-dark:  #1C2333;
+  --color-oc-border:      #E2E8F0;
+  --color-oc-border-dark: #252F42;
+  --color-oc-bone:        #1A202C;
+  --color-oc-bone-dark:   #CBD5E0;
+
+  --color-oc-teal:        #00CED1;
+  --color-oc-teal-light:  rgba(0,206,209,0.12);
+  --color-oc-green:       #2ECC71;
+  --color-oc-green-light: rgba(46,204,113,0.12);
+  --color-oc-blue:        #2C3E50;
+  --color-oc-blue-mid:    #3B82F6;
+  --color-oc-gray:        #7F8C8D;
+  --color-oc-red:         #E74C3C;
+  --color-oc-amber:       #F59E0B;
+
+  /* Animations */
+  --animate-bone-glow:    boneGlow 2s ease-in-out infinite;
+  --animate-slide-in-r:   slideInR 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+  --animate-slide-in-l:   slideInL 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+  --animate-slide-up-m:   slideUpMobile 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+  --animate-slide-down-m: slideDownMobile 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
+  --animate-fade-up:      fadeUp 0.3s ease-out forwards;
+  --animate-scale-in:     scaleIn 0.25s cubic-bezier(0.34,1.56,0.64,1) forwards;
+
+  @keyframes boneGlow {
+    0%,100% { filter: drop-shadow(0 0 4px rgba(0,206,209,0.4)); }
+    50%      { filter: drop-shadow(0 0 16px rgba(0,206,209,1)); }
+  }
+  @keyframes slideInR {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideInL {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes slideUpMobile {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+  }
+  @keyframes slideDownMobile {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100%); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.92); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+}
+
+/* ─── Base ─── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--color-oc-bg);
+  color: var(--color-oc-blue);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: var(--color-oc-bg-dark);
+  color: #E2E8F0;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-oc-border);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+/* ─── Layout utilities ─── */
+@utility surface {
+  background-color: var(--color-oc-surface);
+  border: 1px solid var(--color-oc-border);
+  border-radius: 16px;
+  .dark & {
+    background-color: var(--color-oc-surface-dark);
+    border-color: var(--color-oc-border-dark);
+  }
+}
+
+@utility panel {
+  background-color: var(--color-oc-panel);
+  border: 1px solid var(--color-oc-border);
+  border-radius: 12px;
+  .dark & {
+    background-color: var(--color-oc-panel-dark);
+    border-color: var(--color-oc-border-dark);
+  }
+}
+
+/* ─── Bone SVG interaction ─── */
+@utility bone-hit {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+@utility bone-hover {
+  filter: drop-shadow(0 0 10px rgba(0,206,209,0.8));
+}
+@utility bone-selected {
+  filter: drop-shadow(0 0 14px rgba(46,204,113,0.9));
+}
+
+/* ─── Buttons ─── */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--color-oc-teal);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s;
+  &:hover { filter: brightness(1.1); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0,206,209,0.4); }
+  &:active { transform: translateY(0); }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  font-size: 12.5px;
+  font-weight: 500;
+  background: transparent;
+  color: var(--color-oc-gray);
+  border: 1px solid var(--color-oc-border);
+  cursor: pointer;
+  transition: all 0.18s;
+  &:hover {
+    background: var(--color-oc-teal-light);
+    color: var(--color-oc-teal);
+    border-color: var(--color-oc-teal);
+  }
+}
+
+/* ─── Tag / Badge ─── */
+@utility tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* ─── Type card (fracture type buttons) ─── */
+@utility type-card {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--color-oc-border);
+  cursor: pointer;
+  transition: all 0.18s;
+  font-size: 12.5px;
+  &:hover {
+    border-color: var(--color-oc-teal);
+    background: var(--color-oc-teal-light);
+    color: var(--color-oc-teal);
+  }
+  .dark & { border-color: var(--color-oc-border-dark); }
+}
+@utility type-card-active {
+  border-color: var(--color-oc-green) !important;
+  background: var(--color-oc-green-light) !important;
+  color: var(--color-oc-green) !important;
+}
