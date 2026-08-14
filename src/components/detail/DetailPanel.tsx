@@ -949,8 +949,9 @@ export function DetailPanel({
         borderColor: border,
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
         transition: touchStartY === null ? "transform 0.2s ease" : "none",
+        paddingBottom: "calc(16px + env(safe-area-inset-bottom, 0px))",
       }}
-      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[88vh] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-y-auto ${
+      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-y-auto ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
       } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
     >

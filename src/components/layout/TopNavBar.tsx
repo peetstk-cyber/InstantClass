@@ -58,8 +58,13 @@ export function TopNavBar({
 
   return (
     <header
-      style={{ background: bg, borderBottom: `1px solid ${borderColor}`, color: text }}
-      className="flex items-center justify-between md:justify-start gap-2 md:gap-4 px-3.5 md:px-5 py-2.5 md:py-3 z-30 flex-shrink-0"
+      style={{
+        background: bg,
+        borderBottom: `1px solid ${borderColor}`,
+        color: text,
+        paddingTop: "calc(8px + env(safe-area-inset-top, 0px))",
+      }}
+      className="flex items-center justify-between md:justify-start gap-2 md:gap-4 px-3.5 md:px-5 pb-2.5 md:pb-3 z-30 flex-shrink-0"
     >
       {/* Logo */}
       <div className="flex items-center gap-2 md:gap-3 flex-shrink-0 cursor-pointer">

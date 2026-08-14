@@ -109,6 +109,17 @@ body.dark {
   }
 }
 
+/* Safe area insets for mobile iOS / Android notch & browser bars */
+@utility safe-pt {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+@utility safe-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@utility safe-mb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
 /* ─── Layout utilities ─── */
 @utility surface {
   background-color: var(--color-oc-surface);
