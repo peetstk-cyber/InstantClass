@@ -956,19 +956,19 @@ export function DetailPanel({
     >
       {/* Mobile Top Drag Handle */}
       <div 
-        className="md:hidden flex justify-center py-3 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
+        className="md:hidden flex justify-center py-2.5 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
         onClick={handleAnimatedClose}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="w-12 h-1.5 rounded-full bg-slate-400/50 hover:bg-slate-400/80 transition-colors" />
+        <div className="w-[30%] max-w-[90px] h-1 rounded-full bg-slate-400/40 hover:bg-slate-400/70 transition-colors" />
       </div>
 
       {/* ── Header ── */}
       <div
         style={{
-          padding: "16px 18px 14px",
+          padding: "14px 18px",
           borderBottom: `1px solid ${border}`,
           position: "sticky",
           top: 0,
@@ -976,22 +976,10 @@ export function DetailPanel({
           zIndex: 10,
         }}
       >
-        <div className="flex items-start justify-between">
-          <div>
-            <div style={{ color: "#00CED1", fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 4 }}>
-              {region ? (
-                classSystem
-                  ? `${region.name[language]} : ${classSystem.fullName[language]}`
-                  : region.name[language]
-              ) : (language === "en" ? "Classification" : "การจัดจำแนก")}
-            </div>
-            <h2 style={{ color: textColor, fontSize: 18, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
-              {bone.name[language]}
-            </h2>
-            <p style={{ color: mutedText, fontSize: 12, marginTop: 4, lineHeight: 1.5 }}>
-              {bone.description[language]}
-            </p>
-          </div>
+        <div className="flex items-center justify-between">
+          <h2 style={{ color: textColor, fontSize: 20, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
+            {bone.name[language]}
+          </h2>
           <button
             onClick={handleAnimatedClose}
             className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
@@ -1008,14 +996,14 @@ export function DetailPanel({
 
         {/* Region tabs (if multiple regions) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1.5 mt-3 flex-wrap">
+          <div className="flex gap-1.5 mt-3 overflow-x-auto no-scrollbar pb-1 items-center flex-nowrap">
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
                 <button
                   key={r.id}
                   onClick={() => onSelectRegion(r.id)}
-                  className="transition-all"
+                  className="transition-all whitespace-nowrap flex-shrink-0"
                   style={{
                     padding: "5px 12px",
                     borderRadius: 8,
