@@ -554,10 +554,10 @@ export const footBone: BoneData = {
           ],
           "types": [
             {
-              "type": "Type A",
+              "type": "Homolateral Complete Incongruity",
               "name": {
-                "en": "Type A (Total Incongruity)",
-                "th": "Type A (หลุดเคลื่อนยกแถบ - Total Incongruity)"
+                "en": "Homolateral Complete Incongruity",
+                "th": "Homolateral Complete Incongruity (หลุดเคลื่อนเบี่ยงข้างเดียวกันสมบูรณ์)"
               },
               "description": {
                 "en": "Total tarsometatarsal joint incongruity\nAll 5 metatarsals displace together in one direction (usually lateral or dorsolateral)\nComplete Lisfranc complex disruption",
@@ -585,18 +585,18 @@ export const footBone: BoneData = {
               }
             },
             {
-              "type": "Type B1",
+              "type": "Homolateral Incomplete Incongruity",
               "name": {
-                "en": "Type B1 (Partial Incongruity - Medial Displacement)",
-                "th": "Type B1 (หลุดเคลื่อนบางส่วน - เบี่ยงเข้าด้านใน Medial)"
+                "en": "Homolateral Incomplete Incongruity",
+                "th": "Homolateral Incomplete Incongruity (หลุดเคลื่อนเบี่ยงข้างเดียวกันบางส่วน)"
               },
               "description": {
-                "en": "Partial tarsometatarsal incongruity\nIsolated medial displacement of the 1st metatarsal (or 1st cuneiform)\nLateral 4 metatarsals remain intact and aligned",
-                "th": "ข้อต่อกลางเท้าหลุดเคลื่อนบางส่วน\nกระดูกฝ่าเท้านิ้วหัวแม่มือ (1st Metatarsal) หลุดเบี่ยงแยกออกไปทางด้านในเพียงชิ้นเดียว\nกระดูกฝ่าเท้านิ้วที่ 2-5 ยังคงเรียงตัวปกติ"
+                "en": "Partial tarsometatarsal incongruity\nIsolated displacement of the 1st metatarsal or lateral metatarsals in one direction\nSome metatarsal joints remain intact and aligned",
+                "th": "ข้อต่อกลางเท้าหลุดเคลื่อนบางส่วน\nกระดูกฝ่าเท้านิ้วหัวแม่มือ (1st Metatarsal) หรือฝ่าเท้านิ้วด้านข้างหลุดเบี่ยงแยกออกไปทางเดียวเพียงบางชิ้น\nกระดูกฝ่าเท้าส่วนที่เหลือยังคงเรียงตัวปกติ"
               },
               "moi": {
                 "en": "Abduction or adduction force on forefoot.",
-                "th": "แรงบิดพัดปลายเท้าเข้าด้านใน"
+                "th": "แรงบิดพัดปลายเท้าเข้าด้านในหรือออกด้านนอก"
               },
               "treatment": {
                 "preferred": "operative",
@@ -605,90 +605,28 @@ export const footBone: BoneData = {
                   "th": "พิจารณาเฉพาะกรณีไม่เคลื่อนในท่าลงน้ำหนัก"
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF of 1st tarsometatarsal joint with 3.5mm/4.0mm solid/cannulated screw.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดข้อต่อ 1st Tarsometatarsal ด้วยสกรู"
+                  "en": "RECOMMENDED TREATMENT. ORIF of displaced tarsometatarsal joints with 3.5mm/4.0mm solid or cannulated screws.",
+                  "th": "แนะนำผ่าตัด ORIF ยึดข้อต่อ Tarsometatarsal ชิ้นที่หลุดเคลื่อนด้วยสกรู"
                 }
               },
               "illustrationId": "/images/myerson/myerson_b1.png",
               "xrayDescription": {
-                "en": "Isolated medial displacement of 1st metatarsal base away from 2nd metatarsal.",
-                "th": "เห็นโคนกระดูกฝ่าเท้านิ้ว 1 อ้าออฟเซ็ตแยกออกไปทางด้านใน"
+                "en": "Isolated medial displacement of 1st metatarsal base or lateral displacement of subset of metatarsals.",
+                "th": "เห็นโคนกระดูกฝ่าเท้านิ้ว 1 หรือกลุ่มนิ้วด้านข้างหลุดเบี่ยงแยกออกเพียงบางชิ้น"
               }
             },
             {
-              "type": "Type B2",
+              "type": "Divergent Dislocation",
               "name": {
-                "en": "Type B2 (Partial Incongruity - Lateral Displacement)",
-                "th": "Type B2 (หลุดเคลื่อนบางส่วน - เบี่ยงออกด้านนอก Lateral)"
+                "en": "Divergent Dislocation",
+                "th": "Divergent Dislocation (หลุดแยกสองทาง)"
               },
               "description": {
-                "en": "Partial tarsometatarsal incongruity\nLateral displacement of 2nd to 5th (or subset) metatarsals\n1st metatarsal-cuneiform joint remains intact",
-                "th": "ข้อต่อกลางเท้าหลุดเคลื่อนบางส่วน\nกระดูกฝ่าเท้านิ้วที่ 2 ถึง 5 หลุดเบี่ยงออกไปทางด้านนอก\nข้อต่อกระดูกฝ่าเท้านิ้วหัวแม่มือ (1st Metatarsal) ยังคงปกติ"
+                "en": "Divergent displacement pattern\n1st metatarsal displaces medially and 2nd-5th metatarsals displace laterally\nTotal or partial destruction of transverse carpal arch and Lisfranc ligament complex\nHigh risk of Compartment Syndrome of foot",
+                "th": "การหลุดแยกสองทาง (Divergent)\nกระดูกนิ้ว 1 เบี่ยงเข้าด้านใน และกระดูกนิ้ว 2 ถึง 5 เบี่ยงออกด้านนอก\nส่วนโค้งเท้า (Transverse arch) และชุดเอ็น Lisfranc พังทลาย\nเสี่ยงสูงต่อภาวะความดันในช่องกล้ามเนื้อเท้าสูงฉุกเฉิน (**Compartment Syndrome**)"
               },
               "moi": {
-                "en": "Abduction force on forefoot.",
-                "th": "แรงบิดพัดปลายเท้าออกด้านนอก"
-              },
-              "treatment": {
-                "preferred": "operative",
-                "conservative": {
-                  "en": "Not recommended if displaced >2mm.",
-                  "th": "ไม่แนะนำหากกระดูกอ้าเคลื่อน >2มม."
-                },
-                "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with screws for 2nd/3rd TMT joints and K-wires/screws for 4th/5th TMT joints.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดสกรูข้อที่ 2-3 และปัก K-wire ข้อที่ 4-5"
-                }
-              },
-              "illustrationId": "/images/myerson/myerson_b2.png",
-              "xrayDescription": {
-                "en": "Lateral displacement of 2nd-5th metatarsal bases with intact 1st TMT joint.",
-                "th": "เห็นโคนกระดูกฝ่าเท้านิ้ว 2-5 หลุดเบี่ยงออกด้านนอก"
-              }
-            },
-            {
-              "type": "Type C1",
-              "name": {
-                "en": "Type C1 (Divergent - Partial Displacement)",
-                "th": "Type C1 (หลุดแยกสองทางบางส่วน - Partial Divergent)"
-              },
-              "description": {
-                "en": "Divergent pattern (1st metatarsal displaces medially, 2nd-5th displace laterally)\nPartial involvement (not all lateral metatarsals displaced)\nHigh energy injury with severe soft tissue swelling",
-                "th": "รูปทรงหลุดแยกสองทาง (Divergent) โดยนิ้วหัวแม่มือเบี่ยงเข้าด้านใน ขณะที่นิ้ว 2-5 เบี่ยงออกด้านนอก\nเป็นการหลุดบางส่วนของนิ้วด้านนอก\nเกิดจากอุบัติเหตุพลังงานสูง เนื้อเยื่อบวมรุนแรง"
-              },
-              "moi": {
-                "en": "Direct impact or axial loading splitting the 1st and 2nd metatarsal rays.",
-                "th": "แรงอัดแทรกตรงกลางระหว่างโคนกระดูกนิ้ว 1 และ 2"
-              },
-              "treatment": {
-                "preferred": "operative",
-                "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
-                },
-                "operative": {
-                  "en": "RECOMMENDED TREATMENT. Urgent ORIF with open reduction of 2nd metatarsal into middle cuneiform notch + trans-articular screws.",
-                  "th": "แนะนำผ่าตัด ORIF จัดโคนกระดูกนิ้ว 2 เข้าเบ้า Cuneiform แล้วยึดสกรู"
-                }
-              },
-              "illustrationId": "/images/myerson/myerson_c1.png",
-              "xrayDescription": {
-                "en": "Widened 1st-2nd metatarsal space with 1st moving medially and 2nd-4th moving laterally.",
-                "th": "เห็นช่องว่างนิ้ว 1 และ 2 อ้าแยกออกจากกันโดยแยกออกคนละทิศทาง"
-              }
-            },
-            {
-              "type": "Type C2",
-              "name": {
-                "en": "Type C2 (Divergent - Total Displacement)",
-                "th": "Type C2 (หลุดแยกสองทางสมบูรณ์ - Total Divergent)"
-              },
-              "description": {
-                "en": "Total divergent displacement\n1st metatarsal displaces medially and ALL 2nd-5th metatarsals displace laterally\nTotal destruction of transverse carpal arch and Lisfranc ligament complex\nHigh risk of Compartment Syndrome of foot",
-                "th": "การหลุดแยกสองทางอย่างสมบูรณ์ (Total Divergent)\nกระดูกนิ้ว 1 เบี่ยงเข้าด้านใน และกระดูกนิ้ว 2 ถึง 5 ทั้งหมดเบี่ยงออกด้านนอก\nส่วนโค้งเท้า (Transverse arch) และชุดเอ็น Lisfranc พังทลายสมบูรณ์\nเสี่ยงสูงต่อภาวะความดันในช่องกล้ามเนื้อเท้าสูงฉุกเฉิน (**Compartment Syndrome**)"
-              },
-              "moi": {
-                "en": "Extreme crush injury to the midfoot.",
+                "en": "Extreme crush injury or severe axial loading to the midfoot.",
                 "th": "อุบัติเหตุแรงทับบดกลางเท้าพลังงานสูงรุนแรงสุดขีด"
               },
               "treatment": {
@@ -705,7 +643,7 @@ export const footBone: BoneData = {
               "illustrationId": "/images/myerson/myerson_c2.png",
               "xrayDescription": {
                 "en": "Gross divergent displacement of 1st metatarsal medially and 2nd-5th metatarsals laterally with 'Fleck sign'.",
-                "th": "เห็นกระดูกนิ้ว 1 เบี่ยงเข้าด้านใน และนิ้ว 2-5 หลุดออกด้านนอกทั้งหมดพร้อมเห็น Fleck sign"
+                "th": "เห็นกระดูกนิ้ว 1 เบี่ยงเข้าด้านใน และนิ้ว 2-5 หลุดออกด้านนอกพร้อมเห็น Fleck sign"
               }
             }
           ]
@@ -771,7 +709,7 @@ export const footBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีชิ้นกระดูกเกยเข้าข้อ Cuboid >2 มม. ยึดด้วย Mini-screw"
                 }
               },
-              "illustrationId": "/images/lawrence_botte/zone_1.png",
+              "illustrationId": "/images/lawrence_botte/zone1.jpg",
               "xrayDescription": {
                 "en": "Transverse fracture line at the proximal tuberosity tip not extending into the 4th-5th intermetatarsal articulation.",
                 "th": "เห็นรอยหักแนวขวางตรงตุ่มโคนกระดูกโดยไม่พาดเข้าข้อต่อระหว่างนิ้ว 4-5"
@@ -802,7 +740,7 @@ export const footBone: BoneData = {
                   "th": "แนะนำผ่าตัดในนักกีฬาและผู้ใช้งานเท้า (RECOMMENDED ORIF) ใส่สกรูยึดแกนกลางกระดูก (Intramedullary Screw Fixation) ช่วยให้กลับไปเล่นกีฬาได้เร็วใน 4-6 สัปดาห์"
                 }
               },
-              "illustrationId": "/images/lawrence_botte/zone_2.png",
+              "illustrationId": "/images/lawrence_botte/zone2.jpg",
               "xrayDescription": {
                 "en": "Transverse fracture line passing through 4th-5th intermetatarsal joint articulation without canal sclerosis.",
                 "th": "เห็นรอยหักพาดผ่านข้อต่อระหว่างกระดูกนิ้ว 4-5 โดยยังไม่มีรอยตีบตันของรูแกนกระดูก"
@@ -833,7 +771,7 @@ export const footBone: BoneData = {
                   "th": "แนะนำผ่าตัดรักษา (RECOMMENDED ORIF) ผ่าตัดกรูลายแกนกระดูก (Reaming) + ยึดสกรูแกนกลาง Intramedullary screw ร่วมกับใส่กระดูกปลูก (Bone graft)"
                 }
               },
-              "illustrationId": "/images/lawrence_botte/zone_3.png",
+              "illustrationId": "/images/lawrence_botte/zone3.jpg",
               "xrayDescription": {
                 "en": "Transverse stress fracture line in proximal diaphysis with surrounding cortical sclerosis and narrowed medullary canal.",
                 "th": "เห็นรอยหักล้าขวางแกนกระดูกส่วนต้น พร้อมผนังกระดูกหนาตัวและรูแกนกระดูกตีบตัน"

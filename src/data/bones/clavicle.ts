@@ -542,7 +542,7 @@ export const clavicleBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีเกิดภาวะข้อ AC เสื่อมและปวดเรื้อรังในระยะยาว โดยผ่าตัดตัดปลายกระดูกไหปลาร้า (Mumford procedure)"
                 }
               },
-              "illustrationId": "/images/neer_clavicle/neer_3.png",
+              "illustrationId": "/images/neer_clavicle/neer_3.jpg",
               "xrayDescription": {
                 "en": "Nondisplaced vertical or oblique fracture line extending into the distal articular facet of the AC joint.",
                 "th": "รอยหักแนวตั้งหรือเฉียงพาดผ่านเข้าผิวข้อต่อ AC โดยไม่มีการเคลื่อนตัวของกระดูก"
@@ -573,7 +573,7 @@ export const clavicleBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีผิวดันดันหนังดึงรั้งมาก หรือเป็นแผลเปิด"
                 }
               },
-              "illustrationId": "/images/neer_clavicle/neer_4.png",
+              "illustrationId": "/images/neer_clavicle/neer_4.jpg",
               "xrayDescription": {
                 "en": "Proximal fragment displaced superiorly while distal end and CC ligaments remain in normal anatomical relation.",
                 "th": "ชิ้นกระดูกส่วนต้นยกลอยขึ้นสูง ขณะที่ส่วนปลายและเอ็น CC ยังอยู่ในแนวทางกายวิภาคปกติ"
@@ -604,7 +604,7 @@ export const clavicleBone: BoneData = {
                   "th": "แนะนำให้ผ่าตัดรักษา (ORIF) ด้วยแผ่นเหล็กดามส่วนปลาย ร่วมกับการยึดชิ้นกระดูกล่างและเสริมความแข็งแรงของเอ็น CC"
                 }
               },
-              "illustrationId": "/images/neer_clavicle/neer_5.png",
+              "illustrationId": "/images/neer_clavicle/neer_5.jpg",
               "xrayDescription": {
                 "en": "Comminuted distal clavicle fracture with a distinct inferior comma-shaped cortical fragment holding the CC ligaments.",
                 "th": "รอยหักแตกละเอียดที่ไหปลาร้าส่วนปลาย เห็นชิ้นกระดูกส่วนล่างรูปเครื่องหมายจุลภาคยึดติดกับเอ็น CC"

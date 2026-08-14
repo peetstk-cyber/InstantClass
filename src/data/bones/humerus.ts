@@ -445,9 +445,139 @@ export const humerusBone: BoneData = {
       "id": "distal",
       "name": {
         "en": "Distal Humerus",
-        "th": "ส่วนปลายกระดูกต้นแขน (Distal)"
+        "th": "ส่วนปลายกระดูกต้นแขน (Distal Humerus)"
       },
-      "classifications": []
+      "classifications": [
+        {
+          "system": "AO/OTA 13",
+          "fullName": {
+            "en": "AO/OTA Classification for Distal Humerus Fractures (13-A, 13-B, 13-C)",
+            "th": "ระบบจำแนกการหักของกระดูกต้นแขนส่วนปลาย AO/OTA (13-A, 13-B, 13-C)"
+          },
+          "description": {
+            "en": "Comprehensive classification system for distal humerus fractures based on articular involvement:\n• Type 13-A: Extra-articular fractures (Spares the joint surface)\n• Type 13-B: Partial articular fractures (Part of articular surface remains attached to shaft)\n• Type 13-C: Complete articular fractures (Joint surface completely separated from shaft)",
+            "th": "ระบบจำแนกมาตรฐานหลัก AO/OTA สำหรับการหักของกระดูกต้นแขนส่วนปลาย แบ่งตามการพาดผ่านข้อต่อข้อศอก:\n• Type 13-A: Extra-articular (หักนอกข้อต่อ)\n• Type 13-B: Partial articular (หักเข้าข้อต่อบางส่วน)\n• Type 13-C: Complete articular (หักเข้าข้อต่อสมบูรณ์ ชิ้นข้อต่อหลุดแยกจากแกนกระดูกทั้งหมด)"
+          },
+          "investigations": [
+            {
+              "name": "AP Elbow View",
+              "details": {
+                "en": "Standard Anteroposterior view of the elbow in full extension to evaluate distal humerus alignment, condylar columns, and articular displacement.",
+                "th": "ภาพเอกซเรย์ข้อศอกท่าหน้าหลัง (AP) เหยียดศอกเต็มที่ ประเมินแนวเสากระดูก Condyle และการเคลื่อนในข้อ"
+              }
+            },
+            {
+              "name": "Lateral Elbow View",
+              "details": {
+                "en": "Standard 90-degree flexed lateral view to assess anterior/posterior condylar displacement, anterior humeral line, and tear-drop angle.",
+                "th": "ภาพเอกซเรย์ข้อศอกท่าด้านข้าง (Lateral) งอศอก 90 องศา ประเมินมุมองศาและแนวเคลื่อนหน้าหลัง"
+              }
+            },
+            {
+              "name": "Traction / Motion AP View & CT 3D",
+              "details": {
+                "en": "Traction radiograph or CT scan with 3D reconstruction indispensable for planning complex Type C articular reconstruction.",
+                "th": "เอกซเรย์ท่าดึงกระดูก (Traction View) หรือ CT Scan 3D สำคัญอย่างยิ่งในการวางแผนผ่าตัดจัดข้อ Type C"
+              }
+            }
+          ],
+          "types": [
+            {
+              "type": "Type 13-A",
+              "name": {
+                "en": "Type 13-A: Extra-articular Fractures",
+                "th": "Type 13-A: Extra-articular (รอยหักอยู่นอกข้อต่อทั้งหมด)"
+              },
+              "description": {
+                "en": "Extra-articular distal humerus fracture; joint surface remains completely intact and uninvolved.\n• A1: Extra-articular epicondylar avulsion (Medial/Lateral epicondyle)\n• A2: Extra-articular simple metaphyseal (Supracondylar simple)\n• A3: Extra-articular comminuted metaphyseal (Supracondylar comminuted)",
+                "th": "รอยหักอยู่นอกข้อต่อกระดูกต้นแขนส่วนปลาย ผิวข้อต่อศอกสมบูรณ์ไม่เสียหาย\n• A1: Avulsion หักกะเทาะปุ่มกระดูก Epicondyle\n• A2: Metaphyseal simple รอยหักเหนือข้อแบบเรียบ (Supracondylar)\n• A3: Metaphyseal comminuted รอยหักเหนือข้อแบบแตกละเอียด"
+              },
+              "moi": {
+                "en": "Fall on out-stretched hand (FOOSH) with elbow extended or direct blow to distal humerus.",
+                "th": "ล้มมือยันพื้นขณะศอกเหยียด หรือแรงกระแทกโดยตรงเข้าเหนือข้อศอก"
+              },
+              "treatment": {
+                "preferred": "operative",
+                "conservative": {
+                  "en": "Indicated ONLY for non-displaced A2 supracondylar fractures in low-demand patients. Long arm splint/cast for 3-4 weeks.",
+                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อนตัว (A2) ใส่เฝือกยาวดามแขน 3-4 สัปดาห์"
+                },
+                "operative": {
+                  "en": "RECOMMENDED FOR DISPLACED FRACTURES. Open reduction and internal fixation (ORIF) with dual anatomical locking plates (parallel or orthogonal 90-90 configuration).",
+                  "th": "แนะนำผ่าตัด ORIF ยึดแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ในทิศทางขนานหรือตั้งฉาก 90-90"
+                }
+              },
+              "illustrationId": "/images/humerus/ao_13_a.png",
+              "xrayDescription": {
+                "en": "Metaphyseal or epicondylar fracture line sparing the trochlea and capitellum articular surfaces.",
+                "th": "เห็นรอยหักบริเวณเหนือข้อหรือปุ่ม Epicondyle โดยผิวข้อ Trochlea และ Capitellum สมบูรณ์ดี"
+              }
+            },
+            {
+              "type": "Type 13-B",
+              "name": {
+                "en": "Type 13-B: Partial Articular Fractures",
+                "th": "Type 13-B: Partial Articular (รอยหักเข้าข้อต่อบางส่วน)"
+              },
+              "description": {
+                "en": "Partial articular fracture; part of the articular surface remains continuously attached to the main humeral shaft column.\n• B1: Lateral sagittal fracture (Lateral condyle / Capitellum)\n• B2: Medial sagittal fracture (Medial condyle / Trochlea)\n• B3: Frontal / Coronal plane fracture (Capitellum / Trochlea coronal shear fracture)",
+                "th": "รอยหักพาดผ่านเข้าข้อต่อบางส่วน โดยชิ้นข้อต่อส่วนหนึ่งยังคงยึดติดกับแกนกระดูกต้นแขนหลัก\n• B1: Sagittal ด้านนอก (Lateral condyle)\n• B2: Sagittal ด้านใน (Medial condyle)\n• B3: Coronal Shear หักเฉือนผิวข้อด้านหน้า (Capitellum/Trochlea)"
+              },
+              "moi": {
+                "en": "Direct shear force transmitted through the radial head or olecranon into the distal humeral articular surface.",
+                "th": "แรงเฉือนส่งผ่านจากหัวกระดูก Radius หรือ Olecranon กระแทกเข้าผิวข้อปลายกระดูกต้นแขน"
+              },
+              "treatment": {
+                "preferred": "operative",
+                "conservative": {
+                  "en": "Not recommended for displaced fractures. High risk of articular step-off, stiffness, and early post-traumatic arthritis.",
+                  "th": "ไม่แนะนำในชนิดเคลื่อนตัว เสี่ยงต่อข้อศอกติดแข็งและข้อเสื่อมรุนแรง"
+                },
+                "operative": {
+                  "en": "RECOMMENDED TREATMENT. Anatomical ORIF with countersunk headless compression screws (Herbert screws) for B3 coronal shear or condylar locking plates for B1/B2.",
+                  "th": "แนะนำผ่าตัด ORIF จัดผิวข้อให้เรียบสนิท ยึดสกรูจม Headless compression screws สำหรับ B3 หรือแผ่นเหล็ก Condylar plate สำหรับ B1/B2"
+                }
+              },
+              "illustrationId": "/images/humerus/ao_13_b.png",
+              "xrayDescription": {
+                "en": "Articular fracture line extending through capitellum or trochlea with part of the condyle connected to shaft.",
+                "th": "เห็นรอยหักพาดผ่านผิวข้อ Capitellum หรือ Trochlea โดยมีส่วนหนึ่งยึดติดแกนกระดูก"
+              }
+            },
+            {
+              "type": "Type 13-C",
+              "name": {
+                "en": "Type 13-C: Complete Articular Fractures",
+                "th": "Type 13-C: Complete Articular (รอยหักเข้าข้อต่อสมบูรณ์ - Bicondylar)"
+              },
+              "description": {
+                "en": "Complete articular disruption; the articular block is completely disconnected and separated from the main humeral shaft.\n• C1: Simple articular & simple metaphyseal (Classic T- or Y-type fracture)\n• C2: Simple articular & comminuted metaphyseal\n• C3: Comminuted articular & comminuted metaphyseal (Severe articular crush)",
+                "th": "รอยหักเข้าข้อต่อสมบูรณ์ ชิ้นข้อต่อทั้งหมดหลุดแยกออกจากแกนกระดูกหลักอย่างสิ้นเชิง (Bicondylar Disruption)\n• C1: Simple articular & simple metaphyseal (รูป T หรือ Y เรียบง่าย)\n• C2: Simple articular & comminuted metaphyseal (ผิวข้อเรียบ แต่เหนือข้อแตกละเอียด)\n• C3: Comminuted articular & comminuted metaphyseal (แตกละเอียดทั้งผิวข้อและเหนือข้อ)"
+              },
+              "moi": {
+                "en": "High-energy motor vehicle accident, severe fall, or direct wedge impact of the olecranon driving between the two condyles.",
+                "th": "อุบัติเหตุทางถนนพลังงานสูง หรือปลายกระดูก Olecranon ตอกอัดแทรกตรงกลางระหว่างสอง Condyle"
+              },
+              "treatment": {
+                "preferred": "operative",
+                "conservative": {
+                  "en": "CONTRAINDICATED in functional patients. Results in severe flail elbow or painful ankylosis.",
+                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ทำให้ข้อศอกหลุดพิการและติดแข็งปวดรุนแรง"
+                },
+                "operative": {
+                  "en": "MANDATORY SURGICAL RECONSTRUCTION. Olecranon osteotomy approach + dual pre-contoured anatomical locking plates (Parallel plating architecture) for stable construct permitting immediate post-op early active ROM exercises. Total Elbow Arthroplasty (TEA) for unreconstructable C3 in elderly.",
+                  "th": "จำเป็นต้องผ่าตัดจัดข้อโดยด่วน! เปิดผ่าตัดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating) เพื่อยึดให้แน่นที่สุดให้ฝึกขยับข้อศอกได้ทันทีหลังผ่าตัด (พิจารณาผ่าตัดใส่ข้อศอกเทียม TEA ในผู้สูงอายุที่แตกละเอียด C3)"
+                }
+              },
+              "illustrationId": "/images/humerus/ao_13_c.png",
+              "xrayDescription": {
+                "en": "Complete separation of trochlear and capitellar articular block from shaft with variable articular and metaphyseal comminution.",
+                "th": "เห็นชิ้นข้อต่อ Trochlea/Capitellum หลุดแยกขาดจากแกนกระดูกต้นแขนทั้งหมด"
+              }
+            }
+          ]
+        }
+      ]
     }
   ]
 };
