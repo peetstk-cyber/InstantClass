@@ -672,6 +672,11 @@ function ClassificationTitleWithInfo({
                   src={concept.imageUrl} 
                   alt="Classification Concept Diagram" 
                   className="max-w-full max-h-[350px] object-contain rounded"
+                  onError={(e) => {
+                    if (e.currentTarget.parentElement) {
+                      e.currentTarget.parentElement.style.display = 'none';
+                    }
+                  }}
                 />
               </div>
             )}
