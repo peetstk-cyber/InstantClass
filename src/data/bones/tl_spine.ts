@@ -18,6 +18,60 @@ export const tlSpineBone: BoneData = {
         "en": "Thoracolumbar Spine (T1–L5)",
         "th": "กระดูกสันหลังส่วนอกและเอว (T1–L5)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "TLICS Score Assessment",
+            "positive": {
+              "en": "TLICS score > 4 indicates surgical stabilization (evaluates Injury Morphology, PLC integrity, & Neurological status)",
+              "th": "คะแนน TLICS > 4 บ่งชี้ว่าควรผ่าตัดรักษา (ประเมินจาก Morphology, เอ็นยึด PLC และระบบประสาท)"
+            }
+          },
+          {
+            "sign": "Palpable Interspinous Gap / Step-off",
+            "positive": {
+              "en": "Palpable gap between spinous processes = Posterior Ligamentous Complex (PLC) disruption",
+              "th": "คลำพบช่องว่างกว้างผิดปกติระหว่างปุ่มกระดูกสันหลัง = เอ็นยึดด้านหลัง PLC ฉีกขาด"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Kyphosis Angle",
+              "th": "มุมก้มหลังผิดรูป (Kyphosis)"
+            },
+            "threshold": "< 25-30°",
+            "note": {
+              "en": "> 30° kyphosis carries high risk of progressive spinal collapse",
+              "th": "> 30 องศา เสี่ยงต่อกระดูกทรุดตัวต่อเนื่อง"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Vertebral Height Loss",
+              "th": "การสูญเสียความสูงของข้อกระดูก"
+            },
+            "threshold": "< 50%",
+            "note": {
+              "en": "> 50% anterior height loss indicates PLC instability",
+              "th": "สูญเสียความสูง > 50% แสดงว่าโครงสร้างไม่มั่นคง"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Conus Medullaris / Cauda Equina Syndrome (Saddle anesthesia, bowel/bladder incontinence, bilateral sciatica)",
+            "th": "ภาวะกดทับปลายสายประสาท Cauda Equina (ชาบริเวณอานม้า ควบคุมอุจจาระ/ปัสสาวะไม่ได้)"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Thoracolumbar junction (T11-L2) is the most common site of spinal injury due to transition from rigid thoracic spine to mobile lumbar spine.",
+            "th": "ข้อต่ออก-เอว (T11-L2) เกิดการบาดเจ็บบ่อยที่สุดเนื่องจากเป็นจุดเชื่อมต่อระหว่างส่วนที่แข็งเกร็งกับส่วนที่เคลื่อนไหวได้มาก"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Denis 3-Column Concept",
@@ -28,6 +82,44 @@ export const tlSpineBone: BoneData = {
           "description": {
             "en": "Biomechanical framework dividing the thoracolumbar spine into 3 structural columns: Anterior, Middle (Critical for stability), and Posterior. Mechanical stability is defined by the number of compromised columns and the status of the Middle Column.",
             "th": "หลักการทางชีวกลศาสตร์แบ่งกระดูกสันหลังออกเป็น 3 เสาหลัก (Anterior, Middle [เสาหลักสำคัญที่สุด], Posterior) กำหนดความมั่นคงเชิงกลศาสตร์ (Stable vs Instability 1st/2nd/3rd Degree) ตามความเสียหายของเสาหลัก"
+          },
+          "concept": {
+            "title": {
+              "en": "Denis 3-Column Concept Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Denis 3-Column Concept"
+            },
+            "corePrinciple": {
+              "en": "Biomechanical framework dividing the thoracolumbar spine into 3 longitudinal structural columns (Anterior, Middle, Posterior). Mechanical stability depends primarily on the integrity of the Middle Column.",
+              "th": "กรอบแนวคิดทางชีวกลศาสตร์แบ่งกระดูกสันหลังอกและเอวเป็น 3 เสาหลัก (Anterior, Middle, Posterior) โดยความมั่นคงเชิงกลศาสตร์ขึ้นกับความสมบูรณ์ของ Middle Column"
+            },
+            "rules": [
+              {
+                "en": "Stable Injury (1-Column failure): Isolated Anterior Column failure (Simple Compression Fracture) -> Middle column intact -> Non-operative care (TLSO brace 8–12 weeks).",
+                "th": "Stable Injury (เสียสภาพ 1 เสาหลัก): เสียเฉพาะ Anterior Column (Compression Fracture) -> Middle column สมบูรณ์ -> ใส่เฝือกพยุงหลัง TLSO 8–12 สัปดาห์"
+              },
+              {
+                "en": "1st Degree Instability (Mechanical Instability): 2-Column failure under distraction (e.g., Bony Chance fracture) -> Risk of progressive kyphosis -> TLSO hyperextension or Surgical Fixation.",
+                "th": "1st Degree Instability (ไม่มั่นคงเชิงกลศาสตร์): เสียสภาพ 2 เสาหลักจากแรงดึงถ่าง (เช่น Bony Chance) -> เสี่ยงหลังโก่ง -> ใส่ TLSO hyperextension หรือผ่าตัด"
+              },
+              {
+                "en": "2nd Degree Instability (Neurological Instability): Middle Column failure under axial compression with canal retropulsion (Burst fracture) -> High risk of neuro deficit -> Decompression & Fixation if canal occlusion > 50% or neuro deficit.",
+                "th": "2nd Degree Instability (ไม่มั่นคงเชิงระบบประสาท): เสียสภาพ Middle Column จากแรงอัดกดช่องไขสันหลัง (Burst fracture) -> ผ่าตัดเมื่อกดช่อง > 50% หรือมีอาการประสาท"
+              },
+              {
+                "en": "3rd Degree Instability (Mechanical + Neurological Instability): 3-Column failure (Fracture-Dislocation) -> Extreme instability -> Emergency Surgical Fixation.",
+                "th": "3rd Degree Instability (ไม่มั่นคงขั้นสูงสุด): เสียสภาพครบทั้ง 3 เสาหลัก (Fracture-Dislocation) -> ผ่าตัดดามยึดฉุกเฉิน"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "The Middle Column (posterior 1/3 body, posterior annulus, PLL) is the critical cornerstone of spinal stability; retropulsed bone fragments into canal indicate a Burst fracture (2-column failure), not a simple compression fracture.",
+                "th": "Middle Column เป็นเสาหลักหัวใจสำคัญของความมั่นคง ชิ้นกระดูกทรุดดันเข้าช่องไขสันหลังแสดงว่าเป็น Burst fracture (เสีย 2 เสา) ไม่ใช่รอยหักยุบธรรมดา"
+              },
+              {
+                "en": "Always obtain thin-slice 3D CT to evaluate Middle Column posterior cortical wall integrity.",
+                "th": "ต้องส่งตรวจ CT 3D ความละเอียดสูงเสมอเพื่อประเมินความสมบูรณ์ของผนังกระดูกขอบหลัง (Middle Column)"
+              }
+            ]
           },
           "investigations": [
             {
@@ -188,6 +280,44 @@ export const tlSpineBone: BoneData = {
           "description": {
             "en": "Classification categorizing thoracolumbar fractures into 4 major types: Compression Fracture (Type 1), Burst Fracture (Type 2), Seat-Belt / Chance Injury (Type 3), and Fracture-Dislocation (Type 4).",
             "th": "ระบบจำแนกการบาดเจ็บกระดูกสันหลังอกและเอวเป็น 4 กลุ่มหลักตามลักษณะรอยหัก: Compression Fracture (Type 1), Burst Fracture (Type 2), Seat-Belt / Chance Injury (Type 3) และ Fracture-Dislocation (Type 4)"
+          },
+          "concept": {
+            "title": {
+              "en": "Denis Thoracolumbar Fracture Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Denis Classification"
+            },
+            "corePrinciple": {
+              "en": "Clinical fracture system categorizing thoracolumbar spinal injuries into 4 distinct structural fracture types based on biomechanical failure mechanism.",
+              "th": "ระบบจำแนกรอยหักทางคลินิกที่จัดหมวดหมู่การบาดเจ็บกระดูกสันหลังอกและเอวเป็น 4 กลุ่มหลักตามกลไกทางชีวกลศาสตร์ของการพังทลาย"
+            },
+            "rules": [
+              {
+                "en": "Type 1 (Compression Fracture): Anterior column wedge failure -> Stable -> TLSO brace for 8–12 weeks (Operative if anterior height loss > 50% or kyphosis > 30°).",
+                "th": "Type 1 (Compression Fracture): ยุบตัวเฉพาะเสาหน้า -> มั่นคง -> ใส่ TLSO 8–12 สัปดาห์ (ผ่าตัดเฉพาะเมื่อยุบ > 50% หรือคอโก่ง > 30°)"
+              },
+              {
+                "en": "Type 2 (Burst Fracture): Retropulsed middle column fragment into canal -> Conservative if neurologically intact, canal occlusion < 50%, and kyphosis < 25°; Operative if neuro deficit, canal occlusion ≥ 50%, or kyphosis ≥ 25°.",
+                "th": "Type 2 (Burst Fracture): เสากลางแตกดันเข้าช่องไขสันหลัง -> ไม่ผ่าตัดเมื่อระบบประสาทปกติ ช่องกด < 50% และโก่ง < 25° / ผ่าตัดเมื่อมีอาการประสาท, ช่องกด ≥ 50% หรือโก่ง ≥ 25°"
+              },
+              {
+                "en": "Type 3 (Seat-Belt / Chance Injury): Distraction failure -> Bony Chance (3A) managed in hyperextension TLSO; Ligamentous Chance (3B) requires Posterior Fusion.",
+                "th": "Type 3 (Seat-Belt / Chance Injury): แรงดึงถ่าง -> Bony Chance (3A) ใส่ hyperextension TLSO ได้ / Ligamentous Chance (3B) ต้องผ่าตัดดามยึดด้านหลัง"
+              },
+              {
+                "en": "Type 4 (Fracture-Dislocation): Complete 3-column disruption -> Absolute surgical emergency (Urgent open reduction and multi-level posterior fusion).",
+                "th": "Type 4 (Fracture-Dislocation): เสียสภาพ 3 เสาหลัก -> ข้อบ่งชี้ผ่าตัดฉุกเฉินด่วนที่สุด"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "In Seat-Belt / Chance injuries (Type 3), ALWAYS perform abdominal CT and physical exam! Associated intra-abdominal visceral injuries (bowel perforation, mesenteric tears) occur in 30–50% of cases and can be fatal if missed.",
+                "th": "ใน Seat-Belt / Chance injuries (Type 3) ต้องตรวจช่องท้องและส่ง CT Abdomen เสมอ! เนื่องจากพบการบาดเจ็บของอวัยวะในช่องท้อง (ลำไส้ทะลุ) ร่วมด้วยสูงถึง 30–50%"
+              },
+              {
+                "en": "Never misdiagnose a Burst fracture (Type 2) as a simple Compression fracture (Type 1); check interpedicular distance on AP view and CT.",
+                "th": "ห้ามวินิจฉัย Burst fracture (Type 2) ผิดเป็น Compression fracture (Type 1) เด็ดขาด ให้สังเกตระยะห่างระหว่าง Pedicle ในภาพ AP และ CT"
+              }
+            ]
           },
           "investigations": [
             {
@@ -355,6 +485,44 @@ export const tlSpineBone: BoneData = {
           "description": {
             "en": "Point-based scoring system for thoracolumbar spine injuries (T1-L5) evaluating Fracture Morphology, Disruption of Ligamentous Complex (DLC) integrity, and Neurological Status. TLICS score <4 = Conservative, TLICS score =4 = Equivocal, TLICS score >4 = Operative.",
             "th": "ระบบให้คะแนนการบาดเจ็บกระดูกสันหลังส่วนอกและเอว T1-L5 (SLIC Score) ประเมิน 3 หมวด: ลักษณะรอยหัก (Morphology), ความสมบูรณ์ของเอ็นยึดด้านหลัง (PLC) และระบบประสาท (Neurology) โดยคะแนน <4 รักษาไม่ผ่าตัด, =4 พิจารณาตามความเหมาะสม, >4 แนะนำผ่าตัด"
+          },
+          "concept": {
+            "title": {
+              "en": "TLICS Score Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ TLICS Score Classification"
+            },
+            "corePrinciple": {
+              "en": "Point-based algorithm for thoracolumbar injuries (T1–L5) synthesizing 3 core decision pillars: (1) Injury Morphology (1–4 pts), (2) Posterior Ligamentous Complex / PLC Integrity (0–3 pts), and (3) Neurological Status (0–3 pts).",
+              "th": "อัลกอริทึมให้คะแนนกระดูกสันหลังอกและเอว (T1–L5) สังเคราะห์ 3 เสาหลัก: (1) ชนิดลักษณะรอยหัก (1–4 คะแนน), (2) ความสมบูรณ์ของเอ็นยึดด้านหลัง PLC (0–3 คะแนน) และ (3) ระดับความเสียหายทางระบบประสาท (0–3 คะแนน)"
+            },
+            "rules": [
+              {
+                "en": "TLICS Score < 4: NON-OPERATIVE MANAGEMENT (Rigid TLSO orthosis / Jewett extension brace for 8–12 weeks).",
+                "th": "คะแนน TLICS < 4: รักษาแบบไม่ผ่าตัด (ใส่เฝือกพยุงหลัง Rigid TLSO / Jewett Brace 8–12 สัปดาห์)"
+              },
+              {
+                "en": "TLICS Score = 4: EQUIVOCAL / SURGEON DISCRETION (Treatment tailored to age, comorbidities, pain, and kyphosis angle).",
+                "th": "คะแนน TLICS = 4: ก้ำกึ่ง / ขึ้นกับดุลยพินิจของแพทย์ (พิจารณาตามอายุ โรคประจำตัว ความปวด และมุมโก่ง)"
+              },
+              {
+                "en": "TLICS Score > 4: SURGICAL INDICATION (Posterior Pedicle Screw Fusion ± Decompression / Corpectomy).",
+                "th": "คะแนน TLICS > 4: มีข้อบ่งชี้ผ่าตัด (SURGICAL INDICATION) (ผ่าตัดยึด Pedicle Screw ด้านหลัง ± คลายการกดทับ)"
+              },
+              {
+                "en": "Incomplete cord or cauda equina deficit (+3 pts) strongly drives total score >4, indicating urgent surgical decompression.",
+                "th": "ภาวะไขสันหลังหรือ Cauda Equina บาดเจ็บบางส่วน (+3 คะแนน) จะผลักดันคะแนนรวม > 4 ส่งผลให้มีข้อบ่งชี้ผ่าตัดฉุกเฉิน"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "PLC disruption adds 3 critical points, shifting management from conservative to operative! Look for interspinous widening >30% on X-ray and confirm with STIR MRI.",
+                "th": "การฉีกขาดของเอ็นยึดด้านหลัง PLC บวกเพิ่มถึง 3 คะแนน ซึ่งเปลี่ยนแนวทางเป็นผ่าตัดทันที! ต้องสังเกตช่องว่าง interspinous บน X-ray และยืนยันด้วย STIR MRI"
+              },
+              {
+                "en": "Burst fracture (2 pts) + Disrupted PLC (3 pts) = 5 points -> SURGICAL INDICATION even if the patient is neurologically intact (0 pts)!",
+                "th": "Burst fracture (2 คะแนน) + PLC ขาด (3 คะแนน) = 5 คะแนน -> มีข้อบ่งชี้ผ่าตัดทันที แม้ว่าผู้ป่วยจะมีระบบประสาทปกติ (0 คะแนน) ก็ตาม!"
+              }
+            ]
           },
           "investigations": [
             {

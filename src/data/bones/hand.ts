@@ -18,6 +18,104 @@ export const handBone: BoneData = {
         "en": "Scaphoid",
         "th": "กระดูกสะแคฟอยด์ (Scaphoid)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Anatomical Snuffbox Tenderness",
+            "positive": {
+              "en": "Pain on deep palpation in the anatomical snuffbox (between EPL and EPB/APL tendons); high sensitivity for scaphoid waist/proximal fractures.",
+              "th": "กดเจ็บในแอ่ง Anatomical Snuffbox (ระหว่างเอ็น EPL และ EPB/APL) มีความไวสูงมากในการตรวจพบกระดูกสะแคฟอยด์หัก"
+            }
+          },
+          {
+            "sign": "Scaphoid Tuberosity Tenderness",
+            "positive": {
+              "en": "Pain on palpation of the scaphoid tubercle on the palmar base of the thenar eminence; highly specific for distal pole fractures.",
+              "th": "กดเจ็บบริเวณปุ่มกระดูกสะแคฟอยด์ (Scaphoid tubercle) ด้านฝ่ามือของฐานเนิน thenar มีความจำเพาะสูงสำหรับ distal pole fracture"
+            }
+          },
+          {
+            "sign": "Axial Compression of Thumb",
+            "positive": {
+              "en": "Pain elicited at the wrist when compressing the thumb metacarpal longitudinally toward the scaphoid.",
+              "th": "ปวดบริเวณข้อมือเมื่อดันอัดนิ้วหัวแม่มือตามแนวแกนตรงเข้าหากระดูกสะแคฟอยด์"
+            }
+          },
+          {
+            "sign": "Pain with Resisted Pronation & Radial Deviation",
+            "positive": {
+              "en": "Pain on active radial deviation and pronation of the wrist against resistance due to scaphoid movement.",
+              "th": "ปวดเมื่อต้านแรงการเอียงข้อมือไปทางฝั่งนิ้วโป้ง (Radial deviation) และคว่ำมือ"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Fracture Gap / Displacement",
+              "th": "ระยะอ้าช่องหัก / การเคลื่อนตัว"
+            },
+            "threshold": "< 1 mm",
+            "note": {
+              "en": "Displacement ≥1mm significantly increases nonunion risk; indicates surgical screw fixation.",
+              "th": "การเคลื่อนตัว ≥ 1 มม. เพิ่มความเสี่ยงกระดูกไม่ติดอย่างมาก เป็นข้อบ่งชี้ผ่าตัดยึดสกรู"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Intracarpal Step-off",
+              "th": "ความเหลื่อมของผิวข้อต่อ"
+            },
+            "threshold": "< 1 mm",
+            "note": {
+              "en": "Articular step-off >1mm causes post-traumatic radiocarpal arthritis.",
+              "th": "รอยเหลื่อมผิวข้อ > 1 มม. นำไปสู่ภาวะข้อข้อมือเสื่อมตามหลังอุบัติเหตุ"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Avascular Necrosis (AVN) of proximal pole due to retrograde blood supply cut off by fracture line.",
+            "th": "ภาวะหัวกระดูกส่วนต้นขาดเลือด (AVN of proximal pole) เนื่องจากเส้นเลือดหล่อเลี้ยงวิ่งย้อนศรจากปลายขึ้นมาต้นจึงถูกแนวกระดูกหักตัดขาด"
+          },
+          {
+            "en": "Scapholunate Advanced Collapse (SLAC wrist) secondary to chronic scaphoid nonunion (SNAC).",
+            "th": "ภาวะข้อข้อมือทรุดเสื่อมรุนแรง (SLAC wrist) จากภาวะกระดูกสะแคฟอยด์ไม่ติดเรื้อรัง (SNAC)"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Scapholunate Interosseous Ligament (SLIL) Tear",
+              "th": "การฉีกขาดของเอ็น Scapholunate (SLIL)"
+            },
+            "trigger": {
+              "en": "Always check for SL gap widening on AP view",
+              "th": "ควรตรวจดูระยะถ่าง Scapholunate ในภาพเอกซเรย์ท่า AP เสมอ"
+            }
+          },
+          {
+            "injury": {
+              "en": "Distal Radius Fracture (Trans-scaphoid Perilunate Injury)",
+              "th": "กระดูกปลายแขน Radius หักร่วม หรือข้อข้อมือหลุด Perilunate"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Proximal pole fractures take 12-24 weeks to heal and have high nonunion rate due to retrograde blood supply.",
+            "th": "รอยหักบริเวณ Proximal pole ใช้เวลานาน 12-24 สัปดาห์ในการติด และมีอัตรากระดูกไม่ติดสูงมากเนื่องจากเลือดเลี้ยงวิ่งย้อนศร"
+          },
+          {
+            "en": "Early CT or MRI is mandatory if initial radiographs are negative but high clinical suspicion exists (snuffbox tenderness).",
+            "th": "หากเอกซเรย์เบื้องต้นไม่พบรอยหักแต่ผู้ป่วยมีอาการกดเจ็บชัดเจน ต้องส่งตรวจ CT หรือ MRI เพิ่มเติมทันที"
+          },
+          {
+            "en": "Cast immobilisation for occult fractures should be in short arm thumb spica for 2-3 weeks followed by repeat imaging.",
+            "th": "หากสงสัยรอยหักที่ยังไม่เห็นในเอกซเรย์ ให้ใส่เฝือก Thumb spica สั้นดามไว้ 2-3 สัปดาห์แล้วนัดมาถ่ายภาพ X-ray ซ้ำ"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Anatomical Location",
@@ -29,6 +127,52 @@ export const handBone: BoneData = {
             "en": "Classification of scaphoid fractures based on anatomical location (distal pole, waist, proximal pole), which dictates blood supply and prognosis.",
             "th": "ระบบจำแนกกระดูกสะแคฟอยด์หักตามตำแหน่งทางกายวิภาค (ส่วนปลาย, ส่วนกลาง, ส่วนต้น) ซึ่งเป็นตัวกำหนดเส้นเลือดหล่อเลี้ยงและผลการรักษา"
           },
+          "concept": {
+            "title": {
+              "en": "Scaphoid Anatomical Location & Herbert Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Scaphoid Location & Herbert Classification"
+            },
+            "corePrinciple": {
+              "en": "Scaphoid blood supply is retrograde (70-80% enters via dorsal ridge at distal pole/waist and flows proximally). Fracture location and stability (Herbert A/B/C/D) directly dictate Avascular Necrosis (AVN) risk and surgical indications.",
+              "th": "กระดูก Scaphoid มีเลือดเลี้ยงแบบย้อนกลับ (70-80% เข้าทางส่วนปลาย/เอวแล้วไหลย้อนขึ้นส่วนโคน) ตำแหน่งรอยหักและความมั่นคง (Herbert A/B/C/D) เป็นตัวกำหนดความเสี่ยงหัวกระดูกขาดเลือด (AVN) และข้อบ่งชี้ผ่าตัด"
+            },
+            "rules": [
+              {
+                "en": "Distal Pole / Tuberosity (10-20%): Excellent blood supply; low AVN risk.",
+                "th": "Distal Pole / Tuberosity (10-20%): เลือดมาเลี้ยงดีมาก ความเสี่ยง AVN ต่ำ"
+              },
+              {
+                "en": "Waist Fracture (70-80%): Moderate AVN risk; displacement ≥1 mm or instability indicates ORIF.",
+                "th": "Waist Fracture (70-80%): ความเสี่ยง AVN ปานกลาง; เคลื่อนตัว ≥1 มม. หรือไม่มั่นคงเป็นข้อบ่งชี้ผ่าตัด"
+              },
+              {
+                "en": "Proximal Pole Fracture (10-15%): Retrograde blood supply cut off; high AVN (>30%) and nonunion risk; primary ORIF mandatory.",
+                "th": "Proximal Pole Fracture (10-15%): เลือดเลี้ยงถูกตัดขาด; เสี่ยง AVN (>30%) และกระดูกไม่ติดสูงมาก ต้องผ่าตัด ORIF เสมอ"
+              },
+              {
+                "en": "Herbert Stability Classification: Type A (Stable acute), Type B (Unstable acute / displaced), Type C (Delayed union), Type D (Established nonunion).",
+                "th": "เกณฑ์ความมั่นคง Herbert: Type A (เฉียบพลันมั่นคง), Type B (เฉียบพลันไม่มั่นคง/เคลื่อน), Type C (ติดช้า), Type D (กระดูกไม่ติดถาวร)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Distal Pole: Conservative treatment with Thumb Spica Cast for 4-6 weeks.",
+                "th": "Distal Pole: รักษาแบบไม่ผ่าตัดใส่เฝือก Thumb Spica Cast 4-6 สัปดาห์"
+              },
+              {
+                "en": "Waist (Undisplaced <1 mm): Cast for 8-12 weeks OR percutaneous headless compression screw (Herbert screw) for faster recovery.",
+                "th": "Waist (ไม่เคลื่อน <1 มม.): ใส่เฝือก 8-12 สัปดาห์ หรือผ่าตัดขันสกรูไร้หัว (Herbert screw) เพื่อฟื้นตัวเร็ว"
+              },
+              {
+                "en": "Waist (Displaced ≥1 mm) & Proximal Pole: Surgical ORIF with headless compression screw (± vascularized bone graft) MANDATORY.",
+                "th": "Waist (เคลื่อน ≥1 มม.) & Proximal Pole: จำเป็นต้องผ่าตัด ORIF ขันสกรูไร้หัว (± ปลูกกระดูก) เสมอ"
+              },
+              {
+                "en": "CRITICAL PITFALL: Snuffbox tenderness with negative initial X-ray MUST be immobilized in Thumb Spica and re-imaged / MRI in 10-14 days.",
+                "th": "ข้อควรระวังสำคัญ: กดเจ็บ Anatomical Snuffbox แต่ X-ray ปกติ ต้องใส่เฝือกดามไว้และนัด X-ray ซ้ำ หรือทำ MRI ใน 10-14 วัน"
+              }
+            ]
+          },
           "investigations": [
             {
               "name": "Scaphoid View (PA Ulnar Deviation)",
@@ -39,7 +183,7 @@ export const handBone: BoneData = {
               "imageUrl": "/images/investigations/wrist/scaphoid_view.jpg"
             },
             {
-              "name": "AP Wrist View",
+              "name": "PA Wrist View",
               "details": {
                 "en": "Standard anteroposterior view to assess carpal alignment and exclude other carpal injuries.",
                 "th": "ภาพเอกซเรย์ท่าหน้าหลัง (AP) มาตรฐานเพื่อประเมินการเรียงตัวและแยกการบาดเจ็บของกระดูกข้อมือชิ้นอื่นๆ"
@@ -156,6 +300,93 @@ export const handBone: BoneData = {
         "en": "Carpal Instability",
         "th": "ข้อต่อข้อมือไม่มั่นคง (Carpal Instability)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Watson Scaphoid Shift Test",
+            "positive": {
+              "en": "Painful clunk and dorsal subluxation of scaphoid as wrist is moved from ulnar to radial deviation with pressure on scaphoid tubercle.",
+              "th": "มีเสียงคลิกปวดและกระดูก Scaphoid เคลื่อนหลุดไปด้านหลัง ขณะเบนข้อมือจากฝั่งนิ้วก้อยไปฝั่งนิ้วโป้งพร้อมกับกดปุ่ม Scaphoid tubercle"
+            }
+          },
+          {
+            "sign": "Lunotriquetral Shear Test (Reagan Test)",
+            "positive": {
+              "en": "Pain and crepitus when translating lunate and triquetrum in opposing anterior-posterior directions.",
+              "th": "ปวดและมีเสียงกรอบแกรบเมื่อจับกระดูก Lunate และ Triquetrum ขยับสวนทางกันในแนวหน้า-หลัง"
+            }
+          },
+          {
+            "sign": "Median Nerve Neurological Exam",
+            "positive": {
+              "en": "Paresthesia in thumb, index, and middle fingers or acute weakness of thenar muscles indicating acute median nerve compression.",
+              "th": "ชาบริเวณนิ้วโป้ง นิ้วชี้ นิ้วกลาง หรือมืออ่อนแรง แสดงถึงภาวะเส้นประสาท Median ถูกกดทับฉุกเฉิน"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Scapholunate Interval / Gap",
+              "th": "ระยะถ่างช่อง Scapholunate"
+            },
+            "threshold": "< 3 mm",
+            "note": {
+              "en": "SL gap >3mm on PA view indicates complete SLIL tear ('Terry Thomas sign').",
+              "th": "ระยะถ่าง >3 มม. ในท่า PA แสดงว่าเอ็น SLIL ขาดสมบูรณ์ ('Terry Thomas sign')"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Scapholunate Angle (Lateral View)",
+              "th": "มุม Scapholunate (ท่า Lateral)"
+            },
+            "threshold": "30° - 60°",
+            "note": {
+              "en": ">60° indicates DISI pattern; <30° indicates VISI pattern.",
+              "th": ">60 องศาแสดงถึง DISI pattern; <30 องศาแสดงถึง VISI pattern"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Acute Carpal Tunnel Syndrome from volar lunate dislocation (Mayfield Stage IV), requiring emergency nerve decompression.",
+            "th": "ภาวะพังผืดข้อมือกดทับเส้นประสาทฉุกเฉิน (Acute Carpal Tunnel Syndrome) จากกระดูก Lunate ทะลักมาด้านหน้า (Mayfield IV) ต้องผ่าตัดคลายการกดทับด่วน"
+          },
+          {
+            "en": "Irreversible median nerve ischemia causing permanent hand sensory loss and thenar atrophy.",
+            "th": "ภาวะเส้นประสาท Median ขาดเลือดถาวร ส่งผลให้สูญเสียความรู้สึกที่มือและกล้ามเนื้อเนิน thumb ฝีบเกร็ง"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Scaphoid Waist Fracture (Trans-scaphoid Perilunate Dislocation)",
+              "th": "กระดูกสะแคฟอยด์หักร่วมกับข้อมือหลุด (Trans-scaphoid Perilunate)"
+            }
+          },
+          {
+            "injury": {
+              "en": "Radial Styloid Process Fracture (Chauffeur Fracture)",
+              "th": "กระดูก Radial styloid หัก"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Mayfield progression occurs in 4 sequential stages in a clockwise direction around the lunate starting from SLIL disruption.",
+            "th": "ลำดับการฉีกขาดของ Mayfield เกิดขึ้น 4 ระยะต่อเนื่องกันในทิศทางตามเข็มนาฬิการอบกระดูก Lunate เริ่มจากเอ็น SLIL ขาด"
+          },
+          {
+            "en": "Stage IV shows classic 'Spilled Teacup' sign on lateral view (lunate tilted 90° volarly) and 'Pie sign' on PA view.",
+            "th": "Mayfield Stage IV จะเห็นลักษณะเฉพาะ 'Spilled Teacup sign' ในท่าด้านข้าง (Lunate คว่ำ 90 องศา) และ 'Pie sign' ในท่า PA"
+          },
+          {
+            "en": "Emergency carpal tunnel release, closed/open reduction, and ligamentous repair with pinning are mandatory for Stage IV injuries.",
+            "th": "จำเป็นต้องผ่าตัดฉุกเฉินเปิดผังผืดข้อมือ (CTR) จัดกระดูกเข้าที่ และซ่อมเอ็นยึด K-wire ใน Mayfield Stage IV"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Mayfield",
@@ -169,14 +400,49 @@ export const handBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Mayfield Arc Progression Concept",
-              "th": "แนวคิดลำดับการลุกลาม Mayfield Arc (Clockwise Pattern)"
+              "en": "Mayfield Perilunate Instability Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Mayfield Classification"
             },
-            "imageUrl": "/images/mayfield/concept.png",
-            "description": {
-              "en": "Mayfield's Progressive Perilunate Instability occurs in 4 sequential stages around the Lunate bone in a clockwise direction:\n• Stage I (I): Scapholunate interosseous ligament (SLIL) disruption\n• Stage II (II): Capitolunate joint space disruption (Space of Poirier)\n• Stage III (III): Lunotriquetral interosseous ligament (LTIL) disruption (Perilunate Dislocation)\n• Stage IV (IV): Radiolunate ligament rupture & Volar extrusion of Lunate into Carpal Tunnel ('Spilled Teacup Sign')",
-              "th": "ลำดับการลุกลามของภาวะความไม่มั่นคงรอบกระดูก Lunate (Mayfield Arc) จะฉีกขาดเวียนตามเข็มนาฬิกาเป็น 4 ระยะรอบกระดูก Lunate:\n• ระยะที่ I (I): เอ็น Scapholunate (SL) ขาดอ้าแยกออกจากกัน\n• ระยะที่ II (II): ข้อ Capitolunate (Space of Poirier) ฉีกขาดหลุดลอย\n• ระยะที่ III (III): เอ็น Lunotriquetral (LT) ขาด เกิด Perilunate Dislocation\n• ระยะที่ IV (IV): เอ็น Radiolunate ขาด กระดูก Lunate หมุนบิดทะลักมาด้านหน้าเข้าสู่ช่อง Carpal Tunnel ('Spilled Teacup Sign')"
-            }
+            "corePrinciple": {
+              "en": "Perilunate dislocations result from progressive pericarpal ligamentous failure around the lunate in a sequential clockwise direction (Stages I-IV), culminating in Stage IV lunate dislocation into the carpal tunnel.",
+              "th": "ภาวะข้อ Perilunate หลุดเกิดจากการฉีกขาดของเอ็นรอบกระดูก Lunate อย่างต่อเนื่องตามเข็มนาฬิกา (Stages I-IV) จนกระทั่งใน Stage IV กระดูก Lunate จะหมุนหลุดทะลักเข้าช่องข้อมือ Carpal tunnel"
+            },
+            "rules": [
+              {
+                "en": "Stage I (Scapholunate Dissociation): SL gap >3 mm (Terry Thomas sign), SL angle >60° (DISI).",
+                "th": "Stage I (Scapholunate Dissociation): ช่อง SL อ้า >3 มม. (Terry Thomas sign), มุม SL >60° (DISI)"
+              },
+              {
+                "en": "Stage II (Perilunate Dislocation): Capitolunate joint disruption; capitate dislocates dorsally.",
+                "th": "Stage II (Perilunate Dislocation): เอ็น Capitolunate ขาด; กระดูก Capitate หลุดไปด้านหลัง"
+              },
+              {
+                "en": "Stage III (Perilunate Dislocation Complete): Lunotriquetral (LT) ligament tear; entire carpus dislocates dorsally.",
+                "th": "Stage III (Perilunate Dislocation Complete): เอ็น Lunotriquetral (LT) ขาด; กระดูกข้อมือทั้งหมดหลุดไปด้านหลัง"
+              },
+              {
+                "en": "Stage IV (Lunate Dislocation): Lunate rotated 90° volarly into carpal tunnel ('Spilled Teacup' sign).",
+                "th": "Stage IV (Lunate Dislocation): Lunate หมุนคว่ำ 90° ทะลักเข้า Carpal tunnel ('Spilled Teacup' sign)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Stage I: Operative SL ligament repair / capsulodesis + K-wire stabilization for 6-8 weeks.",
+                "th": "Stage I: ผ่าตัดซ่อมเอ็น SL + เย็บพาสตรึงแคปซูล + ปักเข็ม K-wire นาน 6-8 สัปดาห์"
+              },
+              {
+                "en": "Stage II & III: Urgent closed reduction + open dual-approach ORIF and ligament reconstruction.",
+                "th": "Stage II & III: ดึงจัดข้อเข้าที่ฉุกเฉิน + ผ่าตัดเปิดสองทาง ORIF ซ่อมเอ็นยึดกระดูก"
+              },
+              {
+                "en": "Stage IV: EMERGENCY Carpal Tunnel Release (CTR) for median nerve decompression + open reduction of lunate + robust ORIF & ligament repair.",
+                "th": "Stage IV: ผ่าตัดฉุกเฉินด่วนที่สุด! เปิดคลายช่องข้อมือ (CTR) ลดแรงกดเส้นประสาท Median + จัดกระดูก Lunate เข้าที่ + ORIF ซ่อมเอ็น"
+              },
+              {
+                "en": "CRITICAL PITFALL: Up to 25% of perilunate dislocations are missed on initial ER X-rays. Always evaluate Gilula's 3 carpal arcs.",
+                "th": "ข้อควรระวังสำคัญ: ภาวะ Perilunate dislocation ถูกตรวจพลาดถึง 25% ในห้องฉุกเฉิน! ต้องเช็กแนวเส้น Gilula's 3 arcs ในภาพ PA เสมอ"
+              }
+            ]
           },
           "investigations": [
             {
@@ -188,7 +454,7 @@ export const handBone: BoneData = {
               "imageUrl": "/images/investigations/wrist/ap_wrist_view.jpg"
             },
             {
-              "name": "True Lateral Wrist View",
+              "name": "Lateral Wrist View",
               "details": {
                 "en": "Strict lateral view in neutral position. Crucial for measuring Scapholunate angle (normal 30-60°, DISI >60°), checking radiolunate alignment, and identifying 'Spilled Teacup' sign.",
                 "th": "ภาพเอกซเรย์ข้อมือท่าด้านข้างแท้ จำเป็นสำหรับการวัดมุม Scapholunate (ปกติ 30-60°, DISI >60°), แนว Capitate-Lunate-Radius และดูเงา 'Spilled Teacup sign'"
@@ -339,6 +605,100 @@ export const handBone: BoneData = {
         "en": "1st Metacarpal Base",
         "th": "ฐานกระดูกฝ่ามือนิ้วหัวแม่มือ (1st Metacarpal Base)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "1st CMC Joint Deformity & Bony Prominence",
+            "positive": {
+              "en": "Visible step-off or dorsal prominence at the base of the thumb CMC joint.",
+              "th": "พบความผิดรูปโก่งนูนทางด้านหลังบริเวณฐานข้อต่อ CMC นิ้วหัวแม่มือ"
+            }
+          },
+          {
+            "sign": "Loss of Pinch & Grip Strength",
+            "positive": {
+              "en": "Inability to generate key pinch or tip pinch strength due to CMC instability and pain.",
+              "th": "ไม่สามารถออกแรงหนีบนิ้ว (Pinch strength) หรือแรงกำมือได้เนื่องจากข้อ CMC ไม่มั่นคงและปวด"
+            }
+          },
+          {
+            "sign": "Base of Thumb Local Tenderness",
+            "positive": {
+              "en": "Point tenderness directly over the trapeziometacarpal joint line.",
+              "th": "กดเจ็บเฉพาะจุดตรงแนวข้อต่อ Trapeziometacarpal"
+            }
+          },
+          {
+            "sign": "Axial Loading Test of Thumb",
+            "positive": {
+              "en": "Pain and crepitus when pushing the thumb metacarpal axially toward the trapezium.",
+              "th": "ปวดและมีเสียงกรอบแกรบเมื่อดันกดกระดูกฝ่ามือนิ้วโป้งตามแนวแกนเข้าหากระดูก Trapezium"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Articular Step-off (Bennett / Rolando)",
+              "th": "รอยเหลื่อมผิวข้อต่อ (Bennett / Rolando)"
+            },
+            "threshold": "< 1 mm",
+            "note": {
+              "en": "Articular step-off ≥1mm leads to rapid post-traumatic CMC osteoarthritis.",
+              "th": "รอยเหลื่อมผิวข้อ ≥1 มม. นำไปสู่ข้อต่อ CMC เสื่อมรุนแรงอย่างรวดเร็ว"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Extra-articular Shaft Angulation (Apex Dorsal)",
+              "th": "มุมโก่งงอแกนนอกข้อต่อ (Apex Dorsal)"
+            },
+            "threshold": "< 20° - 30°",
+            "note": {
+              "en": "Up to 30° apex dorsal angulation acceptable for extra-articular fractures due to compensatory CMC mobility.",
+              "th": "ยอมรับมุมโก่งงอไปด้านหลังได้ถึง 30 องศาในรอยหักนอกข้อต่อ เนื่องจากข้อ CMC ชดเชยได้ดี"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Thenar space / hand compartment syndrome following high-energy crush or vascular trauma.",
+            "th": "ภาวะความดันในช่องกล้ามเนื้อฝ่ามือสูง (Compartment syndrome of thenar space) หลังอุบัติเหตุทับบดพลังงานสูง"
+          },
+          {
+            "en": "Digital nerve or radial artery superficial branch injury during sharp trauma or fragment displacement.",
+            "th": "การบาดเจ็บของเส้นประสาทดิจิทัลหรือแขนงหลอดเลือด Radial artery บริเวณฐานนิ้วหัวแม่มือ"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Trapezium Fracture",
+              "th": "กระดูก Trapezium หัก"
+            }
+          },
+          {
+            "injury": {
+              "en": "Ulnar Collateral Ligament (UCL) Tear of 1st MCP Joint (Gamekeeper's / Skier's Thumb)",
+              "th": "เอ็น UCL ข้อ MCP นิ้วโป้งฉีกขาด (Gamekeeper's / Skier's Thumb)"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Abductor pollicis longus (APL) tendon pulls the metacarpal shaft proximally, dorsally, and radially, creating classic Bennett displacement.",
+            "th": "เอ็นกล้ามเนื้อ Abductor pollicis longus (APL) จะดึงรั้งแกนกระดูกฝ่ามือขึ้นบน ไปด้านหลัง และด้านนอก เกิดลักษณะเคลื่อนหลุดคลาสสิกของ Bennett"
+          },
+          {
+            "en": "In Bennett fractures, the small volar lip fragment remains attached to the strong Anterior Oblique Ligament (AOL).",
+            "th": "ใน Bennett fracture ชิ้นส่วนกระดูกเล็กทางด้าน volar ยังคงยึดแน่นอยู่กับเอ็น Anterior Oblique Ligament (AOL)"
+          },
+          {
+            "en": "Rolando fracture is a comminuted Y- or T-shaped intra-articular fracture pattern requiring ORIF or external fixation to restore articular surface.",
+            "th": "Rolando fracture เป็นกระดูกหักเข้าข้อแบบแตกละเอียดรูปตัว Y หรือ T ซึ่งต้องการผ่าตัด ORIF หรือยึดโครงภายนอกเพื่อเรียงผิวข้อ"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Eponyms",
@@ -350,9 +710,55 @@ export const handBone: BoneData = {
             "en": "Classification of fractures at the base of the first metacarpal, distinguishing between intra-articular and extra-articular injuries.",
             "th": "ระบบจำแนกกระดูกหักบริเวณฐานกระดูกฝ่ามือนิ้วหัวแม่มือ (นิ้วที่ 1) แบ่งตามการมีหรือไม่มีรอยหักเข้าข้อต่อ"
           },
+          "concept": {
+            "title": {
+              "en": "1st Metacarpal Base Eponyms Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ 1st Metacarpal Base Fractures"
+            },
+            "corePrinciple": {
+              "en": "In intra-articular 1st CMC joint fractures, the Abductor Pollicis Longus (APL) tendon pulls the metacarpal shaft proximally, dorsally, and radially, while the volar beak fragment remains anchored to the trapezium by the deep volar oblique ligament (AOL).",
+              "th": "ในกระดูกโคนนิ้วโป้งหักเข้าข้อ 1st CMC แรงดึงของกล้ามเนื้อ APL จะดึงแกนกระดูกฝ่ามือหลุดไปทางด้านบน ด้านหลัง และด้านนอก ในขณะที่ชิ้นส่วน Volar beak ยังคงยึดแน่นอยู่กับกระดูก Trapezium ด้วยเอ็น Deep Volar Oblique (AOL)"
+            },
+            "rules": [
+              {
+                "en": "Bennett Fracture: 2-part intra-articular fracture-dislocation.",
+                "th": "Bennett Fracture: กระดูกหักเข้าข้อต่อแบบ 2 ชิ้นร่วมกับข้อหลุด"
+              },
+              {
+                "en": "Rolando Fracture: Comminuted 3-part (or more) intra-articular fracture with Y- or T-shaped pattern.",
+                "th": "Rolando Fracture: กระดูกหักเข้าข้อแบบแตกละเอียดตั้งแต่ 3 ชิ้นขึ้นไป รูปตัว Y หรือ T"
+              },
+              {
+                "en": "Extra-articular Base Fracture: Transverse/oblique fracture distal to 1st CMC joint space.",
+                "th": "Extra-articular Base Fracture: รอยหักแนวขวาง/เฉียงต่ำกว่าช่องข้อ 1st CMC (ไม่เข้าข้อ)"
+              },
+              {
+                "en": "Acceptable Alignment Criteria: Articular step-off <1 mm for Bennett/Rolando. Extra-articular apex dorsal angulation <20°-30°.",
+                "th": "เกณฑ์สัดส่วนที่ยอมรับได้: รอยเหลื่อมผิวข้อ <1 มม. (Bennett/Rolando); นอกข้อต่อยอมรับมุมโก่งงอได้ถึง 20°-30°"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Bennett Fracture: Closed reduction + percutaneous K-wire pinning (CRIF) or ORIF with mini-screws. Cast alone fails due to continuous APL tendon pull.",
+                "th": "Bennett Fracture: ผ่าตัดดึงจัดกระดูกแทง K-wire ยึด (CRIF) หรือ ORIF ขัน mini-screws; ใส่เฝือกอย่างเดียวล้มเหลวเพราะแรงดึงเอ็น APL"
+              },
+              {
+                "en": "Rolando Fracture: ORIF with mini-T-plate or dynamic external fixation to restore articular surface and maintain length.",
+                "th": "Rolando Fracture: ผ่าตัด ORIF ด้วยแผ่นเหล็ก Mini-T-plate หรือใส่โครงยึดภายนอก (External fixation) เพื่อเรียงผิวข้อ"
+              },
+              {
+                "en": "Extra-articular Fracture: Closed reduction + thumb spica cast for 3-4 weeks (CMC joint compensates for up to 30° angulation); ORIF if >30° angulation.",
+                "th": "Extra-articular Fracture: ดึงจัดกระดูกใส่เฝือก Thumb spica 3-4 สัปดาห์ (ข้อ CMC ชดเชยมุมได้ถึง 30°); ผ่าตัด ORIF หากมุมโก่ง >30°"
+              },
+              {
+                "en": "CRITICAL PITFALL: Do not attempt cast immobilization for Bennett or Rolando fractures—continuous muscle forces (APL) inevitably cause secondary subluxation.",
+                "th": "ข้อควรระวังสำคัญ: ห้ามรักษา Bennett หรือ Rolando fracture ด้วยการใส่เฝือกเด็ดขาด! เพราะแรงดึงกล้ามเนื้อ APL จะดึงให้ข้อหลุดซ้ำ"
+              }
+            ]
+          },
           "investigations": [
             {
-              "name": "True AP Thumb View (Robert's View)",
+              "name": "AP Thumb View (Robert's View)",
               "details": {
                 "en": "AP view taken with the wrist in maximum internal rotation. Essential to visualize the carpometacarpal (CMC) joint clearly without trapezium overlay.",
                 "th": "ภาพเอกซเรย์ท่าหน้าหลัง (AP) จริงของนิ้วหัวแม่มือ ถ่ายโดยหมุนข้อมือเข้าด้านในสุด ช่วยให้เห็นช่องข้อ CMC ได้ชัดเจนโดยไม่มีกระดูก Trapezium ทับซ้อน"
@@ -360,7 +766,7 @@ export const handBone: BoneData = {
               "imageUrl": "/images/investigations/hand/ap_thumb_roberts.jpg"
             },
             {
-              "name": "True Lateral Thumb View",
+              "name": "Lateral Thumb View",
               "details": {
                 "en": "Lateral view of the thumb. Crucial for assessing volar subluxation or dorsal displacement of the metacarpal shaft.",
                 "th": "ภาพเอกซเรย์ท่าด้านข้าง (Lateral) จริงของนิ้วหัวแม่มือ มีความสำคัญอย่างยิ่งในการประเมินการเคลื่อนหลุดไปด้านหน้า (Volar subluxation) หรือการเคลื่อนไปด้านหลัง"
@@ -372,8 +778,7 @@ export const handBone: BoneData = {
               "details": {
                 "en": "Hyperpronated view of the thumb CMC joint. Helps confirm subtle subluxations and assess joint stability.",
                 "th": "ภาพเอกซเรย์คว่ำข้อมือสุด (Hyperpronation) ของข้อ CMC นิ้วหัวแม่มือ ช่วยยืนยันภาวะข้อมือเคลื่อนหลุดเล็กน้อยและประเมินความมั่นคงของข้อต่อ"
-              },
-              "imageUrl": "/images/investigations/hand/ap_thumb_roberts.jpg"
+              }
             }
           ],
           "types": [
@@ -477,6 +882,126 @@ export const handBone: BoneData = {
         "en": "2nd - 5th Metacarpals",
         "th": "กระดูกฝ่ามือนิ้วชี้ถึงก้อย (2nd - 5th Metacarpals)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Loss of Knuckle Prominence",
+            "positive": {
+              "en": "Depression or flattening of the MCP knuckle contour on the dorsal aspect of hand due to apex dorsal neck/shaft angulation.",
+              "th": "สันหมัด (Knuckle) บุ๋มหายไปเนื่องจากคอหรือแกนกระดูกฝ่ามือโก่งไปด้านหลัง"
+            }
+          },
+          {
+            "sign": "Rotational Scissoring Test (Finger Flexion Alignment)",
+            "positive": {
+              "en": "Overlapping or crossing of adjacent fingers when flexing digits into a fist; indicates un-tolerated rotational malalignment.",
+              "th": "นิ้วมือซ้อนเกยกันขณะพับกำมือ แสดงถึงการบิดหมุนผิดรูปที่ยอมรับไม่ได้"
+            }
+          },
+          {
+            "sign": "Direct Metacarpal Shaft Tenderness & Pain on Axial Load",
+            "positive": {
+              "en": "Sharp focal tenderness on palpation over metacarpal shaft or pain reproduced by pushing distal fingertip axially.",
+              "th": "กดเจ็บเฉพาะจุดบนแกนกระดูกฝ่ามือ หรือปวดเมื่อดันปลายนิ้วดันเข้าตามแนวแกน"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "2nd & 3rd Metacarpal Neck / Shaft Angulation",
+              "th": "มุมโก่งคอ/แกน นิ้วชี้และนิ้วกลาง (2nd & 3rd MC)"
+            },
+            "threshold": "< 10° - 15°",
+            "note": {
+              "en": "Rigid carpometacarpal joints allow minimal compensatory motion.",
+              "th": "ข้อต่อ CMC นิ้วชี้และกลางมีความแน่นหนา จึงยอมรับมุมโก่งงอได้น้อยมาก"
+            }
+          },
+          {
+            "parameter": {
+              "en": "4th Metacarpal Neck Angulation",
+              "th": "มุมโก่งคอกระดูกฝ่ามือนิ้วนาง (4th MC Neck)"
+            },
+            "threshold": "< 30° - 40°",
+            "note": {
+              "en": "Moderate CMC mobility allows greater compensation.",
+              "th": "ข้อต่อ CMC นิ้วนางมีความยืดหยุ่นปานกลาง สามารถชดเชยมุมโก่งได้มากขึ้น"
+            }
+          },
+          {
+            "parameter": {
+              "en": "5th Metacarpal Neck Angulation (Boxer's Fracture)",
+              "th": "มุมโก่งคอกระดูกฝ่ามือนิ้วก้อย (5th MC Neck)"
+            },
+            "threshold": "< 40° - 50° (up to 70°)",
+            "note": {
+              "en": "Angulation up to 40-70° acceptable if no rotational scissoring or extensor lag present.",
+              "th": "ยอมรับมุมโก่งได้ถึง 40-70 องศาหากไม่มีนิ้วบิดเกยกันและไม่มีภาวะเหยียดนิ้วไม่สุด"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Rotational Deformity (All Metacarpals)",
+              "th": "การบิดหมุนผิดรูป (ทุกกระดูกฝ่ามือ)"
+            },
+            "threshold": "0° (Zero Tolerance)",
+            "note": {
+              "en": "1° of rotation causes ~5° of digital overlap during grip.",
+              "th": "การหมุนบิดเพียง 1 องศา ทำให้ปลายนิ้วเกยกันมากถึง ~5 องศาเวลาพับกำมือ"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Metacarpal Shortening",
+              "th": "ความยาวกระดูกสั้นลง"
+            },
+            "threshold": "< 2 - 3 mm",
+            "note": {
+              "en": "1mm shortening causes ~7° of extensor lag and weak grip.",
+              "th": "กระดูกสั้นลง 1 มม. ทำให้เหยียดนิ้วได้ไม่สุด ~7 องศาและแรงกำมือลดลง"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Fight bite / Human bite wound over 5th MCP joint (Eikenella corrodens contamination) requiring urgent surgical irrigation & IV antibiotics.",
+            "th": "แผลถูกฟันมนุษย์กัด (Fight bite) บริเวณข้อ MCP นิ้วก้อย เสี่ยงต่อการติดเชื้อ Eikenella corrodens รุนแรง ต้องล้างแผลผ่าตัดและให้ยาปฏิชีวนะทางหลอดเลือดด่วน"
+          },
+          {
+            "en": "Interosseous muscle compartment syndrome of the hand following severe crush trauma.",
+            "th": "ภาวะความดันในช่องกล้ามเนื้อฝ่ามือสูง (Interosseous compartment syndrome) หลังบาดเจ็บถูกทับบด"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Extensor Tendon Cap / Sagittal Band Rupture",
+              "th": "เอ็นเหยียดนิ้วฉีกขาด หรือเอ็น Sagittal band ขาด"
+            }
+          },
+          {
+            "injury": {
+              "en": "Adjacent Metacarpal Shaft Fracture",
+              "th": "กระดูกฝ่ามือชิ้นข้างเคียงหักร่วม"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Check for human bite / fight bite wound over 5th MCP joint; puncture wounds over knuckles after a punch are open joint injuries until proven otherwise.",
+            "th": "ต้องตรวจหาแผล Fight bite / Human bite บริเวณข้อ MCP นิ้วก้อยเสมอ แผลรูเบาะๆ หลังชกต่อยถือเป็นแผลเปิดเข้าข้อต่อจนกว่าจะพิสูจน์เป็นอย่างอื่น"
+          },
+          {
+            "en": "Always flex MCP joints to 90° when assessing rotational alignment; extending digits hides rotational scissoring.",
+            "th": "ต้องงอข้อ MCP 90 องศาเสมอขณะประเมินนิ้วบิดเกยกัน การเหยียดนิ้วซ่อนการบิดหมุนซ้อนกันไว้"
+          },
+          {
+            "en": "Jahss reduction maneuver (flexing MCP and PIP to 90° and pushing upward on PIP while stabilizing shaft) is effective for acute Boxer's fractures.",
+            "th": "การดึงจัดกระดูกวิธี Jahss maneuver (งอข้อ MCP และ PIP 90° แล้วดันขึ้นที่ข้อ PIP พร้อมตรึงแกนกระดูก) ได้ผลดีมากใน Boxer's fracture ระยะเฉียบพลัน"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Anatomical Location",
@@ -490,11 +1015,49 @@ export const handBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Metacarpal Acceptable Alignment Thresholds",
-              "th": "เกณฑ์สรุป Acceptable Alignment ใน Metacarpal Fractures"
+              "en": "Metacarpal Acceptable Alignment & Boxer's Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ 2nd-5th Metacarpal Fractures & Boxer's Fracture"
             },
-            "showTable": true,
-            "imageUrl": "/images/metacarpal_other/scissoring.png"
+            "corePrinciple": {
+              "en": "Acceptable apex-dorsal angulation increases progressively from Index (2nd MC) to Little finger (5th MC) because mobile ulnar CMC joints compensate for residual sagittal angulation. Zero tolerance (0°) exists for rotational malalignment.",
+              "th": "มุมโก่งงอไปทางหลังมือ (Apex dorsal angulation) ที่ยอมรับได้จะเพิ่มขึ้นเรื่อยๆ จากนิ้วชี้ (2nd MC) ไปถึงนิ้วก้อย (5th MC) เนื่องจากข้อ CMC ด้านนิ้วก้อยมีความยืดหยุ่นชดเชยได้ แต่ห้ามมีความผิดรูปจากการหมุนบิดเด็ดขาด (Rotation = 0°)"
+            },
+            "rules": [
+              {
+                "en": "2nd & 3rd Metacarpal Neck/Shaft: Max acceptable apex dorsal angulation <10° - 15° (Rigid CMC).",
+                "th": "2nd & 3rd Metacarpal (ชี้-กลาง): โก่งได้ไม่เกิน 10° - 15° (ข้อโคนยึดแน่นชดเชยไม่ได้)"
+              },
+              {
+                "en": "4th Metacarpal Neck: Max acceptable angulation <30° - 40°.",
+                "th": "4th Metacarpal (นาง): โก่งได้ไม่เกิน 30° - 40°"
+              },
+              {
+                "en": "5th Metacarpal Neck (Boxer's Fracture): Max acceptable neck angulation <40° - 50° (shaft <30°).",
+                "th": "5th Metacarpal Neck (Boxer's Fracture): โก่งบริเวณคอกระดูกได้ถึง 40° - 50° (บริเวณแกน <30°)"
+              },
+              {
+                "en": "Rotational Deformity: ZERO TOLERANCE (0°). 1° of metacarpal rotation causes ~5° (1.5 cm) of digital overlap in flexion.",
+                "th": "การหมุนบิดผิดรูป (Rotational Deformity): ยอมรับได้ 0° เท่านั้น! การหมุนบิด 1° ทำให้นิ้วเกยกัน ~5° (1.5 ซม.) ขณะพับกำมือ"
+              },
+              {
+                "en": "Shortening: Max acceptable <2-3 mm (1mm shortening causes ~7° extensor lag).",
+                "th": "ความยาวกระดูกสั้นลง: ยอมรับได้ <2-3 มม. (สั้น 1 มม. ทำให้เหยียดนิ้วได้ไม่สุด ~7°)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Boxer's Fracture (5th MC Neck): Closed reduction via Jahss maneuver + ulnar gutter splint for 3-4 weeks if within alignment criteria.",
+                "th": "Boxer's Fracture: ดึงจัดกระดูกวิธี Jahss maneuver + ใส่เฝือกอ่อน Ulnar Gutter Splint 3-4 สัปดาห์หากอยู่ในเกณฑ์ยอมรับได้"
+              },
+              {
+                "en": "Operative Indications: Rotational scissoring, un-tolerated angulation, multiple metacarpal shaft fractures, or open fight bite wounds.",
+                "th": "ข้อบ่งชี้ผ่าตัด: มีนิ้วบิดเกยซ้อนกัน, มุมโก่งเกินเกณฑ์, กระดูกฝ่ามือหักหลายชิ้น, หรือมีแผลถูกฟันมนุษย์กัด (Fight bite)"
+              },
+              {
+                "en": "CRITICAL PITFALL: ALWAYS check for Fight Bite wound over 5th MCP joint after a punch; requires emergency surgical irrigation & IV antibiotics.",
+                "th": "ข้อควรระวังสำคัญ: ตรวจหาแผล Fight bite บริเวณข้อ MCP นิ้วก้อยหลังการชกต่อยเสมอ; ต้องผ่าตัดล้างข้อและให้ยาปฏิชีวนะทางหลอดเลือดด่วน"
+              }
+            ]
           },
           "investigations": [
             {
@@ -506,7 +1069,7 @@ export const handBone: BoneData = {
               "imageUrl": "/images/investigations/hand/pa_hand_view.jpg"
             },
             {
-              "name": "True Lateral Hand View",
+              "name": "Lateral Hand View",
               "details": {
                 "en": "True lateral view of the hand. Essential to accurately measure apex dorsal angulation of metacarpal neck and shaft fractures.",
                 "th": "ภาพเอกซเรย์มือท่าด้านข้าง (Lateral) จริง จำเป็นอย่างยิ่งสำหรับการวัดมุมโก่งงอไปทางหลังมือ (Apex dorsal angulation) ของส่วนคอและแกนกระดูก"
@@ -514,7 +1077,7 @@ export const handBone: BoneData = {
               "imageUrl": "/images/investigations/hand/lateral_hand_view.jpg"
             },
             {
-              "name": "Oblique Hand View (30° Pronation)",
+              "name": "Oblique Hand View",
               "details": {
                 "en": "30-degree pronated oblique view. Separates overlapping metacarpals to profile individual metacarpal shafts and CMC/MCP joints clearly.",
                 "th": "ภาพเอกซเรย์มือท่าเฉียง 30 องศา ช่วยคลายการทับซ้อนของกระดูกฝ่ามือแต่ละชิ้น ทำให้เห็นส่วนแกนกระดูกและข้อต่อ CMC/MCP ได้ชัดเจน"

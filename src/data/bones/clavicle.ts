@@ -18,6 +18,73 @@ export const clavicleBone: BoneData = {
         "en": "AC Joint",
         "th": "ข้อต่อ AC Joint"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Sternoclavicular (SC) Joint Tenderness & Palpation",
+            "positive": {
+              "en": "Tenderness or prominence at sternoclavicular joint; dyspnea or dysphagia indicates posterior SC dislocation compressing retrosternal trachea/esophagus",
+              "th": "กดเจ็บหรือคลำนูนบริเวณข้อต่อ SC; อาการหายใจลำบากหรือกลืนลำบากบ่งชี้ข้อ SC หลุดไปด้านหลังอัดทับท่อลม/หลอดอาหาร"
+            }
+          },
+          {
+            "sign": "AC Joint Tenderness & Cross-Body Adduction Test",
+            "positive": {
+              "en": "Focal tenderness at AC joint exacerbated by cross-body arm adduction indicates AC joint sprain or dislocation",
+              "th": "กดเจ็บเฉพาะที่บริเวณข้อ AC และปวดมากขึ้นเมื่อหุบแขนข้ามลำตัว บ่งชี้การบาดเจ็บหรือข้อต่อ AC หลุด"
+            }
+          },
+          {
+            "sign": "Piano Key Sign",
+            "positive": {
+              "en": "Downward pressure depresses prominent distal clavicle, which springs back upon release; indicates complete CC ligament rupture",
+              "th": "กดกระดูกไหปลาร้าส่วนปลายที่ยกลอยแล้วยุบลง และเด้งกลับขึ้นมาเมื่อปล่อย บ่งชี้การขาดอย่างสมบูรณ์ของเอ็น Coracoclavicular (CC)"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Posterior sternoclavicular dislocation compressing retrosternal structures (superior vena cava, subclavian vessels, trachea, or esophagus)",
+            "th": "ข้อต่อ Sternoclavicular หลุดไปด้านหลัง กดทับอวัยวะหลังกระดูกหน้าอก (เส้นเลือดใหญ่ SVC, เส้นเลือด Subclavian, ท่อลม หรือหลอดอาหาร)"
+          },
+          {
+            "en": "High-grade AC joint dislocation (Rockwood Type IV, V, VI) with skin tenting or severe soft tissue compromise",
+            "th": "ข้อ AC หลุดระดับรุนแรง (Rockwood Type IV, V, VI) ที่มีผิวดันดันหนังดึงรั้งมากหรือเสี่ยงต่อผิวหนังขาดเลือด"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Coracoclavicular (CC) & AC Ligament Tears",
+              "th": "การฉีกขาดของเส้นเอ็น Coracoclavicular (CC) และ AC"
+            }
+          },
+          {
+            "injury": {
+              "en": "Retrosternal Mediastinal Structure Compression",
+              "th": "การกดทับอวัยวะในช่องอกหลังกระดูกหน้าอก"
+            },
+            "trigger": {
+              "en": "Check in posterior SC dislocations",
+              "th": "ประเมินในเคสข้อ SC หลุดไปด้านหลัง"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Proximal clavicle fractures (Allman Group III) and SC joint dislocations are rare (<5%); mostly managed non-operatively unless posterior displacement threatens retrosternal structures.",
+            "th": "กระดูกไหปลาร้าส่วนต้นหัก (Allman Group III) และข้อ SC หลุด พบได้น้อย (<5%) ส่วนใหญ่รักษาแบบไม่ผ่าตัด ยกเว้นเคลื่อนไปด้านหลังทับกดอวัยวะช่องอก"
+          },
+          {
+            "en": "Rockwood Type I and II AC joint injuries are treated non-operatively with a sling; Type IV, V, and VI mandate surgical reconstruction.",
+            "th": "การบาดเจ็บข้อ AC ชนิด Rockwood Type I และ II รักษาแบบไม่ผ่าตัดด้วย Sling; ชนิด Type IV, V และ VI ต้องผ่าตัดสร้างเอ็น CC ใหม่"
+          },
+          {
+            "en": "Rockwood Type III AC joint injuries are initially treated conservatively for most patients; surgical intervention is reserved for high-demand overhead athletes or heavy laborers.",
+            "th": "Rockwood Type III แนะนำรักษาแบบไม่ผ่าตัดเป็นทางเลือกแรก ส่วนใหญ่ได้ผลดี พิจารณาผ่าตัดเฉพาะนักกีฬาใช้แรงงานหนัก"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Rockwood",
@@ -28,6 +95,56 @@ export const clavicleBone: BoneData = {
           "description": {
             "en": "Rockwood Classification for AC Joint Injuries",
             "th": "Rockwood Classification สำหรับการบาดเจ็บข้อต่อ AC"
+          },
+          "concept": {
+            "title": {
+              "en": "Rockwood AC Joint Injury Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Rockwood Classification"
+            },
+            "corePrinciple": {
+              "en": "Classifies Acromioclavicular (AC) joint injuries (Types I-VI) based on directional displacement, integrity of AC & CC ligaments, and deltotrapezial fascia disruption to guide conservative vs operative management.",
+              "th": "จำแนกการบาดเจ็บข้อต่อ AC (Types I-VI) ตามทิศทางการเคลื่อนตัว ความสมบูรณ์ของเส้นเอ็น AC และ CC และการฉีกขาดของพังผืด Deltotrapezial เพื่อกำหนดแนวทางการรักษาแบบผ่าตัดหรือไม่ผ่าตัด"
+            },
+            "rules": [
+              {
+                "en": "Type I: AC sprain, CC intact, normal radiograph.",
+                "th": "Type I: เอ็น AC บาดเจ็บเล็กน้อย, เอ็น CC ปกติ, ภาพเอกซเรย์ปกติ"
+              },
+              {
+                "en": "Type II: AC torn, CC sprained, distal clavicle elevated < 25%.",
+                "th": "Type II: เอ็น AC ขาด, เอ็น CC บาดเจ็บ, ไหปลาร้ายกลอยขึ้น < 25%"
+              },
+              {
+                "en": "Type III: AC & CC torn, distal clavicle elevated 25% - 100%.",
+                "th": "Type III: เอ็น AC และ CC ขาดทั้งหมด, ไหปลาร้ายกลอยขึ้น 25% - 100%"
+              },
+              {
+                "en": "Type IV: Posterior displacement into or through trapezius muscle.",
+                "th": "Type IV: ไหปลาร้าเคลื่อนไปด้านหลังทะลุเข้ากล้ามเนื้อ Trapezius"
+              },
+              {
+                "en": "Type V: Severe superior displacement > 100% to 300% with deltotrapezial fascia detachment.",
+                "th": "Type V: ไหปลาร้ายกสูงขึ้นมาก > 100% ถึง 300% ร่วมกับพังผืด Deltotrapezial ฉีกขาด"
+              },
+              {
+                "en": "Type VI: Inferior displacement subacromial or subcoracoid.",
+                "th": "Type VI: ไหปลาร้าเคลื่อนลงล่างไปอยู่ใต้ Acromion หรือ Coracoid"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Types I & II: Low-grade stable injuries. Conservative treatment with arm sling for 1-2 weeks followed by early range of motion.",
+                "th": "Type I & II: การบาดเจ็บระดับรุนแรงน้อยและมั่นคง รักษาแบบไม่ผ่าตัดใส่ Arm sling 1-2 สัปดาห์ แล้วเริ่มกายภาพ"
+              },
+              {
+                "en": "Type III: Conservative sling for 3-4 weeks for most patients; surgical CC reconstruction reserved for high-demand overhead athletes or heavy laborers.",
+                "th": "Type III: แนะนำรักษาแบบไม่ผ่าตัดเป็นทางเลือกแรกในผู้ป่วยทั่วไป (ใส่ Sling 3-4 สัปดาห์) พิจารณาผ่าตัดเฉพาะนักกีฬาใช้แขนเหนือศีรษะหรือผู้ใช้แรงงานหนัก"
+              },
+              {
+                "en": "Types IV, V, & VI: High-grade unstable dislocations. MANDATORY surgical reconstruction (CC loop / TightRope / Hook plate) to restore anatomical alignment.",
+                "th": "Type IV, V & VI: การหลุดเคลื่อนรุนแรงที่ไม่มั่นคง จำเป็นต้องผ่าตัดรักษา (CC loop / Suture tape button / Hook plate) เพื่อจัดแนวกระดูกให้ปกติ"
+              }
+            ]
           },
           "investigations": [
             {
@@ -246,6 +363,97 @@ export const clavicleBone: BoneData = {
         "en": "Clavicle Shaft / Allman",
         "th": "ลำกระดูกไหปลาร้า (Clavicle Shaft)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Clavicle Deformity & Skin Tenting Inspection",
+            "positive": {
+              "en": "Visible tenting, puckering, or skin compromise over sharp bone fragments risks closed-to-open fracture conversion",
+              "th": "เห็นผิวดันดันหนัง ดึงรั้ง หรือผิวหนังตึงแน่นเหนือชิ้นกระดูกแหลม เสี่ยงต่อกระดูกแทงทะลุกลายเป็นแผลหักเปิด"
+            }
+          },
+          {
+            "sign": "Subclavian Artery & Distal Pulse Assessment",
+            "positive": {
+              "en": "Diminished distal radial pulse or expanding supraclavicular hematoma indicates subclavian vessel vascular injury",
+              "th": "ชีพจร Radial เบาลง หรือมีก้อนเลือดช้ำเหนือไหปลาร้า บ่งชี้บาดเจ็บต่อหลอดเลือด Subclavian"
+            }
+          },
+          {
+            "sign": "Brachial Plexus Neurological Screen",
+            "positive": {
+              "en": "Motor weakness or altered sensory dermatomes in distal arm indicates brachial plexus compression or traction neuropraxia",
+              "th": "กล้ามเนื้อแขนอ่อนแรงหรือชาตามแขน บ่งชี้การดึงรั้งหรือทับกดเส้นประสาท Brachial Plexus"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Shortening",
+              "th": "ระยะหดสั้น"
+            },
+            "threshold": "< 2 cm",
+            "note": {
+              "en": "Shortening >2 cm is associated with high nonunion rate (~15-20%) and painful scapular dyskinesis",
+              "th": "ระยะหดสั้น >2 ซม. สัมพันธ์กับอัตรากระดูกไม่ติดสูง (~15-20%) และการทำงานของสะบักผิดปกติ"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Vertical Displacement / Cortical Contact",
+              "th": "การเคลื่อนเกยกันในแนวตั้ง / ขอบกระดูกแตะกัน"
+            },
+            "threshold": "< 100% displacement",
+            "note": {
+              "en": "No vertical overlap without cortical contact; 100% displacement increases nonunion risk",
+              "th": "ไม่ควรเคลื่อนเกยหลุดโดยขอบกระดูกไม่แตะกันเลย; การเคลื่อนหลุด 100% เพิ่มความเสี่ยงกระดูกไม่ติด"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Impending skin perforation / severe skin tenting over sharp fracture ends.",
+            "th": "ภาวะกระดูกทิ่มดันผิวหนังรุนแรง เสี่ยงต่อการทะลุกลายเป็นแผลหักเปิด"
+          },
+          {
+            "en": "Subclavian vascular deficit or brachial plexus neurological injury.",
+            "th": "การบาดเจ็บของหลอดเลือด Subclavian หรือเส้นประสาท Brachial plexus"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Pneumothorax / Hemothorax",
+              "th": "ภาวะลมหรือเลือดในช่องเยื่อหุ้มปอด"
+            },
+            "trigger": {
+              "en": "Screen with chest radiograph in high-energy trauma",
+              "th": "ตรวจ Chest X-ray ในเคสอุบัติเหตุแรงกระแทกสูง"
+            }
+          },
+          {
+            "injury": {
+              "en": "Ipsilateral Scapular Neck Fracture (Floating Shoulder)",
+              "th": "กระดูกคอสสะบักหักข้างเดียวกัน (Floating Shoulder)"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Displaced midshaft clavicle fractures with >2 cm shortening or 100% displacement have a high nonunion rate (~15-20%) and benefit from plate ORIF.",
+            "th": "กระดูกไหปลาร้าส่วนกลางหักเคลื่อนที่มีระยะหดสั้น >2 ซม. หรือเกยหลุด 100% มีอัตรากระดูกไม่ติดสูง (~15-20%) และได้ประโยชน์จากการผ่าตัดดามแผ่นเหล็ก"
+          },
+          {
+            "en": "Figure-of-eight bandages provide no clinical advantage over a simple sling and are associated with higher skin ulceration complications.",
+            "th": "การใส่เฝือก Figure-of-eight ไม่ได้ประโยชน์เหนือกว่า Arm sling แบบเรียบง่าย และเสี่ยงเกิดแผลกดทับผิวหนังมากกว่า"
+          },
+          {
+            "en": "Closed reduction of midshaft clavicle fractures cannot be maintained conservatively; splints and slings serve for immobilization and pain relief only.",
+            "th": "การจัดกระดูกแบบไม่ผ่าตัดไม่สามารถรักษาแนวไว้ได้ การใส่เฝือกอ่อนและ Sling มีจุดประสงค์เพื่อลดปวดและดามนิ่งเท่านั้น"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Allman",
@@ -257,6 +465,44 @@ export const clavicleBone: BoneData = {
             "en": "Anatomical location classification system for all clavicle fractures, categorizing injuries into Group I (Middle Third / Midshaft ~80%), Group II (Distal / Lateral Third ~15%), and Group III (Proximal / Medial Third ~5%).",
             "th": "ระบบจำแนกกระดูกไหปลาร้าหักตามตำแหน่งทางกายวิภาค แบ่งเป็น Group I (ส่วนกลาง Midshaft ~80%), Group II (ส่วนปลาย Distal 1/3 ~15%) และ Group III (ส่วนต้น Medial 1/3 ~5%)"
           },
+          "concept": {
+            "title": {
+              "en": "Allman Clavicle Fracture Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Allman Classification"
+            },
+            "corePrinciple": {
+              "en": "Anatomically classifies clavicle fractures into Group I (Midshaft ~80%), Group II (Distal/Lateral 1/3 ~15%), and Group III (Proximal/Medial 1/3 ~5%). Midshaft treatment is guided by displacement, shortening, and comminution.",
+              "th": "จำแนกกระดูกไหปลาร้าหักตามตำแหน่งกายวิภาคเป็น Group I (ส่วนกลาง Midshaft ~80%), Group II (ส่วนปลาย Distal ~15%) และ Group III (ส่วนโคน Medial ~5%) การรักษาการหักส่วนกลางพิจารณาจากระยะหดสั้น การเกยเคลื่อน และความแตกละเอียด"
+            },
+            "rules": [
+              {
+                "en": "Group I (Midshaft ~80%): Non-displaced or shortening < 2 cm & displacement < 100% -> Conservative (Sling 4-6 wks).",
+                "th": "Group I (ส่วนกลาง ~80%): ไม่เคลื่อนตัว หรือหดสั้น < 2 ซม. และเคลื่อนตัว < 100% -> รักษาแบบไม่ผ่าตัด (ใส่ Sling 4-6 สัปดาห์)"
+              },
+              {
+                "en": "Group I Operative Criteria: Shortening > 2 cm, displacement > 100% (no cortical contact), vertical z-shaped fragment, skin tenting, or neurovascular deficit.",
+                "th": "Group I เกณฑ์ผ่าตัด (ORIF): ระยะหดสั้น > 2 ซม., เคลื่อนตัว > 100% (ขอบกระดูกไม่แตะกัน), มีชิ้นกระดูกตั้งฉาก Z-fragment, ทิ่มผิวหนัง หรือโดนเส้นประสาท/หลอดเลือด"
+              },
+              {
+                "en": "Group II (Distal 1/3 ~15%): Subclassified by Neer (Types I-V) based on CC ligament integrity.",
+                "th": "Group II (ส่วนปลาย ~15%): จำแนกย่อยตาม Neer Classification (Type I-V) ตามความสมบูรณ์ของเอ็น CC"
+              },
+              {
+                "en": "Group III (Proximal 1/3 ~5%): Mostly stable and managed non-operatively; posterior displacement requires immediate CT angio to rule out mediastinal structure compression.",
+                "th": "Group III (ส่วนโคน ~5%): ส่วนใหญ่มั่นคงดีรักษาแบบไม่ผ่าตัด; หากเคลื่อนไปด้านหลังต้องทำ CTA ฉุกเฉินเพื่อตรวจหลอดเลือดใหญ่ในช่องอก"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Group I Displaced (> 2 cm shortening / 100% displacement): Operative ORIF with superior or anteroinferior anatomical locking plate significantly reduces nonunion rate (from ~15% to < 2%) and prevents symptomatic shoulder asymmetry.",
+                "th": "Group I ชนิดเคลื่อนตัวมาก (หดสั้น > 2 ซม. / เกย 100%): การผ่าตัด ORIF ดามแผ่นเหล็กล็อคช่วยลดอัตรากระดูกไม่ติดจาก 15% เหลือ < 2% และป้องกันไหล่เสียรูปผิดปกติ"
+              },
+              {
+                "en": "Group III (Proximal): Non-operative sling treatment yields > 95% union rate; surgical fixation (medial plate) reserved for posterior displacement threatening great vessels or trachea.",
+                "th": "Group III (ส่วนโคน): การรักษาแบบไม่ผ่าตัดใส่ Sling มีอัตรากระดูกติด > 95%; ผ่าตัดเฉพาะกรณีเคลื่อนตัวไปด้านหลังกดทับหลอดเลือดใหญ่หรือท่อลม"
+              }
+            ]
+          },
           "investigations": [
             {
               "name": "Standard AP Clavicle Radiograph",
@@ -267,12 +513,12 @@ export const clavicleBone: BoneData = {
               "imageUrl": "/images/investigations/clavicle/ap_clavicle_view.jpg"
             },
             {
-              "name": "15-45° Cephalic Angulated View (Zanca View)",
+              "name": "Cephalic Tilt AP View (15-30°)",
               "details": {
-                "en": "Angulated 15° cephalic view. Essential to project the clavicle free from thoracic ribs and scapular spine overlap, evaluating comminution and CC ligament status.",
-                "th": "ภาพเอกซเรย์เอียงหลอดรังสี 15 องศาขึ้นทางหัว เพื่อหลบกระดูกซี่โครงทับซ้อนและประเมินชิ้นกระดูกแตกละเอียด"
+                "en": "AP radiograph taken with a 15-30° cephalic tube tilt. Projects the clavicle shaft free from rib and thoracic cage overlap, revealing the true length and displacement of the midshaft fracture. Optimal tilt is 15-30° cephalic. Essential for assessing shortening, comminution, and angulation of Group I (Midshaft) fractures. Not to be confused with the Zanca view, which is specific to the AC joint.",
+                "th": "ภาพเอกซเรย์ AP โดยเอียงหลอดรังสีขึ้น 15-30 องศา เพื่อฉายภาพลำกระดูกไหปลาร้าให้หลุดพ้นจากซี่โครงและทรวงอก ทำให้มองเห็นความยาวและการเคลื่อนตัวที่แท้จริงของรอยหักส่วนกลาง ใช้ประเมินการหดสั้น ความแตกละเอียด และการโค้งงอของ Group I (Midshaft) ไม่ใช่ท่า Zanca ซึ่งใช้เฉพาะข้อ AC"
               },
-              "imageUrl": "/images/investigations/clavicle/zanca_view.jpg"
+              "imageUrl": "/images/investigations/clavicle/cephalic_tilt_ap_view.jpg"
             },
             {
               "name": "Non-contrast 3D CT Scan of Chest/Clavicle",
@@ -386,6 +632,58 @@ export const clavicleBone: BoneData = {
         "en": "Distal Clavicle",
         "th": "กระดูกไหปลาร้าส่วนปลาย (Distal Clavicle)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "AC Joint / Distal Clavicle Palpation",
+            "positive": {
+              "en": "Focal tenderness and palpable step-off deformity at distal third of clavicle",
+              "th": "กดเจ็บเฉพาะที่และคลำได้ขอบกระดูกเกยบริเวณไหปลาร้าส่วนปลาย"
+            }
+          },
+          {
+            "sign": "Piano Key Sign",
+            "positive": {
+              "en": "Vertical instability of distal clavicle fragment due to coracoclavicular (CC) ligament detachment/rupture",
+              "th": "กระดูกไหปลาร้าส่วนปลายยกลอยขึ้นและกดลงได้เหมือนคีย์เปียโน แสดงถึงความไม่มั่นคงจากเอ็น CC ขาด"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Neer Type IIA, IIB, and V unstable fracture patterns due to detachment or rupture of coracoclavicular (CC) ligaments from proximal fragment.",
+            "th": "กระดูกหักชนิด Neer Type IIA, IIB และ V ที่ไม่มั่นคงเนื่องจากเอ็น CC ฉีกขาดหรือหลุดออกจากชิ้นกระดูกส่วนต้น"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Coracoclavicular (CC) Ligament Tear / Detachment",
+              "th": "การฉีกขาดหรือหลุดของเส้นเอ็น Coracoclavicular (CC)"
+            }
+          },
+          {
+            "injury": {
+              "en": "AC Joint Capsule Disruption",
+              "th": "การฉีกขาดของปลอกข้อต่อ AC"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Neer Type IIA, IIB, and V distal clavicle fractures are unstable with a high nonunion rate (~30%) because CC ligaments are detached from the proximal segment, requiring surgical reconstruction.",
+            "th": "กระดูกไหปลาร้าส่วนปลายหักชนิด Neer Type IIA, IIB และ V เป็นชนิดไม่มั่นคง มีอัตรากระดูกไม่ติดสูง (~30%) เนื่องจากเอ็น CC หลุดออกจากชิ้นส่วนต้น จำเป็นต้องผ่าตัดรักษา"
+          },
+          {
+            "en": "Neer Type I and III fractures are stable (CC ligaments remain intact) with low nonunion risk, treated conservatively in a sling for 3-4 weeks.",
+            "th": "Neer Type I และ III เป็นชนิดมั่นคง (เอ็น CC ปกติ) เสี่ยงกระดูกไม่ติดต่ำ สามารถรักษาแบบไม่ผ่าตัดใส่ Sling 3-4 สัปดาห์"
+          },
+          {
+            "en": "Neer Type III involves the intra-articular AC joint surface; patients should be monitored for late post-traumatic AC joint osteoarthritis, managed with distal clavicle excision (Mumford procedure).",
+            "th": "Neer Type III หักพาดเข้าผิวข้อ AC ให้เฝ้าระวังภาวะข้อ AC เสื่อมตามมา ซึ่งรักษาได้ด้วยการตัดปลายไหปลาร้า (Mumford procedure)"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Neer (Distal Clavicle)",
@@ -396,6 +694,40 @@ export const clavicleBone: BoneData = {
           "description": {
             "en": "Classification of distal (lateral) third clavicle fractures based on the relationship to the coracoclavicular (CC) ligaments (conoideum and trapezoideum) and articular surface, dictating nonunion risk and surgical management.",
             "th": "ระบบจำแนกกระดูกไหปลาร้าส่วนปลาย (Distal 1/3) หักตามความสัมพันธ์กับเส้นเอ็น Coracoclavicular (CC) และผิวข้อ AC ซึ่งเป็นตัวกำหนดความเสี่ยงต่อกระดูกไม่ติดและการผ่าตัด"
+          },
+          "concept": {
+            "title": {
+              "en": "Neer Distal Clavicle Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Neer Distal Clavicle"
+            },
+            "corePrinciple": {
+              "en": "Classifies distal third clavicle fractures based on the fracture line's relationship to the Coracoclavicular (CC) ligaments (Conoid & Trapezoid) and articular surface, differentiating stable from unstable nonunion-prone patterns.",
+              "th": "จำแนกกระดูกไหปลาร้าส่วนปลาย (Distal 1/3) หักตามความสัมพันธ์ของรอยหักต่อเส้นเอ็น Coracoclavicular (CC) และผิวข้อ AC แยกประเภทชนิดมั่นคงออกจากชนิดไม่มั่นคงที่เสี่ยงต่อภาวะกระดูกไม่ติดสูง"
+            },
+            "rules": [
+              {
+                "en": "Type I (Minimal displacement, CC intact) & Type III (Intra-articular AC joint, CC intact): STABLE. CC ligaments remain attached to proximal fragment.",
+                "th": "Type I (ไม่เคลื่อนตัว, เอ็น CC ปกติ) & Type III (หักเข้าข้อ AC, เอ็น CC ปกติ): มั่นคงดี (STABLE) เอ็น CC ยึดติดกับกระดูกชิ้นโคนอย่างสมบูรณ์"
+              },
+              {
+                "en": "Type IIA (Fracture medial to intact CC), Type IIB (Conoid torn, Trapezoid attached), Type V (Comminuted with inferior fragment holding CC): UNSTABLE. Loss of CC restraint on proximal fragment.",
+                "th": "Type IIA (หักด้านในต่อเอ็น CC), Type IIB (เอ็น Conoid ขาด), Type V (แตกละเอียดโดยเอ็น CC ยึดกับชิ้นล่าง): ไม่มั่นคง (UNSTABLE) กระดูกชิ้นโคนหลุดออกจากเอ็น CC"
+              },
+              {
+                "en": "Type IV (Pediatric periosteal sleeve disruption): Proximal fragment erupts superiorly while distal end and CC remain intact in sleeve.",
+                "th": "Type IV (เยื่อหุ้มกระดูกหลุดในเด็ก): กระดูกชิ้นโคนทะลุขึ้นบน ขณะที่ส่วนปลายและเอ็น CC ยังอยู่ในเยื่อหุ้มกระดูก"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Stable Patterns (Types I, III, IV): Non-operative sling immobilization for 3-4 weeks. Type III patients should be monitored for late AC joint osteoarthritis (managed with Mumford distal clavicle excision).",
+                "th": "ชนิดมั่นคง (Type I, III, IV): รักษาแบบไม่ผ่าตัดใส่ Sling 3-4 สัปดาห์ ใน Type III ให้ติดตามอาการภาวะข้อ AC เสื่อมระยะยาว (ซึ่งรักษาด้วยการทำ Mumford procedure)"
+              },
+              {
+                "en": "Unstable Patterns (Types IIA, IIB, V): High nonunion rate (30-40%) with conservative care. SURGICAL INDICATION for ORIF using Distal Clavicle Locking Plate combined with CC suture tape / TightRope button augmentation or Hook Plate.",
+                "th": "ชนิดไม่มั่นคง (Type IIA, IIB, V): มีอัตรากระดูกไม่ติดสูงมาก (30-40%) หากรักษาแบบไม่ผ่าตัด จึงเป็นข้อบ่งชี้ในการผ่าตัด (ORIF) ดามแผ่นเหล็กส่วนปลายร่วมกับการยึดเชือก CC Tape / Button (TightRope) หรือใส่ Hook Plate"
+              }
+            ]
           },
           "investigations": [
             {

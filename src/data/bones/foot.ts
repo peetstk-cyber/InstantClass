@@ -18,6 +18,48 @@ export const footBone: BoneData = {
         "en": "Talus (Talar Neck)",
         "th": "กระดูกทาเลส / คอทาเลส (Talus)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Talar Neck Point Tenderness",
+            "positive": {
+              "en": "Exquisite pain localized over sinus tarsi and anterior talar neck on deep palpation",
+              "th": "เจ็บจี๊ดรุนแรงเฉพาะจุดบริเวณ Sinus tarsi และคอกระดูก Talus ด้านหน้าเมื่อกดตรวจ"
+            }
+          },
+          {
+            "sign": "Skin Blanching & Tenting Assessment",
+            "positive": {
+              "en": "Pale, blanched, or stretched skin over anterior/medial ankle, indicating risk of skin necrosis from displaced talar fragments",
+              "th": "ผิวหนังซีดดึงตึงบริเวณหน้าข้อเท้าหรือตาตุ่มด้านใน แสดงถึงความเสี่ยงผิวหนังเน่าตายจากชิ้นกระดูกคอ/ตัวทาเลสดัน"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Avascular Necrosis (AVN) of Talar Body: Risk reaches 80-100% in Hawkins III and IV fractures due to disrupted retrograde arterial blood supply",
+            "th": "ภาวะหัวกระดูกทาเลสตายจากการขาดเลือด (AVN): ความเสี่ยงสูงถึง 80-100% ใน Hawkins III และ IV จากการทำลายเส้นเลือดเลี้ยงย้อนกลับ"
+          },
+          {
+            "en": "Skin Necrosis & Impending Open Fracture: Displaced talar neck fragments cause pressure necrosis; requires emergency reduction to relieve skin tension",
+            "th": "ผิวหนังเน่าตายและกระดูกทะลุกลายเป็นแผลเปิด: ชิ้นกระดูกเคลื่อนกดทับผิวหนัง ต้องทำการดึงจัดข้อเข้าที่ด่วนฉุกเฉิน"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Canale view X-ray (15° internal rotation, 15° cephalic tilt) is essential to evaluate talar neck alignment and varus deformity without bone overlap.",
+            "th": "ภาพเอกซเรย์ท่า Canale view เป็นสิ่งจำเป็นเพื่อดูแนวกระดูกคอทาเลสและมุมเอียง varus โดยไม่มีกระดูกอื่นทับซ้อน"
+          },
+          {
+            "en": "Hawkins sign (subchondral osteopenia visible on AP/Canale view at 6-8 weeks) confirms preserved vascularity and rules out AVN.",
+            "th": "Hawkins Sign (รอยบางโปร่งแสงใต้ผิวข้อใน X-ray สัปดาห์ที่ 6-8) ยืนยันว่ากระดูกยังมีเลือดมาเลี้ยงและไม่มีภาวะ AVN"
+          },
+          {
+            "en": "Absence of Hawkins sign indicates subchondral sclerosis and high likelihood of post-traumatic avascular necrosis.",
+            "th": "การไม่พบ Hawkins sign (เห็นกระดูกทึบขาว Sclerosis) แสดงถึงโอกาสสูงมากที่จะเกิดภาวะหัวกระดูกตายจากการขาดเลือด"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Hawkins",
@@ -31,14 +73,50 @@ export const footBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Hawkins Talar Neck Concept & AVN Risk Matrix",
-              "th": "แนวคิดการจำแนก Hawkins และอัตราความเสี่ยงกระดูกตายขาดเลือด (AVN Risk Matrix)"
+              "en": "Hawkins Talar Neck Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Hawkins Classification"
             },
             "imageUrl": "/images/hawkins/hawkins_concept.png",
-            "description": {
-              "en": "Talar Neck fractures compromise the retrogradely supplied blood vessels entering via the tarsal canal (deltoid branch of posterior tibial artery). Blood supply risk increases directly with degree of dislocation:\n\n• Type I (Non-displaced): Subtalar & Tibiotalar intact -> AVN Risk 0 - 10%\n• Type II (Displaced + Subtalar Dislocation): Subtalar joint dislocated -> AVN Risk 40 - 50%\n• Type III (Displaced + Subtalar & Tibiotalar Dislocation): Subtalar & Ankle joints dislocated -> AVN Risk 80 - 100%\n• Type IV (Displaced + Subtalar, Tibiotalar & Talonavicular Dislocation): All 3 joints dislocated -> AVN Risk 100%\n\n💡 Clinical Pearls:\n- Hawkins Sign: Subchondral osteopenia visible on AP/Canale view at 6-8 weeks post-injury indicates intact blood supply (NO AVN).\n- Absence of Hawkins sign suggests AVN (sclerosis of talar dome).",
-              "th": "รอยหักคอกระดูกทาเลส (Talar Neck) ส่งผลทำลายเส้นเลือดเลี้ยงกระดูกที่วิ่งย้อนขึ้นทางด้านหลัง (Retrograde blood supply จาก Deltoid branch ของ Posterior tibial artery) ความเสี่ยงภาวะหัวกระดูกตาย (AVN) แปรผันตามจำนวนข้อที่หลุด:\n\n• Type I (ไม่เคลื่อน): ข้อ Subtalar และ Tibiotalar ปกติ -> เสี่ยง AVN 0 - 10%\n• Type II (เคลื่อน + ข้อ Subtalar หลุด): ข้อ Subtalar หลุด -> เสี่ยง AVN 40 - 50%\n• Type III (เคลื่อน + ข้อ Subtalar & Tibiotalar หลุด): ข้อหลุด 2 ข้อ -> เสี่ยง AVN 80 - 100%\n• Type IV (เคลื่อน + ข้อ Subtalar, Tibiotalar & Talonavicular หลุด): ข้อหลุดสมบูรณ์ 3 ข้อ -> เสี่ยง AVN 100%\n\n💡 เกร็ดทางคลินิก:\n- Hawkins Sign: รอยบางโปร่งแสงใต้ผิวข้อ (Subchondral osteopenia) ในภาพเอกซเรย์สัปดาห์ที่ 6-8 แสดงว่ายังมีเลือดมาเลี้ยงกระดูก (ไม่เกิด AVN)\n- หากไม่พบ Hawkins sign (เห็นกระดูกทึบขาว Sclerosis) แสดงว่าเกิดภาวะหัวกระดูกตายขาดเลือด (AVN)"
-            }
+            "corePrinciple": {
+              "en": "Hawkins classifies talar neck fractures based on fracture displacement and dislocation of surrounding joints (subtalar, tibiotalar, talonavicular), directly correlating with retrograde blood supply disruption and avascular necrosis (AVN) risk.",
+              "th": "Hawkins จำแนกกระดูกคอทาเลส (Talar Neck) หักตามการเคลื่อนตัวและการหลุดของข้อโดยรอบ (Subtalar, Tibiotalar, Talonavicular) ซึ่งสัมพันธ์โดยตรงกับการทำลายเส้นเลือดเลี้ยงย้อนกลับและความเสี่ยงหัวกระดูกตาย (AVN)"
+            },
+            "rules": [
+              {
+                "en": "Type I (Non-displaced, joints intact): AVN risk 0–10%",
+                "th": "Type I (ไม่เคลื่อนตัว, ข้อโดยรอบปกติ): เสี่ยง AVN 0–10%"
+              },
+              {
+                "en": "Type II (Displaced + Subtalar dislocation): AVN risk 40–50%",
+                "th": "Type II (เคลื่อน + ข้อ Subtalar หลุด): เสี่ยง AVN 40–50%"
+              },
+              {
+                "en": "Type III (Displaced + Subtalar & Tibiotalar dislocation): AVN risk 80–100%",
+                "th": "Type III (เคลื่อน + ข้อ Subtalar & Tibiotalar หลุด): เสี่ยง AVN 80–100%"
+              },
+              {
+                "en": "Type IV (Displaced + Subtalar, Tibiotalar & Talonavicular dislocation): AVN risk ~100%",
+                "th": "Type IV (เคลื่อน + ข้อหลุดสมบูรณ์ทั้ง 3 ข้อ): เสี่ยง AVN ~100%"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Type I: Non-operative management with non-weightbearing short leg cast for 8–12 weeks",
+                "th": "Type I: รักษาแบบไม่ผ่าตัด ใส่เฝือกสั้นงดลงน้ำหนัก 8–12 สัปดาห์"
+              },
+              {
+                "en": "Type II–IV: Emergency open reduction and rigid internal fixation (ORIF) with screws or mini-plates to restore alignment and preserve residual blood supply",
+                "th": "Type II–IV: ผ่าตัดเปิดจัดและดามกระดูกฉุกเฉิน (ORIF) ด้วยสกรูหรือเพลทเล็กเพื่อคืนแนวข้อและรักษาเส้นเลือดที่เหลือ"
+              },
+              {
+                "en": "Hawkins Sign (6–8 weeks post-op): Subchondral osteopenia on AP/Canale view proves intact vascularity and absence of AVN",
+                "th": "Hawkins Sign (สัปดาห์ที่ 6–8): รอยโปร่งแสงใต้ผิวข้อ (Subchondral osteopenia) ยืนยันว่ามีเลือดมาเลี้ยงและไม่เกิด AVN"
+              },
+              {
+                "en": "Absence of Hawkins Sign: Sclerotic talar dome indicates AVN; mandatory continued non-weightbearing to prevent structural talar dome collapse",
+                "th": "การไม่พบ Hawkins Sign: หัวกระดูกทึบขาว (Sclerotic dome) บ่งบอกภาวะ AVN ต้องสั่งงดลงน้ำหนักต่อเพื่อป้องกันหัวกระดูกทรุดพัง"
+              }
+            ]
           },
           "investigations": [
             {
@@ -198,6 +276,60 @@ export const footBone: BoneData = {
         "en": "Calcaneus",
         "th": "กระดูกส้นเท้า (Calcaneus)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Heel Width Expansion Assessment",
+            "positive": {
+              "en": "Visibly widened, shortened, and valgus/varus deformed heel compared to uninjured side",
+              "th": "ส้นเท้าขยายกว้างออก สั้นลง และเอียงผิดรูปชัดเจนเมื่อเทียบกับข้างปกติ"
+            }
+          },
+          {
+            "sign": "Bohler's Angle Measurement",
+            "positive": {
+              "en": "Bohler's angle reduced below normal range (20-40°); angle <0° indicates severe articular depression of posterior facet",
+              "th": "มุม Bohler's angle ลดลงต่ำกว่าปกติ (20-40°); หากมุมติดลบ (<0°) แสดงถึงผิวยุบตัวลงรุนแรง"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Foot Compartment Syndrome: Occurs in up to 10% of high-energy calcaneal fractures; monitor for tense plantar fascia, severe forefoot pain, and toe paresthesias",
+            "th": "ภาวะความดันช่องกล้ามเนื้อเท้าสูง (Foot Compartment Syndrome): พบได้ถึง 10% ในรอยหักพลังงานสูง ต้องเฝ้าระวังอุ้งเท้าตึง ปวดเท้าและชานิ้วเท้า"
+          },
+          {
+            "en": "Severe Soft Tissue Blistering (Tension Blisters): Hemorrhagic or serous blisters contraindicate immediate ORIF until positive wrinkle sign returns",
+            "th": "ตุ่มน้ำพองรุนแรงที่ผิวหนัง (Tension Blisters): ตุ่มน้ำใสหรือตุ่มเลือดเป็นข้อห้ามการผ่าตัดเปิด จนกว่าตุ่มน้ำจะแห้งและเกิด Wrinkle sign"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Thoracolumbar Spine (L1-L2) Burst Fractures",
+              "th": "กระดูกสันหลังระดับเอว (L1-L2) หักแตกละเอียด"
+            },
+            "trigger": {
+              "en": "Present in ~10% of calcaneal fractures from high-energy vertical fall; mandatory spine exam and radiographs",
+              "th": "พบประมาณ 10% จากการตกจากที่สูง ต้องตรวจกระดูกสันหลังและถ่ายภาพ X-ray สันหลังเสมอ"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Bohler's angle <0° strongly predicts poor functional outcome and increased rate of secondary subtalar arthrodesis.",
+            "th": "มุม Bohler's angle ที่ติดลบ (<0°) ทำนายผลการรักษาที่ไม่ดีและมีอัตราการต้องผ่าตัดเชื่อมข้อ Subtalar สูง"
+          },
+          {
+            "en": "Sanders CT classification is based on the number and location of articular fracture lines on coronal CT section through the posterior facet.",
+            "th": "การจำแนก Sanders CT จากจำนวนและทิศทางรอยหักผิวข้อในภาพตัดขวาง CT เป็นตัวกำหนดพยากรณ์โรคและความซับซ้อนของการผ่าตัด"
+          },
+          {
+            "en": "Surgical intervention via extensile lateral approach must be delayed (7-14 days) until the 'wrinkle sign' is positive to prevent soft tissue breakdown.",
+            "th": "การผ่าตัดเปิดดามเหล็กทางด้านข้างต้องรอ (7-14 วัน) จนกว่าจะพบ 'Wrinkle sign' เพื่อป้องกันแผลผ่าตัดแยกเน่าตาย"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Essex-Lopresti",
@@ -212,13 +344,45 @@ export const footBone: BoneData = {
           "concept": {
             "title": {
               "en": "Essex-Lopresti Secondary Fracture Line Concept",
-              "th": "แนวคิดรอยหักรอบสอง Essex-Lopresti (Tongue vs Joint-Depression)"
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Essex-Lopresti Classification"
             },
             "imageUrl": "/images/essex_lopresti/concept.png",
-            "description": {
-              "en": "Primary fracture line forms obliquely through the posterior facet (crucial angle of Gissane) driven by talar wedge loading. The exit trajectory of the SECONDARY fracture line dictates the classification:\n\n1. Tongue-Type (Top Row A-C):\n   • Secondary line extends straight POSTERIORLY to the posterior tuberosity border.\n   • Posterior facet fragment remains attached to the large tuberosity fragment forming a horizontal 'tongue'.\n   • Key Advantage: Suitable for closed reduction via percutaneous Steinmann pin leverage (Essex-Lopresti maneuver).\n\n2. Joint-Depression Type (Bottom Row D-F, ~75% Most Common):\n   • Secondary line curves SUPERIORLY exiting just behind the posterior facet.\n   • Isolates the posterior facet fragment, driving it crushed/rotated deep into calcaneal body.\n   • Surgical Indication: Requires open reduction (ORIF) via extensile lateral approach to elevate depressed joint surface.\n\n💡 Bohler's Angle Rule: Normal = 20 - 40°. Reduction to <20° indicates calcaneal height collapse. Invert (<0°) in severe Joint-Depression fractures.",
-              "th": "รอยหักปฐมภูมิ (Primary line) เกิดขึ้นเฉียงตัดผ่านผิวข้อ Posterior facet จากแรงกดอัดของกระดูก Talus ทิศทางพาดออกของ **รอยหักทุติยภูมิ (Secondary line)** เป็นตัวแบ่งชนิด:\n\n1. Tongue-Type (แถวบน A-C):\n   • รอยหักรอบสองพาดตรงไปทางด้านหลังทะลุขอบตุ่มส้นเท้าด้านหลัง\n   • ชิ้นผิวข้อ Posterior facet ยังติดอยู่กับชิ้นกระดูกส้นเท้าด้านบนเกิดเป็น **'ชิ้นลิ้น' (Tongue fragment)**\n   • ข้อได้เปรียบ: สามารถผ่าตัดดัดงัดเข้าที่ผ่านทางผิวหนังด้วยเข็ม Steinmann pin (Essex-Lopresti percutaneous maneuver)\n\n2. Joint-Depression Type (แถวล่าง D-F, พบบ่อยที่สุด ~75%):\n   • รอยหักรอบสองโค้งขึ้นด้านบนทะลุออกหลังต่อผิวข้อ Posterior facet พอดี\n   • ตัดชิ้นผิวข้อแยกเป็นอิสระหมุนจมยุบลงในเนื้อกระดูกพรุนส้นเท้า\n   • ข้อบ่งชี้ผ่าตัด: จำเป็นต้องผ่าตัดเปิด ORIF ดามแผ่นเหล็กเพื่อเปิดงัดชิ้นผิวข้อขึ้นมาให้เรียบ\n\n💡 เกณฑ์มุม Bohler's Angle: ปกติ = 20 - 40 องศา หากลดลง <20 องศาแสดงว่าส้นเท้ายุบตัวลงรุนแรง"
-            }
+            "corePrinciple": {
+              "en": "Essex-Lopresti classifies intra-articular calcaneal fractures based on the exit trajectory of the secondary fracture line driven by talar wedge impact, separating injuries into Tongue-type vs Joint-Depression-type patterns.",
+              "th": "Essex-Lopresti จำแนกกระดูกส้นเท้าหักเข้าข้อตามทิศทางพาดออกของรอยหักทุติยภูมิที่เกิดจากแรงตอกของกระดูก Talus โดยแบ่งเป็นชนิด Tongue-type และ Joint-Depression-type"
+            },
+            "rules": [
+              {
+                "en": "Tongue-Type (~25%): Secondary line exits straight posteriorly into tuberosity wall -> Posterior facet fragment remains attached to calcaneal tuberosity",
+                "th": "Tongue-Type (~25%): รอยหักรอบสองพาดตรงไปด้านหลังถึงตุ่มส้นเท้า -> ชิ้นผิวข้อ Posterior facet ยังติดอยู่กับตุ่มส้นเท้าด้านหลัง"
+              },
+              {
+                "en": "Joint-Depression Type (~75%): Secondary line curves superiorly behind posterior facet -> Facet is isolated and crushed into calcaneal body",
+                "th": "Joint-Depression Type (~75%): รอยหักรอบสองโค้งขึ้นด้านบนเหนือผิวข้อ -> ชิ้นผิวข้อแยกขาดและถูกอัดยุบจมลงในเนื้อกระดูกส้นเท้า"
+              },
+              {
+                "en": "Bohler's Angle Threshold: Normal = 20°–40°; Bohler's angle <20° indicates collapse of posterior facet and loss of calcaneal height",
+                "th": "เกณฑ์มุม Bohler's Angle: ปกติ = 20°–40°; มุม <20° แสดงถึงผิวข้อส้นเท้ายุบตัวและสูญเสียความสูง"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Tongue-Type Surgical Technique: Suitable for percutaneous reduction and pinning (Essex-Lopresti Steinmann pin leverage technique) or ORIF",
+                "th": "แนวทางรักษา Tongue-Type: เหมาะสำหรับการผ่าตัดดัดงัดผ่านผิวหนังด้วยเข็ม (Essex-Lopresti percutaneous pin technique) หรือผ่าตัด ORIF"
+              },
+              {
+                "en": "Joint-Depression Surgical Technique: Requires Open Reduction and Internal Fixation (ORIF) via extensile lateral approach with locking plate and void filling",
+                "th": "แนวทางรักษา Joint-Depression: ต้องผ่าตัดเปิด ORIF ดามแผ่นเหล็กทางเข้าด้านข้าง (Extensile lateral approach) ร่วมกับการยกผิวข้อและเติมกระดูกเทียม"
+              },
+              {
+                "en": "Soft Tissue Envelope Waiting Period: Surgical incision MUST be delayed until swelling subsides and 'Wrinkle Sign' is positive (typically 7–14 days post-injury) to prevent skin flap necrosis",
+                "th": "ระยะเวลารอผิวยุบบวม: ต้องรอจนเกิด 'Wrinkle Sign' (7–14 วัน) ก่อนผ่าตัดเปิดแผลด้านข้างเพื่อป้องกันแผลเน่าแยก"
+              },
+              {
+                "en": "Skin Tenting Emergency: Tongue-type fractures causing severe posterior skin tenting require urgent percutaneous reduction to prevent skin slough",
+                "th": "ภาวะผิวดึงตึงฉุกเฉิน: เคส Tongue-type ที่ชิ้นกระดูกดันทับผิวหนังด้านหลังตึงเต่ง ต้องผ่าตัดงัดจัดกระดูกด่วนเพื่อป้องกันผิวหนังเน่าตาย"
+              }
+            ]
           },
           "investigations": [
             {
@@ -351,14 +515,50 @@ export const footBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Sanders Coronal CT Lines & Surgical Prognosis Concept",
-              "th": "แนวคิดตำแหน่งเส้นรอยหักภาพตัด Coronal CT และการทำนายผลรักษา Sanders"
+              "en": "Sanders Coronal CT Surgical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Sanders Classification"
             },
             "imageUrl": "/images/sanders/concept.png",
-            "description": {
-              "en": "Sanders classification is based on coronal CT cuts through the widest aspect of the posterior articular facet. Fracture lines are designated from lateral to medial (A, B, C):\n• Line A: Lateral 1/3 (creates lateral facet fragment)\n• Line B: Central 1/3 (creates central facet fragment)\n• Line C: Medial 1/3 (creates medial facet fragment at sustentaculum border)\n\nClassification & Surgical Management Summary:\n1. Type I (Non-displaced, <2mm displacement): All non-displaced fractures regardless of number of lines -> Conservative treatment (90-95% success).\n2. Type II (Two-Part, 1 line >2mm): Subdivided into IIA, IIB (most common), IIC -> Gold standard for ORIF with plate & lag screws (>80-85% good/excellent outcome).\n3. Type III (Three-Part, 2 lines with depressed central piece): Subdivided into IIIAB, IIIAC, IIIBC -> Technically demanding ORIF (elevation + bone graft/void filler + plate).\n4. Type IV (Four-Part, 3+ lines / highly comminuted): Severely crushed posterior facet -> Poor ORIF prognosis; indication for Primary Subtalar Arthrodesis (joint fusion).",
-              "th": "ระบบ Sanders ประเมินจากภาพ Coronal CT ผ่านส่วนที่กว้างที่สุดของผิวข้อ Posterior facet โดยแบ่งเส้นรอยหักจากด้านนอกไปด้านในเป็น A, B, C:\n• Line A: รอยหัก 1/3 ด้านนอก (Lateral 1/3)\n• Line B: รอยหัก 1/3 ตรงกลาง (Central 1/3)\n• Line C: รอยหัก 1/3 ด้านใน (Medial 1/3 ติดขอบ Sustentaculum)\n\nสรุปชนิดและการทำนายผลการรักษา:\n1. Type I (ไม่เคลื่อน, เหลื่อม <2มม.): ไม่ว่าจะกี่เส้นรอยหักหากไม่เคลื่อน -> รักษาแบบไม่ผ่าตัด (อัตราสำเร็จ 90-95%)\n2. Type II (หักแยก 2 ชิ้น, 1 เส้นเคลื่อน >2มม.): แบ่งเป็น IIA, IIB (พบบ่อยสุด), IIC -> ข้อบ่งชี้มาตรฐานหลักผ่าตัด ORIF (ผลดี >80-85%)\n3. Type III (หักแยก 3 ชิ้น, 2 เส้นชิ้นกลางยุบ): แบ่งเป็น IIIAB, IIIAC, IIIBC -> ผ่าตัด ORIF ซับซ้อน (งัดชิ้นกลางยุบขึ้นมา เสริมกระดูกเทียม ดามแผ่นเหล็ก)\n4. Type IV (หักแตกละเอียด >4 ชิ้น, รอยหัก >=3 เส้น): ผิวข้อแตกป่นละเอียด -> ผลผ่าตัด ORIF ไม่ดี แนะนำผ่าตัดเชื่อมข้อส้นเท้าเป็นอันดับแรก (**Primary Subtalar Arthrodesis**)"
-            }
+            "corePrinciple": {
+              "en": "Sanders classifies intra-articular calcaneal fractures on coronal CT images through the posterior facet using lines A, B, and C to count displaced articular fragments and predict surgical reconstructability.",
+              "th": "Sanders จำแนกกระดูกส้นเท้าหักเข้าข้อจากภาพตัด Coronal CT ผ่านผิวข้อ Posterior facet โดยใช้เส้น A, B, C ในการนับชิ้นกระดูกที่เคลื่อนเพื่อทำนายความสำเร็จในการผ่าตัดจัดผิวข้อ"
+            },
+            "rules": [
+              {
+                "en": "Type I: Non-displaced fracture regardless of line count (<2 mm articular step-off)",
+                "th": "Type I: รอยหักไม่เคลื่อนตัว ไม่ว่าจะกี่เส้นก็ตาม (ผิวข้อเหลื่อม <2 มม.)"
+              },
+              {
+                "en": "Type II: 2-part articular fracture (1 primary fracture line displaced >2 mm; subtyped IIA, IIB, IIC based on line location)",
+                "th": "Type II: หักเข้าข้อ 2 ชิ้น (มี 1 เส้นรอยหัก เคลื่อน >2 มม.; แบ่งย่อย IIA, IIB, IIC ตามตำแหน่งเส้น A, B, C)"
+              },
+              {
+                "en": "Type III: 3-part articular fracture (2 fracture lines displaced >2 mm with central depressed piece; subtyped IIIAB, IIIAC, IIIBC)",
+                "th": "Type III: หักเข้าข้อ 3 ชิ้น (มี 2 เส้นรอยหัก เคลื่อน >2 มม. พร้อมชิ้นกลางยุบ; แบ่งย่อย IIIAB, IIIAC, IIIBC)"
+              },
+              {
+                "en": "Type IV: 4-part articular fracture (≥3 fracture lines, severely comminuted / crushed posterior facet)",
+                "th": "Type IV: หักเข้าข้อ ≥4 ชิ้น (มีเส้นรอยหัก ≥3 เส้น ผิวข้อแตกป่นละเอียด)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Sanders Type I: Non-operative management with non-weightbearing boot/cast for 6–8 weeks (~90% excellent outcomes)",
+                "th": "Sanders Type I: รักษาแบบไม่ผ่าตัด ใส่อุปกรณ์งดลงน้ำหนัก 6–8 สัปดาห์ (ผลดี >90%)"
+              },
+              {
+                "en": "Sanders Type II: Primary gold standard indication for ORIF via lateral approach with locking plate and lag screws (>80–85% good/excellent results)",
+                "th": "Sanders Type II: ข้อบ่งชี้มาตรฐานหลักสำหรับการผ่าตัด ORIF ดามแผ่นเหล็กล็อค (ผลดี >80–85%)"
+              },
+              {
+                "en": "Sanders Type III: Operative ORIF with complex articular reconstruction, elevation of depressed central fragment, and subchondral bone grafting",
+                "th": "Sanders Type III: ผ่าตัด ORIF ซับซ้อน งัดยกชิ้นกระดูกผิวยุบกลางข้อ ร่วมกับเสริมกระดูกเทียมดามเพลท"
+              },
+              {
+                "en": "Sanders Type IV: Primary Subtalar Arthrodesis (joint fusion) combined with calcaneal body shape reconstruction is preferred over primary ORIF due to high ORIF failure and chronic pain rates",
+                "th": "Sanders Type IV: ผ่าตัดเชื่อมข้อส้นเท้าเป็นอันดับแรก (Primary Subtalar Arthrodesis) ร่วมกับจัดทรงส้นเท้า เนื่องจากผลการผ่าตัด ORIF ไม่ดีและเสี่ยงปวดเรื้อรังสูง"
+              }
+            ]
           },
           "investigations": [
             {
@@ -518,6 +718,51 @@ export const footBone: BoneData = {
         "en": "Lisfranc (Tarsometatarsal)",
         "th": "ข้อต่อกลางเท้า ลิสแฟร็งค์ (Lisfranc / Tarsometatarsal)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Plantar Ecchymosis Sign",
+            "positive": {
+              "en": "Ecchymosis over midfoot plantar surface (PATHOGNOMONIC sign for Lisfranc joint disruption)",
+              "th": "รอยเขียวช้ำบริเวณฝ่าเท้าส่วนกลาง (เป็นสัญญาณเฉพาะ Pathognomonic สำหรับ Lisfranc joint rupture)"
+            }
+          },
+          {
+            "sign": "Fleck Sign (Radiographic Sign)",
+            "positive": {
+              "en": "Avulsion bone fragment in 1st-2nd intermetatarsal space on AP view, representing Lisfranc ligament avulsion",
+              "th": "ชิ้นกระดูกกะเทาะขนาดเล็กบริเวณช่องระหว่าง Metatarsal 1-2 แสดงถึงเอ็น Lisfranc ligament ฉีกขาด"
+            }
+          },
+          {
+            "sign": "Midfoot Abduction & Pronation Stress Test",
+            "positive": {
+              "en": "Severe pain elicited by manual abduction and pronation of forefoot while holding hindfoot stable",
+              "th": "ปวดรุนแรงบริเวณกลางเท้าเมื่อทำการดัดหมุนเท้าออกด้านนอก (Abduction & Pronation) ขณะยึดส้นเท้าไว้"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Missed / Misdiagnosed Lisfranc Injury: Up to 20% missed initially; leads to progressive arch collapse, chronic foot deformity, and painful osteoarthritis",
+            "th": "การวินิจฉัย Lisfranc พลาด: พลาดสูงถึง 20% ใน X-ray แรก ส่งผลให้อุ้งเท้าทรุด โครงสร้างไม่มั่นคงเรื้อรัง และข้อกลางเท้าเสื่อมรุนแรง"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Plantar ecchymosis is pathognomonic for Lisfranc injury and warrants weight-bearing X-rays or CT evaluation.",
+            "th": "รอยช้ำที่ฝ่าเท้า (Plantar ecchymosis) เป็นสัญญาณเฉพาะบ่งบอกถึง Lisfranc injury ต้องส่งเอกซเรย์แบบลงน้ำหนักหรือ CT scan"
+          },
+          {
+            "en": "Weight-bearing bilateral foot X-rays are essential when non-weight-bearing films appear normal despite high suspicion.",
+            "th": "การถ่ายเอกซเรย์เท้าแบบลงน้ำหนักสองข้างเป็นสิ่งจำเป็น เมื่อภาพเอกซเรย์ธรรมดาดูปกติแต่ผู้ป่วยปวดกดเจ็บกลางเท้าชัดเจน"
+          },
+          {
+            "en": "Anatomic reduction is critical: displacement >2mm between 1st and 2nd metatarsal bases requires surgical fixation.",
+            "th": "การจัดกระดูกให้ตรงเป๊ะมีความสำคัญที่สุด: การเคลื่อนตัว >2 มม. ต้องผ่าตัดยึดตรึง"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Myerson",
@@ -528,6 +773,56 @@ export const footBone: BoneData = {
           "description": {
             "en": "Modified Hardcastle classification for tarsometatarsal (Lisfranc) joint injuries based on congruence and direction of displacement, determining surgical reconstruction vs arthrodesis.",
             "th": "ระบบจำแนกการบาดเจ็บของข้อต่อกลางเท้า Lisfranc (Tarsometatarsal) แบ่งตามระดับความเกยสมมาตรของข้อและทิศทางของการเคลื่อนตัว"
+          },
+          "concept": {
+            "title": {
+              "en": "Myerson Lisfranc Fracture-Dislocation Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Myerson Lisfranc Classification"
+            },
+            "corePrinciple": {
+              "en": "Myerson classifies tarsometatarsal (Lisfranc) joint injuries based on congruence and displacement direction (Homolateral vs Divergent), evaluating structural breakdown of the transverse foot arch and Lisfranc ligament complex.",
+              "th": "Myerson จำแนกการบาดเจ็บของข้อต่อกลางเท้า Lisfranc (Tarsometatarsal) ตามความสมมาตรและทิศทางของการหลุดเคลื่อน (Homolateral vs Divergent) เพื่อประเมินการพังทลายของส่วนโค้งเท้าและชุดเอ็น Lisfranc"
+            },
+            "rules": [
+              {
+                "en": "Type A (Homolateral Complete Incongruity): All 5 metatarsals displace together in one direction (usually lateral or dorsolateral)",
+                "th": "Type A (Homolateral Complete Incongruity): กระดูกฝ่าเท้าทั้ง 5 ชิ้นหลุดเคลื่อนย้ายไปในทิศทางเดียวกันทั้งหมด"
+              },
+              {
+                "en": "Type B (Homolateral Incomplete Incongruity): Partial displacement — B1 (isolated medial 1st TMT displacement) or B2 (isolated lateral metatarsals displacement)",
+                "th": "Type B (Homolateral Incomplete Incongruity): หลุดเคลื่อนบางส่วน — B1 (หลุดเฉพาะข้อที่ 1 ด้านใน) หรือ B2 (หลุดเฉพาะกลุ่มนิ้วด้านนอก)"
+              },
+              {
+                "en": "Type C (Divergent Dislocation): Metatarsals split in two directions — C1 (partial 1st medial and 2nd lateral) or C2 (complete 1st medial and 2nd–5th lateral)",
+                "th": "Type C (Divergent Dislocation): กระดูกฝ่าเท้าหลุดแยกสองทาง — C1 (นิ้ว 1 หลุดเข้าใน นิ้ว 2 หลุดออกนอกบางส่วน) หรือ C2 (นิ้ว 1 หลุดเข้าใน นิ้ว 2–5 หลุดออกนอกทั้งหมด)"
+              },
+              {
+                "en": "Displacement threshold: Tarsometatarsal step-off or diastasis >2 mm on weight-bearing views requires operative stabilization",
+                "th": "เกณฑ์ระยะเคลื่อนตัว: ระยะอ้าหรือเหลื่อมของข้อ Tarsometatarsal >2 มม. ในภาพลงน้ำหนักต้องผ่าตัดยึดดาม"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Non-displaced (<2 mm displacement): Non-weightbearing short leg cast for 6–8 weeks",
+                "th": "ไม่เคลื่อนตัว (เหลื่อม <2 มม.): ใส่เฝือกงดลงน้ำหนัก 6–8 สัปดาห์"
+              },
+              {
+                "en": "Displaced Medial & Middle Columns (1st–3rd TMT): Mandatory ORIF with rigid transarticular screws or bridge plates to achieve 100% anatomic reduction",
+                "th": "ข้อฝั่งในและกลาง (TMT 1–3) เคลื่อนตัว: ต้องผ่าตัด ORIF ยึดแน่นด้วย Transarticular Screws หรือ Bridge Plates ให้ตรงกายวิภาค 100%"
+              },
+              {
+                "en": "Displaced Lateral Column (4th–5th TMT): K-wire fixation for 6 weeks to preserve lateral column motion and flexibility",
+                "th": "ข้อฝั่งนอก (TMT 4–5) เคลื่อนตัว: ยึดด้วย K-wires ชั่วคราว 6 สัปดาห์เพื่อสงวนการเคลื่อนไหวของข้อฝั่งนอก"
+              },
+              {
+                "en": "Purely Ligamentous / Comminuted Lisfranc: Primary TMT Arthrodesis (joint fusion of 1st–3rd TMT) yields superior long-term functional results over ORIF",
+                "th": "กรณีเอ็นขาดสมบูรณ์ / ข้อแตกละเอียด: ผ่าตัดเชื่อมข้อกลางเท้า (Primary TMT Arthrodesis ของ TMT 1–3) ให้ผลระยะยาวดีกว่าผ่าตัดดามเหล็ก ORIF"
+              },
+              {
+                "en": "Diagnostic Pitfall & Warning: Up to 20% of Lisfranc injuries are missed on initial non-weightbearing ER films; Plantar ecchymosis is pathognomonic and mandates weight-bearing films or CT scan",
+                "th": "จุดตายและการเฝ้าระวัง: วินิจฉัยหลุดสูงถึง 20% ใน X-ray แรก; รอยช้ำฝ่าเท้า (Plantar ecchymosis) เป็นสัญญาณเฉพาะที่ต้องส่งเอกซเรย์ลงน้ำหนักหรือ CT scan"
+              }
+            ]
           },
           "investigations": [
             {
@@ -656,6 +951,38 @@ export const footBone: BoneData = {
         "en": "5th Metatarsal Base",
         "th": "ฐานกระดูกฝ่าเท้านิ้วที่ 5 (5th Metatarsal Base)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Point Tenderness over 5th Metatarsal Base",
+            "positive": {
+              "en": "Exquisite tenderness localized to tuberosity (Zone 1), watershed junction (Zone 2), or diaphyseal shaft (Zone 3)",
+              "th": "เจ็บจี๊ดเฉพาะจุดบริเวณตุ่มกระดูก (Zone 1), ฐาน (Zone 2) หรือแกนกระดูก (Zone 3) ของกระดูกนิ้วเท้าที่ 5"
+            }
+          },
+          {
+            "sign": "Inversion Stress Test",
+            "positive": {
+              "en": "Pain recreated at lateral foot border during forced inversion of foot (classic avulsion injury mechanism)",
+              "th": "เกิดอาการปวดกระตุ้นที่ขอบนอกเท้าเมื่อดัดบิดเท้าเข้าด้านใน (กลไกการเกิด Avulsion fracture)"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Zone 1 (Pseudo-Jones / Tuberosity Avulsion) fractures heal reliably with conservative management in a hard-soled shoe or boot.",
+            "th": "กระดูกหัก Zone 1 (Pseudo-Jones) ติดดีมากด้วยการรักษาแบบไม่ผ่าตัด ใส่รองเท้าพื้นแข็งหรือ CAM boot ตามที่ทนได้"
+          },
+          {
+            "en": "Zone 2 (True Jones fracture at intermetatarsal articulation) lies in a vascular watershed area with high nonunion risk.",
+            "th": "กระดูกหัก Zone 2 (True Jones) อยู่ในเขตเลือดมาเลี้ยงน้อย (Watershed area) มีความเสี่ยงสูงต่อกระดูกไม่ติด (Nonunion)"
+          },
+          {
+            "en": "Competitive athletes with Zone 2 Jones fractures should undergo early intramedullary screw fixation to lower nonunion risk and expedite return to play.",
+            "th": "นักกีฬาอาชีพที่มีกระดูกหัก Zone 2 Jones ควรพิจารณาผ่าตัดใส่สกรูในโพรงกระดูกตั้งแต่แรก เพื่อกลับไปเล่นกีฬาได้เร็วและลดอัตรากระดูกไม่ติด"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Lawrence-Botte",
@@ -666,6 +993,48 @@ export const footBone: BoneData = {
           "description": {
             "en": "Anatomical zone classification for proximal 5th metatarsal fractures (Zone 1 Tuberosity, Zone 2 Jones, Zone 3 Diaphyseal Stress), dictating vascular supply, nonunion risk, and surgical vs cast management.",
             "th": "ระบบจำแนกกระดูกโคนฝ่าเท้านิ้วที่ 5 (Proximal 5th Metatarsal) หักแบ่งตามโซนกายวิภาค 3 โซน (Zone 1 Avulsion, Zone 2 Jones, Zone 3 Stress Fracture) ซึ่งเป็นตัวกำหนดเส้นเลือดเลี้ยง ความเสี่ยงกระดูกไม่ติด และการผ่าตัด"
+          },
+          "concept": {
+            "title": {
+              "en": "Lawrence-Botte 5th Metatarsal Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Lawrence-Botte Classification"
+            },
+            "corePrinciple": {
+              "en": "Lawrence & Botte classifies proximal 5th metatarsal fractures into 3 anatomical zones based on vascularity transition from well-perfused tuberosity (Zone 1) to avascular watershed articulation (Zone 2/3), dictating nonunion risk and surgical decision-making.",
+              "th": "Lawrence & Botte จำแนกกระดูกโคนฝ่าเท้านิ้วที่ 5 หักออกเป็น 3 โซนตามกายวิภาคของเส้นเลือดเลี้ยงกระดูกที่เปลี่ยนจากบริเวณตุ่มโคนที่มีเลือดเลี้ยงดี (Zone 1) ไปสู่เขตการค้าเลือด (Zone 2/3) ซึ่งเป็นตัวกำหนดความเสี่ยงกระดูกไม่ติดและการผ่าตัด"
+            },
+            "rules": [
+              {
+                "en": "Zone 1 (Tuberosity Avulsion / Pseudo-Jones): Proximal to 4th-5th intermetatarsal joint -> Rich vascular supply -> Nonunion risk <1-2%",
+                "th": "Zone 1 (Tuberosity Avulsion / Pseudo-Jones): อยู่ proximal ต่อข้อต่อ 4th-5th intermetatarsal -> เลือดมาเลี้ยงสมบูรณ์ดี -> เสี่ยงกระดูกไม่ติด <1-2%"
+              },
+              {
+                "en": "Zone 2 (True Jones Fracture): Acute fracture at 4th-5th intermetatarsal articulation -> Vascular watershed region -> Nonunion risk 15–25%",
+                "th": "Zone 2 (True Jones Fracture): รอยหักเฉียบพลันตรงข้อต่อ 4th-5th -> เขตอับเลือด (Watershed region) -> เสี่ยงกระดูกไม่ติด 15–25%"
+              },
+              {
+                "en": "Zone 3 (Proximal Diaphyseal Stress Fracture): Distal to 4th-5th joint with cortical sclerosis -> Chronic repetitive microtrauma -> High nonunion rate (>30–50%)",
+                "th": "Zone 3 (Proximal Diaphyseal Stress Fracture): รอยหักเลยข้อต่อ 4th-5th ลงไป ร่วมกับมีโพรงกระดูกตัน -> เกิดจากแรงกระแทกซ้ำๆ -> เสี่ยงกระดูกไม่ติดสูงมาก (>30–50%)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Zone 1 Management: Conservative treatment in hard-soled shoe, stiff walking boot, or short leg cast for 3–4 weeks with immediate weight-bearing as tolerated",
+                "th": "แนวทางรักษา Zone 1: รักษาแบบไม่ผ่าตัด ใส่รองเท้าพื้นแข็ง CAM boot หรือเฝือกสั้น 3–4 สัปดาห์ ลงน้ำหนักได้ทันทีตามทนไหว"
+              },
+              {
+                "en": "Zone 2 Non-athlete: Non-weightbearing short leg cast for 6–8 weeks (strict NWB required)",
+                "th": "แนวทางรักษา Zone 2 ในคนทั่วไป: ใส่เฝือกสั้นงดลงน้ำหนัก 6–8 สัปดาห์ (ต้องงดลงน้ำหนักอย่างเข้มงวด)"
+              },
+              {
+                "en": "Zone 2 Athlete / High Demand: Early intramedullary cannulated screw fixation (4.0 mm or 4.5 mm) to minimize nonunion risk and expedite return to sports",
+                "th": "แนวทางรักษา Zone 2 ในนักกีฬา: ผ่าตัดใส่ Intramedullary Cannulated Screw (4.0 มม. หรือ 4.5 มม.) ทันทีเพื่อลดอัตรากระดูกไม่ติดและให้กลับไปเล่นกีฬาได้เร็ว"
+              },
+              {
+                "en": "Zone 3 Stress Fracture Management: Intramedullary screw fixation plus curettage and bone grafting for sclerotic intramedullary canal",
+                "th": "แนวทางรักษา Zone 3 Stress Fracture: ผ่าตัดยึด Intramedullary screw ร่วมกับขูดโพรงกระดูกตันและใส่กระดูกเทียมเสริม"
+              }
+            ]
           },
           "investigations": [
             {

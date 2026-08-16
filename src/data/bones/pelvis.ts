@@ -18,6 +18,121 @@ export const pelvisBone: BoneData = {
         "en": "Pelvic Ring",
         "th": "วงกระดูกเชิงกราน (Pelvic Ring)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Pelvic Stability & Compression Test",
+            "positive": {
+              "en": "Pain or abnormal movement when applying gentle posterior-to-anterior or lateral pressure on iliac crests; test ONCE only to prevent clot dislodgement.",
+              "th": "ปวดหรือมีการขยับผิดปกติเมื่อลงแรงกดเบาๆ บนปีกกระดูกเชิงกราน *ทดสอบเพียงครั้งเดียว* เพื่อป้องกันลิ่มเลือดหลุด"
+            }
+          },
+          {
+            "sign": "Morel-Lavallée Degloving Lesion Inspection",
+            "positive": {
+              "en": "Fluctuant fluid collection and skin hypermobility over the greater trochanter/flank from traumatic separation of hypodermis from fascia.",
+              "th": "พบแอ่งน้ำเหลือง/เลือดค้างและชั้นผิวหนังเลื่อนหลุดลอยบริเวณปุ่มสะโพก/เอว (Morel-Lavallée lesion) จากการถลกแยกชั้นผิวหนัง"
+            }
+          },
+          {
+            "sign": "Perineal, Rectal & Vaginal Exam",
+            "positive": {
+              "en": "Blood at urethral meatus, high-riding prostate, perineal hematoma, or palpable bone fragment in rectal/vaginal vault indicating open pelvic fracture.",
+              "th": "พบเลือดออกที่ปลายท่อปัสสาวะ, ต่อมลูกหมากยกลอยสูง, รอยเขียวช้ำที่ฝีเย็บ หรือคลำพบชิ้นกระดูกในช่องทวารหนัก/ช่องคลอด แสดงถึงกระดูกเชิงกรานหักแบบเปิด"
+            }
+          },
+          {
+            "sign": "Leg Length Discrepancy & External Rotation Deformity",
+            "positive": {
+              "en": "Shortened and externally rotated hemipelvis seen in Vertical Shear (VS) or Open-Book (APC) injuries.",
+              "th": "ขาและเชิงกรานข้างนั้นสั้นลงและบิดหมุนออกด้านนอก พบใน Vertical Shear (VS) หรือ Open-Book (APC)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Pubic Symphysis Diastasis",
+              "th": "ระยะถ่างของข้อต่อ Pubic Symphysis"
+            },
+            "threshold": "< 2 cm",
+            "note": {
+              "en": "Diastasis >2cm indicates torn anterior SI and sacrospinous ligaments (APC-II Open Book).",
+              "th": "ระยะถ่าง >2 ซม. แสดงว่าเอ็นด้านหน้า SI และ Sacrospinous ขาด (APC-II Open Book)"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Sacroiliac (SI) Joint Displacement",
+              "th": "การเคลื่อนตัวของข้อต่อ Sacroiliac (SI)"
+            },
+            "threshold": "< 5 mm",
+            "note": {
+              "en": "Posterior SI joint displacement >5mm indicates structural instability.",
+              "th": "ข้อต่อ SI ด้านหลังเคลื่อน >5 มม. แสดงถึงความไม่มั่นคงเชิงโครงสร้าง"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Vertical Hemipelvis Displacement",
+              "th": "การยกลอยในแนวตั้งของเชิงกราน (Vertical Shear)"
+            },
+            "threshold": "0 mm (Zero Tolerance)",
+            "note": {
+              "en": "Any vertical shift indicates Vertical Shear (VS) instability requiring operative reduction.",
+              "th": "การเลื่อนขึ้นลงในแนวตั้งถือเป็น Vertical Shear (VS) ซึ่งไม่มั่นคงอย่างรุนแรงและต้องผ่าตัด"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Massive retroperitoneal hemorrhage from presacral venous plexus and internal iliac branches, leading to rapidly fatal hypovolemic shock.",
+            "th": "ภาวะตกเลือดมหาศาลในช่องหลังช่องท้อง (Massive retroperitoneal hemorrhage) จากหลอดเลือดดำ presacral และแขนงหลอดเลือด Internal iliac นำไปสู่ภาวะช็อกจากการเสียเลือดอันตรายถึงชีวิต"
+          },
+          {
+            "en": "Associated lower urinary tract injury (posterior urethral disruption or bladder rupture).",
+            "th": "การบาดเจ็บของระบบทางเดินปัสสาวะส่วนล่าง (ท่อปัสสาวะขาด หรือกระเพาะปัสสาวะแตก)"
+          },
+          {
+            "en": "Open pelvic fracture with high risk of overwhelming pelvic sepsis.",
+            "th": "กระดูกเชิงกรานหักแบบเปิด เสี่ยงต่อการติดเชื้อในเชิงกรานรุนแรงถึงชีวิต (Pelvic sepsis)"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Internal Iliac Vessel Tear / Retroperitoneal Bleeding",
+              "th": "หลอดเลือด Internal iliac ฉีกขาด / เลือดออกช่องหลังช่องท้อง"
+            }
+          },
+          {
+            "injury": {
+              "en": "Posterior Urethral Disruption & Bladder Rupture",
+              "th": "ท่อปัสสาวะส่วนหลังฉีกขาด และกระเพาะปัสสาวะแตก"
+            }
+          },
+          {
+            "injury": {
+              "en": "Lumbosacral Plexus (L5/S1 Nerve Root) Injury",
+              "th": "เส้นประสาท Lumbosacral plexus (L5/S1) บาดเจ็บ"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Open book pelvis (APC II / APC III) requires immediate pelvic binder or sheet wrapping centered over the Greater Trochanters to close pelvic volume and tamponade bleeding.",
+            "th": "ภาวะ Open book pelvis (APC II/III) ต้องใส่ผ้าพันเชิงกราน (Pelvic binder/sheet) รัดแน่นตรงระดับ Greater trochanter ทันที เพื่อลดปริมาตรเชิงกรานและห้ามเลือด"
+          },
+          {
+            "en": "Do NOT perform repeated manual pelvic compression tests during trauma resuscitation to prevent dislodging soft retroperitoneal blood clots.",
+            "th": "ห้ามโยกหรือทดสอบกดเชิงกรานซ้ำๆ ระหว่างการกู้ชีพผู้ป่วยอุบัติเหตุ เพื่อป้องกันลิ่มเลือดห้ามเลือดหลุดออก"
+          },
+          {
+            "en": "Young-Burgess classification vector (APC vs LC vs VS) predicts associated injury patterns and resuscitation needs.",
+            "th": "การจำแนก Young-Burgess บอกทิศทางแรง (APC, LC, VS) ซึ่งช่วยทำนายรูปแบบการบาดเจ็บร่วมและการกู้ชีพเสียเลือด"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Young-Burgess",
@@ -29,13 +144,71 @@ export const pelvisBone: BoneData = {
             "en": "Classification of pelvic ring injuries based on force vector mechanism (APC, LC, VS, CM), predicting ligamentous instability, pelvic volume expansion, and internal hemorrhage risk.",
             "th": "ระบบจำแนกการหักเคลื่อนของวงกระดูกเชิงกรานตามกลไกทิศทางของแรงกระแทก (APC, LC, VS) ซึ่งบอกถึงความมั่นคง การขยายตัวของช่องเชิงกราน และความเสี่ยงเสียเลือดรุนแรง"
           },
+          "concept": {
+            "title": {
+              "en": "Young-Burgess & Tile Pelvic Ring Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Young-Burgess & Tile Pelvic Ring Classification"
+            },
+            "corePrinciple": {
+              "en": "Force vector (APC vs LC vs VS) dictates pelvic ring disruption pattern, pelvic volume expansion, and life-threatening retroperitoneal venous hemorrhage risk. Tile classification correlates stability: Tile A (stable), Tile B (rotationally unstable), Tile C (vertically unstable).",
+              "th": "ทิศทางของแรง (APC, LC, VS) เป็นตัวกำหนดรูปแบบการพังทลายของวงเชิงกราน ปริมาตรการขยายตัว และความเสี่ยงต่อการเสียเลือดรุนแรง การจำแนกแบบ Tile สัมพันธ์กับความมั่นคง: Tile A (มั่นคง), Tile B (ไม่มั่นคงการหมุน), Tile C (ไม่มั่นคงแนวตั้ง)"
+            },
+            "rules": [
+              {
+                "en": "LC1 (Lateral Compression Stage 1): Sacral crush fracture; stable ring (Tile A/B1).",
+                "th": "LC1 (แรงอัดด้านข้าง Stage 1): กระดูก Sacrum ทรุด; วงแหวนมั่นคง (Tile A/B1)"
+              },
+              {
+                "en": "LC2 / LC3: Crescent iliac wing fracture (LC2) or Windswept pelvis (LC3 - contralateral APC); rotationally unstable (Tile B2/B3).",
+                "th": "LC2 / LC3: แผ่น Iliac หักรูป Crescent (LC2) หรือ Windswept pelvis (LC3); ไม่มั่นคงแนวการหมุน (Tile B2/B3)"
+              },
+              {
+                "en": "APC1 (Anteroposterior Compression Stage 1): Pubic symphysis diastasis <2.5 cm; intact SI ligaments; stable (Tile A).",
+                "th": "APC1 (แรงอัดหน้าหลัง Stage 1): Pubic symphysis แยก <2.5 ซม.; เอ็น SI สมบูรณ์; มั่นคง (Tile A)"
+              },
+              {
+                "en": "APC2 / APC3: Open-book pelvis with pubic diastasis ≥2.5 cm and posterior SI ligament disruption (APC2 partial, APC3 complete); rotationally ± vertically unstable (Tile B1 / C1).",
+                "th": "APC2 / APC3: Open-book pelvis โดย Pubic diastasis ≥2.5 ซม. ร่วมกับเอ็น SI ด้านหลังฉีกขาด; ไม่มั่นคงการหมุน ± แนวตั้ง (Tile B1 / C1)"
+              },
+              {
+                "en": "VS (Vertical Shear): Complete disruption of anterior and posterior pelvic ring with vertical displacement of hemipelvis; vertically and rotationally unstable (Tile C).",
+                "th": "VS (แรงเฉือนแนวตั้ง): วงแหวนเชิงกรานและเอ็นยึดขาดทั้งหมด ร่วมกับเชิงกรานเลื่อนขึ้นแนวตั้ง; ไม่มั่นคงรุนแรงทั้งแนวตั้งและการหมุน (Tile C)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "LC1 & APC1: Conservative non-operative management with progressive weight-bearing as tolerated.",
+                "th": "LC1 & APC1: รักษาแบบไม่ผ่าตัด ค่อยๆ ฝึกรับน้ำหนักตามที่ทนได้"
+              },
+              {
+                "en": "APC2, APC3 & VS: EMERGENCY resuscitation! Pelvic retroperitoneal volume expands dramatically causing severe venous plexus hemorrhage. Apply Pelvic Binder IMMEDIATELY centered over GREATER TROCHANTERS (not iliac crests!).",
+                "th": "APC2, APC3 & VS: การกู้ชีพฉุกเฉินด่วนที่สุด! ช่องเรโตรเพอริโตเนียมขยายตัวทำให้เลือดออกในหลอดเลือดดำช็อกเสียชีวิต; ต้องรัด Pelvic Binder ทันทีโดยให้จุดศูนย์กลางผ้าอยู่ที่ **Greater Trochanters** (ห้ามรัดตรงสันสะโพก!)"
+              },
+              {
+                "en": "Surgical Fixation: Operative ORIF indicated for unstable patterns (Anterior pubic ramus/symphysis plating + Posterior percutaneous iliosacral screws).",
+                "th": "ข้อบ่งชี้ผ่าตัด: ผ่าตัด ORIF สำหรับเคสไม่มั่นคง (ดามแผ่นเหล็ก Pubic ด้านหน้า + ขันสกรูข้อ SI ด้านหลัง)"
+              },
+              {
+                "en": "CRITICAL PITFALL: Never use pelvic sheet/binder over iliac crests—it fails to compress the pelvis and may worsen displacement; center binder low over greater trochanters.",
+                "th": "ข้อควรระวังสำคัญ: ห้ามพันผ้ารัดตรงสันสะโพก (Iliac crests) เด็ดขาดเพราะจะไม่ช่วยบีบกระดูกและอาจทำให้กระดูกหักเคลื่อนมากขึ้น; ต้องพันต่ำตรงระดับ Greater trochanters"
+              }
+            ]
+          },
           "investigations": [
+            {
+              "name": "CT Pelvis (Non-Contrast, Thin-Slice 1mm)",
+              "details": {
+                "en": "GOLD STANDARD for pelvic ring fracture assessment. Non-contrast thin-slice CT (1mm axial with coronal/sagittal reconstructions) is MANDATORY in all hemodynamically stable pelvic trauma patients. Essential for: (1) Accurately classifying Young-Burgess injury pattern (plain films miss up to 50% of posterior SI disruptions/sacral fractures), (2) Detecting posterior ring instability (SI joint diastasis, sacral fractures), (3) Guiding definitive surgical fixation planning. CT angiography (CTA) is added if arterial extravasation is suspected.",
+                "th": "มาตรฐานหลักในการประเมินกระดูกเชิงกรานหัก CT ไม่ฉีดสีตัดบาง 1 มม. พร้อม Reconstruction ทุกทิศทาง จำเป็นในทุกผู้ป่วย Pelvic trauma ที่ระบบไหลเวียนเลือดเสถียร สำคัญสำหรับ: (1) จำแนก Young-Burgess pattern ที่แม่นยำ (X-ray ธรรมดาพลาด SI disruption และ Sacral fracture ได้สูงถึง 50%), (2) ตรวจพบความไม่มั่นคงด้านหลัง, (3) วางแผนผ่าตัด ถ้าสงสัย Active bleeding เพิ่ม CTA"
+              }
+            },
             {
               "name": "AP Pelvis View",
               "details": {
                 "en": "Standard AP view of the pelvis. Evaluates overall pelvic ring symmetry, pubic diastasis, sacral fracture lines, and sacroiliac (SI) joint widening.",
                 "th": "ภาพเอกซเรย์เชิงกรานท่า AP มาตรฐาน ใช้ประเมินความสมมาตรของวงเชิงกราน ระยะแยกของ Pubic diastasis และความกว้างข้อต่อ SI"
-              }
+              },
+              "imageUrl": "/images/investigations/hip/ap_pelvis_view.jpg"
             },
             {
               "name": "Pelvic Inlet View (45° Caudal Tilt)",
@@ -280,6 +453,103 @@ export const pelvisBone: BoneData = {
         "en": "Acetabulum",
         "th": "เบ้าหัวกระดูกสะโพก (Acetabulum)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Hip Motion Pain & Inability to Bear Weight",
+            "positive": {
+              "en": "Severe deep pain with any passive hip motion; complete inability to stand or put weight on affected extremity.",
+              "th": "ปวดลึกรุนแรงเมื่อขยับข้อสะโพก และไม่สามารถยืนหรือลงน้ำหนักบนขาข้างที่เจ็บได้เลย"
+            }
+          },
+          {
+            "sign": "Sciatic Nerve Neurological Examination",
+            "positive": {
+              "en": "Loss of sensation on lateral calf/dorsum of foot or foot drop (ankle/great toe dorsiflexion weakness); peroneal division most vulnerable in posterior wall/column injuries.",
+              "th": "ชาบริเวณน่องด้านนอก/หลังเท้า หรือมีภาวะเท้าตก (Foot drop) จากการบาดเจ็บของแขนง Peroneal division ของเส้นประสาท Sciatic"
+            }
+          },
+          {
+            "sign": "Deformity from Associated Hip Dislocation",
+            "positive": {
+              "en": "Flexed, adducted, internally rotated leg (posterior dislocation) or abducted, externally rotated leg (anterior dislocation).",
+              "th": "ขาท่า งอ-หุบ-หมุนเข้าด้านใน (ข้อสะโพกหลุดไปด้านหลัง) หรือ กาง-หมุนออกด้านนอก (ข้อสะโพกหลุดไปด้านหน้า)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Articular Step-off / Gap",
+              "th": "ความเหลื่อม/ช่องอ้าของผิวข้อต่อเบ้าสะโพก"
+            },
+            "threshold": "< 1 - 2 mm",
+            "note": {
+              "en": "Articular step-off >1mm causes post-traumatic hip osteoarthritis.",
+              "th": "ผิวข้อเหลื่อม > 1 มม. นำไปสู่ข้อสะโพกเสื่อมตามหลังอุบัติเหตุรุนแรง"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Roof Arc Angle (Matta Criterion)",
+              "th": "มุมโดมหลังคาเบ้าสะโพก (Roof Arc Angle)"
+            },
+            "threshold": "> 45°",
+            "note": {
+              "en": "Roof arc angle >45° on AP, Iliac, and Obturator views indicates intact weight-bearing dome for non-operative care.",
+              "th": "มุมหลังคาเบ้า >45 องศาทั้ง 3 ท่า แสดงว่าส่วนรับน้ำหนักยังสมบูรณ์ สามารถรักษาแบบไม่ผ่าตัดได้"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Sciatic nerve palsy (especially peroneal division) secondary to posterior wall/column fracture-dislocation.",
+            "th": "ภาวะเส้นประสาท Sciatic อัมพาต (โดยเฉพาะแขนง Peroneal) จากกระดูกเบ้าสะโพกด้านหลังหักเคลื่อน"
+          },
+          {
+            "en": "Irreducible hip dislocation or non-congruent reduction due to intra-articular trapped bone fragments, requiring emergency open reduction.",
+            "th": "ข้อสะโพกหลุดที่ไม่สามารถดึงเข้าที่ได้ หรือเข้าที่ไม่สนิทจากชิ้นกระดูกค้างในข้อ ต้องผ่าตัดเปิดจัดเข้าที่ด่วน"
+          },
+          {
+            "en": "Femoral head avascular necrosis (AVN) following delayed reduction of hip dislocation.",
+            "th": "ภาวะหัวกระดูกสะโพกขาดเลือด (AVN of femoral head) จากการดึงจัดข้อสะโพกหลุดล่าช้า"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Posterior Hip Dislocation",
+              "th": "ข้อสะโพกหลุดไปด้านหลัง"
+            }
+          },
+          {
+            "injury": {
+              "en": "Femoral Head Chondral Indentation / Fracture",
+              "th": "กระดูกอ่อนหัวกระดูกสะโพกยุบตัวหรือหักร่วม"
+            }
+          },
+          {
+            "injury": {
+              "en": "Sciatic Nerve Injury",
+              "th": "การบาดเจ็บของเส้นประสาท Sciatic"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Posterior wall fracture is the single most common acetabular fracture pattern (~25% of cases).",
+            "th": "Posterior wall fracture เป็นรูปแบบกระดูกเบ้าสะโพกหักที่พบบ่อยที่สุด (~25% ของผู้ป่วยทั้งหมด)"
+          },
+          {
+            "en": "Spur Sign on Iliac Oblique Judet view is pathognomonic for Both-Columns acetabular fractures.",
+            "th": "การพบ 'Spur Sign' ในท่า Iliac Oblique Judet view เป็นลักษณะเฉพาะ (Pathognomonic) สำหรับ Both-Columns fracture"
+          },
+          {
+            "en": "CT scan with 3D reconstruction and digital subtraction of the femoral head is mandatory for pre-operative planning and column assessment.",
+            "th": "การทำ CT scan 3D และลบภาพหัวกระดูกสะโพกออก เป็นสิ่งจำเป็นอย่างยิ่งในการวางแผนผ่าตัดและประเมินเสากระดูกเบ้า"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Judet-Letournel",
@@ -291,13 +561,60 @@ export const pelvisBone: BoneData = {
             "en": "Classification system for acetabular fractures dividing injuries into 5 Elementary (simple) patterns and 5 Associated (complex) patterns based on column and wall involvement.",
             "th": "ระบบจำแนกกระดูกเบ้าสะโพกหัก (Acetabulum) แบ่งเป็น 5 รูปแบบพื้นฐาน (Elementary) และ 5 รูปแบบซับซ้อน (Associated) ตามการหักของผนังและเสากระดูก"
           },
+          "concept": {
+            "title": {
+              "en": "Judet-Letournel Acetabular Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Judet-Letournel Acetabulum"
+            },
+            "corePrinciple": {
+              "en": "Classifies acetabular fractures into 5 Elementary and 5 Associated patterns based on Anterior Column (iliopectineal line), Posterior Column (ilioischial line), and weight-bearing Roof Arc involvement. Anatomical reduction (<1-2 mm step-off) is critical to prevent post-traumatic hip arthritis.",
+              "th": "จำแนกกระดูกเบ้าสะโพกหักเป็น 5 รูปแบบพื้นฐาน (Elementary) และ 5 รูปแบบซับซ้อน (Associated) ตามเสากระดูกด้านหน้า เสากระดูกด้านหลัง และหลังคาโดมรับน้ำหนัก การผ่าตัดจัดกระดูกให้เรียบสนิท (<1-2 มม.) มีความสำคัญสูงสุดเพื่อป้องกันข้อสะโพกเสื่อม"
+            },
+            "rules": [
+              {
+                "en": "5 Elementary Patterns: Posterior Wall, Posterior Column, Anterior Wall, Anterior Column, Transverse.",
+                "th": "5 รูปแบบพื้นฐาน (Elementary): ผนังหลัง (Posterior Wall), เสาหลัง (Posterior Column), ผนังหน้า (Anterior Wall), เสาหน้า (Anterior Column), หักขวาง (Transverse)"
+              },
+              {
+                "en": "5 Associated Patterns: T-Shaped, Posterior Column + Posterior Wall, Transverse + Posterior Wall, Anterior Column/Wall + Posterior Semi-Transverse, Both-Column.",
+                "th": "5 รูปแบบซับซ้อน (Associated): รูปตัว T, เสาหลัง+ผนังหลัง, หักขวาง+ผนังหลัง, เสาหน้า/ผนังหน้า+เฉียงหลัง, สองเสาสมบูรณ์ (Both-Column)"
+              },
+              {
+                "en": "Non-Operative Criteria (Matta Criteria): Step-off <2 mm in weight-bearing dome, intact Roof Arc angle >45° on all 3 Judet radiograph views, AND posterior wall fragment <20%.",
+                "th": "เกณฑ์รักษาแบบไม่ผ่าตัด (Matta Criteria): ผิวข้อเหลื่อม <2 มม. บริเวณโดมรับน้ำหนัก, มุมหลังคาเบ้าสมบูรณ์ (Roof arc angle >45° ใน 3 ท่า Judet views), และผนังหลังหัก <20%"
+              },
+              {
+                "en": "Both-Column Fracture Signature: Characterized by complete floating articular surface with the pathognomonic 'Spur Sign' on iliac oblique view.",
+                "th": "ลักษณะเฉพาะ Both-Column Fracture: ผิวข้อหลุดลอยแยกจากกระดูกเชิงกรานทั้งหมด ร่วมกับพบ 'Spur Sign' ในท่าเอกซเรย์ Iliac oblique view"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Non-Operative Management: Non-weightbearing with crutches for 6-8 weeks if Matta criteria are met.",
+                "th": "การรักษาแบบไม่ผ่าตัด: งดลงน้ำหนักใช้ไม้ค้ำยัน 6-8 สัปดาห์ หากผ่านเกณฑ์ Matta criteria"
+              },
+              {
+                "en": "Operative Indications: Step-off ≥2 mm in weight-bearing dome, intra-articular loose fragments, posterior wall defect >40-50%, or hip joint dislocation/instability.",
+                "th": "ข้อบ่งชี้ผ่าตัด: ผิวข้อเหลื่อม ≥2 มม. บริเวณโดมรับน้ำหนัก, มีเศษกระดูกในข้อ, ผนังหลังแตก >40-50%, หรือข้อสะโพกหลุดหลวม"
+              },
+              {
+                "en": "Surgical Approaches: Kocher-Langenbeck approach (posterior wall/column) vs Ilioinguinal / Modified Stoppa approach (anterior wall/column). Primary Total Hip Arthroplasty (THA) in elderly with severe osteoporotic comminution.",
+                "th": "ทางเข้าผ่าตัด: Kocher-Langenbeck approach (สำหรับผนัง/เสาหลัง) หรือ Ilioinguinal / Modified Stoppa approach (สำหรับผนัง/เสาหน้า); พิจารณาผ่าตัดเปลี่ยนข้อสะโพกเทียม THA ในผู้สูงอายุที่กระดูกแตกพรุนรุนแรง"
+              },
+              {
+                "en": "CRITICAL PITFALL: ALWAYS order 3 plain Judet views (AP Pelvis, Iliac Oblique, Obturator Oblique) + 3D CT scan. Missing a posterior wall fracture causes unrecognized posterior subluxation and catastrophic hip joint collapse.",
+                "th": "ข้อควรระวังสำคัญ: ต้องส่งภาพเอกซเรย์ Judet views ครบ 3 ท่า (AP Pelvis, Iliac Oblique, Obturator Oblique) ร่วมกับ 3D CT scan เสมอ! การตรวจพลาดรอยหัก Posterior wall จะทำให้ข้อสะโพกหลุดหลวมด้านหลังและข้อพังทลาย"
+              }
+            ]
+          },
           "investigations": [
             {
               "name": "AP Pelvis View",
               "details": {
                 "en": "Standard AP view of the pelvis. Evaluates teardrop line, iliopectineal line (anterior column), ilioischial line (posterior column), and roof arc.",
                 "th": "ภาพเอกซเรย์เชิงกรานท่า AP มาตรฐาน ประเมินแนวเส้น Iliopectineal (เสาหน้า), Ilioischial (เสาหลัง) และโดมหลังคาเบ้าสะโพก"
-              }
+              },
+              "imageUrl": "/images/investigations/hip/ap_pelvis_view.jpg"
             },
             {
               "name": "Iliac Oblique View (Judet View 45°)",
@@ -311,6 +628,13 @@ export const pelvisBone: BoneData = {
               "details": {
                 "en": "45° Judet oblique view with affected hip rotated DOWN. Profiles the anterior column and posterior wall of the acetabulum, visualizing the obturator foramen.",
                 "th": "ภาพเอกซเรย์ท่าเฉียง Judet 45 องศา โดยตะแคงสะโพกข้างที่เจ็บลงล่าง ใช้ประเมินเสากระดูกด้านหน้า (Anterior column) และผนังด้านหลัง"
+              }
+            },
+            {
+              "name": "3D CT Reconstruction (Acetabular Protocol)",
+              "details": {
+                "en": "MANDATORY alongside the 3 Judet plain films. High-resolution CT with 3D volume rendering and multiplanar reconstructions (axial, coronal, sagittal) is essential for: (1) Accurate Letournel-Judet pattern identification — plain films alone are insufficient for complex T-type and associated fractures; (2) Quantifying articular displacement and comminution; (3) Detecting dome impaction and marginal impaction fragments; (4) Pre-operative templating and surgical approach selection. Femoral head digital subtraction greatly improves dome visualization.",
+                "th": "บังคับทำควบคู่กับ Judet views ทั้ง 3 ภาพ CT 3D ความละเอียดสูงพร้อม Multiplanar reconstruction จำเป็นสำหรับ: (1) จำแนกรูปแบบ Letournel-Judet ที่แม่นยำ (X-ray ไม่เพียงพอสำหรับ T-type และ Associated fractures), (2) วัดระยะเคลื่อนตัวและความแตกละเอียดของผิวข้อ, (3) ตรวจหา Dome impaction fragment, (4) วางแผนผ่าตัด การลบหัวกระดูกออก (Digital subtraction) ช่วยให้เห็นหลังคาเบ้าสะโพกชัดขึ้น"
               }
             }
           ],

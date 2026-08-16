@@ -303,7 +303,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
             {activeQuizType === "subtype" && currentQuestion.targetType && (
               <div className="max-w-xs mx-auto">
                 <FractureVisualizer
-                  illustrationId={currentQuestion.targetType.illustrationId}
+                  illustrationId={currentQuestion.targetType.illustrationId || ""}
                   showAsXray={false}
                 />
                 
@@ -312,7 +312,7 @@ export const QuizMode: React.FC<QuizModeProps> = ({
                   <AlertCircle className="w-4 h-4 text-clinical-primary flex-shrink-0 mt-0.5" />
                   <p className="leading-relaxed text-left">
                     <strong className="text-slate-300 block mb-0.5">{t("xrayTitle")}:</strong>
-                    {currentQuestion.targetType.xrayDescription[language]}
+                    {currentQuestion.targetType.xrayDescription?.[language]}
                   </p>
                 </div>
               </div>

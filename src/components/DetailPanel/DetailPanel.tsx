@@ -280,14 +280,14 @@ export const DetailPanel: React.FC<DetailPanelProps> = ({
                     </div>
                   </div>
 
-                  <FractureVisualizer illustrationId={currentType.illustrationId} showAsXray={showAsXray} />
+                  <FractureVisualizer illustrationId={currentType.illustrationId || ""} showAsXray={showAsXray} />
 
                   {/* Radiograph details description */}
                   <div className="p-3 bg-slate-950/60 rounded-xl border border-slate-900 text-xs text-clinical-muted flex gap-2">
                     <Activity className="w-4 h-4 text-clinical-primary flex-shrink-0 mt-0.5" />
                     <p className="leading-relaxed">
                       <strong className="text-slate-300 block mb-0.5">{t("xrayTitle")}:</strong>
-                      {currentType.xrayDescription[language]}
+                      {currentType.xrayDescription?.[language]}
                     </p>
                   </div>
                 </div>

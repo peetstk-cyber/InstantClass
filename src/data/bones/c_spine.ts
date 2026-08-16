@@ -18,6 +18,40 @@ export const cSpineBone: BoneData = {
         "en": "Upper Cervical Spine (C1–C2)",
         "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Canadian C-Spine Rule & NEXUS Criteria",
+            "positive": {
+              "en": "Midline cervical tenderness, focal neurological deficit, high-risk mechanism = Mandatory C-Spine Imaging",
+              "th": "กดเจ็บบริเวณกระดูกคอกลางลำตัว มีอาการทางระบบประสาท หรือเกิดอุบัติเหตุพลังงานสูง = ต้องถ่ายภาพรังสี C-Spine"
+            }
+          },
+          {
+            "sign": "C1-C2 Open Mouth View Assessment",
+            "positive": {
+              "en": "Combined lateral overhang of C1 masses > 7mm = Transverse Ligament Rupture (Spence's Rule)",
+              "th": "ระยะยื่นขอบข้างของ C1 mass รวม > 7มม. = เส้นเอ็น Transverse Ligament ฉีกขาด (Spence Rule)"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Cervical Cord Injury (Tetraplegia, Neurogenic Shock with bradycardia & hypotension)",
+            "th": "ภาวะบาดเจ็บไขสันหลังคอ (อัมพาตสี่แผลม, ภาวะช็อกทางระบบประสาท หัวใจเต้นช้าและความดันตก)"
+          },
+          {
+            "en": "Vertebral Artery Dissection (Posterior circulation stroke, Wallenberg syndrome)",
+            "th": "การฉีกขาดของหลอดเลือด Vertebral Artery (เสี่ยงหลอดเลือดสมองอุดตัน)"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Odontoid Type II fracture has a high nonunion rate (>30%) due to watershed blood supply and usually requires ORIF screw or Halo vest.",
+            "th": "Odontoid Type II มีอัตรากระดูกไม่ติดสูง (>30%) เนื่องจากเลือดมาเลี้ยงน้อย แนะนำผ่าตัดยึดสกรูหรือใส่ Halo vest"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Jefferson C1",
@@ -28,6 +62,44 @@ export const cSpineBone: BoneData = {
           "description": {
             "en": "Classification of C1 atlas fractures (Type I Single arch, Type II Classic Jefferson burst fracture, Type III Lateral mass). Evaluated using the Rule of Spence to determine Transverse Atlanto-Axial Ligament (TAL) integrity.",
             "th": "ระบบจำแนกกระดูกคอ C1 (Atlas) หัก แบ่งเป็น Type I (วงโค้งหักจุดเดียว), Type II (Burst fracture วงโค้งหน้าและหลังหักแตก - Classic Jefferson) และ Type III (มวลกระดูกด้านข้างหัก) โดยใช้กฎ Rule of Spence ประเมินเอ็นยึด Transverse Ligament (TAL)"
+          },
+          "concept": {
+            "title": {
+              "en": "Jefferson C1 Burst Fracture Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Jefferson C1 Classification"
+            },
+            "corePrinciple": {
+              "en": "Evaluates C1 (Atlas) ring fractures caused by axial loading, where stability depends primarily on the integrity of the Transverse Atlanto-Axial Ligament (TAL).",
+              "th": "ประเมินกระดูกคอ C1 (Atlas) หักจากแรงอัดตามแกนยาว โดยความมั่นคงขึ้นอยู่กับความสมบูรณ์ของเอ็นยึด Transverse Ligament (TAL) เป็นสำคัญ"
+            },
+            "rules": [
+              {
+                "en": "Spence's Rule (Open-Mouth Peg View): Sum of C1 lateral mass overhang relative to C2 > 6.9 mm indicates TAL rupture -> UNSTABLE.",
+                "th": "Rule of Spence (X-ray อ้าปาก): ผลรวมระยะยื่นเกยของ C1 lateral mass > 6.9 มม. บ่งชี้ว่าเอ็น TAL ขาด -> ไม่มั่นคง"
+              },
+              {
+                "en": "Spence's Rule: Sum of C1 lateral mass overhang ≤ 6.9 mm indicates TAL intact -> STABLE.",
+                "th": "Rule of Spence: ผลรวมระยะยื่นเกย ≤ 6.9 มม. บ่งชี้ว่าเอ็น TAL สมบูรณ์ -> มั่นคง"
+              },
+              {
+                "en": "MRI Cut-off: Direct T2/STIR visualization of TAL disruption confirms instability regardless of overhang measurement.",
+                "th": "เกณฑ์ MRI: การพบเอ็น TAL ขาดหลุดในภาพ MRI T2/STIR ถือว่าไม่มั่นคงทันที"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Stable patterns (TAL intact): Managed conservatively with a Rigid Cervical Collar for 6–8 weeks with high union rates.",
+                "th": "รอยหักแบบมั่นคง (TAL สมบูรณ์): รักษาแบบไม่ผ่าตัดโดยใส่เฝือกคอชนิดแข็ง (Rigid Collar) 6–8 สัปดาห์"
+              },
+              {
+                "en": "Unstable patterns (TAL disrupted): Requires operative C1–C2 posterior instrumented fusion or rigid Halo-vest immobilization for 8–12 weeks.",
+                "th": "รอยหักแบบไม่มั่นคง (TAL ขาด): แนะนำผ่าตัดดามยึดกระดูก C1–C2 ด้านหลัง หรือใส่ Halo-vest 8–12 สัปดาห์"
+              },
+              {
+                "en": "Clinical Pitfall: Spence's rule on X-ray can underestimate TAL rupture by 20% due to magnification error; obtain CT/MRI. Always evaluate for concomitant C2 fractures (present in up to 40%).",
+                "th": "ข้อควรระวัง: Rule of Spence บน X-ray อาจประเมินต่ำกว่าจริง 20% จากการขยายภาพ ควรส่ง CT/MRI และต้องตรวจหากระดูก C2 หักร่วมเสมอ (พบร่วมถึง 40%)"
+              }
+            ]
           },
           "investigations": [
             {
@@ -166,6 +238,52 @@ export const cSpineBone: BoneData = {
           "description": {
             "en": "Classification of C2 axis traumatic spondylolisthesis (pars interarticularis fracture) into Types I, II, IIA, and III based on translation, angulation, C2-C3 disc disruption, and facet dislocation.",
             "th": "ระบบจำแนกกระดูกคอ C2 (Axis) หักหลุดบริเวณ Pars interarticularis (Hangman's fracture) แบ่งเป็น Type I, II, IIA และ III ตามระยะเคลื่อนเกย การเอียงบิด การฉีกขาดของหมอนรองกระดูก C2-C3 และข้อต่อ Facet หลุด"
+          },
+          "concept": {
+            "title": {
+              "en": "Hangman's C2 Spondylolisthesis Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Hangman C2 Classification"
+            },
+            "corePrinciple": {
+              "en": "Classifies C2 traumatic spondylolisthesis (pars interarticularis fractures) based on C2–C3 translation, angulation, and C2–C3 intervertebral disc/PLL integrity.",
+              "th": "จำแนกกระดูกคอ C2 pars interarticularis หักหลุดสองข้างตามระยะการเคลื่อนเกย มุมเอียงบิด และความสมบูรณ์ของหมอนรองกระดูกและเอ็นยึด C2–C3"
+            },
+            "rules": [
+              {
+                "en": "Type I: Translation < 3 mm and 0° angulation (Intact C2–C3 disc) -> STABLE.",
+                "th": "Type I: เคลื่อน < 3 มม. และไม่เอียงบิด 0° (หมอนรอง C2–C3 สมบูรณ์) -> มั่นคง"
+              },
+              {
+                "en": "Type II: Translation > 3 mm and angulation > 11° (C2–C3 disc disruption) -> UNSTABLE.",
+                "th": "Type II: เคลื่อน > 3 มม. และมุมเอียง > 11° (หมอนรอง C2–C3 ฉีกขาด) -> ไม่มั่นคง"
+              },
+              {
+                "en": "Type IIA: Severe angulation with minimal/no translation (Flexion-distraction disc tear) -> HIGHLY UNSTABLE.",
+                "th": "Type IIA: มุมเอียงบิดรุนแรง แต่ไม่เคลื่อนเกย (หมอนรองฉีกขาดจากแรงดึงถ่าง) -> ไม่มั่นคงสูง"
+              },
+              {
+                "en": "Type III: Translation + Bilateral C2–C3 Facet Dislocation -> GROSSLY UNSTABLE.",
+                "th": "Type III: เคลื่อนเกยร่วมกับข้อต่อ C2–C3 Facet หลุดล็อคทั้งสองข้าง -> ไม่มั่นคงรุนแรง"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Type I is managed conservatively in a Rigid Cervical Collar for 6–12 weeks.",
+                "th": "Type I รักษาแบบไม่ผ่าตัดโดยใส่เฝือกคอชนิดแข็ง 6–12 สัปดาห์"
+              },
+              {
+                "en": "Type II requires closed traction reduction in slight extension followed by Halo-vest immobilization or C2–C3 surgical fusion.",
+                "th": "Type II ต้องดึงจัดกระดูกคอแล้วใส่ Halo-vest หรือผ่าตัดเชื่อมข้อ C2–C3"
+              },
+              {
+                "en": "CRITICAL CONTRAINDICATION: Cervical traction is STRICTLY CONTRAINDICATED in Type IIA injuries; traction causes catastrophic over-distraction and spinal cord transection. Treat with manual extension reduction or early surgery.",
+                "th": "ข้อห้ามวิกฤต: ห้ามดึงคอ (Traction) ใน Type IIA เด็ดขาด! เพราะจะทำให้หมอนรองและไขสันหลังถูกดึงยืดจนขาด ให้จัดกระดูกท่าแหงนหรือผ่าตัด"
+              },
+              {
+                "en": "Type III requires emergency open reduction of facet dislocations and posterior C2–C3 instrumented fusion.",
+                "th": "Type III ต้องผ่าตัดเปิดจัดข้อ Facet ที่หลุดฉุกเฉินและดามยึดกระดูก C2–C3 ด้านหลัง"
+              }
+            ]
           },
           "investigations": [
             {
@@ -328,6 +446,48 @@ export const cSpineBone: BoneData = {
             "en": "Classification of C2 axis odontoid process fractures into Type I (Tip avulsion), Type II (Base fracture - High nonunion risk ~30-40%), and Type III (Body extension - High union rate >90%). Dictates surgical versus conservative management.",
             "th": "ระบบจำแนกกระดูกยอดเดือย C2 (Odontoid / Dens) หัก แบ่งเป็น Type I (ปลายเดือยกะเทาะ), Type II (โคนเดือยหัก - เสี่ยงกระดูกไม่ติดสูง ~30-40%) และ Type III (ลุกลามเข้าตัวกระดูก C2 - อัตรากระดูกติดสูง >90%)"
           },
+          "concept": {
+            "title": {
+              "en": "Odontoid C2 Fracture Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Odontoid C2 Classification"
+            },
+            "corePrinciple": {
+              "en": "Classifies C2 dens fractures by anatomical location (Tip, Base, Body), which directly determines fracture site vascularity and nonunion risk.",
+              "th": "จำแนกรอยหักของยอดเดือย C2 (Dens) ตามตำแหน่งทางกายวิภาค (ปลาย, โคน, ลำตัว) ซึ่งเป็นตัวกำหนดเลือดมาเลี้ยงและโอกาสเกิดกระดูกไม่ติด"
+            },
+            "rules": [
+              {
+                "en": "Type I (Tip avulsion above TAL): Avulsion of alar ligament attachment -> STABLE.",
+                "th": "Type I (ปลายเดือยกะเทาะ): รอยหักปลายเดือยเหนือเอ็น TAL -> มั่นคง"
+              },
+              {
+                "en": "Type II (Base fracture at junction with body): Watershed vascular zone -> HIGH NONUNION RISK (30–40%).",
+                "th": "Type II (โคนเดือยหัก): บริเวณจุดอับเลือด -> เสี่ยงกระดูกไม่ติดสูงมาก (30–40%)"
+              },
+              {
+                "en": "Type II Operative Cut-offs: Displacement ≥ 5 mm, Angulation ≥ 10°, Age > 65 years, or Comminuted Base (Type IIA) -> Mandatory Surgical Indication.",
+                "th": "เกณฑ์ผ่าตัด Type II: เคลื่อน ≥ 5 มม., เอียง ≥ 10°, อายุ > 65 ปี หรือมีชิ้นแตกย่อย (IIA) -> มีข้อบ่งชี้ผ่าตัด"
+              },
+              {
+                "en": "Type III (Deep extension into C2 cancellous body): Rich vascular bed -> HIGH UNION RATE (> 90%).",
+                "th": "Type III (รอยหักลึกลงในลำตัว C2): กระดูกพรุนเลือดเลี้ยงอุดมสมบูรณ์ -> อัตรากระดูกติดสูง (> 90%)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Type I and non-displaced Type III fractures are managed conservatively in a Rigid Collar or Halo vest for 6–12 weeks.",
+                "th": "Type I และ Type III ที่ไม่เคลื่อนตัว รักษาแบบไม่ผ่าตัดโดยใส่เฝือกคอแข็งหรือ Halo vest 6–12 สัปดาห์"
+              },
+              {
+                "en": "Type II in young patients (<65 yrs) with <5 mm displacement can be attempted in Halo vest, but displacement ≥5 mm warrants Anterior Odontoid Screw or C1–C2 Fusion.",
+                "th": "Type II ในผู้ป่วยอายุน้อยที่เคลื่อน <5 มม. อาจใส่ Halo vest ได้ แต่หากเคลื่อน ≥5 มม. ควรผ่าตัดขันสกรูหรือเชื่อมข้อ C1–C2"
+              },
+              {
+                "en": "Elderly Pitfall: In patients >65 years with Type II fractures, Halo-vest treatment has high mortality (~40%) and poor nonunion rates (>60%); surgical fixation is strongly preferred.",
+                "th": "ข้อควรระวังในผู้สูงอายุ: ผู้ป่วยอายุ >65 ปีที่เป็น Type II การใส่ Halo vest มีอัตราตายสูง (~40%) และกระดูกไม่ติดสูง (>60%) ควรพิจารณาผ่าตัดดามกระดูกเป็นทางเลือกหลัก"
+              }
+            ]
+          },
           "investigations": [
             {
               "name": "Open-Mouth Odontoid AP & Lateral Radiographs",
@@ -456,6 +616,53 @@ export const cSpineBone: BoneData = {
         "en": "Lower Cervical Spine (C3–C7)",
         "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "SLIC Score Assessment",
+            "positive": {
+              "en": "SLIC score > 4 indicates surgical stabilization (evaluates Morphology, PLC integrity, & Neurological status)",
+              "th": "คะแนน SLIC > 4 บ่งชี้ว่าควรผ่าตัดรักษา (ประเมินจาก Morphology, ความสมบูรณ์ของเอ็น PLC และสถานะระบบประสาท)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Translational Displacement",
+              "th": "การเคลื่อนตัวของข้อต่อ (Translation)"
+            },
+            "threshold": "< 3.5 mm",
+            "note": {
+              "en": "> 3.5mm indicates severe subaxial instability",
+              "th": "> 3.5มม. บ่งบอกถึงภาวะไม่มั่นคงรุนแรง"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Kyphotic Angulation",
+              "th": "มุมก้มคอผิดรูป (Kyphosis)"
+            },
+            "threshold": "< 11°",
+            "note": {
+              "en": "> 11° relative kyphosis indicates posterior ligamentous complex rupture",
+              "th": "> 11 องศา บ่งบอกว่าเอ็นยึดด้านหลังฉีกขาด"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Bilateral Facet Dislocation (100% PLC disruption, severe canal compromise & spinal cord injury)",
+            "th": "ข้อต่อ Facet หลุดสองข้าง (เอ็นยึดฉีกขาด 100% เสี่ยงอัมพาตครึ่งท่อนหรือสี่แผลมอย่างรุนแรง)"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Unilateral Facet Dislocation presents with ~25% anterior translation, while Bilateral Facet Dislocation presents with ~50% translation on lateral X-ray.",
+            "th": "Facet หลุดข้างเดียวจะเห็นกระดูกเคลื่อนไปข้างหน้า ~25% แต่ถ้าหลุด 2 ข้างจะเคลื่อนไปข้างหน้า ~50%"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "SLIC Score",
@@ -466,6 +673,44 @@ export const cSpineBone: BoneData = {
           "description": {
             "en": "Point-based scoring system for subaxial cervical spine injuries (C3-C7) evaluating Fracture Morphology, Disruption of Ligamentous Complex (DLC) integrity, and Neurological Status. SLIC score <4 = Conservative, SLIC score =4 = Equivocal, SLIC score >4 = Operative.",
             "th": "ระบบให้คะแนนการบาดเจ็บกระดูกสันหลังคอ C3-C7 (SLIC Score) ประเมิน 3 หมวด: ลักษณะรอยหัก (Morphology), ความสมบูรณ์ของหมอนรองและเอ็นยึด (PLC) และระบบประสาท (Neurology) โดยคะแนน <4 รักษาไม่ผ่าตัด, =4 พิจารณาตามความเหมาะสม, >4 แนะนำผ่าตัด"
+          },
+          "concept": {
+            "title": {
+              "en": "SLIC Score Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ SLIC Score Classification"
+            },
+            "corePrinciple": {
+              "en": "Point-based algorithm for C3–C7 injuries integrating 3 independent categories: (1) Fracture Morphology (0–4 pts), (2) Disruption of Ligamentous Complex / DLC (0–2 pts), and (3) Neurological Status (0–4 pts).",
+              "th": "อัลกอริทึมประเมินคะแนนการบาดเจ็บกระดูกคอ C3–C7 โดยรวม 3 หมวดหลัก: (1) ลักษณะรอยหัก (0–4 คะแนน), (2) ความสมบูรณ์ของเอ็นยึดและหมอนรอง DLC (0–2 คะแนน) และ (3) อาการทางระบบประสาท (0–4 คะแนน)"
+            },
+            "rules": [
+              {
+                "en": "SLIC Score < 4: Non-operative management indicated (Rigid Cervical Collar for 6–12 weeks).",
+                "th": "คะแนน SLIC < 4: แนะนำรักษาแบบไม่ผ่าตัด (ใส่อุปกรณ์ดามคอชนิดแข็ง 6–12 สัปดาห์)"
+              },
+              {
+                "en": "SLIC Score = 4: Equivocal / Borderline (Surgeon discretion based on comorbidities, pain, and sagittal alignment).",
+                "th": "คะแนน SLIC = 4: ก้ำกึ่ง (ขึ้นกับดุลยพินิจของแพทย์ โรคประจำตัว ความปวด และแนวโค้งกระดูกคอ)"
+              },
+              {
+                "en": "SLIC Score > 4: OPERATIVE INDICATION (Anterior/Posterior Cervical Decompression & Surgical Fixation).",
+                "th": "คะแนน SLIC > 4: มีข้อบ่งชี้ผ่าตัด (ผ่าตัดเปิดกดทับและยึดดามกระดูกคอ)"
+              },
+              {
+                "en": "Neurological Modifier (+1 pt): Ongoing or progressive cord compression warrants urgent surgical decompression.",
+                "th": "ปัจจัยเสริมระบบประสาท (+1 คะแนน): หากมีอาการกดทับไขสันหลังรุนแรงขึ้นเรื่อยๆ มีข้อบ่งชี้ผ่าตัดฉุกเฉิน"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "DLC disruption adds 2 critical points, often turning a non-operative case into an operative one. Look for focal interspinous widening or facet asymmetry; obtain MRI (STIR) if CT is equivocal.",
+                "th": "การฉีกขาดของเอ็นยึด DLC เพิ่มคะแนน 2 คะแนน ซึ่งมักเปลี่ยนการรักษาเป็นผ่าตัด ต้องสังเกตช่องว่าง interspinous และส่ง MRI เมื่อ CT ไม่ชัดเจน"
+              },
+              {
+                "en": "Incomplete spinal cord injury (+3 pts) strongly drives score >4 and benefits from surgical decompression within 24 hours of injury.",
+                "th": "ภาวะไขสันหลังบาดเจ็บบางส่วน (+3 คะแนน) ช่วยผลักดันคะแนน >4 และควรผ่าตัดคลายการกดทับภายใน 24 ชั่วโมง"
+              }
+            ]
           },
           "investigations": [
             {
@@ -597,6 +842,40 @@ export const cSpineBone: BoneData = {
             "en": "Comprehensive anatomical classification categorizing subaxial cervical injuries into Type A (Compression injuries), Type B (Distraction / Ligamentous injuries), and Type C (Translational / Displacement injuries), combined with Neurological Status (N0-N4) and Modifiers.",
             "th": "ระบบจำแนก AO Spine สำหรับกระดูกคอส่วนล่าง แบ่งเป็น Type A (แรงกดอัด/ยุบตัว), Type B (แรงดึงถ่าง/เอ็นฉีกขาด), Type C (เคลื่อนหลุดแปลกแนว) ร่วมกับระดับความรุนแรงทางระบบประสาท (N0-N4) และปัจจัยเสริม (M1-M4)"
           },
+          "concept": {
+            "title": {
+              "en": "AO Spine Subaxial Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ AO Spine Subaxial Classification"
+            },
+            "corePrinciple": {
+              "en": "Hierarchical structural classification categorizing subaxial injuries into Type A (Compression), Type B (Distraction/Tension Band failure), and Type C (Translation/Dislocation), paired with Neurological Status (N0–N4) and Modifiers.",
+              "th": "ระบบจำแนกลำดับขั้นทางโครงสร้างแบ่งการบาดเจ็บกระดูกคอ C3–C7 เป็น Type A (แรงกดอัด), Type B (แรงดึงถ่าง/เอ็นขาด) และ Type C (เคลื่อนหลุดแปลกแนว) ร่วมกับระดับระบบประสาท (N0–N4) และปัจจัยเสริม"
+            },
+            "rules": [
+              {
+                "en": "Type A (Compression): A0–A2 (Stable, intact PLC) -> Conservative (Rigid Collar). A3–A4 (Burst fracture with canal compromise/neuro deficit) -> Surgical Decompression & Fixation.",
+                "th": "Type A (แรงกดอัด): A0–A2 (มั่นคง เอ็นไม่ขาด) -> ใส่เฝือกคอแข็ง; A3–A4 (Burst fracture กดช่องไขสันหลัง/มีอาการประสาท) -> ผ่าตัดเปิดกดทับและยึดดาม"
+              },
+              {
+                "en": "Type B (Distraction): B1 (Posterior osseous failure), B2 (Posterior ligamentous/PLC failure), B3 (Anterior tension band failure) -> High instability -> Surgical Reconstruction mandated.",
+                "th": "Type B (แรงดึงถ่าง): B1 (หักผ่านกระดูก), B2 (เอ็น PLC ขาด), B3 (เอ็นด้านหน้าขาด) -> ความไม่มั่นคงสูง -> ต้องผ่าตัดยึดดามกระดูก"
+              },
+              {
+                "en": "Type C (Translation / Facet Dislocation): Complete structural disruption -> MANDATORY SURGICAL EMERGENCY (Urgent reduction and instrumented stabilization).",
+                "th": "Type C (ข้อ Facet หลุดล็อค / เคลื่อนแปลกแนว): โครงสร้างถูกทำลายสมบูรณ์ -> ข้อบ่งชี้ผ่าตัดฉุกเฉิน (ดัดจัดข้อและผ่าตัดดามเหล็ก)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Facet Dislocations (unilateral/bilateral) are AO Type C injuries. In neurologically intact or obtunded patients, ALWAYS obtain MRI before closed traction reduction to rule out herniated disc that could transect the cord during reduction.",
+                "th": "ข้อ Facet หลุดล็อคเป็น AO Type C ในผู้ป่วยที่ระบบประสาทปกติหรือหมดสติ ต้องส่ง MRI ก่อนดึงคอ (Closed Reduction) เพื่อตรวจหาหมอนรองกระดูกเคลื่อนกดไขสันหลัง"
+              },
+              {
+                "en": "Do not misclassify Type B3 hyperextension injuries as simple Type A anterior compression fractures.",
+                "th": "ระวังอย่าสับสนการบาดเจ็บแหงนคอดึงถ่าง B3 กับรอยหักกดอัดด้านหน้า Type A ธรรมดา"
+              }
+            ]
+          },
           "investigations": [
             {
               "name": "Lateral Cervical Spine Radiograph",
@@ -718,6 +997,44 @@ export const cSpineBone: BoneData = {
           "description": {
             "en": "Biomechanical classification categorizing injuries based on vector forces: Compressive Flexion (CF 1-5), Vertical Compression (VC 1-3), Distractive Flexion (DF 1-4 including locked facets), Compressive Extension (CE 1-5), Distractive Extension (DE 1-2), and Lateral Flexion (LF 1-2).",
             "th": "ระบบจำแนกเชิงชีวกลศาสตร์แบ่งตามทิศทางของแรง: Compressive Flexion (ก้มคออัด), Vertical Compression (อัดตรง), Distractive Flexion (ก้มคอดึงถ่าง - ข้อ Facet ล็อค), Compressive Extension (แหงนคออัด), Distractive Extension (แหงนคอดึงถ่าง) และ Lateral Flexion (เอียงข้าง)"
+          },
+          "concept": {
+            "title": {
+              "en": "Allen-Ferguson Biomechanical Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Allen-Ferguson Classification"
+            },
+            "corePrinciple": {
+              "en": "Biomechanical mechanistic system classifying lower cervical spine trauma based on vector force direction and neck position at impact across 6 categories.",
+              "th": "ระบบจำแนกเชิงชีวกลศาสตร์ที่จัดหมวดหมู่การบาดเจ็บกระดูกคอส่วนล่างตามทิศทางของแรงและท่าทางของคอขณะเกิดเหตุใน 6 กลไกหลัก"
+            },
+            "rules": [
+              {
+                "en": "Lower Spectrum (CF 1-2, VC 1, DF 1, CE 1-2): Posterior ligamentous complex intact -> STABLE -> Conservative (Rigid Collar 6–8 weeks).",
+                "th": "กลุ่มความรุนแรงต่ำ (CF 1-2, VC 1, DF 1, CE 1-2): เอ็นส่วนหลัง PLC ยังสมบูรณ์ -> มั่นคง -> ใส่ Rigid Collar 6–8 สัปดาห์"
+              },
+              {
+                "en": "DF 2-4 (Locked Facets, Distractive Flexion): Ligamentous disruption -> UNSTABLE -> Urgent Reduction & Surgical Stabilization.",
+                "th": "DF 2-4 (ข้อ Facet หลุดล็อค): เอ็นยึดฉีกขาด -> ไม่มั่นคง -> ดึงจัดข้อและผ่าตัดยึดดามกระดูก"
+              },
+              {
+                "en": "CF 3-5 (Flexion Teardrop Fracture): Complete 3-column disruption -> HIGHLY UNSTABLE -> Emergency Surgical Fusion.",
+                "th": "CF 3-5 (Flexion Teardrop Fracture): โครงสร้าง 3 เสาถูกทำลายสมบูรณ์ -> ไม่มั่นคงอย่างรุนแรง -> ผ่าตัดฉุกเฉิน"
+              },
+              {
+                "en": "VC 2-3 (Burst fracture with canal retropulsion): Canal occlusion > 50% or neurological deficit -> Decompression & Fusion.",
+                "th": "VC 2-3 (Burst fracture ชิ้นส่วนกดช่องไขสันหลัง): กดช่องไขสันหลัง > 50% หรือมีอาการทางประสาท -> ผ่าตัดเปิดกดทับและยึดดาม"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Flexion Teardrop Fracture (CF 3-5) is the most devastating cervical injury; the anterior teardrop bone fragment is only the tip of the iceberg, representing complete posterior ligamentous disruption with high risk of quadriplegia.",
+                "th": "Flexion Teardrop Fracture (CF 3-5) เป็นการบาดเจ็บกระดูกคอที่รุนแรงที่สุด ชิ้นกระดูกสามเหลี่ยมด้านหน้าเป็นเพียงยอดภูเขาน้ำแข็ง แต่โครงสร้างเอ็นส่วนหลังขาดสมบูรณ์เสี่ยงอัมพาตสี่แผลมสูงมาก"
+              },
+              {
+                "en": "DF Stage 2 (unilateral locked facet) can present with subtle neck pain; inspect lateral radiograph carefully for 25% anterior translation.",
+                "th": "DF Stage 2 (ข้อ Facet หลุดล็อคข้างเดียว) ผู้ป่วยอาจปวดคอไม่มาก ต้องตรวจ X-ray Lateral อย่างละเอียดเพื่อดูการเคลื่อนไปข้างหน้า 25%"
+              }
+            ]
           },
           "investigations": [
             {

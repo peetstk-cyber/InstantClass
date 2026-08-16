@@ -18,6 +18,64 @@ export const femurBone: BoneData = {
         "en": "Femoral Neck",
         "th": "คอกระดูกต้นขา (Femoral Neck)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Limb Shortening & External Rotation",
+            "positive": {
+              "en": "Affected limb rests in mild shortening and external rotation (~45°); groin/hip pain on active straight leg raise or log roll.",
+              "th": "ขาข้างที่บาดเจ็บสั้นลงเล็กน้อยและหมุนออกด้านนอก (~45°); มีอาการปวดบริเวณขาหนีบ/สะโพกเมื่อพยายามยกขาหรือหมุนขา"
+            }
+          },
+          {
+            "sign": "Log Roll Test",
+            "positive": {
+              "en": "Pain elicited with gentle passive internal and external rotation of the relaxed extremity, indicating intra-capsular hip joint disruption.",
+              "th": "ปวดรุนแรงบริเวณขาหนีบเมื่อจับหมุนขาไปมาเบาๆ (Log roll) บ่งชี้การบาดเจ็บภายในเยื่อหุ้มข้อสะโพก"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Garden Alignment Index (AP View)",
+              "th": "ดัชนีการจัดมุม Garden (ภาพ AP)"
+            },
+            "threshold": "160° - 180°",
+            "note": {
+              "en": "Angle between medial trabeculae of femoral head and medial cortex of femoral shaft should be 160°.",
+              "th": "มุมระหว่างแนว Trabeculae ด้านในกับขอบกระดูกแกนต้นขาด้านในควรอยู่ที่ประมาณ 160 องศา"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Garden Alignment Index (Lateral View)",
+              "th": "ดัชนีการจัดมุม Garden (ภาพ Lateral)"
+            },
+            "threshold": "180°",
+            "note": {
+              "en": "True 180° collinear alignment on lateral view is critical to avoid posterior sag/angulation.",
+              "th": "แนวแกนตรง 180 องศาในท่าด้านข้าง เพื่อป้องกันมุมเอียงเบี่ยงไปด้านหลัง"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "High Avascular Necrosis (AVN) Risk: Displaced femoral neck fractures (Garden III/IV) disrupt the medial femoral circumflex artery, carrying up to 30-50% AVN and nonunion rates.",
+            "th": "ความเสี่ยงหัวกระดูกขาดเลือด (AVN) สูง: กระดูกคอสะโพกหักเคลื่อนที่ (Garden III/IV) ทำลายเส้นเลือด Medial Femoral Circumflex มีอัตราเกิด AVN สูงถึง 30-50%"
+          },
+          {
+            "en": "Urgent Reduction in Young Patients: Displaced femoral neck fractures in young patients (<60 years) are surgical emergencies requiring anatomical reduction and fixation within 6-24h to save native head.",
+            "th": "ต้องผ่าตัดฉุกเฉินในผู้ป่วยอายุน้อย: คอสะโพกหักเคลื่อนที่ในคนอายุน้อย (<60 ปี) เป็นภาวะฉุกเฉิน ต้องผ่าตัดดึงดามกระดูกภายใน 6-24 ชม. เพื่อรักษาหัวกระดูกเดิม"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Young vs Elderly Surgical Protocol: In elderly patients (>65 years), displaced neck fractures are treated with Hemiarthroplasty or Total Hip Arthroplasty (THA). In young active patients, urgent open/closed reduction with DHS or cannulated screws is mandatory.",
+            "th": "แนวทางรักษาคนแก่ vs คนอายุน้อย: ในผู้ป่วยสูงอายุ (>65 ปี) คอสะโพกหักเคลื่อนที่ควรใส่ข้อสะโพกเทียม (Hemiarthroplasty/THA); ในคนอายุน้อยต้องผ่าตัดยึดกระดูกดั้งเดิม (ORIF with DHS/Screws) ด่วนที่สุด"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Garden",
@@ -176,6 +234,57 @@ export const femurBone: BoneData = {
       "name": {
         "en": "Intertrochanteric",
         "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Marked Shortening & External Rotation",
+            "positive": {
+              "en": "Affected limb rests in marked external rotation (often 90°, lateral border of foot touches bed) with obvious shortening and ecchymosis over greater trochanter.",
+              "th": "ขาข้างบาดเจ็บหมุนออกนอกอย่างมาก (เท้าล้มแปะกับเตียง 90°) ร่วมกับขาสั้นลงชัดเจนและมีรอยเขียวช้ำบริเวณปุ่มสะโพก"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Neck-Shaft Angle (CCD Angle)",
+              "th": "มุมคอกระดูกกับแกนขา (Neck-Shaft Angle)"
+            },
+            "threshold": "125° - 135°",
+            "note": {
+              "en": "Avoid varus reduction (<120°); valgus/anatomical alignment is required to prevent lag screw cut-out.",
+              "th": "หลีกเลี่ยงมุม Varus (<120°); ต้องจัดมุมให้อยู่ในแนวปกติหรือ Valgus เล็กน้อย เพื่อลดโอกาส Lag Screw หลุดกะเทาะ"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Tip-Apex Distance (TAD)",
+              "th": "ระยะ Tip-Apex Distance (TAD)"
+            },
+            "threshold": "< 25 mm",
+            "note": {
+              "en": "Baumgaertner Tip-Apex Distance <25mm (sum of AP + Lateral distance from screw tip to head apex) is MANDATORY to prevent cut-out.",
+              "th": "ค่าผลรวมระยะปลายสกรูถึงจุดศูนย์กลางหัวกระดูก (AP + Lateral) ต้องน้อยกว่า 25 มม. เพื่อป้องกันสกรูทะลุหัวกระดูก"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Lag Screw Cut-Out: TAD >25 mm or varus reduction leads to lag screw cut-out superiorly through the femoral head, requiring conversion to arthroplasty.",
+            "th": "ภาวะ Lag Screw ทะลุหัวกระดูก (Cut-out): หาก TAD >25 มม. หรือจัดกระดูกในมุม Varus สกรูจะทะลุออกด้านบนของหัวกระดูก ต้องผ่าตัดแก้ไขเป็นข้อเทียม"
+          },
+          {
+            "en": "Unstable Fracture Pattern (Evans-Jensen / Reverse Obliquity): Reverse oblique fractures (AO 31-A3) or loss of posteromedial wall support require intramedullary cephalomedullary nails (PFNA/InterTan) rather than DHS.",
+            "th": "รอยหักไม่มั่นคง (Reverse Obliquity / ผนังด้านในแตก): รอยหักแบบทแยงย้อนกลับหรือขาดแรงค้ำด้านหลัง-ใน ต้องดามด้วยแกนเหล็กในโพรงกระดูก (Cephalomedullary Nail) ห้ามใช้ DHS"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "TAD Rule of Baumgaertner: Maintaining TAD <25mm reduces the risk of lag screw cut-out to less than 1%. Position the lag screw centered-centered or inferior-centered in the femoral head on AP and lateral views.",
+            "th": "กฎ TAD ของ Baumgaertner: การรักษาค่า TAD <25 มม. ช่วยลดอัตราสกรูทะลุหลุดเหลือต่ำกว่า 1% ควรวางตำแหน่ง Lag Screw ให้อยู่ตรงกลาง-ตรงกลาง หรือล่าง-ตรงกลาง ของหัวกระดูก"
+          }
+        ]
       },
       "classifications": [
         {
@@ -373,6 +482,60 @@ export const femurBone: BoneData = {
         "en": "Subtrochanteric",
         "th": "ใต้ปุ่มกระดูกต้นขา (Subtrochanteric)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Proximal Fragment Deformity Flexion-Abduction-External Rotation",
+            "positive": {
+              "en": "Visible thigh deformity with proximal fragment pulled into flexion (iliopsoas), abduction (gluteus medius), and external rotation (short rotators).",
+              "th": "เห็นความผิดรูปของต้นขาชัดเจน โดยชิ้นกระดูกส่วนบนถูกดึงให้งอขึ้น (Iliopsoas), กางออก (Gluteus medius) และหมุนออกนอก (Short rotators)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Varus / Valgus Angulation",
+              "th": "มุมเอียง Varus / Valgus"
+            },
+            "threshold": "< 5°",
+            "note": {
+              "en": "Subtrochanteric region experiences high compressive forces medially (up to 1200 psi); varus leads to nonunion and plate failure.",
+              "th": "บริเวณ Subtrochanteric รับแรงกดมหาศาลทางด้านใน หากปล่อยให้มีมุม Varus จะเกิดกระดูกไม่ติดและเหล็กดามหัก"
+            }
+          },
+          {
+            "parameter": {
+              "en": "AP / Lateral Angulation",
+              "th": "มุมเอียง AP / Lateral"
+            },
+            "threshold": "< 10°"
+          },
+          {
+            "parameter": {
+              "en": "Leg Length Shortening",
+              "th": "ความยาวขาสั้นลง"
+            },
+            "threshold": "< 1 cm"
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Atypical Femur Fracture (AFF) / Bisphosphonate-Related: Transverse or short oblique fracture with localized lateral cortical thickening; high risk of delayed union/nonunion requiring long IM nailing.",
+            "th": "กระดูกหักผิดปกติจากยา Bisphosphonate (AFF): รอยหักแนวขวางขอบหนาด้านนอก มีอัตราติดช้า/ไม่ติดสูง ต้องรักษาด้วยการตอกแกนเหล็กยาวในโพรงกระดูก"
+          },
+          {
+            "en": "High Mechanical Stress Area: Notorious site for implant breakage and nonunion due to high tensile stress laterally and extreme compressive stress medially.",
+            "th": "พื้นที่รับแรงเค้นสูงที่สุด: เป็นตำแหน่งที่เหล็กดามหักและกระดูกไม่ติดบ่อยที่สุด เนื่องจากมีแรงดึงด้านนอกและแรงกดด้านในสูงมาก"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Managing Deforming Forces: Use a Schanz pin / joystick or bone hook in the proximal fragment to pull it out of flexion and abduction during intramedullary nailing.",
+            "th": "การควบคุมแรงดึงผิดรูป: ใช้ Schanz pin / joystick หรือ Bone hook ช่วยดึงชิ้นกระดูกส่วนบนลงมาจากท่างอและกางออก ขณะทำการตอกแกนเหล็กในโพรงกระดูก"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Russell-Taylor",
@@ -541,6 +704,67 @@ export const femurBone: BoneData = {
       "name": {
         "en": "Femoral Shaft",
         "th": "แกนกระดูกต้นขา (Femoral Shaft)"
+      },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Tense Thigh Expansion & Neurovascular Check",
+            "positive": {
+              "en": "Massive thigh swelling and tense compartment from internal bleeding; evaluate distal dorsalis pedis / posterior tibial pulses and sciatic / peroneal nerve sensation.",
+              "th": "ต้นขาบวมตึงรุนแรงจากการเสียเลือดในกล้ามเนื้อ; ต้องประเมินชีพจรข้อเท้าและระบบประสาท Sciatic/Peroneal เสมอ"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Leg Shortening",
+              "th": "ความยาวขาสั้นลง"
+            },
+            "threshold": "< 1 cm"
+          },
+          {
+            "parameter": {
+              "en": "Varus / Valgus Angulation",
+              "th": "มุมเอียง Varus / Valgus"
+            },
+            "threshold": "< 5°"
+          },
+          {
+            "parameter": {
+              "en": "Anteroposterior Angulation",
+              "th": "มุมเอียง AP"
+            },
+            "threshold": "< 10°"
+          },
+          {
+            "parameter": {
+              "en": "Rotational Deformity",
+              "th": "มุมบิดหมุนผิดรูป"
+            },
+            "threshold": "< 10°"
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Massive Hemorrhagic Shock: Closed femoral shaft fracture can bleed 1000-1500 ml into the thigh compartment, causing hypovolemic shock.",
+            "th": "ภาวะช็อกจากการเสียเลือดปริมาณมาก: กระดูกแกนต้นขาหักแบบปิดสามารถเสียเลือดในชั้นกล้ามเนื้อได้ถึง 1,000-1,500 มล. ทำให้เกิดภาวะช็อกได้"
+          },
+          {
+            "en": "Fat Embolism Syndrome (FES): Triad of hypoxemia, confusion/neurological changes, and petechial rash (chest/axilla) 24-72 hours post-fracture.",
+            "th": "ภาวะไขมันอุดตันสตรีมเลือด (Fat Embolism): อาการไตรภาค ได้แก่ ออกซิเจนต่ำ, สับสน/ซึม, และผื่นจุดเลือดออกที่หน้าอก/รักแร้ ภายใน 24-72 ชม."
+          },
+          {
+            "en": "Missed Ipsilateral Femoral Neck Fracture: Occurs in up to 5-10% of high-energy femoral shaft fractures; mandatory dedicated AP pelvis and fine-cut CT hip screening.",
+            "th": "ตรวจพลาดกระดูกคอสะโพกหักร่วมในขาข้างเดียวกัน: พบได้ถึง 5-10% ในอุบัติเหตุแรงสูง บังคับต้องถ่าย AP Pelvis หรือส่ง CT Hip เสมอ"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Damage Control Orthopedics (DCO) & Fixation Timing: Reamed intramedullary nailing within 24 hours reduces pulmonary complications (ARDS, FES) and mortality. In unstable polytrauma patients, apply temporary bridging external fixation first.",
+            "th": "การควบคุมความรุนแรง (DCO) & ระยะเวลาผ่าตัด: การตอกแกนเหล็กในโพรงกระดูกภายใน 24 ชั่วโมงช่วยลดภาวะแทรกซ้อนทางปอดและอัตราเสียชีวิต หากผู้ป่วยอาการไม่เสถียร ให้ใส่โครงยึดภายนอกชั่วคราวก่อน"
+          }
+        ]
       },
       "classifications": [
         {

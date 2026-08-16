@@ -18,6 +18,101 @@ export const patellaBone: BoneData = {
         "en": "Patella",
         "th": "กระดูกสะบ้า (Patella)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Active Straight Leg Raise (SLR) Test",
+            "positive": {
+              "en": "Inability to actively elevate extended leg off table or presence of extension lag >10°; pathognomonic for complete extensor mechanism disruption.",
+              "th": "ไม่สามารถนอนยกขาตรงลอยพ้นเตียงได้ หรือมีภาวะเหยียดเข่าไม่สุด (Extension lag >10°) แสดงถึงกลไกการเหยียดข้อเข่าฉีกขาดสมบูรณ์"
+            }
+          },
+          {
+            "sign": "Palpable Fracture Defect / Gap",
+            "positive": {
+              "en": "Focal depression or sulcus palpated between superior and inferior patellar fragments.",
+              "th": "คลำได้ร่องรอยบุ๋มหรือช่องอ้าแยกระหว่างชิ้นกระดูกสะบ้าส่วนบนและส่วนล่าง"
+            }
+          },
+          {
+            "sign": "Knee Joint Hemarthrosis & Tense Effusion",
+            "positive": {
+              "en": "Rapid painful swelling and fluid wave in the knee joint due to intra-articular bleeding from fractured patella.",
+              "th": "ข้อเข่าบวมตึงรวดเร็วและมีเลือดออกสะสมในช่องข้อ (Hemarthrosis) จากรอยหักของสะบ้า"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Articular Step-off",
+              "th": "ความเหลื่อมของผิวข้อต่อ"
+            },
+            "threshold": "< 1 - 2 mm",
+            "note": {
+              "en": "Articular step-off >2mm increases patellofemoral osteoarthritis risk.",
+              "th": "ผิวข้อเหลื่อม > 2 มม. เพิ่มความเสี่ยงข้อสะบ้าเสื่อม (Patellofemoral arthritis)"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Fracture Separation Gap (Displacement)",
+              "th": "ระยะอ้าแยกของรอยหัก"
+            },
+            "threshold": "< 2 - 3 mm",
+            "note": {
+              "en": "Gap >3mm indicates torn medial/lateral retinacula and requires surgical repair.",
+              "th": "ช่องอ้า > 3 มม. แสดงว่าเอ็น Retinaculum สองข้างฉีกขาด ต้องได้รับการผ่าตัด"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Disruption of extensor mechanism (loss of SLR ability), leading to permanent loss of knee extension if un-repaired.",
+            "th": "การฉีกขาดของกลไกเหยียดเข่า (สูญเสียความสามารถ SLR) นำไปสู่การสูญเสียการเหยียดเข่าถาวรหากไม่ได้ผ่าตัดซ่อมแซม"
+          },
+          {
+            "en": "Open patella fracture with joint contamination, requiring urgent operative debridement and joint washout.",
+            "th": "กระดูกสะบ้าหักแบบมีแผลเปิดเข้าข้อ (Open patella fracture) ต้องผ่าตัดล้างข้อเข่าฉุกเฉิน"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Medial and Lateral Retinacular Tears",
+              "th": "พังผืดเอ็น Retinaculum ด้านในและด้านนอกฉีกขาด"
+            },
+            "trigger": {
+              "en": "Present whenever fracture gap >3mm or SLR is impossible",
+              "th": "พบเสมอเมื่อรอยหักอ้าแยก >3มม. หรือยกขาตรง SLR ไม่ได้"
+            }
+          },
+          {
+            "injury": {
+              "en": "Femoral Condyle Osteochondral Contusion / Fracture",
+              "th": "กระดูกอ่อนผิวข้อ Femoral condyle ช้ำหรือหักกะเทาะ"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Extensor mechanism check (active SLR test) is the primary clinical determinant for surgical vs non-operative management.",
+            "th": "การตรวจกลไกเหยียดเข่า (Active SLR test) เป็นตัวตัดสินหลักทางคลินิกในการเลือกระหว่างการผ่าตัดกับการใส่เฝือกดาม"
+          },
+          {
+            "en": "Tension Band Wiring (TBW) is the classic gold-standard fixation for displaced transverse patellar fractures with intact retinaculum.",
+            "th": "วิธี Tension Band Wiring (TBW) เป็นมาตรฐานหลักคลาสสิกในการผ่าตัดยึดกระดูกสะบ้าหักแนวขวางที่เคลื่อนตัว"
+          },
+          {
+            "en": "Biromechanically, TBW converts tensile forces on the anterior patellar surface during knee flexion into dynamic compressive forces across the posterior articular surface.",
+            "th": "ทางชีวกลศาสตร์ TBW จะเปลี่ยนแรงดึงด้านหน้าสะบ้าขณะงอเข่า ให้กลายเป็นแรงอัดแน่น (Dynamic compression) ตรงผิวข้อด้านหลัง"
+          },
+          {
+            "en": "Distinguish bipartite patella (smooth, rounded margins at superolateral pole, usually bilateral) from acute fracture.",
+            "th": "ต้องแยก Bipartite patella (ขอบเรียบมนตรงมุมบนด้านนอก มักเป็นสองข้าง) ออกจากรอยหักสะบ้าเฉียบพลัน"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Anatomical & Functional",
@@ -31,14 +126,50 @@ export const patellaBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Patella Fracture Concept & Surgical Decision Matrix",
-              "th": "แนวคิดและหลักการรักษา Patella Fracture (SLR & TBW Principle)"
+              "en": "Patella Fracture Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Patella Fracture Classification"
             },
             "showTable": true,
-            "description": {
-              "en": "Management of Patellar Fractures is guided by 2 fundamental clinical principles:\n\n1. Extensor Mechanism Integrity (Active Straight Leg Raise - SLR Test):\n   • Intact SLR (Patient can elevate extended leg): Medial & lateral retinacula are intact. Allows non-operative treatment with cylinder cast/brace for Nondisplaced, Vertical, or Undisplaced Comminuted fractures.\n   • Disrupted SLR (Patient CANNOT perform SLR or has extension lag >10°): Indicates torn retinacula and fracture gap >2-3mm. Requires SURGICAL FIXATION.\n\n2. Biomechanical Principle of Tension Band Wiring (TBW):\n   • TBW converts anterior tensile pull (from Quadriceps muscle contraction during knee flexion) into dynamic compressive forces across the posterior articular surface, promoting rigid bone healing.",
-              "th": "แนวคิดหลักในการวินิจฉัยและตัดสินใจรักษา Patellar Fracture ขึ้นอยู่กับ 2 หัวใจสำคัญ:\n\n1. กลไกการเหยียดเข่าสมบูรณ์หรือไม่? (ประเมินด้วยการตรวจ Active Straight Leg Raise - SLR Test):\n   • ยกขาตรงได้ (Intact SLR): แสดงว่าเอ็น Retinaculum สองข้างยังไม่ขาด สามารถรักษาแบบไม่ผ่าตัดด้วยเฝือก Cylinder Cast (สำหรับประเภท Nondisplaced, Vertical, หรือ Undisplaced Comminuted)\n   • ยกขาตรงไม่ได้ (Disrupted SLR / ภาวะ Extension Lag > 10°): แสดงว่าเอ็น Retinaculum ฉีกขาด และมีระยะอ้าช่องหัก > 2-3 มม. จำเป็นต้องผ่าตัดจัดดามกระดูก (ORIF)\n\n2. หลักการชีวกลศาสตร์ Tension Band Wiring (TBW):\n   • วิธี TBW จะเปลี่ยนแรงดึงด้านหน้า (Anterior tensile force จากการหดตัวของ Quadriceps ขณะงอเข่า) ให้กลายเป็นแรงอัดแน่น (Dynamic Articular Compression) บริเวณผิวข้อด้านหลัง ช่วยให้กระดูกติดแน่นยึดตรึงได้ดีเยี่ยม"
-            }
+            "corePrinciple": {
+              "en": "Patella fractures are classified by anatomical pattern (transverse, vertical, comminuted, pole) and extensor mechanism functional integrity (active Straight Leg Raise test), dictating non-operative cylinder casting versus surgical restoration.",
+              "th": "การจำแนกกระดูกสะบ้าหักอิงตามรูปแบบทางกายวิภาค (แนวขวาง, แนวดิ่ง, แตกละเอียด, ชิ้นขั้วสะบ้า) ร่วมกับความสมบูรณ์ของกลไกการเหยียดข้อเข่า (การทดสอบยกขาตรง Active SLR) ซึ่งเป็นตัวชี้ขาดการรักษาระหว่างเฝือก Cylinder cast กับการผ่าตัด"
+            },
+            "rules": [
+              {
+                "en": "Non-Operative Rule: Intact extensor mechanism (Patient CAN perform active SLR), fracture gap <2–3 mm, AND articular step-off <1–2 mm",
+                "th": "เกณฑ์รักษาแบบไม่ผ่าตัด: กลไกเหยียดเข่าสมบูรณ์ (ยกขาตรง SLR ได้ดี), ช่องอ้ารอยหัก <2–3 มม. และผิวข้อเหลื่อม <1–2 มม."
+              },
+              {
+                "en": "Operative Rule: Disrupted extensor mechanism (Inability to perform active SLR / Extension lag >10°), fracture gap >2–3 mm, OR articular step-off >1–2 mm",
+                "th": "เกณฑ์ผ่าตัด: กลไกเหยียดเข่าฉีกขาด (ยกขาตรง SLR ไม่ได้ / Extension lag >10°), ช่องอ้ารอยหัก >2–3 มม. หรือผิวข้อเหลื่อม >1–2 มม."
+              },
+              {
+                "en": "Transverse Pattern Rule: Convert anterior tension force into dynamic articular compression using Tension Band Wiring (TBW)",
+                "th": "เกณฑ์รอยหักแนวขวาง: เปลี่ยนแรงดึงด้านหน้าเป็นแรงอัดผิวข้อแน่นโดยใช้เทคนิค Tension Band Wiring (TBW)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Non-Operative Protocol: Immobilization in Cylinder Cast or hinged knee brace locked in full extension for 4–6 weeks with immediate weight-bearing as tolerated",
+                "th": "แนวทางรักษาแบบไม่ผ่าตัด: ใส่เฝือกดามขาตรง Cylinder Cast หรือ Hinged brace ล็อคเข่าตรง 4–6 สัปดาห์ ลงน้ำหนักได้ทันทีตามทนไหว"
+              },
+              {
+                "en": "Transverse Fracture Fixation: Tension Band Wiring (TBW) using two 2.0 mm K-wires or 4.0 mm cannulated screws with figure-of-8 18-gauge wire",
+                "th": "ผ่าตัดรอยหักแนวขวาง: ทำ Tension Band Wiring (TBW) ด้วย K-wires 2.0 มม. สองตัว หรือ Cannulated Screws 4.0 มม. ร่วมกับลวดคล้องเลข 8"
+              },
+              {
+                "en": "Comminuted Fracture Fixation: Low-profile fixed-angle mesh plating or partial patellectomy with direct Quadriceps/Patellar tendon repair",
+                "th": "ผ่าตัดรอยหักแตกละเอียด: ดามแผ่นเหล็ก Low-profile mesh plate หรือทำ Partial patellectomy ร่วมกับเย็บซ่อมเอ็นสะบ้า"
+              },
+              {
+                "en": "Inferior Pole Fracture Fixation: Suture anchor repair or transosseous wiring with patellotibial basket plate or tape augmentation",
+                "th": "ผ่าตัดรอยหักขั้วล่าง: ผ่าตัดยึดด้วย Suture anchors หรือ Transosseous wiring ร่วมกับเย็บซ่อมเอ็น"
+              },
+              {
+                "en": "Clinical Pitfall Warning: Never rely on X-rays alone; a non-displaced looking fracture with SLR failure indicates complete retinacular rupture requiring surgery. Also differentiate acute fracture from bipartite patella (smooth rounded superolateral fragment)",
+                "th": "คำเตือนจุดตาย: ห้ามใช้ X-ray ตัดสินเพียงอย่างเดียว; หากรอยหักดูไม่เคลื่อนแต่ยกขาตรง SLRไม่ได้ แสดงว่าเอ็น Retinaculum ขาดสมบูรณ์และต้องผ่าตัด และต้องแยกแยะ Bipartite patella (ขอบมนเรียบตรงมุมบนด้านนอก) ออกจากรอยหักเฉียบพลัน"
+              }
+            ]
           },
           "investigations": [
             {

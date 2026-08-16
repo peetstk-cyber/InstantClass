@@ -16,9 +16,9 @@ export interface FractureClassificationType {
   description: Translation;
   moi?: Translation;
   treatment: TreatmentType;
-  // Illustration and X-ray representation codes (rendered using custom SVGs or canvases)
-  illustrationId: string; // Key to map to a dynamic drawing in UI
-  xrayDescription: Translation; // Description of X-ray findings
+  illustrationId: string;
+  xrayDescription: Translation;
+  xrayUrl?: string;
 }
 
 export interface InvestigationView {
@@ -28,31 +28,75 @@ export interface InvestigationView {
   imageUrl?: string;
 }
 
+export interface ClassificationConcept {
+  title?: Translation;
+  /** TL;DR / The Core Principle (หัวใจหลักของ Classification) */
+  corePrinciple?: Translation;
+  /** The "Rules" (เกณฑ์การตัดสิน เช่น Displacement > 1cm, Angulation > 45°) */
+  rules?: Translation[];
+  /** Clinical Significance (นำไปใช้ทำอะไร / นำส่งผลต่อการรักษาอย่างไร) */
+  clinicalSignificance?: Translation[];
+  imageUrl?: string;
+  description?: Translation;
+  showTable?: boolean;
+}
+
 export interface ClassificationSystem {
-  system: string; // e.g., "Garden", "Pauwels", "Schatzker", "Fernandez", "Salter-Harris", "Weber"
+  system: string;
   fullName: Translation;
   description: Translation;
-  concept?: {
-    title?: Translation;
-    imageUrl?: string;
-    description?: Translation;
-    showTable?: boolean;
-  };
+  concept?: ClassificationConcept;
   investigations?: InvestigationView[];
   types: FractureClassificationType[];
 }
 
+// ─── Region Concept (per-region clinical summary) ───────────────────────────
+
+export interface PhysicalExamSign {
+  /** Name of the test/sign e.g. "Anterior Drawer Test" */
+  sign: string;
+  /** What a positive result means */
+  positive: Translation;
+}
+
+export interface AlignmentRow {
+  /** Parameter name e.g. "Varus/Valgus" */
+  parameter: Translation;
+  /** Acceptable threshold e.g. "< 5°" */
+  threshold: string;
+  /** Clinical rationale (optional) */
+  note?: Translation;
+}
+
+export interface AssociatedInjury {
+  injury: Translation;
+  /** Trigger condition e.g. "Always check if Weber C" */
+  trigger?: Translation;
+}
+
+export interface RegionConcept {
+  imageUrl?: string;
+  physicalExam?: PhysicalExamSign[];
+  acceptableAlignment?: AlignmentRow[];
+  redFlags?: Translation[];
+  associatedInjuries?: AssociatedInjury[];
+  clinicalPearls?: Translation[];
+}
+
+// ────────────────────────────────────────────────────────────────────────────
+
 export interface BoneRegion {
   id: string; // e.g. "proximal", "shaft", "distal"
   name: Translation;
+  /** Clinical concept summary for this region (Physical Exam, Alignment, Pearls…) */
+  regionConcept?: RegionConcept;
   classifications: ClassificationSystem[];
 }
 
 export interface BoneData {
-  id: string; // e.g. "femur", "tibia", "humerus", "forearm", "spine", "pelvis", "clavicle", "pediatric-physis"
+  id: string;
   name: Translation;
   description: Translation;
   regions: BoneRegion[];
-  pediatric: boolean; // True if it's a pediatric classification
+  pediatric: boolean;
 }
-

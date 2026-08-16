@@ -18,6 +18,85 @@ export const tibiaBone: BoneData = {
         "en": "Proximal Tibia",
         "th": "ส่วนหัวกระดูกหน้าแข้ง (Proximal)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Lachman Test",
+            "positive": {
+              "en": "Soft endpoint or excessive anterior tibial translation, indicating ACL disruption",
+              "th": "ไม่มีจุดหยุดที่แน่นหนาหรือมีการเคลื่อนของกระดูกหน้าแข้งไปด้านหน้ามากผิดปกติ แสดงถึงการฉีกขาดของเอ็นไขว้หน้า (ACL)"
+            }
+          },
+          {
+            "sign": "Dial Test (at 30° and 90° flexion)",
+            "positive": {
+              "en": "Increased external rotation >10° at 30° flexion (posterolateral corner injury) or at both 30° & 90° (PLC + PCL injury)",
+              "th": "การหมุนข้อเท้าออกด้านนอกเพิ่มขึ้น >10° ที่มุมงอ 30° (บาดเจ็บต่อ PLC) หรือทั้งที่ 30° และ 90° (บาดเจ็บต่อ PLC ร่วมกับ PCL)"
+            }
+          },
+          {
+            "sign": "Varus / Valgus Stress Test (at 0° and 30° flexion)",
+            "positive": {
+              "en": "Joint line gapping or laxity; instability at 0° full extension indicates combined major collateral and cruciate ligament injury",
+              "th": "ช่องข้ออ้ากว้างหรือหลวม; ความหลวมที่มุมเหยียดตรง 0° แสดงถึงการบาดเจ็บรุนแรงร่วมกันของเอ็นข้างข้อและเอ็นไขว้เข่า"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Popliteal Artery Injury: High incidence in high-energy Schatzker IV-VI fracture-dislocations; perform immediate ABI and CTA if distal pulses are diminished or asymmetric",
+            "th": "การบาดเจ็บของเส้นเลือดใหญ่ Popliteal Artery: พบบ่อยใน Schatzker IV-VI ที่มีข้อหลุดร่วมด้วย ต้องตรวจ ABI และ CTA ด่วนหากคลำชีพจรได้เบาหรือสองข้างไม่เท่ากัน"
+          },
+          {
+            "en": "Peroneal Nerve Injury: Assess active ankle dorsiflexion, toe extension (EHL), and sensation over the 1st web space",
+            "th": "การบาดเจ็บของเส้นประสาท Peroneal Nerve: ต้องประเมินการกระดกข้อเท้า การเหยียดนิ้วหัวแม่เท้า (EHL) และความรู้สึกบริเวณง่ามนิ้วเท้าที่ 1"
+          },
+          {
+            "en": "Acute Compartment Syndrome: Tense, firm leg compartments with severe passive stretch pain requiring emergent 4-compartment fasciotomy",
+            "th": "ภาวะความดันช่องกล้ามเนื้อสูงฉุกเฉิน (Acute Compartment Syndrome): ช่องกล้ามเนื้อตึงแน่นและปวดรุนแรงขณะยืดกล้ามเนื้อ ต้องผ่าตัดเปิดช่องกล้ามเนื้อด่วน"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Meniscal Tears (Lateral > Medial)",
+              "th": "หมอนรองกระดูกข้อเข่าฉีกขาด (Lateral > Medial)"
+            },
+            "trigger": {
+              "en": "Present in ~50% of tibial plateau fractures; inspect during open or arthroscopic-assisted reduction",
+              "th": "พบสูงถึง ~50% ของผู้ป่วยหัวกระดูกหน้าแข้งหัก ควรตรวจประเมินขณะผ่าตัด"
+            }
+          },
+          {
+            "injury": {
+              "en": "Cruciate Ligament Disruption (ACL / PCL)",
+              "th": "เอ็นไขว้หน้าหรือเอ็นไขว้หลังฉีกขาด (ACL / PCL)"
+            },
+            "trigger": {
+              "en": "Common in high-energy bicondylar (Schatzker V/VI) and medial plateau fracture-dislocations (Schatzker IV)",
+              "th": "พบบ่อยในรอยหักพลังงานสูงสองฝั่ง (Schatzker V/VI) และรอยหักฝั่งด้านใน (Schatzker IV)"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Schatzker IV represents a high-energy medial plateau dislocation variant with the highest risk of popliteal neurovascular injury.",
+            "th": "Schatzker IV เป็นรอยหักฝั่งในชนิดพลังงานสูงที่มีลักษณะของข้อหลุด ร่วมกับมีความเสี่ยงสูงที่สุดต่อการบาดเจ็บของเส้นเลือดและเส้นประสาท Popliteal"
+          },
+          {
+            "en": "Articular depression >2-3mm or condylar widening >5mm typically warrants open reduction and internal fixation (ORIF).",
+            "th": "การยุบตัวของผิวข้อ >2-3 มม. หรือหัวกระดูกกางออก >5 มม. เป็นข้อบ่งชี้ในการผ่าตัดจัดกระดูกและยึดตรึงภายใน (ORIF)"
+          },
+          {
+            "en": "CT scan with 3D reconstruction is essential to evaluate posterior column depression and plan optimal plate placement.",
+            "th": "การทำ CT scan พร้อมภาพ 3 มิติ มีความจำเป็นอย่างยิ่งเพื่อประเมินผิวยุบด้านหลัง (Posterior column) และวางแผนทางเข้าผ่าตัด"
+          },
+          {
+            "en": "In high-energy Schatzker V and VI fractures with soft tissue compromise, temporary joint-spanning external fixation is the safest initial management.",
+            "th": "ในรอยหักพลังงานสูง Schatzker V และ VI ที่มีเนื้อเยื่อบวมเต่ง การใส่โครงยึดภายนอกข้ามข้อ (Spanning Ex-Fix) ชั่วคราวเป็นแนวทางที่ปลอดภัยที่สุดในระยะแรก"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Schatzker",
@@ -28,6 +107,48 @@ export const tibiaBone: BoneData = {
           "description": {
             "en": "Classification system for tibial plateau fractures based on fracture pattern, degree of depression, and energy of injury (Types I-III: Low energy/lateral plateau; Types IV-VI: High energy/medial plateau or bicondylar).",
             "th": "ระบบจำแนกกระดูกหัวหน้าแข้งหัก (Tibial Plateau) ตามลักษณะรอยหัก การยุบตัวของผิวข้อ และพลังงานของการบาดเจ็บ (Type I-III: พลังงานต่ำ/ฝั่งนอก; Type IV-VI: พลังงานสูง/ฝั่งใน หรือสองฝั่ง)"
+          },
+          "concept": {
+            "title": {
+              "en": "Schatzker Tibial Plateau Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Schatzker Classification"
+            },
+            "corePrinciple": {
+              "en": "Schatzker classifies tibial plateau fractures based on fracture lines, CT depression pattern, and kinetic energy to distinguish low-energy lateral split/depression variants from high-energy bicondylar fractures with severe soft tissue compromise.",
+              "th": "Schatzker จำแนกกระดูกหัวหน้าแข้งหักตามทิศทางรอยหัก รูปแบบผิวยุบจาก CT scan และพลังงานการบาดเจ็บ เพื่อแยกกลุ่มพลังงานต่ำฝั่งนอกออกจากกลุ่มพลังงานสูงสองฝั่งที่มีอันตรายต่อเนื้อเยื่อรอบข้อ"
+            },
+            "rules": [
+              {
+                "en": "Articular depression threshold: >2–3 mm step-off indicates operative restoration",
+                "th": "เกณฑ์ผ่าตัดจากผิวยุบ: ผิวข้อเหลื่อมหรือยุบตัว >2–3 มม."
+              },
+              {
+                "en": "Condylar widening threshold: >5 mm joint widening requires surgical realignment",
+                "th": "เกณฑ์ผ่าตัดจากหัวกระดูกกาง: ข้อกางออก >5 มม. ต้องผ่าตัดจัดแนวแกน"
+              },
+              {
+                "en": "Medial split (Schatzker Type IV): High-energy dislocation-fracture with high risk of popliteal artery disruption or peroneal nerve palsy",
+                "th": "รอยหักฝั่งด้านใน (Schatzker Type IV): เกิดจากพลังงานสูงร่วมกับข้อหลุด เสี่ยงสูงต่อการบาดเจ็บของหลอดเลือด Popliteal artery และเส้นประสาท Peroneal nerve"
+              },
+              {
+                "en": "AO/OTA 41 Correlation: 41-A (extra-articular), 41-B (partial articular / Types I–IV), 41-C (complete articular / Types V–VI)",
+                "th": "การเชื่อมโยง AO/OTA 41: 41-A (นอกข้อ), 41-B (เข้าข้อย่อส่วน / Types I–IV), 41-C (เข้าข้อสมบูรณ์ / Types V–VI)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Type I–III (Low energy lateral): ORIF with cancellous screws or lateral locking plate, subcortical elevation, and bone grafting/void filler for depressed surface",
+                "th": "Type I–III (พลังงานต่ำฝั่งนอก): ผ่าตัด ORIF ยึด Screws/แผ่นเหล็ก ยกรอยยุบใต้ผิวข้อ ร่วมกับใส่กระดูกเทียมเติมช่องว่าง"
+              },
+              {
+                "en": "Type IV (Medial split/dislocation): Emergency vascular screening (ABI & CTA if pulse asymmetric) and open reduction with medial anti-glide plate",
+                "th": "Type IV (หักฝั่งใน/ข้อหลุด): ประเมินหลอดเลือดด่วน (ABI & CTA หากชีพจรผิดปกติ) และผ่าตัด ORIF ดามแผ่นเหล็ก Medial anti-glide plate"
+              },
+              {
+                "en": "Type V–VI (High energy bicondylar/metaphyseal dissociation): Staged protocol mandatory — temporary knee-spanning external fixator until soft tissue subsides (positive Wrinkle Sign, ~7–14 days) before definitive dual locking plates",
+                "th": "Type V–VI (พลังงานสูงสองฝั่ง/ตัดขาดลำตัวกระดูก): ต้องใช้ Staged protocol — ใส่โครงยึดภายนอกข้ามข้อ (Spanning Ex-Fix) ชั่วคราว รอผิวยุบบวม (Wrinkle Sign positive 7–14 วัน) ก่อนผ่าตัดดามเหล็กคู่ (Dual Plating)"
+              }
+            ]
           },
           "investigations": [
             {
@@ -49,6 +170,20 @@ export const tibiaBone: BoneData = {
               "details": {
                 "en": "Non-contrast CT scan of the knee with 3D reconstruction. Gold standard to measure exact articular depression depth (>2-3mm), split fragment orientation, and plan surgical plate placement.",
                 "th": "การตรวจเอ็กซเรย์คอมพิวเตอร์ (CT scan) พร้อมสร้างภาพ 3 มิติ เป็นมาตรฐานหลักในการวัดความลึกของการยุบตัว (>2-3 มม.) และวางแผนตำแหน่งผ่าตัดใส่แผ่นเหล็ก"
+              }
+            },
+            {
+              "name": "Tibial Plateau View (10-15° Caudal Tilt)",
+              "details": {
+                "en": "AP view with 10-15° caudal tube tilt projects the femoral condyles out of the plateau articular surface. Best view to accurately quantify articular depression depth and lateral condylar split patterns on plain X-rays before CT.",
+                "th": "ภาพ AP เอียงหลอดรังสี 10-15° ลงด้านล่าง ช่วยแยกกระดูกปลายต้นขาออกจากพื้นผิวข้อเข่า ใช้วัดระดับการยุบตัวของผิวข้อและรูปแบบ Split ด้านข้างก่อนส่ง CT"
+              }
+            },
+            {
+              "name": "Oblique Views (Internal & External Rotation)",
+              "details": {
+                "en": "Internal and external rotation oblique X-rays help profile the medial and lateral plateau compartments separately. Useful for detecting occult split or depression fractures not seen on standard AP view.",
+                "th": "ภาพ Oblique หมุนเข้า-ออกช่วยประเมินผิวข้อด้านในและด้านนอกแยกกัน มีประโยชน์ในการตรวจหารอยหัก Split หรือยุบตัวที่ไม่ชัดเจนใน AP ธรรมดา"
               }
             }
           ],
@@ -249,6 +384,109 @@ export const tibiaBone: BoneData = {
         "en": "Tibial Shaft",
         "th": "ส่วนแกนกระดูกหน้าแข้ง (Shaft)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Compartment Palpation",
+            "positive": {
+              "en": "Tense, wooden-hard fullness across any of the 4 leg compartments",
+              "th": "คลำพบช่องกล้ามเนื้อตึงแน่น แข็งเหมือนไม้ ในช่องใดช่องหนึ่งของขาทั้ง 4 ช่อง"
+            }
+          },
+          {
+            "sign": "Passive Stretch Pain Test",
+            "positive": {
+              "en": "Severe, excruciating pain elicited by passive extension/flexion of toes or ankle (most sensitive clinical sign of early compartment syndrome)",
+              "th": "อาการปวดรุนแรงผิดปกติเมื่อยืดกล้ามเนื้อและนิ้วเท้าแบบ passive (เป็นสัญญาณทางคลินิกที่ไวที่สุดของ Compartment Syndrome ระยะแรก)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Coronal Alignment (Varus / Valgus)",
+              "th": "มุมเอียงซ้าย-ขวา (Varus / Valgus)"
+            },
+            "threshold": "< 5°",
+            "note": {
+              "en": "Angulation >5° causes asymmetric joint loading at knee and ankle",
+              "th": "มุมเอียงเกิน 5° ส่งผลให้เกิดการรับน้ำหนักไม่เท่ากันที่ข้อเข่าและข้อเท้า"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Sagittal Alignment (AP Angulation)",
+              "th": "มุมเอียงหน้า-หลัง (AP Angulation)"
+            },
+            "threshold": "< 10°",
+            "note": {
+              "en": "Anteroposterior angulation >10° alters lower extremity biomechanics",
+              "th": "มุมเอียงหน้าหลังเกิน 10 องศาทำให้ชีวกลศาสตร์ขาผิดปกติ"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Shortening (Leg Length Discrepancy)",
+              "th": "ความสั้นของกระดูก (Shortening)"
+            },
+            "threshold": "< 10 mm",
+            "note": {
+              "en": "Shortening >1 cm leads to symptomatic pelvic tilt and lumbar strain",
+              "th": "กระดูกสั้นเกิน 1 ซม. ทำให้เชิงอ่างเอียงและปวดหลัง"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Rotational Deformity",
+              "th": "การบิดหมุนผิดรูป (Rotation)"
+            },
+            "threshold": "< 10°",
+            "note": {
+              "en": "Internal rotation is clinically tolerated poorly compared to external rotation",
+              "th": "การบิดหมุนเข้าด้านในทนทานได้น้อยกว่าการบิดหมุนออกด้านนอกทางคลินิก"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Cortical Surface Contact",
+              "th": "การแตะกันของขอบกระดูก (Cortical contact)"
+            },
+            "threshold": "> 50%",
+            "note": {
+              "en": "At least 50% cortical overlap is required for non-operative Sarmiento cast bracing",
+              "th": "ต้องมีขอบกระดูกแตะกันอย่างน้อย 50% สำหรับการใส่เฝือก Sarmiento Cast"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Acute Compartment Syndrome: Tibial shaft is the #1 site in the human body; closely monitor the 5 Ps (Pain out of proportion, Passive stretch pain, Paresthesia, Pallor, Pulselessness)",
+            "th": "ภาวะความดันช่องกล้ามเนื้อสูง (Acute Compartment Syndrome): แกนหน้าแข้งเป็นตำแหน่งเกิดอันดับ 1 ในร่างกาย ต้องติดตามสัญญาณ 5 Ps อย่างใกล้ชิด"
+          },
+          {
+            "en": "Open Fracture: High incidence due to subcutaneous anteromedial border of tibia; requires urgent IV antibiotics and operative debridement",
+            "th": "กระดูกหักแผลเปิด: พบบ่อยเนื่องจากขอบหน้าแข้งอยู่ใต้ผิวหนังโดยตรง ต้องให้ยาปฏิชีวนะทางหลอดเลือดดำและล้างแผลผ่าตัดด่วน"
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Antegrade reamed intramedullary nailing (IMN) is the surgical gold standard for displaced tibial shaft fractures.",
+            "th": "การตอกตะปูในโพรงกระดูกแบบ Reamed IMN เป็นมาตรฐานหลักในการรักษาผ่าตัดกระดูกแกนหน้าแข้งหักที่เคลื่อนตัว"
+          },
+          {
+            "en": "Tibial shaft is the most common site for acute compartment syndrome; presence of distal pulses does NOT rule out compartment syndrome.",
+            "th": "แกนกระดูกหน้าแข้งเป็นตำแหน่งที่พบ Compartment Syndrome บ่อยที่สุดในร่างกาย การพบชีพจรปลายเท้าปกติไม่ได้ vylู ออกภาวะนี้"
+          },
+          {
+            "en": "Sarmiento functional cast bracing is appropriate for closed, low-energy fractures that meet all alignment criteria once initial swelling subsides.",
+            "th": "การใส่เฝือกดาม Sarmiento เหมาะสำหรับกระดูกหักปิดพลังงานต่ำที่มุมเอียงอยู่ในเกณฑ์ที่ยอมรับได้ทั้งหมดเมื่อยุบบวมแล้ว"
+          },
+          {
+            "en": "A delta pressure (Diastolic BP minus Compartment Pressure) <30 mmHg is an absolute indication for emergency 4-compartment fasciotomy.",
+            "th": "ค่า Delta pressure (ความดัน Diastolic ลบ ความดันช่องกล้ามเนื้อ) ที่น้อยกว่า 30 mmHg เป็นข้อบ่งชี้เด็ดขาดในการผ่าตัดเปิดช่องกล้ามเนื้อ 4 ช่องด่วน"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "AO/OTA & Alignment Concept",
@@ -263,13 +501,53 @@ export const tibiaBone: BoneData = {
           "concept": {
             "title": {
               "en": "Tibial Shaft Alignment & Management Concept",
-              "th": "ตารางสรุปเกณฑ์มุมเอียงและแนวทางรักษา Tibial Shaft Fracture"
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Tibial Shaft Fractures"
             },
             "showTable": true,
-            "description": {
-              "en": "Key clinical considerations for Tibial Shaft Fractures:\n\n1. Acceptable Alignment Criteria (Sarmiento Rules):\n   • Coronal (Varus/Valgus): <5° varus / valgus\n   • Sagittal (Anteroposterior): <10° anterior / posterior angulation\n   • Shortening: <10 mm (<1 cm length discrepancy)\n   • Rotation: <10° internal/external rotation\n   • Cortical Contact: >50% cortical surface contact\n\n2. Compartment Syndrome Vigilance:\n   • Tibial shaft is the #1 site in the human body for Acute Compartment Syndrome.\n   • Perform 5 Ps assessment (Pain out of proportion, Passive stretch pain, Paresthesia, Pallor, Pulselessness). Emergency Fasciotomy if Delta Pressure <30 mmHg.\n\n3. Treatment Gold Standard:\n   • Non-operative: Sarmiento Functional Cast/Bracing for closed, low-energy, well-aligned fractures.\n   • Surgical Gold Standard: Antegrade Reamed Intramedullary Nailing (IMN) for displaced, unstable, or open fractures.",
-              "th": "หัวใจสำคัญทางคลินิกสำหรับ Tibial Shaft Fracture:\n\n1. เกณฑ์มุมเอียงที่ยอมรับได้ (Sarmiento Acceptable Alignment Rules):\n   • มุมเอียงซ้าย-ขวา (Varus/Valgus): < 5 องศา\n   • มุมเอียงหน้า-หลัง (Anteroposterior): < 10 องศา\n   • ความสั้นของขา (Shortening): < 10 มิลลิเมตร (< 1 ซม.)\n   • การบิดหมุน (Rotation): < 10 องศา\n   • การแตะกันของขอบกระดูก (Cortical contact): > 50%\n\n2. การเฝ้าระวัง Compartment Syndrome:\n   • Tibial shaft เป็นตำแหน่งที่เกิดภาวะความดันช่องกล้ามเนื้อสูง (Acute Compartment Syndrome) พบบ่อยที่สุดในร่างกาย\n   • ต้องตรวจประเมิน 5 Ps (ปวดรุนแรงเกินเหตุ, ปวดมากขณะยืดกล้ามเนื้อแบบ Passive, ชา, ซีด, คลำชีพจรไม่ได้) หาก Delta pressure < 30 mmHg ต้องผ่าตัดเปิดช่องกล้ามเนื้อ Fasciotomy ด่วน\n\n3. แนวทางการรักษาหลัก:\n   • รักษาแบบไม่ผ่าตัด: เฝือกดาม Sarmiento Cast สำหรับรอยหักปิด พลังงานต่ำ ที่มุมเอียงอยู่ในเกณฑ์\n   • ผ่าตัดมาตรฐานหลัก (Gold Standard): ผ่าตัดตอกตะปูยึดในโพรงกระดูก (Reamed Intramedullary Nailing - IMN)"
-            }
+            "corePrinciple": {
+              "en": "Tibial shaft fractures (AO/OTA 42) are classified by energy pattern and soft tissue envelope status, evaluating mechanical alignment thresholds for closed functional casting (Sarmiento) versus reamed intramedullary nailing (IMN).",
+              "th": "การจำแนกกระดูกแกนหน้าแข้งหัก (AO/OTA 42) อิงตามพลังงานการบาดเจ็บและสภาพเนื้อเยื่อรอบกระดูก เพื่อประเมินเกณฑ์มุมเอียงสำหรับใส่เฝือก Sarmiento กับการผ่าตัดตอกแกนเหล็กในโพรงกระดูก (IMN)"
+            },
+            "rules": [
+              {
+                "en": "Sarmiento Alignment Criteria (Coronal): Varus / Valgus angulation < 5°",
+                "th": "เกณฑ์มุมเอียง Sarmiento (แนวระนาบ Coronal): มุม Varus / Valgus ต้อง < 5°"
+              },
+              {
+                "en": "Sarmiento Alignment Criteria (Sagittal): Anterior / Posterior (AP) angulation < 10°",
+                "th": "เกณฑ์มุมเอียง Sarmiento (แนวระนาบ Sagittal): มุมหน้า-หลัง (AP) ต้อง < 10°"
+              },
+              {
+                "en": "Shortening & Rotation Criteria: Limb shortening < 10 mm (< 1 cm), internal/external rotation < 10°",
+                "th": "เกณฑ์ความสั้นและการบิดหมุน: ขาสั้น < 10 มม. (< 1 ซม.) และการบิดหมุน < 10°"
+              },
+              {
+                "en": "Cortical Contact Criteria: Minimum > 50% cortical contact between fracture ends",
+                "th": "เกณฑ์หน้าสัมผัสกระดูก: ขอบกระดูกหักต้องสัมผัสกันอย่างน้อย > 50%"
+              },
+              {
+                "en": "AO/OTA 42 Subtypes: 42-A (Simple spiral/oblique/transverse), 42-B (Wedge/butterfly), 42-C (Complex/segmental/comminuted)",
+                "th": "การแบ่ง AO/OTA 42: 42-A (หักท่อนเดียว/เฉียง/ขวาง), 42-B (หักมีปีกผีเสื้อ), 42-C (หักหลายท่อน/ซับซ้อน/ละเอียด)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Conservative management: Sarmiento functional cast bracing indicated ONLY for closed low-energy fractures meeting ALL alignment criteria after initial swelling subsides",
+                "th": "การรักษาแบบไม่ผ่าตัด: ใส่เฝือก Sarmiento ได้เฉพาะเคสกระดูกหักปิดพลังงานต่ำที่ผ่านเกณฑ์มุมเอียงครบทุกข้อเมื่อยุบบวมแล้ว"
+              },
+              {
+                "en": "Operative gold standard: Reamed Intramedullary Nailing (IMN) with static interlocking screws for fractures exceeding alignment thresholds, open injuries, or segmental fractures",
+                "th": "มาตรฐานหลักการผ่าตัด: ตอกแกนเหล็กในโพรงกระดูก Reamed Intramedullary Nailing (IMN) ยึดหมุด Static สำหรับเคสที่มุมเอียงเกินเกณฑ์ กระดูกหักเปิด หรือหักหลายท่อน"
+              },
+              {
+                "en": "Compartment Syndrome Warning: Tibia is the #1 body location for acute compartment syndrome; Delta pressure (Diastolic BP minus compartment pressure) < 30 mmHg requires emergency 4-compartment fasciotomy",
+                "th": "การเฝ้าระวัง Compartment Syndrome: แกนหน้าแข้งเกิดภาวะนี้บ่อยที่สุด ค่า Delta pressure < 30 mmHg ต้องทำผ่าตัดเปิด 4 ช่องกล้ามเนื้อ (Fasciotomy) ฉุกเฉิน"
+              },
+              {
+                "en": "Concomitant Injury: Distal 1/3 spiral shaft fractures have up to 20% associated posterior malleolus or ankle fractures; dedicated ankle films are mandatory",
+                "th": "ภาวะพบร่วม: รอยหักเกลียวส่วนปลาย 1/3 มักพบกระดูกตาตุ่มหลังหักร่วมด้วยถึง 20% ต้องส่งภาพเอกซเรย์ข้อเท้าเสมอ"
+              }
+            ]
           },
           "investigations": [
             {
@@ -284,6 +562,13 @@ export const tibiaBone: BoneData = {
               "details": {
                 "en": "Intracompartmental pressure measurement for all 4 leg compartments (Anterior, Lateral, Superficial Posterior, Deep Posterior). Delta Pressure = Diastolic BP - IMTP (<30 mmHg = Fasciotomy).",
                 "th": "การวัดความดันช่องกล้ามเนื้อขาทั้ง 4 ช่อง โดยตรวจค่า Delta Pressure (ความดันโลหิตตัวล่าง Diastolic - ความดันช่องกล้ามเนื้อ) หากน้อยกว่า 30 mmHg ต้องผ่าตัด Fasciotomy"
+              }
+            },
+            {
+              "name": "Ankle Series (AP, Lateral & Mortise Views)",
+              "details": {
+                "en": "MANDATORY for all distal 1/3 tibial shaft fractures. Dedicated ankle radiographs (AP, Lateral, and 15-20° internally rotated Mortise view) are required to detect associated posterior malleolus fractures, which occur in up to 15-20% of distal tibial spiral fractures. A missed posterior malleolus fragment >25% of the articular surface is an operative indication.",
+                "th": "บังคับส่งตรวจในกระดูกแกนแข้งส่วนล่าง 1/3 ทุกราย ภาพ AP, Lateral และ Mortise ของข้อเท้าจำเป็นสำหรับตรวจหากระดูก Posterior malleolus หักร่วม ซึ่งพบได้สูงถึง 15-20% ในกระดูกแกนแข้งหักแบบเกลียวส่วนปลาย ชิ้น Posterior malleolus > 25% ของพื้นผิวข้อมีข้อบ่งชี้ผ่าตัด"
               }
             }
           ],
@@ -391,6 +676,91 @@ export const tibiaBone: BoneData = {
         "en": "Ankle / Distal Malleoli",
         "th": "ข้อเท้าและตาตุ่ม (Ankle / Malleoli)"
       },
+      "regionConcept": {
+        "physicalExam": [
+          {
+            "sign": "Ottawa Ankle Rules",
+            "positive": {
+              "en": "Bone tenderness along posterior 6cm or tip of lateral/medial malleolus, or inability to bear weight for 4 steps (warrants X-ray series)",
+              "th": "กดเจ็บบริเวณขอบหลัง 6 ซม. หรือปลายตาตุ่ม (นอกหรือใน) หรือไม่สามารถเดินลงน้ำหนักได้ 4 ก้าว (เป็นข้อบ่งชี้ในการถ่าย X-ray)"
+            }
+          },
+          {
+            "sign": "Syndesmotic Squeeze Test",
+            "positive": {
+              "en": "Pain localized at distal tibiofibular joint when compressing mid-calf (indicates syndesmotic ligament injury)",
+              "th": "ปวดบริเวณข้อต่อหน้าแข้งส่วนปลายเมื่อบีบกระชับบริเวณกลางน่อง (แสดงถึงการบาดเจ็บของเส้นเอ็น Syndesmosis)"
+            }
+          },
+          {
+            "sign": "External Rotation Stress Test",
+            "positive": {
+              "en": "Pain at syndesmosis or widening of medial clear space upon passive external rotation of foot (indicates syndesmotic or deltoid tear)",
+              "th": "ปวดบริเวณ Syndesmosis หรือช่อง Medial clear space กว้างออกเมื่อหมุนเท้าออกด้านนอก (แสดงถึงการฉีกขาดของ Syndesmosis หรือเอ็น Deltoid)"
+            }
+          }
+        ],
+        "acceptableAlignment": [
+          {
+            "parameter": {
+              "en": "Medial Clear Space (Mortise View)",
+              "th": "ระยะห่าง Medial Clear Space (ท่า Mortise)"
+            },
+            "threshold": "≤ 4 mm",
+            "note": {
+              "en": "Medial clear space >4mm indicates deltoid ligament disruption and talar lateral shift",
+              "th": "ระยะ Medial clear space >4 มม. แสดงถึงเอ็น Deltoid ฉีกขาดและกระดูก Talus เคลื่อนออกด้านนอก"
+            }
+          },
+          {
+            "parameter": {
+              "en": "Talar Tilt Angle",
+              "th": "มุมเอียงกระดูกทาเลส (Talar Tilt)"
+            },
+            "threshold": "< 2°",
+            "note": {
+              "en": "Talar tilt >2° compared to opposite side indicates joint incongruity and articular instability",
+              "th": "มุมเอียง Talus tilt >2 องศาเมื่อเทียบกับข้างปกติแสดงถึงหน้าสัมผัสข้อเท้าเอียงไม่สมดุล"
+            }
+          }
+        ],
+        "redFlags": [
+          {
+            "en": "Open Ankle Fracture / Dislocation: Surgical emergency requiring immediate IV antibiotics, joint reduction, and operative debridement",
+            "th": "ข้อเท้าหักแผลเปิดหรือข้อหลุด: ภาวะฉุกเฉินทางผ่าตัด ต้องดึงข้อเข้าที่ ให้ยาปฏิชีวนะ และล้างแผลผ่าตัดทันที"
+          },
+          {
+            "en": "Skin Tenting over Medial Malleolus or Fibula: High risk of rapid focal skin necrosis; urgent closed reduction and splinting mandatory to relieve tension",
+            "th": "ผิวหนังถูกตึงดึงรั้ง (Skin Tenting) บริเวณตาตุ่ม: เสี่ยงต่อผิวหนังเน่าตายอย่างรวดเร็ว ต้องทำการดึงข้อจัดเข้าที่ด่วนเพื่อลดแรงตึง"
+          }
+        ],
+        "associatedInjuries": [
+          {
+            "injury": {
+              "en": "Maisonneuve Fracture Pattern",
+              "th": "รอยหักแบบ Maisonneuve Fracture"
+            },
+            "trigger": {
+              "en": "Always palpate proximal fibula head/neck in Weber C or isolated medial clear space widening to avoid missing proximal fibular fracture",
+              "th": "ต้องคลำตรวจหัวกระดูกน่องส่วนบนเสมอในกรณี Weber C หรือเมื่อพบช่อง Medial clear space กว้าง เพื่อไม่ให้พลาดรอยหักกระดูกน่องส่วนบน"
+            }
+          }
+        ],
+        "clinicalPearls": [
+          {
+            "en": "Weber A fractures are stable infrasyndesmotic injuries manageable conservatively with a walking cast or boot.",
+            "th": "กระดูกหักชนิด Weber A เป็นการบาดเจ็บใต้ระดับ syndesmosis ที่มั่นคง สามารถรักษาแบบไม่ผ่าตัดด้วยเฝือกสั้นหรือ CAM boot"
+          },
+          {
+            "en": "Weber B fracture stability depends entirely on medial integrity; Medial clear space ≤4mm can be treated in cast, whereas >4mm indicates instability requiring ORIF.",
+            "th": "ความมั่นคงของ Weber B ขึ้นอยู่กับโครงสร้างด้านใน หาก Medial clear space ≤4 มม. ใส่เฝือกได้ แต่ถ้า >4 มม. ถือว่าไม่มั่นคงต้องผ่าตัด ORIF"
+          },
+          {
+            "en": "Weber C fractures involve complete syndesmotic disruption and require ORIF with syndesmotic screw or suture-button fixation.",
+            "th": "กระดูกหักชนิด Weber C มีการฉีกขาดของ syndesmosis สมบูรณ์แบบ ต้องผ่าตัด ORIF ร่วมกับยึด syndesmotic screw หรือ suture-button เสมอ"
+          }
+        ]
+      },
       "classifications": [
         {
           "system": "Danis-Weber",
@@ -404,13 +774,49 @@ export const tibiaBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Danis-Weber Ankle Concept (Syndesmotic Integrity & Stability)",
-              "th": "แนวคิดการจำแนก Danis-Weber (ความสมบูรณ์ของเอ็นยึด Syndesmosis)"
+              "en": "Danis-Weber Ankle Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Danis-Weber Ankle Classification"
             },
-            "description": {
-              "en": "The Danis-Weber system classifies ankle fractures by the level of the fibular fracture relative to the syndesmosis:\n• Weber A (Infrasyndesmotic): Fracture below syndesmosis. Syndesmosis INTACT -> Stable -> Conservative treatment.\n• Weber B (Transsyndesmotic): Fracture at joint level. Syndesmosis torn in ~50%. Stability depends on Medial Clear Space (<4mm = Conservative, >4mm = ORIF).\n• Weber C (Suprasyndesmotic): Fracture above syndesmosis. Syndesmosis TOTALLY TORN -> Unstable -> REQUIRES ORIF + Syndesmotic Screw Fixation (Always check full-length X-ray for Maisonneuve!).",
-              "th": "ระบบ Danis-Weber จำแนกข้อเท้าหักตามระดับรอยหักกระดูก Fibula เทียบกับเส้นเอ็นยึด Syndesmosis:\n• Weber A (Infrasyndesmotic): รอยหักต่ำกว่าระดับข้อเท้า -> เส้นเอ็น Syndesmosis สมบูรณ์ดี -> มั่นคง -> รักษาแบบไม่ผ่าตัด\n• Weber B (Transsyndesmotic): รอยหักระดับเดียวกับข้อเท้า -> เอ็น Syndesmosis ฉีกขาด ~50% -> ความมั่นคงขึ้นกับ Medial Clear Space (<4มม. ใส่เฝือก, >4มม. ผ่าตัด ORIF)\n• Weber C (Suprasyndesmotic): รอยหักสูงกว่าข้อเท้า -> เอ็น Syndesmosis ฉีกขาดสมบูรณ์ 100% -> ขาดความมั่นคงอย่างรุนแรง -> จำเป็นต้องผ่าตัด ORIF + ใส่สกรูยึด Syndesmosis (ต้องถ่าย X-ray ขาทั้งเส้นเพื่อตรวจหา Maisonneuve fracture เสมอ!)"
-            }
+            "corePrinciple": {
+              "en": "Danis-Weber classifies ankle injuries based on the fibular fracture level relative to the syndesmosis, directly reflecting syndesmotic complex integrity, talar displacement, and overall mortise stability.",
+              "th": "Danis-Weber จำแนกกระดูกข้อเท้าหักตามระดับความสูงของรอยหัก Fibula เทียบกับเส้นเอ็น Syndesmosis ซึ่งสะท้อนถึงความสมบูรณ์ของเอ็นยึด การเคลื่อนหลุดของกระดูก Talus และความมั่นคงของเบ้าข้อเท้า"
+            },
+            "rules": [
+              {
+                "en": "Weber A (Infrasyndesmotic): Fracture line below syndesmosis -> Syndesmosis intact -> Mortise STABLE",
+                "th": "Weber A (หักต่ำกว่าข้อ): รอยหักต่ำกว่าระดับ Syndesmosis -> เอ็นยึดสมบูรณ์ดี -> ข้อเท้า มั่นคง"
+              },
+              {
+                "en": "Weber B (Transsyndesmotic): Fracture at level of syndesmosis -> ~50% syndesmotic tear -> Medial Clear Space (MCS) ≤4 mm (Stable) vs >4 mm (Unstable)",
+                "th": "Weber B (หักระดับข้อ): รอยหักระดับเดียวกับ Syndesmosis -> เอ็นยึดขาดบางส่วน (~50%) -> ตรวจ Medial Clear Space (MCS) ≤4 มม. (มั่นคง) vs >4 มม. (ไม่มั่นคง)"
+              },
+              {
+                "en": "Weber C (Suprasyndesmotic): Fracture above syndesmosis -> 100% syndesmotic disruption + Deltoid/Medial fracture -> GROSSLY UNSTABLE",
+                "th": "Weber C (หักสูงกว่าข้อ): รอยหักสูงกว่าระดับ Syndesmosis -> เอ็นยึดขาดสมบูรณ์ 100% ร่วมกับเอ็น Deltoid/ตาตุ่มในหัก -> ไม่มั่นคงอย่างรุนแรง"
+              },
+              {
+                "en": "AO/OTA 44 Correlation: 44-A (Infrasyndesmotic / Weber A), 44-B (Transsyndesmotic / Weber B), 44-C (Suprasyndesmotic / Weber C)",
+                "th": "การเชื่อมโยง AO/OTA 44: 44-A (Weber A), 44-B (Weber B), 44-C (Weber C)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Weber A: Non-operative treatment with short leg walking cast or CAM boot for 4–6 weeks with full weight-bearing as tolerated",
+                "th": "Weber A: รักษาแบบไม่ผ่าตัด ใส่เฝือก short leg walking cast หรือ CAM boot 4–6 สัปดาห์ ลงน้ำหนักได้ทันที"
+              },
+              {
+                "en": "Weber B: Non-operative if non-displaced with MCS ≤4 mm on gravity stress view; ORIF (1/3 tubular plate + lag screw) indicated if MCS >4 mm or medial malleolus displaced",
+                "th": "Weber B: ใส่เฝือกหากไม่เคลื่อนและ MCS ≤4 มม. ในภาพ Stress view; แต่ถ้า MCS >4 มม. หรือมีตาตุ่มในหักเคลื่อน ต้องผ่าตัด ORIF (1/3 tubular plate + lag screw)"
+              },
+              {
+                "en": "Weber C: Mandatory ORIF of fibula and medial malleolus plus syndesmotic screw / Tightrope fixation (placed 2–3 cm above joint line)",
+                "th": "Weber C: มีข้อบ่งชี้ผ่าตัด ORIF กระดูก Fibula และตาตุ่มใน ร่วมกับการยึด Syndesmotic screw / Tightrope (2–3 ซม. เหนือระดับข้อ)"
+              },
+              {
+                "en": "High Fibular Warning: Always palpate proximal fibular neck in high Weber C injuries to rule out Maisonneuve fracture variant",
+                "th": "คำเตือนรอยหักสูง: ต้องคลำตรวจหัวกระดูก Fibula ส่วนบนเสมอในเคส Weber C เพื่อไม่ให้หลุดการตรวจ Maisonneuve fracture"
+              }
+            ]
           },
           "investigations": [
             {
@@ -432,6 +838,13 @@ export const tibiaBone: BoneData = {
               "details": {
                 "en": "Lateral view of the ankle. Assesses posterior malleolus fragment size, anterior/posterior talar translation, and fibular shortening/rotation.",
                 "th": "ภาพเอกซเรย์ข้อเท้าท่าด้านข้าง (Lateral) เพื่อประเมินขนาดชิ้นกระดูกตาตุ่มหลัง (Posterior malleolus) การเลื่อนของกระดูก Talus และความสั้น/บิดหมุนของกระดูก Fibula"
+              }
+            },
+            {
+              "name": "External Rotation (Gravity) Stress View",
+              "details": {
+                "en": "Critical view for detecting occult deltoid ligament tears in apparent isolated fibula fractures. Patient lies in lateral decubitus with ankle unsupported. Medial clear space > 4 mm on stress view = deltoid ligament rupture (medial instability) -> upgrades SER II to SER IV equivalent -> Operative Indication. Distinguishes stable (SER II / Weber B stable) from unstable ankle fractures.",
+                "th": "View สำคัญมากสำหรับตรวจหาการฉีกขาดของเอ็น Deltoid ที่ซ่อนอยู่ในกระดูกน่องหักโดดๆ ผู้ป่วยนอนตะแคง ให้ข้อเท้าแขวนไม่รับน้ำหนัก ถ้า Medial clear space > 4 มม. = เอ็น Deltoid ขาด -> เปลี่ยนเป็นข้อเท้าไม่มั่นคง -> มีข้อบ่งชี้ผ่าตัด"
               }
             }
           ],
@@ -543,14 +956,54 @@ export const tibiaBone: BoneData = {
           },
           "concept": {
             "title": {
-              "en": "Lauge-Hansen Ankle Mechanism Concept (2 Words Rule)",
-              "th": "แนวคิดการจำแนก Lauge-Hansen (กฎ 2 คำ: ท่าเท้า + ทิศทางแรงบิด)"
+              "en": "Lauge-Hansen Ankle Mechanism Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Lauge-Hansen Classification"
             },
             "imageUrl": "/images/lauge_hansen/concept.png",
-            "description": {
-              "en": "The Lauge-Hansen system predicts sequential ankle damage based on a 2-word naming rule:\n• Word 1 = Foot Position at time of impact (Supination vs Pronation)\n• Word 2 = Direction of Deforming Force (External Rotation, Adduction, Abduction)\n\n4 Main Categories & Clinical Features:\n1. SER (Supination-External Rotation, ~60-70%): Starts AITFL -> Fibula Spiral (Weber B) -> PITFL -> Medial Malleolus/Deltoid.\n2. SAD (Supination-Adduction, ~15-20%): Starts Fibula Avulsion (Weber A) -> Vertical Medial Malleolus (Push-off).\n3. PER (Pronation-External Rotation, ~10%): Starts Medial Malleolus/Deltoid -> AITFL -> High Fibula (Weber C / Maisonneuve) -> PITFL.\n4. PAB (Pronation-Abduction, ~5%): Starts Medial Malleolus/Deltoid -> AITFL/PITFL -> Suprasyndesmotic Bending Butterfly Fibula (Weber C).",
-              "th": "ระบบ Lauge-Hansen ทำนายลำดับความเสียหายจากเอ็นถึงกระดูกโดยใช้กฎคำสองคำ:\n• คำที่ 1 = ท่าทางของเท้าขณะเกิดเหตุ (Supination - หงายเท้า vs Pronation - คว่ำเท้า)\n• คำที่ 2 = ทิศทางของแรงบิดกระทำ (External Rotation - บิดออกนอก, Adduction - หุบเข้าใน, Abduction - กางออกนอก)\n\n4 กลุ่มหลักและรูปแบบทางคลินิก:\n1. SER (Supination-External Rotation - พบบ่อยสุด ~60-70%): เริ่มที่เอ็น AITFL -> Fibula หักเกลียว (Weber B) -> เอ็น PITFL -> ตาตุ่มใน/Deltoid\n2. SAD (Supination-Adduction - ~15-20%): เริ่มที่ Fibula หักขวางต่ำ (Weber A) -> ตาตุ่มในหักแนวตั้ง (Push-off)\n3. PER (Pronation-External Rotation - ~10%): เริ่มที่ตาตุ่มใน/Deltoid -> เอ็น AITFL -> Fibula หักสูง (Weber C / Maisonneuve) -> PITFL\n4. PAB (Pronation-Abduction - ~5%): เริ่มที่ตาตุ่มใน/Deltoid -> เอ็นยึด Syndesmosis -> Fibula หักขวาง/ปีกผีเสื้อเหนือข้อ (Weber C)"
-            }
+            "corePrinciple": {
+              "en": "Lauge-Hansen classifies ankle fractures based on foot position (Supination/Pronation) and deforming force direction (External Rotation/Adduction/Abduction), predicting sequential ring-failure stages of ligaments and malleoli.",
+              "th": "Lauge-Hansen จำแนกกระดูกข้อเท้าหักตามท่าทางของเท้า (Supination/Pronation) และทิศทางแรงบิด (External Rotation/Adduction/Abduction) เพื่อทำนายลำดับขั้นความเสียหายทวีคูณรอบวงแหวนข้อเท้า"
+            },
+            "rules": [
+              {
+                "en": "SER (Supination-External Rotation, ~60–70%): Stage I (AITFL) -> Stage II (Spiral Fibula / Weber B) -> Stage III (PITFL) -> Stage IV (Medial Malleolus / Deltoid tear)",
+                "th": "SER (หงายเท้า-หมุนออกนอก, พบบ่อยสุด 60–70%): Stage I (เอ็น AITFL) -> Stage II (Fibula หักเฉียง/Weber B) -> Stage III (เอ็น PITFL) -> Stage IV (ตาตุ่มในหัก/Deltoid ขาด)"
+              },
+              {
+                "en": "SAD (Supination-Adduction, ~15–20%): Stage I (Transverse Fibula / Weber A) -> Stage II (Vertical Medial Malleolus push-off)",
+                "th": "SAD (หงายเท้า-หุบเข้าใน, 15–20%): Stage I (Fibula หักขวางต่ำ/Weber A) -> Stage II (ตาตุ่มในหักแนวตั้ง)"
+              },
+              {
+                "en": "PER (Pronation-External Rotation, ~10%): Stage I (Medial side) -> Stage II (AITFL) -> Stage III (High Fibula / Weber C) -> Stage IV (PITFL)",
+                "th": "PER (คว่ำเท้า-หมุนออกนอก, 10%): Stage I (ด้านใน) -> Stage II (เอ็น AITFL) -> Stage III (Fibula หักสูง/Weber C) -> Stage IV (เอ็น PITFL)"
+              },
+              {
+                "en": "PAB (Pronation-Abduction, ~5%): Stage I (Medial side) -> Stage II (Syndesmosis) -> Stage III (Butterfly Fibular fracture above joint line)",
+                "th": "PAB (คว่ำเท้า-กางออกนอก, 5%): Stage I (ด้านใน) -> Stage II (เอ็น Syndesmosis) -> Stage III (Fibula หักปีกผีเสื้อเหนือข้อ)"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Closed reduction maneuver: Reverses the exact mechanism of injury (e.g. SER reduced by hyper-pronation and internal rotation)",
+                "th": "การดึงจัดกระดูก (Closed reduction): ดำเนินการย้อนทิศทางของกลไกการหัก (เช่น SER ดัดแก้ด้วยการคว่ำเท้าและหมุนเข้าด้านใน)"
+              },
+              {
+                "en": "SER Management: Stage I–II with intact medial side managed conservatively in cast; Stage III–IV indicates mortise instability requiring ORIF",
+                "th": "แนวทางรักษา SER: Stage I–II ที่ฝั่งด้านในสมบูรณ์รักษาโดยใส่เฝือก; Stage III–IV แสดงถึงข้อย้วยไม่มั่นคงต้องผ่าตัด ORIF"
+              },
+              {
+                "en": "SAD Stage II Plating: Vertical medial malleolus fracture requires rigid anti-glide plate fixation on the medial surface to prevent shear displacement",
+                "th": "แนวทางรักษา SAD Stage II: กระดูกตาตุ่มในหักแนวตั้งต้องผ่าตัดดาม Medial Anti-glide Plate เพื่อต้านแรงเฉือน"
+              },
+              {
+                "en": "PER/PAB Surgical Rule: Always requires ORIF of fibula and medial structures plus syndesmotic stabilization",
+                "th": "แนวทางรักษา PER/PAB: ต้องผ่าตัด ORIF ทั้ง Fibula ด้านใน และยึดดามเอ็น Syndesmosis เสมอ"
+              },
+              {
+                "en": "SER Stage IV Equivalent Pitfall: Spiral fibula with intact medial malleolus but MCS ≥4 mm indicates deltoid tear; must not be mistaken for simple Weber B",
+                "th": "จุดตาย SER Stage IV Equivalent: รอยหักเกลียว Fibula ที่ตาตุ่มในไม่หักแต่พบ MCS ≥4 มม. แสดงว่าเอ็น Deltoid ขาด ต้องผ่าตัด ห้ามรักษาแบบ Weber B ธรรมดา"
+              }
+            ]
           },
           "investigations": [
             {
@@ -572,6 +1025,13 @@ export const tibiaBone: BoneData = {
               "details": {
                 "en": "Evaluates posterior malleolus fracture (Volkmann fragment), fibular fracture obliquity/spiral pattern, and sagittal talar dislocation.",
                 "th": "ประเมินชิ้นกระดูกตาตุ่มหลัง (Posterior malleolus), แนงหักเฉียงเกลียวของกระดูก Fibula และการเคลื่อนหลุดไปด้านหลังของกระดูก Talus"
+              }
+            },
+            {
+              "name": "External Rotation (Gravity) Stress View",
+              "details": {
+                "en": "Critical view for detecting occult deltoid ligament tears in apparent isolated fibula fractures. Patient lies in lateral decubitus with ankle unsupported. Medial clear space > 4 mm on stress view = deltoid ligament rupture (medial instability) -> upgrades SER II to SER IV equivalent -> Operative Indication. Distinguishes stable (SER II) from unstable (SER IV) ankle fractures.",
+                "th": "View สำคัญมากสำหรับตรวจหาการฉีกขาดของเอ็น Deltoid ที่ซ่อนอยู่ในกระดูกน่องหักโดดๆ ผู้ป่วยนอนตะแคง ให้ข้อเท้าแขวนไม่รับน้ำหนัก ถ้า Medial clear space > 4 มม. = เอ็น Deltoid ขาด -> เปลี่ยน SER II เป็น SER IV equivalent -> มีข้อบ่งชี้ผ่าตัด"
               }
             }
           ],
