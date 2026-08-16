@@ -1241,7 +1241,7 @@ export function DetailPanel({
 
       {/* ── Content ── */}
       {mobilePage === 1 && region?.regionConcept ? (
-        <div className="md:hidden flex-1 flex flex-col">
+        <div key="mobile-concept-view" className="md:hidden flex-1 flex flex-col animate-slide-in-r overflow-y-auto">
           <RegionConceptPanel
             concept={region.regionConcept}
             boneName={bone.name}
@@ -1252,27 +1252,27 @@ export function DetailPanel({
           />
         </div>
       ) : (
-        <div style={{ padding: "8px 12px", flex: 1, display: "flex", flexDirection: "column" }}>
+        <div key="mobile-classification-view" className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
           {/* Main Tabs: Classifications vs Investigations */}
-          <div className="flex p-1 mb-3" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 8 }}>
+          <div className="flex p-0.5 mb-2" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 6 }}>
             <button
               onClick={() => setActiveTab("classification")}
-              className="flex-1 py-1.5 rounded-md transition-all text-xs font-bold"
+              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
               style={{
                 background: activeTab === "classification" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
                 color: activeTab === "classification" ? (darkMode ? "#FFFFFF" : "#1E293B") : mutedText,
-                boxShadow: activeTab === "classification" ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+                boxShadow: activeTab === "classification" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
               }}
             >
               {language === "en" ? "Classifications" : "การจัดจำแนก"}
             </button>
             <button
               onClick={() => setActiveTab("investigation")}
-              className="flex-1 py-1.5 rounded-md transition-all text-xs font-bold"
+              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
               style={{
                 background: activeTab === "investigation" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
                 color: activeTab === "investigation" ? (darkMode ? "#FFFFFF" : "#1E293B") : mutedText,
-                boxShadow: activeTab === "investigation" ? "0 1px 3px rgba(0,0,0,0.1)" : "none"
+                boxShadow: activeTab === "investigation" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
               }}
             >
               {language === "en" ? "Investigation / X-Ray" : "การส่งตรวจ (X-Ray)"}

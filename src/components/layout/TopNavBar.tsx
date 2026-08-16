@@ -1,7 +1,7 @@
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
-import { Search, Moon, Sun, Globe, User } from "lucide-react";
+import { Search, Moon, Sun, Globe } from "lucide-react";
 
 interface TopNavBarProps {
   darkMode: boolean;
@@ -40,7 +40,7 @@ export const BONE_CATEGORY: Record<string, string> = {
 export function TopNavBar({
   darkMode, onToggleDark, language, onToggleLanguage,
   searchQuery, onSearchChange, activeCategory, onCategoryChange,
-  bones, onSelectBone, onOpenAdmin, currentUser, onOpenAuth,
+  bones, onSelectBone, onOpenAdmin,
 }: TopNavBarProps) {
   const borderColor = darkMode ? "#252F42" : "#E2E8F0";
   const bg         = darkMode ? "#161B27" : "#FFFFFF";
@@ -159,23 +159,6 @@ export function TopNavBar({
 
       {/* Right controls */}
       <div className="flex items-center gap-1.5 md:gap-2 ml-auto flex-shrink-0">
-        {onOpenAuth && (
-          <button
-            onClick={onOpenAuth}
-            style={{ 
-              border: `1px solid ${currentUser ? "rgba(0,206,209,0.4)" : borderColor}`, 
-              color: currentUser ? "#00CED1" : mutedText, 
-              background: currentUser ? "rgba(0,206,209,0.1)" : "transparent" 
-            }}
-            className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-[11px] md:text-[12px] font-bold hover:border-[#00CED1] hover:text-[#00CED1] transition-all cursor-pointer"
-            title={currentUser ? currentUser.name : "Sign In"}
-          >
-            <User size={14} className={currentUser ? "text-[#00CED1]" : ""} />
-            <span className="hidden sm:inline max-w-[100px] truncate">
-              {currentUser ? currentUser.name.split(" ")[0] : (language === "en" ? "Sign In" : "เข้าสู่ระบบ")}
-            </span>
-          </button>
-        )}
         <button
           onClick={onToggleLanguage}
           style={{ border: `1px solid ${borderColor}`, color: mutedText, background: "transparent" }}
