@@ -28,6 +28,16 @@ interface DetailPanelProps {
   onClose: () => void;
 }
 
+export function cleanSystemName(name: string): string {
+  if (!name) return "";
+  let cleaned = name;
+  const forMatch = cleaned.match(/\s+for\s+/i);
+  if (forMatch && forMatch.index !== undefined) {
+    cleaned = cleaned.substring(0, forMatch.index);
+  }
+  return cleaned.trim();
+}
+
 /** Smart X-Ray modal content viewer with automatic path matching and error fallback */
 function XRayModalViewer({
   fracType,
@@ -560,7 +570,7 @@ function ClassificationTitleWithInfo({
               lineHeight: 1.25,
             }}
           >
-            {fullName}
+            {cleanSystemName(fullName)}
           </h3>
 
           {/* Info Button (Inline right after class title) */}

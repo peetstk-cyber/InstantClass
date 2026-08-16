@@ -14,6 +14,7 @@ import {
 
 import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
+import { cleanSystemName } from "../detail/DetailPanel";
 
 interface LearningHubPanelProps {
   darkMode: boolean;
@@ -91,7 +92,7 @@ export function LearningHubPanel({
               bone: b,
               regionId: reg.id,
               regionTitle: reg.name[language] || reg.name.en,
-              systemName: sys.fullName[language] || sys.system,
+              systemName: cleanSystemName(sys.fullName[language] || sys.system),
               boneName: b.name[language],
               typesCount: sys.types.length
             };
@@ -103,7 +104,7 @@ export function LearningHubPanel({
       bone: bones.find(b => b.id === "femur") || bones[0],
       regionId: "proximal",
       regionTitle: language === "en" ? "Subregion Concept" : "ขอบเขตส่วนกระดูก",
-      systemName: bName,
+      systemName: cleanSystemName(bName),
       boneName: language === "en" ? "Orthopedic System" : "ระบบจัดประเภทกระดูก",
       typesCount: 4
     };

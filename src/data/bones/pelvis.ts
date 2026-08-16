@@ -137,7 +137,7 @@ export const pelvisBone: BoneData = {
         {
           "system": "Young-Burgess",
           "fullName": {
-            "en": "Young-Burgess Classification for Pelvic Ring Disruptions",
+            "en": "Young-Burgess Classification",
             "th": "การจำแนกกระดูกเชิงกรานหักเคลื่อนแบบ Young-Burgess"
           },
           "description": {

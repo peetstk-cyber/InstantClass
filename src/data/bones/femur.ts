@@ -540,7 +540,7 @@ export const femurBone: BoneData = {
         {
           "system": "Russell-Taylor",
           "fullName": {
-            "en": "Russell-Taylor Classification for Subtrochanteric Femoral Fractures",
+            "en": "Russell-Taylor Classification",
             "th": "การจำแนกกระดูกใต้ปุ่มสะโพกหัก Russell-Taylor"
           },
           "description": {
@@ -770,7 +770,7 @@ export const femurBone: BoneData = {
         {
           "system": "Winquist-Hansen",
           "fullName": {
-            "en": "Winquist & Hansen Classification for Femoral Shaft Fractures",
+            "en": "Winquist & Hansen Classification",
             "th": "การจำแนกกระดูกแกนต้นขาหักแตกละเอียด Winquist & Hansen"
           },
           "description": {
