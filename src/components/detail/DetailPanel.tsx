@@ -897,11 +897,15 @@ export function DetailPanel({
         const deltaX = endX - touchStartX;
         const deltaY = touchStartY !== null ? endY - touchStartY : 0;
 
-        if (Math.abs(deltaX) > 50 && Math.abs(deltaX) > Math.abs(deltaY)) {
-          if (deltaX < -50 && region?.regionConcept) {
-            setMobilePage(1); // Swipe Left -> Concept
-          } else if (deltaX > 50) {
-            setMobilePage(0); // Swipe Right -> Classification
+        if (Math.abs(deltaX) > 35 && Math.abs(deltaX) > Math.abs(deltaY)) {
+          if (region?.regionConcept) {
+            if (deltaX < -35) {
+              // Swipe Left -> Go to Concept (Page 1) or toggle
+              setMobilePage(prev => (prev === 0 ? 1 : 0));
+            } else if (deltaX > 35) {
+              // Swipe Right -> Go to Concept (Page 1) or toggle
+              setMobilePage(prev => (prev === 0 ? 1 : 0));
+            }
           }
         }
       }
@@ -1130,6 +1134,9 @@ export function DetailPanel({
 
       {/* ── Header ── */}
       <div
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
         style={{
           padding: "14px 18px",
           borderBottom: `1px solid ${border}`,
@@ -1185,28 +1192,31 @@ export function DetailPanel({
             })}
           </div>
         )}
-        {/* Mobile Page Dot Indicator */}
+
+        {/* Mobile Page Segmented Control Switcher & Swipe Guide */}
         {region?.regionConcept && (
-          <div className="md:hidden flex items-center justify-center gap-2 mt-2 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+          <div className="md:hidden flex items-center gap-1.5 mt-2.5 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
             <button
               onClick={() => setMobilePage(0)}
-              className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 0 ? "w-6 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+              className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                mobilePage === 0
+                  ? "bg-[#00CED1] text-slate-950 shadow-sm"
+                  : "bg-slate-500/15 text-slate-400 hover:text-slate-200"
               }`}
-              title="Classification"
-            />
+            >
+              <span>{language === "en" ? "Classifications" : "การจำแนกประเภท"}</span>
+            </button>
             <button
               onClick={() => setMobilePage(1)}
-              className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 1 ? "w-6 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+              className={`flex-1 py-1.5 px-3 rounded-lg text-xs font-extrabold transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
+                mobilePage === 1
+                  ? "bg-[#00CED1] text-slate-950 shadow-sm"
+                  : "bg-slate-500/15 text-slate-400 hover:text-slate-200"
               }`}
-              title="Concept Guide"
-            />
-            <span className="text-[10px] font-bold text-[#00CED1] ml-1 uppercase tracking-wider">
-              {mobilePage === 0
-                ? (language === "en" ? "Classification" : "การจำแนกประเภท")
-                : (language === "en" ? "Concept Guide" : "คู่มือแนวคิด")}
-            </span>
+            >
+              <Zap size={12} className={mobilePage === 1 ? "fill-slate-950" : ""} />
+              <span>{language === "en" ? "Class Concept 💡" : "แนวคิดรอยหัก 💡"}</span>
+            </button>
           </div>
         )}
       </div>
