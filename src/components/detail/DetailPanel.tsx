@@ -1137,19 +1137,19 @@ export function DetailPanel({
     >
       {/* Mobile Top Drag Handle */}
       <div 
-        className="md:hidden flex justify-center py-2.5 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
+        className="md:hidden flex justify-center py-1.5 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
         onClick={handleAnimatedClose}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="w-[30%] max-w-[90px] h-1 rounded-full bg-slate-400/40 hover:bg-slate-400/70 transition-colors" />
+        <div className="w-[25%] max-w-[80px] h-1 rounded-full bg-slate-400/40 hover:bg-slate-400/70 transition-colors" />
       </div>
 
       {/* ── Header ── */}
       <div
         style={{
-          padding: "14px 18px",
+          padding: "10px 14px",
           borderBottom: `1px solid ${border}`,
           position: "sticky",
           top: 0,
@@ -1158,12 +1158,12 @@ export function DetailPanel({
         }}
       >
         <div className="flex items-center justify-between">
-          <h2 style={{ color: textColor, fontSize: 20, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
+          <h2 style={{ color: textColor, fontSize: 17, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
             {bone.name[language]}
           </h2>
           <button
             onClick={handleAnimatedClose}
-            className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
+            className="flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
             style={{
               background: "transparent",
               border: `1px solid ${border}`,
@@ -1171,13 +1171,13 @@ export function DetailPanel({
               cursor: "pointer",
             }}
           >
-            <X size={13} />
+            <X size={12} />
           </button>
         </div>
 
         {/* Region tabs (if multiple regions) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1.5 mt-3 overflow-x-auto no-scrollbar pb-1 items-center flex-nowrap">
+          <div className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
@@ -1186,9 +1186,9 @@ export function DetailPanel({
                   onClick={() => onSelectRegion(r.id)}
                   className="transition-all whitespace-nowrap flex-shrink-0"
                   style={{
-                    padding: "5px 12px",
-                    borderRadius: 8,
-                    fontSize: 11.5,
+                    padding: "4px 10px",
+                    borderRadius: 7,
+                    fontSize: 11,
                     fontWeight: isSelected ? 800 : 600,
                     cursor: "pointer",
                     background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#F1F5F9"),
@@ -1205,22 +1205,22 @@ export function DetailPanel({
         )}
         {/* Mobile Page Dot Indicator */}
         {region?.regionConcept && (
-          <div className="md:hidden flex items-center justify-center gap-2 mt-2 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1.5 pt-1 border-t border-slate-200/30 dark:border-slate-800/30">
             <button
               onClick={() => setMobilePage(0)}
               className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 0 ? "w-6 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+                mobilePage === 0 ? "w-5 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
               }`}
               title="Classification"
             />
             <button
               onClick={() => setMobilePage(1)}
               className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 1 ? "w-6 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+                mobilePage === 1 ? "w-5 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
               }`}
               title="Concept Guide"
             />
-            <span className="text-[10px] font-bold text-[#00CED1] ml-1 uppercase tracking-wider">
+            <span className="text-[9.5px] font-extrabold text-[#00CED1] ml-1 uppercase tracking-wider">
               {mobilePage === 0
                 ? (language === "en" ? "Classification" : "การจำแนกประเภท")
                 : (language === "en" ? "Concept Guide" : "คู่มือแนวคิด")}
@@ -1242,7 +1242,7 @@ export function DetailPanel({
           />
         </div>
       ) : (
-        <div style={{ padding: "14px 18px", flex: 1, display: "flex", flexDirection: "column" }}>
+        <div style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
           {/* Main Tabs: Classifications vs Investigations */}
           <div className="flex p-1 mb-3" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 8 }}>
             <button
