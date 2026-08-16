@@ -64,10 +64,9 @@ function XRayModalViewer({
   if (candidateUrl && !imgError) {
     return (
       <div style={{
-        width: 440,
-        height: 380,
-        maxWidth: "90vw",
-        maxHeight: "75vh",
+        width: "100%",
+        maxWidth: "100%",
+        maxHeight: "65vh",
         overflow: "hidden",
         borderRadius: 12,
         border: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`,
@@ -75,15 +74,17 @@ function XRayModalViewer({
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: 10
+        padding: 8
       }}>
         <img
           src={candidateUrl}
           alt={fracType.name[language]}
           onError={() => setImgError(true)}
           style={{
-            width: "100%",
-            height: "100%",
+            maxWidth: "100%",
+            maxHeight: "58vh",
+            width: "auto",
+            height: "auto",
             objectFit: "contain",
             borderRadius: 6,
             display: "block"
@@ -96,10 +97,9 @@ function XRayModalViewer({
   return (
     <div
       style={{
-        width: 440,
-        height: 380,
-        maxWidth: "90vw",
-        maxHeight: "75vh",
+        width: "100%",
+        maxWidth: "100%",
+        maxHeight: "60vh",
         background: darkMode ? "rgba(0,206,209,0.04)" : "rgba(0,206,209,0.06)",
         borderRadius: 12,
         border: "1.5px dashed rgba(0,206,209,0.35)",
@@ -107,8 +107,8 @@ function XRayModalViewer({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "48px 32px",
-        gap: 16,
+        padding: "32px 16px",
+        gap: 12,
         textAlign: "center",
       }}
     >
@@ -908,6 +908,20 @@ export function DetailPanel({
   const [swipeStartY, setSwipeStartY] = useState<number | null>(null);
 
   const handleSwipeTouchStart = (e: React.TouchEvent) => {
+    // Prevent page swipe if touch originated inside a horizontal scroll container (e.g. type cards carousel)
+    let target = e.target as HTMLElement | null;
+    while (target && target !== e.currentTarget) {
+      if (
+        target.scrollWidth > target.clientWidth + 5 ||
+        target.classList.contains("overflow-x-auto") ||
+        target.getAttribute("data-no-swipe") === "true"
+      ) {
+        setSwipeStartX(null);
+        setSwipeStartY(null);
+        return;
+      }
+      target = target.parentElement;
+    }
     setSwipeStartX(e.touches[0].clientX);
     setSwipeStartY(e.touches[0].clientY);
   };
@@ -1172,7 +1186,7 @@ export function DetailPanel({
         }}
       >
         <div className="flex items-center justify-between">
-          <h2 style={{ color: textColor, fontSize: 16, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
+          <h2 style={{ color: textColor, fontSize: 18, fontWeight: 800, lineHeight: 1.2, margin: 0 }} className="text-lg md:text-xl font-extrabold tracking-tight">
             {bone.name[language]}
           </h2>
           <button
@@ -1822,10 +1836,10 @@ export function DetailPanel({
         <div 
           style={{
             position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-            background: "rgba(0,0,0,0.8)",
-            zIndex: 100,
+            background: "rgba(0,0,0,0.85)",
+            zIndex: 99999,
             display: "flex", alignItems: "center", justifyContent: "center",
-            padding: 20,
+            padding: 12,
             animation: "fadeIn 0.2s ease"
           }}
           onClick={() => setShowFilmPopup(false)}
@@ -1833,23 +1847,26 @@ export function DetailPanel({
           <div 
             style={{
               background: darkMode ? "#161B27" : "#FFFFFF",
-              borderRadius: 12, padding: 20,
-              maxWidth: "100%", maxHeight: "100%",
+              borderRadius: 16, padding: "14px 14px 16px 14px",
+              width: "calc(100vw - 24px)", maxWidth: 500, maxHeight: "90vh",
               display: "flex", flexDirection: "column",
               border: `1px solid ${darkMode ? "#252F42" : "#E2E8F0"}`,
-              animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)"
+              boxShadow: "0 25px 60px rgba(0,0,0,0.7)",
+              animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)",
+              overflow: "hidden"
             }}
             onClick={e => e.stopPropagation()}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
-              <h3 style={{ color: textColor, margin: 0, fontSize: 16, fontWeight: 800 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, paddingRight: 2 }}>
+              <h3 className="pr-2" style={{ color: textColor, margin: 0, fontSize: 14, fontWeight: 800, lineHeight: 1.3 }}>
                 {fracType.name[language]} - {language === "en" ? "X-Ray Film" : "ภาพเอกซเรย์"}
               </h3>
               <button 
                 onClick={() => setShowFilmPopup(false)} 
-                style={{ background: "transparent", border: "none", cursor: "pointer", padding: 4 }}
+                className="flex-shrink-0 cursor-pointer p-1 rounded-lg hover:bg-white/10 transition-colors"
+                style={{ background: "transparent", border: "none" }}
               >
-                <X size={20} color={mutedText} />
+                <X size={18} color={mutedText} />
               </button>
             </div>
             
