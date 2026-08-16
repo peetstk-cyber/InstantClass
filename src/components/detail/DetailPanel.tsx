@@ -1149,7 +1149,7 @@ export function DetailPanel({
       {/* ── Header ── */}
       <div
         style={{
-          padding: "10px 14px",
+          padding: "8px 12px 6px 12px",
           borderBottom: `1px solid ${border}`,
           position: "sticky",
           top: 0,
@@ -1158,7 +1158,7 @@ export function DetailPanel({
         }}
       >
         <div className="flex items-center justify-between">
-          <h2 style={{ color: textColor, fontSize: 17, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
+          <h2 style={{ color: textColor, fontSize: 16, fontWeight: 800, lineHeight: 1.2, margin: 0 }}>
             {bone.name[language]}
           </h2>
           <button
@@ -1177,7 +1177,7 @@ export function DetailPanel({
 
         {/* Region tabs (if multiple regions) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
+          <div className="flex gap-1 mt-1 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
@@ -1186,9 +1186,9 @@ export function DetailPanel({
                   onClick={() => onSelectRegion(r.id)}
                   className="transition-all whitespace-nowrap flex-shrink-0"
                   style={{
-                    padding: "4px 10px",
-                    borderRadius: 7,
-                    fontSize: 11,
+                    padding: "3px 9px",
+                    borderRadius: 6,
+                    fontSize: 10.5,
                     fontWeight: isSelected ? 800 : 600,
                     cursor: "pointer",
                     background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#F1F5F9"),
@@ -1205,22 +1205,22 @@ export function DetailPanel({
         )}
         {/* Mobile Page Dot Indicator */}
         {region?.regionConcept && (
-          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1.5 pt-1 border-t border-slate-200/30 dark:border-slate-800/30">
+          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1">
             <button
               onClick={() => setMobilePage(0)}
-              className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 0 ? "w-5 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+              className={`h-1 rounded-full transition-all cursor-pointer ${
+                mobilePage === 0 ? "w-4 bg-[#00CED1]" : "w-1 bg-slate-400/40"
               }`}
               title="Classification"
             />
             <button
               onClick={() => setMobilePage(1)}
-              className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                mobilePage === 1 ? "w-5 bg-[#00CED1]" : "w-1.5 bg-slate-400/40"
+              className={`h-1 rounded-full transition-all cursor-pointer ${
+                mobilePage === 1 ? "w-4 bg-[#00CED1]" : "w-1 bg-slate-400/40"
               }`}
               title="Concept Guide"
             />
-            <span className="text-[9.5px] font-extrabold text-[#00CED1] ml-1 uppercase tracking-wider">
+            <span className="text-[9px] font-extrabold text-[#00CED1] ml-0.5 uppercase tracking-wider">
               {mobilePage === 0
                 ? (language === "en" ? "Classification" : "การจำแนกประเภท")
                 : (language === "en" ? "Concept Guide" : "คู่มือแนวคิด")}
@@ -1242,7 +1242,7 @@ export function DetailPanel({
           />
         </div>
       ) : (
-        <div style={{ padding: "10px 14px", flex: 1, display: "flex", flexDirection: "column" }}>
+        <div style={{ padding: "8px 12px", flex: 1, display: "flex", flexDirection: "column" }}>
           {/* Main Tabs: Classifications vs Investigations */}
           <div className="flex p-1 mb-3" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 8 }}>
             <button
