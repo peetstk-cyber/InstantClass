@@ -27,7 +27,7 @@ export function SkeletonCanvas({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  const bg = darkMode ? "#0E1117" : "#F7F9FC";
+  const bg = darkMode ? "#0E1117" : "#E2E7ED";
   const gridColor = darkMode ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)";
 
   const handleResetZoom = () => {

@@ -49,11 +49,11 @@ export function LeftSidebar({
   darkMode, language, bones, selectedBone, selectedRegionId,
   activeCategory, onSelectBone, onBackToList, searchQuery,
 }: LeftSidebarProps) {
-  const bg          = darkMode ? "#161B27" : "#FFFFFF";
-  const border      = darkMode ? "#252F42" : "#E2E8F0";
-  const mutedText   = darkMode ? "#64748B" : "#94A3B8";
-  const sectionHead = darkMode ? "#475569" : "#94A3B8";
-  const hoverBg     = darkMode ? "rgba(0,206,209,0.07)" : "rgba(0,206,209,0.06)";
+  const bg          = darkMode ? "#161B27" : "#EAECEF";
+  const border      = darkMode ? "#252F42" : "#D5D9E0";
+  const mutedText   = darkMode ? "#64748B" : "#475569";
+  const sectionHead = darkMode ? "#475569" : "#475569";
+  const hoverBg     = darkMode ? "rgba(0,206,209,0.07)" : "#FFFFFF";
 
   const boneMap = Object.fromEntries(bones.map(b => [b.id, b]));
 

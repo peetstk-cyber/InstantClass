@@ -9,6 +9,7 @@ import { DetailPanel } from "./components/detail/DetailPanel";
 import { AdminImageUploader } from "./components/admin/AdminImageUploader";
 import { AuthModal } from "./components/auth/AuthModal";
 import { 
+  Search,
   HelpCircle, 
   Bookmark, 
   User, 
@@ -37,6 +38,7 @@ function App() {
   const [showAuthModal, setShowAuthModal] = useState(false);
 
   // Mobile Modals State
+  const [showSearchModal, setShowSearchModal] = useState(false);
   const [showQuizModal, setShowQuizModal] = useState(false);
   const [showBookmarksModal, setShowBookmarksModal] = useState(false);
   const [quizAnswer, setQuizAnswer] = useState<number | null>(null);
@@ -167,7 +169,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#F0F4F8] text-[#2C3E50]"}`}>
+    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -241,7 +243,23 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Always Visible) ── */}
       <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
-        {/* Top Icon: Daily Quiz Challenge */}
+        {/* Top Icon: Search Classification */}
+        <button
+          type="button"
+          onClick={() => setShowSearchModal(true)}
+          style={{
+            background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
+            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#00CED1",
+            color: "#00CED1",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+          }}
+          className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
+          title={language === "en" ? "Search Classification" : "ค้นหาการจำแนกประเภท"}
+        >
+          <Search size={17} />
+        </button>
+
+        {/* 2nd Icon: Daily Quiz Challenge */}
         <button
           type="button"
           onClick={() => setShowQuizModal(true)}
@@ -257,7 +275,7 @@ function App() {
           <HelpCircle size={17} />
         </button>
 
-        {/* Middle Icon: Saved Bookmarks */}
+        {/* 3rd Icon: Saved Bookmarks */}
         <button
           type="button"
           onClick={() => setShowBookmarksModal(true)}
@@ -289,6 +307,139 @@ function App() {
           <User size={17} />
         </button>
       </div>
+
+      {/* ── Mobile Search Modal ── */}
+      {showSearchModal && (
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-start justify-center p-4 pt-16 animate-fadeIn">
+          <div
+            style={{
+              background: darkMode ? "#161B27" : "#FFFFFF",
+              borderColor: darkMode ? "#252F42" : "#E2E8F0",
+              color: darkMode ? "#F1F5F9" : "#101828",
+            }}
+            className="w-full max-w-md rounded-2xl border p-4 shadow-2xl space-y-3 relative flex flex-col max-h-[80dvh]"
+          >
+            <button
+              onClick={() => {
+                setShowSearchModal(false);
+                setSearchQuery("");
+              }}
+              style={{ color: darkMode ? "#94A3B8" : "#64748B" }}
+              className="absolute top-3.5 right-3.5 hover:opacity-100 p-1 rounded-lg transition-all cursor-pointer"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="flex items-center gap-2 pr-6">
+              <Search size={18} className="text-[#00CED1]" />
+              <h3 className="text-base font-extrabold tracking-tight">
+                {language === "en" ? "Search Fracture Classification" : "ค้นหาการจำแนกประเภทกระดูกหัก"}
+              </h3>
+            </div>
+
+            <div className="relative">
+              <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                autoFocus
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={language === "en" ? "Search bone, region, or system..." : "พิมพ์ชื่อกระดูก หรือระบบจำแนก..."}
+                style={{
+                  background: darkMode ? "#1E293B" : "#F8FAFC",
+                  borderColor: darkMode ? "#334155" : "#E2E8F0",
+                  color: darkMode ? "#F1F5F9" : "#101828",
+                }}
+                className="w-full pl-9 pr-8 py-2.5 rounded-xl border text-sm outline-none focus:border-[#00CED1] transition-all"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200"
+                >
+                  <X size={14} />
+                </button>
+              )}
+            </div>
+
+            {/* Results list */}
+            <div className="flex-1 overflow-y-auto space-y-1.5 pt-1">
+              {searchQuery.trim().length > 0 ? (
+                (() => {
+                  const results = bonesData.flatMap((b) =>
+                    b.regions.flatMap((r) =>
+                      r.classifications
+                        .filter(
+                          (c) =>
+                            b.name[language].toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            r.name[language].toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            c.system.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                            c.fullName[language].toLowerCase().includes(searchQuery.toLowerCase())
+                        )
+                        .map((c) => ({
+                          boneId: b.id,
+                          regionId: r.id,
+                          boneName: b.name[language],
+                          regionName: r.name[language],
+                          systemName: cleanSystemName(c.fullName[language] || c.system),
+                        }))
+                    )
+                  );
+
+                  if (results.length === 0) {
+                    return (
+                      <div className="py-8 text-center text-xs text-slate-400">
+                        {language === "en" ? "No classification systems found matching your search." : "ไม่พบระบบจำแนกกระดูกหักที่ตรงกับคำค้นหา"}
+                      </div>
+                    );
+                  }
+
+                  return results.map((res, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        handleSelectBoneById(res.boneId, res.regionId);
+                        setShowSearchModal(false);
+                        setSearchQuery("");
+                      }}
+                      style={{
+                        background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
+                        borderColor: darkMode ? "rgba(255,255,255,0.08)" : "#EAECF0",
+                      }}
+                      className="w-full text-left p-3 rounded-xl border flex items-center justify-between hover:border-[#00CED1] transition-all cursor-pointer group"
+                    >
+                      <div>
+                        <div className="text-xs font-bold text-[#00CED1]">
+                          {res.boneName} • {res.regionName}
+                        </div>
+                        <div className="text-sm font-extrabold mt-0.5">
+                          {res.systemName}
+                        </div>
+                      </div>
+                      <ChevronRight size={16} className="text-slate-400 group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
+                    </button>
+                  ));
+                })()
+              ) : (
+                <div className="py-6 text-center text-xs text-slate-400 space-y-2">
+                  <p>{language === "en" ? "Popular Search Topics:" : "หัวข้อค้นขายอดนิยม:"}</p>
+                  <div className="flex flex-wrap justify-center gap-1.5">
+                    {["Garden", "Schatzker", "Neer", "Gustilo", "Pauwels"].map((topic) => (
+                      <button
+                        key={topic}
+                        onClick={() => setSearchQuery(topic)}
+                        className="px-2.5 py-1 rounded-lg text-xs font-bold bg-[#00CED1]/15 text-[#00CED1] border border-[#00CED1]/30 hover:bg-[#00CED1]/25 transition-all cursor-pointer"
+                      >
+                        {topic}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ── Mobile Quiz Challenge Modal ── */}
       {showQuizModal && (

@@ -40,10 +40,10 @@ export function LearningHubPanel({
 }: LearningHubPanelProps) {
   const [quizSelected, setQuizSelected] = useState<number | null>(null);
 
-  const bg = darkMode ? "#161B27" : "#FFFFFF";
-  const text = darkMode ? "#F1F5F9" : "#1E293B";
-  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC";
-  const cardBorder = darkMode ? "rgba(255,255,255,0.08)" : "#E2E8F0";
+  const bg = darkMode ? "#161B27" : "#EAECEF";
+  const text = darkMode ? "#F1F5F9" : "#0F172A";
+  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#FFFFFF";
+  const cardBorder = darkMode ? "rgba(255,255,255,0.08)" : "#D5D9E0";
 
   const boneMap = Object.fromEntries(bones.map((b) => [b.id, b]));
 

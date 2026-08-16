@@ -42,10 +42,10 @@ export function TopNavBar({
   searchQuery, onSearchChange, activeCategory, onCategoryChange,
   bones, onSelectBone, onOpenAdmin,
 }: TopNavBarProps) {
-  const borderColor = darkMode ? "#252F42" : "#E2E8F0";
+  const borderColor = darkMode ? "#252F42" : "#EAECF0";
   const bg         = darkMode ? "#161B27" : "#FFFFFF";
-  const text        = darkMode ? "#E2E8F0" : "#2C3E50";
-  const mutedText   = darkMode ? "#94A3B8" : "#7F8C8D";
+  const text        = darkMode ? "#E2E8F0" : "#101828";
+  const mutedText   = darkMode ? "#94A3B8" : "#475569";
 
   // Search results
   const filtered = searchQuery.trim().length > 0
@@ -68,24 +68,27 @@ export function TopNavBar({
         color: text,
         paddingTop: "calc(8px + env(safe-area-inset-top, 0px))",
       }}
-      className="flex items-center justify-between md:justify-start gap-2 md:gap-4 px-3.5 md:px-5 pb-2.5 md:pb-3 z-30 flex-shrink-0"
+      className="flex items-center justify-between md:justify-start gap-2 md:gap-3.5 px-2 sm:px-3 md:px-4 pb-2 md:pb-2.5 z-30 flex-shrink-0"
     >
       {/* Logo */}
       <div 
         onClick={onOpenAdmin}
         title="InstantClass (Click to open X-Ray Uploader Manager)"
-        className="flex items-center gap-2 md:gap-3 flex-shrink-0 cursor-pointer group"
+        className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0 cursor-pointer group pl-0.5"
       >
         <img
           src="/logo.png"
           alt="InstantClass Logo"
-          className="h-8 md:h-11 w-auto object-contain transition-all drop-shadow-sm group-hover:scale-105"
+          className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-all drop-shadow-sm group-hover:scale-105"
           style={{
             filter: darkMode ? "brightness(0) invert(1)" : "none",
           }}
         />
         <div>
-          <div className="text-base md:text-lg font-black tracking-tight leading-none text-[#00CED1] dark:text-[#00CED1]">
+          <div 
+            style={{ color: text }}
+            className="text-base sm:text-lg md:text-xl font-black tracking-tight leading-none transition-colors"
+          >
             InstantClass
           </div>
           <div style={{ color: mutedText }} className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider mt-0.5 hidden xs:block">
@@ -94,8 +97,8 @@ export function TopNavBar({
         </div>
       </div>
 
-      {/* Search bar */}
-      <div className="flex-1 max-w-[200px] sm:max-w-xs md:max-w-sm relative">
+      {/* Search bar - Desktop only */}
+      <div className="hidden md:block flex-1 max-w-xs md:max-w-sm relative">
         <Search
           size={13}
           style={{ color: mutedText }}
@@ -108,9 +111,10 @@ export function TopNavBar({
           onBlur={() => setTimeout(() => onSearchChange(""), 150)}
           placeholder={language === "en" ? "Search..." : "ค้นหา..."}
           style={{
-            background: darkMode ? "#1C2333" : "#F7F9FC",
+            background: darkMode ? "#1C2333" : "#F8FAFC",
             border: `1px solid ${borderColor}`,
             color: text,
+            boxShadow: darkMode ? "none" : "0 1px 3px rgba(0,0,0,0.03)",
           }}
           className="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-xl text-xs md:text-[13px] outline-none focus:border-[#00CED1] transition-all"
         />

@@ -29,12 +29,12 @@ export function RegionConceptPanel({
   onBackToList,
   isDesktop = true,
 }: RegionConceptPanelProps) {
-  const bg = darkMode ? "#161B27" : "#FFFFFF";
-  const border = darkMode ? "#252F42" : "#E2E8F0";
-  const text = darkMode ? "#F1F5F9" : "#1E293B";
-  const mutedText = darkMode ? "#94A3B8" : "#64748B";
-  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC";
-  const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#E2E8F0";
+  const bg = darkMode ? "#161B27" : "#EAECEF";
+  const border = darkMode ? "#252F42" : "#D5D9E0";
+  const text = darkMode ? "#F1F5F9" : "#0F172A";
+  const mutedText = darkMode ? "#94A3B8" : "#475569";
+  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#FFFFFF";
+  const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#EAECF0";
 
   const hasPhysicalExam = concept.physicalExam && concept.physicalExam.length > 0;
   const hasAlignment = concept.acceptableAlignment && concept.acceptableAlignment.length > 0;

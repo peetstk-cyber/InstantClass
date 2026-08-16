@@ -826,8 +826,8 @@ export function DetailPanel({
   const [activeTab, setActiveTab] = useState<"classification" | "investigation">("classification");
   const [showFilmPopup, setShowFilmPopup] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [touchStartY, setTouchStartY] = useState<number | null>(null);
   const [dragY, setDragY] = useState(0);
+  const [mobilePage, setMobilePage] = useState<number>(0);
 
   const handleAnimatedClose = useCallback(() => {
     setIsClosing(true);
@@ -837,9 +837,6 @@ export function DetailPanel({
       setDragY(0);
     }, 260);
   }, [onClose]);
-
-  const [mobilePage, setMobilePage] = useState<number>(0);
-  const [touchStartX, setTouchStartX] = useState<number | null>(null);
 
   const [bookmarkedSystems, setBookmarkedSystems] = useState<string[]>(() => {
     if (currentUser?.bookmarks) {
@@ -881,58 +878,68 @@ export function DetailPanel({
     });
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartY(e.touches[0].clientY);
-    setTouchStartX(e.touches[0].clientX);
+  // ── Top Drag Handle Only (Drag Down To Close Modal) ──
+  const [handleTouchStartY, setHandleTouchStartY] = useState<number | null>(null);
+
+  const handleHandleTouchStart = (e: React.TouchEvent) => {
+    setHandleTouchStartY(e.touches[0].clientY);
   };
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (touchStartY === null || touchStartX === null) return;
+  const handleHandleTouchMove = (e: React.TouchEvent) => {
+    if (handleTouchStartY === null) return;
     const currentY = e.touches[0].clientY;
-    const currentX = e.touches[0].clientX;
-    const diffY = currentY - touchStartY;
-    const diffX = currentX - touchStartX;
-
-    // Drag down to close only if vertical movement downwards is dominant
-    if (diffY > 0 && Math.abs(diffY) > Math.abs(diffX) * 1.2) {
+    const diffY = currentY - handleTouchStartY;
+    if (diffY > 0) {
       setDragY(diffY);
     }
   };
 
-  const handleTouchEnd = (e: React.TouchEvent) => {
-    if (dragY > 80) {
+  const handleHandleTouchEnd = () => {
+    if (dragY > 60) {
       handleAnimatedClose();
     } else {
       setDragY(0);
-      // Check horizontal swipe from anywhere on the window
-      if (touchStartX !== null && touchStartY !== null && e.changedTouches && e.changedTouches.length > 0) {
-        const endX = e.changedTouches[0].clientX;
-        const endY = e.changedTouches[0].clientY;
-        const deltaX = endX - touchStartX;
-        const deltaY = endY - touchStartY;
+    }
+    setHandleTouchStartY(null);
+  };
 
-        // If horizontal swipe is dominant (abs(deltaX) > abs(deltaY)) and distance >= 35px
-        if (Math.abs(deltaX) >= 35 && Math.abs(deltaX) > Math.abs(deltaY)) {
-          if (deltaX < -35) {
-            // Swipe Left -> Concept Guide (Page 1) or Next System
-            if (mobilePage === 0 && region?.regionConcept) {
-              setMobilePage(1);
-            } else if (region?.classifications && region.classifications.length > 1) {
-              onSelectSystem((selectedSystemIdx + 1) % region.classifications.length);
-            }
-          } else if (deltaX > 35) {
-            // Swipe Right -> Classification View (Page 0) or Previous System
-            if (mobilePage === 1) {
-              setMobilePage(0);
-            } else if (region?.classifications && region.classifications.length > 1) {
-              onSelectSystem((selectedSystemIdx - 1 + region.classifications.length) % region.classifications.length);
-            }
+  // ── Horizontal Swipe (Between Classification & Concept Guide - Content Only) ──
+  const [swipeStartX, setSwipeStartX] = useState<number | null>(null);
+  const [swipeStartY, setSwipeStartY] = useState<number | null>(null);
+
+  const handleSwipeTouchStart = (e: React.TouchEvent) => {
+    setSwipeStartX(e.touches[0].clientX);
+    setSwipeStartY(e.touches[0].clientY);
+  };
+
+  const handleSwipeTouchEnd = (e: React.TouchEvent) => {
+    if (swipeStartX !== null && swipeStartY !== null && e.changedTouches && e.changedTouches.length > 0) {
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const deltaX = endX - swipeStartX;
+      const deltaY = endY - swipeStartY;
+
+      // Only trigger horizontal swipe if horizontal movement is strongly dominant (> 1.5x vertical)
+      if (Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
+        if (deltaX < -40) {
+          // Swipe Left -> Concept Guide (Page 1) or Next System
+          if (mobilePage === 0 && region?.regionConcept) {
+            setMobilePage(1);
+          } else if (region?.classifications && region.classifications.length > 1) {
+            onSelectSystem((selectedSystemIdx + 1) % region.classifications.length);
+          }
+        } else if (deltaX > 40) {
+          // Swipe Right -> Classification View (Page 0) or Previous System
+          if (mobilePage === 1) {
+            setMobilePage(0);
+          } else if (region?.classifications && region.classifications.length > 1) {
+            onSelectSystem((selectedSystemIdx - 1 + region.classifications.length) % region.classifications.length);
           }
         }
       }
     }
-    setTouchStartY(null);
-    setTouchStartX(null);
+    setSwipeStartX(null);
+    setSwipeStartY(null);
   };
   
   // Reset tabs, system, type, and mobile page when region/bone changes
@@ -952,10 +959,10 @@ export function DetailPanel({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSystemIdx]);
 
-  const bg       = darkMode ? "#161B27" : "#FFFFFF";
-  const border   = darkMode ? "#252F42" : "#E2E8F0";
-  const mutedText = darkMode ? "#64748B" : "#94A3B8";
-  const textColor = darkMode ? "#E2E8F0" : "#2C3E50";
+  const bg       = darkMode ? "#161B27" : "#EAECEF";
+  const border   = darkMode ? "#252F42" : "#D5D9E0";
+  const mutedText = darkMode ? "#94A3B8" : "#475569";
+  const textColor = darkMode ? "#E2E8F0" : "#0F172A";
 
   // Derive active data
   const region = bone?.regions.find(r => r.id === selectedRegionId) ?? bone?.regions[0] ?? null;
@@ -1131,29 +1138,26 @@ export function DetailPanel({
 
   return (
     <aside
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
       style={{
         background: bg,
         borderColor: border,
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
-        transition: touchStartY === null ? "transform 0.2s ease" : "none",
+        transition: handleTouchStartY === null ? "transform 0.2s ease" : "none",
         paddingBottom: "calc(16px + env(safe-area-inset-bottom, 0px))",
       }}
       className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-y-auto ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
       } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
     >
-      {/* Mobile Top Drag Handle */}
+      {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE ONLY TO CLOSE MODAL) */}
       <div 
-        className="md:hidden flex justify-center py-1.5 cursor-pointer border-b border-white/5 active:bg-white/5 transition-colors select-none" 
+        className="md:hidden flex justify-center py-2.5 cursor-grab active:cursor-grabbing border-b border-black/5 dark:border-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors select-none touch-none" 
         onClick={handleAnimatedClose}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        onTouchStart={handleHandleTouchStart}
+        onTouchMove={handleHandleTouchMove}
+        onTouchEnd={handleHandleTouchEnd}
       >
-        <div className="w-[25%] max-w-[80px] h-1 rounded-full bg-slate-400/40 hover:bg-slate-400/70 transition-colors" />
+        <div className="w-[28%] max-w-[90px] h-1.5 rounded-full bg-slate-400/60 hover:bg-slate-400/90 transition-colors" />
       </div>
 
       {/* ── Header ── */}
@@ -1241,7 +1245,7 @@ export function DetailPanel({
 
       {/* ── Content ── */}
       {mobilePage === 1 && region?.regionConcept ? (
-        <div key="mobile-concept-view" className="md:hidden flex-1 flex flex-col animate-slide-in-r overflow-y-auto">
+        <div key="mobile-concept-view" onTouchStart={handleSwipeTouchStart} onTouchEnd={handleSwipeTouchEnd} className="md:hidden flex-1 flex flex-col animate-slide-in-r overflow-y-auto">
           <RegionConceptPanel
             concept={region.regionConcept}
             boneName={bone.name}
@@ -1252,7 +1256,7 @@ export function DetailPanel({
           />
         </div>
       ) : (
-        <div key="mobile-classification-view" className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
+        <div key="mobile-classification-view" onTouchStart={handleSwipeTouchStart} onTouchEnd={handleSwipeTouchEnd} className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
           {/* Main Tabs: Classifications vs Investigations */}
           <div className="flex p-0.5 mb-2" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 6 }}>
             <button
