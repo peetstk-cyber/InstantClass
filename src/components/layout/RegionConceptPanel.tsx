@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import type { Language } from "../../App";
 import type { RegionConcept, Translation } from "../../types";
 import { 
@@ -7,7 +8,8 @@ import {
   Link2, 
   Lightbulb, 
   ArrowLeft,
-  Bone
+  Bone,
+  ZoomIn
 } from "lucide-react";
 
 interface RegionConceptPanelProps {
@@ -32,9 +34,19 @@ export function RegionConceptPanel({
   const bg = darkMode ? "#161B27" : "#EAECEF";
   const border = darkMode ? "#252F42" : "#D5D9E0";
   const text = darkMode ? "#F1F5F9" : "#0F172A";
-  const mutedText = darkMode ? "#94A3B8" : "#475569";
   const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#FFFFFF";
   const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#EAECF0";
+
+  const [imgError, setImgError] = useState(false);
+  const [showZoomModal, setShowZoomModal] = useState(false);
+
+  const autoPath = `/images/concepts/${concept.imageUrl ? concept.imageUrl.replace(/^\//, "") : `anatomy_${regionName.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`}`;
+  const finalSrc = concept.imageUrl || autoPath;
+
+  // Reset error state whenever finalSrc or region changes
+  useEffect(() => {
+    setImgError(false);
+  }, [finalSrc, regionName.en]);
 
   const hasPhysicalExam = concept.physicalExam && concept.physicalExam.length > 0;
   const hasAlignment = concept.acceptableAlignment && concept.acceptableAlignment.length > 0;
@@ -76,55 +88,129 @@ export function RegionConceptPanel({
 
       {/* ── Anatomy Image Frame ── */}
       <div 
-        style={{ background: darkMode ? "rgba(0,0,0,0.2)" : "#F8FAFC", borderColor: cardBorder }}
-        className="rounded-xl border p-3 flex flex-col items-center justify-center min-h-[130px] relative overflow-hidden group shadow-xs transition-all hover:border-[#00CED1]/30"
+        key={finalSrc}
+        style={{ 
+          background: "#FFFFFF", 
+          borderColor: cardBorder,
+          minHeight: isDesktop ? 160 : 220,
+          aspectRatio: "4/3"
+        }}
+        className="rounded-2xl border p-2.5 flex flex-col items-center justify-center relative overflow-hidden group shadow-xs transition-all hover:border-[#00CED1]/40 w-full flex-shrink-0"
       >
-        {/* Display image if specified or try auto-resolved region path */}
-        {(() => {
-          const autoPath = `/images/concepts/${concept.imageUrl ? concept.imageUrl.replace(/^\//, '') : `anatomy_${regionName.en.toLowerCase().replace(/[^a-z0-9]/g, '_')}.png`}`;
-          const finalSrc = concept.imageUrl || autoPath;
-
-          return (
+        {!imgError ? (
+          <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
             <img
               src={finalSrc}
               alt={`${regionName[language]} Anatomy`}
-              className="max-h-[170px] w-auto object-contain transition-transform duration-300 group-hover:scale-105"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                const parent = e.currentTarget.parentElement;
-                if (parent) {
-                  const placeholder = parent.querySelector(".anatomy-placeholder");
-                  if (placeholder) (placeholder as HTMLElement).style.display = "flex";
-                }
+              style={{
+                width: "100%",
+                height: "100%",
+                maxHeight: isDesktop ? 220 : 320,
+                objectFit: "contain",
+                display: "block",
               }}
+              className="transition-transform duration-300 group-hover:scale-[1.02] cursor-pointer rounded-lg"
+              onClick={() => setShowZoomModal(true)}
+              onError={() => setImgError(true)}
             />
-          );
-        })()}
+            <button
+              onClick={() => setShowZoomModal(true)}
+              title={language === "en" ? "Click to expand" : "คลิกเพื่อขยายดูภาพ"}
+              className="absolute top-2 right-2 p-1.5 rounded-lg bg-black/60 hover:bg-black/80 text-white opacity-85 hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer shadow backdrop-blur-xs"
+            >
+              <ZoomIn size={14} />
+            </button>
+          </div>
+        ) : (
+          /* Fallback Frame if image missing */
+          <div 
+            className="flex flex-col items-center justify-center text-center p-6 space-y-1.5"
+          >
+            <div 
+              style={{ background: "rgba(0,206,209,0.12)", borderColor: "rgba(0,206,209,0.3)" }}
+              className="w-10 h-10 rounded-xl border flex items-center justify-center text-[#00CED1] mb-0.5"
+            >
+              <Bone size={20} />
+            </div>
+            <div className="text-xs font-bold text-slate-800">
+              {regionName[language]} Anatomy
+            </div>
+            <div className="text-[10px] text-slate-400">
+              {language === "en" ? "Anatomy Diagram Frame" : "กรอบภาพกายวิภาคกระดูก"}
+            </div>
+          </div>
+        )}
+      </div>
 
-        {/* Fallback Frame if image missing */}
+      {/* Zoom Modal */}
+      {showZoomModal && !imgError && (
         <div 
-          className="anatomy-placeholder flex flex-col items-center justify-center text-center p-3 space-y-1.5"
-          style={{ display: "none" }}
+          style={{
+            position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+            background: "rgba(0,0,0,0.85)",
+            zIndex: 99999,
+            display: "flex", alignItems: "center", justifyContent: "center",
+            padding: 12,
+            animation: "fadeIn 0.2s ease"
+          }}
+          onClick={() => setShowZoomModal(false)}
         >
           <div 
-            style={{ background: "rgba(0,206,209,0.12)", borderColor: "rgba(0,206,209,0.3)" }}
-            className="w-10 h-10 rounded-xl border flex items-center justify-center text-[#00CED1] mb-0.5"
+            style={{
+              background: darkMode ? "#161B27" : "#FFFFFF",
+              borderRadius: 20,
+              padding: 14,
+              width: "calc(100vw - 24px)",
+              maxWidth: 540,
+              maxHeight: "92vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              boxShadow: "0 25px 60px rgba(0,0,0,0.75)",
+              position: "relative",
+              border: `1.5px solid ${darkMode ? "rgba(255,255,255,0.15)" : "#CBD5E1"}`,
+              animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)",
+              overflowY: "auto"
+            }}
+            onClick={e => e.stopPropagation()}
           >
-            <Bone size={20} />
-          </div>
-          <div className="text-xs font-bold text-slate-800 dark:text-slate-200">
-            {regionName[language]} Anatomy
-          </div>
-          <div className="text-[10px] text-slate-400">
-            {language === "en" ? "Anatomy Diagram Frame" : "กรอบภาพกายวิภาคกระดูก"}
+            <div className="w-full flex items-center justify-between mb-2.5 pb-2 border-b" style={{ borderColor: border }}>
+              <span className="font-extrabold text-sm truncate pr-2" style={{ color: text }}>
+                {regionName[language]} — {language === "en" ? "Anatomy & Concept" : "กายวิภาคและแนวคิด"}
+              </span>
+              <button 
+                onClick={() => setShowZoomModal(false)}
+                className="text-slate-400 hover:text-slate-100 text-xs font-bold px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 cursor-pointer flex items-center gap-1 flex-shrink-0"
+              >
+                ✕ <span>{language === "en" ? "Close" : "ปิด"}</span>
+              </button>
+            </div>
+            <div 
+              className="w-full flex items-center justify-center p-3 rounded-xl bg-white overflow-hidden border"
+              style={{ minHeight: 280, maxHeight: "68vh" }}
+            >
+              <img 
+                src={finalSrc} 
+                alt={regionName.en}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "65vh",
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                  display: "block"
+                }}
+                className="rounded"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* ── 1. Physical Exam ── */}
       {hasPhysicalExam && (
         <section className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-500 dark:text-teal-400">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00CED1]">
             <Stethoscope size={15} />
             <span>{language === "en" ? "Physical Exam Signs" : "การตรวจร่างกายที่สำคัญ"}</span>
           </div>
@@ -134,14 +220,14 @@ export function RegionConceptPanel({
               <div
                 key={idx}
                 style={{ background: cardBg, borderColor: cardBorder }}
-                className="p-2.5 rounded-xl border text-xs space-y-1 transition-all hover:border-[#00CED1]/40"
+                className="p-3 rounded-xl border text-xs space-y-1 transition-all hover:border-[#00CED1]/40"
               >
-                <div className="font-bold text-slate-900 dark:text-slate-100 flex items-center gap-1.5">
+                <div className="font-bold text-slate-100 dark:text-slate-100 flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#00CED1]" />
                   <span>{item.sign}</span>
                 </div>
-                <div className="text-[11.5px] leading-relaxed" style={{ color: mutedText }}>
-                  <span className="font-semibold text-teal-600 dark:text-teal-400">Positive: </span>
+                <div className="text-[11.5px] leading-relaxed text-slate-300 dark:text-slate-200 pl-3.5">
+                  <span className="font-semibold text-[#00CED1]">Positive: </span>
                   {item.positive[language]}
                 </div>
               </div>
@@ -153,7 +239,7 @@ export function RegionConceptPanel({
       {/* ── 2. Acceptable Alignment (Table) ── */}
       {hasAlignment && (
         <section className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-500 dark:text-sky-400">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400">
             <Ruler size={15} />
             <span>{language === "en" ? "Acceptable Alignment" : "เกณฑ์มุมเอียงที่ยอมรับได้"}</span>
           </div>
@@ -172,15 +258,15 @@ export function RegionConceptPanel({
               <tbody className="divide-y" style={{ borderColor: cardBorder }}>
                 {concept.acceptableAlignment!.map((row, idx) => (
                   <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
-                    <td className="p-2 pl-2.5 font-medium">
+                    <td className="p-2 pl-2.5 font-medium text-slate-200">
                       <div>{row.parameter[language]}</div>
                       {row.note && (
-                        <div className="text-[10px] mt-0.5" style={{ color: mutedText }}>
+                        <div className="text-[10px] mt-0.5 text-slate-400">
                           {row.note[language]}
                         </div>
                       )}
                     </td>
-                    <td className="p-2 text-center font-bold text-sky-600 dark:text-sky-400 whitespace-nowrap">
+                    <td className="p-2 text-center font-bold text-sky-400 whitespace-nowrap">
                       {row.threshold}
                     </td>
                   </tr>
@@ -194,16 +280,24 @@ export function RegionConceptPanel({
       {/* ── 3. Red Flags ── */}
       {hasRedFlags && (
         <section className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-rose-400">
             <AlertTriangle size={15} />
             <span>{language === "en" ? "Red Flags / Complications" : "ข้อควรระวังอันตราย (Red Flags)"}</span>
           </div>
 
-          <div className="p-3 rounded-xl border border-rose-500/30 bg-rose-500/10 text-xs space-y-1.5">
+          <div 
+            style={{ 
+              background: cardBg, 
+              borderColor: darkMode ? "rgba(244,63,94,0.3)" : "rgba(244,63,94,0.35)" 
+            }}
+            className="p-3 rounded-xl border text-xs space-y-2"
+          >
             {concept.redFlags!.map((flag, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-rose-700 dark:text-rose-300 leading-snug">
-                <span className="text-rose-500 font-extrabold flex-shrink-0 mt-0.5">•</span>
-                <span className="font-medium text-[11.5px]">{flag[language]}</span>
+              <div key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                <span className="w-1.5 h-1.5 rounded-full bg-rose-400 flex-shrink-0 mt-1.5" />
+                <span className="font-medium text-[11.5px] text-slate-100 dark:text-slate-100 leading-relaxed">
+                  {flag[language]}
+                </span>
               </div>
             ))}
           </div>
@@ -213,7 +307,7 @@ export function RegionConceptPanel({
       {/* ── 4. Associated Injuries ── */}
       {hasAssociated && (
         <section className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-500 dark:text-amber-400">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-400">
             <Link2 size={15} />
             <span>{language === "en" ? "Associated Injuries" : "การบาดเจ็บร่วมที่ต้องตรวจหา"}</span>
           </div>
@@ -223,16 +317,17 @@ export function RegionConceptPanel({
               <div
                 key={idx}
                 style={{ background: cardBg, borderColor: cardBorder }}
-                className="p-2.5 rounded-xl border text-xs flex items-start gap-2"
+                className="p-3 rounded-xl border text-xs flex items-start gap-2.5"
               >
-                <span className="text-amber-500 font-bold flex-shrink-0">⚡</span>
+                <span className="text-amber-400 font-bold flex-shrink-0 mt-0.5">⚡</span>
                 <div>
-                  <div className="font-semibold text-slate-800 dark:text-slate-200">
+                  <div className="font-bold text-slate-100 dark:text-slate-100">
                     {assoc.injury[language]}
                   </div>
                   {assoc.trigger && (
-                    <div className="text-[10.5px] mt-0.5 font-medium text-amber-600 dark:text-amber-400">
-                      Trigger: {assoc.trigger[language]}
+                    <div className="text-[11px] mt-0.5 font-medium text-slate-300 dark:text-slate-300">
+                      <span className="text-amber-400 font-semibold">Trigger: </span>
+                      {assoc.trigger[language]}
                     </div>
                   )}
                 </div>
@@ -245,16 +340,24 @@ export function RegionConceptPanel({
       {/* ── 5. Clinical Pearls ── */}
       {hasPearls && (
         <section className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-500 dark:text-emerald-400">
+          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-400">
             <Lightbulb size={15} />
             <span>{language === "en" ? "Clinical Pearls" : "ข้อควรจำทางคลินิก (Pearls)"}</span>
           </div>
 
-          <div className="p-3 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-xs space-y-2">
+          <div 
+            style={{ 
+              background: cardBg, 
+              borderColor: darkMode ? "rgba(16,185,129,0.3)" : "rgba(16,185,129,0.35)" 
+            }}
+            className="p-3 rounded-xl border text-xs space-y-2.5"
+          >
             {concept.clinicalPearls!.map((pearl, idx) => (
-              <div key={idx} className="flex items-start gap-2 text-emerald-800 dark:text-emerald-200 leading-relaxed">
-                <span className="text-emerald-500 font-bold flex-shrink-0">💎</span>
-                <span className="font-medium text-[11.5px]">{pearl[language]}</span>
+              <div key={idx} className="flex items-start gap-2.5 leading-relaxed">
+                <span className="text-emerald-400 font-bold flex-shrink-0 mt-0.5 text-xs">💎</span>
+                <span className="font-medium text-[11.5px] text-slate-100 dark:text-slate-100 leading-relaxed">
+                  {pearl[language]}
+                </span>
               </div>
             ))}
           </div>

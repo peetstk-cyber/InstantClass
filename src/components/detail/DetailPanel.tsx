@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import type { Language } from "../../App";
 import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
-import { X, Zap, Info, Bookmark } from "lucide-react";
+import { X, Zap, Info, Bookmark, Image as ImageIcon, Film } from "lucide-react";
 import { FractureIllustration } from "./FractureIllustration";
 import { SpineScoreCalculator } from "./SpineScoreCalculator";
 import { RegionConceptPanel } from "../layout/RegionConceptPanel";
@@ -38,111 +38,206 @@ export function cleanSystemName(name: string): string {
   return cleaned.trim();
 }
 
-/** Smart X-Ray modal content viewer with automatic path matching and error fallback */
-function XRayModalViewer({
+/** Smart interactive Media Viewer Modal (Switch between Diagram Illustration & Real X-Ray Film) */
+function ClassificationMediaViewerModal({
   fracType,
   language,
   darkMode,
   mutedText,
+  textColor,
+  border,
+  onClose,
 }: {
   fracType: FractureClassificationType;
   language: Language;
   darkMode: boolean;
   mutedText: string;
+  textColor: string;
+  border: string;
+  onClose: () => void;
 }) {
-  const [imgError, setImgError] = useState(false);
+  const [activeMediaTab, setActiveMediaTab] = useState<"diagram" | "xray">("diagram");
+  const [xrayError, setXrayError] = useState(false);
+  const [diagramError, setDiagramError] = useState(false);
 
   useEffect(() => {
-    setImgError(false);
+    setXrayError(false);
+    setDiagramError(false);
   }, [fracType]);
 
-  // Candidate URL: explicit xrayUrl OR auto-derived from illustrationId (/images/xxx/yyy.png -> /images/xrays/xxx/yyy.png)
-  const candidateUrl =
+  const xrayCandidateUrl =
     fracType.xrayUrl ||
     (fracType.illustrationId ? fracType.illustrationId.replace("/images/", "/images/xrays/") : null);
 
-  if (candidateUrl && !imgError) {
-    return (
-      <div style={{
-        width: "100%",
-        maxWidth: "100%",
-        maxHeight: "65vh",
-        overflow: "hidden",
-        borderRadius: 12,
-        border: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`,
-        background: "#000000",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: 8
-      }}>
-        <img
-          src={candidateUrl}
-          alt={fracType.name[language]}
-          onError={() => setImgError(true)}
-          style={{
-            maxWidth: "100%",
-            maxHeight: "58vh",
-            width: "auto",
-            height: "auto",
-            objectFit: "contain",
-            borderRadius: 6,
-            display: "block"
-          }}
-        />
-      </div>
-    );
-  }
-
   return (
-    <div
+    <div 
       style={{
-        width: "100%",
-        maxWidth: "100%",
-        maxHeight: "60vh",
-        background: darkMode ? "rgba(0,206,209,0.04)" : "rgba(0,206,209,0.06)",
-        borderRadius: 12,
-        border: "1.5px dashed rgba(0,206,209,0.35)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "32px 16px",
-        gap: 12,
-        textAlign: "center",
-      }}
-    >
-      <div style={{
-        width: 64, height: 64,
-        borderRadius: 16,
-        background: "rgba(0,206,209,0.10)",
-        border: "1.5px solid rgba(0,206,209,0.3)",
+        position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
+        background: "rgba(0,0,0,0.88)",
+        zIndex: 99999,
         display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 28,
-      }}>
-        🩻
-      </div>
-      <div>
-        <div style={{ color: "#00CED1", fontSize: 13, fontWeight: 800, letterSpacing: "0.05em", textTransform: "uppercase", marginBottom: 6 }}>
-          {language === "en" ? "X-Ray Image Coming Soon" : "กำลังเตรียมภาพเอกซเรย์"}
+        padding: 12,
+        animation: "fadeIn 0.2s ease"
+      }}
+      onClick={onClose}
+    >
+      <div 
+        style={{
+          background: darkMode ? "#161B27" : "#FFFFFF",
+          borderRadius: 20,
+          padding: "16px",
+          width: "calc(100vw - 24px)",
+          maxWidth: 540,
+          maxHeight: "92vh",
+          display: "flex",
+          flexDirection: "column",
+          border: `1.5px solid ${darkMode ? "rgba(255,255,255,0.15)" : "#CBD5E1"}`,
+          boxShadow: "0 25px 60px rgba(0,0,0,0.75)",
+          animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)",
+          overflowY: "auto",
+        }}
+        onClick={e => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b" style={{ borderColor: border }}>
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-2">
+              <span className="px-2 py-0.5 rounded-md bg-[#00CED1]/15 text-[#00CED1] border border-[#00CED1]/30 font-extrabold text-xs">
+                {fracType.type}
+              </span>
+              <h3 className="text-sm md:text-base font-extrabold truncate" style={{ color: textColor, margin: 0 }}>
+                {fracType.name[language]}
+              </h3>
+            </div>
+          </div>
+          <button 
+            onClick={onClose} 
+            className="flex-shrink-0 cursor-pointer p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+            style={{ background: "transparent", border: "none", color: mutedText }}
+          >
+            <X size={20} />
+          </button>
         </div>
-        <div style={{ color: mutedText, fontSize: 12, lineHeight: 1.6, maxWidth: 280 }}>
-          {language === "en"
-            ? `Reference X-Ray for ${fracType.name[language]} will be available in a future update.`
-            : `ภาพเอกซเรย์อ้างอิงสำหรับ ${fracType.name[language]} จะถูกเพิ่มในอัปเดตถัดไป`}
+
+        {/* Dual Tab Switcher: Diagram vs Real X-Ray */}
+        <div 
+          className="flex p-1 mb-3 rounded-xl border"
+          style={{
+            background: darkMode ? "#0E1117" : "#F1F5F9",
+            borderColor: border,
+          }}
+        >
+          <button
+            onClick={() => setActiveMediaTab("diagram")}
+            className="flex-1 py-2 px-3 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+            style={{
+              background: activeMediaTab === "diagram" ? "#00CED1" : "transparent",
+              color: activeMediaTab === "diagram" ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
+              boxShadow: activeMediaTab === "diagram" ? "0 2px 8px rgba(0,206,209,0.35)" : "none",
+            }}
+          >
+            <ImageIcon size={14} />
+            <span>{language === "en" ? "Medical Diagram" : "ภาพวาดไดอะแกรม"}</span>
+          </button>
+
+          <button
+            onClick={() => setActiveMediaTab("xray")}
+            className="flex-1 py-2 px-3 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+            style={{
+              background: activeMediaTab === "xray" ? "#2ECC71" : "transparent",
+              color: activeMediaTab === "xray" ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
+              boxShadow: activeMediaTab === "xray" ? "0 2px 8px rgba(46,204,113,0.35)" : "none",
+            }}
+          >
+            <Film size={14} />
+            <span>{language === "en" ? "Real X-Ray Film" : "ภาพฟิล์มเอกซเรย์"}</span>
+          </button>
         </div>
-      </div>
-      <div style={{
-        padding: "4px 12px",
-        borderRadius: 20,
-        background: "rgba(0,206,209,0.08)",
-        border: "1px solid rgba(0,206,209,0.2)",
-        color: "#00CED1",
-        fontSize: 11,
-        fontWeight: 700,
-        letterSpacing: "0.04em",
-      }}>
-        {fracType.type}
+
+        {/* Media Frame (Aspect ratio 4:3 / tall portrait frame with zoom) */}
+        <div 
+          className="w-full rounded-xl overflow-hidden border flex items-center justify-center relative p-3 transition-all"
+          style={{
+            minHeight: 260,
+            maxHeight: "55vh",
+            background: activeMediaTab === "xray" ? "#000000" : "#FFFFFF",
+            borderColor: activeMediaTab === "diagram" ? "#00CED1" : "#2ECC71",
+          }}
+        >
+          {activeMediaTab === "diagram" ? (
+            /* ── DIAGRAM VIEW ── */
+            (fracType.illustrationId?.startsWith("/") || fracType.illustrationId?.includes(".")) && !diagramError ? (
+              <img
+                src={fracType.illustrationId}
+                alt={fracType.name.en}
+                onError={() => setDiagramError(true)}
+                className="max-h-[50vh] max-w-full object-contain rounded transition-transform duration-200"
+              />
+            ) : (
+              <div className="w-full h-full flex flex-col items-center justify-center p-6 gap-2 text-center">
+                <FractureIllustration illustrationId={fracType.illustrationId || ""} darkMode={false} />
+                <span className="text-xs font-bold text-slate-600 mt-2">{fracType.type} Diagram</span>
+              </div>
+            )
+          ) : (
+            /* ── REAL X-RAY VIEW ── */
+            xrayCandidateUrl && !xrayError ? (
+              <img
+                src={xrayCandidateUrl}
+                alt={`${fracType.name.en} X-Ray`}
+                onError={() => setXrayError(true)}
+                className="max-h-[50vh] max-w-full object-contain rounded"
+              />
+            ) : (
+              <div className="flex flex-col items-center justify-center p-8 text-center gap-3">
+                <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-2xl">
+                  🩻
+                </div>
+                <div>
+                  <div className="text-sm font-extrabold text-teal-400">
+                    {language === "en" ? "X-Ray Film Coming Soon" : "กำลังเตรียมภาพเอกซเรย์จริง"}
+                  </div>
+                  <div className="text-xs text-slate-400 mt-1 max-w-xs leading-relaxed">
+                    {language === "en"
+                      ? `Real radiograph sample for ${fracType.name.en} is being curated.`
+                      : `ภาพฟิล์มเอกซเรย์ตัวอย่างสำหรับ ${fracType.name.th} กำลังอยู่ระหว่างการอัปโหลด`}
+                  </div>
+                </div>
+                <button
+                  onClick={() => setActiveMediaTab("diagram")}
+                  className="px-3.5 py-1.5 rounded-lg bg-[#00CED1] text-slate-900 font-extrabold text-xs hover:bg-[#00CED1]/90 cursor-pointer transition-all"
+                >
+                  {language === "en" ? "View Diagram Instead" : "ดูภาพวาดไดอะแกรมแทน"}
+                </button>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* Bottom Context Info */}
+        <div className="mt-3 p-3 rounded-xl border text-xs" style={{ background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC", borderColor: border }}>
+          {activeMediaTab === "xray" && fracType.xrayDescription ? (
+            <div>
+              <div className="font-extrabold text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                <Film size={13} />
+                <span>{language === "en" ? "Key Radiographic Signs" : "จุดสังเกตในภาพเอกซเรย์"}</span>
+              </div>
+              <div className="leading-relaxed" style={{ color: textColor }}>
+                {fracType.xrayDescription[language]}
+              </div>
+            </div>
+          ) : (
+            <div>
+              <div className="font-extrabold text-teal-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                <Info size={13} />
+                <span>{language === "en" ? "Fracture Pattern Summary" : "สรุปลักษณะและกลไกการหัก"}</span>
+              </div>
+              <div className="leading-relaxed" style={{ color: textColor }}>
+                {fracType.description[language]}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -1143,42 +1238,6 @@ export function DetailPanel({
           </div>
         )}
 
-        {/* System switcher tabs (Classification systems under active region) - Always pinned in header */}
-        {region && region.classifications.length > 1 && (
-          <div className="flex gap-1.5 mt-2 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
-            {region.classifications.map((cls, i) => {
-              const isSelected = selectedSystemIdx === i;
-              return (
-                <button
-                  key={cls.system}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    onSelectSystem(i);
-                    onSelectType(0);
-                    setMobilePage(0);
-                    setActiveTab("classification");
-                  }}
-                  className="transition-all whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
-                  style={{
-                    padding: "4px 12px",
-                    minHeight: 28,
-                    borderRadius: 7,
-                    fontSize: 10.5,
-                    fontWeight: isSelected ? 800 : 600,
-                    background: isSelected ? "#2ECC71" : (darkMode ? "#1A2530" : "#F1F5F9"),
-                    border: isSelected ? "1.5px solid #2ECC71" : `1.5px solid ${border}`,
-                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
-                    boxShadow: isSelected ? "0 0 8px rgba(46,204,113,0.3)" : "none",
-                    letterSpacing: "0.02em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {cls.system}
-                </button>
-              );
-            })}
-          </div>
-        )}
 
         {/* Mobile Page Dot Indicator */}
         {region?.regionConcept && (
@@ -1261,13 +1320,14 @@ export function DetailPanel({
               {/* Classification System Selector Row inside content view for multiple systems */}
               {region && region.classifications && region.classifications.length > 1 && (
                 <div 
-                  className="flex items-center gap-1.5 mb-3 p-1 rounded-xl border overflow-x-auto no-scrollbar"
+                  className="flex items-center gap-1 mb-2.5 p-0.5 rounded-lg border overflow-x-auto no-scrollbar"
                   style={{
-                    background: darkMode ? "rgba(46, 204, 113, 0.08)" : "rgba(46, 204, 113, 0.05)",
-                    borderColor: darkMode ? "rgba(46, 204, 113, 0.25)" : "rgba(46, 204, 113, 0.3)",
+                    background: darkMode ? "rgba(46, 204, 113, 0.06)" : "rgba(46, 204, 113, 0.04)",
+                    borderColor: darkMode ? "rgba(46, 204, 113, 0.2)" : "rgba(46, 204, 113, 0.25)",
+                    minHeight: 28,
                   }}
                 >
-                  <span className="text-[10px] font-extrabold uppercase px-2 tracking-wider flex-shrink-0" style={{ color: "#2ECC71" }}>
+                  <span className="text-[9.5px] font-extrabold uppercase px-1.5 tracking-wider flex-shrink-0" style={{ color: "#2ECC71" }}>
                     {language === "en" ? "System:" : "ระบบ:"}
                   </span>
                   {region.classifications.map((cls, i) => {
@@ -1281,12 +1341,11 @@ export function DetailPanel({
                           setMobilePage(0);
                           setActiveTab("classification");
                         }}
-                        className="flex-1 py-1.5 px-3 rounded-lg font-bold text-[11px] whitespace-nowrap transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
+                        className="flex-1 py-1 px-2.5 rounded-md font-bold text-[10.5px] whitespace-nowrap transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
                         style={{
                           background: isSelected ? "#2ECC71" : "transparent",
                           color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#334155"),
-                          boxShadow: isSelected ? "0 2px 8px rgba(46,204,113,0.35)" : "none",
-                          border: isSelected ? "1px solid #2ECC71" : "1px solid transparent",
+                          boxShadow: isSelected ? "0 1px 4px rgba(46,204,113,0.3)" : "none",
                         }}
                       >
                         {cls.system}
@@ -1324,67 +1383,77 @@ export function DetailPanel({
                   const isJudetLetournel = classSystem.system.toLowerCase().includes("judet") ||
                     (classSystem.types.length === 10 && classSystem.types.some(t => t.name.en.includes("Elementary") || t.name.th.includes("Elementary")));
 
-                  const renderTypeCard = (t: typeof classSystem.types[0], i: number) => (
-                    <div key={t.type} className="flex flex-col items-center gap-2 flex-shrink-0" style={{ width: "calc(33.333% - 6px)", scrollSnapAlign: "start" }}>
+                  const renderTypeCard = (t: typeof classSystem.types[0], i: number) => {
+                    const isSelected = selectedTypeIdx === i;
+
+                    return (
                       <div 
-                        onClick={() => {
-                          if (selectedTypeIdx === i) setShowFilmPopup(true);
-                          else onSelectType(i);
-                        }}
-                        className="transition-all cursor-pointer flex items-center justify-center overflow-hidden w-full p-2.5"
-                        style={{
-                          height: 140,
-                          background: "#FFFFFF",
-                          border: selectedTypeIdx === i ? "2px solid #00CED1" : `1.5px solid ${darkMode ? "rgba(255,255,255,0.2)" : border}`,
-                          borderRadius: 10,
-                          opacity: selectedTypeIdx === i ? 1 : 0.85,
-                          boxShadow: selectedTypeIdx === i ? "0 0 10px rgba(0,206,209,0.35)" : "none",
-                        }}
+                        key={t.type} 
+                        className="flex flex-col items-center gap-2 flex-shrink-0 w-[72%] sm:w-[56%] md:w-[calc(33.333%-6px)] min-w-[210px] md:min-w-[130px]" 
+                        style={{ scrollSnapAlign: "start" }}
                       >
-                        {t.illustrationId?.startsWith('/') || t.illustrationId?.includes('.') ? (
-                          <img 
-                            src={t.illustrationId} 
-                            alt={t.name.en} 
-                            style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 4, display: "block" }}
-                            onError={(e) => {
-                              // If image fails, hide broken img tag and replace with vector illustration
-                              (e.target as HTMLElement).style.display = 'none';
-                              const parent = (e.target as HTMLElement).parentElement;
-                              if (parent) {
-                                const fallbackDiv = document.createElement('div');
-                                fallbackDiv.className = 'w-full h-full flex items-center justify-center text-xs font-bold text-slate-400';
-                                fallbackDiv.innerText = t.type;
-                                parent.appendChild(fallbackDiv);
-                              }
-                            }}
-                          />
-                        ) : (
-                          <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                            <FractureIllustration illustrationId={t.illustrationId || ""} darkMode={darkMode} />
-                          </div>
-                        )}
+                        <div 
+                          onClick={() => {
+                            if (isSelected) {
+                              setShowFilmPopup(true);
+                            } else {
+                              onSelectType(i);
+                            }
+                          }}
+                          className="transition-all cursor-pointer flex flex-col items-center justify-center overflow-hidden w-full p-2.5 rounded-2xl border relative group bg-white shadow-xs hover:shadow-md active:scale-98"
+                          style={{
+                            aspectRatio: "4/3",
+                            width: "100%",
+                            border: isSelected ? "2.5px solid #00CED1" : `1.5px solid ${darkMode ? "rgba(255,255,255,0.2)" : border}`,
+                            opacity: isSelected ? 1 : 0.88,
+                            boxShadow: isSelected ? "0 0 14px rgba(0,206,209,0.4)" : "none",
+                          }}
+                        >
+
+                          {t.illustrationId?.startsWith("/") || t.illustrationId?.includes(".") ? (
+                            <img 
+                              src={t.illustrationId} 
+                              alt={t.name.en} 
+                              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 6, display: "block" }}
+                              onError={(e) => {
+                                (e.target as HTMLElement).style.display = "none";
+                                const parent = (e.target as HTMLElement).parentElement;
+                                if (parent) {
+                                  const fallbackDiv = document.createElement("div");
+                                  fallbackDiv.className = "w-full h-full flex items-center justify-center text-xs font-bold text-slate-400";
+                                  fallbackDiv.innerText = t.type;
+                                  parent.appendChild(fallbackDiv);
+                                }
+                              }}
+                            />
+                          ) : (
+                            <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                              <FractureIllustration illustrationId={t.illustrationId || ""} darkMode={false} />
+                            </div>
+                          )}
+                        </div>
+
+                        <button
+                          onClick={() => {
+                            if (isSelected) {
+                              setShowFilmPopup(true);
+                            } else {
+                              onSelectType(i);
+                            }
+                          }}
+                          className="transition-all w-full text-center py-1.5 px-1 rounded-lg text-xs font-extrabold cursor-pointer active:scale-95 tracking-wide"
+                          style={{
+                            background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#F1F5F9"),
+                            border: isSelected ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
+                            color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#475569"),
+                            boxShadow: isSelected ? "0 0 10px rgba(0,206,209,0.35)" : "none",
+                          }}
+                        >
+                          {t.type}
+                        </button>
                       </div>
-                      <button
-                        onClick={() => {
-                          if (selectedTypeIdx === i) setShowFilmPopup(true);
-                          else onSelectType(i);
-                        }}
-                        className="transition-all w-full text-center"
-                        style={{
-                          padding: "4px 0",
-                          borderRadius: 6,
-                          fontSize: 10,
-                          fontWeight: 800,
-                          cursor: "pointer",
-                          background: selectedTypeIdx === i ? "#00CED1" : "transparent",
-                          border: selectedTypeIdx === i ? "1px solid #00CED1" : `1px solid ${border}`,
-                          color: selectedTypeIdx === i ? "#FFFFFF" : mutedText,
-                        }}
-                      >
-                        {t.type}
-                      </button>
-                    </div>
-                  );
+                    );
+                  };
 
                   if (isJudetLetournel) {
                     const elementaryList = classSystem.types.slice(0, 5);
@@ -1798,53 +1867,17 @@ export function DetailPanel({
         )}
       </div>
       )}
-      {/* Film Popup Modal */}
+      {/* Classification Media Viewer Modal (Switch between Diagram & Real X-Ray) */}
       {showFilmPopup && fracType && (
-        <div 
-          style={{
-            position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-            background: "rgba(0,0,0,0.85)",
-            zIndex: 99999,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            padding: 12,
-            animation: "fadeIn 0.2s ease"
-          }}
-          onClick={() => setShowFilmPopup(false)}
-        >
-          <div 
-            style={{
-              background: darkMode ? "#161B27" : "#FFFFFF",
-              borderRadius: 16, padding: "14px 14px 16px 14px",
-              width: "calc(100vw - 24px)", maxWidth: 500, maxHeight: "90vh",
-              display: "flex", flexDirection: "column",
-              border: `1px solid ${darkMode ? "#252F42" : "#E2E8F0"}`,
-              boxShadow: "0 25px 60px rgba(0,0,0,0.7)",
-              animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)",
-              overflow: "hidden"
-            }}
-            onClick={e => e.stopPropagation()}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10, paddingRight: 2 }}>
-              <h3 className="pr-2" style={{ color: textColor, margin: 0, fontSize: 14, fontWeight: 800, lineHeight: 1.3 }}>
-                {fracType.name[language]} - {language === "en" ? "X-Ray Film" : "ภาพเอกซเรย์"}
-              </h3>
-              <button 
-                onClick={() => setShowFilmPopup(false)} 
-                className="flex-shrink-0 cursor-pointer p-1 rounded-lg hover:bg-white/10 transition-colors"
-                style={{ background: "transparent", border: "none" }}
-              >
-                <X size={18} color={mutedText} />
-              </button>
-            </div>
-            
-            <XRayModalViewer
-              fracType={fracType}
-              language={language}
-              darkMode={darkMode}
-              mutedText={mutedText}
-            />
-          </div>
-        </div>
+        <ClassificationMediaViewerModal
+          fracType={fracType}
+          language={language}
+          darkMode={darkMode}
+          mutedText={mutedText}
+          textColor={textColor}
+          border={border}
+          onClose={() => setShowFilmPopup(false)}
+        />
       )}
     </aside>
   );
