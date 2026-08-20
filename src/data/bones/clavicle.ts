@@ -517,8 +517,7 @@ export const clavicleBone: BoneData = {
               "details": {
                 "en": "AP radiograph taken with a 15-30° cephalic tube tilt. Projects the clavicle shaft free from rib and thoracic cage overlap, revealing the true length and displacement of the midshaft fracture. Optimal tilt is 15-30° cephalic. Essential for assessing shortening, comminution, and angulation of Group I (Midshaft) fractures. Not to be confused with the Zanca view, which is specific to the AC joint.",
                 "th": "ภาพเอกซเรย์ AP โดยเอียงหลอดรังสีขึ้น 15-30 องศา เพื่อฉายภาพลำกระดูกไหปลาร้าให้หลุดพ้นจากซี่โครงและทรวงอก ทำให้มองเห็นความยาวและการเคลื่อนตัวที่แท้จริงของรอยหักส่วนกลาง ใช้ประเมินการหดสั้น ความแตกละเอียด และการโค้งงอของ Group I (Midshaft) ไม่ใช่ท่า Zanca ซึ่งใช้เฉพาะข้อ AC"
-              },
-              "imageUrl": "/images/investigations/clavicle/cephalic_tilt_ap_view.jpg"
+              }
             },
             {
               "name": "Non-contrast 3D CT Scan of Chest/Clavicle",

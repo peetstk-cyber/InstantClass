@@ -170,7 +170,7 @@ export const tlSpineBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_1_compression.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Anterior height loss of vertebral body with intact posterior 1/3 cortical wall.",
                 "th": "เห็นลำตัวกระดูกยุบตัวเฉพาะ 2/3 ด้านหน้า โดยเสาหลักกลางขอบหลังยังปกติ"
@@ -201,7 +201,7 @@ export const tlSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดยึดตรึงกระดูกกรณี Middle Column แตกป่นหลุดดัน"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_2_burst.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Posterior cortical retropulsion into spinal canal with loss of posterior body height.",
                 "th": "เห็นขอบกระดูกส่วนหลังแตกป่นและทรุดดันเข้าช่องไขสันหลัง"
@@ -232,7 +232,7 @@ export const tlSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดยึดตรึงด้านหลังกรณีเอ็นยึด PLC ฉีกขาด"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_3_chance.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Widened interspinous gap, facet subluxation, or horizontal lamina/spinous process fracture.",
                 "th": "เห็นระยะช่องว่างระหว่างยอดกระดูกกว้างขึ้น หรือเห็นรอยหักผ่านวงโค้งกระดูกด้านหลัง"
@@ -263,7 +263,7 @@ export const tlSpineBone: BoneData = {
                   "th": "ผ่าตัดรักษาในรอยหัก Instability ขั้นที่ 1, 2 และ 3"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_4_dislocation.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Assessment of column involvement and posterior wall integrity on CT/MRI.",
                 "th": "ประเมินจำนวนเสาหลักที่เสียหายและความสมบูรณ์ของผนังกระดูกส่วนหลัง"
@@ -375,7 +375,7 @@ export const tlSpineBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีความสูงยุบ >50% หรือคอโก่ง >30 องศา"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_1_compression.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Anterior wedge height loss of vertebral body with intact posterior cortex and normal interpedicular distance.",
                 "th": "เห็นลำตัวกระดูกยุบตัวเป็นรูปิ่มด้านหน้า โดยขอบกระดูกส่วนหลังและระยะ Pedicle ยังปกติ"
@@ -406,7 +406,7 @@ export const tlSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดรักษาในรอยหักไม่มั่นคง: ผ่าตัดคลายการกดทับและดามยึดกระดูก Posterior Pedicle Screw Fusion หรือ Anterior Corpectomy จำเป็นด่วนที่สุดหากมีอาการอัมพาต"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_2_burst.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Widened interpedicular distance on AP view; posterior cortical wall retropulsion into canal with loss of posterior body height on Lateral view.",
                 "th": "เห็นระยะห่าง Pedicle กว้างขึ้นในท่า AP และเห็นขอบกระดูกหลังทรุดดันเข้าช่องไขสันหลังในท่า Lateral"
@@ -437,7 +437,7 @@ export const tlSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดรักษาใน Ligamentous Chance (3B) หรือคอโก่ง >15° โดยผ่าตัดยึด Pedicle Screw ด้านหลัง"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_3_chance.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Horizontal fracture line splitting spinous process, pedicle, and body (Bony Chance) OR wide interspinous and disc space gapping (Ligamentous Chance).",
                 "th": "เห็นรอยหักแนวนอนตัดแยกยอด spinous, pedicle และตัวกระดูก หรือเห็นระยะเอ็นและหมอนรองอ้ากว้าง"
@@ -468,7 +468,7 @@ export const tlSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดด่วนที่สุด (EMERGENCY SURGERY): เปิดผ่าตัดจัดกระดูกที่หลุดให้เข้าที่, ผ่าตัด減壓คลายการกดทับไขสันหลัง และดามยึดกระดูกหลังด้วย Pedicle Screw 2-3 ระดับบนและล่าง"
                 }
               },
-              "illustrationId": "/images/tl_spine_denis/denis_4_dislocation.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross translational displacement of one vertebra relative to another in frontal or sagittal plane with facet dislocation.",
                 "th": "เห็นกระดูกสันหลังเคลื่อนหลุดแปลกแนวออกด้านข้างหรือหน้าหลังอย่างรุนแรง ร่วมกับข้อต่อ Facet หลุดหลุดเกย"

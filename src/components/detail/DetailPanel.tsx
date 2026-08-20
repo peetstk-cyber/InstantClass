@@ -1034,104 +1034,15 @@ export function DetailPanel({
         }
       ];
     }
-
-    if (boneId === "humerus" && regionId === "proximal") {
-      return [
-        {
-          name: "AP Shoulder View (Grashey)",
-          details: {
-            en: "True AP view of the glenohumeral joint. Prevents overlap of the humeral head and glenoid.",
-            th: "ภาพเอกซเรย์ท่าหน้าหลัง (AP) จริงของข้อไหล่ ช่วยป้องกันกระดูกหัวไหล่และเบ้าไหล่ทับซ้อนกัน"
-          }
-        },
-        {
-          name: "Transscapular Y-View",
-          details: {
-            en: "Orthogonal lateral view of the scapula. Essential for identifying anterior/posterior displacement or dislocation.",
-            th: "ภาพเอกซเรย์ท่าด้านข้างของสะบัก (Y-view) ช่วยระบุการเคลื่อนหลุดไปด้านหน้าหรือด้านหลัง"
-          }
-        },
-        {
-          name: "Axillary Lateral View",
-          details: {
-            en: "Axillary view to determine humeral head rotation, glenohumeral dislocation, and tuberosity displacement.",
-            th: "ภาพเอกซเรย์ท่ารักแร้ (Axillary) เพื่อประเมินการบิดของหัวกระดูกต้นแขน การหลุดของข้อ และการเคลื่อนของ Tuberosity"
-          }
-        }
-      ];
-    }
-
-    if (boneId === "tibia" && regionId === "proximal") {
-      return [
-        {
-          name: "AP Knee View",
-          details: {
-            en: "Anteroposterior view of the knee. Evaluates tibial plateau depression, split, and joint alignment.",
-            th: "ภาพเอกซเรย์เข่าท่าหน้าหลัง (AP) เพื่อประเมินการยุบตัวของผิวข้อหน้าแข้ง (Tibial plateau) และการแยกออกจากกัน"
-          }
-        },
-        {
-          name: "Lateral Knee View",
-          details: {
-            en: "Lateral view of the knee. Helps identify posterior tibial plateau involvement and tibial slope disruption.",
-            th: "ภาพเอกซเรย์เข่าท่าด้านข้าง (Lateral) ช่วยตรวจหาการหักของผิวข้อหน้าแข้งด้านหลัง"
-          }
-        }
-      ];
-    }
-
-    if (boneId === "pelvis" && regionId === "pelvic-ring") {
-      return [
-        {
-          name: "AP Pelvis View",
-          details: {
-            en: "Standard AP view of the pelvic ring. Checks for symmetry, pubic symphysis diastasis, and sacroiliac joint widening.",
-            th: "ภาพเอกซเรย์เชิงกรานท่าหน้าหลัง (AP) สำหรับตรวจสอบความสมมาตร ช่องกระดูกหัวหน่าวแยก หรือข้อต่อ SI joint กว้างขึ้น"
-          }
-        },
-        {
-          name: "Inlet View",
-          details: {
-            en: "Pelvis inlet view (40° caudal tilt). Best for assessing anterior/posterior displacement of the hemipelvis.",
-            th: "ภาพเอกซเรย์ท่า Inlet (เอียงหลอดรังสีลงล่าง 40 องศา) ช่วยประเมินการเคลื่อนไปด้านหน้าหรือหลังของอุ้งเชิงกราน"
-          }
-        },
-        {
-          name: "Outlet View",
-          details: {
-            en: "Pelvis outlet view (40° cephalic tilt). Best for assessing vertical shear and superior/inferior displacement.",
-            th: "ภาพเอกซเรย์ท่า Outlet (เอียงหลอดรังสีขึ้นบน 40 องศา) ช่วยประเมินการเลื่อนในแนวตั้งและการเคลื่อนขึ้นลง"
-          }
-        }
-      ];
-    }
-
-    return [
-      {
-        name: "AP View",
-        details: {
-          en: `Standard Anteroposterior view of the ${region?.name.en || bone?.name.en || "bone"}. Evaluates coronal plane alignment and displacement.`,
-          th: `ภาพเอกซเรย์ท่าหน้าหลัง (AP) มาตรฐานของ ${region?.name.th || bone?.name.th || "กระดูก"} เพื่อประเมินแนวการหักและการเคลื่อนในแนวโคโรนัล`
-        }
-      },
-      {
-        name: "Lateral View",
-        details: {
-          en: `Standard Lateral view of the ${region?.name.en || bone?.name.en || "bone"}. Evaluates sagittal plane displacement and angulation.`,
-          th: `ภาพเอกซเรย์ท่าด้านข้าง (Lateral) มาตรฐานของ ${region?.name.th || bone?.name.th || "กระดูก"} เพื่อประเมินแนวการหักและการเคลื่อนในแนวซาจิตทัล`
-        }
-      }
-    ];
+    return [];
   };
 
+  // If no bone selected on desktop, show empty state; on mobile, render nothing (panel unmounts)
   if (!bone) {
     return (
       <aside
-        style={{
-          background: bg,
-          borderColor: border,
-        }}
-        className="hidden md:flex flex-col w-[40%] min-w-[340px] border-l overflow-hidden z-20"
+        style={{ background: bg, borderColor: border }}
+        className="hidden md:flex md:w-[40%] md:min-w-[380px] border-l flex-col h-full overflow-hidden"
       >
         <LearningHubPanel
           darkMode={darkMode}
@@ -1205,7 +1116,7 @@ export function DetailPanel({
 
         {/* Region tabs (if multiple regions) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1 mt-1 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
+          <div className="flex gap-1 mt-1.5 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
@@ -1231,9 +1142,47 @@ export function DetailPanel({
             })}
           </div>
         )}
+
+        {/* System switcher tabs (Classification systems under active region) - Always pinned in header */}
+        {region && region.classifications.length > 1 && (
+          <div className="flex gap-1.5 mt-2 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
+            {region.classifications.map((cls, i) => {
+              const isSelected = selectedSystemIdx === i;
+              return (
+                <button
+                  key={cls.system}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onSelectSystem(i);
+                    onSelectType(0);
+                    setMobilePage(0);
+                    setActiveTab("classification");
+                  }}
+                  className="transition-all whitespace-nowrap flex-shrink-0 cursor-pointer active:scale-95"
+                  style={{
+                    padding: "4px 12px",
+                    minHeight: 28,
+                    borderRadius: 7,
+                    fontSize: 10.5,
+                    fontWeight: isSelected ? 800 : 600,
+                    background: isSelected ? "#2ECC71" : (darkMode ? "#1A2530" : "#F1F5F9"),
+                    border: isSelected ? "1.5px solid #2ECC71" : `1.5px solid ${border}`,
+                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
+                    boxShadow: isSelected ? "0 0 8px rgba(46,204,113,0.3)" : "none",
+                    letterSpacing: "0.02em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {cls.system}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {/* Mobile Page Dot Indicator */}
         {region?.regionConcept && (
-          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1">
+          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1.5">
             <button
               onClick={() => setMobilePage(0)}
               className={`h-1 rounded-full transition-all cursor-pointer ${
@@ -1272,7 +1221,7 @@ export function DetailPanel({
       ) : (
         <div key="mobile-classification-view" onTouchStart={handleSwipeTouchStart} onTouchEnd={handleSwipeTouchEnd} className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
           {/* Main Tabs: Classifications vs Investigations */}
-          <div className="flex p-0.5 mb-2" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 6 }}>
+          <div className="flex p-0.5 mb-2.5" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 6 }}>
             <button
               onClick={() => setActiveTab("classification")}
               className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
@@ -1297,37 +1246,6 @@ export function DetailPanel({
             </button>
           </div>
 
-        {/* System tabs (Classification systems under region) - placed below Classifications tab */}
-        {region && region.classifications.length > 1 && (
-          <div className="flex gap-1.5 mb-3 overflow-x-auto no-scrollbar items-center">
-            {region.classifications.map((cls, i) => {
-              const isSelected = selectedSystemIdx === i;
-              return (
-                <button
-                  key={cls.system}
-                  onClick={() => onSelectSystem(i)}
-                  className="transition-all whitespace-nowrap flex-shrink-0"
-                  style={{
-                    padding: "5px 12px",
-                    borderRadius: 8,
-                    fontSize: 11,
-                    fontWeight: isSelected ? 800 : 600,
-                    cursor: "pointer",
-                    background: isSelected ? "#2ECC71" : (darkMode ? "#1A2530" : "#F1F5F9"),
-                    border: isSelected ? "1.5px solid #2ECC71" : `1.5px solid ${border}`,
-                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
-                    boxShadow: isSelected ? "0 0 10px rgba(46,204,113,0.35)" : "none",
-                    letterSpacing: "0.03em",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {cls.system}
-                </button>
-              );
-            })}
-          </div>
-        )}
-
         {activeTab === "classification" ? (
           !classSystem ? (
             <div style={{ padding: "60px 20px", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", opacity: 0.6 }}>
@@ -1340,6 +1258,44 @@ export function DetailPanel({
             </div>
           ) : (
             <div style={{ animation: "scaleIn 0.25s ease both" }}>
+              {/* Classification System Selector Row inside content view for multiple systems */}
+              {region && region.classifications && region.classifications.length > 1 && (
+                <div 
+                  className="flex items-center gap-1.5 mb-3 p-1 rounded-xl border overflow-x-auto no-scrollbar"
+                  style={{
+                    background: darkMode ? "rgba(46, 204, 113, 0.08)" : "rgba(46, 204, 113, 0.05)",
+                    borderColor: darkMode ? "rgba(46, 204, 113, 0.25)" : "rgba(46, 204, 113, 0.3)",
+                  }}
+                >
+                  <span className="text-[10px] font-extrabold uppercase px-2 tracking-wider flex-shrink-0" style={{ color: "#2ECC71" }}>
+                    {language === "en" ? "System:" : "ระบบ:"}
+                  </span>
+                  {region.classifications.map((cls, i) => {
+                    const isSelected = selectedSystemIdx === i;
+                    return (
+                      <button
+                        key={cls.system}
+                        onClick={() => {
+                          onSelectSystem(i);
+                          onSelectType(0);
+                          setMobilePage(0);
+                          setActiveTab("classification");
+                        }}
+                        className="flex-1 py-1.5 px-3 rounded-lg font-bold text-[11px] whitespace-nowrap transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
+                        style={{
+                          background: isSelected ? "#2ECC71" : "transparent",
+                          color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#334155"),
+                          boxShadow: isSelected ? "0 2px 8px rgba(46,204,113,0.35)" : "none",
+                          border: isSelected ? "1px solid #2ECC71" : "1px solid transparent",
+                        }}
+                      >
+                        {cls.system}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
               {/* System full name & description */}
               <ClassificationTitleWithInfo
                 fullName={classSystem.fullName[language]}
@@ -1390,6 +1346,17 @@ export function DetailPanel({
                             src={t.illustrationId} 
                             alt={t.name.en} 
                             style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 4, display: "block" }}
+                            onError={(e) => {
+                              // If image fails, hide broken img tag and replace with vector illustration
+                              (e.target as HTMLElement).style.display = 'none';
+                              const parent = (e.target as HTMLElement).parentElement;
+                              if (parent) {
+                                const fallbackDiv = document.createElement('div');
+                                fallbackDiv.className = 'w-full h-full flex items-center justify-center text-xs font-bold text-slate-400';
+                                fallbackDiv.innerText = t.type;
+                                parent.appendChild(fallbackDiv);
+                              }
+                            }}
                           />
                         ) : (
                           <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>

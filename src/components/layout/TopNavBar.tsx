@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
@@ -42,6 +43,24 @@ export function TopNavBar({
   searchQuery, onSearchChange, activeCategory, onCategoryChange,
   bones, onSelectBone, onOpenAdmin,
 }: TopNavBarProps) {
+  const clickCountRef = useRef<number>(0);
+  const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleLogoClick = () => {
+    clickCountRef.current += 1;
+    if (clickCountRef.current >= 5) {
+      if (onOpenAdmin) onOpenAdmin();
+      clickCountRef.current = 0;
+      if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+      return;
+    }
+
+    if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
+    clickTimerRef.current = setTimeout(() => {
+      clickCountRef.current = 0;
+    }, 2000);
+  };
+
   const borderColor = darkMode ? "#252F42" : "#EAECF0";
   const bg         = darkMode ? "#161B27" : "#FFFFFF";
   const text        = darkMode ? "#E2E8F0" : "#101828";
@@ -70,18 +89,18 @@ export function TopNavBar({
       }}
       className="flex items-center justify-between md:justify-start gap-2 md:gap-3.5 px-2 sm:px-3 md:px-4 pb-2 md:pb-2.5 z-30 flex-shrink-0"
     >
-      {/* Logo */}
+      {/* Logo (5 clicks to open Admin Tool) */}
       <div 
-        onClick={onOpenAdmin}
-        title="InstantClass (Click to open X-Ray Uploader Manager)"
+        onClick={handleLogoClick}
+        title="InstantClass (Click 5 times to open Admin X-Ray Uploader)"
         className="flex items-center gap-1 sm:gap-1.5 flex-shrink-0 cursor-pointer group pl-0.5"
       >
         <img
           src="/logo.png"
           alt="InstantClass Logo"
-          className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-all drop-shadow-sm group-hover:scale-105"
+          className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-all group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           style={{
-            filter: darkMode ? "brightness(0) invert(1)" : "none",
+            filter: "brightness(0) invert(1)",
           }}
         />
         <div>

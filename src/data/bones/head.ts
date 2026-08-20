@@ -50,7 +50,8 @@ export const headBone: BoneData = {
             "en": "Non-contrast CT Brain is the gold standard investigation for acute traumatic brain injury.",
             "th": "CT Brain แบบไม่ฉีดสี คือวิธีตรวจมาตรฐานหลักที่ดีที่สุดสำหรับอุบัติเหตุศีรษะฉุกเฉิน"
           }
-        ]
+        ],
+        "imageUrl": "/images/concepts/anatomy_skull.png"
       },
       "classifications": [
         {
@@ -137,6 +138,7 @@ export const headBone: BoneData = {
                 }
               },
               "illustrationId": "/images/head/lefort_1.png",
+              "xrayUrl": "/images/xrays/head/lefort_1.png",
               "xrayDescription": {
                 "en": "Horizontal fracture line above maxillary root tips with lower pterygoid plate disruption.",
                 "th": "เห็นรอยหักแนวนอนเหนือปลายรากฟันขากรรไกรบน และ Pterygoid plate ส่วนล่างหัก"
@@ -168,6 +170,7 @@ export const headBone: BoneData = {
                 }
               },
               "illustrationId": "/images/head/lefort_2.png",
+              "xrayUrl": "/images/xrays/head/lefort_2.png",
               "xrayDescription": {
                 "en": "Pyramidal fracture extending from nasofrontal suture down through bilateral inferior orbital rims.",
                 "th": "เห็นรอยหักรูปพีระมิดลากจาก Nasofrontal suture ลงมาผ่านขอบเบ้าตาล่างทั้งสองข้าง"
@@ -199,6 +202,7 @@ export const headBone: BoneData = {
                 }
               },
               "illustrationId": "/images/head/lefort_3.png",
+              "xrayUrl": "/images/xrays/head/lefort_3.png",
               "xrayDescription": {
                 "en": "Bilateral zygomatic arch, frontozygomatic suture, and nasofrontal suture disruptions with severe retrodisplacement of midface.",
                 "th": "เห็นรอยหักที่ Zygomatic arch, Frontozygomatic suture และ Nasofrontal suture สองข้าง ใบหน้าทรุดไปด้านหลัง"
@@ -296,7 +300,7 @@ export const headBone: BoneData = {
                   "th": "ผ่าตัดเมื่อ CSF leak ไม่หยุดเกิน 10-14 วัน มีลมในสมองไม่หาย หรือเยื่อหุ้มสมองฉีกขาดใหญ่ โดยซ่อมเยื่อหุ้มสมองผ่านกล้องหรือเปิดกะโหลก"
                 }
               },
-              "illustrationId": "/images/head/anterior_fossa.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line crossing frontal sinus or cribriform plate on CT bone windows; pneumocephalus may be present.",
                 "th": "เห็นรอยหักพาดผ่าน Frontal sinus หรือ Cribriform plate ใน CT bone window อาจพบลมในกะโหลกศีรษะ"
@@ -327,7 +331,7 @@ export const headBone: BoneData = {
                   "th": "ผ่าตัดเมื่อเกิดหน้าเบี้ยวอัมพาตทันทีหลังอุบัติเหตุ (Facial nerve decompression) หรือหลอดเลือด carotid มีปัญหา"
                 }
               },
-              "illustrationId": "/images/head/middle_fossa.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Longitudinal or transverse fracture line traversing petrous temporal bone and middle ear cavity.",
                 "th": "เห็นรอยหักตามยาวหรือตามขวางพาดผ่าน Petrous temporal bone และช่องหูชั้นกลาง"
@@ -358,7 +362,7 @@ export const headBone: BoneData = {
                   "th": "ผ่าตัดฉุกเฉินเมื่อมีก้อนเลือด Posterior fossa EDH กดก้านสมอง/สมองน้อย หรือสมองบวมน้ำ (Suboccipital craniectomy)"
                 }
               },
-              "illustrationId": "/images/head/posterior_fossa.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line extending through occipital squama towards foramen magnum or clivus.",
                 "th": "เห็นรอยหักพาดจากกระดูกท้ายทอยมุ่งสู่ Foramen magnum หรือ Clivus"

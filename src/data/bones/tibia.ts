@@ -759,7 +759,8 @@ export const tibiaBone: BoneData = {
             "en": "Weber C fractures involve complete syndesmotic disruption and require ORIF with syndesmotic screw or suture-button fixation.",
             "th": "กระดูกหักชนิด Weber C มีการฉีกขาดของ syndesmosis สมบูรณ์แบบ ต้องผ่าตัด ORIF ร่วมกับยึด syndesmotic screw หรือ suture-button เสมอ"
           }
-        ]
+        ],
+        "imageUrl": "/images/concepts/anatomy_ankle___distal_malleoli.png"
       },
       "classifications": [
         {

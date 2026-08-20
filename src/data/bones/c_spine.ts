@@ -159,7 +159,7 @@ export const cSpineBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/c1_jefferson/landells_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Isolated fracture line through anterior or posterior arch of C1 without lateral mass displacement.",
                 "th": "เห็นรอยหักจุดเดียวที่วงโค้งหน้าหรือหลังของ C1 โดยชิ้นกระดูกข้างไม่เคลื่อนตัว"
@@ -190,7 +190,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดหากเอ็น TAL ขาด (ระยะเกย >6.9มม. / ADI >3มม.) ผ่าตัดดามยึดกระดูกคอ C1-C2 ด้านหลัง (Harms technique)"
                 }
               },
-              "illustrationId": "/images/c1_jefferson/landells_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Multiple fracture lines through anterior and posterior arches with lateral displacement of C1 masses.",
                 "th": "เห็นรอยหักแตกหลายจุดที่วงโค้งหน้าและหลัง พร้อม C1 lateral mass เคลื่อนแยกออกด้านข้าง"
@@ -221,7 +221,7 @@ export const cSpineBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีผิวข้อเหลื่อม >2มม. หรือเอ็น TAL ขาด"
                 }
               },
-              "illustrationId": "/images/c1_jefferson/landells_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line crossing C1 lateral mass with variable displacement on coronal CT.",
                 "th": "เห็นรอยหักพาดผ่าน C1 lateral mass ในภาพรังสีหรือ CT สแกนแนว Coronal"
@@ -335,7 +335,7 @@ export const cSpineBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/c2_hangman/levine_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Nondisplaced fracture line through C2 pars interarticularis with normal C2-C3 alignment.",
                 "th": "เห็นรอยหักที่ C2 pars interarticularis โดยแนว C2-C3 ยังคงเรียงกันปกติ"
@@ -366,7 +366,7 @@ export const cSpineBone: BoneData = {
                   "th": "ผ่าตัดเมื่อดึงจัดกระดูกไม่สำเร็จ หรือ C2-C3 ยังคงหลวมเคลื่อน โดยผ่าตัดเชื่อมข้อ C2-C3 ทางด้านหน้า (ACDF) หรือด้านหลัง"
                 }
               },
-              "illustrationId": "/images/c2_hangman/levine_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Significant translation >2mm and anterior tilt of C2 body relative to C3 with disc space widening.",
                 "th": "เห็น C2 เคลื่อนไปด้านหน้า >2มม. เอียง ก้มลง และช่องหมอนรอง C2-C3 กว้างขึ้น"
@@ -397,7 +397,7 @@ export const cSpineBone: BoneData = {
                   "th": "ผ่าตัดหากใส่ Halo แล้วกระดูกยังเคลื่อนบิด โดยขันสกรู C2 pedicle screw หรือผ่าตัดดาม C2-C3 ด้านหลัง"
                 }
               },
-              "illustrationId": "/images/c2_hangman/levine_2a.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Severe anterior angulation of C2 body with posterior disc space gap and minimal translation.",
                 "th": "เห็น C2 เอียงก้มลงรุนแรงโดยช่องหมอนรองด้านหลังอ้ากว้าง แต่ไม่มีการเกยไปด้านข้าง"
@@ -428,7 +428,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดรักษาด่วนที่สุด (ORIF) เปิดผ่าตัดจัดข้อ C2-C3 facet ที่หลุดให้เข้าที่ แล้วดามด้วยแผ่นเหล็ก/สกรู C2-C3 ด้านหลัง"
                 }
               },
-              "illustrationId": "/images/c2_hangman/levine_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Displaced C2 pars fracture with bilateral locked or subluxated C2-C3 facet joints.",
                 "th": "เห็นรอยหัก C2 ร่วมกับข้อต่อ C2-C3 Facet joint หลุดเกยข้ามกันทั้งสองข้าง"
@@ -538,7 +538,7 @@ export const cSpineBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/c2_odontoid/anderson_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Small oblique avulsion fragment off the tip of the odontoid process.",
                 "th": "เห็นชิ้นกระดูกกะเทาะเล็กๆ ตรงปลายยอดเดือย C2"
@@ -569,7 +569,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดรักษาในผู้สูงอายุ (>65 ปี), เคลื่อน >5มม., เอียง >10° โดยผ่าตัดยึดสกรูทางด้านหน้า (Anterior Odontoid Screw) หรือผ่าตัดเชื่อม C1-C2 ด้านหลัง (Harms technique)"
                 }
               },
-              "illustrationId": "/images/c2_odontoid/anderson_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Transverse or oblique fracture line through the narrow neck/base of the odontoid process.",
                 "th": "เห็นรอยหักแนวขวางหรือเฉียงพาดผ่านโคนเดือย C2"
@@ -600,7 +600,7 @@ export const cSpineBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีเคลื่อนเกย >5มม. หรือมีรอยกดทับไขสันหลัง"
                 }
               },
-              "illustrationId": "/images/c2_odontoid/anderson_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line extending beneath odontoid base deep into C2 body cancellous bone.",
                 "th": "เห็นรอยหักจากโคนเดือยล้ำลึกลงไปในเนื้อกระดูกของลำตัว C2"
@@ -762,7 +762,7 @@ export const cSpineBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/lower_cervical_slic/slic_less_4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Simple anterior compression fracture or isolated spinous process fracture with intact posterior alignment.",
                 "th": "เห็นรอยหักยุบตัวเฉพาะส่วนหน้า หรือหักเฉพาะส่วนยอดกระดูก โดยแนวข้อต่อด้านหลังยังเรียงตัวปกติ"
@@ -793,7 +793,7 @@ export const cSpineBone: BoneData = {
                   "th": "พิจารณาผ่าตัดยึดตรึง (ACDF หรือ Posterior Fusion) ในผู้ป่วยอายุน้อย คอผิดรูป หรือปวดรุนแรง"
                 }
               },
-              "illustrationId": "/images/lower_cervical_slic/slic_4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Incomplete burst fracture or compression fracture with equivocal posterior interspinous gap widening.",
                 "th": "เห็นรอยหักยุบตัวส่วนหลังร่วมกับระยะช่องว่างระหว่างยอดกระดูกกว้างขึ้นเล็กน้อย"
@@ -824,7 +824,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดมาตรฐานหลัก (Gold Standard): ผ่าตัด減壓และดามยึดกระดูก เช่น ACDF, Corpectomy หรือ Posterior Lateral Mass Screw Fusion ผ่าตัดด่วนที่สุดหากมีอาการอัมพาตครึ่งท่อน"
                 }
               },
-              "illustrationId": "/images/lower_cervical_slic/slic_greater_4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross translational dislocation, locked facets, or complete burst fracture with canal compromise >50%.",
                 "th": "เห็นกระดูกคอเคลื่อนหลุดแปลกแนว, ข้อต่อ Facet ล็อคเกยกัน หรือ Burst fracture กดช่องไขสันหลัง >50%"
@@ -918,7 +918,7 @@ export const cSpineBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะ A4 burst fracture, คอโก่ง >20° หรือมีอาการอัมพาต โดยผ่าตัด ACDF หรือ Corpectomy"
                 }
               },
-              "illustrationId": "/images/lower_cervical_aospine/ao_type_a.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Wedge compression or burst fracture of vertebral body with intact posterior tension band.",
                 "th": "เห็นลำตัวกระดูกคอยุบตัวเป็นรูปิ่ม หรือแตกป่น โดยแนวเอ็นยึดด้านหลังยังสมบูรณ์"
@@ -949,7 +949,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดยึดตรึงในผู้ป่วย Type B ทุกราย เพื่อสร้างความมั่นคงของแนวเอ็นยึด"
                 }
               },
-              "illustrationId": "/images/lower_cervical_aospine/ao_type_b.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Widened interspinous gap, facet joint subluxation/perched facets, or anterior disc space gapping.",
                 "th": "เห็นช่องว่างระหว่างยอดกระดูกกว้างขึ้น, ข้อ Facet หลุดเกย หรือช่องหมอนรองด้านหน้าอ้ากว้าง"
@@ -980,7 +980,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดด่วนที่สุด (EMERGENCY SURGERY): ดึงจัดข้อให้เข้าที่ แล้วเปิดผ่าตัดดามยึดกระดูกเชื่อมข้อทั้งด้านหน้าและด้านหลัง"
                 }
               },
-              "illustrationId": "/images/lower_cervical_aospine/ao_type_c.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross translational step-off >3.5mm, bilateral locked facets, or complete vertebral displacement.",
                 "th": "เห็นชิ้นกระดูกเคลื่อนเกยแปลกแนว >3.5มม., ข้อ Facet หลุดล็อคเกยกันสมบูรณ์"
@@ -1078,7 +1078,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดด่วนใน CF3-CF5 (Flexion Tear-drop) โดยทำ ACDF หรือ Corpectomy"
                 }
               },
-              "illustrationId": "/images/lower_cervical_allen/cf_teardrop.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Anterior inferior triangular tear-drop fragment with retropulsed body fragment.",
                 "th": "เห็นชิ้นกระดูกสามเหลี่ยมหลุดตรงขอบล่างหน้า (Tear-drop) และตัวกระดูกทรุดดันเข้าช่องไขสันหลัง"
@@ -1109,7 +1109,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดด่วน: ดึงจัดข้อ Facet ที่ล็อคให้หลุดเข้าที่ แล้วผ่าตัดเชื่อมข้อ ACDF หรือ Posterior Fusion"
                 }
               },
-              "illustrationId": "/images/lower_cervical_allen/df_locked_facets.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Abrupt displacement >25% (unilateral) or >50% (bilateral locked facets) on lateral X-ray.",
                 "th": "เห็นกระดูกคอเคลื่อนเกย >25% (ข้างเดียว) หรือ >50% (สองข้าง) จากข้อ Facet ล็อคข้ามกัน"
@@ -1140,7 +1140,7 @@ export const cSpineBone: BoneData = {
                   "th": "แนะนำผ่าตัดใน VC2-VC3 โดยทำ Corpectomy ตัดลำตัวกระดูกแล้วใส่ Cage ดามแผ่นเหล็ก"
                 }
               },
-              "illustrationId": "/images/lower_cervical_allen/vc_burst.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Centrally comminuted vertebral body with outward displacement of anterior and posterior walls.",
                 "th": "เห็นลำตัวกระดูกแตกป่นกลางชิ้น โดยผนังหน้าและหลังโป่งขยายออก"

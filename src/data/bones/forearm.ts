@@ -1566,7 +1566,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด Volar locking plate หากไม่มั่นคงหรือเคลื่อนหลุดซ้ำ"
                 }
               },
-              "illustrationId": "/images/frykman/frykman1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Extra-articular fracture line at distal radius; intact radiocarpal joint, DRUJ, and ulnar styloid.",
                 "th": "รอยหักนอกข้อบริเวณปลายกระดูกเรเดียส โดยข้อ radiocarpal, DRUJ และ ulnar styloid สมบูรณ์ดี"
@@ -1592,7 +1592,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด Volar locking plate สำหรับ Radius และประเมินข้อ DRUJ"
                 }
               },
-              "illustrationId": "/images/frykman/frykman2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Extra-articular distal radius fracture with fracture line across distal ulnar styloid.",
                 "th": "รอยหักนอกข้อปลายกระดูกเรเดียส ร่วมกับมีรอยหักบริเวณปุ่ม ulnar styloid"
@@ -1618,7 +1618,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF ด้วย Volar locking plate เพื่อเรียงผิวข้อ"
                 }
               },
-              "illustrationId": "/images/frykman/frykman3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Intra-articular fracture extending into radiocarpal articular surface; intact DRUJ and ulnar styloid.",
                 "th": "รอยหักลามเข้าผิวข้อ radiocarpal โดยข้อ DRUJ และ ulnar styloid ยังสมบูรณ์ดี"
@@ -1644,7 +1644,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF Radius + ประเมินความมั่นคงข้อ DRUJ"
                 }
               },
-              "illustrationId": "/images/frykman/frykman4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Intra-articular fracture extending into radiocarpal joint with associated ulnar styloid fracture.",
                 "th": "รอยหักลามเข้าข้อ radiocarpal ร่วมกับมีรอยหัก ulnar styloid"
@@ -1670,7 +1670,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF Radius ± ปักเข็มยึดข้อ DRUJ หากไม่มั่นคง"
                 }
               },
-              "illustrationId": "/images/frykman/frykman5.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Intra-articular fracture extending into distal radioulnar joint (sigmoid notch); intact ulnar styloid.",
                 "th": "รอยหักลามเข้าข้อ DRUJ (sigmoid notch) โดย ulnar styloid ยังสมบูรณ์ดี"
@@ -1696,7 +1696,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF Radius + ยึด Ulnar styloid หากข้อ DRUJ ยังไม่มั่นคง"
                 }
               },
-              "illustrationId": "/images/frykman/frykman6.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Intra-articular fracture involving DRUJ combined with ulnar styloid fracture.",
                 "th": "รอยหักลามเข้าข้อ DRUJ ร่วมกับมีรอยหัก ulnar styloid"
@@ -1722,7 +1722,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF ด้วย Volar locking plate + จัดเรียงผิวข้อทั้งสองเข้าที่สมบูรณ์"
                 }
               },
-              "illustrationId": "/images/frykman/frykman7.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Complex intra-articular fracture extending into BOTH radiocarpal and DRUJ joints; intact ulnar styloid.",
                 "th": "รอยหักเข้าข้อซับซ้อนลามทั้งข้อ radiocarpal และ DRUJ โดย ulnar styloid ยังสมบูรณ์ดี"
@@ -1748,7 +1748,7 @@ export const forearmBone: BoneData = {
                   "th": "ผ่าตัด ORIF ครบวงจรด้วย Volar Locking Plate จัดเรียงผิวข้อและสร้างความมั่นคงให้ข้อ DRUJ"
                 }
               },
-              "illustrationId": "/images/frykman/frykman8.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Comminuted intra-articular fracture involving BOTH radiocarpal and DRUJ joints plus ulnar styloid fracture.",
                 "th": "รอยหักแตกเข้าข้อลามทั้งข้อ radiocarpal, DRUJ และมีรอยหัก ulnar styloid ร่วมด้วย"

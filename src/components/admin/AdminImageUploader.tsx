@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Language } from "../../App";
 import type { BoneData, FractureClassificationType, BoneRegion } from "../../types";
-import { X, Upload, Image as ImageIcon, CheckCircle, Download, RefreshCw, Layers, BookOpen } from "lucide-react";
+import { X, Upload, CheckCircle, Download, RefreshCw, BookOpen, Loader2, AlertCircle, Check, Palette, Film } from "lucide-react";
 
 interface AdminImageUploaderProps {
   darkMode: boolean;
@@ -16,6 +16,9 @@ interface UploadItem {
   targetPath: string;
   suggestedFilename: string;
   title: string;
+  status: "idle" | "saving" | "saved" | "error";
+  statusMessage?: string;
+  updatedFile?: string;
 }
 
 export function AdminImageUploader({
@@ -24,12 +27,14 @@ export function AdminImageUploader({
   bones,
   onClose,
 }: AdminImageUploaderProps) {
-  const [activeTab, setActiveTab] = useState<"xrays" | "concepts">("xrays");
+  const [activeTab, setActiveTab] = useState<"illustrations" | "xrays" | "concepts">("illustrations");
   const [selectedBoneId, setSelectedBoneId] = useState<string>(bones[0]?.id || "femur");
   const [selectedRegionId, setSelectedRegionId] = useState<string>("");
   const [selectedSystemIdx, setSelectedSystemIdx] = useState<number>(0);
+  const [illustrationUploads, setIllustrationUploads] = useState<Record<string, UploadItem>>({});
   const [xrayUploads, setXrayUploads] = useState<Record<string, UploadItem>>({});
   const [conceptUploads, setConceptUploads] = useState<Record<string, UploadItem>>({});
+  const [globalBanner, setGlobalBanner] = useState<{ type: "success" | "error"; message: string } | null>(null);
 
   const selectedBone = bones.find(b => b.id === selectedBoneId) || bones[0];
   const regions = selectedBone?.regions || [];
@@ -45,7 +50,129 @@ export function AdminImageUploader({
   const text = darkMode ? "#F1F5F9" : "#0F172A";
   const muted = darkMode ? "#94A3B8" : "#64748B";
 
-  const handleXRayFileDrop = (type: FractureClassificationType, files: FileList | null) => {
+  // API helper to save image to public directory and update bone typescript file
+  const saveImageToServer = async (
+    file: File,
+    targetPath: string,
+    boneId: string,
+    regionId: string,
+    systemIdx: number,
+    typeIdx: number,
+    typeCode: string,
+    updateType: "illustration" | "xray" | "concept"
+  ): Promise<{ success: boolean; updatedFile?: string; error?: string }> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onload = async () => {
+        const imageData = reader.result as string;
+        try {
+          const res = await fetch("/api/admin/save-image", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              targetPath,
+              imageData,
+              boneId,
+              regionId,
+              systemIdx,
+              typeIdx,
+              typeCode,
+              updateType,
+            }),
+          });
+          const json = await res.json();
+          if (json.success) {
+            resolve({ success: true, updatedFile: json.updatedFile });
+          } else {
+            resolve({ success: false, error: json.error || "Server error" });
+          }
+        } catch (err: any) {
+          resolve({ success: false, error: err.message || "Failed to communicate with dev server" });
+        }
+      };
+      reader.onerror = () => resolve({ success: false, error: "Failed to read image file" });
+      reader.readAsDataURL(file);
+    });
+  };
+
+  // 1. Handle Classification Diagram Illustration Drop
+  const handleIllustrationFileDrop = async (type: FractureClassificationType, typeIdx: number, files: FileList | null) => {
+    if (!files || files.length === 0) return;
+    const file = files[0];
+    if (!file.type.startsWith("image/")) {
+      alert("Please upload an image file (PNG, JPG, WebP, SVG)");
+      return;
+    }
+
+    const previewUrl = URL.createObjectURL(file);
+    const defaultFolder = type.illustrationId && type.illustrationId.startsWith("/images/") && !type.illustrationId.startsWith("/images/xrays/")
+      ? type.illustrationId.replace("/images/", "").split("/")[0]
+      : selectedBoneId;
+    
+    const baseFilename = type.illustrationId && type.illustrationId.includes("/")
+      ? type.illustrationId.split("/").pop() || `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
+      : `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
+
+    const targetPath = `/images/${defaultFolder}/${baseFilename}`;
+
+    setIllustrationUploads(prev => ({
+      ...prev,
+      [type.type]: {
+        file,
+        previewUrl,
+        targetPath,
+        suggestedFilename: baseFilename,
+        title: type.name[language],
+        status: "saving",
+        statusMessage: "Saving diagram & updating illustrationId...",
+      },
+    }));
+
+    const result = await saveImageToServer(
+      file,
+      targetPath,
+      selectedBoneId,
+      currentRegion?.id || "",
+      selectedSystemIdx,
+      typeIdx,
+      type.type,
+      "illustration"
+    );
+
+    if (result.success) {
+      type.illustrationId = targetPath;
+      setIllustrationUploads(prev => ({
+        ...prev,
+        [type.type]: {
+          ...prev[type.type],
+          status: "saved",
+          updatedFile: result.updatedFile,
+          statusMessage: `Auto-saved to ${targetPath} & updated illustrationId!`,
+        },
+      }));
+      setGlobalBanner({
+        type: "success",
+        message: `✅ Classification Diagram saved to ${targetPath} and updated in ${result.updatedFile}!`,
+      });
+      setTimeout(() => setGlobalBanner(null), 5000);
+    } else {
+      setIllustrationUploads(prev => ({
+        ...prev,
+        [type.type]: {
+          ...prev[type.type],
+          status: "error",
+          statusMessage: result.error,
+        },
+      }));
+      setGlobalBanner({
+        type: "error",
+        message: `⚠️ Auto-save error: ${result.error}`,
+      });
+    }
+  };
+
+  // 2. Handle Real X-Ray Film Drop
+  const handleXRayFileDrop = async (type: FractureClassificationType, typeIdx: number, files: FileList | null) => {
     if (!files || files.length === 0) return;
     const file = files[0];
     if (!file.type.startsWith("image/")) {
@@ -54,13 +181,13 @@ export function AdminImageUploader({
     }
 
     const previewUrl = URL.createObjectURL(file);
-    const defaultFolder = type.illustrationId
-      ? type.illustrationId.replace("/images/", "").split("/")[0]
+    const defaultFolder = type.xrayUrl && type.xrayUrl.startsWith("/images/xrays/")
+      ? type.xrayUrl.replace("/images/xrays/", "").split("/")[0]
       : selectedBoneId;
     
-    const baseFilename = type.illustrationId
-      ? type.illustrationId.split("/").pop() || `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
-      : `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
+    const baseFilename = type.xrayUrl && type.xrayUrl.includes("/")
+      ? type.xrayUrl.split("/").pop() || `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}_xray.png`
+      : `${type.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}_xray.png`;
 
     const targetPath = `/images/xrays/${defaultFolder}/${baseFilename}`;
 
@@ -72,11 +199,56 @@ export function AdminImageUploader({
         targetPath,
         suggestedFilename: baseFilename,
         title: type.name[language],
+        status: "saving",
+        statusMessage: "Saving X-Ray film & updating xrayUrl...",
       },
     }));
+
+    const result = await saveImageToServer(
+      file,
+      targetPath,
+      selectedBoneId,
+      currentRegion?.id || "",
+      selectedSystemIdx,
+      typeIdx,
+      type.type,
+      "xray"
+    );
+
+    if (result.success) {
+      type.xrayUrl = targetPath;
+      setXrayUploads(prev => ({
+        ...prev,
+        [type.type]: {
+          ...prev[type.type],
+          status: "saved",
+          updatedFile: result.updatedFile,
+          statusMessage: `Auto-saved to ${targetPath} & updated xrayUrl!`,
+        },
+      }));
+      setGlobalBanner({
+        type: "success",
+        message: `✅ Real X-Ray film saved to ${targetPath} and updated in ${result.updatedFile}!`,
+      });
+      setTimeout(() => setGlobalBanner(null), 5000);
+    } else {
+      setXrayUploads(prev => ({
+        ...prev,
+        [type.type]: {
+          ...prev[type.type],
+          status: "error",
+          statusMessage: result.error,
+        },
+      }));
+      setGlobalBanner({
+        type: "error",
+        message: `⚠️ Auto-save error: ${result.error}`,
+      });
+    }
   };
 
-  const handleConceptFileDrop = (region: BoneRegion, files: FileList | null) => {
+  // 3. Handle Anatomy Concept Drop
+  const handleConceptFileDrop = async (region: BoneRegion, files: FileList | null) => {
     if (!files || files.length === 0) return;
     const file = files[0];
     if (!file.type.startsWith("image/")) {
@@ -85,7 +257,7 @@ export function AdminImageUploader({
     }
 
     const previewUrl = URL.createObjectURL(file);
-    const baseFilename = region.regionConcept?.imageUrl
+    const baseFilename = region.regionConcept?.imageUrl && region.regionConcept.imageUrl.includes("/")
       ? region.regionConcept.imageUrl.split("/").pop() || `anatomy_${region.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
       : `anatomy_${region.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
 
@@ -99,11 +271,62 @@ export function AdminImageUploader({
         targetPath,
         suggestedFilename: baseFilename,
         title: `${region.name[language]} Concept Anatomy`,
+        status: "saving",
+        statusMessage: "Saving anatomy diagram...",
       },
     }));
+
+    const result = await saveImageToServer(
+      file,
+      targetPath,
+      selectedBoneId,
+      region.id,
+      0,
+      0,
+      "",
+      "concept"
+    );
+
+    if (result.success) {
+      if (!region.regionConcept) {
+        region.regionConcept = {};
+      }
+      region.regionConcept.imageUrl = targetPath;
+      setConceptUploads(prev => ({
+        ...prev,
+        [region.id]: {
+          ...prev[region.id],
+          status: "saved",
+          updatedFile: result.updatedFile,
+          statusMessage: `Auto-saved to ${targetPath}!`,
+        },
+      }));
+      setGlobalBanner({
+        type: "success",
+        message: `✅ Anatomy diagram saved to ${targetPath} and updated in ${result.updatedFile}!`,
+      });
+      setTimeout(() => setGlobalBanner(null), 5000);
+    } else {
+      setConceptUploads(prev => ({
+        ...prev,
+        [region.id]: {
+          ...prev[region.id],
+          status: "error",
+          statusMessage: result.error,
+        },
+      }));
+      setGlobalBanner({
+        type: "error",
+        message: `⚠️ Auto-save error: ${result.error}`,
+      });
+    }
   };
 
-  const currentUploads = activeTab === "xrays" ? xrayUploads : conceptUploads;
+  const currentUploads = activeTab === "illustrations" 
+    ? illustrationUploads 
+    : activeTab === "xrays" 
+    ? xrayUploads 
+    : conceptUploads;
 
   const handleDownloadSingle = (item: UploadItem) => {
     const a = document.createElement("a");
@@ -134,7 +357,7 @@ export function AdminImageUploader({
           background: bg,
           borderColor: border,
           color: text,
-          width: 950,
+          width: 980,
           maxWidth: "100%",
           maxHeight: "92vh",
         }}
@@ -152,14 +375,15 @@ export function AdminImageUploader({
             <div>
               <div className="flex items-center gap-2">
                 <h2 className="text-lg font-extrabold tracking-tight">
-                  Media Manager & Batch Uploader
+                  Auto-Sync Media Manager & X-Ray Uploader
                 </h2>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-500/10 text-teal-400 border border-teal-500/30 uppercase tracking-widest">
-                  Admin Tool
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-500/10 text-teal-400 border border-teal-500/30 uppercase tracking-widest flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                  Auto-Save Active
                 </span>
               </div>
               <p className="text-xs" style={{ color: muted }}>
-                Drag and drop X-Rays or Anatomy Concept diagrams. Files will automatically be mapped to the project structure.
+                Drag and drop X-Rays or Anatomy Concept diagrams. Images are automatically saved to disk (<code>public/images/</code>) and updated into the bone data files.
               </p>
             </div>
           </div>
@@ -171,8 +395,45 @@ export function AdminImageUploader({
           </button>
         </div>
 
+        {/* Global Notification Banner */}
+        {globalBanner && (
+          <div
+            className={`px-6 py-2.5 text-xs font-semibold flex items-center justify-between flex-shrink-0 transition-all ${
+              globalBanner.type === "success"
+                ? "bg-teal-500/15 border-b border-teal-500/30 text-teal-300"
+                : "bg-red-500/15 border-b border-red-500/30 text-red-300"
+            }`}
+          >
+            <div className="flex items-center gap-2">
+              {globalBanner.type === "success" ? <Check size={14} /> : <AlertCircle size={14} />}
+              <span>{globalBanner.message}</span>
+            </div>
+            <button onClick={() => setGlobalBanner(null)} className="opacity-70 hover:opacity-100">
+              <X size={14} />
+            </button>
+          </div>
+        )}
+
         {/* Tab Switcher */}
         <div style={{ background: cardBg, borderColor: border }} className="px-6 pt-3 border-b flex items-center gap-2 flex-shrink-0">
+          <button
+            onClick={() => setActiveTab("illustrations")}
+            style={{
+              background: activeTab === "illustrations" ? bg : "transparent",
+              color: activeTab === "illustrations" ? "#00CED1" : muted,
+              borderColor: activeTab === "illustrations" ? border : "transparent",
+            }}
+            className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
+          >
+            <Palette size={15} />
+            <span>Classification Diagrams (รูปวาดการ์ด)</span>
+            {Object.keys(illustrationUploads).length > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
+                {Object.keys(illustrationUploads).length}
+              </span>
+            )}
+          </button>
+
           <button
             onClick={() => setActiveTab("xrays")}
             style={{
@@ -182,8 +443,8 @@ export function AdminImageUploader({
             }}
             className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
           >
-            <Layers size={15} />
-            <span>X-Ray Classification Films</span>
+            <Film size={15} />
+            <span>Real X-Ray Films (ภาพฟิล์มจริง)</span>
             {Object.keys(xrayUploads).length > 0 && (
               <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
                 {Object.keys(xrayUploads).length}
@@ -201,7 +462,7 @@ export function AdminImageUploader({
             className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
           >
             <BookOpen size={15} />
-            <span>Region Concept Anatomy (Left Sidebar)</span>
+            <span>Region Concept Anatomy (ภาพซ้ายมือ)</span>
             {Object.keys(conceptUploads).length > 0 && (
               <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
                 {Object.keys(conceptUploads).length}
@@ -237,7 +498,7 @@ export function AdminImageUploader({
           </div>
 
           {/* Region Select */}
-          {activeTab === "xrays" && regions.length > 0 && (
+          {activeTab !== "concepts" && regions.length > 0 && (
             <div className="flex items-center gap-2">
               <span className="font-bold" style={{ color: muted }}>Region:</span>
               <select
@@ -258,8 +519,8 @@ export function AdminImageUploader({
             </div>
           )}
 
-          {/* Classification System Select (X-rays only) */}
-          {activeTab === "xrays" && systems.length > 0 && (
+          {/* Classification System Select */}
+          {activeTab !== "concepts" && systems.length > 0 && (
             <div className="flex items-center gap-2">
               <span className="font-bold" style={{ color: muted }}>Classification:</span>
               <select
@@ -284,43 +545,52 @@ export function AdminImageUploader({
               className="ml-auto px-3.5 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
             >
               <Download size={14} />
-              <span>Download Batch ({Object.keys(currentUploads).length})</span>
+              <span>Download Batch Backup ({Object.keys(currentUploads).length})</span>
             </button>
           )}
         </div>
 
         {/* Content Body */}
         <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-4">
-          {activeTab === "xrays" ? (
-            /* ── X-Ray Types Grid ── */
+          {activeTab === "illustrations" ? (
+            /* ── TAB 1: Classification Diagram Illustrations ── */
             <>
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-extrabold uppercase tracking-wider text-teal-400 flex items-center gap-2">
-                  <Layers size={16} />
+                  <Palette size={16} />
                   <span>{currentSystem?.fullName[language] || currentSystem?.system}</span>
                   <span className="text-xs font-normal" style={{ color: muted }}>
-                    ({types.length} Classification Types)
+                    ({types.length} Types — Diagram Illustrations)
                   </span>
                 </h3>
-                <span className="text-xs" style={{ color: muted }}>
-                  Drop X-Ray images onto each classification card:
+                <span className="text-xs font-medium" style={{ color: muted }}>
+                  Drag & drop medical diagram images to update <code>illustrationId</code>:
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {types.map(t => {
-                  const upload = xrayUploads[t.type];
-                  const targetFolder = t.illustrationId
+                {types.map((t, typeIdx) => {
+                  const upload = illustrationUploads[t.type];
+                  const targetFolder = t.illustrationId && t.illustrationId.startsWith("/images/") && !t.illustrationId.startsWith("/images/xrays/")
                     ? t.illustrationId.replace("/images/", "").split("/")[0]
                     : selectedBoneId;
-                  const targetFilename = t.illustrationId
+                  const targetFilename = t.illustrationId && t.illustrationId.includes("/")
                     ? t.illustrationId.split("/").pop() || `${t.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
                     : `${t.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
 
                   return (
                     <div
                       key={t.type}
-                      style={{ background: cardBg, borderColor: upload ? "#00CED1" : border }}
+                      style={{ 
+                        background: cardBg, 
+                        borderColor: upload?.status === "saved" 
+                          ? "#2ECC71" 
+                          : upload?.status === "saving"
+                          ? "#00CED1"
+                          : upload?.status === "error"
+                          ? "#EF4444"
+                          : border 
+                      }}
                       className="rounded-xl border p-4 flex flex-col gap-3 transition-all relative group"
                     >
                       <div className="flex items-start justify-between gap-2">
@@ -331,8 +601,17 @@ export function AdminImageUploader({
                           </div>
                         </div>
                         {upload && (
-                          <span className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center flex-shrink-0">
-                            <CheckCircle size={14} />
+                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold flex items-center gap-1 flex-shrink-0 ${
+                            upload.status === "saved"
+                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                              : upload.status === "saving"
+                              ? "bg-teal-500/20 text-teal-300 border border-teal-500/30 animate-pulse"
+                              : "bg-red-500/20 text-red-300 border border-red-500/30"
+                          }`}>
+                            {upload.status === "saving" && <Loader2 size={10} className="animate-spin" />}
+                            {upload.status === "saved" && <CheckCircle size={10} />}
+                            {upload.status === "error" && <AlertCircle size={10} />}
+                            <span>{upload.status === "saving" ? "Saving..." : upload.status === "saved" ? "Diagram Saved" : "Error"}</span>
                           </span>
                         )}
                       </div>
@@ -342,11 +621,11 @@ export function AdminImageUploader({
                         onDrop={e => {
                           e.preventDefault();
                           e.stopPropagation();
-                          handleXRayFileDrop(t, e.dataTransfer.files);
+                          handleIllustrationFileDrop(t, typeIdx, e.dataTransfer.files);
                         }}
                         style={{
                           height: 150,
-                          borderColor: upload ? "#00CED1" : border,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
                           background: darkMode ? "#0B0F17" : "#FFFFFF",
                         }}
                         className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
@@ -357,7 +636,7 @@ export function AdminImageUploader({
                           type="file"
                           accept="image/*"
                           className="hidden"
-                          onChange={e => handleXRayFileDrop(t, e.target.files)}
+                          onChange={e => handleIllustrationFileDrop(t, typeIdx, e.target.files)}
                         />
 
                         {upload ? (
@@ -369,18 +648,18 @@ export function AdminImageUploader({
                             />
                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 rounded">
                               <span className="text-[11px] font-bold text-white bg-teal-600/90 px-2.5 py-1 rounded-md flex items-center gap-1 shadow">
-                                <RefreshCw size={12} /> Replace Image
+                                <RefreshCw size={12} /> Replace Diagram
                               </span>
                             </div>
                           </div>
                         ) : (
                           <div className="flex flex-col items-center justify-center text-center gap-2 p-3">
-                            <div className="w-9 h-9 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400">
-                              <ImageIcon size={18} />
+                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
+                              <Palette size={18} />
                             </div>
                             <div>
-                              <div className="text-xs font-bold text-slate-300">Drag & Drop X-Ray</div>
-                              <div className="text-[10px]" style={{ color: muted }}>or click to browse</div>
+                              <div className="text-xs font-bold text-slate-300">Drag & Drop Classification Diagram</div>
+                              <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/{targetFolder}/</div>
                             </div>
                           </div>
                         )}
@@ -388,22 +667,181 @@ export function AdminImageUploader({
 
                       <div
                         style={{ background: darkMode ? "#0B0F17" : "#F1F5F9", borderColor: border }}
-                        className="p-2 rounded-lg border text-[11px] font-mono flex flex-col gap-1"
+                        className="p-2.5 rounded-lg border text-[11px] font-mono flex flex-col gap-1.5"
                       >
                         <div className="flex items-center justify-between text-[10px]" style={{ color: muted }}>
-                          <span>Destination Folder:</span>
+                          <span className="font-bold">Target illustrationId:</span>
                           {upload && (
                             <button
                               onClick={() => handleDownloadSingle(upload)}
                               className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
                             >
-                              <Download size={10} /> Save File
+                              <Download size={10} /> Backup
                             </button>
                           )}
                         </div>
-                        <div className="text-slate-300 font-bold truncate">
+                        <div className="text-slate-300 font-bold truncate text-[10px]">
+                          public/images/{targetFolder}/{targetFilename}
+                        </div>
+                        {upload?.statusMessage && (
+                          <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
+                            upload.status === "saved" 
+                              ? "text-emerald-400" 
+                              : upload.status === "saving" 
+                              ? "text-teal-400" 
+                              : "text-red-400"
+                          }`}>
+                            {upload.statusMessage}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </>
+          ) : activeTab === "xrays" ? (
+            /* ── TAB 2: Real X-Ray Films ── */
+            <>
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-extrabold uppercase tracking-wider text-teal-400 flex items-center gap-2">
+                  <Film size={16} />
+                  <span>{currentSystem?.fullName[language] || currentSystem?.system}</span>
+                  <span className="text-xs font-normal" style={{ color: muted }}>
+                    ({types.length} Types — Real X-Ray Films)
+                  </span>
+                </h3>
+                <span className="text-xs font-medium" style={{ color: muted }}>
+                  Drag & drop real X-Ray radiographs to update <code>xrayUrl</code>:
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {types.map((t, typeIdx) => {
+                  const upload = xrayUploads[t.type];
+                  const targetFolder = t.xrayUrl && t.xrayUrl.startsWith("/images/xrays/")
+                    ? t.xrayUrl.replace("/images/xrays/", "").split("/")[0]
+                    : selectedBoneId;
+                  const targetFilename = t.xrayUrl && t.xrayUrl.includes("/")
+                    ? t.xrayUrl.split("/").pop() || `${t.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}_xray.png`
+                    : `${t.type.toLowerCase().replace(/[^a-z0-9]/g, "_")}_xray.png`;
+
+                  return (
+                    <div
+                      key={t.type}
+                      style={{ 
+                        background: cardBg, 
+                        borderColor: upload?.status === "saved" 
+                          ? "#2ECC71" 
+                          : upload?.status === "saving"
+                          ? "#00CED1"
+                          : upload?.status === "error"
+                          ? "#EF4444"
+                          : border 
+                      }}
+                      className="rounded-xl border p-4 flex flex-col gap-3 transition-all relative group"
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div>
+                          <div className="font-extrabold text-sm text-teal-400">{t.type}</div>
+                          <div className="text-xs font-semibold leading-snug line-clamp-1" style={{ color: text }}>
+                            {t.name[language]}
+                          </div>
+                        </div>
+                        {upload && (
+                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold flex items-center gap-1 flex-shrink-0 ${
+                            upload.status === "saved"
+                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                              : upload.status === "saving"
+                              ? "bg-teal-500/20 text-teal-300 border border-teal-500/30 animate-pulse"
+                              : "bg-red-500/20 text-red-300 border border-red-500/30"
+                          }`}>
+                            {upload.status === "saving" && <Loader2 size={10} className="animate-spin" />}
+                            {upload.status === "saved" && <CheckCircle size={10} />}
+                            {upload.status === "error" && <AlertCircle size={10} />}
+                            <span>{upload.status === "saving" ? "Saving..." : upload.status === "saved" ? "X-Ray Saved" : "Error"}</span>
+                          </span>
+                        )}
+                      </div>
+
+                      <label
+                        onDragOver={e => { e.preventDefault(); e.stopPropagation(); }}
+                        onDrop={e => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          handleXRayFileDrop(t, typeIdx, e.dataTransfer.files);
+                        }}
+                        style={{
+                          height: 150,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
+                          background: darkMode ? "#0B0F17" : "#FFFFFF",
+                        }}
+                        className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
+                          upload ? "border-solid" : ""
+                        }`}
+                      >
+                        <input
+                          type="file"
+                          accept="image/*"
+                          className="hidden"
+                          onChange={e => handleXRayFileDrop(t, typeIdx, e.target.files)}
+                        />
+
+                        {upload ? (
+                          <div className="w-full h-full flex flex-col items-center justify-center relative">
+                            <img
+                              src={upload.previewUrl}
+                              alt={t.name[language]}
+                              className="max-h-full max-w-full object-contain rounded"
+                            />
+                            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 rounded">
+                              <span className="text-[11px] font-bold text-white bg-teal-600/90 px-2.5 py-1 rounded-md flex items-center gap-1 shadow">
+                                <RefreshCw size={12} /> Replace X-Ray
+                              </span>
+                            </div>
+                          </div>
+                        ) : (
+                          <div className="flex flex-col items-center justify-center text-center gap-2 p-3">
+                            <div className="w-9 h-9 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400">
+                              <Film size={18} />
+                            </div>
+                            <div>
+                              <div className="text-xs font-bold text-slate-300">Drag & Drop Real X-Ray</div>
+                              <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/xrays/{targetFolder}/</div>
+                            </div>
+                          </div>
+                        )}
+                      </label>
+
+                      <div
+                        style={{ background: darkMode ? "#0B0F17" : "#F1F5F9", borderColor: border }}
+                        className="p-2.5 rounded-lg border text-[11px] font-mono flex flex-col gap-1.5"
+                      >
+                        <div className="flex items-center justify-between text-[10px]" style={{ color: muted }}>
+                          <span className="font-bold">Target xrayUrl:</span>
+                          {upload && (
+                            <button
+                              onClick={() => handleDownloadSingle(upload)}
+                              className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
+                            >
+                              <Download size={10} /> Backup
+                            </button>
+                          )}
+                        </div>
+                        <div className="text-slate-300 font-bold truncate text-[10px]">
                           public/images/xrays/{targetFolder}/{targetFilename}
                         </div>
+                        {upload?.statusMessage && (
+                          <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
+                            upload.status === "saved" 
+                              ? "text-emerald-400" 
+                              : upload.status === "saving" 
+                              ? "text-teal-400" 
+                              : "text-red-400"
+                          }`}>
+                            {upload.statusMessage}
+                          </div>
+                        )}
                       </div>
                     </div>
                   );
@@ -411,7 +849,7 @@ export function AdminImageUploader({
               </div>
             </>
           ) : (
-            /* ── Region Anatomy Concepts Grid ── */
+            /* ── TAB 3: Region Anatomy Concepts Grid ── */
             <>
               <div className="flex items-center justify-between">
                 <h3 className="text-sm font-extrabold uppercase tracking-wider text-teal-400 flex items-center gap-2">
@@ -421,22 +859,31 @@ export function AdminImageUploader({
                     ({regions.length} Anatomy Regions)
                   </span>
                 </h3>
-                <span className="text-xs" style={{ color: muted }}>
-                  Drop Anatomy / Diagram illustrations for the Left Sidebar Clinical Guide:
+                <span className="text-xs font-medium" style={{ color: muted }}>
+                  Drag & drop Anatomy illustrations to auto-update Clinical Guide:
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {regions.map(r => {
                   const upload = conceptUploads[r.id];
-                  const targetFilename = r.regionConcept?.imageUrl
+                  const targetFilename = r.regionConcept?.imageUrl && r.regionConcept.imageUrl.includes("/")
                     ? r.regionConcept.imageUrl.split("/").pop() || `anatomy_${r.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
                     : `anatomy_${r.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
 
                   return (
                     <div
                       key={r.id}
-                      style={{ background: cardBg, borderColor: upload ? "#00CED1" : border }}
+                      style={{ 
+                        background: cardBg, 
+                        borderColor: upload?.status === "saved" 
+                          ? "#2ECC71" 
+                          : upload?.status === "saving"
+                          ? "#00CED1"
+                          : upload?.status === "error"
+                          ? "#EF4444"
+                          : border 
+                      }}
                       className="rounded-xl border p-4 flex flex-col gap-3 transition-all relative group"
                     >
                       <div className="flex items-start justify-between gap-2">
@@ -447,8 +894,17 @@ export function AdminImageUploader({
                           </div>
                         </div>
                         {upload && (
-                          <span className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center flex-shrink-0">
-                            <CheckCircle size={14} />
+                          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold flex items-center gap-1 flex-shrink-0 ${
+                            upload.status === "saved"
+                              ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/30"
+                              : upload.status === "saving"
+                              ? "bg-teal-500/20 text-teal-300 border border-teal-500/30 animate-pulse"
+                              : "bg-red-500/20 text-red-300 border border-red-500/30"
+                          }`}>
+                            {upload.status === "saving" && <Loader2 size={10} className="animate-spin" />}
+                            {upload.status === "saved" && <CheckCircle size={10} />}
+                            {upload.status === "error" && <AlertCircle size={10} />}
+                            <span>{upload.status === "saving" ? "Saving..." : upload.status === "saved" ? "Anatomy Saved" : "Error"}</span>
                           </span>
                         )}
                       </div>
@@ -462,7 +918,7 @@ export function AdminImageUploader({
                         }}
                         style={{
                           height: 150,
-                          borderColor: upload ? "#00CED1" : border,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
                           background: darkMode ? "#0B0F17" : "#FFFFFF",
                         }}
                         className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
@@ -485,7 +941,7 @@ export function AdminImageUploader({
                             />
                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 rounded">
                               <span className="text-[11px] font-bold text-white bg-teal-600/90 px-2.5 py-1 rounded-md flex items-center gap-1 shadow">
-                                <RefreshCw size={12} /> Replace Image
+                                <RefreshCw size={12} /> Replace Anatomy
                               </span>
                             </div>
                           </div>
@@ -496,7 +952,7 @@ export function AdminImageUploader({
                             </div>
                             <div>
                               <div className="text-xs font-bold text-slate-300">Drag & Drop Anatomy Diagram</div>
-                              <div className="text-[10px]" style={{ color: muted }}>or click to browse</div>
+                              <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/concepts/</div>
                             </div>
                           </div>
                         )}
@@ -504,22 +960,33 @@ export function AdminImageUploader({
 
                       <div
                         style={{ background: darkMode ? "#0B0F17" : "#F1F5F9", borderColor: border }}
-                        className="p-2 rounded-lg border text-[11px] font-mono flex flex-col gap-1"
+                        className="p-2.5 rounded-lg border text-[11px] font-mono flex flex-col gap-1.5"
                       >
                         <div className="flex items-center justify-between text-[10px]" style={{ color: muted }}>
-                          <span>Destination Folder:</span>
+                          <span className="font-bold">Target imageUrl:</span>
                           {upload && (
                             <button
                               onClick={() => handleDownloadSingle(upload)}
                               className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
                             >
-                              <Download size={10} /> Save File
+                              <Download size={10} /> Backup
                             </button>
                           )}
                         </div>
-                        <div className="text-slate-300 font-bold truncate">
+                        <div className="text-slate-300 font-bold truncate text-[10px]">
                           public/images/concepts/{targetFilename}
                         </div>
+                        {upload?.statusMessage && (
+                          <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
+                            upload.status === "saved" 
+                              ? "text-emerald-400" 
+                              : upload.status === "saving" 
+                              ? "text-teal-400" 
+                              : "text-red-400"
+                          }`}>
+                            {upload.statusMessage}
+                          </div>
+                        )}
                       </div>
                     </div>
                   );
@@ -535,7 +1002,7 @@ export function AdminImageUploader({
           className="px-6 py-3.5 border-t flex items-center justify-between text-xs flex-shrink-0"
         >
           <div style={{ color: muted }} className="flex items-center gap-2">
-            <span>💡 <strong>Tip:</strong> Images for the Left Sidebar go to <code>public/images/concepts/</code> and will show up automatically in the Clinical Guide frame.</span>
+            <span>⚡ <strong>Auto-Sync Active:</strong> เมื่อลากรูปใส่ การ์ดจะทำการเซฟไฟล์ลง <code>public/images/</code> และอัปเดตโค้ดใน <code>src/data/bones/</code> ให้อัตโนมัติทันที</span>
           </div>
           <button
             onClick={onClose}

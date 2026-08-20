@@ -118,8 +118,7 @@ export const scapulaBone: BoneData = {
             "en": "Anatomical Classification of Scapular Body Fractures",
             "th": "การจำแนกกระดูกสะบักส่วนลำตัวหักตามตำแหน่งทางกายวิภาค"
           },
-
-        "description": {
+          "description": {
             "en": "Classification of scapular body fractures based on anatomical location (Infraspinous Fossa, Scapular Spine, Medial/Lateral Border). Most body fractures (~90%) are non-displaced due to surrounding muscle splinting.",
             "th": "ระบบจำแนกกระดูกสะบักส่วนลำตัวหักตามตำแหน่งกายวิภาค (ลำตัว Fossa, สันสะบัก Spine, ขอบด้านใน/นอก) ส่วนใหญ่ (~90%) เป็นรอยหักไม่เคลื่อนตัวเนื่องจากมีกล้ามเนื้อหนาแน่นปกคลุมพยุง"
           },
@@ -199,7 +198,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีเกยเคลื่อน >2 ซม. ทิ่มเสียดสีผนังซี่โครง"
                 }
               },
-              "illustrationId": "/images/scapula_body/body_fossa.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Comminuted or transverse fracture lines within the thin scapular blade with intact borders.",
                 "th": "เห็นรอยหักบนแผ่นกระดูกสะบักโดยขอบกระดูกหลักยังคงต่อเนื่องกัน"
@@ -230,7 +229,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีเคลื่อนตัว >1 ซม. หรือกดทับช่องใต้ Acromion"
                 }
               },
-              "illustrationId": "/images/scapula_body/spine.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Transverse or oblique fracture line crossing the dorsal scapular spine on Y-view.",
                 "th": "เห็นรอยหักแนวขวางพาดผ่านสันสะบักด้านหลังชัดเจนในท่า Scapular Y-view"
@@ -261,7 +260,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีขอบนอกเบี้ยวเคลื่อน >20 มม. หรือหมุนบิด >45 องศา"
                 }
               },
-              "illustrationId": "/images/scapula_body/border_angle.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line isolated to the lateral/medial cortical margin or inferior angle.",
                 "th": "เห็นรอยหักเฉพาะบริเวณขอบกระดูกด้านนอก ด้านใน หรือมุมล่างของสะบัก"
@@ -476,7 +475,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะกรณีเกยเคลื่อน >1 ซม. หรือมุม GPA <22 องศา"
                 }
               },
-              "illustrationId": "/images/scapula_neck/isolated_neck.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line across scapular neck with normal clavicle and intact AC joint.",
                 "th": "เห็นรอยหักบริเวณคอสะบัก โดยกระดูกไหปลาร้าและข้อ AC ยังคงปกติสมบูรณ์"
@@ -507,7 +506,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำให้ผ่าตัดรักษา (ORIF) ผ่าตัดยึดแผ่นเหล็กกระดูกไหปลาร้าก่อนเพื่อคืนรูปวง SSSC และดามคอสะบักหากยังคงเคลื่อนตัว >1ซม."
                 }
               },
-              "illustrationId": "/images/scapula_neck/floating_shoulder.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Ipsilateral scapular neck fracture combined with displaced clavicle shaft fracture or Type III-V AC joint dislocation.",
                 "th": "เห็นรอยหักคอสะบักร่วมกับกระดูกไหปลาร้าหักเกย หรือข้อ AC เคลื่อนหลุดในฝั่งเดียวกัน"
@@ -538,7 +537,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF เปิดแผลด้านหลัง (Judet approach) ดามด้วยแผ่นเหล็กล็อค Anatomical Plate"
                 }
               },
-              "illustrationId": "/images/scapula_neck/displaced_neck.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross translational step-off >1cm or severe angulation >40° of the glenoid block relative to body.",
                 "th": "เห็นชิ้นส่วนเบ้าข้อไหล่เกยเคลื่อน >1ซม. หรือเอียงบิด >40 องศาเมื่อเทียบกับตัวสะบัก"
@@ -754,7 +753,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะชิ้นกระดูกใหญ่ >25% หรือข้อไหล่ยังคงหลวมหลุด ยึดด้วย Suture Anchor หรือสกรู"
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Avulsion fragment off anterior (IA) or posterior (IB) glenoid rim on axillary view.",
                 "th": "เห็นชิ้นกระดูกกะเทาะออกจากขอบเบ้าด้านหน้า (IA) หรือด้านหลัง (IB) ในท่า Axillary"
@@ -785,7 +784,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF เมื่อผิวข้อเหลื่อม >4มม. ยึดด้วยสกรูจมหรือแผ่นเหล็ก"
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Transverse fracture line across lower glenoid exiting lateral scapular border.",
                 "th": "เห็นรอยหักแนวขวางพาดผ่านเบ้าข้อช่วงล่าง ทะลุออกขอบสะบักด้านนอก"
@@ -816,7 +815,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ยึดสกรูหรือแผ่นเหล็กเมื่อผิวข้อเหลื่อม >4มม."
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Oblique fracture line crossing superior glenoid fossa exiting at base of coracoid.",
                 "th": "เห็นรอยหักเฉียงพาดผ่านเบ้าส่วนบน ทะลุออกโคนจะงอยกระดูก Coracoid"
@@ -847,7 +846,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF เปิดแผลด้านหลังดามแผ่นเหล็กยาว"
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Horizontal fracture line spanning from glenoid cavity to medial scapular border.",
                 "th": "เห็นรอยหักแนวนอนพาดจากแอ่งเบ้าข้อทะลุไปถึงขอบสะบักด้านใน"
@@ -878,7 +877,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF จัดดามแผ่นเหล็กสองทางอย่างประณีต"
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_5.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Combination horizontal body line and secondary intra-articular glenoid lines.",
                 "th": "เห็นรอยหักขวางลำตัวร่วมกับเส้นรอยหักแตกเข้าเบ้าข้อหลายเส้น"
@@ -909,7 +908,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ดามแผ่นเหล็กจิ๋ว หรือผ่าตัดใส่ข้อไหล่เทียมชนิดผันกลับ (Reverse TSA)"
                 }
               },
-              "illustrationId": "/images/glenoid_ideberg/ideberg_6.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross comminution and fragmentation of the entire glenoid articular surface.",
                 "th": "เห็นแอ่งเบ้าข้อไหล่แตกป่นกระจายหลายชิ้นส่วนสมบูรณ์"
@@ -1024,15 +1023,15 @@ export const scapulaBone: BoneData = {
             "th": "ระบบจำแนกยอดกระดูกสะบัก (Acromion) หักตามการเคลื่อนตัว การแคบลงของช่องใต้ Acromion (Subacromial space) และการกดทับเอ็นหมุนข้อไหล่"
           },
           "concept": {
-          "title": {
-                    "en": "Kuhn Acromial Fracture Concept",
-                    "th": "หลักการคิดและเกณฑ์ตัดสินใจ Kuhn Acromion Classification"
+            "title": {
+              "en": "Kuhn Acromial Fracture Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Kuhn Acromion Classification"
+            },
+            "description": {
+              "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. John E. Kuhn (1994) classified acromial fractures into Types I-III based on displacement, subacromial space compromise, and association with rotator cuff tears or AC joint disruption.\n• Core Concept: Evaluates whether acromial displacement causes subacromial impingement or disrupts the deltoid origin and SSSC ring integrity.\n\n⚖️ DECISION CUT-OFF:\n• Type I (Non-displaced / Minimally displaced): Conservative care (Sling 2-3 wks, progressive ROM).\n• Type II (Displaced inferiorly into subacromial space without impingement / symptomatic): Tension Band Wiring or Mini-locking plate ORIF to restore subacromial height.\n• Type III (Displaced with subacromial space compromise / impingement / symptomatic nonunion): Operative ORIF with locking plate and subacromial decompression.\n\n⚠️ CLINICAL PITFALL:\nDo not confuse a Type I acromial fracture with an Os Acromiale (unfused acromial apophysis). Os acromiale has smooth rounded margins on axial views and is bilateral in 60% of patients.",
+              "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. John E. Kuhn (1994) จำแนกกระดูก Acromion หักเป็น Types I-III ตามการเคลื่อนตัว การแคบลงของช่องใต้เบ้า (Subacromial space) และการบาดเจ็บของเอ็นไหล่\n• Core Concept: ประเมินว่าการเคลื่อนตัวของ Acromion ทำให้เกิดภาวะขัดชนใต้เบ้า (Subacromial impingement) หรือทำลายจุดเกาะของกล้ามเนื้อ Deltoid และวง SSSC หรือไม่\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I (ไม่เคลื่อนตัว หรือเคลื่อนน้อย): รักษาแบบไม่ผ่าตัด (ใส่ Sling 2-3 สัปดาห์ แล้วทำกายภาพ)\n• Type II (เคลื่อนลงล่างเข้าช่องใต้เบ้า แต่ยังไม่ขัดชนรุนแรง): ผ่าตัด Tension Band Wiring หรือ Mini-locking plate ORIF เพื่อคืนความสูงช่องใต้เบ้า\n• Type III (เคลื่อนตัวรุนแรงช่องใต้เบ้าแคบติดขัด / กระดูกไม่ติดที่มีอาการ): ผ่าตัด ORIF ดามแผ่นเหล็กล็อค ร่วมกับผ่าตัดขยายช่องใต้เบ้าข้อไหล่\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nระวังอย่าสับสนระหว่าง Acromion หัก Type I กับภาวะ Os Acromiale (กระดูกไม่เชื่อมตามธรรมชาติ) Os acromiale จะเห็นขอบมนเรียบในเอกซเรย์ Axial view และพบทั้งสองข้างถึง 60%!"
+            }
           },
-          "description": {
-                    "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. John E. Kuhn (1994) classified acromial fractures into Types I-III based on displacement, subacromial space compromise, and association with rotator cuff tears or AC joint disruption.\n• Core Concept: Evaluates whether acromial displacement causes subacromial impingement or disrupts the deltoid origin and SSSC ring integrity.\n\n⚖️ DECISION CUT-OFF:\n• Type I (Non-displaced / Minimally displaced): Conservative care (Sling 2-3 wks, progressive ROM).\n• Type II (Displaced inferiorly into subacromial space without impingement / symptomatic): Tension Band Wiring or Mini-locking plate ORIF to restore subacromial height.\n• Type III (Displaced with subacromial space compromise / impingement / symptomatic nonunion): Operative ORIF with locking plate and subacromial decompression.\n\n⚠️ CLINICAL PITFALL:\nDo not confuse a Type I acromial fracture with an Os Acromiale (unfused acromial apophysis). Os acromiale has smooth rounded margins on axial views and is bilateral in 60% of patients.",
-                    "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. John E. Kuhn (1994) จำแนกกระดูก Acromion หักเป็น Types I-III ตามการเคลื่อนตัว การแคบลงของช่องใต้เบ้า (Subacromial space) และการบาดเจ็บของเอ็นไหล่\n• Core Concept: ประเมินว่าการเคลื่อนตัวของ Acromion ทำให้เกิดภาวะขัดชนใต้เบ้า (Subacromial impingement) หรือทำลายจุดเกาะของกล้ามเนื้อ Deltoid และวง SSSC หรือไม่\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I (ไม่เคลื่อนตัว หรือเคลื่อนน้อย): รักษาแบบไม่ผ่าตัด (ใส่ Sling 2-3 สัปดาห์ แล้วทำกายภาพ)\n• Type II (เคลื่อนลงล่างเข้าช่องใต้เบ้า แต่ยังไม่ขัดชนรุนแรง): ผ่าตัด Tension Band Wiring หรือ Mini-locking plate ORIF เพื่อคืนความสูงช่องใต้เบ้า\n• Type III (เคลื่อนตัวรุนแรงช่องใต้เบ้าแคบติดขัด / กระดูกไม่ติดที่มีอาการ): ผ่าตัด ORIF ดามแผ่นเหล็กล็อค ร่วมกับผ่าตัดขยายช่องใต้เบ้าข้อไหล่\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nระวังอย่าสับสนระหว่าง Acromion หัก Type I กับภาวะ Os Acromiale (กระดูกไม่เชื่อมตามธรรมชาติ) Os acromiale จะเห็นขอบมนเรียบในเอกซเรย์ Axial view และพบทั้งสองข้างถึง 60%!"
-          }
-},
           "investigations": [
             {
               "name": "Axillary Lateral Shoulder View",
@@ -1075,7 +1074,7 @@ export const scapulaBone: BoneData = {
                   "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
                 }
               },
-              "illustrationId": "/images/acromion_kuhn/kuhn_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Nondisplaced fracture line across acromion process with normal subacromial height.",
                 "th": "เห็นรอยหักข้ามยอด Acromion โดยระยะความสูงช่องใต้ Acromion ยังปกติ"
@@ -1106,7 +1105,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดในผู้ป่วยที่ปวดกระดูกไม่ติด หรือนักกีฬาใช้แขนเหนือศีรษะ ดามด้วย Tension-band wiring หรือแผ่นเหล็ก"
                 }
               },
-              "illustrationId": "/images/acromion_kuhn/kuhn_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Displaced acromial fracture >2mm without inferior tilt into subacromial space.",
                 "th": "เห็นรอยหักเคลื่อนตัว >2มม. โดยชิ้นกระดูกไม่เอียงกดลงล่าง"
@@ -1137,7 +1136,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัดมาตรฐานหลัก (Gold Standard ORIF) ดึงยกชิ้นกระดูกกลับเข้าที่ แล้วดามด้วย Tension-band wiring หรือแผ่นเหล็กล็อค"
                 }
               },
-              "illustrationId": "/images/acromion_kuhn/kuhn_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Inferiorly tilted acromial fragment narrowing subacromial space height (<6mm).",
                 "th": "เห็นชิ้นกระดูก Acromion เอียงกดต่ำลง ทำให้ระยะช่องใต้ Acromion แคบลงมาก (<6มม.)"
@@ -1247,15 +1246,15 @@ export const scapulaBone: BoneData = {
             "th": "ระบบจำแนกจะงอยกระดูกสะบัก (Coracoid) หักตามตำแหน่งรอยหักเมื่อเทียบกับจุดเกาะของเอ็น Coracoclavicular (CC) ซึ่งบอกถึงความมั่นคงเชิงโครงสร้างและการผ่าตัด"
           },
           "concept": {
-          "title": {
-                    "en": "Ogawa Coracoid Fracture Concept",
-                    "th": "หลักการคิดและเกณฑ์ตัดสินใจ Ogawa Coracoid Classification"
+            "title": {
+              "en": "Ogawa Coracoid Fracture Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Ogawa Coracoid Classification"
+            },
+            "description": {
+              "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. Kiyohisa Ogawa (1997) classified coracoid fractures relative to the attachment of the Coracoclavicular (CC) ligaments (conoideum and trapezoideum), which dictates shoulder girdle stability.\n• Core Concept: Differentiates Type I (proximal to CC ligaments - unstable due to SSSC disruption) from Type II (distal to CC ligaments - stable due to intact CC tethering to scapular base).\n\n⚖️ DECISION CUT-OFF:\n• Type I (Proximal / Posterior to CC ligaments): UNSTABLE. CC ligaments remain attached to the mobile fragment, disrupting SSSC ring. Operative ORIF with 3.5/4.0mm cannulated screw into scapular neck.\n• Type II (Distal / Anterior to CC ligaments): STABLE. CC ligaments remain attached to intact scapular base. Conservative management with sling 2-3 weeks.\n\n⚠️ CLINICAL PITFALL:\nOgawa Type I fractures are often associated with AC joint dislocations or clavicle fractures. Always evaluate the full Superior Suspensory Shoulder Complex (SSSC).",
+              "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. Kiyohisa Ogawa (1997) จำแนกตามตำแหน่งรอยหักเมื่อเทียบกับจุดเกาะของเส้นเอ็น Coracoclavicular (CC) ซึ่งเป็นตัวกำหนดความมั่นคงของห่วงยึดข้อไหล่\n• Core Concept: แยกประเภท Type I (หักโคนต่อเอ็น CC - ไม่มั่นคงเพราะทำลายวง SSSC) ออกจาก Type II (หักปลายต่อเอ็น CC - มั่นคงเพราะเอ็น CC ยังยึดกับโคนสะบักที่สมบูรณ์)\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I (ส่วนโคน ด้านหลังต่อเอ็น CC): ไม่มั่นคง (Unstable) เอ็น CC ติดอยู่กับชิ้นกระดูกส่วนปลายที่หลุดลอย ทำลายวง SSSC ring -> ผ่าตัด ORIF ขันสกรู Cannulated screw เข้าคอสะบัก\n• Type II (ส่วนปลาย ด้านหน้าต่อเอ็น CC): มั่นคง (Stable) เอ็น CC ยังยึดกับโคนสะบักที่สมบูรณ์ -> รักษาแบบไม่ผ่าตัด ใส่ Sling 2-3 สัปดาห์\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nOgawa Type I มักพบบาดเจ็บร่วมกับข้อ AC หลุดหรือไหปลาร้าหัก ต้องตรวจประเมินความมั่นคงของวง SSSC ทั้งหมดเสมอ"
+            }
           },
-          "description": {
-                    "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. Kiyohisa Ogawa (1997) classified coracoid fractures relative to the attachment of the Coracoclavicular (CC) ligaments (conoideum and trapezoideum), which dictates shoulder girdle stability.\n• Core Concept: Differentiates Type I (proximal to CC ligaments - unstable due to SSSC disruption) from Type II (distal to CC ligaments - stable due to intact CC tethering to scapular base).\n\n⚖️ DECISION CUT-OFF:\n• Type I (Proximal / Posterior to CC ligaments): UNSTABLE. CC ligaments remain attached to the mobile fragment, disrupting SSSC ring. Operative ORIF with 3.5/4.0mm cannulated screw into scapular neck.\n• Type II (Distal / Anterior to CC ligaments): STABLE. CC ligaments remain attached to intact scapular base. Conservative management with sling 2-3 weeks.\n\n⚠️ CLINICAL PITFALL:\nOgawa Type I fractures are often associated with AC joint dislocations or clavicle fractures. Always evaluate the full Superior Suspensory Shoulder Complex (SSSC).",
-                    "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. Kiyohisa Ogawa (1997) จำแนกตามตำแหน่งรอยหักเมื่อเทียบกับจุดเกาะของเส้นเอ็น Coracoclavicular (CC) ซึ่งเป็นตัวกำหนดความมั่นคงของห่วงยึดข้อไหล่\n• Core Concept: แยกประเภท Type I (หักโคนต่อเอ็น CC - ไม่มั่นคงเพราะทำลายวง SSSC) ออกจาก Type II (หักปลายต่อเอ็น CC - มั่นคงเพราะเอ็น CC ยังยึดกับโคนสะบักที่สมบูรณ์)\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I (ส่วนโคน ด้านหลังต่อเอ็น CC): ไม่มั่นคง (Unstable) เอ็น CC ติดอยู่กับชิ้นกระดูกส่วนปลายที่หลุดลอย ทำลายวง SSSC ring -> ผ่าตัด ORIF ขันสกรู Cannulated screw เข้าคอสะบัก\n• Type II (ส่วนปลาย ด้านหน้าต่อเอ็น CC): มั่นคง (Stable) เอ็น CC ยังยึดกับโคนสะบักที่สมบูรณ์ -> รักษาแบบไม่ผ่าตัด ใส่ Sling 2-3 สัปดาห์\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nOgawa Type I มักพบบาดเจ็บร่วมกับข้อ AC หลุดหรือไหปลาร้าหัก ต้องตรวจประเมินความมั่นคงของวง SSSC ทั้งหมดเสมอ"
-          }
-},
           "investigations": [
             {
               "name": "Stryker Notch View Radiograph",
@@ -1298,7 +1297,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ขันสกรู Cannulated screw ยึดตามแนวแกนจะงอย Coracoid เข้าสู่คอสะบัก"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/ogawa_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture line proximal to CC ligament insertion at coracoid base with displacement.",
                 "th": "เห็นรอยหักอยู่ด้านหลังต่อจุดเกาะเอ็น CC บริเวณโคนจะงอยกระดูกเคลื่อนตัว"
@@ -1329,7 +1328,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะนักกีฬารับแรงสูงที่ชิ้นกระดูกอ้าเคลื่อน >1ซม. โดยยึดสกรูหรือตัดชิ้นปลายออก"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/ogawa_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Small avulsion fracture line at the anterior coracoid tip with intact coracoid base.",
                 "th": "เห็นรอยหักกะเทาะเล็กๆ ตรงปลายแหลมจะงอย Coracoid โดยโคนกระดูกยังสมบูรณ์ดี"
@@ -1348,15 +1347,15 @@ export const scapulaBone: BoneData = {
             "th": "ระบบจำแนกจะงอยกระดูกสะบักหัก 5 ระดับ (Type I - V) ตามการลุกลามจากปลายจะงอย โคนจะงอย เข้าแอ่งเบ้าข้อไหล่ หรือพาดเข้าตัวกระดูกสะบัก"
           },
           "concept": {
-          "title": {
-                    "en": "Eyres Coracoid Fracture Concept",
-                    "th": "หลักการคิดและเกณฑ์ตัดสินใจ Eyres Coracoid Classification"
+            "title": {
+              "en": "Eyres Coracoid Fracture Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Eyres Coracoid Classification"
+            },
+            "description": {
+              "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. K.S. Eyres (1995) established an anatomical level classification (Types I-V) tracing fracture extension from the coracoid tip down into the glenoid cavity or scapular body.\n• Core Concept: Categorizes coracoid fractures by anatomical level and articular/scapular body extension, distinguishing simple apical avulsions from complex intra-articular glenoid patterns.\n\n⚖️ DECISION CUT-OFF:\n• Type I & II (Apical tip & mid-coracoid): STABLE / MINIMALLY DISPLACED. Conservative with sling 2-3 weeks.\n• Type III (Coracoid base): UNSTABLE (proximal to CC ligaments). Operative ORIF with cannulated screw.\n• Type IV (Base extending into Superior Glenoid): Intra-articular involvement. Operative ORIF to restore glenoid surface.\n• Type V (Base extending into Scapular Body): Complex pattern. Operative ORIF with reconstruction plate.\n\n⚠️ CLINICAL PITFALL:\nType IV injuries involve the superior glenoid articular surface. Failure to reduce Type IV fractures leads to shoulder incongruity and rapid joint wear.",
+              "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. K.S. Eyres (1995) จำแนกตามระดับกายวิภาค (Type I-V) ติดตามการลุกลามของรอยหักตั้งแต่ปลายจะงอย ลงไปยังโคนจะงอย เข้าแอ่งเบ้าข้อไหล่ หรือเข้าลำตัวสะบัก\n• Core Concept: จำแนกตามระดับกายวิภาคและการลุกลามเข้าข้อต่อ/ลำตัวสะบัก แยกการดึงกระชากชิ้นปลายธรรมดา ออกจากรอยหักซับซ้อนที่ลามเข้าผิวข้อเบ้าไหล่\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I & II (ปลายจะงอย & กลางลำตัว): มั่นคง / เคลื่อนตัวน้อย -> รักษาแบบไม่ผ่าตัด ใส่ Sling 2-3 สัปดาห์\n• Type III (โคนจะงอย): ไม่มั่นคง (อยู่โคนต่อเอ็น CC) -> ผ่าตัด ORIF ขันสกรู Cannulated screw\n• Type IV (โคนจะงอยลุกลามเข้าเบ้าไหล่ส่วนบน): เข้าข้อต่อ -> ผ่าตัด ORIF เพื่อจัดเรียงผิวข้อเบ้าไหล่\n• Type V (โคนจะงอยลุกลามเข้าตัวสะบัก): รูปแบบซับซ้อน -> ผ่าตัด ORIF ดามแผ่นเหล็ก\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nEyres Type IV มีรอยหักลามเข้าผิวข้อต่อเบ้าไหล่ส่วนบน หากผ่าตัดจัดไม่เรียบจะนำไปสู่ภาวะข้อไหล่เสื่อมและติดขัดอย่างรวดเร็ว"
+            }
           },
-          "description": {
-                    "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Dr. K.S. Eyres (1995) established an anatomical level classification (Types I-V) tracing fracture extension from the coracoid tip down into the glenoid cavity or scapular body.\n• Core Concept: Categorizes coracoid fractures by anatomical level and articular/scapular body extension, distinguishing simple apical avulsions from complex intra-articular glenoid patterns.\n\n⚖️ DECISION CUT-OFF:\n• Type I & II (Apical tip & mid-coracoid): STABLE / MINIMALLY DISPLACED. Conservative with sling 2-3 weeks.\n• Type III (Coracoid base): UNSTABLE (proximal to CC ligaments). Operative ORIF with cannulated screw.\n• Type IV (Base extending into Superior Glenoid): Intra-articular involvement. Operative ORIF to restore glenoid surface.\n• Type V (Base extending into Scapular Body): Complex pattern. Operative ORIF with reconstruction plate.\n\n⚠️ CLINICAL PITFALL:\nType IV injuries involve the superior glenoid articular surface. Failure to reduce Type IV fractures leads to shoulder incongruity and rapid joint wear.",
-                    "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: Dr. K.S. Eyres (1995) จำแนกตามระดับกายวิภาค (Type I-V) ติดตามการลุกลามของรอยหักตั้งแต่ปลายจะงอย ลงไปยังโคนจะงอย เข้าแอ่งเบ้าข้อไหล่ หรือเข้าลำตัวสะบัก\n• Core Concept: จำแนกตามระดับกายวิภาคและการลุกลามเข้าข้อต่อ/ลำตัวสะบัก แยกการดึงกระชากชิ้นปลายธรรมดา ออกจากรอยหักซับซ้อนที่ลามเข้าผิวข้อเบ้าไหล่\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Type I & II (ปลายจะงอย & กลางลำตัว): มั่นคง / เคลื่อนตัวน้อย -> รักษาแบบไม่ผ่าตัด ใส่ Sling 2-3 สัปดาห์\n• Type III (โคนจะงอย): ไม่มั่นคง (อยู่โคนต่อเอ็น CC) -> ผ่าตัด ORIF ขันสกรู Cannulated screw\n• Type IV (โคนจะงอยลุกลามเข้าเบ้าไหล่ส่วนบน): เข้าข้อต่อ -> ผ่าตัด ORIF เพื่อจัดเรียงผิวข้อเบ้าไหล่\n• Type V (โคนจะงอยลุกลามเข้าตัวสะบัก): รูปแบบซับซ้อน -> ผ่าตัด ORIF ดามแผ่นเหล็ก\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nEyres Type IV มีรอยหักลามเข้าผิวข้อต่อเบ้าไหล่ส่วนบน หากผ่าตัดจัดไม่เรียบจะนำไปสู่ภาวะข้อไหล่เสื่อมและติดขัดอย่างรวดเร็ว"
-          }
-},
           "investigations": [
             {
               "name": "Stryker Notch View Radiograph",
@@ -1399,7 +1398,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดเฉพาะเมื่อมีอาการ"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/eyres_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Avulsion of tip of coracoid.",
                 "th": "ชิ้นกระดูกกะเทาะตรงปลายจะงอย Coracoid"
@@ -1430,7 +1429,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัด ORIF หากเคลื่อน >1ซม."
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/eyres_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Transverse line across coracoid body.",
                 "th": "รอยหักขวางลำตัวจะงอย Coracoid"
@@ -1461,7 +1460,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ยึดสกรู"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/eyres_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Fracture at coracoid base.",
                 "th": "รอยหักบริเวณโคนจะงอย Coracoid"
@@ -1492,7 +1491,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ยึดสกรู/แผ่นเหล็ก"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/eyres_4.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Coracoid base fracture extending into glenoid rim.",
                 "th": "รอยหักโคนจะงอยพาดเข้าขอบเบ้าข้อไหล่"
@@ -1523,7 +1522,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัด ORIF ดามแผ่นเหล็ก"
                 }
               },
-              "illustrationId": "/images/coracoid_ogawa/eyres_5.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Coracoid base line extending into scapular blade.",
                 "th": "รอยหักโคนจะงอยลุกลามเข้าแผ่นกระดูกสะบัก"
@@ -1551,15 +1550,15 @@ export const scapulaBone: BoneData = {
             "th": "ระบบจำแนกภาวะแขนหลุดลอยภายใน (Internal Amputation) จากแรงดึงรั้งพลังงานสูงรุนแรง แบ่งตามความรุนแรงของเส้นประสาทและหลอดเลือด (Type I กระดูก/กล้ามเนื้ออย่างเดียว, Type II บาดเจ็บเส้นประสาท, Type III หลอดเลือดขาดฉุกเฉิน)"
           },
           "concept": {
-          "title": {
-                    "en": "Scapulothoracic Dissociation Concept",
-                    "th": "หลักการคิดและเกณฑ์ตัดสินใจ Scapulothoracic Dissociation"
+            "title": {
+              "en": "Scapulothoracic Dissociation Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Scapulothoracic Dissociation"
+            },
+            "description": {
+              "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Scapulothoracic dissociation was described by Oreck et al. (1984) and classified by Zelle and Damschen based on the severity of musculoskeletal, neurological (Brachial plexus), and vascular (Subclavian/Axillary vessels) injuries resulting from high-energy traction.\n• Core Concept: Represents a closed internal amputation of the shoulder girdle caused by massive traction force. Survival and functional outcome depend on immediate vascular stabilization and evaluation of brachial plexus root avulsion.\n\n⚖️ DECISION CUT-OFF:\n• Class I (Musculoskeletal disruption only): Intact neurovascular structures. Operative fixation of clavicle/scapula + rehabilitation.\n• Class II (Neurological injury present): IIA (Incomplete brachial plexus lesion), IIB (Complete brachial plexus root avulsion). Class IIB has poor functional recovery; nerve transfer or reconstruction required.\n• Class III (Vascular transection): Life-threatening subclavian/axillary artery disruption. EMERGENCY vascular surgical repair / temporary shunt MANDATORY.\n\n⚠️ CLINICAL PITFALL:\nHigh mortality rate (~20%) and severe neurological disability (>50%). Scapular lateral displacement >1 cm on AP CXR is diagnostic. Always perform immediate Angiography/CTA if pulseless or expanding hematoma!",
+              "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: ภาวะข้อสะบักกับผนังอกหลุดฉีก (Scapulothoracic dissociation) ได้รับการอธิบายโดย Oreck (1984) และจำแนกโดย Zelle และ Damschen ตามความรุนแรงของการบาดเจ็บกระดูก/กล้ามเนื้อ เส้นประสาท Brachial plexus และหลอดเลือด Subclavian/Axillary จากแรงดึงกระชากมหาศาล\n• Core Concept: เป็นการบาดเจ็บระดับแขนหลุดลอยภายใน (Internal amputation) จากแรงดึงกระชากมหาศาล อัตราการรอดชีวิตและการฟื้นตัวขึ้นกับการผ่าตัดต่อหลอดเลือดฉุกเฉินและการประเมินความเสียหายของรากประสาท\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Class I (บาดเจ็บเฉพาะกระดูก/กล้ามเนื้อ): เส้นประสาทและหลอดเลือดสมบูรณ์ดี -> ผ่าตัดยึดกระดูกไหปลาร้า/สะบัก + กายภาพ\n• Class II (มีความเสียหายของเส้นประสาท Brachial plexus): IIA (ขาดบางส่วน), IIB (รากประสาทขาดหลุดถาวร) Class IIB การฟื้นตัวต่ำมาก ต้องย้ายเส้นประสาทซ่อมแซม\n• Class III (หลอดเลือดขาด): หลอดเลือด Subclavian/Axillary ขาดฉุกเฉิน -> ต้องผ่าตัดต่อหลอดเลือดฉุกเฉินทันที (Emergency vascular repair)\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nอัตราการเสียชีวิตสูง (~20%) และพิการทางประสาทรุนแรง (>50%) ตรวจพบสะบักเบนออกด้านข้าง >1 ซม. ในภาพ CXR ต้องส่งตรวจ CTA/Angiography ทันทีหากคลำชีพจรไม่ได้หรือมีก้อนเลือดโตขึ้น"
+            }
           },
-          "description": {
-                    "en": "💡 CONCEPT (Origin & Logic):\n• Origin & Logic: Scapulothoracic dissociation was described by Oreck et al. (1984) and classified by Zelle and Damschen based on the severity of musculoskeletal, neurological (Brachial plexus), and vascular (Subclavian/Axillary vessels) injuries resulting from high-energy traction.\n• Core Concept: Represents a closed internal amputation of the shoulder girdle caused by massive traction force. Survival and functional outcome depend on immediate vascular stabilization and evaluation of brachial plexus root avulsion.\n\n⚖️ DECISION CUT-OFF:\n• Class I (Musculoskeletal disruption only): Intact neurovascular structures. Operative fixation of clavicle/scapula + rehabilitation.\n• Class II (Neurological injury present): IIA (Incomplete brachial plexus lesion), IIB (Complete brachial plexus root avulsion). Class IIB has poor functional recovery; nerve transfer or reconstruction required.\n• Class III (Vascular transection): Life-threatening subclavian/axillary artery disruption. EMERGENCY vascular surgical repair / temporary shunt MANDATORY.\n\n⚠️ CLINICAL PITFALL:\nHigh mortality rate (~20%) and severe neurological disability (>50%). Scapular lateral displacement >1 cm on AP CXR is diagnostic. Always perform immediate Angiography/CTA if pulseless or expanding hematoma!",
-                    "th": "💡 CONCEPT (ที่มา & แนวคิดร่วม):\n• Origin & Logic: ภาวะข้อสะบักกับผนังอกหลุดฉีก (Scapulothoracic dissociation) ได้รับการอธิบายโดย Oreck (1984) และจำแนกโดย Zelle และ Damschen ตามความรุนแรงของการบาดเจ็บกระดูก/กล้ามเนื้อ เส้นประสาท Brachial plexus และหลอดเลือด Subclavian/Axillary จากแรงดึงกระชากมหาศาล\n• Core Concept: เป็นการบาดเจ็บระดับแขนหลุดลอยภายใน (Internal amputation) จากแรงดึงกระชากมหาศาล อัตราการรอดชีวิตและการฟื้นตัวขึ้นกับการผ่าตัดต่อหลอดเลือดฉุกเฉินและการประเมินความเสียหายของรากประสาท\n\n⚖️ DECISION CUT-OFF (เกณฑ์ตัดสินใจ):\n• Class I (บาดเจ็บเฉพาะกระดูก/กล้ามเนื้อ): เส้นประสาทและหลอดเลือดสมบูรณ์ดี -> ผ่าตัดยึดกระดูกไหปลาร้า/สะบัก + กายภาพ\n• Class II (มีความเสียหายของเส้นประสาท Brachial plexus): IIA (ขาดบางส่วน), IIB (รากประสาทขาดหลุดถาวร) Class IIB การฟื้นตัวต่ำมาก ต้องย้ายเส้นประสาทซ่อมแซม\n• Class III (หลอดเลือดขาด): หลอดเลือด Subclavian/Axillary ขาดฉุกเฉิน -> ต้องผ่าตัดต่อหลอดเลือดฉุกเฉินทันที (Emergency vascular repair)\n\n⚠️ CLINICAL PITFALL (จุดตายที่ต้องระวัง):\nอัตราการเสียชีวิตสูง (~20%) และพิการทางประสาทรุนแรง (>50%) ตรวจพบสะบักเบนออกด้านข้าง >1 ซม. ในภาพ CXR ต้องส่งตรวจ CTA/Angiography ทันทีหากคลำชีพจรไม่ได้หรือมีก้อนเลือดโตขึ้น"
-          }
-},
           "investigations": [
             {
               "name": "Chest Radiograph (Scapular Index Measurement)",
@@ -1609,7 +1608,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัดยึดตรึงกระดูกไหปลาร้า/ข้อ AC และสะบัก เพื่อคืนรูปโครงสร้างไหล่"
                 }
               },
-              "illustrationId": "/images/scapulothoracic_dissociation/std_1.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Lateral displacement of scapula >1cm on AP chest radiograph with intact vascular run-through.",
                 "th": "เห็นกระดูกสะบักเคลื่อนหลุดออกด้านข้าง >1ซม. ในภาพรังสีหน้าอก โดยหลอดเลือดเดินปกติ"
@@ -1640,7 +1639,7 @@ export const scapulaBone: BoneData = {
                   "th": "แนะนำผ่าตัดดามกระดูก + ผ่าตัดต่อหรือย้ายเส้นประสาท (Nerve transfer) เพื่อฟื้นฟูแขน"
                 }
               },
-              "illustrationId": "/images/scapulothoracic_dissociation/std_2.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Gross lateral displacement of scapula with clinical flail upper extremity.",
                 "th": "เห็นสะบักเคลื่อนหลุดออกด้านข้างมาก พร้อมผู้ป่วยมีภาวะแขนอัมพาตหลุดลอย"
@@ -1671,7 +1670,7 @@ export const scapulaBone: BoneData = {
                   "th": "ผ่าตัดฉุกเฉินด่วนที่สุด! (EMERGENCY SURGERY) ผ่าตัดต่อหลอดเลือดแดงเพื่อชีวิตและแขน + ดามกระดูกยึดภายนอก หากไม่สามารถช่วยแขนได้อาจจำเป็นต้องตัดแขน"
                 }
               },
-              "illustrationId": "/images/scapulothoracic_dissociation/std_3.png",
+              "illustrationId": "",
               "xrayDescription": {
                 "en": "Extreme lateral scapular displacement with CTA showing abrupt arterial cutoff at subclavian/axillary level.",
                 "th": "เห็นสะบักเคลื่อนหลุดออกด้านข้างอย่างรุนแรง และภาพ CTA แสดงจุดตัดขาดของหลอดเลือดแดงด่วน"
