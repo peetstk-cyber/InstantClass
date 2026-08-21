@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /* ── New OrthoClass palette ── */
   --color-oc-bg:          #F0F4F8;
@@ -18,9 +20,9 @@
   --color-oc-teal-light:  rgba(0,206,209,0.12);
   --color-oc-green:       #2ECC71;
   --color-oc-green-light: rgba(46,204,113,0.12);
-  --color-oc-blue:        #2C3E50;
+  --color-oc-blue:        #000000;
   --color-oc-blue-mid:    #3B82F6;
-  --color-oc-gray:        #7F8C8D;
+  --color-oc-gray:        #334155;
   --color-oc-red:         #E74C3C;
   --color-oc-amber:       #F59E0B;
 
@@ -80,7 +82,7 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
   background-color: var(--color-oc-bg);
-  color: var(--color-oc-blue);
+  color: #000000;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s, color 0.3s;
 }

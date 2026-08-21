@@ -483,8 +483,8 @@ export const tlSpineBone: BoneData = {
             "th": "ระบบประเมินให้คะแนนการบาดเจ็บกระดูกสันหลังอกและเอว TLICS System (Vaccaro)"
           },
           "description": {
-            "en": "Point-based scoring system for thoracolumbar spine injuries (T1-L5) evaluating Fracture Morphology, Disruption of Ligamentous Complex (DLC) integrity, and Neurological Status. TLICS score <4 = Conservative, TLICS score =4 = Equivocal, TLICS score >4 = Operative.",
-            "th": "ระบบให้คะแนนการบาดเจ็บกระดูกสันหลังส่วนอกและเอว T1-L5 (SLIC Score) ประเมิน 3 หมวด: ลักษณะรอยหัก (Morphology), ความสมบูรณ์ของเอ็นยึดด้านหลัง (PLC) และระบบประสาท (Neurology) โดยคะแนน <4 รักษาไม่ผ่าตัด, =4 พิจารณาตามความเหมาะสม, >4 แนะนำผ่าตัด"
+            "en": "Point-based scoring system for thoracolumbar spine injuries (T1-L5) evaluating Fracture Morphology, Posterior Ligamentous Complex (PLC) integrity, and Neurological Status. TLICS score <4 = Conservative, TLICS score =4 = Equivocal, TLICS score >4 = Operative.",
+            "th": "ระบบให้คะแนนการบาดเจ็บกระดูกสันหลังส่วนอกและเอว T1-L5 (TLICS Score) ประเมิน 3 หมวด: ลักษณะรอยหัก (Morphology), ความสมบูรณ์ของเอ็นยึดด้านหลัง (PLC) และระบบประสาท (Neurology) โดยคะแนน <4 รักษาไม่ผ่าตัด, =4 พิจารณาตามความเหมาะสม, >4 แนะนำผ่าตัด"
           },
           "concept": {
             "title": {
@@ -542,20 +542,20 @@ export const tlSpineBone: BoneData = {
             {
               "name": "MRI Thoracolumbar Spine (T1, T2, STIR)",
               "details": {
-                "en": "TL-spine MRI. Mandatory to evaluate Disruption of Ligamentous Complex (DLC) integrity (Intact = 0, Indeterminate = 2, Disrupted = 3) and spinal cord contusion.",
+                "en": "TL-spine MRI. Mandatory to evaluate Posterior Ligamentous Complex (PLC) integrity (Intact = 0, Indeterminate = 2, Disrupted = 3) and spinal cord contusion.",
                 "th": "เอกซเรย์คลื่นแม่เหล็กไฟฟ้า (MRI) ประเมินคะแนนเอ็นยึดด้านหลัง PLC (สมบูรณ์=0, สงสัย=2, ขาดสมบูรณ์=3) และการบาดเจ็บของไขสันหลัง"
               }
             }
           ],
           "types": [
             {
-              "type": "SLIC < 4",
+              "type": "TLICS < 4",
               "name": {
-                "en": "SLIC Score < 4 (Conservative Management - STABLE)",
-                "th": "SLIC Score < 4 (แนะนำรักษาแบบไม่ผ่าตัด - มั่นคง)"
+                "en": "TLICS Score < 4 (Conservative Management - STABLE)",
+                "th": "TLICS Score < 4 (แนะนำรักษาแบบไม่ผ่าตัด - มั่นคง)"
               },
               "description": {
-                "en": "Total TLICS score is LESS THAN 4 points\nIndicates mechanically STABLE injury pattern with intact or minimally injured Disruption of Ligamentous Complex (DLC) and no progressive neuro deficit",
+                "en": "Total TLICS score is LESS THAN 4 points\nIndicates mechanically STABLE injury pattern with intact or minimally injured Posterior Ligamentous Complex (PLC) and no progressive neuro deficit",
                 "th": "ผลรวมคะแนน TLICS Score **น้อยกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **มั่นคงเชิงกลศาสตร์** เอ็นยึดด้านหลัง PLC สมบูรณ์ดี และไม่มีอาการทางระบบประสาทแย่ลง"
               },
               "moi": {
@@ -580,10 +580,10 @@ export const tlSpineBone: BoneData = {
               }
             },
             {
-              "type": "SLIC = 4",
+              "type": "TLICS = 4",
               "name": {
-                "en": "SLIC Score = 4 (Equivocal / Surgeon's Discretion)",
-                "th": "SLIC Score = 4 (กึ่งก้ำกึ่ง - พิจารณาผ่าตัดหรือดามตามความเหมาะสม)"
+                "en": "TLICS Score = 4 (Equivocal / Surgeon's Discretion)",
+                "th": "TLICS Score = 4 (กึ่งก้ำกึ่ง - พิจารณาผ่าตัดหรือดามตามความเหมาะสม)"
               },
               "description": {
                 "en": "Total TLICS score is EXACTLY 4 points\nEQUIVOCAL injury pattern where treatment choice depends on patient age, baseline comorbidities, pain level, kyphosis angle, and surgeon discretion",
@@ -611,13 +611,13 @@ export const tlSpineBone: BoneData = {
               }
             },
             {
-              "type": "SLIC > 4",
+              "type": "TLICS > 4",
               "name": {
-                "en": "SLIC Score > 4 (Operative Management - UNSTABLE / NEURO DEFICIT)",
-                "th": "SLIC Score > 4 (แนะนำผ่าตัดรักษา - ไม่มั่นคง / บาดเจ็บระบบประสาท)"
+                "en": "TLICS Score > 4 (Operative Management - UNSTABLE / NEURO DEFICIT)",
+                "th": "TLICS Score > 4 (แนะนำผ่าตัดรักษา - ไม่มั่นคง / บาดเจ็บระบบประสาท)"
               },
               "description": {
-                "en": "Total TLICS score is GREATER THAN 4 points\nIndicates mechanically UNSTABLE injury, complete Disruption of Ligamentous Complex (DLC) disruption, or severe neurological deficit",
+                "en": "Total TLICS score is GREATER THAN 4 points\nIndicates mechanically UNSTABLE injury, complete Posterior Ligamentous Complex (PLC) disruption, or severe neurological deficit",
                 "th": "ผลรวมคะแนน TLICS Score **มากกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **ไม่มั่นคงอย่างรุนแรง**, เอ็นยึดด้านหลัง PLC ฉีกขาดสมบูรณ์ หรือมีภาวะบาดเจ็บระบบประสาท"
               },
               "moi": {

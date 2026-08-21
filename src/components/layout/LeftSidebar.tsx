@@ -51,8 +51,8 @@ export function LeftSidebar({
 }: LeftSidebarProps) {
   const bg          = darkMode ? "#161B27" : "#EAECEF";
   const border      = darkMode ? "#252F42" : "#D5D9E0";
-  const mutedText   = darkMode ? "#64748B" : "#475569";
-  const sectionHead = darkMode ? "#475569" : "#475569";
+  const mutedText   = darkMode ? "#94A3B8" : "#000000";
+  const sectionHead = darkMode ? "#94A3B8" : "#000000";
   const hoverBg     = darkMode ? "rgba(0,206,209,0.07)" : "#FFFFFF";
 
   const boneMap = Object.fromEntries(bones.map(b => [b.id, b]));
@@ -117,7 +117,7 @@ export function LeftSidebar({
               <div className="w-6 h-6 rounded-lg bg-[#00CED1]/10 border border-[#00CED1]/30 flex items-center justify-center text-[#00CED1]">
                 <BookOpen size={13} />
               </div>
-              <span className="font-extrabold text-xs tracking-tight text-slate-800 dark:text-slate-100 uppercase">
+              <span className="font-extrabold text-xs tracking-tight text-black dark:text-slate-100 uppercase">
                 {language === "en" ? "Bone Catalog" : "หมวดหมู่กระดูก"}
               </span>
             </div>
@@ -126,7 +126,7 @@ export function LeftSidebar({
             {isFiltering ? (
               /* Flat filtered list */
               <div className="px-3">
-                <p style={{ color: mutedText }} className="text-[10px] uppercase tracking-wider font-semibold mb-2 px-1">
+                <p style={{ color: mutedText }} className="text-[10px] uppercase tracking-wider font-extrabold mb-2 px-1">
                   {language === "en" ? "Results" : "ผลการค้นหา"}
                 </p>
                 {getFilteredBones().map(bone => (
@@ -147,7 +147,7 @@ export function LeftSidebar({
                 <div key={group.id} className="mb-3">
                   <div
                     style={{ color: sectionHead }}
-                    className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest"
+                    className="px-4 py-1.5 text-[10px] font-black uppercase tracking-widest"
                   >
                     {group.label[language]}
                   </div>
@@ -175,7 +175,7 @@ export function LeftSidebar({
 
           {/* Footer */}
           <div className="mt-auto px-4 py-3" style={{ borderTop: `1px solid ${border}` }}>
-            <p style={{ color: mutedText }} className="text-[10px] text-center leading-relaxed">
+            <p style={{ color: darkMode ? "#94A3B8" : "#334155" }} className="text-[10px] text-center font-medium leading-relaxed">
               For educational use only.<br />Not for clinical decisions.
             </p>
           </div>
@@ -200,11 +200,11 @@ function BoneItem({
   return (
     <button
       onClick={onSelect}
-      className="w-full text-left rounded-xl px-3 py-2.5 mb-0.5 flex items-center gap-2.5 transition-all group"
+      className="w-full text-left rounded-xl px-3 py-2.5 mb-0.5 flex items-center gap-2.5 transition-all group cursor-pointer"
       style={{
         background: isSelected ? "rgba(0,206,209,0.12)" : "transparent",
         border: isSelected ? "1.5px solid rgba(0,206,209,0.4)" : "1.5px solid transparent",
-        color: isSelected ? "#00CED1" : (darkMode ? "#CBD5E0" : "#2C3E50"),
+        color: isSelected ? "#00CED1" : (darkMode ? "#CBD5E0" : "#000000"),
       }}
       onMouseEnter={e => {
         if (!isSelected) (e.currentTarget as HTMLElement).style.background = hoverBg;
@@ -215,12 +215,12 @@ function BoneItem({
     >
       <Bone
         size={14}
-        className="flex-shrink-0 opacity-60 group-hover:opacity-100 transition-opacity"
+        className="flex-shrink-0 opacity-70 group-hover:opacity-100 transition-opacity"
         style={{ color: isSelected ? "#00CED1" : undefined }}
       />
       <div className="flex-1 min-w-0">
-        <div className="text-[13px] font-semibold truncate">{bone.name[language]}</div>
-        <div className="text-[10.5px] opacity-50 mt-0.5">
+        <div className="text-[13px] font-bold truncate">{bone.name[language]}</div>
+        <div className={`text-[10.5px] mt-0.5 ${darkMode ? "text-slate-400" : "text-slate-700 font-medium"}`}>
           {classCount} {language === "en" ? "systems" : "ระบบ"}
         </div>
       </div>

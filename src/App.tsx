@@ -315,7 +315,7 @@ function App() {
             style={{
               background: darkMode ? "#161B27" : "#FFFFFF",
               borderColor: darkMode ? "#252F42" : "#E2E8F0",
-              color: darkMode ? "#F1F5F9" : "#101828",
+              color: darkMode ? "#F1F5F9" : "#000000",
             }}
             className="w-full max-w-md rounded-2xl border p-4 shadow-2xl space-y-3 relative flex flex-col max-h-[80dvh]"
           >
@@ -324,7 +324,7 @@ function App() {
                 setShowSearchModal(false);
                 setSearchQuery("");
               }}
-              style={{ color: darkMode ? "#94A3B8" : "#64748B" }}
+              style={{ color: darkMode ? "#94A3B8" : "#000000" }}
               className="absolute top-3.5 right-3.5 hover:opacity-100 p-1 rounded-lg transition-all cursor-pointer"
             >
               <X size={18} />
@@ -332,13 +332,13 @@ function App() {
 
             <div className="flex items-center gap-2 pr-6">
               <Search size={18} className="text-[#00CED1]" />
-              <h3 className="text-base font-extrabold tracking-tight">
+              <h3 className="text-base font-extrabold tracking-tight text-black dark:text-slate-100">
                 {language === "en" ? "Search Fracture Classification" : "ค้นหาการจำแนกประเภทกระดูกหัก"}
               </h3>
             </div>
 
             <div className="relative">
-              <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400" />
               <input
                 type="text"
                 autoFocus
@@ -348,14 +348,14 @@ function App() {
                 style={{
                   background: darkMode ? "#1E293B" : "#F8FAFC",
                   borderColor: darkMode ? "#334155" : "#E2E8F0",
-                  color: darkMode ? "#F1F5F9" : "#101828",
+                  color: darkMode ? "#F1F5F9" : "#000000",
                 }}
-                className="w-full pl-9 pr-8 py-2.5 rounded-xl border text-sm outline-none focus:border-[#00CED1] transition-all"
+                className="w-full pl-9 pr-8 py-2.5 rounded-xl border text-sm outline-none focus:border-[#00CED1] transition-all font-medium"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 hover:text-slate-200"
                 >
                   <X size={14} />
                 </button>
@@ -388,7 +388,7 @@ function App() {
 
                   if (results.length === 0) {
                     return (
-                      <div className="py-8 text-center text-xs text-slate-400">
+                      <div className="py-8 text-center text-xs text-slate-800 dark:text-slate-400 font-medium">
                         {language === "en" ? "No classification systems found matching your search." : "ไม่พบระบบจำแนกกระดูกหักที่ตรงกับคำค้นหา"}
                       </div>
                     );
@@ -409,26 +409,26 @@ function App() {
                       className="w-full text-left p-3 rounded-xl border flex items-center justify-between hover:border-[#00CED1] transition-all cursor-pointer group"
                     >
                       <div>
-                        <div className="text-xs font-bold text-[#00CED1]">
+                        <div className="text-xs font-bold text-teal-700 dark:text-[#00CED1]">
                           {res.boneName} • {res.regionName}
                         </div>
-                        <div className="text-sm font-extrabold mt-0.5">
+                        <div className="text-sm font-extrabold mt-0.5 text-black dark:text-slate-100">
                           {res.systemName}
                         </div>
                       </div>
-                      <ChevronRight size={16} className="text-slate-400 group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
+                      <ChevronRight size={16} className="text-slate-500 dark:text-slate-400 group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
                     </button>
                   ));
                 })()
               ) : (
-                <div className="py-6 text-center text-xs text-slate-400 space-y-2">
+                <div className="py-6 text-center text-xs text-slate-800 dark:text-slate-400 font-medium space-y-2">
                   <p>{language === "en" ? "Popular Search Topics:" : "หัวข้อค้นขายอดนิยม:"}</p>
                   <div className="flex flex-wrap justify-center gap-1.5">
                     {["Garden", "Schatzker", "Neer", "Gustilo", "Pauwels"].map((topic) => (
                       <button
                         key={topic}
                         onClick={() => setSearchQuery(topic)}
-                        className="px-2.5 py-1 rounded-lg text-xs font-bold bg-[#00CED1]/15 text-[#00CED1] border border-[#00CED1]/30 hover:bg-[#00CED1]/25 transition-all cursor-pointer"
+                        className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-[#00CED1]/30 hover:bg-[#00CED1]/25 transition-all cursor-pointer"
                       >
                         {topic}
                       </button>
@@ -448,41 +448,41 @@ function App() {
             style={{
               background: darkMode ? "#161B27" : "#FFFFFF",
               borderColor: darkMode ? "#334155" : "#E2E8F0",
-              color: darkMode ? "#F1F5F9" : "#0F172A",
+              color: darkMode ? "#F1F5F9" : "#000000",
               width: "100%",
               maxWidth: 440,
             }}
             className="rounded-2xl border flex flex-col shadow-2xl overflow-hidden relative p-5 max-h-[90dvh] overflow-y-auto"
           >
             {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-700/40">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700/40">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-500 dark:text-amber-400 flex items-center justify-center">
                   <HelpCircle size={18} />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-sm text-slate-800 dark:text-slate-100">
+                  <h3 className="font-extrabold text-sm text-black dark:text-slate-100">
                     {language === "en" ? "Daily High-Yield Challenge" : "คำถามความรู้ประจำวัน"}
                   </h3>
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-slate-700 dark:text-slate-400 font-medium">
                     {language === "en" ? "Test your orthopaedic clinical knowledge" : "ทดสอบเคสและแนวทางรักษาทางออร์โธ"}
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setShowQuizModal(false)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
               >
                 <X size={18} />
               </button>
             </div>
 
             {/* Question */}
-            <div className="my-4 p-3.5 rounded-xl bg-slate-800/40 border border-slate-700/40">
-              <div className="text-[10px] font-extrabold text-amber-400 uppercase tracking-wider mb-1">
+            <div className="my-4 p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/40">
+              <div className="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
                 CASE SCENARIO • TIBIA
               </div>
-              <p className="text-xs font-bold leading-relaxed text-slate-200">
+              <p className="text-xs font-bold leading-relaxed text-black dark:text-slate-200">
                 {language === "en"
                   ? "Schatzker Type IV fracture of the proximal tibia is characterized by which anatomical finding and primary clinical concern?"
                   : "กระดูก Tibial Plateau หักแบบ Schatzker Type IV มีลักษณะเด่นอย่างไร และต้องระวังภาวะแทรกซ้อนใดเป็นพิเศษ?"}
@@ -514,17 +514,17 @@ function App() {
                 const isSelected = quizAnswer === opt.id;
                 let optBg = darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC";
                 let optBorder = darkMode ? "#334155" : "#E2E8F0";
-                let textColor = darkMode ? "#CBD5E1" : "#475569";
+                let optTextColor = darkMode ? "#CBD5E1" : "#000000";
 
                 if (isSelected) {
                   if (opt.isCorrect) {
                     optBg = "rgba(46, 204, 113, 0.12)";
                     optBorder = "#2ECC71";
-                    textColor = "#2ECC71";
+                    optTextColor = "#2ECC71";
                   } else {
                     optBg = "rgba(231, 76, 60, 0.12)";
                     optBorder = "#E74C3C";
-                    textColor = "#E74C3C";
+                    optTextColor = "#E74C3C";
                   }
                 }
 
@@ -532,7 +532,7 @@ function App() {
                   <button
                     key={opt.id}
                     onClick={() => setQuizAnswer(opt.id)}
-                    style={{ background: optBg, borderColor: optBorder, color: textColor }}
+                    style={{ background: optBg, borderColor: optBorder, color: optTextColor }}
                     className="p-3 rounded-xl border text-left text-xs font-semibold transition-all cursor-pointer flex items-center justify-between gap-2"
                   >
                     <span>{language === "en" ? opt.textEn : opt.textTh}</span>
@@ -546,8 +546,8 @@ function App() {
 
             {/* Explanation & Action */}
             {quizAnswer !== null && (
-              <div className="p-3 rounded-xl bg-[#00CED1]/10 border border-[#00CED1]/30 text-xs text-slate-200 mb-4 leading-relaxed animate-fadeIn">
-                <div className="font-extrabold text-[#00CED1] mb-1">
+              <div className="p-3 rounded-xl bg-[#00CED1]/10 border border-[#00CED1]/30 text-xs text-black dark:text-slate-200 mb-4 leading-relaxed animate-fadeIn font-medium">
+                <div className="font-extrabold text-teal-800 dark:text-[#00CED1] mb-1">
                   {quizAnswer === 1
                     ? (language === "en" ? "✓ Correct!" : "✓ ถูกต้อง!")
                     : (language === "en" ? "✕ Incorrect" : "✕ ยังไม่ถูกต้อง")}
@@ -563,7 +563,7 @@ function App() {
                 setShowQuizModal(false);
                 handleSelectBoneById("tibia", "proximal");
               }}
-              className="w-full py-2.5 rounded-xl bg-[#00CED1] text-slate-950 font-extrabold text-xs flex items-center justify-center gap-2 shadow-md hover:bg-[#00CED1]/90 transition-all cursor-pointer"
+              className="w-full py-2.5 rounded-xl bg-teal-700 dark:bg-[#00CED1] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-md hover:bg-teal-700/90 dark:hover:bg-[#00CED1]/90 transition-all cursor-pointer"
             >
               <BookOpen size={15} />
               <span>{language === "en" ? "Study Schatzker System" : "ดูระบบจำแนก Schatzker"}</span>
@@ -579,30 +579,30 @@ function App() {
             style={{
               background: darkMode ? "#161B27" : "#FFFFFF",
               borderColor: darkMode ? "#334155" : "#E2E8F0",
-              color: darkMode ? "#F1F5F9" : "#0F172A",
+              color: darkMode ? "#F1F5F9" : "#000000",
               width: "100%",
               maxWidth: 440,
             }}
             className="rounded-2xl border flex flex-col shadow-2xl overflow-hidden relative p-5 max-h-[90dvh]"
           >
             {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-700/40">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700/40">
               <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-[#00CED1]/15 border border-[#00CED1]/30 text-[#00CED1] flex items-center justify-center">
-                  <Bookmark size={18} className="fill-[#00CED1]/20" />
+                <div className="w-8 h-8 rounded-lg bg-teal-600/15 dark:bg-[#00CED1]/15 border border-teal-600/30 dark:border-[#00CED1]/30 text-teal-800 dark:text-[#00CED1] flex items-center justify-center">
+                  <Bookmark size={18} className="fill-teal-800/20 dark:fill-[#00CED1]/20" />
                 </div>
                 <div>
-                  <h3 className="font-extrabold text-sm text-slate-800 dark:text-slate-100">
+                  <h3 className="font-extrabold text-sm text-black dark:text-slate-100">
                     {language === "en" ? "Saved Bookmarked Systems" : "รายการระบบที่บันทึกไว้"}
                   </h3>
-                  <p className="text-[10px] text-slate-400">
+                  <p className="text-[10px] text-slate-700 dark:text-slate-400 font-medium">
                     {language === "en" ? "Quick access to your saved clinical classifications" : "เข้าถึงหัวข้อบันทึกย่อทางคลินิกอย่างรวดเร็ว"}
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setShowBookmarksModal(false)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+                className="w-7 h-7 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
               >
                 <X size={18} />
               </button>
@@ -611,12 +611,12 @@ function App() {
             {/* Bookmarks List */}
             <div className="my-4 flex-1 overflow-y-auto flex flex-col gap-2 max-h-[50dvh] pr-1">
               {resolvedBookmarks.length === 0 ? (
-                <div className="py-10 text-center flex flex-col items-center justify-center opacity-60">
-                  <Bookmark size={32} className="text-slate-500 mb-2 stroke-[1.5]" />
-                  <p className="text-xs font-bold text-slate-400">
+                <div className="py-10 text-center flex flex-col items-center justify-center opacity-75">
+                  <Bookmark size={32} className="text-slate-400 dark:text-slate-500 mb-2 stroke-[1.5]" />
+                  <p className="text-xs font-bold text-slate-800 dark:text-slate-400">
                     {language === "en" ? "No bookmarked systems yet" : "ยังไม่มีรายการที่บันทึกไว้"}
                   </p>
-                  <p className="text-[11px] text-slate-500 max-w-[220px] mt-1">
+                  <p className="text-[11px] text-slate-700 dark:text-slate-500 font-medium max-w-[220px] mt-1">
                     {language === "en"
                       ? "Tap the bookmark icon on any classification system to save it here."
                       : "กดไอคอนบุ๊กมาร์กบนหน้าระบบการจัดจำแนกเพื่อบันทึกไว้ดูภายหลัง"}
@@ -637,10 +637,10 @@ function App() {
                     }}
                   >
                     <div>
-                      <div className="text-xs font-extrabold text-white group-hover:text-[#00CED1]">
+                      <div className="text-xs font-extrabold text-black dark:text-white group-hover:text-teal-800 dark:group-hover:text-[#00CED1]">
                         {item.regionName} ({item.boneName})
                       </div>
-                      <div className="text-[11px] font-bold text-[#00CED1] mt-0.5">
+                      <div className="text-[11px] font-bold text-teal-800 dark:text-[#00CED1] mt-0.5">
                         {item.systemName}
                       </div>
                     </div>

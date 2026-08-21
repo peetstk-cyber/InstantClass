@@ -46,8 +46,8 @@ export function AuthModal({
   const bg = darkMode ? "#111827" : "#FFFFFF";
   const cardBg = darkMode ? "#1E293B" : "#F8FAFC";
   const border = darkMode ? "#334155" : "#E2E8F0";
-  const text = darkMode ? "#F1F5F9" : "#0F172A";
-  const muted = darkMode ? "#94A3B8" : "#64748B";
+  const text = darkMode ? "#F1F5F9" : "#000000";
+  const muted = darkMode ? "#94A3B8" : "#000000";
 
   const handleSignIn = async (e: React.FormEvent) => {
     e.preventDefault();

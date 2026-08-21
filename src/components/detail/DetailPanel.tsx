@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import type { Language } from "../../App";
 import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
 import { X, Zap, Info, Bookmark, Image as ImageIcon, Film } from "lucide-react";
@@ -69,12 +70,14 @@ function ClassificationMediaViewerModal({
     fracType.xrayUrl ||
     (fracType.illustrationId ? fracType.illustrationId.replace("/images/", "/images/xrays/") : null);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <div 
       style={{
         position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
         background: "rgba(0,0,0,0.88)",
-        zIndex: 99999,
+        zIndex: 999999,
         display: "flex", alignItems: "center", justifyContent: "center",
         padding: 12,
         animation: "fadeIn 0.2s ease"
@@ -239,7 +242,8 @@ function ClassificationMediaViewerModal({
           )}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
@@ -280,7 +284,7 @@ function MetacarpalAlignmentTable({
       >
         <div className="flex items-center gap-2">
           <span className="text-sm">📊</span>
-          <span style={{ fontSize: 12, fontWeight: 800, color: "#00CED1" }}>
+          <span style={{ fontSize: 12, fontWeight: 800, color: darkMode ? "#00CED1" : "#0F766E" }}>
             {language === "en" ? "Summary Table: Acceptable Alignment in Metacarpal Fractures" : "ตารางสรุป Acceptable Alignment ใน Metacarpal Fractures"}
           </span>
         </div>
@@ -293,7 +297,7 @@ function MetacarpalAlignmentTable({
               <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
                 {language === "en" ? "Degree of Acceptable" : "ตำแหน่งกระดูก MC"}
               </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: "#00CED1" }}>
+              <th className="py-2.5 px-3 font-bold text-center" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>
                 {language === "en" ? "Metacarpal Neck (°)" : "Metacarpal Neck (°)"}
               </th>
               <th className="py-2.5 px-3 font-bold text-center" style={{ color: "#2ECC71" }}>
@@ -314,7 +318,7 @@ function MetacarpalAlignmentTable({
                 }}
               >
                 <td className="py-2.5 px-3 font-semibold" style={{ color: textColor }}>{row.mc}</td>
-                <td className="py-2.5 px-3 text-center font-bold" style={{ color: "#00CED1" }}>{row.neck}</td>
+                <td className="py-2.5 px-3 text-center font-bold" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>{row.neck}</td>
                 <td className="py-2.5 px-3 text-center font-bold" style={{ color: "#2ECC71" }}>{row.shaft}</td>
                 <td className="py-2.5 px-3 text-center font-bold" style={{ color: "#EF4444" }}>{row.rotation}</td>
               </tr>
@@ -526,7 +530,7 @@ function TibialShaftAlignmentTable({
       >
         <div className="flex items-center gap-2">
           <span className="text-sm">📏</span>
-          <span style={{ fontSize: 12, fontWeight: 800, color: "#00CED1" }}>
+          <span style={{ fontSize: 12, fontWeight: 800, color: darkMode ? "#00CED1" : "#0F766E" }}>
             {language === "en" ? "Acceptable Alignment Thresholds (Sarmiento Rules)" : "เกณฑ์มุมเอียงที่ยอมรับได้ (Sarmiento Alignment Criteria)"}
           </span>
         </div>
@@ -539,7 +543,7 @@ function TibialShaftAlignmentTable({
               <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
                 {language === "en" ? "Alignment Parameter" : "พารามิเตอร์การจัดเรียงตัว"}
               </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: "#00CED1" }}>
+              <th className="py-2.5 px-3 font-bold text-center" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>
                 {language === "en" ? "Max Threshold" : "เกณฑ์สูงสุดที่ยอมรับได้"}
               </th>
               <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
@@ -716,13 +720,13 @@ function ClassificationTitleWithInfo({
       </div>
 
       {/* Unified Info & Concept Modal */}
-      {showInfoModal && (
+      {showInfoModal && typeof document !== "undefined" && createPortal(
         <div 
           onClick={() => setShowInfoModal(false)}
           style={{
             position: "fixed",
             inset: 0,
-            zIndex: 9999,
+            zIndex: 999999,
             background: "rgba(0, 0, 0, 0.75)",
             backdropFilter: "blur(6px)",
             display: "flex",
@@ -752,7 +756,7 @@ function ClassificationTitleWithInfo({
             {/* Modal Header */}
             <div className="flex items-center justify-between gap-2 mb-3 pb-3" style={{ borderBottom: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "#E2E8F0"}` }}>
               <div>
-                <div className="text-[10.5px] font-bold text-[#00CED1] uppercase tracking-wider">
+                <div className="text-[10.5px] font-bold text-teal-800 dark:text-[#00CED1] uppercase tracking-wider">
                   Classification Guide
                 </div>
                 <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800, color: textColor }}>
@@ -773,13 +777,13 @@ function ClassificationTitleWithInfo({
             </div>
 
             {/* Modal Tabs: Overview vs Clinical Concept */}
-            <div className="flex p-1 mb-4 rounded-xl" style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "#F1F5F9" }}>
+            <div className="flex p-1 mb-4 rounded-xl" style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "#E2E8F0" }}>
               <button
                 onClick={() => setActiveTab("overview")}
                 className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   activeTab === "overview"
-                    ? "bg-[#00CED1] text-slate-900 shadow-sm"
-                    : "text-slate-400 hover:text-slate-200"
+                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
+                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
                 }`}
               >
                 📘 {language === "en" ? "Overview" : "ภาพรวมระบบ"}
@@ -788,8 +792,8 @@ function ClassificationTitleWithInfo({
                 onClick={() => setActiveTab("concept")}
                 className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   activeTab === "concept"
-                    ? "bg-[#00CED1] text-slate-900 shadow-sm"
-                    : "text-slate-400 hover:text-slate-200"
+                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
+                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
                 }`}
               >
                 💡 {language === "en" ? "Clinical Concept" : "แนวคิดหลัก & เกณฑ์พิจารณา"}
@@ -800,10 +804,10 @@ function ClassificationTitleWithInfo({
             {activeTab === "overview" && (
               <div className="space-y-3 text-xs leading-relaxed">
                 <div className="p-3 rounded-xl bg-slate-500/10 border border-slate-500/20">
-                  <div className="font-bold text-[#00CED1] mb-1 uppercase text-[10.5px] tracking-wider">
+                  <div className="font-extrabold text-teal-800 dark:text-[#00CED1] mb-1 uppercase text-[10.5px] tracking-wider">
                     {language === "en" ? "System Description & Indication" : "คำอธิบายภาพรวมและข้อบ่งชี้"}
                   </div>
-                  <p className="m-0 text-slate-700 dark:text-slate-300">
+                  <p className="m-0 text-black dark:text-slate-300 font-medium">
                     {description}
                   </p>
                 </div>
@@ -815,12 +819,12 @@ function ClassificationTitleWithInfo({
               <div className="space-y-3.5 text-xs leading-relaxed">
                 {/* 1. Core Principle (TL;DR) */}
                 {concept?.corePrinciple ? (
-                  <div className="p-3.5 rounded-xl bg-[#00CED1]/10 border border-[#00CED1]/30 space-y-1.5">
-                    <div className="font-extrabold text-[#00CED1] flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                  <div className="p-3.5 rounded-xl bg-teal-600/10 border border-teal-600/30 dark:bg-[#00CED1]/10 dark:border-[#00CED1]/30 space-y-1.5">
+                    <div className="font-extrabold text-teal-800 dark:text-[#00CED1] flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                       <span>💡</span>
                       <span>{language === "en" ? "TL;DR / The Core Principle" : "หัวใจหลักในการจำแนก (Core Principle)"}</span>
                     </div>
-                    <p className="m-0 text-slate-800 dark:text-slate-100 font-medium text-[12px] leading-relaxed">
+                    <p className="m-0 text-black dark:text-slate-100 font-medium text-[12px] leading-relaxed">
                       {concept.corePrinciple[language]}
                     </p>
                   </div>
@@ -829,11 +833,11 @@ function ClassificationTitleWithInfo({
                 {/* 2. The "Rules" (Decision Cut-offs) */}
                 {concept?.rules && concept.rules.length > 0 ? (
                   <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2">
-                    <div className="font-extrabold text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                    <div className="font-extrabold text-amber-600 dark:text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                       <span>⚖️</span>
                       <span>{language === "en" ? "The Rules (Key Thresholds)" : "เกณฑ์การตัดสินใจ (The Rules)"}</span>
                     </div>
-                    <ul className="m-0 pl-4 space-y-1 text-slate-800 dark:text-slate-200 text-[11.5px] list-disc font-medium">
+                    <ul className="m-0 pl-4 space-y-1 text-black dark:text-slate-200 text-[11.5px] list-disc font-medium">
                       {concept.rules.map((rule, rIdx) => (
                         <li key={rIdx}>{rule[language]}</li>
                       ))}
@@ -844,11 +848,11 @@ function ClassificationTitleWithInfo({
                 {/* 3. Clinical Significance */}
                 {concept?.clinicalSignificance && concept.clinicalSignificance.length > 0 ? (
                   <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/25 space-y-2">
-                    <div className="font-extrabold text-blue-400 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                    <div className="font-extrabold text-blue-600 dark:text-blue-400 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                       <span>🏥</span>
                       <span>{language === "en" ? "Clinical Significance & Impact" : "การนำไปใช้ทางคลินิก (Clinical Significance)"}</span>
                     </div>
-                    <ul className="m-0 pl-4 space-y-1.5 text-slate-800 dark:text-slate-200 text-[11.5px] list-disc">
+                    <ul className="m-0 pl-4 space-y-1.5 text-black dark:text-slate-200 text-[11.5px] list-disc font-medium">
                       {concept.clinicalSignificance.map((sig, sIdx) => (
                         <li key={sIdx}>{sig[language]}</li>
                       ))}
@@ -859,16 +863,16 @@ function ClassificationTitleWithInfo({
                 {/* Fallback Legacy Description if new structured fields missing */}
                 {!concept?.corePrinciple && concept?.description ? (
                   <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2">
-                    <div className="font-bold text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                    <div className="font-bold text-amber-600 dark:text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                       <span>💡</span>
                       <span>{concept.title ? concept.title[language] : (language === "en" ? "Core Concept" : "หลักการคิดและจุดตัดสินใจ")}</span>
                     </div>
-                    <div className="whitespace-pre-line text-slate-800 dark:text-slate-200 text-[11.5px] leading-relaxed">
+                    <div className="whitespace-pre-line text-black dark:text-slate-200 text-[11.5px] font-medium leading-relaxed">
                       {concept.description[language]}
                     </div>
                   </div>
                 ) : !concept?.corePrinciple && !concept?.rules && !concept?.description ? (
-                  <div className="p-3 rounded-xl bg-slate-500/10 border border-slate-500/20 text-slate-400 text-center py-6">
+                  <div className="p-3 rounded-xl bg-slate-500/10 border border-slate-500/20 text-slate-800 dark:text-slate-400 font-medium text-center py-6">
                     {language === "en" ? "System description applies standard clinical guidelines." : "ระบบการจำแนกนี้ใช้หลักเกณฑ์มาตรฐานทางออร์โธปิดิกส์"}
                   </div>
                 ) : null}
@@ -905,7 +909,8 @@ function ClassificationTitleWithInfo({
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
@@ -1070,8 +1075,8 @@ export function DetailPanel({
 
   const bg       = darkMode ? "#161B27" : "#EAECEF";
   const border   = darkMode ? "#252F42" : "#D5D9E0";
-  const mutedText = darkMode ? "#94A3B8" : "#475569";
-  const textColor = darkMode ? "#E2E8F0" : "#0F172A";
+  const mutedText = darkMode ? "#94A3B8" : "#000000";
+  const textColor = darkMode ? "#E2E8F0" : "#000000";
 
   // Derive active data
   const region = bone?.regions.find(r => r.id === selectedRegionId) ?? bone?.regions[0] ?? null;
@@ -1225,9 +1230,9 @@ export function DetailPanel({
                     fontSize: 10.5,
                     fontWeight: isSelected ? 800 : 600,
                     cursor: "pointer",
-                    background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#F1F5F9"),
+                    background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#FFFFFF"),
                     border: isSelected ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
-                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
+                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#000000"),
                     boxShadow: isSelected ? "0 0 10px rgba(0,206,209,0.35)" : "none",
                   }}
                 >
@@ -1280,13 +1285,13 @@ export function DetailPanel({
       ) : (
         <div key="mobile-classification-view" onTouchStart={handleSwipeTouchStart} onTouchEnd={handleSwipeTouchEnd} className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
           {/* Main Tabs: Classifications vs Investigations */}
-          <div className="flex p-0.5 mb-2.5" style={{ background: darkMode ? "#1A2530" : "#E2E8F0", borderRadius: 6 }}>
+          <div className="flex p-0.5 mb-2.5" style={{ background: darkMode ? "#1A2530" : "#D5D9E0", borderRadius: 6 }}>
             <button
               onClick={() => setActiveTab("classification")}
               className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
               style={{
                 background: activeTab === "classification" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
-                color: activeTab === "classification" ? (darkMode ? "#FFFFFF" : "#1E293B") : mutedText,
+                color: activeTab === "classification" ? (darkMode ? "#FFFFFF" : "#000000") : (darkMode ? "#94A3B8" : "#000000"),
                 boxShadow: activeTab === "classification" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
               }}
             >
@@ -1297,7 +1302,7 @@ export function DetailPanel({
               className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
               style={{
                 background: activeTab === "investigation" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
-                color: activeTab === "investigation" ? (darkMode ? "#FFFFFF" : "#1E293B") : mutedText,
+                color: activeTab === "investigation" ? (darkMode ? "#FFFFFF" : "#000000") : (darkMode ? "#94A3B8" : "#000000"),
                 boxShadow: activeTab === "investigation" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
               }}
             >
@@ -1344,7 +1349,7 @@ export function DetailPanel({
                         className="flex-1 py-1 px-2.5 rounded-md font-bold text-[10.5px] whitespace-nowrap transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
                         style={{
                           background: isSelected ? "#2ECC71" : "transparent",
-                          color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#334155"),
+                          color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#000000"),
                           boxShadow: isSelected ? "0 1px 4px rgba(46,204,113,0.3)" : "none",
                         }}
                       >
@@ -1420,7 +1425,7 @@ export function DetailPanel({
                                 const parent = (e.target as HTMLElement).parentElement;
                                 if (parent) {
                                   const fallbackDiv = document.createElement("div");
-                                  fallbackDiv.className = "w-full h-full flex items-center justify-center text-xs font-bold text-slate-400";
+                                  fallbackDiv.className = "w-full h-full flex items-center justify-center text-xs font-bold text-slate-800 dark:text-slate-400";
                                   fallbackDiv.innerText = t.type;
                                   parent.appendChild(fallbackDiv);
                                 }
@@ -1443,9 +1448,9 @@ export function DetailPanel({
                           }}
                           className="transition-all w-full text-center py-1.5 px-1 rounded-lg text-xs font-extrabold cursor-pointer active:scale-95 tracking-wide"
                           style={{
-                            background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#F1F5F9"),
+                            background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#FFFFFF"),
                             border: isSelected ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
-                            color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#475569"),
+                            color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#000000"),
                             boxShadow: isSelected ? "0 0 10px rgba(0,206,209,0.35)" : "none",
                           }}
                         >
@@ -1672,14 +1677,14 @@ export function DetailPanel({
                   {/* X-ray description */}
                   <div
                     style={{
-                      background: "rgba(0,206,209,0.05)",
-                      border: "1px solid rgba(0,206,209,0.2)",
+                      background: darkMode ? "rgba(0,206,209,0.05)" : "rgba(15,118,110,0.06)",
+                      border: `1px solid ${darkMode ? "rgba(0,206,209,0.2)" : "rgba(15,118,110,0.25)"}`,
                       borderRadius: 10,
                       padding: "10px 12px",
                       marginBottom: 10,
                     }}
                   >
-                    <div style={{ color: "#00CED1", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>
+                    <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 10, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>
                       X-Ray Findings
                     </div>
                     <p style={{ color: textColor, fontSize: 12, margin: 0, lineHeight: 1.6 }}>

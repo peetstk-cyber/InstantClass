@@ -63,8 +63,8 @@ export function TopNavBar({
 
   const borderColor = darkMode ? "#252F42" : "#EAECF0";
   const bg         = darkMode ? "#161B27" : "#FFFFFF";
-  const text        = darkMode ? "#E2E8F0" : "#101828";
-  const mutedText   = darkMode ? "#94A3B8" : "#475569";
+  const text        = darkMode ? "#E2E8F0" : "#000000";
+  const mutedText   = darkMode ? "#94A3B8" : "#000000";
 
   // Search results
   const filtered = searchQuery.trim().length > 0
@@ -100,7 +100,7 @@ export function TopNavBar({
           alt="InstantClass Logo"
           className="h-9 sm:h-10 md:h-11 w-auto object-contain transition-all group-hover:scale-110 drop-shadow-[0_2px_8px_rgba(0,0,0,0.35)]"
           style={{
-            filter: "brightness(0) invert(1)",
+            filter: darkMode ? "brightness(0) invert(1)" : "brightness(0)",
           }}
         />
         <div>
@@ -110,7 +110,7 @@ export function TopNavBar({
           >
             InstantClass
           </div>
-          <div style={{ color: mutedText }} className="text-[9px] md:text-[10px] font-semibold uppercase tracking-wider mt-0.5 hidden xs:block">
+          <div style={{ color: mutedText }} className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider mt-0.5 hidden xs:block">
             Fracture Classification Hub
           </div>
         </div>
@@ -135,7 +135,7 @@ export function TopNavBar({
             color: text,
             boxShadow: darkMode ? "none" : "0 1px 3px rgba(0,0,0,0.03)",
           }}
-          className="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-xl text-xs md:text-[13px] outline-none focus:border-[#00CED1] transition-all"
+          className="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-xl text-xs md:text-[13px] outline-none focus:border-[#00CED1] transition-all font-medium"
         />
         {/* Dropdown results */}
         {filtered.length > 0 && (
@@ -148,10 +148,10 @@ export function TopNavBar({
                 key={bone.id}
                 onClick={() => { onSelectBone(bone.id); onSearchChange(""); }}
                 style={{ color: text }}
-                className="w-full text-left px-3.5 py-2 text-xs md:text-[13px] hover:bg-[rgba(0,206,209,0.08)] transition-colors flex items-center gap-2"
+                className="w-full text-left px-3.5 py-2 text-xs md:text-[13px] hover:bg-[rgba(0,206,209,0.08)] transition-colors flex items-center gap-2 cursor-pointer"
               >
-                <span className="font-semibold">{bone.name[language]}</span>
-                <span style={{ color: mutedText }} className="text-[10px] md:text-[11px]">
+                <span className="font-bold">{bone.name[language]}</span>
+                <span style={{ color: darkMode ? "#94A3B8" : "#475569" }} className="text-[10px] md:text-[11px] font-medium">
                   {bone.regions[0]?.classifications[0]?.system}
                 </span>
               </button>
@@ -168,12 +168,12 @@ export function TopNavBar({
             onClick={() => onCategoryChange(cat.id)}
             style={{
               background: activeCategory === cat.id
-                ? "rgba(0,206,209,0.15)"
+                ? (darkMode ? "rgba(0,206,209,0.15)" : "#0F766E")
                 : "transparent",
-              color: activeCategory === cat.id ? "#00CED1" : mutedText,
-              border: activeCategory === cat.id ? "1px solid rgba(0,206,209,0.4)" : "1px solid transparent",
+              color: activeCategory === cat.id ? (darkMode ? "#00CED1" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#000000"),
+              border: activeCategory === cat.id ? (darkMode ? "1px solid rgba(0,206,209,0.4)" : "1px solid #0F766E") : "1px solid transparent",
             }}
-            className="px-3 py-1 rounded-lg text-[12px] font-medium transition-all hover:text-[#00CED1]"
+            className="px-3 py-1 rounded-lg text-[12px] font-bold transition-all hover:text-teal-700 dark:hover:text-[#00CED1] cursor-pointer"
           >
             {cat.label[language]}
           </button>
@@ -184,16 +184,16 @@ export function TopNavBar({
       <div className="flex items-center gap-1.5 md:gap-2 ml-auto flex-shrink-0">
         <button
           onClick={onToggleLanguage}
-          style={{ border: `1px solid ${borderColor}`, color: mutedText, background: "transparent" }}
-          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] md:text-[12px] font-semibold hover:text-[#00CED1] hover:border-[#00CED1] transition-all"
+          style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
+          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] md:text-[12px] font-bold hover:text-[#00CED1] hover:border-[#00CED1] transition-all cursor-pointer"
         >
           <Globe size={13} />
           {language === "en" ? "TH" : "EN"}
         </button>
         <button
           onClick={onToggleDark}
-          style={{ border: `1px solid ${borderColor}`, color: mutedText, background: "transparent" }}
-          className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-[#00CED1] hover:border-[#00CED1] transition-all"
+          style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
+          className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-[#00CED1] hover:border-[#00CED1] transition-all cursor-pointer"
         >
           {darkMode ? <Sun size={14} /> : <Moon size={14} />}
         </button>
