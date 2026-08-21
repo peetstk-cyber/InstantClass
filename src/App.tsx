@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { cleanSystemName } from "./components/detail/DetailPanel";
 import { searchEponyms } from "./data/eponyms";
+import { FeedbackModal } from "./components/feedback/FeedbackModal";
 
 export type Language = "en" | "th";
 
@@ -42,6 +43,7 @@ function App() {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showQuizModal, setShowQuizModal] = useState(false);
   const [showBookmarksModal, setShowBookmarksModal] = useState(false);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
   const [quizAnswer, setQuizAnswer] = useState<number | null>(null);
 
   // User Auth State Persisted in LocalStorage
@@ -186,6 +188,7 @@ function App() {
         onOpenAdmin={() => setShowAdmin(true)}
         currentUser={currentUser}
         onOpenAuth={() => setShowAuthModal(true)}
+        onOpenFeedback={() => setShowFeedbackModal(true)}
       />
 
       {/* ── Main body layout ── */}
@@ -759,6 +762,16 @@ function App() {
           onClose={() => setShowAdmin(false)}
         />
       )}
+
+      {/* ── Real Feedback & Cloud Database Modal ── */}
+      <FeedbackModal
+        isOpen={showFeedbackModal}
+        onClose={() => setShowFeedbackModal(false)}
+        darkMode={darkMode}
+        language={language}
+        currentBoneName={selectedBone?.name[language]}
+        currentRegionName={selectedBone?.regions.find(r => r.id === selectedRegionId)?.name[language]}
+      />
     </div>
   );
 }

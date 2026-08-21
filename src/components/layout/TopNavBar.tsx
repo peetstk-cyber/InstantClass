@@ -2,7 +2,7 @@ import { useRef } from "react";
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
-import { Search, Moon, Sun, Globe } from "lucide-react";
+import { Search, Moon, Sun, Globe, MessageSquarePlus } from "lucide-react";
 import { searchEponyms } from "../../data/eponyms";
 
 interface TopNavBarProps {
@@ -19,6 +19,7 @@ interface TopNavBarProps {
   onOpenAdmin?: () => void;
   currentUser?: UserProfile | null;
   onOpenAuth?: () => void;
+  onOpenFeedback?: () => void;
 }
 
 const CATEGORIES = [
@@ -42,7 +43,7 @@ export const BONE_CATEGORY: Record<string, string> = {
 export function TopNavBar({
   darkMode, onToggleDark, language, onToggleLanguage,
   searchQuery, onSearchChange, activeCategory, onCategoryChange,
-  bones, onSelectBone, onOpenAdmin,
+  bones, onSelectBone, onOpenAdmin, onOpenFeedback
 }: TopNavBarProps) {
   const clickCountRef = useRef<number>(0);
   const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -59,10 +60,10 @@ export function TopNavBar({
     if (clickTimerRef.current) clearTimeout(clickTimerRef.current);
     clickTimerRef.current = setTimeout(() => {
       clickCountRef.current = 0;
-    }, 2000);
+    }, 1500);
   };
 
-  const borderColor = darkMode ? "#252F42" : "#EAECF0";
+  const borderColor = darkMode ? "rgba(255, 255, 255, 0.08)" : "#E2E8F0";
   const bg         = darkMode ? "#161B27" : "#FFFFFF";
   const text        = darkMode ? "#E2E8F0" : "#000000";
   const mutedText   = darkMode ? "#94A3B8" : "#000000";
@@ -229,6 +230,21 @@ export function TopNavBar({
 
       {/* Right controls */}
       <div className="flex items-center gap-1.5 md:gap-2 ml-auto flex-shrink-0">
+        {/* Feedback Button */}
+        <button
+          onClick={onOpenFeedback}
+          title={language === "en" ? "Send Feedback / Suggestions" : "ส่งฟีดแบค / ข้อเสนอแนะ"}
+          style={{
+            background: darkMode ? "rgba(0, 206, 209, 0.15)" : "#0F766E",
+            color: darkMode ? "#00CED1" : "#FFFFFF",
+            border: darkMode ? "1px solid rgba(0, 206, 209, 0.35)" : "1px solid #0F766E",
+          }}
+          className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-extrabold shadow-xs hover:opacity-90 active:scale-95 transition-all cursor-pointer"
+        >
+          <MessageSquarePlus size={14} className="flex-shrink-0" />
+          <span className="hidden xs:inline">{language === "en" ? "Feedback" : "ฟีดแบค"}</span>
+        </button>
+
         <button
           onClick={onToggleLanguage}
           style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
