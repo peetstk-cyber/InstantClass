@@ -682,12 +682,12 @@ function ClassificationTitleWithInfo({
             title={language === "en" ? "System Info & Concept" : "ข้อมูลและแนวคิดระบบ"}
             className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
             style={{
-              width: 24,
-              height: 24,
+              width: 26,
+              height: 26,
               borderRadius: "50%",
-              background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(0, 206, 209, 0.08)",
-              color: "#00CED1",
-              border: "1px solid rgba(0, 206, 209, 0.3)",
+              background: darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)",
+              color: darkMode ? "#94A3B8" : "#64748B",
+              border: `1.5px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
               boxShadow: "none",
               padding: 0,
             }}
