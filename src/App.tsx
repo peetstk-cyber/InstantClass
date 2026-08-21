@@ -21,6 +21,7 @@ import {
   BookOpen 
 } from "lucide-react";
 import { cleanSystemName } from "./components/detail/DetailPanel";
+import { searchEponyms } from "./data/eponyms";
 
 export type Language = "en" | "th";
 
@@ -331,9 +332,9 @@ function App() {
             </button>
 
             <div className="flex items-center gap-2 pr-6">
-              <Search size={18} className="text-[#00CED1]" />
+              <Search size={18} className="text-teal-800 dark:text-[#00CED1]" />
               <h3 className="text-base font-extrabold tracking-tight text-black dark:text-slate-100">
-                {language === "en" ? "Search Fracture Classification" : "ค้นหาการจำแนกประเภทกระดูกหัก"}
+                {language === "en" ? "Search Classification & Eponyms" : "ค้นหาระบบจำแนก & ชื่อรอยหัก (Eponyms)"}
               </h3>
             </div>
 
@@ -344,18 +345,18 @@ function App() {
                 autoFocus
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder={language === "en" ? "Search bone, region, or system..." : "พิมพ์ชื่อกระดูก หรือระบบจำแนก..."}
+                placeholder={language === "en" ? "Search Boxer, Colles, Nightstick, Garden..." : "พิมพ์ชื่อรอยหัก เช่น Boxer, Colles, Monteggia..."}
                 style={{
                   background: darkMode ? "#1E293B" : "#F8FAFC",
                   borderColor: darkMode ? "#334155" : "#E2E8F0",
                   color: darkMode ? "#F1F5F9" : "#000000",
                 }}
-                className="w-full pl-9 pr-8 py-2.5 rounded-xl border text-sm outline-none focus:border-[#00CED1] transition-all font-medium"
+                className="w-full pl-9 pr-8 py-2.5 rounded-xl border text-sm outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-all font-medium"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 hover:text-slate-200"
+                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 hover:text-slate-200 cursor-pointer"
                 >
                   <X size={14} />
                 </button>
@@ -363,10 +364,11 @@ function App() {
             </div>
 
             {/* Results list */}
-            <div className="flex-1 overflow-y-auto space-y-1.5 pt-1">
+            <div className="flex-1 overflow-y-auto space-y-2 pt-1 pr-1">
               {searchQuery.trim().length > 0 ? (
                 (() => {
-                  const results = bonesData.flatMap((b) =>
+                  const matchingEponyms = searchEponyms(searchQuery);
+                  const boneResults = bonesData.flatMap((b) =>
                     b.regions.flatMap((r) =>
                       r.classifications
                         .filter(
@@ -386,53 +388,123 @@ function App() {
                     )
                   );
 
-                  if (results.length === 0) {
+                  if (matchingEponyms.length === 0 && boneResults.length === 0) {
                     return (
                       <div className="py-8 text-center text-xs text-slate-800 dark:text-slate-400 font-medium">
-                        {language === "en" ? "No classification systems found matching your search." : "ไม่พบระบบจำแนกกระดูกหักที่ตรงกับคำค้นหา"}
+                        {language === "en" ? "No classification systems or eponyms found matching your search." : "ไม่พบระบบจำแนกหรือชื่อรอยหักที่ตรงกับคำค้นหา"}
                       </div>
                     );
                   }
 
-                  return results.map((res, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => {
-                        handleSelectBoneById(res.boneId, res.regionId);
-                        setShowSearchModal(false);
-                        setSearchQuery("");
-                      }}
-                      style={{
-                        background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
-                        borderColor: darkMode ? "rgba(255,255,255,0.08)" : "#EAECF0",
-                      }}
-                      className="w-full text-left p-3 rounded-xl border flex items-center justify-between hover:border-[#00CED1] transition-all cursor-pointer group"
-                    >
-                      <div>
-                        <div className="text-xs font-bold text-teal-700 dark:text-[#00CED1]">
-                          {res.boneName} • {res.regionName}
+                  return (
+                    <div className="space-y-2.5">
+                      {/* 1. Eponym Results */}
+                      {matchingEponyms.length > 0 && (
+                        <div className="space-y-1.5">
+                          <div className="text-[10.5px] font-extrabold uppercase tracking-wider text-teal-800 dark:text-[#00CED1] flex items-center gap-1">
+                            <span>⚡</span>
+                            <span>{language === "en" ? "Fracture Eponyms / Nicknames" : "ชื่อเฉพาะ / Eponyms"}</span>
+                          </div>
+                          {matchingEponyms.map((item) => (
+                            <button
+                              key={item.id}
+                              onClick={() => {
+                                handleSelectBoneById(item.boneId, item.regionId);
+                                setShowSearchModal(false);
+                                setSearchQuery("");
+                              }}
+                              style={{
+                                background: darkMode ? "rgba(255,255,255,0.04)" : "#FFFFFF",
+                                borderColor: darkMode ? "rgba(0,206,209,0.3)" : "rgba(15,118,110,0.3)",
+                              }}
+                              className="w-full text-left px-3 py-2.5 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-sm transition-all cursor-pointer group"
+                            >
+                              <div className="font-extrabold text-sm text-black dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] truncate">
+                                {item.name}
+                              </div>
+                              <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-md bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
+                                {item.boneId}
+                              </span>
+                            </button>
+                          ))}
                         </div>
-                        <div className="text-sm font-extrabold mt-0.5 text-black dark:text-slate-100">
-                          {res.systemName}
+                      )}
+
+                      {/* 2. Bones & Classification Systems */}
+                      {boneResults.length > 0 && (
+                        <div className="space-y-1.5">
+                          <div className="text-[10.5px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                            {language === "en" ? "Classification Systems" : "ระบบการจำแนกกระดูก"}
+                          </div>
+                          {boneResults.map((res, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => {
+                                handleSelectBoneById(res.boneId, res.regionId);
+                                setShowSearchModal(false);
+                                setSearchQuery("");
+                              }}
+                              style={{
+                                background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
+                                borderColor: darkMode ? "rgba(255,255,255,0.08)" : "#EAECF0",
+                              }}
+                              className="w-full text-left p-2.5 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer group"
+                            >
+                              <div>
+                                <div className="text-xs font-bold text-teal-800 dark:text-[#00CED1]">
+                                  {res.boneName} • {res.regionName}
+                                </div>
+                                <div className="text-xs font-extrabold mt-0.5 text-black dark:text-slate-100">
+                                  {res.systemName}
+                                </div>
+                              </div>
+                              <ChevronRight size={15} className="text-slate-500 dark:text-slate-400 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
+                            </button>
+                          ))}
                         </div>
-                      </div>
-                      <ChevronRight size={16} className="text-slate-500 dark:text-slate-400 group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
-                    </button>
-                  ));
+                      )}
+                    </div>
+                  );
                 })()
               ) : (
-                <div className="py-6 text-center text-xs text-slate-800 dark:text-slate-400 font-medium space-y-2">
-                  <p>{language === "en" ? "Popular Search Topics:" : "หัวข้อค้นขายอดนิยม:"}</p>
-                  <div className="flex flex-wrap justify-center gap-1.5">
-                    {["Garden", "Schatzker", "Neer", "Gustilo", "Pauwels"].map((topic) => (
-                      <button
-                        key={topic}
-                        onClick={() => setSearchQuery(topic)}
-                        className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-[#00CED1]/30 hover:bg-[#00CED1]/25 transition-all cursor-pointer"
-                      >
-                        {topic}
-                      </button>
-                    ))}
+                <div className="py-4 text-center text-xs text-slate-800 dark:text-slate-400 font-medium space-y-3">
+                  <div>
+                    <p className="font-extrabold text-[11px] text-teal-800 dark:text-[#00CED1] mb-1.5 uppercase tracking-wider">
+                      ⚡ {language === "en" ? "High-Yield Fracture Eponyms (ER / Ward):" : "ชื่อเฉพาะยอดฮิตในห้องฉุกเฉิน (Eponyms):"}
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-1.5 max-h-[140px] overflow-y-auto p-1">
+                      {[
+                        "Boxer", "Nightstick", "Monteggia", "Galeazzi", 
+                        "Colles", "Smith", "Barton", "Chauffeur", 
+                        "Jones", "Lisfranc", "Hangman", "Pipkin", 
+                        "Segond", "Chance", "Salter-Harris"
+                      ].map((eponym) => (
+                        <button
+                          key={eponym}
+                          onClick={() => setSearchQuery(eponym)}
+                          className="px-2.5 py-1 rounded-lg text-[11px] font-extrabold bg-teal-600/15 text-teal-900 dark:bg-[#00CED1]/15 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 hover:bg-teal-600/25 transition-all cursor-pointer"
+                        >
+                          {eponym}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
+                    <p className="text-[10.5px] text-slate-500 dark:text-slate-400 mb-1.5 font-bold">
+                      {language === "en" ? "Standard Systems:" : "ระบบจำแนกมาตรฐาน:"}
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-1.5">
+                      {["Garden", "Schatzker", "Neer", "Gustilo", "Pauwels", "Rockwood"].map((topic) => (
+                        <button
+                          key={topic}
+                          onClick={() => setSearchQuery(topic)}
+                          className="px-2.5 py-0.5 rounded-lg text-[10.5px] font-bold bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all cursor-pointer"
+                        >
+                          {topic}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}

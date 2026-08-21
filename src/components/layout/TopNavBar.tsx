@@ -3,6 +3,7 @@ import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
 import { Search, Moon, Sun, Globe } from "lucide-react";
+import { searchEponyms } from "../../data/eponyms";
 
 interface TopNavBarProps {
   darkMode: boolean;
@@ -66,11 +67,13 @@ export function TopNavBar({
   const text        = darkMode ? "#E2E8F0" : "#000000";
   const mutedText   = darkMode ? "#94A3B8" : "#000000";
 
-  // Search results
-  const filtered = searchQuery.trim().length > 0
+  // Search results (including Eponyms & Clinical nicknames)
+  const matchingEponyms = searchQuery.trim().length > 0 ? searchEponyms(searchQuery) : [];
+  const filteredBones = searchQuery.trim().length > 0
     ? bones.filter(b =>
         b.name[language].toLowerCase().includes(searchQuery.toLowerCase()) ||
         b.regions.some(r =>
+          r.name[language].toLowerCase().includes(searchQuery.toLowerCase()) ||
           r.classifications.some(c =>
             c.system.toLowerCase().includes(searchQuery.toLowerCase()) ||
             c.fullName[language].toLowerCase().includes(searchQuery.toLowerCase())
@@ -78,6 +81,8 @@ export function TopNavBar({
         )
       )
     : [];
+
+  const hasSearchResults = matchingEponyms.length > 0 || filteredBones.length > 0;
 
   return (
     <header
@@ -127,35 +132,77 @@ export function TopNavBar({
           type="text"
           value={searchQuery}
           onChange={e => onSearchChange(e.target.value)}
-          onBlur={() => setTimeout(() => onSearchChange(""), 150)}
-          placeholder={language === "en" ? "Search..." : "ค้นหา..."}
+          placeholder={language === "en" ? "Search fracture, eponym (Boxer, Colles)..." : "ค้นหากระดูก, ชื่อเฉพาะ (Boxer, Colles)..."}
           style={{
             background: darkMode ? "#1C2333" : "#F8FAFC",
             border: `1px solid ${borderColor}`,
             color: text,
             boxShadow: darkMode ? "none" : "0 1px 3px rgba(0,0,0,0.03)",
           }}
-          className="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-xl text-xs md:text-[13px] outline-none focus:border-[#00CED1] transition-all font-medium"
+          className="w-full pl-8 pr-3 py-1.5 md:py-2 rounded-xl text-xs md:text-[13px] outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-all font-medium"
         />
         {/* Dropdown results */}
-        {filtered.length > 0 && (
+        {searchQuery.trim().length > 0 && hasSearchResults && (
           <div
-            style={{ background: bg, border: `1px solid ${borderColor}` }}
-            className="absolute top-full left-0 right-0 mt-1 rounded-xl shadow-xl z-50 overflow-hidden"
+            style={{ 
+              background: darkMode ? "#161B27" : "#FFFFFF", 
+              borderColor: darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1",
+              boxShadow: "0 15px 35px rgba(0,0,0,0.35)"
+            }}
+            className="absolute top-full left-0 right-0 mt-1 rounded-xl border shadow-xl z-50 overflow-hidden max-h-[380px] overflow-y-auto"
           >
-            {filtered.slice(0, 6).map(bone => (
-              <button
-                key={bone.id}
-                onClick={() => { onSelectBone(bone.id); onSearchChange(""); }}
-                style={{ color: text }}
-                className="w-full text-left px-3.5 py-2 text-xs md:text-[13px] hover:bg-[rgba(0,206,209,0.08)] transition-colors flex items-center gap-2 cursor-pointer"
-              >
-                <span className="font-bold">{bone.name[language]}</span>
-                <span style={{ color: darkMode ? "#94A3B8" : "#475569" }} className="text-[10px] md:text-[11px] font-medium">
-                  {bone.regions[0]?.classifications[0]?.system}
-                </span>
-              </button>
-            ))}
+            {/* 1. Eponym Results Section */}
+            {matchingEponyms.length > 0 && (
+              <div className="p-1.5 border-b border-slate-200 dark:border-slate-800">
+                <div className="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-teal-800 dark:text-[#00CED1] flex items-center gap-1">
+                  <span>⚡</span>
+                  <span>{language === "en" ? "Fracture Eponyms & Nicknames" : "ชื่อเฉพาะ / Eponyms"}</span>
+                </div>
+                {matchingEponyms.slice(0, 6).map(eponym => (
+                  <button
+                    key={eponym.id}
+                    onClick={() => { 
+                      onSelectBone(eponym.boneId, eponym.regionId); 
+                      onSearchChange(""); 
+                    }}
+                    style={{ color: text }}
+                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-teal-500/10 transition-colors flex items-center justify-between gap-2 cursor-pointer group"
+                  >
+                    <div className="font-extrabold text-xs text-black dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] truncate">
+                      {eponym.name}
+                    </div>
+                    <span className="text-[9.5px] font-bold px-1.5 py-0.5 rounded bg-teal-500/15 text-teal-800 dark:text-[#00CED1] border border-teal-500/30 flex-shrink-0">
+                      {eponym.boneId}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {/* 2. Bones & Classifications Section */}
+            {filteredBones.length > 0 && (
+              <div className="p-1.5">
+                <div className="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  {language === "en" ? "Anatomical Bones" : "ตำแหน่งกระดูก"}
+                </div>
+                {filteredBones.slice(0, 5).map(bone => (
+                  <button
+                    key={bone.id}
+                    onClick={() => { 
+                      onSelectBone(bone.id, bone.regions[0]?.id); 
+                      onSearchChange(""); 
+                    }}
+                    style={{ color: text }}
+                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-500/10 transition-colors flex items-center justify-between gap-2 cursor-pointer"
+                  >
+                    <span className="font-bold text-xs">{bone.name[language]}</span>
+                    <span style={{ color: darkMode ? "#94A3B8" : "#475569" }} className="text-[10px] font-medium truncate max-w-[140px]">
+                      {bone.regions[0]?.classifications[0]?.system}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </div>

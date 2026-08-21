@@ -1394,7 +1394,7 @@ export function DetailPanel({
                     return (
                       <div 
                         key={t.type} 
-                        className="flex flex-col items-center gap-2 flex-shrink-0 w-[72%] sm:w-[56%] md:w-[calc(33.333%-6px)] min-w-[210px] md:min-w-[130px]" 
+                        className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[48%] sm:w-[38%] md:w-[calc(33.333%-6px)] min-w-[130px] md:min-w-[120px]" 
                         style={{ scrollSnapAlign: "start" }}
                       >
                         <div 
@@ -1405,9 +1405,9 @@ export function DetailPanel({
                               onSelectType(i);
                             }
                           }}
-                          className="transition-all cursor-pointer flex flex-col items-center justify-center overflow-hidden w-full p-2.5 rounded-2xl border relative group bg-white shadow-xs hover:shadow-md active:scale-98"
+                          className="transition-all cursor-pointer flex flex-col items-center justify-center overflow-hidden w-full p-2 md:p-2.5 rounded-2xl border relative group bg-white shadow-xs hover:shadow-md active:scale-98"
                           style={{
-                            aspectRatio: "4/3",
+                            aspectRatio: "1/1",
                             width: "100%",
                             border: isSelected ? "2.5px solid #00CED1" : `1.5px solid ${darkMode ? "rgba(255,255,255,0.2)" : border}`,
                             opacity: isSelected ? 1 : 0.88,
