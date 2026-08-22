@@ -1074,10 +1074,10 @@ export function DetailPanel({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedSystemIdx]);
 
-  const bg       = darkMode ? "#161B27" : "#EAECEF";
-  const border   = darkMode ? "#252F42" : "#D5D9E0";
-  const mutedText = darkMode ? "#94A3B8" : "#000000";
-  const textColor = darkMode ? "#E2E8F0" : "#000000";
+  const bg       = darkMode ? "#161B27" : "#FFFFFF";
+  const border   = darkMode ? "#252F42" : "#E2E8F0";
+  const mutedText = darkMode ? "#94A3B8" : "#475569";
+  const textColor = darkMode ? "#E2E8F0" : "#0F172A";
 
   // Derive active data
   const region = bone?.regions.find(r => r.id === selectedRegionId) ?? bone?.regions[0] ?? null;
