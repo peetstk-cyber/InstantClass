@@ -19,6 +19,8 @@ export interface FeedbackEntry {
   rating: number; // 1 to 5
   comment: string;
   role: string;
+  contextBone?: string;
+  contextRegion?: string;
   createdAt: string;
   userAgent?: string;
   screenWidth?: number;
@@ -29,18 +31,20 @@ interface FeedbackModalProps {
   onClose: () => void;
   darkMode: boolean;
   language: Language;
+  currentBoneName?: string;
+  currentRegionName?: string;
 }
 
 const LOCAL_STORAGE_KEY = "instantclass_feedbacks_cache";
 const ADMIN_PIN = "1111"; // Secret PIN for admin unlock
-// Google Apps Script Web App URL for Google Sheet webhook
-export const DEFAULT_GOOGLE_SHEET_URL = (import.meta as any).env?.VITE_FEEDBACK_SHEET_URL || "https://script.google.com/macros/s/AKfycbxOtC8YFkeSkbtbZLnTQ-5Fzqbtb9YII66PsBR2fThRr7Wac4Sa7Z4GRGrP96WJeD0/exec";
 
 export function FeedbackModal({
   isOpen,
   onClose,
   darkMode,
   language,
+  currentBoneName,
+  currentRegionName
 }: FeedbackModalProps) {
   const [activeTab, setActiveTab] = useState<"form" | "admin">("form");
   const [rating, setRating] = useState<number>(5);
@@ -96,13 +100,19 @@ export function FeedbackModal({
     if (secretClickCount.current >= 5) {
       secretClickCount.current = 0;
       if (secretTimerRef.current) clearTimeout(secretTimerRef.current);
-      setShowPinModal(true);
-    } else {
-      if (secretTimerRef.current) clearTimeout(secretTimerRef.current);
-      secretTimerRef.current = setTimeout(() => {
-        secretClickCount.current = 0;
-      }, 2000);
+      if (isAdminUnlocked) {
+        setActiveTab("admin");
+        fetchFeedbacks();
+      } else {
+        setShowPinModal(true);
+      }
+      return;
     }
+
+    if (secretTimerRef.current) clearTimeout(secretTimerRef.current);
+    secretTimerRef.current = setTimeout(() => {
+      secretClickCount.current = 0;
+    }, 1500);
   };
 
   const handleVerifyPin = (e: React.FormEvent) => {
@@ -129,6 +139,8 @@ export function FeedbackModal({
       rating,
       comment: comment.trim(),
       role,
+      contextBone: currentBoneName,
+      contextRegion: currentRegionName,
       createdAt: new Date().toISOString(),
       userAgent: typeof navigator !== "undefined" ? navigator.userAgent : undefined,
       screenWidth: typeof window !== "undefined" ? window.innerWidth : undefined,
@@ -152,21 +164,6 @@ export function FeedbackModal({
       });
     } catch (err) {
       console.warn("Firestore feedback save note:", err);
-    }
-
-    // 3. Send directly to Google Sheet Webhook if configured
-    const sheetUrl = localStorage.getItem("ortho_feedback_sheet_url") || DEFAULT_GOOGLE_SHEET_URL;
-    if (sheetUrl) {
-      try {
-        await fetch(sheetUrl, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(newFeedback),
-        });
-      } catch (err) {
-        console.warn("Google Sheet sync note:", err);
-      }
     }
 
     setIsSubmitting(false);
@@ -210,12 +207,13 @@ export function FeedbackModal({
 
   const exportAsCSV = () => {
     if (adminFeedbacks.length === 0) return;
-    const headers = ["Date", "Rating", "Category", "Role", "Comment"];
+    const headers = ["Date", "Rating", "Category", "Role", "Context", "Comment"];
     const rows = adminFeedbacks.map(f => [
       new Date(f.createdAt).toLocaleString(),
       f.rating,
       f.category,
       f.role,
+      `"${(f.contextBone || "")} - ${(f.contextRegion || "")}"`,
       `"${(f.comment || "").replace(/"/g, '""').replace(/\n/g, ' ')}"`,
     ]);
 
@@ -325,6 +323,11 @@ export function FeedbackModal({
                       <p className="font-medium text-black dark:text-slate-200 whitespace-pre-wrap">
                         {item.comment}
                       </p>
+                      {item.contextBone && (
+                        <div className="text-[10px] text-slate-400">
+                          {item.contextBone} {item.contextRegion ? `> ${item.contextRegion}` : ""}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
