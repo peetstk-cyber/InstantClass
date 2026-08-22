@@ -263,72 +263,74 @@ function App() {
         />
       </div>
 
-      {/* ── Mobile Standing Vertical Floating Action Icons (Always Visible) ── */}
-      <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
-        {/* Top Icon: Search Classification */}
-        <button
-          type="button"
-          onClick={() => setShowSearchModal(true)}
-          style={{
-            background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
-            color: darkMode ? "#00CED1" : "#0F766E",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-          }}
-          className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
-          title={language === "en" ? "Search Classification" : "ค้นหาการจำแนกประเภท"}
-        >
-          <Search size={17} />
-        </button>
+      {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
+      {!selectedBone && (
+        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
+          {/* Top Icon: Search Classification */}
+          <button
+            type="button"
+            onClick={() => setShowSearchModal(true)}
+            style={{
+              background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
+              borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
+              color: darkMode ? "#00CED1" : "#0F766E",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            }}
+            className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
+            title={language === "en" ? "Search Classification" : "ค้นหาการจำแนกประเภท"}
+          >
+            <Search size={17} />
+          </button>
 
-        {/* 2nd Icon: Daily Quiz Challenge */}
-        <button
-          type="button"
-          onClick={() => setShowQuizModal(true)}
-          style={{
-            background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(245,158,11,0.5)" : "#F59E0B",
-            color: "#F59E0B",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-          }}
-          className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
-          title={language === "en" ? "Daily Quiz Challenge" : "คำถามความรู้ (Quiz)"}
-        >
-          <HelpCircle size={17} />
-        </button>
+          {/* 2nd Icon: Daily Quiz Challenge */}
+          <button
+            type="button"
+            onClick={() => setShowQuizModal(true)}
+            style={{
+              background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
+              borderColor: darkMode ? "rgba(245,158,11,0.5)" : "#F59E0B",
+              color: "#F59E0B",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            }}
+            className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
+            title={language === "en" ? "Daily Quiz Challenge" : "คำถามความรู้ (Quiz)"}
+          >
+            <HelpCircle size={17} />
+          </button>
 
-        {/* 3rd Icon: Saved Bookmarks */}
-        <button
-          type="button"
-          onClick={() => setShowBookmarksModal(true)}
-          style={{
-            background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
-            color: darkMode ? "#00CED1" : "#0F766E",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-          }}
-          className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
-          title={language === "en" ? "Saved Bookmarks" : "รายการที่บันทึกไว้"}
-        >
-          <Bookmark size={17} className={darkMode ? "fill-[#00CED1]/20" : "fill-[#0F766E]/20"} />
-        </button>
+          {/* 3rd Icon: Saved Bookmarks */}
+          <button
+            type="button"
+            onClick={() => setShowBookmarksModal(true)}
+            style={{
+              background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
+              borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
+              color: darkMode ? "#00CED1" : "#0F766E",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            }}
+            className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
+            title={language === "en" ? "Saved Bookmarks" : "รายการที่บันทึกไว้"}
+          >
+            <Bookmark size={17} className={darkMode ? "fill-[#00CED1]/20" : "fill-[#0F766E]/20"} />
+          </button>
 
-        {/* Bottom Icon: Account & Login */}
-        <button
-          type="button"
-          onClick={() => setShowAuthModal(true)}
-          style={{
-            background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(46,204,113,0.5)" : "#2ECC71",
-            color: "#2ECC71",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-          }}
-          className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
-          title={currentUser ? `@${currentUser.username}` : (language === "en" ? "Sign In / Account" : "เข้าสู่ระบบ / จัดการบัญชี")}
-        >
-          <User size={17} />
-        </button>
-      </div>
+          {/* Bottom Icon: Account & Login */}
+          <button
+            type="button"
+            onClick={() => setShowAuthModal(true)}
+            style={{
+              background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
+              borderColor: darkMode ? "rgba(46,204,113,0.5)" : "#2ECC71",
+              color: "#2ECC71",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+            }}
+            className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
+            title={currentUser ? `@${currentUser.username}` : (language === "en" ? "Sign In / Account" : "เข้าสู่ระบบ / จัดการบัญชี")}
+          >
+            <User size={17} />
+          </button>
+        </div>
+      )}
 
       {/* ── Mobile Search Modal ── */}
       {showSearchModal && (
