@@ -4,6 +4,7 @@ import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
 import { Search, Moon, Sun, Globe, MessageSquarePlus } from "lucide-react";
 import { searchEponyms } from "../../data/eponyms";
+import { getBoneIcon } from "../common/BoneIcons";
 
 interface TopNavBarProps {
   darkMode: boolean;
@@ -186,22 +187,30 @@ export function TopNavBar({
                 <div className="px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   {language === "en" ? "Anatomical Bones" : "ตำแหน่งกระดูก"}
                 </div>
-                {filteredBones.slice(0, 5).map(bone => (
-                  <button
-                    key={bone.id}
-                    onClick={() => { 
-                      onSelectBone(bone.id, bone.regions[0]?.id); 
-                      onSearchChange(""); 
-                    }}
-                    style={{ color: text }}
-                    className="w-full text-left px-2.5 py-1.5 rounded-lg hover:bg-slate-500/10 transition-colors flex items-center justify-between gap-2 cursor-pointer"
-                  >
-                    <span className="font-bold text-xs">{bone.name[language]}</span>
-                    <span style={{ color: darkMode ? "#94A3B8" : "#475569" }} className="text-[10px] font-medium truncate max-w-[140px]">
-                      {bone.regions[0]?.classifications[0]?.system}
-                    </span>
-                  </button>
-                ))}
+                {filteredBones.slice(0, 5).map(bone => {
+                  const BoneIconComp = getBoneIcon(bone.id);
+                  return (
+                    <button
+                      key={bone.id}
+                      onClick={() => { 
+                        onSelectBone(bone.id, bone.regions[0]?.id); 
+                        onSearchChange(""); 
+                      }}
+                      style={{ color: text }}
+                      className="w-full text-left px-2.5 py-2 rounded-lg hover:bg-slate-500/10 transition-colors flex items-center justify-between gap-2 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5 min-w-0">
+                        <div className="w-6 h-6 rounded-md flex items-center justify-center bg-teal-500/10 text-teal-600 dark:text-[#00CED1] flex-shrink-0">
+                          <BoneIconComp size={16} />
+                        </div>
+                        <span className="font-bold text-xs truncate">{bone.name[language]}</span>
+                      </div>
+                      <span style={{ color: darkMode ? "#94A3B8" : "#475569" }} className="text-[10px] font-medium truncate max-w-[140px]">
+                        {bone.regions[0]?.classifications[0]?.system}
+                      </span>
+                    </button>
+                  );
+                })}
               </div>
             )}
           </div>

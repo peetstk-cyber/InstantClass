@@ -420,7 +420,7 @@ export function AdminImageUploader({
             onClick={() => setActiveTab("illustrations")}
             style={{
               background: activeTab === "illustrations" ? bg : "transparent",
-              color: activeTab === "illustrations" ? "#00CED1" : muted,
+              color: activeTab === "illustrations" ? (darkMode ? "#00CED1" : "#0F766E") : muted,
               borderColor: activeTab === "illustrations" ? border : "transparent",
             }}
             className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
@@ -428,7 +428,7 @@ export function AdminImageUploader({
             <Palette size={15} />
             <span>Classification Diagrams (รูปวาดการ์ด)</span>
             {Object.keys(illustrationUploads).length > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
+              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px]">
                 {Object.keys(illustrationUploads).length}
               </span>
             )}
@@ -438,7 +438,7 @@ export function AdminImageUploader({
             onClick={() => setActiveTab("xrays")}
             style={{
               background: activeTab === "xrays" ? bg : "transparent",
-              color: activeTab === "xrays" ? "#00CED1" : muted,
+              color: activeTab === "xrays" ? (darkMode ? "#00CED1" : "#0F766E") : muted,
               borderColor: activeTab === "xrays" ? border : "transparent",
             }}
             className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
@@ -446,7 +446,7 @@ export function AdminImageUploader({
             <Film size={15} />
             <span>Real X-Ray Films (ภาพฟิล์มจริง)</span>
             {Object.keys(xrayUploads).length > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
+              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px]">
                 {Object.keys(xrayUploads).length}
               </span>
             )}
@@ -456,7 +456,7 @@ export function AdminImageUploader({
             onClick={() => setActiveTab("concepts")}
             style={{
               background: activeTab === "concepts" ? bg : "transparent",
-              color: activeTab === "concepts" ? "#00CED1" : muted,
+              color: activeTab === "concepts" ? (darkMode ? "#00CED1" : "#0F766E") : muted,
               borderColor: activeTab === "concepts" ? border : "transparent",
             }}
             className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
@@ -464,7 +464,7 @@ export function AdminImageUploader({
             <BookOpen size={15} />
             <span>Region Concept Anatomy (ภาพซ้ายมือ)</span>
             {Object.keys(conceptUploads).length > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-300 text-[10px]">
+              <span className="px-1.5 py-0.2 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 text-[10px]">
                 {Object.keys(conceptUploads).length}
               </span>
             )}

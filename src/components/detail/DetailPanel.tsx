@@ -19,6 +19,7 @@ interface DetailPanelProps {
   currentUser?: UserProfile | null;
   onUpdateUser?: (updatedUser: UserProfile) => void;
   onOpenAuth?: () => void;
+  onOpenQuiz?: () => void;
   onSelectBoneAndRegion?: (bone: BoneData, regionId?: string) => void;
   selectedRegionId: string | null;
   onSelectRegion: (id: string) => void;
@@ -134,9 +135,9 @@ function ClassificationMediaViewerModal({
             onClick={() => setActiveMediaTab("diagram")}
             className="flex-1 py-2 px-3 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             style={{
-              background: activeMediaTab === "diagram" ? "#00CED1" : "transparent",
-              color: activeMediaTab === "diagram" ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
-              boxShadow: activeMediaTab === "diagram" ? "0 2px 8px rgba(0,206,209,0.35)" : "none",
+              background: activeMediaTab === "diagram" ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
+              color: activeMediaTab === "diagram" ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#CBD5E1" : "#475569"),
+              boxShadow: activeMediaTab === "diagram" ? (darkMode ? "0 2px 8px rgba(0,206,209,0.35)" : "0 2px 8px rgba(15,118,110,0.35)") : "none",
             }}
           >
             <ImageIcon size={14} />
@@ -164,7 +165,7 @@ function ClassificationMediaViewerModal({
             minHeight: 260,
             maxHeight: "55vh",
             background: activeMediaTab === "xray" ? "#000000" : "#FFFFFF",
-            borderColor: activeMediaTab === "diagram" ? "#00CED1" : "#2ECC71",
+            borderColor: activeMediaTab === "diagram" ? (darkMode ? "#00CED1" : "#0F766E") : "#2ECC71",
           }}
         >
           {activeMediaTab === "diagram" ? (
@@ -208,7 +209,7 @@ function ClassificationMediaViewerModal({
                 </div>
                 <button
                   onClick={() => setActiveMediaTab("diagram")}
-                  className="px-3.5 py-1.5 rounded-lg bg-[#00CED1] text-slate-900 font-extrabold text-xs hover:bg-[#00CED1]/90 cursor-pointer transition-all"
+                  className="px-3.5 py-1.5 rounded-lg bg-teal-700 hover:bg-teal-800 text-white dark:bg-[#00CED1] dark:hover:bg-[#00CED1]/90 dark:text-slate-900 font-extrabold text-xs cursor-pointer transition-all"
                 >
                   {language === "en" ? "View Diagram Instead" : "ดูภาพวาดไดอะแกรมแทน"}
                 </button>
@@ -707,15 +708,15 @@ function ClassificationTitleWithInfo({
             height: 26,
             borderRadius: "50%",
             background: isBookmarked
-              ? (darkMode ? "rgba(0, 206, 209, 0.22)" : "rgba(0, 206, 209, 0.15)")
+              ? (darkMode ? "rgba(0, 206, 209, 0.22)" : "rgba(15, 118, 110, 0.15)")
               : (darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)"),
-            color: isBookmarked ? "#00CED1" : (darkMode ? "#94A3B8" : "#64748B"),
-            border: `1.5px solid ${isBookmarked ? "rgba(0, 206, 209, 0.5)" : (darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1")}`,
-            boxShadow: isBookmarked ? "0 0 10px rgba(0, 206, 209, 0.25)" : "none",
+            color: isBookmarked ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#94A3B8" : "#64748B"),
+            border: `1.5px solid ${isBookmarked ? (darkMode ? "rgba(0, 206, 209, 0.5)" : "rgba(15, 118, 110, 0.5)") : (darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1")}`,
+            boxShadow: isBookmarked ? (darkMode ? "0 0 10px rgba(0, 206, 209, 0.25)" : "0 0 10px rgba(15, 118, 110, 0.25)") : "none",
             padding: 0,
           }}
         >
-          <Bookmark size={13} className={isBookmarked ? "fill-[#00CED1]" : ""} />
+          <Bookmark size={13} className={isBookmarked ? (darkMode ? "fill-[#00CED1]" : "fill-[#0F766E]") : ""} />
         </button>
       </div>
 
@@ -917,7 +918,7 @@ function ClassificationTitleWithInfo({
 }
 
 export function DetailPanel({
-  darkMode, language, bone, bones = [], currentUser, onUpdateUser, onOpenAuth, onSelectBoneAndRegion,
+  darkMode, language, bone, bones = [], currentUser, onUpdateUser, onOpenAuth, onOpenQuiz, onSelectBoneAndRegion,
   selectedRegionId, onSelectRegion,
   selectedSystemIdx, onSelectSystem,
   selectedTypeIdx, onSelectType,
@@ -1150,6 +1151,7 @@ export function DetailPanel({
           bones={bones}
           currentUser={currentUser}
           onOpenAuth={onOpenAuth}
+          onOpenQuiz={onOpenQuiz}
           onSelectBone={(b, regId) => {
             if (onSelectBoneAndRegion) {
               onSelectBoneAndRegion(b, regId);
@@ -1176,19 +1178,19 @@ export function DetailPanel({
     >
       {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE ONLY TO CLOSE MODAL) */}
       <div 
-        className="md:hidden flex justify-center py-2.5 cursor-grab active:cursor-grabbing border-b border-black/5 dark:border-white/5 active:bg-black/5 dark:active:bg-white/5 transition-colors select-none touch-none" 
+        className="md:hidden flex justify-center pt-2 pb-1 cursor-grab active:cursor-grabbing select-none touch-none" 
         onClick={handleAnimatedClose}
         onTouchStart={handleHandleTouchStart}
         onTouchMove={handleHandleTouchMove}
         onTouchEnd={handleHandleTouchEnd}
       >
-        <div className="w-[28%] max-w-[90px] h-1.5 rounded-full bg-slate-400/60 hover:bg-slate-400/90 transition-colors" />
+        <div className="w-10 h-1 rounded-full bg-slate-400/50 hover:bg-slate-400/80 transition-colors" />
       </div>
 
-      {/* ── Header ── */}
+      {/* ── Compact Header ── */}
       <div
         style={{
-          padding: "8px 12px 6px 12px",
+          padding: "6px 12px 6px 12px",
           borderBottom: `1px solid ${border}`,
           position: "sticky",
           top: 0,
@@ -1196,76 +1198,88 @@ export function DetailPanel({
           zIndex: 10,
         }}
       >
-        <div className="flex items-center justify-between">
-          <h2 style={{ color: textColor, fontSize: 18, fontWeight: 800, lineHeight: 1.2, margin: 0 }} className="text-lg md:text-xl font-extrabold tracking-tight">
-            {bone.name[language]}
-          </h2>
-          <button
-            onClick={handleAnimatedClose}
-            className="flex-shrink-0 w-6 h-6 rounded-lg flex items-center justify-center transition-all hover:bg-white/10"
-            style={{
-              background: "transparent",
-              border: `1px solid ${border}`,
-              color: mutedText,
-              cursor: "pointer",
-            }}
-          >
-            <X size={12} />
-          </button>
+        <div className="flex items-center justify-between gap-2">
+          {/* Bone Title */}
+          <div className="min-w-0 flex items-center gap-2">
+            <h2 style={{ color: textColor }} className="text-base md:text-lg font-black tracking-tight leading-tight truncate">
+              {bone.name[language]}
+            </h2>
+          </div>
+
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {/* Mobile Page Segmented Switcher (Integrated into title row) */}
+            {region?.regionConcept && (
+              <div 
+                className="md:hidden flex items-center p-0.5 rounded-lg border"
+                style={{
+                  background: darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9",
+                  borderColor: border,
+                }}
+              >
+                <button
+                  onClick={() => setMobilePage(0)}
+                  className="px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer"
+                  style={{
+                    background: mobilePage === 0 ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
+                    color: mobilePage === 0 ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#64748B"),
+                    boxShadow: mobilePage === 0 ? (darkMode ? "0 1px 4px rgba(0,206,209,0.3)" : "0 1px 4px rgba(15,118,110,0.3)") : "none",
+                  }}
+                  title="Classification"
+                >
+                  {language === "en" ? "Classify" : "จำแนก"}
+                </button>
+                <button
+                  onClick={() => setMobilePage(1)}
+                  className="px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer"
+                  style={{
+                    background: mobilePage === 1 ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
+                    color: mobilePage === 1 ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#64748B"),
+                    boxShadow: mobilePage === 1 ? (darkMode ? "0 1px 4px rgba(0,206,209,0.3)" : "0 1px 4px rgba(15,118,110,0.3)") : "none",
+                  }}
+                  title="Concept Guide"
+                >
+                  {language === "en" ? "Concept" : "แนวคิด"}
+                </button>
+              </div>
+            )}
+
+            {/* Close Button */}
+            <button
+              onClick={handleAnimatedClose}
+              className="w-6 h-6 rounded-lg flex items-center justify-center transition-all hover:bg-slate-500/10 cursor-pointer"
+              style={{
+                background: "transparent",
+                border: `1px solid ${border}`,
+                color: mutedText,
+              }}
+              title="Close"
+            >
+              <X size={13} />
+            </button>
+          </div>
         </div>
 
-        {/* Region tabs (if multiple regions) */}
+        {/* Region tabs (Horizontal scrollable compact pills) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1 mt-1.5 overflow-x-auto no-scrollbar pb-0.5 items-center flex-nowrap">
+          <div className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar items-center flex-nowrap scroll-smooth py-0.5">
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
                 <button
                   key={r.id}
                   onClick={() => onSelectRegion(r.id)}
-                  className="transition-all whitespace-nowrap flex-shrink-0"
+                  className="transition-all whitespace-nowrap flex-shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95"
                   style={{
-                    padding: "3px 9px",
-                    borderRadius: 6,
-                    fontSize: 10.5,
-                    fontWeight: isSelected ? 800 : 600,
-                    cursor: "pointer",
-                    background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#FFFFFF"),
-                    border: isSelected ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
-                    color: isSelected ? "#0F172A" : (darkMode ? "#CBD5E1" : "#000000"),
-                    boxShadow: isSelected ? "0 0 10px rgba(0,206,209,0.35)" : "none",
+                    background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9"),
+                    border: isSelected ? (darkMode ? "1px solid #00CED1" : "1px solid #0F766E") : `1px solid ${border}`,
+                    color: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#CBD5E1" : "#475569"),
+                    boxShadow: isSelected ? (darkMode ? "0 1px 6px rgba(0,206,209,0.25)" : "0 1px 6px rgba(15,118,110,0.3)") : "none",
                   }}
                 >
                   {r.name[language]}
                 </button>
               );
             })}
-          </div>
-        )}
-
-
-        {/* Mobile Page Dot Indicator */}
-        {region?.regionConcept && (
-          <div className="md:hidden flex items-center justify-center gap-1.5 mt-1.5">
-            <button
-              onClick={() => setMobilePage(0)}
-              className={`h-1 rounded-full transition-all cursor-pointer ${
-                mobilePage === 0 ? "w-4 bg-[#00CED1]" : "w-1 bg-slate-400/40"
-              }`}
-              title="Classification"
-            />
-            <button
-              onClick={() => setMobilePage(1)}
-              className={`h-1 rounded-full transition-all cursor-pointer ${
-                mobilePage === 1 ? "w-4 bg-[#00CED1]" : "w-1 bg-slate-400/40"
-              }`}
-              title="Concept Guide"
-            />
-            <span className="text-[9px] font-extrabold text-[#00CED1] ml-0.5 uppercase tracking-wider">
-              {mobilePage === 0
-                ? (language === "en" ? "Classification" : "การจำแนกประเภท")
-                : (language === "en" ? "Concept Guide" : "คู่มือแนวคิด")}
-            </span>
           </div>
         )}
       </div>
@@ -1409,9 +1423,9 @@ export function DetailPanel({
                           style={{
                             aspectRatio: "1/1",
                             width: "100%",
-                            border: isSelected ? "2.5px solid #00CED1" : `1.5px solid ${darkMode ? "rgba(255,255,255,0.2)" : border}`,
+                            border: isSelected ? (darkMode ? "2.5px solid #00CED1" : "2.5px solid #0F766E") : `1.5px solid ${darkMode ? "rgba(255,255,255,0.2)" : border}`,
                             opacity: isSelected ? 1 : 0.88,
-                            boxShadow: isSelected ? "0 0 14px rgba(0,206,209,0.4)" : "none",
+                            boxShadow: isSelected ? (darkMode ? "0 0 14px rgba(0,206,209,0.4)" : "0 0 14px rgba(15,118,110,0.35)") : "none",
                           }}
                         >
 
@@ -1448,10 +1462,10 @@ export function DetailPanel({
                           }}
                           className="transition-all w-full text-center py-1.5 px-1 rounded-lg text-xs font-extrabold cursor-pointer active:scale-95 tracking-wide"
                           style={{
-                            background: isSelected ? "#00CED1" : (darkMode ? "#1A2530" : "#FFFFFF"),
-                            border: isSelected ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
-                            color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#000000"),
-                            boxShadow: isSelected ? "0 0 10px rgba(0,206,209,0.35)" : "none",
+                            background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#1A2530" : "#FFFFFF"),
+                            border: isSelected ? (darkMode ? "1.5px solid #00CED1" : "1.5px solid #0F766E") : `1.5px solid ${border}`,
+                            color: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#E2E8F0" : "#000000"),
+                            boxShadow: isSelected ? (darkMode ? "0 0 10px rgba(0,206,209,0.35)" : "0 0 10px rgba(15,118,110,0.3)") : "none",
                           }}
                         >
                           {t.type}
@@ -1468,7 +1482,7 @@ export function DetailPanel({
                       <div className="flex flex-col gap-4">
                         {/* Row 1: Elementary Types */}
                         <div>
-                          <div style={{ color: "#00CED1", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                          <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "Elementary Types (5)" : "รูปแบบพื้นฐาน (Elementary Types)"}
                           </div>
                           <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1501,7 +1515,7 @@ export function DetailPanel({
                       <div className="flex flex-col gap-4">
                         {/* Row 1: APC Types */}
                         <div>
-                          <div style={{ color: "#00CED1", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                          <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "APC - Anterior-Posterior Compression" : "APC - แรงอัดหน้าหลัง (Anterior-Posterior Compression)"}
                           </div>
                           <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1546,7 +1560,7 @@ export function DetailPanel({
                         {/* Row 1: SER Types */}
                         {serItems.length > 0 && (
                           <div>
-                            <div style={{ color: "#00CED1", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                            <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "SER - Supination-External Rotation" : "SER - หงายเท้าหมุนออกนอก (Supination-External Rotation)"}
                             </div>
                             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1610,9 +1624,9 @@ export function DetailPanel({
                               fontSize: 11.5,
                               fontWeight: 800,
                               cursor: "pointer",
-                              background: selectedTypeIdx === i ? "#00CED1" : (darkMode ? "#1A2530" : "#E0F2FE"),
-                              border: selectedTypeIdx === i ? "1.5px solid #00CED1" : `1.5px solid ${border}`,
-                              color: selectedTypeIdx === i ? "#0F172A" : (darkMode ? "#E2E8F0" : "#1E293B"),
+                              background: selectedTypeIdx === i ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#1A2530" : "#E0F2FE"),
+                              border: selectedTypeIdx === i ? (darkMode ? "1.5px solid #00CED1" : "1.5px solid #0F766E") : `1.5px solid ${border}`,
+                              color: selectedTypeIdx === i ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#E2E8F0" : "#1E293B"),
                             }}
                           >
                             {t.type}

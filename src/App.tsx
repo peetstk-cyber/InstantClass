@@ -15,14 +15,13 @@ import {
   User, 
   ChevronRight, 
   X, 
-  CheckCircle2, 
-  XCircle, 
-  Trash2, 
-  BookOpen 
+  Trash2 
 } from "lucide-react";
 import { cleanSystemName } from "./components/detail/DetailPanel";
 import { searchEponyms } from "./data/eponyms";
 import { FeedbackModal } from "./components/feedback/FeedbackModal";
+import { getBoneIcon } from "./components/common/BoneIcons";
+import { QuizModal } from "./components/Quiz/QuizModal";
 
 export type Language = "en" | "th";
 
@@ -44,7 +43,6 @@ function App() {
   const [showQuizModal, setShowQuizModal] = useState(false);
   const [showBookmarksModal, setShowBookmarksModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-  const [quizAnswer, setQuizAnswer] = useState<number | null>(null);
 
   // User Auth State Persisted in LocalStorage
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(() => {
@@ -234,6 +232,7 @@ function App() {
           currentUser={currentUser}
           onUpdateUser={handleLogin}
           onOpenAuth={() => setShowAuthModal(true)}
+          onOpenQuiz={() => setShowQuizModal(true)}
           onSelectBoneAndRegion={handleSelectBone}
           selectedRegionId={selectedRegionId}
           onSelectRegion={setSelectedRegionId}
@@ -253,8 +252,8 @@ function App() {
           onClick={() => setShowSearchModal(true)}
           style={{
             background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#00CED1",
-            color: "#00CED1",
+            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
+            color: darkMode ? "#00CED1" : "#0F766E",
             boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
           }}
           className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
@@ -285,14 +284,14 @@ function App() {
           onClick={() => setShowBookmarksModal(true)}
           style={{
             background: darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)",
-            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#00CED1",
-            color: "#00CED1",
+            borderColor: darkMode ? "rgba(0,206,209,0.5)" : "#0F766E",
+            color: darkMode ? "#00CED1" : "#0F766E",
             boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
           }}
           className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90 cursor-pointer"
           title={language === "en" ? "Saved Bookmarks" : "รายการที่บันทึกไว้"}
         >
-          <Bookmark size={17} className="fill-[#00CED1]/20" />
+          <Bookmark size={17} className={darkMode ? "fill-[#00CED1]/20" : "fill-[#0F766E]/20"} />
         </button>
 
         {/* Bottom Icon: Account & Login */}
@@ -408,28 +407,36 @@ function App() {
                             <span>⚡</span>
                             <span>{language === "en" ? "Fracture Eponyms / Nicknames" : "ชื่อเฉพาะ / Eponyms"}</span>
                           </div>
-                          {matchingEponyms.map((item) => (
-                            <button
-                              key={item.id}
-                              onClick={() => {
-                                handleSelectBoneById(item.boneId, item.regionId);
-                                setShowSearchModal(false);
-                                setSearchQuery("");
-                              }}
-                              style={{
-                                background: darkMode ? "rgba(255,255,255,0.04)" : "#FFFFFF",
-                                borderColor: darkMode ? "rgba(0,206,209,0.3)" : "rgba(15,118,110,0.3)",
-                              }}
-                              className="w-full text-left px-3 py-2.5 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-sm transition-all cursor-pointer group"
-                            >
-                              <div className="font-extrabold text-sm text-black dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] truncate">
-                                {item.name}
-                              </div>
-                              <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-md bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
-                                {item.boneId}
-                              </span>
-                            </button>
-                          ))}
+                          {matchingEponyms.map((item) => {
+                            const BoneIconComp = getBoneIcon(item.boneId);
+                            return (
+                              <button
+                                key={item.id}
+                                onClick={() => {
+                                  handleSelectBoneById(item.boneId, item.regionId);
+                                  setShowSearchModal(false);
+                                  setSearchQuery("");
+                                }}
+                                style={{
+                                  background: darkMode ? "rgba(255,255,255,0.04)" : "#FFFFFF",
+                                  borderColor: darkMode ? "rgba(0,206,209,0.3)" : "rgba(15,118,110,0.3)",
+                                }}
+                                className="w-full text-left px-3 py-2 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-sm transition-all cursor-pointer group"
+                              >
+                                <div className="flex items-center gap-3 min-w-0">
+                                  <div className="w-7 h-7 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-[#00CED1] flex-shrink-0">
+                                    <BoneIconComp size={16} />
+                                  </div>
+                                  <div className="font-extrabold text-sm text-slate-800 dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] truncate">
+                                    {item.name}
+                                  </div>
+                                </div>
+                                <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-md bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
+                                  {item.boneId}
+                                </span>
+                              </button>
+                            );
+                          })}
                         </div>
                       )}
 
@@ -439,31 +446,39 @@ function App() {
                           <div className="text-[10.5px] font-extrabold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                             {language === "en" ? "Classification Systems" : "ระบบการจำแนกกระดูก"}
                           </div>
-                          {boneResults.map((res, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => {
-                                handleSelectBoneById(res.boneId, res.regionId);
-                                setShowSearchModal(false);
-                                setSearchQuery("");
-                              }}
-                              style={{
-                                background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
-                                borderColor: darkMode ? "rgba(255,255,255,0.08)" : "#EAECF0",
-                              }}
-                              className="w-full text-left p-2.5 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer group"
-                            >
-                              <div>
-                                <div className="text-xs font-bold text-teal-800 dark:text-[#00CED1]">
-                                  {res.boneName} • {res.regionName}
+                          {boneResults.map((res, idx) => {
+                            const BoneIconComp = getBoneIcon(res.boneId);
+                            return (
+                              <button
+                                key={idx}
+                                onClick={() => {
+                                  handleSelectBoneById(res.boneId, res.regionId);
+                                  setShowSearchModal(false);
+                                  setSearchQuery("");
+                                }}
+                                style={{
+                                  background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
+                                  borderColor: darkMode ? "rgba(255,255,255,0.08)" : "#EAECF0",
+                                }}
+                                className="w-full text-left p-2.5 rounded-xl border flex items-center justify-between hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer group"
+                              >
+                                <div className="flex items-center gap-3 min-w-0">
+                                  <div className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-[#00CED1] flex-shrink-0">
+                                    <BoneIconComp size={18} />
+                                  </div>
+                                  <div className="min-w-0">
+                                    <div className="text-xs font-bold text-teal-800 dark:text-[#00CED1] truncate">
+                                      {res.boneName} • {res.regionName}
+                                    </div>
+                                    <div className="text-xs font-extrabold mt-0.5 text-slate-800 dark:text-slate-100 truncate">
+                                      {res.systemName}
+                                    </div>
+                                  </div>
                                 </div>
-                                <div className="text-xs font-extrabold mt-0.5 text-black dark:text-slate-100">
-                                  {res.systemName}
-                                </div>
-                              </div>
-                              <ChevronRight size={15} className="text-slate-500 dark:text-slate-400 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all" />
-                            </button>
-                          ))}
+                                <ChevronRight size={15} className="text-slate-500 dark:text-slate-400 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                              </button>
+                            );
+                          })}
                         </div>
                       )}
                     </div>
@@ -516,136 +531,15 @@ function App() {
         </div>
       )}
 
-      {/* ── Mobile Quiz Challenge Modal ── */}
-      {showQuizModal && (
-        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 animate-fadeIn">
-          <div
-            style={{
-              background: darkMode ? "#161B27" : "#FFFFFF",
-              borderColor: darkMode ? "#334155" : "#E2E8F0",
-              color: darkMode ? "#F1F5F9" : "#000000",
-              width: "100%",
-              maxWidth: 440,
-            }}
-            className="rounded-2xl border flex flex-col shadow-2xl overflow-hidden relative p-5 max-h-[90dvh] overflow-y-auto"
-          >
-            {/* Header */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-700/40">
-              <div className="flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-500 dark:text-amber-400 flex items-center justify-center">
-                  <HelpCircle size={18} />
-                </div>
-                <div>
-                  <h3 className="font-extrabold text-sm text-black dark:text-slate-100">
-                    {language === "en" ? "Daily High-Yield Challenge" : "คำถามความรู้ประจำวัน"}
-                  </h3>
-                  <p className="text-[10px] text-slate-700 dark:text-slate-400 font-medium">
-                    {language === "en" ? "Test your orthopaedic clinical knowledge" : "ทดสอบเคสและแนวทางรักษาทางออร์โธ"}
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowQuizModal(false)}
-                className="w-7 h-7 rounded-lg flex items-center justify-center text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
-              >
-                <X size={18} />
-              </button>
-            </div>
-
-            {/* Question */}
-            <div className="my-4 p-3.5 rounded-xl bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/40">
-              <div className="text-[10px] font-extrabold text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-1">
-                CASE SCENARIO • TIBIA
-              </div>
-              <p className="text-xs font-bold leading-relaxed text-black dark:text-slate-200">
-                {language === "en"
-                  ? "Schatzker Type IV fracture of the proximal tibia is characterized by which anatomical finding and primary clinical concern?"
-                  : "กระดูก Tibial Plateau หักแบบ Schatzker Type IV มีลักษณะเด่นอย่างไร และต้องระวังภาวะแทรกซ้อนใดเป็นพิเศษ?"}
-              </p>
-            </div>
-
-            {/* Options */}
-            <div className="flex flex-col gap-2 mb-4">
-              {[
-                {
-                  id: 0,
-                  textEn: "Pure split fracture of lateral tibial plateau with low neurovascular risk",
-                  textTh: "การหักเฉือนเฉพาะฝั่ง Lateral Plateau และมีความเสี่ยงต่อเส้นเลือดต่ำ",
-                  isCorrect: false,
-                },
-                {
-                  id: 1,
-                  textEn: "Medial tibial plateau fracture; high risk of Popliteal Artery injury",
-                  textTh: "การหักฝั่ง Medial Plateau; เสี่ยงสูงต่อการบาดเจ็บของเส้นเลือดใหญ่ Popliteal Artery",
-                  isCorrect: true,
-                },
-                {
-                  id: 2,
-                  textEn: "Depression fracture of central articular surface only",
-                  textTh: "การยุบตัวเฉพาะผิวกระดูกอ่อนตรงกลางข้อเท่านั้น",
-                  isCorrect: false,
-                },
-              ].map((opt) => {
-                const isSelected = quizAnswer === opt.id;
-                let optBg = darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC";
-                let optBorder = darkMode ? "#334155" : "#E2E8F0";
-                let optTextColor = darkMode ? "#CBD5E1" : "#000000";
-
-                if (isSelected) {
-                  if (opt.isCorrect) {
-                    optBg = "rgba(46, 204, 113, 0.12)";
-                    optBorder = "#2ECC71";
-                    optTextColor = "#2ECC71";
-                  } else {
-                    optBg = "rgba(231, 76, 60, 0.12)";
-                    optBorder = "#E74C3C";
-                    optTextColor = "#E74C3C";
-                  }
-                }
-
-                return (
-                  <button
-                    key={opt.id}
-                    onClick={() => setQuizAnswer(opt.id)}
-                    style={{ background: optBg, borderColor: optBorder, color: optTextColor }}
-                    className="p-3 rounded-xl border text-left text-xs font-semibold transition-all cursor-pointer flex items-center justify-between gap-2"
-                  >
-                    <span>{language === "en" ? opt.textEn : opt.textTh}</span>
-                    {isSelected && (
-                      opt.isCorrect ? <CheckCircle2 size={16} className="text-[#2ECC71] flex-shrink-0" /> : <XCircle size={16} className="text-[#E74C3C] flex-shrink-0" />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-
-            {/* Explanation & Action */}
-            {quizAnswer !== null && (
-              <div className="p-3 rounded-xl bg-[#00CED1]/10 border border-[#00CED1]/30 text-xs text-black dark:text-slate-200 mb-4 leading-relaxed animate-fadeIn font-medium">
-                <div className="font-extrabold text-teal-800 dark:text-[#00CED1] mb-1">
-                  {quizAnswer === 1
-                    ? (language === "en" ? "✓ Correct!" : "✓ ถูกต้อง!")
-                    : (language === "en" ? "✕ Incorrect" : "✕ ยังไม่ถูกต้อง")}
-                </div>
-                {language === "en"
-                  ? "Schatzker Type IV involves the medial tibial plateau. Because this fracture pattern often results from high energy and knee dislocation forces, it carries a very high risk of popliteal artery and peroneal nerve injury!"
-                  : "Schatzker Type IV เป็นการหักของฝั่ง Medial Tibial Plateau มักเกิดจากแรงรุนแรงสูงร่วมกับภาวะข้อเข่าเคลื่อน จึงมีความเสี่ยงสูงมากที่จะเกิดการบาดเจ็บต่อหลอดเลือด Popliteal Artery และเส้นประสาท Peroneal Nerve!"}
-              </div>
-            )}
-
-            <button
-              onClick={() => {
-                setShowQuizModal(false);
-                handleSelectBoneById("tibia", "proximal");
-              }}
-              className="w-full py-2.5 rounded-xl bg-teal-700 dark:bg-[#00CED1] text-white font-extrabold text-xs flex items-center justify-center gap-2 shadow-md hover:bg-teal-700/90 dark:hover:bg-[#00CED1]/90 transition-all cursor-pointer"
-            >
-              <BookOpen size={15} />
-              <span>{language === "en" ? "Study Schatzker System" : "ดูระบบจำแนก Schatzker"}</span>
-            </button>
-          </div>
-        </div>
-      )}
+      {/* ── Quiz & Trauma Film Spot Diagnosis Modal ── */}
+      <QuizModal
+        isOpen={showQuizModal}
+        onClose={() => setShowQuizModal(false)}
+        darkMode={darkMode}
+        language={language}
+        bones={bonesData}
+        onSelectBone={handleSelectBoneById}
+      />
 
       {/* ── Mobile Bookmarks Modal ── */}
       {showBookmarksModal && (
@@ -698,30 +592,38 @@ function App() {
                   </p>
                 </div>
               ) : (
-                resolvedBookmarks.map((item, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      setShowBookmarksModal(false);
-                      handleSelectBoneById(item.boneId, item.regionId);
-                    }}
-                    className="p-3 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between group"
-                    style={{
-                      background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
-                      borderColor: darkMode ? "#334155" : "#E2E8F0"
-                    }}
-                  >
-                    <div>
-                      <div className="text-xs font-extrabold text-black dark:text-white group-hover:text-teal-800 dark:group-hover:text-[#00CED1]">
-                        {item.regionName} ({item.boneName})
+                resolvedBookmarks.map((item, idx) => {
+                  const BoneIconComp = getBoneIcon(item.boneId);
+                  return (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setShowBookmarksModal(false);
+                        handleSelectBoneById(item.boneId, item.regionId);
+                      }}
+                      className="p-2.5 rounded-xl border text-left transition-all cursor-pointer flex items-center justify-between group"
+                      style={{
+                        background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC",
+                        borderColor: darkMode ? "#334155" : "#E2E8F0"
+                      }}
+                    >
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="w-8 h-8 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-[#00CED1] flex-shrink-0">
+                          <BoneIconComp size={18} />
+                        </div>
+                        <div className="min-w-0">
+                          <div className="text-xs font-extrabold text-slate-800 dark:text-white group-hover:text-teal-800 dark:group-hover:text-[#00CED1] truncate">
+                            {item.regionName} ({item.boneName})
+                          </div>
+                          <div className="text-[11px] font-bold text-teal-800 dark:text-[#00CED1] mt-0.5 truncate">
+                            {item.systemName}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-[11px] font-bold text-teal-800 dark:text-[#00CED1] mt-0.5">
-                        {item.systemName}
-                      </div>
-                    </div>
-                    <ChevronRight size={15} className="text-slate-400 group-hover:text-[#00CED1]" />
-                  </button>
-                ))
+                      <ChevronRight size={15} className="text-slate-400 group-hover:text-[#00CED1] flex-shrink-0" />
+                    </button>
+                  );
+                })
               )}
             </div>
 

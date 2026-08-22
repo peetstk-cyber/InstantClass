@@ -9,12 +9,14 @@ import {
   Bookmark,
   User,
   LogIn,
-  Award
+  Award,
+  Film
 } from "lucide-react";
 
 import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
 import { cleanSystemName } from "../detail/DetailPanel";
+import { getBoneIcon } from "../common/BoneIcons";
 
 interface LearningHubPanelProps {
   darkMode: boolean;
@@ -23,6 +25,7 @@ interface LearningHubPanelProps {
   currentUser?: UserProfile | null;
   onUpdateUser?: (updated: UserProfile) => void;
   onOpenAuth?: () => void;
+  onOpenQuiz?: () => void;
   onSelectBone: (bone: BoneData, regionId?: string) => void;
   onSwitchToBoneList?: () => void;
 }
@@ -36,6 +39,7 @@ export function LearningHubPanel({
   currentUser,
   onUpdateUser,
   onOpenAuth,
+  onOpenQuiz,
   onSelectBone,
 }: LearningHubPanelProps) {
   const [quizSelected, setQuizSelected] = useState<number | null>(null);
@@ -198,7 +202,11 @@ export function LearningHubPanel({
               🔥 {streak} Days
             </span>
           </div>
-          <div className="flex flex-col items-center justify-center border-x border-slate-300 dark:border-slate-700/30 px-1">
+          <div 
+            onClick={onOpenQuiz}
+            className="flex flex-col items-center justify-center border-x border-slate-300 dark:border-slate-700/30 px-1 hover:bg-slate-500/10 transition-colors rounded cursor-pointer"
+            title="Open Orthopaedic Quiz & Spot Diagnosis"
+          >
             <span className="text-[10px] text-slate-800 dark:text-slate-400 font-semibold">{language === "en" ? "Quizzes" : "ตอบคำถาม"}</span>
             <span className="font-extrabold text-[11px] text-teal-800 dark:text-[#00CED1] flex items-center gap-0.5 mt-0.5">
               <Award size={11} /> {quizzes}
@@ -279,6 +287,22 @@ export function LearningHubPanel({
               </button>
             </div>
           )}
+
+          {/* Quick Launch Full Quiz & Trauma Film Spot Diag */}
+          {onOpenQuiz && (
+            <button
+              onClick={onOpenQuiz}
+              className="w-full py-2 px-3 rounded-xl border text-[11.5px] font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-xs active:scale-98"
+              style={{
+                background: darkMode ? "rgba(0, 206, 209, 0.12)" : "#0F766E",
+                color: darkMode ? "#00CED1" : "#FFFFFF",
+                borderColor: darkMode ? "rgba(0, 206, 209, 0.3)" : "#0F766E",
+              }}
+            >
+              <Film size={14} />
+              <span>{language === "en" ? "Launch Trauma Film Spot Diag & Flashcards" : "เปิดโหมดสปอตวินิจฉัยฟิล์ม & แฟลชการ์ด 🩻"}</span>
+            </button>
+          )}
         </div>
       </section>
 
@@ -312,28 +336,31 @@ export function LearningHubPanel({
               <span className="font-semibold text-black dark:text-slate-300">{language === "en" ? "No bookmarked systems yet. Click 🔖 on any classification to save!" : "ยังไม่มีรายการโปรดที่บันทึกไว้ กดไอคอน 🔖 บนระบบจัดประเภทกระดูกเพื่อเซฟด่วน!"}</span>
             </div>
           ) : (
-            resolvedBookmarks.map((topic, idx) => (
-              <div
-                key={idx}
-                onClick={() => topic.bone && handleLaunchTopic(topic.bone.id, topic.regionId)}
-                className="p-3 rounded-xl border transition-all cursor-pointer group hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-md hover:-translate-y-0.5"
-                style={{ background: cardBg, borderColor: cardBorder }}
-              >
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-[9.5px] font-extrabold px-1.5 py-0.5 rounded-md border text-teal-900 dark:text-[#00CED1] border-teal-600/30 dark:border-[#00CED1]/30 bg-teal-600/10 dark:bg-[#00CED1]/10 flex items-center gap-1">
-                    <Bookmark size={10} className="fill-teal-800 dark:fill-[#00CED1]" />
-                    {topic.boneName}
-                  </span>
-                  <ChevronRight size={13} className="text-slate-500 dark:text-slate-400 group-hover:text-teal-800 dark:group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-transform" />
+            resolvedBookmarks.map((topic, idx) => {
+              const BoneIconComp = getBoneIcon(topic.bone?.id || "");
+              return (
+                <div
+                  key={idx}
+                  onClick={() => topic.bone && handleLaunchTopic(topic.bone.id, topic.regionId)}
+                  className="p-3 rounded-xl border transition-all cursor-pointer group hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-md hover:-translate-y-0.5"
+                  style={{ background: cardBg, borderColor: cardBorder }}
+                >
+                  <div className="flex items-center justify-between mb-1.5">
+                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-md border text-teal-900 dark:text-[#00CED1] border-teal-600/30 dark:border-[#00CED1]/30 bg-teal-600/10 dark:bg-[#00CED1]/10 flex items-center gap-1.5">
+                      <BoneIconComp size={15} />
+                      <span>{topic.boneName}</span>
+                    </span>
+                    <ChevronRight size={14} className="text-slate-500 dark:text-slate-400 group-hover:text-teal-800 dark:group-hover:text-[#00CED1] group-hover:translate-x-0.5 transition-transform" />
+                  </div>
+                  <div className="font-extrabold text-xs text-slate-800 dark:text-slate-100 group-hover:text-teal-800 dark:group-hover:text-[#00CED1] transition-colors mt-0.5">
+                    {topic.regionTitle}
+                  </div>
+                  <div className="text-[11px] font-bold text-teal-900 dark:text-[#00CED1] mt-0.5 leading-snug">
+                    {topic.systemName}
+                  </div>
                 </div>
-                <div className="font-extrabold text-xs text-black dark:text-slate-100 group-hover:text-teal-800 dark:group-hover:text-[#00CED1] transition-colors mt-0.5">
-                  {topic.regionTitle}
-                </div>
-                <div className="text-[11px] font-bold text-teal-900 dark:text-[#00CED1] mt-0.5 leading-snug">
-                  {topic.systemName}
-                </div>
-              </div>
-            ))
+              );
+            })
           )}
         </div>
       </section>
