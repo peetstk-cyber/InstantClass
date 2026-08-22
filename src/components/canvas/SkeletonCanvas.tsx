@@ -116,7 +116,10 @@ export function SkeletonCanvas({
       </div>
 
       {/* Small Floating Zoom Control at Bottom-Left */}
-      <div className="absolute bottom-4 left-4 z-30 flex flex-col items-start gap-2">
+      <div 
+        className="fixed left-4 z-30 flex flex-col items-start gap-2"
+        style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
+      >
         {/* Zoom Slider Popover */}
         {showZoomSlider && (
           <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#161B27]/95 text-slate-200 border border-[#00CED1]/30 backdrop-blur-xl shadow-2xl animate-scale-in">

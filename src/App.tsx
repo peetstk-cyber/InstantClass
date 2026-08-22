@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`fixed inset-0 flex flex-col w-full h-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#E2E7ED] text-[#101828]"}`}>
+    <div className={`flex flex-col w-full h-full flex-1 overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#E2E7ED] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -234,7 +234,7 @@ function App() {
           hasDetailOpen={!!selectedBone}
         />
 
-        {/* Mobile Backdrop overlay when panel is open */}
+        {/* Mobile backdrop for open detail panel */}
         {selectedBone && (
           <div 
             onClick={handleClose} 
@@ -264,7 +264,10 @@ function App() {
       </div>
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Always Visible) ── */}
-      <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
+      <div 
+        className="fixed right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
+        style={{ bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))" }}
+      >
         {/* Top Icon: Search Classification */}
         <button
           type="button"
