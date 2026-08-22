@@ -889,13 +889,38 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
   },
 ];
 
-export const ALL_SPECIAL_VIEW_DISTRACTORS = [
-  { id: "dist-judet", typeCode: "Judet Oblique Views (Iliac & Obturator)", typeName: { en: "Acetabular Column & Wall Projections", th: "ภาพเอกซเรย์ท่า Judet View (ตรวจเบ้าสะโพก Iliac & Obturator Oblique)" } },
-  { id: "dist-mortise", typeCode: "Mortise View (15-20° Internal Rotation)", typeName: { en: "True Ankle Syndesmosis Projection", th: "ภาพเอกซเรย์ท่า Mortise View (หมุนข้อเท้าเข้าใน 15 องศาตรวจ Syndesmosis)" } },
-  { id: "dist-skyline", typeCode: "Merchant / Skyline Patellar View", typeName: { en: "Axial Patellofemoral Tracking View", th: "ภาพเอกซเรย์ท่า Skyline / Sunrise (ตรวจข้อสะบ้าและร่อง Femoral Trochlea)" } },
-  { id: "dist-harris", typeCode: "Harris-Beath (Axial Calcaneal) View", typeName: { en: "45° Caudal Calcaneus & Subtalar View", th: "ภาพเอกซเรย์ท่า Harris-Beath View (ตรวจกระดูกส้นเท้า Calcaneus และข้อ Subtalar)" } },
-  { id: "dist-stryker", typeCode: "Stryker Notch View", typeName: { en: "Posterolateral Humeral Head Hill-Sachs View", th: "ภาพเอกซเรย์ท่า Stryker Notch View (ตรวจรอยบุบ Hill-Sachs ด้านหลังหัวไหล่)" } },
-  { id: "dist-west-point", typeCode: "West Point Axillary View", typeName: { en: "Prone Axillary Glenoid Rim Bankart View", th: "ภาพเอกซเรย์ท่า West Point View (ตรวจกระดูกขอบเบ้าไหล่ Bony Bankart)" } },
+export interface SpecialViewDistractor {
+  id: string;
+  region: "shoulder_girdle" | "hand_wrist_elbow" | "spine" | "pelvis_lower";
+  typeCode: string;
+  typeName: Translation;
+}
+
+export const ALL_SPECIAL_VIEW_DISTRACTORS: SpecialViewDistractor[] = [
+  // Shoulder / Clavicle / Scapula
+  { id: "dist-stryker", region: "shoulder_girdle", typeCode: "Stryker Notch View", typeName: { en: "Posterolateral Humeral Head Hill-Sachs View", th: "ภาพเอกซเรย์ท่า Stryker Notch View (ตรวจรอยบุบ Hill-Sachs ด้านหลังหัวไหล่)" } },
+  { id: "dist-west-point", region: "shoulder_girdle", typeCode: "West Point Axillary View", typeName: { en: "Prone Axillary Glenoid Rim Bankart View", th: "ภาพเอกซเรย์ท่า West Point View (ตรวจกระดูกขอบเบ้าไหล่ Bony Bankart)" } },
+  { id: "dist-velpeau", region: "shoulder_girdle", typeCode: "Velpeau (In-Sling Axillary) View", typeName: { en: "Modified Axillary View for Immobilized Shoulder", th: "ภาพเอกซเรย์ท่า Velpeau View (ตรวจข้อไหล่หลุดโดยไม่ต้องกางแขน)" } },
+  { id: "dist-hermodsson", region: "shoulder_girdle", typeCode: "Hermodsson Tangential View", typeName: { en: "Tangential Posterior Humeral Head Defect View", th: "ภาพเอกซเรย์ท่า Hermodsson View (ตรวจรอยยุบหัวไหล่ด้านหลัง)" } },
+
+  // Hand / Wrist / Forearm / Elbow
+  { id: "dist-carpal-tunnel", region: "hand_wrist_elbow", typeCode: "Carpal Tunnel (Gaynor-Hart) View", typeName: { en: "Tangential Carpal Canal & Hook of Hamate View", th: "ภาพเอกซเรย์ท่า Carpal Tunnel View (ตรวจกระดูก Hook of Hamate และโพรงข้อมือ)" } },
+  { id: "dist-brewerton", region: "hand_wrist_elbow", typeCode: "Brewerton (MCP Joint) View", typeName: { en: "65° Metacarpophalangeal Collateral Ligament View", th: "ภาพเอกซเรย์ท่า Brewerton View (ตรวจข้อโคนนิ้วมือและเอ็นยึดข้อ MCP)" } },
+  { id: "dist-jones-elbow", region: "hand_wrist_elbow", typeCode: "Jones (Acute Flexion Elbow) View", typeName: { en: "Maximal Flexion Distal Humerus & Olecranon View", th: "ภาพเอกซเรย์ท่างอศอกสุด Jones View (ตรวจปลายกระดูกต้นแขนและ Olecranon)" } },
+
+  // Spine
+  { id: "dist-swimmer", region: "spine", typeCode: "Swimmer's (Twining) C-T Junction View", typeName: { en: "Lateral Cervicothoracic C7-T1 Special Projection", th: "ภาพเอกซเรย์ท่า Swimmer's View (ตรวจรอยต่อกระดูกคอและอก C7-T1)" } },
+  { id: "dist-flex-ext-spine", region: "spine", typeCode: "Flexion-Extension Stress Cervical View", typeName: { en: "Dynamic Cervical Instability Stress Views", th: "ภาพเอกซเรย์ท่าก้ม-เงยคอ (ตรวจความไม่มั่นคงของกระดูกคอ)" } },
+  { id: "dist-pillar", region: "spine", typeCode: "Pillar (Cervical Facet) View", typeName: { en: "30° Caudal Cervical Articular Pillar View", th: "ภาพเอกซเรย์ท่า Pillar View (ตรวจข้อต่อ Facet Joints และ Laminae)" } },
+
+  // Pelvis / Hip / Lower Extremity
+  { id: "dist-judet", region: "pelvis_lower", typeCode: "Judet Oblique Views (Iliac & Obturator)", typeName: { en: "Acetabular Column & Wall Projections", th: "ภาพเอกซเรย์ท่า Judet View (ตรวจเบ้าสะโพก Iliac & Obturator Oblique)" } },
+  { id: "dist-pelvic-inlet-outlet", region: "pelvis_lower", typeCode: "Pelvic Inlet & Outlet Views", typeName: { en: "40° Caudad / Cephalad Pelvic Ring Projections", th: "ภาพเอกซเรย์ท่า Pelvic Inlet & Outlet (ตรวจวงแหวนเชิงกรานหักเลื่อน)" } },
+  { id: "dist-mortise", region: "pelvis_lower", typeCode: "Mortise View (15-20° Internal Rotation)", typeName: { en: "True Ankle Syndesmosis Projection", th: "ภาพเอกซเรย์ท่า Mortise View (หมุนข้อเท้าเข้าใน 15 องศาตรวจ Syndesmosis)" } },
+  { id: "dist-skyline", region: "pelvis_lower", typeCode: "Merchant / Skyline Patellar View", typeName: { en: "Axial Patellofemoral Tracking View", th: "ภาพเอกซเรย์ท่า Skyline / Sunrise (ตรวจข้อสะบ้าและร่อง Femoral Trochlea)" } },
+  { id: "dist-harris", region: "pelvis_lower", typeCode: "Harris-Beath (Axial Calcaneal) View", typeName: { en: "45° Caudal Calcaneus & Subtalar View", th: "ภาพเอกซเรย์ท่า Harris-Beath View (ตรวจกระดูกส้นเท้า Calcaneus และข้อ Subtalar)" } },
+  { id: "dist-broden", region: "pelvis_lower", typeCode: "Broden's Views (Subtalar Joint)", typeName: { en: "10-40° Cephalad Subtalar Facet Views", th: "ภาพเอกซเรย์ท่า Broden's Views (ตรวจข้อต่อใต้กระดูกข้อเท้า Subtalar)" } },
+  { id: "dist-flamingo", region: "pelvis_lower", typeCode: "Flamingo Single-Leg Stance View", typeName: { en: "Dynamic Pubic Symphysis Instability View", th: "ภาพเอกซเรย์ท่ายืนขาเดียว Flamingo View (ตรวจความไม่มั่นคงของรอยต่อหัวหน่าว)" } },
 ];
 
 
@@ -940,10 +965,64 @@ export const ALL_ORTHO_CLASSIFICATION_SYSTEMS = [
   { id: "mayo-olecranon", name: "Mayo Classification", fullName: { en: "Mayo Classification of Olecranon Fractures", th: "การจำแนกกระดูกข้อศอกหัก (Mayo Olecranon)" }, boneName: { en: "Elbow", th: "ข้อศอก" } },
 ];
 
+/** Helper to parse Roman numerals, numbers, and types for sequential sorting (I -> II -> III -> IV) */
+function parseRomanOrNumberRank(code: string): number {
+  const upper = code.toUpperCase();
+  
+  // Specific known rank matches
+  if (/\b(TYPE\s*I\b|STAGE\s*I\b|GRADE\s*I\b|GARDEN\s*I\b|ZONE\s*1\b|1-PART|CLASS\s*I\b|GROUP\s*1\b)/i.test(upper)) return 1;
+  if (/\b(TYPE\s*IIA|STAGE\s*IIA|2A)\b/i.test(upper)) return 2.1;
+  if (/\b(TYPE\s*IIB|STAGE\s*IIB|2B)\b/i.test(upper)) return 2.2;
+  if (/\b(TYPE\s*II\b|STAGE\s*II\b|GRADE\s*II\b|GARDEN\s*II\b|ZONE\s*2\b|2-PART|CLASS\s*II\b|GROUP\s*2\b)/i.test(upper)) return 2;
+  if (/\b(TYPE\s*IIIA|STAGE\s*IIIA|3A)\b/i.test(upper)) return 3.1;
+  if (/\b(TYPE\s*IIIB|STAGE\s*IIIB|3B)\b/i.test(upper)) return 3.2;
+  if (/\b(TYPE\s*IIIC|STAGE\s*IIIC|3C)\b/i.test(upper)) return 3.3;
+  if (/\b(TYPE\s*III\b|STAGE\s*III\b|GRADE\s*III\b|GARDEN\s*III\b|ZONE\s*3\b|3-PART|CLASS\s*III\b|GROUP\s*3\b)/i.test(upper)) return 3;
+  if (/\b(TYPE\s*IV\b|STAGE\s*IV\b|GRADE\s*IV\b|GARDEN\s*IV\b|ZONE\s*4\b|4-PART|CLASS\s*IV\b|GROUP\s*4\b)/i.test(upper)) return 4;
+  if (/\b(TYPE\s*V\b|STAGE\s*V\b|GRADE\s*V\b|ZONE\s*5\b|5-PART|CLASS\s*V\b|GROUP\s*5\b)/i.test(upper)) return 5;
+  if (/\b(TYPE\s*VI\b|STAGE\s*VI\b|GRADE\s*VI\b|ZONE\s*6\b|6-PART|CLASS\s*VI\b|GROUP\s*6\b)/i.test(upper)) return 6;
+
+  // Check Roman Numerals anywhere
+  const romanMatch = upper.match(/\b(I|II|III|IV|V|VI|VII|VIII)\b/);
+  if (romanMatch) {
+    const roman = romanMatch[1];
+    const map: Record<string, number> = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8 };
+    if (map[roman]) return map[roman];
+  }
+
+  // Check simple digit
+  const numMatch = upper.match(/\b(\d+)\b/);
+  if (numMatch) return parseInt(numMatch[1], 10);
+
+  // Check Letter (Type A, Type B, Type C)
+  const letterMatch = upper.match(/\bTYPE\s*([A-F])\b/);
+  if (letterMatch) return letterMatch[1].charCodeAt(0) - 64;
+
+  return 99;
+}
+
+/** Sorts classification options strictly in sequential order (I -> II -> III -> IV) */
+export function sortClassificationOptions(options: ClassificationTypeOption[]): ClassificationTypeOption[] {
+  return [...options].sort((a, b) => {
+    const rankA = parseRomanOrNumberRank(a.typeCode);
+    const rankB = parseRomanOrNumberRank(b.typeCode);
+    if (rankA !== rankB) return rankA - rankB;
+    return a.typeCode.localeCompare(b.typeCode, undefined, { numeric: true });
+  });
+}
+
+/** Helper to get anatomical region of a bone */
+function getBoneAnatomicalRegion(boneId: string): "shoulder_girdle" | "hand_wrist_elbow" | "spine" | "pelvis_lower" {
+  if (["clavicle", "scapula", "humerus", "shoulder"].includes(boneId)) return "shoulder_girdle";
+  if (["forearm", "hand", "wrist", "elbow"].includes(boneId)) return "hand_wrist_elbow";
+  if (["c-spine", "tl-spine", "spine"].includes(boneId)) return "spine";
+  return "pelvis_lower";
+}
+
 /**
  * Generates Spot Question:
- * - If target is Investigation View: 1-step Radiographic View Identification (4 view choices)
- * - If target is Fracture Classification: 2-step Identification (Step 1: System, Step 2: Type/Stage)
+ * - If target is Investigation View: 1-step Radiographic View Identification (4 view choices from the SAME anatomical group)
+ * - If target is Fracture Classification: 2-step Identification (Step 1: System, Step 2: Type/Stage sorted I -> II -> III -> IV)
  */
 export function generateTwoStepSpotQuestion(
   allItems: SpotFilmItem[],
@@ -967,15 +1046,42 @@ export function generateTwoStepSpotQuestion(
   const targetIdx = Math.floor(Math.random() * pool.length);
   const target = pool[targetIdx];
 
-  // ── Case 1: Target is a Special Investigation View (1-Step View Quiz) ──
+  // ── Case 1: Target is a Special Investigation View (Anatomically-matched 1-Step View Quiz) ──
   if (target.kind === "investigation_view") {
-    const otherSpecialViews = dataset.filter(i => i.kind === "investigation_view" && i.id !== target.id);
-    const combinedDistractorPool = [
-      ...otherSpecialViews.map(v => ({ id: v.id, typeCode: v.typeCode, typeName: v.typeName })),
-      ...ALL_SPECIAL_VIEW_DISTRACTORS
+    const targetAnatRegion = getBoneAnatomicalRegion(target.boneId);
+
+    // Filter other special views strictly within the same anatomical category
+    const sameRegionDatasetViews = dataset.filter(
+      i => i.kind === "investigation_view" && i.id !== target.id && getBoneAnatomicalRegion(i.boneId) === targetAnatRegion
+    );
+    const sameRegionDistractors = ALL_SPECIAL_VIEW_DISTRACTORS.filter(
+      d => d.region === targetAnatRegion && d.typeCode !== target.typeCode
+    );
+
+    const candidateSameRegionPool = [
+      ...sameRegionDatasetViews.map(v => ({ id: v.id, typeCode: v.typeCode, typeName: v.typeName })),
+      ...sameRegionDistractors.map(d => ({ id: d.id, typeCode: d.typeCode, typeName: d.typeName })),
     ];
-    const shuffledDistractors = [...combinedDistractorPool].sort(() => Math.random() - 0.5);
-    const distractorViews = shuffledDistractors.slice(0, 3);
+
+    // Deduplicate by typeCode
+    const seenCodes = new Set<string>([target.typeCode]);
+    const uniqueSameRegionPool: { id: string; typeCode: string; typeName: Translation }[] = [];
+    for (const item of candidateSameRegionPool) {
+      if (!seenCodes.has(item.typeCode)) {
+        seenCodes.add(item.typeCode);
+        uniqueSameRegionPool.push(item);
+      }
+    }
+
+    const shuffledSameRegion = [...uniqueSameRegionPool].sort(() => Math.random() - 0.5);
+    let chosenDistractors = shuffledSameRegion.slice(0, 3);
+
+    // If fewer than 3 in exact same region, fallback to upper/lower related
+    if (chosenDistractors.length < 3) {
+      const otherViews = ALL_SPECIAL_VIEW_DISTRACTORS.filter(d => !seenCodes.has(d.typeCode));
+      const shuffledOthers = [...otherViews].sort(() => Math.random() - 0.5);
+      chosenDistractors = [...chosenDistractors, ...shuffledOthers].slice(0, 3);
+    }
 
     const viewOptionsRaw: ClassificationTypeOption[] = [
       {
@@ -984,7 +1090,7 @@ export function generateTwoStepSpotQuestion(
         typeName: target.typeName,
         isCorrect: true,
       },
-      ...distractorViews.map(d => ({
+      ...chosenDistractors.map(d => ({
         id: d.id,
         typeCode: d.typeCode,
         typeName: d.typeName,
@@ -1031,7 +1137,7 @@ export function generateTwoStepSpotQuestion(
     })),
   ].sort(() => Math.random() - 0.5);
 
-  // Step 2 Options: 1 Correct Type + 3 other Types from the same or related dataset
+  // Step 2 Options: 1 Correct Type + other Types from the same system / dataset
   const sameSystemItems = dataset.filter(i => i.kind === "classification" && i.systemName === targetSystemName && i.id !== target.id);
   const otherClassItems = dataset.filter(i => i.kind === "classification" && i.id !== target.id);
 
@@ -1056,13 +1162,16 @@ export function generateTwoStepSpotQuestion(
       typeName: d.typeName,
       isCorrect: false,
     })),
-  ].sort(() => Math.random() - 0.5);
+  ];
+
+  // Strictly sort Step 2 options sequentially (I -> II -> III -> IV)
+  const step2Sorted = sortClassificationOptions(step2Raw);
 
   return {
     kind: "classification",
     target,
     step1Options: step1Raw,
-    step2Options: step2Raw,
+    step2Options: step2Sorted,
     viewOptions: [],
   };
 }

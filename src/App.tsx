@@ -26,7 +26,17 @@ import { QuizModal } from "./components/Quiz/QuizModal";
 export type Language = "en" | "th";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    try {
+      const savedTheme = localStorage.getItem("ortho_theme");
+      if (savedTheme !== null) {
+        return savedTheme === "dark";
+      }
+      return false; // Default to Light Mode
+    } catch {
+      return false;
+    }
+  });
   const [language, setLanguage] = useState<Language>("en");
   const [selectedBone, setSelectedBone] = useState<BoneData | null>(null);
   const [selectedRegionId, setSelectedRegionId] = useState<string | null>(null);
@@ -129,10 +139,19 @@ function App() {
     }
   };
 
-  // Apply dark class to <html> (must be in useEffect, not render body)
+  // Apply dark class to <html> and save preference
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
     document.body.classList.toggle("dark", darkMode);
+    try {
+      localStorage.setItem("ortho_theme", darkMode ? "dark" : "light");
+    } catch (e) {
+      console.error(e);
+    }
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    if (metaTheme) {
+      metaTheme.setAttribute("content", darkMode ? "#090d16" : "#F8FAFC");
+    }
   }, [darkMode]);
 
   // Secret keyboard shortcut: Ctrl+Shift+U or Cmd+Shift+U
@@ -671,8 +690,6 @@ function App() {
         onClose={() => setShowFeedbackModal(false)}
         darkMode={darkMode}
         language={language}
-        currentBoneName={selectedBone?.name[language]}
-        currentRegionName={selectedBone?.regions.find(r => r.id === selectedRegionId)?.name[language]}
       />
     </div>
   );

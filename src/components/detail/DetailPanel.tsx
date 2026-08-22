@@ -1207,38 +1207,58 @@ export function DetailPanel({
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
-            {/* Mobile Page Segmented Switcher (Integrated into title row) */}
+            {/* Mobile Page Segmented Switcher (Clean, subtle native style) */}
             {region?.regionConcept && (
               <div 
-                className="md:hidden flex items-center p-0.5 rounded-lg border"
+                className="md:hidden flex items-center p-0.5 rounded-lg border gap-0.5"
                 style={{
-                  background: darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9",
-                  borderColor: border,
+                  background: darkMode ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
+                  borderColor: darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
                 }}
               >
                 <button
                   onClick={() => setMobilePage(0)}
-                  className="px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer"
+                  className="px-2.5 py-0.5 rounded-md text-[10.5px] font-bold transition-all cursor-pointer flex items-center gap-1"
                   style={{
-                    background: mobilePage === 0 ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
-                    color: mobilePage === 0 ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#64748B"),
-                    boxShadow: mobilePage === 0 ? (darkMode ? "0 1px 4px rgba(0,206,209,0.3)" : "0 1px 4px rgba(15,118,110,0.3)") : "none",
+                    background: mobilePage === 0 
+                      ? (darkMode ? "#1E293B" : "#FFFFFF") 
+                      : "transparent",
+                    color: mobilePage === 0 
+                      ? (darkMode ? "#F8FAFC" : "#0F172A") 
+                      : (darkMode ? "#94A3B8" : "#64748B"),
+                    border: mobilePage === 0 
+                      ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` 
+                      : "1px solid transparent",
+                    boxShadow: mobilePage === 0 
+                      ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") 
+                      : "none",
                   }}
                   title="Classification"
                 >
-                  {language === "en" ? "Classify" : "จำแนก"}
+                  <span className="text-[10px] opacity-80">📋</span>
+                  <span>{language === "en" ? "Classify" : "จำแนก"}</span>
                 </button>
                 <button
                   onClick={() => setMobilePage(1)}
-                  className="px-2 py-0.5 rounded-md text-[10px] font-bold transition-all cursor-pointer"
+                  className="px-2.5 py-0.5 rounded-md text-[10.5px] font-bold transition-all cursor-pointer flex items-center gap-1"
                   style={{
-                    background: mobilePage === 1 ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
-                    color: mobilePage === 1 ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#64748B"),
-                    boxShadow: mobilePage === 1 ? (darkMode ? "0 1px 4px rgba(0,206,209,0.3)" : "0 1px 4px rgba(15,118,110,0.3)") : "none",
+                    background: mobilePage === 1 
+                      ? (darkMode ? "#1E293B" : "#FFFFFF") 
+                      : "transparent",
+                    color: mobilePage === 1 
+                      ? (darkMode ? "#F8FAFC" : "#0F172A") 
+                      : (darkMode ? "#94A3B8" : "#64748B"),
+                    border: mobilePage === 1 
+                      ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` 
+                      : "1px solid transparent",
+                    boxShadow: mobilePage === 1 
+                      ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") 
+                      : "none",
                   }}
                   title="Concept Guide"
                 >
-                  {language === "en" ? "Concept" : "แนวคิด"}
+                  <span className="text-[10px] opacity-80">💡</span>
+                  <span>{language === "en" ? "Concept" : "แนวคิด"}</span>
                 </button>
               </div>
             )}
@@ -1299,28 +1319,36 @@ export function DetailPanel({
       ) : (
         <div key="mobile-classification-view" onTouchStart={handleSwipeTouchStart} onTouchEnd={handleSwipeTouchEnd} className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" style={{ padding: "8px 12px" }}>
           {/* Main Tabs: Classifications vs Investigations */}
-          <div className="flex p-0.5 mb-2.5" style={{ background: darkMode ? "#1A2530" : "#D5D9E0", borderRadius: 6 }}>
+          <div 
+            className="flex p-0.5 mb-2.5 rounded-lg border gap-0.5" 
+            style={{ 
+              background: darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9", 
+              borderColor: border 
+            }}
+          >
             <button
               onClick={() => setActiveTab("classification")}
-              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
+              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold cursor-pointer flex items-center justify-center gap-1.5"
               style={{
-                background: activeTab === "classification" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
-                color: activeTab === "classification" ? (darkMode ? "#FFFFFF" : "#000000") : (darkMode ? "#94A3B8" : "#000000"),
-                boxShadow: activeTab === "classification" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
+                background: activeTab === "classification" ? (darkMode ? "#1E293B" : "#FFFFFF") : "transparent",
+                color: activeTab === "classification" ? (darkMode ? "#F8FAFC" : "#0F172A") : (darkMode ? "#94A3B8" : "#64748B"),
+                border: activeTab === "classification" ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` : "1px solid transparent",
+                boxShadow: activeTab === "classification" ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") : "none"
               }}
             >
-              {language === "en" ? "Classifications" : "การจัดจำแนก"}
+              <span>{language === "en" ? "Classifications" : "การจัดจำแนก"}</span>
             </button>
             <button
               onClick={() => setActiveTab("investigation")}
-              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold"
+              className="flex-1 py-1 rounded-md transition-all text-[11px] font-bold cursor-pointer flex items-center justify-center gap-1.5"
               style={{
-                background: activeTab === "investigation" ? (darkMode ? "#2C3E50" : "#FFFFFF") : "transparent",
-                color: activeTab === "investigation" ? (darkMode ? "#FFFFFF" : "#000000") : (darkMode ? "#94A3B8" : "#000000"),
-                boxShadow: activeTab === "investigation" ? "0 1px 2px rgba(0,0,0,0.1)" : "none"
+                background: activeTab === "investigation" ? (darkMode ? "#1E293B" : "#FFFFFF") : "transparent",
+                color: activeTab === "investigation" ? (darkMode ? "#F8FAFC" : "#0F172A") : (darkMode ? "#94A3B8" : "#64748B"),
+                border: activeTab === "investigation" ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` : "1px solid transparent",
+                boxShadow: activeTab === "investigation" ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") : "none"
               }}
             >
-              {language === "en" ? "Investigation / X-Ray" : "การส่งตรวจ (X-Ray)"}
+              <span>{language === "en" ? "Investigation / X-Ray" : "การส่งตรวจ (X-Ray)"}</span>
             </button>
           </div>
 
