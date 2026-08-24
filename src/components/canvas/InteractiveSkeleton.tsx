@@ -15,8 +15,8 @@ export const InteractiveSkeleton = ({
   darkMode
 }: InteractiveSkeletonProps) => {
   return (
-    <div className="w-full h-full flex items-end md:items-center justify-center p-0 sm:p-2 overflow-hidden">
-      <div className="relative w-full h-full flex justify-center items-end md:items-center overflow-hidden">
+    <div className="w-full h-full flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-full flex justify-center items-center overflow-hidden">
         <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 865" width="245" height="865" className="h-full w-auto max-h-full object-contain">
 	
 	<g >

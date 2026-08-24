@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div style={{ height: "calc(var(--real-vh, 1dvh) * 100)", maxHeight: "calc(var(--real-vh, 1dvh) * 100)" }} className={`flex flex-col w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
