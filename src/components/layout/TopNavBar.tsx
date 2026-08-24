@@ -94,7 +94,7 @@ export function TopNavBar({
         color: text,
         paddingTop: "calc(8px + env(safe-area-inset-top, 0px))",
       }}
-      className="sticky top-0 flex items-center justify-between md:justify-start gap-2 md:gap-3.5 px-2 sm:px-3 md:px-4 pb-2 md:pb-2.5 z-30 flex-shrink-0"
+      className="flex items-center justify-between md:justify-start gap-2 md:gap-3.5 px-2 sm:px-3 md:px-4 pb-2 md:pb-2.5 z-30 flex-shrink-0"
     >
       {/* Logo (5 clicks to open Admin Tool) */}
       <div 

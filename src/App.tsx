@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col min-h-screen md:h-full md:h-[100dvh] md:max-h-[100dvh] w-full overflow-x-hidden md:overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -209,7 +209,7 @@ function App() {
       />
 
       {/* ── Main body layout ── */}
-      <div className="flex flex-1 md:overflow-hidden relative">
+      <div className="flex flex-1 overflow-hidden relative">
         {/* Left sidebar - Hidden on mobile */}
         <LeftSidebar
           darkMode={darkMode}
