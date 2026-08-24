@@ -69,12 +69,13 @@ export function SkeletonCanvas({
       style={{
         background: bg,
         flex: 1,
+        minHeight: 0,
         position: "relative",
         overflow: "hidden",
         cursor: canPan ? (isDragging ? "grabbing" : "grab") : "default",
         touchAction: canPan ? "none" : "auto",
       }}
-      className="flex flex-col items-center justify-center w-full h-full select-none"
+      className="flex flex-col flex-1 min-h-0 items-center justify-center w-full h-full select-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -99,12 +100,14 @@ export function SkeletonCanvas({
           transition: isDragging ? "none" : "transform 0.2s ease",
           height: "100%",
           width: "100%",
+          minHeight: 0,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flex: 1,
         }}
       >
-        <div style={{ height: "100%", width: "100%", maxHeight: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div style={{ height: "100%", width: "100%", maxHeight: "100%", minHeight: 0, display: "flex", justifyContent: "center", alignItems: "center", flex: 1 }}>
           <InteractiveSkeleton 
             selectedBoneId={selectedBoneId}
             hoveredBoneId={hoveredBoneId}

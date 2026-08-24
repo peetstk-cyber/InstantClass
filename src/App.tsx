@@ -22,6 +22,7 @@ import { searchEponyms } from "./data/eponyms";
 import { FeedbackModal } from "./components/feedback/FeedbackModal";
 import { getBoneIcon } from "./components/common/BoneIcons";
 import { QuizModal } from "./components/Quiz/QuizModal";
+import { useViewportSize } from "./hooks/useViewportSize";
 
 export type Language = "en" | "th";
 
@@ -188,8 +189,13 @@ function App() {
     setSelectedRegionId(null);
   }, []);
 
+  const { height: viewportHeight } = useViewportSize();
+
   return (
-    <div style={{ height: "calc(var(--real-vh, 1dvh) * 100)", maxHeight: "calc(var(--real-vh, 1dvh) * 100)" }} className={`flex flex-col w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div 
+      style={{ height: `${viewportHeight}px`, maxHeight: `${viewportHeight}px` }} 
+      className={`fixed inset-0 flex flex-col h-full w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}
+    >
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -209,7 +215,7 @@ function App() {
       />
 
       {/* ── Main body layout ── */}
-      <div className="flex flex-1 overflow-hidden relative">
+      <div className="flex flex-1 min-h-0 w-full overflow-hidden relative">
         {/* Left sidebar - Hidden on mobile */}
         <LeftSidebar
           darkMode={darkMode}
