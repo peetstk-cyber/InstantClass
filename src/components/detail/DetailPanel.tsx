@@ -1170,11 +1170,11 @@ export function DetailPanel({
         borderColor: border,
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
         transition: handleTouchStartY === null ? "transform 0.2s ease" : "none",
+        maxHeight: "calc(var(--real-vh, 1dvh) * 85)",
       }}
       className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
       } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
-      style={{ maxHeight: "calc(var(--real-vh, 1dvh) * 85)" }}
     >
       {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE ONLY TO CLOSE MODAL) */}
       <div 
