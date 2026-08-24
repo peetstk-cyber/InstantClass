@@ -22,7 +22,6 @@ import { searchEponyms } from "./data/eponyms";
 import { FeedbackModal } from "./components/feedback/FeedbackModal";
 import { getBoneIcon } from "./components/common/BoneIcons";
 import { QuizModal } from "./components/Quiz/QuizModal";
-import { useViewportSize } from "./hooks/useViewportSize";
 
 export type Language = "en" | "th";
 
@@ -189,11 +188,8 @@ function App() {
     setSelectedRegionId(null);
   }, []);
 
-  const { height: viewportHeight } = useViewportSize();
-
   return (
     <div 
-      style={{ height: `${viewportHeight}px`, maxHeight: `${viewportHeight}px` }} 
       className={`fixed inset-0 flex flex-col h-full w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}
     >
       {/* ── Header ── */}
@@ -271,7 +267,13 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
       {!selectedBone && (
-        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
+        <div 
+          style={{
+            bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
+            right: "calc(1rem + env(safe-area-inset-right, 0px))",
+          }}
+          className="fixed z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
+        >
           {/* Top Icon: Search Classification */}
           <button
             type="button"

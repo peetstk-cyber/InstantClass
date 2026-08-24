@@ -20,9 +20,10 @@ export const InteractiveSkeleton = ({
         <svg 
           version="1.2" 
           xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 245 852" 
+          viewBox="0 0 245 865" 
           preserveAspectRatio="xMidYMid meet"
-          className="h-full w-auto max-h-full max-w-full object-contain"
+          className="w-full h-full max-h-full max-w-full block"
+          style={{ width: "100%", height: "100%", maxHeight: "100%", maxWidth: "100%" }}
         >
 	
 	<g >
