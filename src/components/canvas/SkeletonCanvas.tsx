@@ -70,11 +70,10 @@ export function SkeletonCanvas({
         background: bg,
         flex: 1,
         position: "relative",
-        overflow: "hidden",
         cursor: canPan ? (isDragging ? "grabbing" : "grab") : "default",
-        touchAction: canPan ? "none" : "auto",
+        touchAction: canPan ? "none" : "pan-y",
       }}
-      className="flex flex-col items-center justify-center w-full h-full select-none"
+      className="flex flex-col items-center justify-center w-full min-h-[820px] md:min-h-0 md:h-full md:overflow-hidden select-none py-6 md:py-0"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -97,14 +96,10 @@ export function SkeletonCanvas({
         style={{
           transform: `scale(${zoom}) translate(${pan.x}px, ${pan.y}px)`,
           transition: isDragging ? "none" : "transform 0.2s ease",
-          height: "100%",
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
+        className="w-full h-full min-h-[780px] md:min-h-0 flex items-center justify-center"
       >
-        <div style={{ height: "100%", width: "100%", maxHeight: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div className="w-full h-full max-h-full flex justify-center items-center">
           <InteractiveSkeleton 
             selectedBoneId={selectedBoneId}
             hoveredBoneId={hoveredBoneId}
@@ -116,7 +111,7 @@ export function SkeletonCanvas({
       </div>
 
       {/* Small Floating Zoom Control at Bottom-Left */}
-      <div className="absolute bottom-4 left-4 z-30 flex flex-col items-start gap-2">
+      <div className="fixed md:absolute bottom-4 left-4 z-30 flex flex-col items-start gap-2">
         {/* Zoom Slider Popover */}
         {showZoomSlider && (
           <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#161B27]/95 text-slate-200 border border-[#00CED1]/30 backdrop-blur-xl shadow-2xl animate-scale-in">
