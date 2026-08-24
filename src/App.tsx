@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`fixed inset-0 flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#E2E7ED] text-[#101828]"}`}>
+    <div className={`flex flex-col h-full w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#E2E7ED] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -209,7 +209,7 @@ function App() {
       />
 
       {/* ── Main body layout ── */}
-      <div className="flex flex-1 min-h-0 w-full overflow-hidden relative">
+      <div className="flex flex-1 overflow-hidden relative">
         {/* Left sidebar - Hidden on mobile */}
         <LeftSidebar
           darkMode={darkMode}
@@ -265,13 +265,7 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
       {!selectedBone && (
-        <div 
-          style={{
-            bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
-            right: "calc(1rem + env(safe-area-inset-right, 0px))",
-          }}
-          className="fixed z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
-        >
+        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
           {/* Top Icon: Search Classification */}
           <button
             type="button"

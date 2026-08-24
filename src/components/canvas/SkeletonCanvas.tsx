@@ -69,14 +69,12 @@ export function SkeletonCanvas({
       style={{
         background: bg,
         flex: 1,
-        minHeight: 0,
         position: "relative",
         overflow: "hidden",
         cursor: canPan ? (isDragging ? "grabbing" : "grab") : "default",
-        touchAction: "none",
-        overscrollBehavior: "none",
+        touchAction: canPan ? "none" : "auto",
       }}
-      className="flex flex-col flex-1 min-h-0 items-center justify-center w-full h-full select-none"
+      className="flex flex-col items-center justify-center w-full h-full select-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -101,14 +99,12 @@ export function SkeletonCanvas({
           transition: isDragging ? "none" : "transform 0.2s ease",
           height: "100%",
           width: "100%",
-          minHeight: 0,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          flex: 1,
         }}
       >
-        <div style={{ height: "100%", width: "100%", maxHeight: "100%", minHeight: 0, display: "flex", justifyContent: "center", alignItems: "center", flex: 1 }}>
+        <div style={{ height: "100%", width: "100%", maxHeight: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
           <InteractiveSkeleton 
             selectedBoneId={selectedBoneId}
             hoveredBoneId={hoveredBoneId}
@@ -120,13 +116,7 @@ export function SkeletonCanvas({
       </div>
 
       {/* Small Floating Zoom Control at Bottom-Left */}
-      <div 
-        style={{
-          bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
-          left: "calc(1rem + env(safe-area-inset-left, 0px))",
-        }}
-        className="absolute z-30 flex flex-col items-start gap-2"
-      >
+      <div className="absolute bottom-4 left-4 z-30 flex flex-col items-start gap-2">
         {/* Zoom Slider Popover */}
         {showZoomSlider && (
           <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#161B27]/95 text-slate-200 border border-[#00CED1]/30 backdrop-blur-xl shadow-2xl animate-scale-in">
