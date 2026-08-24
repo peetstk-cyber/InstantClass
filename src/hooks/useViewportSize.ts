@@ -1,44 +1,80 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export function useViewportSize() {
+  const getAccurateHeight = useCallback(() => {
+    if (typeof window === "undefined") return 800;
+    
+    // Priority: visualViewport height > innerHeight > clientHeight
+    const vh = window.visualViewport?.height;
+    const ih = window.innerHeight;
+    const ch = document.documentElement?.clientHeight;
+    
+    return vh || ih || ch || 800;
+  }, []);
+
+  const getAccurateWidth = useCallback(() => {
+    if (typeof window === "undefined") return 390;
+    return window.visualViewport?.width || window.innerWidth || document.documentElement?.clientWidth || 390;
+  }, []);
+
   const [size, setSize] = useState({
-    width: typeof window !== "undefined" ? (window.visualViewport?.width || window.innerWidth) : 390,
-    height: typeof window !== "undefined" ? (window.visualViewport?.height || window.innerHeight) : 800,
+    width: getAccurateWidth(),
+    height: getAccurateHeight(),
   });
 
   useEffect(() => {
-    const updateSize = () => {
-      const w = window.visualViewport ? window.visualViewport.width : window.innerWidth;
-      const h = window.visualViewport ? window.visualViewport.height : window.innerHeight;
-      
+    const forceRecalculate = () => {
+      const w = getAccurateWidth();
+      const h = getAccurateHeight();
+
       setSize({ width: w, height: h });
-      
-      // Update global CSS variables for any pure CSS references
+
+      // Inject accurate values into CSS custom properties
       document.documentElement.style.setProperty("--real-vh", `${h * 0.01}px`);
       document.documentElement.style.setProperty("--app-height", `${h}px`);
     };
 
-    updateSize();
+    // Run immediately
+    forceRecalculate();
 
-    window.addEventListener("resize", updateSize);
+    // Force dispatch orientationchange & resize events on mount
+    // to simulate rotating the screen and back
+    const triggerSyntheticEvents = () => {
+      window.dispatchEvent(new Event("resize"));
+      window.dispatchEvent(new Event("orientationchange"));
+      forceRecalculate();
+    };
+
+    // Multiple stages of triggering to ensure Safari has finished rendering chrome
+    requestAnimationFrame(forceRecalculate);
+    const t1 = setTimeout(triggerSyntheticEvents, 50);
+    const t2 = setTimeout(triggerSyntheticEvents, 150);
+    const t3 = setTimeout(triggerSyntheticEvents, 350);
+    const t4 = setTimeout(triggerSyntheticEvents, 700);
+
+    window.addEventListener("resize", forceRecalculate);
     window.addEventListener("orientationchange", () => {
-      setTimeout(updateSize, 100);
-      setTimeout(updateSize, 300);
+      setTimeout(forceRecalculate, 100);
+      setTimeout(forceRecalculate, 300);
     });
 
     if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", updateSize);
-      window.visualViewport.addEventListener("scroll", updateSize);
+      window.visualViewport.addEventListener("resize", forceRecalculate);
+      window.visualViewport.addEventListener("scroll", forceRecalculate);
     }
 
     return () => {
-      window.removeEventListener("resize", updateSize);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      window.removeEventListener("resize", forceRecalculate);
       if (window.visualViewport) {
-        window.visualViewport.removeEventListener("resize", updateSize);
-        window.visualViewport.removeEventListener("scroll", updateSize);
+        window.visualViewport.removeEventListener("resize", forceRecalculate);
+        window.visualViewport.removeEventListener("scroll", forceRecalculate);
       }
     };
-  }, []);
+  }, [getAccurateHeight, getAccurateWidth]);
 
   return size;
 }

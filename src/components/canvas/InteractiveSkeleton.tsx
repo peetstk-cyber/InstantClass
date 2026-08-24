@@ -20,7 +20,7 @@ export const InteractiveSkeleton = ({
         <svg 
           version="1.2" 
           xmlns="http://www.w3.org/2000/svg" 
-          viewBox="0 0 245 865" 
+          viewBox="0 0 245 852" 
           preserveAspectRatio="xMidYMid meet"
           className="h-full w-auto max-h-full max-w-full object-contain"
         >
