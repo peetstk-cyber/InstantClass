@@ -69,38 +69,54 @@
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  min-height: -webkit-fill-available;
   margin: 0;
   padding: 0;
   overflow: hidden;
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #EAECEF;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+}
+
+html.dark, body.dark {
+  background-color: #0E1117;
 }
 
 #root {
   width: 100%;
   height: 100%;
-  position: absolute;
-  inset: 0;
+  min-height: -webkit-fill-available;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background-color: #EAECEF;
+}
+
+.dark #root {
+  background-color: #0E1117;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  background-color: var(--color-oc-bg);
   color: #000000;
   transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark {
-  background-color: var(--color-oc-bg-dark);
   color: #E2E8F0;
 }
 

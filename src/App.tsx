@@ -150,7 +150,7 @@ function App() {
     }
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {
-      metaTheme.setAttribute("content", darkMode ? "#090d16" : "#F8FAFC");
+      metaTheme.setAttribute("content", darkMode ? "#0E1117" : "#EAECEF");
     }
   }, [darkMode]);
 
