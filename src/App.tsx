@@ -209,7 +209,7 @@ function App() {
       />
 
       {/* ── Main body layout ── */}
-      <div className="flex flex-1 overflow-hidden relative">
+      <div className="flex flex-1 min-h-0 w-full overflow-hidden relative">
         {/* Left sidebar - Hidden on mobile */}
         <LeftSidebar
           darkMode={darkMode}

@@ -15,9 +15,22 @@ export const InteractiveSkeleton = ({
   darkMode
 }: InteractiveSkeletonProps) => {
   return (
-    <div className="w-full h-full flex items-center justify-center p-0.5 sm:p-2 overflow-hidden">
-      <div className="relative w-full h-full flex justify-center items-center overflow-hidden">
-        <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 865" width="245" height="865" className="h-full w-auto max-h-full object-contain">
+    <div className="w-full h-full min-h-0 flex items-center justify-center p-0 overflow-hidden">
+      <div className="relative w-full h-full min-h-0 flex justify-center items-center overflow-hidden">
+        <svg 
+          version="1.2" 
+          xmlns="http://www.w3.org/2000/svg" 
+          viewBox="0 0 245 865" 
+          preserveAspectRatio="xMidYMid meet"
+          style={{
+            height: "100%",
+            width: "auto",
+            maxHeight: "100%",
+            maxWidth: "100%",
+            display: "block"
+          }}
+          className="object-contain"
+        >
 	
 	<g >
 	</g>
