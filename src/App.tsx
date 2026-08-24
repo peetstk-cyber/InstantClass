@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div className={`fixed inset-0 flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#E2E7ED] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -265,7 +265,13 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
       {!selectedBone && (
-        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
+        <div 
+          style={{
+            bottom: "calc(1rem + env(safe-area-inset-bottom, 0px))",
+            right: "calc(1rem + env(safe-area-inset-right, 0px))",
+          }}
+          className="fixed z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
+        >
           {/* Top Icon: Search Classification */}
           <button
             type="button"
