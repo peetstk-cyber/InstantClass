@@ -74,7 +74,7 @@ export function SkeletonCanvas({
         cursor: canPan ? (isDragging ? "grabbing" : "grab") : "default",
         touchAction: canPan ? "none" : "auto",
       }}
-      className="flex flex-col items-center justify-center w-full h-full select-none"
+      className="flex flex-col items-center justify-end md:justify-center w-full h-full select-none"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -94,17 +94,16 @@ export function SkeletonCanvas({
 
       {/* Interactive Canvas */}
       <div
+        className="items-end md:items-center justify-center"
         style={{
           transform: `scale(${zoom}) translate(${pan.x}px, ${pan.y}px)`,
           transition: isDragging ? "none" : "transform 0.2s ease",
           height: "100%",
           width: "100%",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <div style={{ height: "100%", width: "100%", maxHeight: "100%", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <div className="h-full w-full max-h-full flex justify-center items-end md:items-center">
           <InteractiveSkeleton 
             selectedBoneId={selectedBoneId}
             hoveredBoneId={hoveredBoneId}
