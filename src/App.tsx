@@ -150,7 +150,7 @@ function App() {
     }
     const metaTheme = document.querySelector('meta[name="theme-color"]');
     if (metaTheme) {
-      metaTheme.setAttribute("content", darkMode ? "#0E1117" : "#EAECEF");
+      metaTheme.setAttribute("content", darkMode ? "#090d16" : "#F8FAFC");
     }
   }, [darkMode]);
 
@@ -189,7 +189,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-full w-full overflow-hidden relative transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}

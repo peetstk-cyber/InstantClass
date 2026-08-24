@@ -3,11 +3,10 @@
   "short_name": "InstantClass",
   "description": "Interactive Orthopedic Fracture Classification Hub",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
-  "background_color": "#EAECEF",
-  "theme_color": "#EAECEF",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
