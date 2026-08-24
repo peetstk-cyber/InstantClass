@@ -27,7 +27,7 @@ export function SkeletonCanvas({
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
 
-  const bg = darkMode ? "#0E1117" : "#E2E7ED";
+  const bg = darkMode ? "#0E1117" : "#EAECEF";
   const gridColor = darkMode ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)";
 
   const handleResetZoom = () => {
@@ -116,10 +116,7 @@ export function SkeletonCanvas({
       </div>
 
       {/* Small Floating Zoom Control at Bottom-Left */}
-      <div
-        style={{ bottom: "calc(16px + env(safe-area-inset-bottom, 0px))" }}
-        className="absolute left-4 z-30 flex flex-col items-start gap-2"
-      >
+      <div className="absolute bottom-4 left-4 z-30 flex flex-col items-start gap-2">
         {/* Zoom Slider Popover */}
         {showZoomSlider && (
           <div className="flex items-center gap-2.5 px-3.5 py-2 rounded-2xl bg-[#161B27]/95 text-slate-200 border border-[#00CED1]/30 backdrop-blur-xl shadow-2xl animate-scale-in">

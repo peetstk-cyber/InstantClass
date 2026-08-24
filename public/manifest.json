@@ -3,6 +3,7 @@
   "short_name": "InstantClass",
   "description": "Interactive Orthopedic Fracture Classification Hub",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#090d16",

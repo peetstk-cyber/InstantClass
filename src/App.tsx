@@ -265,10 +265,7 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
       {!selectedBone && (
-        <div
-          style={{ bottom: "calc(16px + env(safe-area-inset-bottom, 0px))" }}
-          className="fixed right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
-        >
+        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
           {/* Top Icon: Search Classification */}
           <button
             type="button"
