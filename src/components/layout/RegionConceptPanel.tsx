@@ -31,11 +31,11 @@ export function RegionConceptPanel({
   onBackToList,
   isDesktop = true,
 }: RegionConceptPanelProps) {
-  const bg = darkMode ? "#161B27" : "#EAECEF";
-  const border = darkMode ? "#252F42" : "#D5D9E0";
-  const text = darkMode ? "#F1F5F9" : "#000000";
-  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#FFFFFF";
-  const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#D5D9E0";
+  const bg = darkMode ? "#161B27" : "#FFFFFF";
+  const border = darkMode ? "#252F42" : "#E2E8F0";
+  const text = darkMode ? "#F1F5F9" : "#0F172A";
+  const cardBg = darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC";
+  const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#E2E8F0";
 
   const [imgError, setImgError] = useState(false);
   const [showZoomModal, setShowZoomModal] = useState(false);
@@ -232,19 +232,19 @@ export function RegionConceptPanel({
           </div>
 
           <div
-            style={{ borderColor: cardBorder }}
+            style={{ background: cardBg, borderColor: cardBorder }}
             className="rounded-xl border overflow-hidden text-xs shadow-xs"
           >
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="bg-slate-200/90 dark:bg-slate-800/80 text-[10.5px] font-extrabold uppercase tracking-wider border-b" style={{ borderColor: border, color: text }}>
+                <tr className="bg-slate-100/80 dark:bg-slate-800/80 text-[10.5px] font-extrabold uppercase tracking-wider border-b" style={{ borderColor: cardBorder, color: text }}>
                   <th className="p-2 pl-2.5">{language === "en" ? "Parameter" : "ตัวแปร"}</th>
                   <th className="p-2 text-center">{language === "en" ? "Limit" : "เกณฑ์"}</th>
                 </tr>
               </thead>
               <tbody className="divide-y" style={{ borderColor: cardBorder }}>
                 {concept.acceptableAlignment!.map((row, idx) => (
-                  <tr key={idx} className="hover:bg-slate-100/60 dark:hover:bg-slate-800/40 transition-colors">
+                  <tr key={idx} className="hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors">
                     <td className="p-2 pl-2.5 font-bold" style={{ color: text }}>
                       <div>{row.parameter[language]}</div>
                       {row.note && (

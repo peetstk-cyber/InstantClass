@@ -60,11 +60,11 @@ export function LeftSidebar({
   darkMode, language, bones, selectedBone, selectedRegionId,
   activeCategory, onSelectBone, onBackToList, searchQuery,
 }: LeftSidebarProps) {
-  const bg          = darkMode ? "#161B27" : "#EAECEF";
-  const border      = darkMode ? "#252F42" : "#D5D9E0";
-  const mutedText   = darkMode ? "#94A3B8" : "#475569";
-  const sectionHead = darkMode ? "#94A3B8" : "#334155";
-  const hoverBg     = darkMode ? "rgba(0,206,209,0.07)" : "#FFFFFF";
+  const bg          = darkMode ? "#161B27" : "#FFFFFF";
+  const border      = darkMode ? "#252F42" : "#E2E8F0";
+  const mutedText   = darkMode ? "#94A3B8" : "#64748B";
+  const sectionHead = darkMode ? "#94A3B8" : "#475569";
+  const hoverBg     = darkMode ? "rgba(0,206,209,0.07)" : "#F1F5F9";
 
   const boneMap = Object.fromEntries(bones.map(b => [b.id, b]));
 
@@ -125,7 +125,7 @@ export function LeftSidebar({
             }}
           >
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-[#00CED1]/10 border border-[#00CED1]/30 flex items-center justify-center text-[#00CED1]">
+              <div className="w-6 h-6 rounded-lg bg-teal-600/10 dark:bg-[#00CED1]/10 border border-teal-600/30 dark:border-[#00CED1]/30 flex items-center justify-center text-teal-700 dark:text-[#00CED1]">
                 <BookOpen size={13} />
               </div>
               <span className="font-extrabold text-xs tracking-tight text-slate-800 dark:text-slate-100 uppercase">
@@ -231,7 +231,7 @@ function BoneItem({
         style={{
           background: isSelected 
             ? (darkMode ? "#00CED1" : "#0F766E")
-            : (darkMode ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)"),
+            : (darkMode ? "rgba(255,255,255,0.06)" : "#F1F5F9"),
           color: isSelected 
             ? (darkMode ? "#0F172A" : "#FFFFFF") 
             : (darkMode ? "#94A3B8" : "#475569")
