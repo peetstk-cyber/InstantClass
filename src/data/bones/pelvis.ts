@@ -241,14 +241,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกจากด้านหน้าตรงเข้าเชิงกราน หรืออุบัติเหตุรถจักรยานยนต์ชนหน้าตรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intact posterior SI ligaments ensure mechanical stability; non-operative care with early protected weight-bearing is the standard of care.",
+                  "th": "เส้นเอ็นด้านหลังยังสมบูรณ์ทำให้วงเชิงกรานมั่นคง การรักษาหลักคือไม่ผ่าตัดและเริ่มฝึกเดินลงน้ำหนักตามอาการ"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Bed rest for pain control followed by progressive weight bearing as tolerated with a walker or crutches.",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัด พักผ่อนบรรเทาปวด แล้วเริ่มหัดเดินลงน้ำหนักเท่าที่ทนได้ด้วยอุปกรณ์ช่วยเดิน"
+                  "indication": {
+                    "en": "• Pubic symphysis diastasis < 2 cm\n• Intact posterior sacroiliac ligaments\n• Mechanically stable pelvic ring on stress examination\n• Low risk of internal hemorrhage",
+                    "th": "• รอยแยก Pubic symphysis < 2 ซม.\n• เส้นเอ็น Posterior SI และ Sacrotuberous ยังสมบูรณ์ดี\n• วงเชิงกรานมีความมั่นคงสูง\n• ไม่มีความเสี่ยงต่อภาวะตกเลือดในเชิงกราน"
+                  },
+                  "method": {
+                    "en": "• Bed rest for acute pain control (1–3 days)\n• Progressive weight bearing as tolerated (WBAT) with walker or crutches\n• Multimodal analgesia and VTE prophylaxis",
+                    "th": "• นอนพักบรรเทาอาการปวดระยะเฉียบพลัน (1–3 วันแรก)\n• เริ่มฝึกเดินลงน้ำหนักเท่าที่ทนได้ (WBAT) ด้วย Walker หรือไม้ค้ำยัน\n• ให้ยาระงับปวดและยาป้องกันลิ่มเลือดอุดตันหลอดเลือดดำ (VTE prophylaxis)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Mobilize out of bed as early as pain allows\n• Use assistive devices for 4–6 weeks\n• Serial AP pelvic radiographs at 1, 2, and 6 weeks to confirm no secondary displacement",
+                    "th": "• เริ่มขยับลุกออกจากเตียงทันทีที่อาการปวดทุเลา\n• ใช้อุปกรณ์ช่วยเดินพยุงเป็นเวลา 4–6 สัปดาห์\n• ติดตามภาพถ่าย X-ray เชิงกรานที่ 1, 2 และ 6 สัปดาห์เพื่อยืนยันว่าไม่มีการถ่างแยกเพิ่มขึ้น"
+                  },
+                  "pitfalls": {
+                    "en": "• Watch for occult posterior ring injury (obtain inlet/outlet views or CT)\n• In elderly patients, verify true isolation of injury before discharge",
+                    "th": "• ระวังการบาดเจ็บของวงกระดูกด้านหลังที่ซ่อนอยู่ (ควรตรวจ CT หรือ Inlet/Outlet view)\n• ในผู้สูงอายุต้องตรวจคัดกรองภาวะกระดูกพรุนและยืนยันว่าไม่มีรอยหักอื่นร่วม"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely needed unless patient has intolerable pain with weight-bearing.",
-                  "th": "แทบไม่ต้องผ่าตัด พิจารณาเฉพาะกรณีที่ปวดมากจนลงน้ำหนักไม่ได้เลย"
+                  "indication": {
+                    "en": "• Failed non-operative trial due to intractable pain preventing mobilization\n• Occult vertical or rotational instability unmasked on dynamic stress views",
+                    "th": "• ผู้ป่วยปวดรุนแรงจนไม่สามารถขยับลุกเดินได้แม้ให้ยาแก้ปวดเต็มที่\n• ตรวจพบความไม่มั่นคงซ่อนเร้นจากการกดตรวจประเมิน (Dynamic stress exam)"
+                  },
+                  "method": {
+                    "en": "• Anterior symphyseal plating via Pfannenstiel approach (2 to 4-hole 3.5mm low-profile plate)\n• Or percutaneous retrograde superior pubic ramus screws",
+                    "th": "• ผ่าตัดยึดแผ่นเหล็กดาม Pubic symphysis (2-4 รู) ผ่านทางลงแผล Pfannenstiel\n• หรือใส่สกรูยึดกระดูกกิ่ง Pubic ramus ผ่านผิวหนัง (Percutaneous retrograde screw)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) for 6 weeks, then advance to full weight-bearing",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน (Touch-down WB) 6 สัปดาห์ แล้วจึงเริ่มลงน้ำหนักเต็มที่"
+                  },
+                  "pitfalls": {
+                    "en": "• Avoid extensive subperiosteal stripping over the bladder dome during anterior approach",
+                    "th": "• ระวังการบาดเจ็บต่อกระเพาะปัสสาวะด้านหลัง Pubic symphysis ขณะเปิดแผล"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/apc_1.png",
@@ -272,14 +304,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกทับบดพลังงานสูง หรืออุบัติเหตุรถยนต์ชนประสานงารุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Pelvic volume expansion creates major venous hemorrhage risk; urgent binder closure in ER followed by rigid anterior symphyseal plating restores rotational stability.",
+                  "th": "ช่องเชิงกรานที่ถ่างออกทำให้เสียเลือดในช่องเชิงกรานสูง ต้องรัดผ้ารัดเชิงกราน (Binder) ทันทีใน ER และผ่าตัดดามแผ่นเหล็กด้านหน้าเพื่อปิดช่องว่าง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended. High risk of persistent pelvic deformity and chronic pain.",
-                  "th": "ไม่แนะนำ เนื่องจากเสี่ยงต่อภาวะเชิงกรานผิดรูปและปวดเรื้อรัง"
+                  "indication": {
+                    "en": "• Severely medically compromised or moribund patients completely unfit for surgery",
+                    "th": "• ผู้ป่วยที่มีภาวะโรคร่วมรุนแรงขั้นวิกฤต หรือไม่สามารถทนต่อการผ่าตัดดมยาสลบได้"
+                  },
+                  "method": {
+                    "en": "• Non-operative management with prolonged bed rest in pelvic sling (high morbidity)",
+                    "th": "• นอนพักบนเตียงและใช้เปลผ้าพยุงเชิงกราน (Pelvic sling) เป็นเวลานาน (มีภาวะแทรกซ้อนสูง)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Non-weight bearing for 8–12 weeks; high rate of chronic pelvic pain and pelvic asymmetry",
+                    "th": "• ห้ามลงน้ำหนัก 8–12 สัปดาห์ เสี่ยงสูงต่อกระดูกไม่ติด เชิงกรานเบี้ยว และปวดเรื้อรัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe risk of deep vein thrombosis (DVT), pulmonary embolism (PE), and pressure decubitus ulcers",
+                    "th": "• เสี่ยงต่อภาวะลิ่มเลือดอุดตันหลอดเลือดปอด (PE) แผลกดทับ และกระดูกติดผิดรูป"
+                  }
                 },
                 "operative": {
-                  "en": "URGENT STABILIZATION. Apply pelvic binder/sheet in ER to reduce volume and control bleeding. Definitive ORIF with multi-hole pubic symphysis plate and/or posterior SI screws.",
-                  "th": "ต้องควบคุมการเสียเลือดฉุกเฉิน ใส่ผ้าพันเชิงกราน (Pelvic binder) รัดตรงระดับ Greater trochanter ทันทีใน ER แล้วผ่าตัด ORIF ยึดแผ่นเหล็กดาม Pubic symphysis ร่วมกับใส่สกรูยึด SI joint"
+                  "indication": {
+                    "en": "• Pubic symphysis diastasis > 2 cm ('Open-Book' deformity)\n• Torn anterior SI, sacrospinous, and sacrotuberous ligaments\n• Rotationally unstable pelvis with expanded pelvic volume\n• Active hemorrhage risk in emergency trauma resuscitation",
+                    "th": "• Pubic symphysis ถ่างแยก > 2 ซม. (Open Book)\n• เส้นเอ็น Anterior SI และ Sacrospinous/Sacrotuberous ฉีกขาด\n• เชิงกรานไม่มั่นคงในแนวหมุนและช่องเชิงกรานขยายตัว\n• ความเสี่ยงสูงต่อภาวะตกเลือดในช่องเชิงกราน"
+                  },
+                  "method": {
+                    "en": "• EMERGENCY ER: Immediate Pelvic Binder applied strictly at Greater Trochanter level\n• Definitive ORIF: Multi-hole (4 to 6-hole) 3.5mm reconstruction/symphyseal plate via Pfannenstiel approach\n• Optional anterior external fixator or INFIX for damage control in unstable polytrauma",
+                    "th": "• ระยะฉุกเฉิน: ใส่ Pelvic Binder รัดแน่นตรงระดับ Greater Trochanter ทันที\n• การผ่าตัดหลัก: ผ่าตัด ORIF ดามแผ่นเหล็ก 3.5mm Multi-hole plate ผ่านทางลงแผล Pfannenstiel\n• ใส่เหล็กดามกระดูกภายนอก (Ex-Fix) หรือ INFIX ในกรณี Damage control ผู้ป่วยวิกฤต"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 6–8 weeks\n• Advance to partial weight bearing at 8 weeks, full WB at 10–12 weeks after radiographic union",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน (Touch-down WB) 6–8 สัปดาห์\n• เริ่มลงน้ำหนักเพิ่มขึ้นที่ 8 สัปดาห์ และลงน้ำหนักเต็มที่เมื่อกระดูกติดสนิทที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Do NOT place pelvic binder over iliac crests (must center over Greater Trochanters to close book)\n• Screen for associated bladder rupture or urethral tear (~15% incidence)",
+                    "th": "• ห้ามรัดแผ่น Binder ตรงระดับปีกสะโพก (Iliac crest) ต้องรัดตรงระดับ Greater Trochanter เท่านั้น\n• ระวังการฉีกขาดของท่อปัสสาวะหรือกระเพาะปัสสาวะแตก (พบร่วมได้ถึง 15%)"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/apc_2.png",
@@ -303,14 +367,46 @@ export const pelvisBone: BoneData = {
                 "th": "อุบัติเหตุความเร็วสูงรุนแรงสุดขีด หรือการตกจากที่สูงมาก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Life-threatening hemorrhagic shock with floating hemipelvis; emergency binder/packing/angio followed by circumferential anterior AND posterior rigid stabilization.",
+                  "th": "ภาวะตกเลือดรุนแรงถึงแก่ชีวิตจากเชิงกรานหลุดสมบูรณ์ ต้องห้ามเลือดฉุกเฉิน (Packing/Angio) และผ่าตัดยึดทั้งด้านหน้าและด้านหลัง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Lethal without rapid stabilization.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ เสี่ยงเสียชีวิตสูงมาก"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Lethal without surgical stabilization)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (มีอัตราเสียชีวิตสูงมากหากไม่ยึดตรึง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Exsanguinating retroperitoneal hemorrhage and rapid circulatory collapse",
+                    "th": "• ภาวะช็อกจากการเสียเลือดมหาศาลในช่องหลังช่องท้องจนเสียชีวิต"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY RESUSCITATION & SURGERY. Immediate Pelvic binder/C-clamp, pelvic packing for hemorrhage control, urgent angiography/embolization if hypotensive, followed by staged ORIF (anterior plate + posterior SI screws/plates).",
-                  "th": "ช่วยชีวิตและผ่าตัดฉุกเฉิน ใส่ Pelvic Binder/C-clamp ทันที ยัดผ้าห้ามเลือด (Pelvic packing) ทำฉีดสีอุดเส้นเลือด (Embolization) หากความดันตก แล้วผ่าตัด ORIF ยึดแผ่นเหล็กหน้าและสกรูหลัง"
+                  "indication": {
+                    "en": "• Complete disruption of pubic symphysis AND posterior SI ligamentous complex\n• Floating hemipelvis with both rotational and vertical instability\n• Severe polytrauma with high risk of vascular tear (internal iliac branches)",
+                    "th": "• รอยฉีกขาดสมบูรณ์ของทั้ง Pubic symphysis และเอ็นข้อ SI ทั้งด้านหน้าและด้านหลัง\n• เชิงกรานหลุดลอย (Floating hemipelvis) ขาดความมั่นคงทั้งแนวหมุนและแนวดิ่ง\n• เสี่ยงต่อเส้นเลือดใหญ่ในเชิงกรานฉีกขาด"
+                  },
+                  "method": {
+                    "en": "• RESUSCITATION: Pelvic binder / Pelvic C-clamp + Pre-peritoneal pelvic packing or Angiographic embolization\n• Definitive Fixation: Dual-stage or combined ORIF:\n  - Anterior: Symphyseal multi-hole plate via Pfannenstiel\n  - Posterior: Percutaneous iliosacral 7.0/7.3mm cannulated screws into S1 and S2 bodies, or posterior tension band plate",
+                    "th": "• การกู้ชีพฉุกเฉิน: รัด Pelvic binder / C-clamp ร่วมกับทำ Pre-peritoneal pelvic packing หรือฉีดสีอุดหลอดเลือด (Angio-embolization)\n• การผ่าตัดยึดตรึงสมบูรณ์:\n  - ด้านหน้า: ผ่าตัด ORIF ดามแผ่นเหล็ก Pubic symphysis\n  - ด้านหลัง: ใส่สกรูยึดข้อ SI (Iliosacral screw 7.0/7.3mm) เข้าสู่กระดูก Sacrum S1/S2 หรือดามแผ่นเหล็กด้านหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing (NWB) on affected extremity x 8–12 weeks\n• In-bed active-assisted ROM exercises for hip, knee, and ankle",
+                    "th": "• ห้ามลงน้ำหนักบนขาข้างที่บาดเจ็บเด็ดขาด (Strict NWB) 8–12 สัปดาห์\n• ฝึกบริหารขยับข้อสะโพก ข้อเข่า และข้อเท้าบนเตียง"
+                  },
+                  "pitfalls": {
+                    "en": "• Risk of L5 nerve root injury or S1 foraminal violation with misdirected iliosacral screws\n• High overall trauma mortality (up to 20–30%)",
+                    "th": "• ระวังการใส่สกรู SI พลาดแทงโดนรากประสาท L5 หรือรูประสาท S1 (ควรใช้ Intra-op Fluoroscopy 3 ท่า)\n• อัตราการเสียชีวิตสูง (20-30%) จากการเสียเลือดและอวัยวะภายในล้มเหลว"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/apc_3.png",
@@ -334,14 +430,46 @@ export const pelvisBone: BoneData = {
                 "th": "อุบัติเหตุชนเข้าด้านข้างตัวรถ (T-bone crash) หรือล้มกระแทกข้างสะโพก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Impacted sacral compression with reduced pelvic volume maintains mechanical stability; non-operative care with early mobilization as tolerated is standard.",
+                  "th": "แรงบีบอัดทำให้กระดูก Sacrum อัดแน่นและช่องเชิงกรานแคบลง วงเชิงกรานจึงมั่นคง รักษาแบบไม่ผ่าตัดและเริ่มฝึกเดินได้เร็ว"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Non-operative management. Early mobilization with weight-bearing as tolerated once acute pain subsides.",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัด เริ่มหัดเดินลงน้ำหนักเท่าที่ทนได้เมื่ออาการปวดระบมลดลง"
+                  "indication": {
+                    "en": "• Impacted sacral buckle/crush fracture\n• Transverse ipsilateral pubic ramus fractures\n• Stable pelvic ring with intact posterior ligamentous tension bands\n• Normal hemodynamic parameters",
+                    "th": "• กระดูก Sacrum ถูกแรงอัดย่นแน่นเข้าหากัน (Impacted sacral fracture)\n• กระดูก Pubic ramus หักแนวขวางด้านเดียวกัน\n• วงเชิงกรานมั่นคงและไม่มีการเคลื่อนตัวในแนวดิ่ง\n• สัญญาณชีพคงที่และไม่มีภาวะตกเลือด"
+                  },
+                  "method": {
+                    "en": "• Bed rest for 24–48 hours until acute pain subsides\n• Early mobilization with weight-bearing as tolerated (WBAT) with walker\n• Multimodal oral analgesia and short-term DVT prophylaxis",
+                    "th": "• นอนพัก 24–48 ชั่วโมงแรกจนอาการปวดเฉียบพลันลดลง\n• เริ่มฝึกเดินลงน้ำหนักเท่าที่ทนได้ (WBAT) ด้วยอุปกรณ์ช่วยเดิน (Walker)\n• ให้ยาแก้ปวดและยาป้องกันลิ่มเลือดอุดตันหลอดเลือดดำระยะสั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• Ambulation with walker/crutches for 4–6 weeks\n• Advance to full independent ambulation by 6–8 weeks\n• Serial radiographs at 1 and 4 weeks to verify no collapse or displacement",
+                    "th": "• เดินโดยใช้อุปกรณ์ช่วยเดินพยุงเป็นเวลา 4–6 สัปดาห์\n• เริ่มเดินอิสระเต็มที่ได้ภายใน 6–8 สัปดาห์\n• ติดตาม X-ray ที่ 1 และ 4 สัปดาห์เพื่อยืนยันว่าไม่มีแนวกระดูกยุบตัวเพิ่ม"
+                  },
+                  "pitfalls": {
+                    "en": "• Rule out complete sacral fracture or crescent component with pelvic CT scan\n• Screen for osteoporosis and fragility insufficiency in elderly fall patients",
+                    "th": "• ต้องตรวจ CT เพื่อแยกจากรอยหัก Sacrum สมบูรณ์หรือ Crescent fracture\n• ระวังภาวะกระดูกพรุนในผู้สูงอายุที่ล้มเบาๆ (Fragility pelvic fracture)"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely needed unless severe ramus displacement causes nerve or bladder irritation.",
-                  "th": "แทบไม่ต้องผ่าตัด พิจารณาเฉพาะกรณีชิ้นกระดูก Pubic ramus ทิ่มแทงกระเพาะปัสสาวะ"
+                  "indication": {
+                    "en": "• Severe pubic ramus displacement impinging the bladder, vagina, or obturator nerve\n• Intractable pain completely preventing bed-to-chair mobilization in fragile elderly patients",
+                    "th": "• ชิ้นกระดูก Pubic ramus หักทิ่มแทงกระเพาะปัสสาวะ ช่องคลอด หรือกดเส้นประสาท Obturator\n• ผู้ป่วยสูงอายุที่ปวดรุนแรงมากจนไม่สามารถลุกนั่งหรือขยับตัวได้เลย (ขังเตียง)"
+                  },
+                  "method": {
+                    "en": "• Percutaneous retrograde superior ramus screw or S1 iliosacral screw for pain stabilization and early mobility",
+                    "th": "• เจาะใส่สกรูยึดกระดูกกิ่ง Pubic ramus หรือใส่สกรูยึด Sacrum S1 ผ่านผิวหนังเพื่อลดปวดและให้ลุกเดินได้เร็ว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate full weight-bearing as tolerated post-percutaneous fixation",
+                    "th": "• สามารถฝึกเดินลงน้ำหนักได้ทันทีหลังผ่าตัดยึดสกรูผ่านผิวหนัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Avoid over-constraining the anterior ring if posterior sacrum is impaction-locked",
+                    "th": "• หลีกเลี่ยงการดึงบีบเชิงกรานมากเกินไป"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/lc_1.png",
@@ -365,14 +493,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกทับบดด้านข้างพลังงานสูง หรือรถชนด้านข้างตรงเข้าที่ปีกกระดูกเชิงกราน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Crescent fracture destabilizes rotational alignment of the iliac wing; anatomic reduction and plating of the crescent restores pelvic geometry and prevents leg length asymmetry.",
+                  "th": "รอยหักเสี้ยวพระจันทร์ทำให้ปีกเชิงกรานบิดหมุนเข้าใน การผ่าตัดจัดกระดูกเข้าที่และดามแผ่นเหล็กจะช่วยคืนแนวเชิงกรานและป้องกันขาโก่งสั้น"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended for displaced crescent fractures (>1 cm or rotational deformity).",
-                  "th": "ไม่แนะนำในกรณีชิ้นกระดูกเสี้ยวพระจันทร์บิดเกยกันเกิน 1 ซม."
+                  "indication": {
+                    "en": "• Minimally displaced crescent fracture (<5mm) in non-ambulatory or high-surgical-risk patients",
+                    "th": "• ชิ้นกระดูกเสี้ยวพระจันทร์เคลื่อนตัวน้อยมาก (<5 มม.) ในผู้ป่วยที่ไม่เดินหรือมีความเสี่ยงผ่าตัดสูง"
+                  },
+                  "method": {
+                    "en": "• Bed rest with gradual progressive weight-bearing as tolerated with assistive device",
+                    "th": "• นอนพักและเริ่มฝึกเดินลงน้ำหนักด้วยอุปกรณ์ช่วยเดินเมื่อปวดลดลง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Non-weight bearing x 6–8 weeks; monitor for internal rotation progression",
+                    "th": "• ห้ามลงน้ำหนัก 6–8 สัปดาห์ ติดตาม X-ray ดูว่าเชิงกรานบิดหมุนยุบตัวเพิ่มหรือไม่"
+                  },
+                  "pitfalls": {
+                    "en": "• Risk of secondary internal rotational displacement leading to pelvic asymmetry and sitting discomfort",
+                    "th": "• เสี่ยงต่อเชิงกรานบิดเบี้ยวผิดรูป ทำให้เวลานั่งไม่สมดุลและขาสั้นยาวไม่เท่ากัน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) of the iliac wing crescent fracture via ilioinguinal approach with reconstruction plates to restore rotational stability.",
-                  "th": "แนะนำผ่าตัด ORIF จัดชิ้นกระดูกเสี้ยวพระจันทร์ให้เข้าที่แล้วดามด้วยแผ่นเหล็ก Reconstruction plate ผ่านทางลงแผล Ilioinguinal"
+                  "indication": {
+                    "en": "• Displaced crescent fracture (>1 cm or rotational deformity)\n• Internal rotation deformity of the hemipelvis\n• Articular step-off extending into the sacroiliac joint",
+                    "th": "• ชิ้นกระดูกเสี้ยวพระจันทร์เคลื่อนตัว (>1 ซม.) หรือเชิงกรานบิดผิดรูปชัดเจน\n• เชิงกรานบิดหมุนเข้าด้านในอย่างรุนแรง (Internal rotation deformity)\n• รอยหักแตกเข้าสู่ช่องข้อ Sacroiliac joint"
+                  },
+                  "method": {
+                    "en": "• ORIF of iliac wing crescent fracture via Lateral/First window of Ilioinguinal approach or direct lateral iliac approach\n• 3.5mm pelvic reconstruction plates along iliac crest and pelvic brim\n• Percutaneous S1 iliosacral screw if posterior SI joint is unstable",
+                    "th": "• ผ่าตัด ORIF จัดชิ้นกระดูกเสี้ยวพระจันทร์ผ่านทางเข้า Ilioinguinal (First window) หรือ Lateral iliac approach\n• ดามด้วยแผ่นเหล็ก Reconstruction plate 3.5mm ตามแนวปีกกระดูก Iliac crest\n• ใส่สกรูยึดข้อ SI (S1 iliosacral screw) ร่วมด้วยหากข้อด้านหลังไม่มั่นคง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) for 6–8 weeks\n• Advance to partial weight bearing at 8 weeks, full WB at 10–12 weeks upon union",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน (Touch-down WB) 6–8 สัปดาห์\n• เริ่มลงน้ำหนักเพิ่มขึ้นที่ 8 สัปดาห์ และลงน้ำหนักเต็มที่เมื่อกระดูกติดที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Protect Lateral Femoral Cutaneous Nerve (LFCN) near ASIS during anterior iliac exposure\n• Avoid injuring superior gluteal vessels and nerve in greater sciatic notch",
+                    "th": "• ระวังการบาดเจ็บต่อเส้นประสาท Lateral Femoral Cutaneous (LFCN) บริเวณ ASIS\n• ระวังเส้นเลือดและเส้นประสาท Superior Gluteal บริเวณร่อง Sciatic notch"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/lc_2.png",
@@ -396,14 +556,46 @@ export const pelvisBone: BoneData = {
                 "th": "อุบัติเหตุรถพลิกคว่ำทับบดด้านข้างความเร็วสูง หรือถูกน้ำหนักมหาศาลทับกดเชิงกราน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Severe combined rollover mechanism causing bilateral multi-planar instability and retroperitoneal hemorrhage; requires damage-control resuscitation and bilateral circumferential ORIF.",
+                  "th": "การบาดเจ็บรุนแรงสองฝั่งแบบ Windswept เสี่ยงตกเลือดรุนแรง ต้องกู้ชีพควบคุมการเสียเลือดฉุกเฉินและผ่าตัดยึดตรึงเชิงกรานทั้งสองข้าง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Severe risk of fatal hemorrhage and permanent deformity.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ เสี่ยงต่อการเสียเลือดจนเสียชีวิต"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Severe risk of fatal hemorrhage and permanent crippling deformity)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (เสี่ยงต่อการเสียชีวิตจากการตกเลือดและพิการถาวร)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Uncontrolled retroperitoneal bleeding, severe windswept pelvic nonunion, and inability to walk",
+                    "th": "• เสียชีวิตจากการตกเลือด และเชิงกรานบิดเบี้ยวถาวรจนเดินไม่ได้"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY OPERATIVE STABILIZATION. Pelvic binder in ER, emergency angiography/embolization if hypotensive, provisional external fixation followed by dual ORIF of posterior SI joint and anterior pubic symphysis/rami.",
-                  "th": "ผ่าตัดด่วนฉุกเฉิน ใส่ Pelvic binder ฉีดสีอุดเส้นเลือดถ้าความดันตก ยึดเหล็กดามนอก (Ex-fix) แล้วผ่าตัด ORIF ยึดทั้งด้านหน้าและด้านหลัง"
+                  "indication": {
+                    "en": "• Classic 'Windswept' injury pattern (ipsilateral crush + contralateral open-book)\n• Combined rotational and multi-planar instability\n• Polytrauma with severe soft-tissue and vascular injury",
+                    "th": "• รูปแบบการหักแบบ 'Windswept' (ข้างหนึ่งถูกบีบ อีกข้างหนึ่งอ้าออก)\n• ไม่มั่นคงรุนแรงทั้งสองข้างในหลายระนาบ\n• มีการบาดเจ็บของเส้นเลือดและเนื้อเยื่ออ่อนร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "• RESUSCITATION: Emergency Pelvic Binder applied in ER; emergent Angio-embolization for hemodynamic instability\n• Provisional External Fixator or C-clamp for damage control\n• Definitive Staged Fixation: Dual ORIF:\n  - Anterior symphyseal plate to close contralateral open-book\n  - Posterior iliosacral screws or iliac reconstruction plates for ipsilateral compression and contralateral SI joint",
+                    "th": "• การกู้ชีพ: รัด Pelvic binder ฉุกเฉินใน ER และทำ Angio-embolization หากความดันตก\n• ใส่เหล็กดามกระดูกภายนอก (Ex-Fix) ชั่วคราวในระยะ Damage control\n• ผ่าตัดยึดตรึงสมบูรณ์:\n  - ดามแผ่นเหล็ก Pubic symphysis ด้านหน้าเพื่อปิดส่วน Open-book\n  - ใส่สกรูยึดข้อ SI (Iliosacral screw) หรือดามแผ่นเหล็กที่ปีกสะโพกทั้งสองข้าง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing (NWB) bilateral lower extremities x 10–12 weeks\n• Wheelchair transfer training and active upper-body conditioning",
+                    "th": "• ห้ามลงน้ำหนักขาทั้งสองข้าง (Strict NWB) 10–12 สัปดาห์\n• ฝึกเคลื่อนย้ายตัวบนรถเข็นและบริหารกล้ามเนื้อลำตัวช่วงบน"
+                  },
+                  "pitfalls": {
+                    "en": "• High incidence of Morel-Lavallée closed degloving lesions over the trochanter/flank (must debride/drain before anterior approach)\n• Massive internal venous plexus bleeding",
+                    "th": "• ระวังแผลฉีกแยกใต้ผิวหนัง (Morel-Lavallée lesion) บริเวณสะโพก/บั้นเอว ต้องระบายน้ำเหลืองก่อนเปิดแผลผ่าตัด\n• เสี่ยงต่อการเสียเลือดมหาศาลจากแขนง Internal iliac venous plexus"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/lc_3.png",
@@ -427,14 +619,46 @@ export const pelvisBone: BoneData = {
                 "th": "การตกจากที่สูงโดยเอาขาข้างเดียวลงยันพื้นอย่างรุนแรง หรืออุบัติเหตุรถจักรยานยนต์ความเร็วสูง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete ligamentous rupture with vertical translation causes severe vertical instability; skeletal traction for length reduction followed by mandatory multi-planar rigid posterior and anterior fixation is essential.",
+                  "th": "เอ็นยึดเชิงกรานขาดหมดและเชิงกรานลอยขึ้นในแนวดิ่ง ต้องดึงถ่วงน้ำหนัก (Skeletal traction) ดึงขาลง และผ่าตัดยึดตรึงทั้งเสาหลังและด้านหน้าให้แน่นหนา"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Results in permanent vertical pelvic displacement, severe leg length discrepancy, and disabling chronic pain)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ทำให้เชิงกรานลอยค้างถาวร ขาสั้นยาวไม่เท่ากันอย่างมาก และปวดหลังเรื้อรังรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe limb shortening (>3-5 cm), chronic sacroiliac nonunion, and inability to walk",
+                    "th": "• ขาสั้นถาวร > 3-5 ซม. กระดูกไม่ติด และไม่สามารถเดินได้ตามปกติ"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY OPERATIVE FIXATION. Skeletal traction for provisional length reduction. Definitive ORIF with posterior SI sacroiliac screws or spinal-pelvic fixation, combined with anterior pubic ramus/symphysis plating.",
-                  "th": "จำเป็นต้องผ่าตัดเสมอ (Mandatory ORIF) ดึงถ่วงน้ำหนัก (Skeletal traction) เพื่อดึงขาลง แล้วผ่าตัดยึดสกรูข้อต่อ SI ด้านหลัง ร่วมกับยึดแผ่นเหล็ก Pubicด้านหน้า"
+                  "indication": {
+                    "en": "• Complete vertical displacement through SI joint, sacrum, or ilium\n• Vertically and rotationally unstable hemipelvis\n• Vertical step-off of anterior pubic rami\n• High risk of neurovascular disruption",
+                    "th": "• รอยเลื่อนในแนวดิ่งสมบูรณ์ผ่านข้อ SI, Sacrum หรือ Ilium\n• เชิงกรานไม่มั่นคงทั้งแนวดิ่งและแนวหมุน\n• แนวกระดูก Pubic ด้านหน้าเกยเหลื่อมกันในแนวตั้ง\n• เสี่ยงต่อการบาดเจ็บของเส้นประสาท L5/S1"
+                  },
+                  "method": {
+                    "en": "• PRE-OP: Distal femoral skeletal traction (15–20% body weight) to regain pelvic length and reduce cranial migration\n• Definitive Rigid Fixation:\n  - Posterior: Dual 7.0/7.3mm S1/S2 iliosacral screws or Triangular Lumbopelvic Fixation (L5-S1-ilium spinopelvic pedicle screw construct)\n  - Anterior: ORIF pubic symphysis plate or superior ramus plating via Stoppa/Pfannenstiel approach",
+                    "th": "• ก่อนผ่าตัด: ดึงถ่วงน้ำหนักกระดูกต้นขา (Distal femoral skeletal traction 15-20% ของน้ำหนักตัว) เพื่อดึงเชิงกรานกลับลงมา\n• ผ่าตัดยึดตรึงความแข็งแรงสูง:\n  - ด้านหลัง: ใส่สกรูยึดข้อ SI สองตัว (S1 + S2 iliosacral screws) หรือยึดตรึงกระดูกสันหลังส่วนเอวเข้ากับเชิงกราน (Triangular Lumbopelvic Fixation)\n  - ด้านหน้า: ผ่าตัด ORIF ดามแผ่นเหล็ก Pubic symphysis / Rami ผ่านทางเข้า Stoppa หรือ Pfannenstiel"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing (NWB) on affected side for 10–12 weeks\n• Serial Outlet and Inlet radiographs at 2, 6, and 12 weeks to monitor against vertical recurrence",
+                    "th": "• ห้ามลงน้ำหนักบนขาข้างที่บาดเจ็บเด็ดขาด (Strict NWB) 10–12 สัปดาห์\n• ถ่ายภาพ X-ray Inlet/Outlet views ติดตามที่ 2, 6 และ 12 สัปดาห์เพื่อยืนยันว่าไม่มีการเลื่อนลอยซ้ำ"
+                  },
+                  "pitfalls": {
+                    "en": "• Watch for L5 nerve root entrapment during vertical reduction maneuvers\n• Inadequate posterior fixation leads to early screw loosening and vertical loss of reduction",
+                    "th": "• ระวังเส้นประสาท L5 ถูกดึงรั้งหรือหนีบขณะดึงกระดูกเชิงกรานลงมาเข้าที่\n• การยึดด้านหลังที่ไม่แข็งแรงพอจะทำให้สกรูหลุดหลวมและเชิงกรานลอยกลับขึ้นไปใหม่"
+                  }
                 }
               },
               "illustrationId": "/images/pelvis/vs.png",
@@ -654,14 +878,46 @@ export const pelvisBone: BoneData = {
                 "th": "Dashboard injury (เข่าชนหน้ารถ): เข่ากระแทกหน้ารถขณะนั่งงอข้อสะโพกในรถยนต์"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Posterior hip stability is determined by fragment size; >20-25% wall involvement requires urgent hip reduction and buttress plating to prevent posterior subluxation.",
+                  "th": "ความมั่นคงของข้อสะโพกขึ้นกับขนาดชิ้นกระดูกผนังหลัง (>20-25% ต้องดึงจัดข้อสะโพกหลุดฉุกเฉินและผ่าตัดดามแผ่นเหล็ก Buttress เพื่อป้องกันข้อสะโพกหลุดซ้ำ)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY for small fragment (<20% of wall) with STABLE hip joint on dynamic testing.",
-                  "th": "พิจารณาเฉพาะกรณีชิ้นกระดูกเล็กมาก (<20% ของผนัง) และข้อสะโพกมั่นคงดี"
+                  "indication": {
+                    "en": "• Small wall fragment (<20% of posterior wall area)\n• Congruent hip joint on AP, Judet views, and dynamic fluoroscopy\n• Intact weight-bearing dome (Roof arc angle >45°)",
+                    "th": "• ชิ้นกระดูกผนังหลังเล็กมาก (<20% ของพื้นที่ผนังหลัง)\n• ข้อสะโพกเรียบสนิทมั่นคงดีในท่า AP, Judet views และการตรวจ Dynamic test\n• มุมหลังคาเบ้าสะโพกสมบูรณ์ (Roof arc angle >45°)"
+                  },
+                  "method": {
+                    "en": "• Bed rest for 24–48 hours followed by protected non-weight bearing (NWB) with crutches\n• Analgesics, muscle relaxants, and serial radiographic assessment",
+                    "th": "• นอนพัก 24–48 ชั่วโมงแล้วเริ่มหัดเดินโดยห้ามลงน้ำหนัก (Strict NWB) ด้วยไม้ค้ำยัน\n• ให้ยาแก้ปวดและตรวจติดตามภาพ X-ray อย่างใกล้ชิด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing for 6 weeks\n• Partial weight bearing (PWB) from 6–10 weeks, then full WB at 12 weeks after CT/X-ray confirmation",
+                    "th": "• ห้ามลงน้ำหนัก 6 สัปดาห์แรก\n• เริ่มลงน้ำหนักบางส่วนที่ 6–10 สัปดาห์ และลงน้ำหนักเต็มที่เมื่อครบ 12 สัปดาห์หลังตรวจ X-ray ยืนยัน"
+                  },
+                  "pitfalls": {
+                    "en": "• Unrecognized posterior subluxation leading to catastrophic rapid femoral head cartilage wear",
+                    "th": "• ระวังข้อสะโพกเลื่อนหลุดไปด้านหลังโดยไม่รู้ตัว ทำให้ผิวกระดูกอ่อนหัวกระดูกสะโพกสึกพังทลายอย่างรวดเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Urgent reduction of hip dislocation, then ORIF of posterior wall with mini-screws and a 3.5mm reconstruction buttress plate via Kocher-Langenbeck approach.",
-                  "th": "ดึงจัดข้อสะโพกที่หลุดฉุกเฉิน แล้วผ่าตัด ORIF ยึดผนังหลังด้วยสกรูและแผ่นเหล็กดาม (Reconstruction buttress plate)"
+                  "indication": {
+                    "en": "• Posterior wall fragment >20–25% of acetabular rim\n• Incongruent joint or intra-articular incarcerated bone/cartilage fragments\n• Unstable hip joint on dynamic examination in 90° flexion",
+                    "th": "• ชิ้นกระดูกผนังหลังแตกกะเทาะ >20–25% ของขอบเบ้าสะโพก\n• ข้อสะโพกไม่เรียบสนิท หรือมีเศษกระดูก/กระดูกอ่อนหลุดค้างในข้อ\n• ข้อสะโพกหลุดหลวมเมื่อตรวจขยับในท่างอสะโพก 90 องศา"
+                  },
+                  "method": {
+                    "en": "• Emergent closed reduction of hip dislocation under sedation/anesthesia\n• Definitive ORIF via Kocher-Langenbeck approach\n• Direct reduction of wall fragments with mini-screws (2.7/3.5mm) and a contoured 3.5mm reconstruction buttress plate over the wall",
+                    "th": "• ดึงจัดข้อสะโพกที่หลุดเข้าที่ฉุกเฉินทันที\n• ผ่าตัด ORIF ผ่านทางเข้าด้านหลัง (Kocher-Langenbeck approach)\n• จัดชิ้นกระดูกผนังหลังเข้าที่ ยึดด้วยสกรูและดามทับด้วยแผ่นเหล็ก 3.5mm Reconstruction buttress plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) for 6–8 weeks\n• Early passive-to-active hip ROM exercises avoiding extreme adduction/internal rotation\n• Advance to full WB at 12 weeks upon radiographic healing",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน (Touch-down WB) 6–8 สัปดาห์\n• เริ่มบริหารขยับข้อสะโพกแต่เนิ่นๆ โดยหลีกเลี่ยงท่างอสะโพกมากเกินและหุบขาเข้าใน\n• เริ่มลงน้ำหนักเต็มที่เมื่อกระดูกติดที่ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Sciatic nerve injury (peroneal division, keep knee flexed and hip extended during retraction)\n• Marginal impaction of articular cartilage (must elevate and bone graft before wall fixation)",
+                    "th": "• ระวังการบาดเจ็บต่อเส้นประสาท Sciatic (ต้องงอเข่าและเหยียดสะโพกขณะดึงรั้งกล้ามเนื้อ)\n• หากมีกระดูกอ่อนขอบเบ้าสะโพกยุบตัว (Marginal impaction) ต้องงัดขึ้นและปลูกกระดูกเทียมก่อนยึดผนัง"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/posterior_wall.png",
@@ -685,14 +941,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกด้านข้างเข้าบริเวณปุ่มสะโพกขณะข้อสะโพกกางออก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Disrupts the ilioischial line and posterior weight-bearing dome; anatomic reduction via Kocher-Langenbeck approach with a posterior column reconstruction plate restores articular congruity.",
+                  "th": "รอยหักตัดผ่านเส้น Ilioischial และส่วนรับน้ำหนักด้านหลัง ต้องผ่าตัดจัดกระดูกเข้าที่ผ่านทางเข้าด้านหลังและดามแผ่นเหล็กตามแนวเสาหลัง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated only if non-displaced (<2mm) and roof arc angle intact (>45°).",
-                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อน (<2 มม.) และมุมหลังคาเบ้าสะโพกสมบูรณ์ดี"
+                  "indication": {
+                    "en": "• Non-displaced (<2mm displacement)\n• Intact weight-bearing dome (roof arc angle >45° on AP, obturator, and iliac views)",
+                    "th": "• รอยหักไม่เคลื่อนตัว (<2 มม.)\n• โดมหลังคาเบ้าสะโพกส่วนรับน้ำหนักยังสมบูรณ์ดี (Roof arc angle >45° ทั้ง 3 ท่า)"
+                  },
+                  "method": {
+                    "en": "• Protected non-weight bearing with crutches and serial radiographic monitoring",
+                    "th": "• ใช้ไม้ค้ำยันพยุงเดินโดยห้ามลงน้ำหนัก และติดตามภาพถ่ายรังสีสม่ำเสมอ"
+                  },
+                  "rehabilitation": {
+                    "en": "• NWB x 6–8 weeks, progressive weight bearing from 8–12 weeks",
+                    "th": "• ห้ามลงน้ำหนัก 6–8 สัปดาห์ แล้วเริ่มฝึกเดินลงน้ำหนักเพิ่มขึ้นที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Late medial subluxation and instability of the femoral head",
+                    "th": "• ระวังหัวกระดูกสะโพกเลื่อนหลุดเข้าด้านในตามหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via Kocher-Langenbeck approach using reconstruction plate along the posterior column.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหลัง (Kocher-Langenbeck) ดามแผ่นเหล็กตามแนวเสาหลัง"
+                  "indication": {
+                    "en": "• Displaced posterior column fracture (step-off ≥2mm)\n• Joint incongruity or roof arc angle <45°\n• Associated sciatic nerve entrapment or persistent subluxation",
+                    "th": "• รอยหักเสาหลังเคลื่อนตัว (Step-off ≥2 มม.)\n• ผิวข้อต่อไม่เรียบสนิท หรือมุมหลังคาเบ้าสะโพก <45°\n• มีการกดทับเส้นประสาท Sciatic หรือข้อสะโพกเลื่อนหลวม"
+                  },
+                  "method": {
+                    "en": "• ORIF via Kocher-Langenbeck approach\n• Reduction using Farabeuf / Matta pelvic reduction clamps across ischial tuberosity to ilium\n• 3.5mm reconstruction plate spanning from ischium across the column to superior posterior ilium",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้าด้านหลัง (Kocher-Langenbeck approach)\n• ดึงจัดกระดูกเข้าที่ด้วยคีมจับกระดูกเชิงกราน (Farabeuf/Matta clamp)\n• ดามด้วยแผ่นเหล็ก 3.5mm Reconstruction plate พาดจาก Ischium ขึ้นไปถึงปีกกระดูก Ilium ด้านหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 8 weeks, advance to full WB at 12 weeks",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 8 สัปดาห์ แล้วเริ่มลงน้ำหนักเต็มที่เมื่อครบ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Superior gluteal neurovascular bundle injury in greater sciatic notch",
+                    "th": "• ระวังการบาดเจ็บต่อเส้นเลือดและเส้นประสาท Superior gluteal บริเวณร่อง Sciatic notch"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/posterior_column.png",
@@ -716,14 +1004,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกเข้าด้านหน้าสะโพก หรือแรงกระแทกด้านข้างขณะข้อสะโพกเหยียดและหมุนออก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Middle iliopectineal line disruption with anterior joint instability; ORIF via Ilioinguinal or Modified Stoppa approach restores anterior rim congruity.",
+                  "th": "รอยหักตัดผ่านเส้น Iliopectineal ช่วงกลางและขอบเบ้าด้านหน้า ผ่าตัด ORIF ผ่านทางเข้าด้านหน้า (Ilioinguinal / Stoppa) เพื่อจัดยึดขอบเบ้าสะโพก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated only for small non-displaced wall fragments.",
-                  "th": "พิจารณาเฉพาะรอยหักเล็กๆ ที่ไม่เคลื่อนตัว"
+                  "indication": {
+                    "en": "• Non-displaced wall fragment (<2mm) without anterior hip subluxation\n• Intact weight-bearing dome on Obturator Oblique view",
+                    "th": "• ชิ้นกระดูกผนังหน้าไม่เคลื่อนตัว (<2 มม.) และข้อสะโพกไม่หลุดไปด้านหน้า\n• โดมหลังคาเบ้าสะโพกสมบูรณ์ในท่า Obturator Oblique"
+                  },
+                  "method": {
+                    "en": "• Protected non-weight bearing with crutches and serial radiographic monitoring",
+                    "th": "• ใช้ไม้ค้ำยันพยุงเดินโดยห้ามลงน้ำหนัก และติดตามภาพ X-ray อย่างใกล้ชิด"
+                  },
+                  "rehabilitation": {
+                    "en": "• NWB x 6 weeks, advance to full weight-bearing by 10–12 weeks",
+                    "th": "• ห้ามลงน้ำหนัก 6 สัปดาห์แรก แล้วเริ่มลงน้ำหนักเต็มที่ได้ที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Unstable anterior subluxation on hip extension and external rotation",
+                    "th": "• ระวังข้อสะโพกเลื่อนหลุดไปด้านหน้าเมื่อเหยียดสะโพกและหมุนขาออกนอก"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via anterior approach (Ilioinguinal or Modified Stoppa approach) with reconstruction plate.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหน้า (Ilioinguinal หรือ Modified Stoppa approach) ดามแผ่นเหล็ก"
+                  "indication": {
+                    "en": "• Displaced anterior wall fragment (step-off ≥2mm)\n• Anterior hip subluxation or intra-articular debris\n• Associated anterior femoral head chondral indentation",
+                    "th": "• ชิ้นกระดูกผนังหน้าเคลื่อนตัว (Step-off ≥2 มม.)\n• ข้อสะโพกเลื่อนหลุดไปด้านหน้า หรือมีเศษกระดูกอ่อนหลุดค้างในข้อ\n• มีรอยบุบกระแทกของผิวกระดูกอ่อนหัวกระดูกสะโพกด้านหน้าร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "• ORIF via Ilioinguinal approach (Middle/Second window) or Modified Stoppa approach\n• Small-fragment lag screws (2.7/3.5mm) and a contoured 3.5mm pelvic brim reconstruction plate",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้า Ilioinguinal (Second window) หรือ Modified Stoppa approach\n• จัดกระดูกเข้าที่ ยึดด้วย Lag screws และดามแผ่นเหล็ก 3.5mm Reconstruction plate ตามแนว Pelvic brim"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 6–8 weeks, progressive weight-bearing thereafter",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 6–8 สัปดาห์ แล้วจึงเริ่มฝึกเดินลงน้ำหนักเพิ่มขึ้น"
+                  },
+                  "pitfalls": {
+                    "en": "• Femoral nerve and external iliac vessel injury during anterior retraction (avoid excessive prolonged traction)",
+                    "th": "• ระวังการบาดเจ็บต่อเส้นประสาท Femoral และเส้นเลือด External iliac จากการดึงรั้งแผลแรงเกินไป"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/anterior_wall.png",
@@ -747,14 +1067,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกเข้าด้านหน้าสะโพกขณะข้อสะโพกเหยียดและหมุนออกด้านนอก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete anterior pelvic pillar disruption extending from pubic ramus to iliac crest; anatomic plating along pelvic brim restores load-bearing biomechanics.",
+                  "th": "รอยหักเสาหน้าทั้งหมดตั้งแต่กิ่งกระดูก Pubic ramus ถึงปีกสะโพก Iliac crest ผ่าตัด ORIF ดามแผ่นเหล็กยาวตามแนว Pelvic brim เพื่อฟื้นฟูความแข็งแรง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated for non-displaced fractures with intact weight-bearing dome.",
-                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อนและผิวรับน้ำหนักด้านบนไม่เสียหาย"
+                  "indication": {
+                    "en": "• Low anterior column fracture with intact weight-bearing dome (roof arc >45°)\n• Non-displaced fracture (<2mm step-off) in medically unfit patients",
+                    "th": "• รอยหักเสาหน้าส่วนล่างที่ไม่กระทบต่อโดมหลังคาเบ้าสะโพก (Roof arc >45°)\n• รอยหักไม่เคลื่อนตัว (<2 มม.) ในผู้ป่วยที่มีข้อห้ามการผ่าตัด"
+                  },
+                  "method": {
+                    "en": "• Protected non-weight bearing with walker/crutches and serial radiographic follow-up",
+                    "th": "• ใช้อุปกรณ์ช่วยเดินพยุงโดยห้ามลงน้ำหนัก และติดตาม X-ray ดูการเคลื่อนตัวของแนวกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict NWB x 6–8 weeks, progressive weight-bearing as tolerated at 8 weeks",
+                    "th": "• ห้ามลงน้ำหนัก 6–8 สัปดาห์แรก แล้วเริ่มฝึกเดินลงน้ำหนักเพิ่มขึ้นที่ 8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Late collapse and medial drift of the anterior dome in osteoporotic bone",
+                    "th": "• ระวังกระดูกยุบตัวและหัวกระดูกสะโพกเลื่อนเข้าในตามหลังในผู้ป่วยกระดูกพรุน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via anterior approach (Ilioinguinal or Stoppa) using long reconstruction plates along the pelvic brim.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหน้า ดามแผ่นเหล็กยาวตามแนวขอบเชิงกราน (Pelvic brim)"
+                  "indication": {
+                    "en": "• Displaced anterior column fracture (step-off ≥2mm)\n• High anterior column involving the weight-bearing roof arc\n• Associated quadrilateral plate medial displacement",
+                    "th": "• รอยหักเสาหน้าเคลื่อนตัว (Step-off ≥2 มม.)\n• รอยหักเสาหน้าส่วนบนที่ตัดผ่านโดมรับน้ำหนัก\n• ผนังกระดูก Quadrilateral plate ยุบเลื่อนตัวเข้าด้านใน"
+                  },
+                  "method": {
+                    "en": "• ORIF via Ilioinguinal (First and Second windows) or Modified Stoppa approach\n• Long 3.5mm pelvic reconstruction plate contoured along pelvic brim from pubic tubercle to inner iliac fossa\n• Supplemental lag screws for high iliac wing fracture components",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้า Ilioinguinal หรือ Modified Stoppa approach\n• ดามแผ่นเหล็กยาว 3.5mm Pelvic reconstruction plate ตามแนวขอบเชิงกราน (Pelvic brim) จาก Pubic tubercle ขึ้นไปถึงปีกสะโพกด้านใน\n• ใส่สกรู Lag screw ยึดปีกกระดูก Iliac wing เพิ่มเติม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 8 weeks, advance to full WB at 12 weeks",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 8 สัปดาห์ แล้วเริ่มลงน้ำหนักเต็มที่เมื่อครบ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Corona mortis anastomosis (anastomotic connection between external iliac and obturator vessels) must be identified and clipped/ligated over superior pubic ramus",
+                    "th": "• ต้องระวังและผูก/หนีบคลิปหลอดเลือด Corona mortis ที่พาดข้ามกระดูก Superior pubic ramus เสมอเพื่อป้องกันเลือดออกรุนแรง"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/anterior_column.png",
@@ -778,14 +1130,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่ปุ่มสะโพกด้านข้างขณะข้อสะโพกอยู่ในท่าปกติ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Divides both columns horizontally separating weight-bearing dome from lower ischiopubic segment; requires anatomic reduction of both anterior and posterior pillars.",
+                  "th": "รอยหักขวางตัดผ่านทั้งสองเสาแยกโดมรับน้ำหนักออกจากส่วนล่าง ต้องผ่าตัดจัดกระดูกและดามแผ่นเหล็กเพื่อยึดคืนความมั่นคงของทั้งเสาหน้าและเสาหลัง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated only if non-displaced (<2mm displacement) with congruent joint lines.",
-                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อน (<2 มม.) และผิวข้อเรียบเข้ากันดี"
+                  "indication": {
+                    "en": "• Truly non-displaced (<2mm displacement)\n• Infratectal or transtectal fracture with intact roof arc angle (>45° on all 3 Judet views)\n• Congruent joint in traction or weight-bearing simulation",
+                    "th": "• รอยหักไม่เคลื่อนตัว (<2 มม.)\n• มุมหลังคาเบ้าสะโพกสมบูรณ์ดี (Roof arc >45° ครบทั้ง 3 ท่า Judet views)\n• ผิวข้อต่อเรียบสนิท"
+                  },
+                  "method": {
+                    "en": "• Strict non-weight bearing ambulation with crutches\n• Serial weekly AP and Judet radiographs for the first 3 weeks to monitor against displacement",
+                    "th": "• ใช้ไม้ค้ำยันโดยห้ามลงน้ำหนักเด็ดขาด\n• ถ่ายภาพ X-ray ติดตามทุกสัปดาห์ในช่วง 3 สัปดาห์แรกเพื่อเฝ้าระวังการเคลื่อนตัว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict NWB x 6–8 weeks, progressive weight bearing from 8–12 weeks",
+                    "th": "• ห้ามลงน้ำหนัก 6–8 สัปดาห์แรก แล้วเริ่มลงน้ำหนักบางส่วนที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Rotational mismatch between superior and inferior halves causing early post-traumatic arthritis",
+                    "th": "• การหมิดเบี้ยวเหลื่อมกันระหว่างชิ้นบนและชิ้นล่างทำให้ข้อสะโพกเสื่อมเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with reconstruction plates along posterior column (Kocher-Langenbeck) or anterior approach.",
-                  "th": "แนะนำผ่าตัด (ORIF) ดามแผ่นเหล็กยึดเสากระดูกเพื่อดึงผิวข้อส่วนบนและล่างให้เข้าที่สมบูรณ์"
+                  "indication": {
+                    "en": "• Juxtatectal or transtectal transverse fracture with step-off ≥2mm\n• Femoral head subluxation or joint incongruity\n• Roof arc angle <45° on any plain Judet view",
+                    "th": "• รอยหักตัดผ่านโดมรับน้ำหนัก (Transtectal/Juxtatectal) ที่เคลื่อนตัว ≥2 มม.\n• ข้อสะโพกหลุดหลวม หรือมุมหลังคาเบ้าสะโพก <45°"
+                  },
+                  "method": {
+                    "en": "• ORIF via Kocher-Langenbeck (if posterior displacement dominates) or Stoppa/Ilioinguinal (if anterior displacement dominates)\n• Anatomic reduction with Jungbluth / pelvic reduction clamps\n• Posterior column 3.5mm reconstruction plate spanning ischium to ilium + anterior column lag screw (or dual plating)",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้า Kocher-Langenbeck (หากเสาหลังเคลื่อนเด่น) หรือ Stoppa (หากเสาหน้าเคลื่อนเด่น)\n• ดึงจัดกระดูกเข้าที่ด้วยแคลมป์ Jungbluth\n• ดามแผ่นเหล็ก 3.5mm Reconstruction plate ที่เสาหลังร่วมกับใส่สกรู Lag screw ยึดเสาหน้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 8–10 weeks, progressive WB upon radiographic union at 10–12 weeks",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 8–10 สัปดาห์ แล้วเริ่มลงน้ำหนักเต็มที่เมื่อกระดูกติดสนิท"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate reduction of one column while fixing the other (inter-column rotational step-off)\n• Sciatic nerve neuropraxia with posterior approach",
+                    "th": "• การจัดกระดูกเสาหนึ่งเข้าที่แต่อีกเสาหนึ่งยังบิดเหลื่อมอยู่ (Inter-column step-off)\n• การบาดเจ็บต่อเส้นประสาท Sciatic ในทางเข้าด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/transverse.png",
@@ -809,14 +1193,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกด้านข้างเข้าที่ปุ่มสะโพกขณะงอหรือเหยียดสะโพก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Transverse fracture combined with vertical stem dividing anterior and posterior ischiopubic segments; high complexity requiring multi-column stabilization.",
+                  "th": "รอยหักขวางร่วมกับแนวดิ่งแยกชิ้นกระดูกเสาหน้าและเสาหลังออกจากกันอย่างสิ้นเชิง การผ่าตัดต้องจัดยึดทีละเสาเพื่อดึงเบ้าสะโพกกลับมาประกบกัน"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended due to high rate of articular incongruity.",
-                  "th": "ไม่แนะนำเนื่องจากผิวข้อเคลื่อนและเกยกันมาก"
+                  "indication": {
+                    "en": "• Non-viable for non-operative care; reserved strictly for moribund patients unfit for anesthesia",
+                    "th": "• ไม่แนะนำอย่างยิ่ง สงวนไว้เฉพาะผู้ป่วยวิกฤตที่ไม่สามารถทนต่อการดมยาสลบได้"
+                  },
+                  "method": {
+                    "en": "• Prolonged bed rest with skeletal traction (high morbidity and joint failure)",
+                    "th": "• นอนพักบนเตียงและดึงถ่วงน้ำหนัก (เสี่ยงต่อข้อสะโพกพังทลายสูง)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wheelchair mobility x 10–12 weeks; very poor functional outcomes",
+                    "th": "• เคลื่อนไหวบนรถเข็น 10–12 สัปดาห์ ผลการรักษามักมีข้อสะโพกเสื่อมรุนแรง"
+                  },
+                  "pitfalls": {
+                    "en": "• High nonunion rate, persistent column dissociation, and rapid destructive osteoarthritis",
+                    "th": "• กระดูกไม่ติด เสากระดูกแยกจากกันถาวร และเกิดข้อสะโพกเสื่อมรวดเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via Kocher-Langenbeck approach or combined approaches to reduce and fix both the transverse component and vertical stem.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหลังหรือเปิดสองทาง เพื่อจัดยึดแนวกระดูกหักขวางและแนวดิ่งตัว T ให้เรียบสนิท"
+                  "indication": {
+                    "en": "• All displaced T-shaped acetabular fractures\n• Articular step-off ≥2mm or obturator ring displacement\n• Rotational column dissociation",
+                    "th": "• รอยหักรูปตัว T ที่มีการเคลื่อนตัวทุกราย\n• ผิวข้อต่อเหลื่อม ≥2 มม. หรือวง Obturator foramen เคลื่อนตัว\n• เสาหน้าและเสาหลังบิดหมุนแยกจากกัน"
+                  },
+                  "method": {
+                    "en": "• ORIF via Kocher-Langenbeck, Modified Stoppa, or combined dual anterior-posterior approaches\n• Sequential reduction: Anatomic reduction and fixation of transverse line first, followed by reduction and rigid fixation of vertical stem across obturator ring and columns",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้า Kocher-Langenbeck, Modified Stoppa หรือเปิดสองทางหน้า-หลัง\n• จัดกระดูกเป็นลำดับขั้นตอน: จัดยึดรอยหักขวางก่อน แล้วจึงจัดยึดรอยหักแนวดิ่งรูปตัว T ให้แนบสนิท"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing (NWB) x 10–12 weeks\n• In-bed active-assisted hip ROM exercises",
+                    "th": "• ห้ามลงน้ำหนักเด็ดขาด 10–12 สัปดาห์\n• ฝึกบริหารขยับข้อสะโพกบนเตียงเพื่อป้องกันข้อติด"
+                  },
+                  "pitfalls": {
+                    "en": "• Dual approach significantly increases Heterotopic Ossification (HO) risk (prescribe Indomethacin or single-dose radiation prophylaxis)",
+                    "th": "• การเปิดแผลสองทางเพิ่มความเสี่ยงต่อการเกิดกระดูกงอกผิดที่ (Heterotopic Ossification) ต้องให้ยา Indomethacin ป้องกัน"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/t_shaped.png",
@@ -840,14 +1256,46 @@ export const pelvisBone: BoneData = {
                 "th": "การกระแทกหน้ารถยนต์อย่างรุนแรงขณะนั่งงอและหุบขา"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete loss of posterior hip support with high sciatic nerve vulnerability; urgent closed reduction and dual-component rigid column + buttress plate fixation via Kocher-Langenbeck.",
+                  "th": "โครงสร้างรับแรงด้านหลังสูญเสียทั้งหมดและเสี่ยงต่อเส้นประสาท Sciatic ต้องดึงจัดข้อสะโพกฉุกเฉินและผ่าตัดยึดทั้งเสาหลังและผนังหลังผ่านทางเข้าด้านหลัง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Highly unstable hip joint.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ข้อสะโพกไม่มั่นคงอย่างยิ่ง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Extremely unstable hip with persistent dislocation risk)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ข้อสะโพกไม่มั่นคงอย่างยิ่งและจะหลุดซ้ำทันที)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Chronic posterior hip dislocation, rapid femoral head avascular necrosis (AVN), and permanent sciatic nerve palsy",
+                    "th": "• ข้อสะโพกหลุดค้างถาวร หัวกระดูกสะโพกขาดเลือดตาย (AVN) และเส้นประสาท Sciatic เป็นอัมพาต"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Urgent hip reduction. ORIF via Kocher-Langenbeck approach with posterior column reconstruction plate and spring plates/screws for posterior wall.",
-                  "th": "ดึงจัดข้อสะโพกหลุดฉุกเฉิน แล้วผ่าตัด ORIF ยึดเสาหลังด้วยแผ่นเหล็กดามร่วมกับสกรูยึดผนังหลัง"
+                  "indication": {
+                    "en": "• Combined posterior column vertical fracture and posterior wall rim fracture\n• Posterior hip dislocation / subluxation\n• Articular comminution and marginal impaction",
+                    "th": "• รอยหักเสาหลังร่วมกับผนังหลังแตกกะเทาะ\n• ข้อสะโพกหลุดไปด้านหลัง\n• ผิวกระดูกอ่อนแตกร่วนหรือยุบตัว (Marginal impaction)"
+                  },
+                  "method": {
+                    "en": "• Immediate closed hip reduction in ER under sedation\n• Definitive ORIF via Kocher-Langenbeck approach\n• Step 1: Anatomic reduction and buttressing of posterior column with 3.5mm reconstruction plate\n• Step 2: Elevation of impacted articular cartilage with bone grafting, followed by posterior wall mini-screws and secondary spring/buttress plate",
+                    "th": "• ดึงจัดข้อสะโพกที่หลุดเข้าที่ฉุกเฉินใน ER ทันที\n• ผ่าตัด ORIF ผ่านทางเข้าด้านหลัง Kocher-Langenbeck\n• ขั้นตอนที่ 1: จัดกระดูกเสาหลังให้เข้าที่แล้วดามด้วยแผ่นเหล็ก 3.5mm Reconstruction plate\n• ขั้นตอนที่ 2: งัดผิวกระดูกอ่อนที่ยุบตัวขึ้นมา ปลูกกระดูกเทียม แล้วยึดผนังหลังด้วย Spring plate / สกรู"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 8–10 weeks; strictly avoid hip flexion >90° and adduction\n• Advance to partial WB at 10 weeks, full WB at 12 weeks",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 8–10 สัปดาห์ หลีกเลี่ยงท่างอสะโพกเกิน 90 องศาและหุบขา\n• เริ่มลงน้ำหนักเพิ่มขึ้นที่ 10 สัปดาห์ และลงน้ำหนักเต็มที่เมื่อครบ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Sciatic nerve injury (monitor peroneal division throughout exposure; keep knee flexed)\n• Intra-articular screw penetration through wall fragments",
+                    "th": "• ระวังเส้นประสาท Sciatic ชอกช้ำ (ต้องงอเข่าเพื่อหย่อนเส้นประสาทตลอดเวลา)\n• ระวังสกรูทิ่มทะลุเข้าในช่องข้อสะโพก"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/post_column_wall.png",
@@ -871,14 +1319,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกด้านข้างพลังงานสูงเข้าที่ปุ่มสะโพก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "High-energy combination of 2-column transverse line and posterior wall detachment; commonest associated pattern requiring precise columnar and rim fixation.",
+                  "th": "รูปแบบซับซ้อนที่พบบ่อยที่สุด รอยหักขวางทั้งสองเสาร่วมกับผนังหลังแตกหลุด ต้องผ่าตัดจัดยึดรอยหักขวางให้มั่นคงก่อนแล้วดามผนังหลังด้วย Buttress plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Severe joint incongruity with persistent posterior subluxation)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ผิวข้อเหลื่อมรุนแรงและข้อสะโพกไม่มั่นคง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Rapid post-traumatic joint destruction and femoral head chondrolysis",
+                    "th": "• ข้อสะโพกเสื่อมพังทลายอย่างรวดเร็วและการตายของผิวกระดูกอ่อน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via Kocher-Langenbeck approach (or combined) to reduce the transverse component first, followed by rigid fixation of the posterior wall.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหลัง จัดยึดรอยหักขวางให้เข้าที่ก่อน แล้วยึดผนังหลังให้แน่นหนา"
+                  "indication": {
+                    "en": "• Transverse acetabular fracture with detached posterior wall\n• Articular step-off ≥2mm or posterior hip subluxation\n• Incarcerated intra-articular fragments",
+                    "th": "• รอยหักแนวขวางร่วมกับผนังหลังเบ้าสะโพกแตกหลุด\n• ผิวข้อต่อเหลื่อม ≥2 มม. หรือข้อสะโพกหลุดหลวม\n• มีเศษกระดูกหลุดค้างในช่องข้อ"
+                  },
+                  "method": {
+                    "en": "• ORIF via Kocher-Langenbeck approach (or combined dual approaches if anterior column displaced)\n• Anatomic reduction and stabilization of transverse column fracture with 3.5mm reconstruction plate\n• Elevation of marginal impaction, bone grafting, and rigid buttress plating of the posterior wall",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้าด้านหลัง Kocher-Langenbeck\n• จัดรอยหักขวางให้เข้าที่และดามแผ่นเหล็ก 3.5mm Reconstruction plate ที่เสาหลังก่อน\n• งัดผิวกระดูกอ่อนที่ยุบตัว ปลูกกระดูก และดามผนังหลังด้วยแผ่นเหล็ก Buttress plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing (NWB) x 8–10 weeks, progressive weight-bearing at 10–12 weeks upon union",
+                    "th": "• ห้ามลงน้ำหนัก 8–10 สัปดาห์ แล้วเริ่มฝึกเดินลงน้ำหนักเพิ่มขึ้นที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• High risk of heterotopic ossification (prescribe Indomethacin or single-dose radiation prophylaxis)\n• Sciatic nerve stretching during long retracting maneuvers",
+                    "th": "• เสี่ยงต่อการเกิดกระดูกงอกผิดที่ (Heterotopic ossification) สูงมาก ต้องให้ยาป้องกัน\n• ระวังเส้นประสาท Sciatic ถูกดึงรั้งนานเกินไป"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/transverse_post_wall.png",
@@ -902,14 +1382,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกเข้าด้านหน้าสะโพกขณะเหยียดและหมุนออก มักพบในผู้สูงอายุ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "High anterior column/wall fracture with low posterior hemitransverse line; frequent in elderly osteoporotic falls, fixed via anterior approach with quadrilateral plate buttressing.",
+                  "th": "รอยหักเสาหน้าส่วนบนร่วมกับรอยหักขวางเสาหลังส่วนล่าง พบบ่อยในผู้สูงอายุหกล้ม ผ่าตัดยึดแผ่นเหล็กทางด้านหน้าพร้อมดามผนัง Quadrilateral plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated only if non-displaced and weight-bearing dome intact in elderly.",
-                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อนและผิวรับน้ำหนักส่วนหลังคาดีในผู้สูงอายุ"
+                  "indication": {
+                    "en": "• Non-displaced fracture (<2mm displacement) with intact weight-bearing dome in low-demand elderly patients\n• Congruent hip joint without medial subluxation",
+                    "th": "• รอยหักไม่เคลื่อนตัว (<2 มม.) และโดมรับน้ำหนักสมบูรณ์ในผู้สูงอายุที่กิจกรรมน้อย\n• ข้อสะโพกเรียบสนิทและหัวกระดูกไม่เลื่อนหลุดเข้าด้านใน"
+                  },
+                  "method": {
+                    "en": "• Protected weight-bearing as tolerated (WBAT) with walker and close radiographic monitoring",
+                    "th": "• ฝึกเดินลงน้ำหนักเท่าที่ทนได้ด้วย Walker และติดตามภาพถ่ายรังสีอย่างใกล้ชิด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early out-of-bed mobilization; serial radiographs at 1, 3, and 6 weeks to rule out medial dome migration",
+                    "th": "• ลุกออกจากเตียงแต่เนิ่นๆ ตรวจ X-ray ติดตามที่ 1, 3 และ 6 สัปดาห์เพื่อเฝ้าระวังเบ้าสะโพกยุบเข้าใน"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary central/medial migration of femoral head through a comminuted quadrilateral plate",
+                    "th": "• ระวังหัวกระดูกสะโพกเลื่อนทะลุผ่านผนัง Quadrilateral plate เข้าในเชิงกราน (Central dislocation)"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via anterior approach (Ilioinguinal/Stoppa) with long pelvic brim plate and percutaneous/open posterior column lag screw.",
-                  "th": "แนะนำผ่าตัด (ORIF) ผ่านทางเข้าด้านหน้า ยึดแผ่นเหล็กตามแนวขอบเชิงกราน ร่วมกับยึดสกรูไปทางเสาหลัง"
+                  "indication": {
+                    "en": "• Displaced anterior column with quadrilateral plate medial subluxation (central hip subluxation)\n• Step-off ≥2mm in the weight-bearing dome\n• Incongruent joint in active patients",
+                    "th": "• รอยหักเสาหน้าเคลื่อนตัวร่วมกับผนัง Quadrilateral plate ยุบตัวเข้าใน\n• ผิวข้อส่วนโดมรับน้ำหนักเหลื่อม ≥2 มม.\n• ข้อสะโพกไม่เรียบสนิทในผู้ป่วยที่ยังเคลื่อนไหวทำงาน"
+                  },
+                  "method": {
+                    "en": "• ORIF via Modified Stoppa or Ilioinguinal approach\n• Pelvic brim 3.5mm reconstruction plate + Infrapectineal quadrilateral surface buttress plate\n• Retrograde posterior column lag screw placed from pelvic brim\n• Primary Total Hip Arthroplasty (THA) with porous trabecular metal cup in elderly osteoporotic comminution",
+                    "th": "• ผ่าตัด ORIF ผ่านทางเข้า Modified Stoppa หรือ Ilioinguinal\n• ดามแผ่นเหล็ก Pelvic brim 3.5mm ร่วมกับ Infrapectineal quadrilateral plate เพื่อดามผนังด้านใน\n• ใส่สกรู Lag screw ย้อนไปยึดเสาหลัง\n• พิจารณาผ่าตัดเปลี่ยนข้อสะโพกเทียม (Primary THA) ร่วมกับเบ้าโลหะพิเศษในผู้สูงอายุกระดูกพรุนแตกละเอียด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Touch-down weight bearing (TDWB) x 6–8 weeks (or immediate WBAT if primary THA performed)\n• Progressive weight bearing to full WB at 10–12 weeks",
+                    "th": "• แตะเท้าลงน้ำหนักบางส่วน 6–8 สัปดาห์ (หรือเริ่มลงน้ำหนักได้ทันทีหากทำผ่าตัดเปลี่ยนข้อสะโพกเทียม THA)\n• เริ่มลงน้ำหนักเต็มที่เมื่อครบ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Corona mortis vascular hemorrhage during Stoppa approach (must ligate before subperiosteal dissection)\n• Medial protrusio if quadrilateral plate is under-buttressed",
+                    "th": "• เสี่ยงต่อหลอดเลือด Corona mortis ฉีกขาดเลือดออกมาก ต้องตรวจหาและผูกเส้นเลือดนี้ก่อนเสมอ\n• ระวังเบ้าสะโพกยุบเข้าด้านในหากไม่ดามผนัง Quadrilateral plate ให้แข็งแรงพอ"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/ant_post_hemitransverse.png",
@@ -933,14 +1445,46 @@ export const pelvisBone: BoneData = {
                 "th": "แรงกระแทกด้านข้างพลังงานสูงรุนแรงสุดขีด หรืออุบัติเหตุชนความเร็วสูง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete detachment of entire articular surface from ilium ('Spur Sign'); floating acetabulum requires multi-column reconstruction or secondary congruence assessment.",
+                  "th": "ผิวข้อเบ้าสะโพกทั้งหมดหลุดแยกเป็นอิสระจากเชิงกราน (พบ 'Spur Sign') ต้องผ่าตัดจัดยึดคืนรูปเสากระดูกหลายแนว หรือประเมินภาวะข้อสมานเข้ากันได้ทุติยภูมิ (Secondary Congruence)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Results in severe joint incongruity and crippling arthritis.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ เสี่ยงข้อเสื่อมรุนแรงขั้นพิการ"
+                  "indication": {
+                    "en": "• 'Secondary Congruence' on 3 Judet views where femoral head and comminuted roof remain symmetrically centered in elderly low-demand patients\n• Patient medically unfit for major pelvic surgery",
+                    "th": "• พบภาวะ 'Secondary Congruence' ใน Judet views 3 ท่า โดยหัวกระดูกและเบ้าที่แตกร่วนยังโอบกระชับสมมาตรกันพอดีในผู้สูงอายุที่กิจกรรมน้อย\n• ผู้ป่วยที่มีโรคร่วมรุนแรงจนไม่สามารถทนการผ่าตัดใหญ่ได้"
+                  },
+                  "method": {
+                    "en": "• Bed rest with skeletal traction for 2–3 weeks, followed by gentle protected mobilization",
+                    "th": "• นอนพักบนเตียงและดึงถ่วงน้ำหนัก 2–3 สัปดาห์แรก แล้วเริ่มฝึกขยับตัวช้าๆ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wheelchair mobility x 6–8 weeks, progressive weight-bearing as tolerated at 8–12 weeks",
+                    "th": "• เคลื่อนไหวบนรถเข็น 6–8 สัปดาห์ แล้วจึงเริ่มฝึกเดินลงน้ำหนักเพิ่มขึ้นที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Rapid painful joint degeneration if secondary congruence is false or lost during weight-bearing",
+                    "th": "• เกิดข้อสะโพกเสื่อมปวดรุนแรงหากข้อไม่ได้สมานเข้ากันได้จริง (False secondary congruence)"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY HIGH-COMPLEXITY SURGERY. ORIF via anterior approach (Ilioinguinal/Stoppa) or combined dual approaches with long reconstruction plates to re-anchor floating acetabular segments to iliac wing.",
-                  "th": "ผ่าตัดซับซ้อนสูง (Mandatory ORIF) ผ่านทางเข้าด้านหน้า หรือเปิดสองทางหน้า-หลัง ดามแผ่นเหล็กยาวเพื่อยึดเบ้าสะโพกที่ลอยอยู่กลับเข้ากับปีกสะโพก"
+                  "indication": {
+                    "en": "• All active patients with Both-Column fracture (Floating Acetabulum)\n• Displaced columns (step-off ≥2mm) without secondary congruence\n• Pathognomonic 'Spur Sign' on iliac oblique view",
+                    "th": "• ผู้ป่วยที่มีกิจกรรมทั่วไปทุกรายที่มีรอยหัก Both-Column (Floating Acetabulum)\n• เสากระดูกเคลื่อนตัว (Step-off ≥2 มม.) และไม่มี Secondary congruence\n• พบลักษณะ 'Spur Sign' ในท่า Iliac Oblique view"
+                  },
+                  "method": {
+                    "en": "• High-complexity ORIF via Anterior approach (Ilioinguinal or Modified Stoppa) or Combined dual approaches\n• Stepwise reconstruction: (1) Iliac wing reduction, (2) Anterior column reconstruction to ilium, (3) Posterior column reduction to anterior column\n• Multiple 3.5mm pelvic reconstruction plates spanning iliac crest, pelvic brim, and quadrilateral plate",
+                    "th": "• ผ่าตัด ORIF ความซับซ้อนสูงผ่านทางเข้าด้านหน้า (Ilioinguinal หรือ Modified Stoppa) หรือเปิดสองทางหน้า-หลัง\n• ขั้นตอนการจัดกระดูก: (1) จัดปีกสะโพก Iliac wing ให้เข้าที่, (2) ยึดเสาหน้าเข้ากับปีกสะโพก, (3) จัดเสาหลังเข้าประกบกับเสาหน้า\n• ดามด้วยแผ่นเหล็ก 3.5mm Reconstruction plates หลายแผ่นตามแนว Iliac crest, Pelvic brim และ Quadrilateral plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict non-weight bearing on operative side x 10–12 weeks\n• Supervised physical therapy for gentle passive hip ROM and gait retraining",
+                    "th": "• ห้ามลงน้ำหนักบนขาข้างที่ผ่าตัดเด็ดขาด 10–12 สัปดาห์\n• ฝึกกายภาพบำบัดขยับข้อสะโพกและฝึกเดินด้วยอุปกรณ์ช่วยเดิน"
+                  },
+                  "pitfalls": {
+                    "en": "• High intraoperative blood loss during deep pelvic exposure\n• Fixation failure if screws fail to gain purchase into dense sciatic buttress bone",
+                    "th": "• เสี่ยงต่อการเสียเลือดมากระหว่างผ่าตัดลึกในเชิงกราน\n• การยึดตรึงหลุดล้มเหลวหากสกรูไม่สามารถยึดเข้ากับกระดูกเนื้อแน่นบริเวณ Sciatic buttress"
+                  }
                 }
               },
               "illustrationId": "/images/acetabulum/both_columns.png",

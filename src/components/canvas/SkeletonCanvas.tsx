@@ -160,10 +160,10 @@ export function SkeletonCanvas({
         <button
           onClick={() => setShowZoomSlider((prev) => !prev)}
           style={{
-            background: showZoomSlider ? "#00CED1" : (darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.9)"),
-            borderColor: showZoomSlider ? "#00CED1" : (darkMode ? "rgba(0,206,209,0.35)" : "#CBD5E1"),
-            color: showZoomSlider ? "#0F172A" : "#00CED1",
-            boxShadow: showZoomSlider ? "0 0 14px rgba(0,206,209,0.6)" : "0 4px 12px rgba(0,0,0,0.15)",
+            background: showZoomSlider ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(22,27,39,0.9)" : "rgba(255,255,255,0.95)"),
+            borderColor: showZoomSlider ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(0,206,209,0.35)" : "rgba(15,118,110,0.35)"),
+            color: showZoomSlider ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#00CED1" : "#0F766E"),
+            boxShadow: showZoomSlider ? (darkMode ? "0 0 14px rgba(0,206,209,0.6)" : "0 0 14px rgba(15,118,110,0.35)") : "0 4px 12px rgba(0,0,0,0.12)",
           }}
           className="w-9 h-9 rounded-full border backdrop-blur-md flex items-center justify-center transition-all active:scale-90"
           title="Zoom Slider"

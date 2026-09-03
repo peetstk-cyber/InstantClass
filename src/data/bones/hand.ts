@@ -215,13 +215,46 @@ export const handBone: BoneData = {
                 "th": "เกิดจากแรงกระแทกโดยตรงที่ฝั่งนิ้วหัวแม่มือ หรือล้มยันมือ (FOOSH)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal third / scaphoid tuberosity fracture with excellent direct retrograde blood supply; minimal nonunion/AVN risk (<1%); non-operative short arm thumb spica cast for 4–6 weeks achieves ~100% union.",
+                  "th": "กระดูกสะแคฟอยด์หักส่วนปลายหรือปุ่มกระดูก มีหลอดเลือดมาเลี้ยงดีเยี่ยม ความเสี่ยงต่อกระดูกไม่ติดหรือขาดเลือดต่ำมาก (<1%) รักษาแบบไม่ผ่าตัดด้วยเฝือก Thumb Spica Cast สั้นนาน 4–6 สัปดาห์ กระดูกติดเกือบ 100%"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Short arm thumb spica cast or splint for 4-6 weeks. Highly successful with near-100% healing rate.",
-                  "th": "ใส่เฝือก Thumb Spica สั้นหรือเฝือกอ่อนประมาณ 4-6 สัปดาห์ อัตราการติดเกือบ 100%"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced distal pole / tuberosity fracture (<1 mm displacement)\n• Intact radiocarpal and midcarpal alignment",
+                    "th": "• กระดูกสะแคฟอยด์หักส่วนปลายหรือปุ่มกระดูกชนิดไม่เคลื่อน (<1 มม.)\n• การเรียงตัวของข้อมือและกระดูกมือปกติสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Short arm thumb spica cast or rigid thermoplastic splint including thumb IP/MCP joints in functional position for 4–6 weeks",
+                    "th": "• ใส่เฝือก Thumb Spica สั้นหรือเฝือกเทอร์โมพลาสติกครอบข้อมือและนิ้วหัวแม่มือ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active thumb and wrist ROM exercises immediately upon cast removal at 4–6 weeks; grip strengthening at 6–8 weeks",
+                    "th": "• เริ่มฝึกขยับข้อมือและนิ้วโป้งทันทีหลังถอดเฝือกที่ 4–6 สัปดาห์ และฝึกเพิ่มแรงกำมือที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary operative intervention for stable distal fractures with inherent high vascularity",
+                    "th": "• ผ่าตัดโดยไม่จำเป็นในรอยหักส่วนปลายที่มั่นคงและมีเลือดมาเลี้ยงดีอยู่แล้ว"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely indicated; reserved for high displacement, unstable configuration, or elite athletes requiring early return to play.",
-                  "th": "แทบไม่มีความจำเป็นในการผ่าตัด พิจารณาเฉพาะกรณีเคลื่อนตัวมากๆ หรือในนักกีฬาอาชีพเพื่อเร่งการใช้งานข้อมือ"
+                  "indication": {
+                    "en": "• Grossly displaced distal articular fragment (>1.5 mm step-off)\n• High-demand professional athlete requiring immediate return to competition",
+                    "th": "• ชิ้นผิวข้อส่วนปลายเคลื่อนตัวมาก (>1.5 มม.)\n• นักกีฬาอาชีพที่ต้องการเร่งฟื้นฟูกลับไปแข่งขันทันที"
+                  },
+                  "method": {
+                    "en": "• Percutaneous or mini-open headless compression screw fixation (Herbert / Accutrak screw) inserted retrograde (distal-to-proximal)",
+                    "th": "• ผ่าตัดขันสกรูไร้หัว (Headless Compression Screw เช่น Herbert/Acutrak) ยึดย้อนศรจากปลายขึ้นมาต้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early gentle active wrist ROM at 1–2 weeks post-op",
+                    "th": "• เริ่มขยับข้อมือเบาๆ หลังผ่าตัด 1–2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prominent screw head impinging on trapezium articular surface",
+                    "th": "• หัวสกรูโผล่พ้นผิวข้อไปชนเบียดกระดูก Trapezium"
+                  }
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_distal.png",
@@ -245,13 +278,46 @@ export const handBone: BoneData = {
                 "th": "ล้มยันมือ (FOOSH) ในท่าข้อมือแอ่นสุดและปัดเยื้องไปทางด้านนิ้วโป้ง (Radial deviation)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Most common scaphoid fracture (65%–70%); retrograde blood supply creates 10%–15% nonunion risk; non-displaced fractures (<1 mm) can be treated with 8–12 weeks cast or percutaneous screw fixation; displaced waist fractures (≥1 mm gap, step-off, or humpback deformity) mandate ORIF with headless compression screw.",
+                  "th": "รอยหักเอวสะแคฟอยด์พบบ่อยสุด (65%–70%) เลือดเลี้ยงวิ่งย้อนศรทำให้มีความเสี่ยงกระดูกไม่ติด 10%–15% หากไม่เคลื่อน (<1 มม.) ใส่เฝือก Thumb Spica 8–12 สัปดาห์หรือผ่าตัดแทงสกรูเพื่อขยับเร็ว; หากเคลื่อนตัว ≥1 มม., ผิวข้อเหลื่อม หรือกระดูกโก่งงอ (Humpback deformity) ต้องผ่าตัด ORIF ด้วยสกรูไร้หัว (Headless Compression Screw)"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Short arm thumb spica cast for 8-12 weeks for non-displaced fractures (<1mm displacement). Close radiographic follow-up is mandatory.",
-                  "th": "ใส่เฝือก Thumb Spica สั้นเป็นเวลา 8-12 สัปดาห์สำหรับรอยหักที่ไม่เคลื่อน (<1 มม.) ต้องนัดเอกซเรย์ติดตามอย่างเข้มงวด"
+                  "indication": {
+                    "en": "• Acute, strictly non-displaced scaphoid waist fracture (<1 mm translation, no scapholunate angle change, lateral intrascaphoid angle <35°)\n• Patient compliant with prolonged casting",
+                    "th": "• กระดูกเอวสะแคฟอยด์หักเฉียบพลันชนิดไม่เคลื่อนตัวเด็ดขาด (<1 มม., ไม่มีมุมโก่ง Humpback, Intrascaphoid angle <35°)\n• ผู้ป่วยให้ความร่วมมือในการใส่เฝือกนาน"
+                  },
+                  "method": {
+                    "en": "• Short-arm thumb spica cast (or long-arm thumb spica for first 4 weeks then short-arm) for 8–12 weeks until CT-confirmed bony bridging",
+                    "th": "• ใส่เฝือก Thumb Spica สั้น (หรือใส่เฝือกยาวเหนือศอก 4 สัปดาห์แรกแล้วเปลี่ยนเป็นเฝือกสั้น) นาน 8–12 สัปดาห์จนกระทั่ง CT ยืนยันกระดูกเชื่อมติด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Dedicated physical therapy for wrist flexion-extension and pronation-supination after cast removal; avoid contact sports for 3 months",
+                    "th": "• กายภาพบำบัดฟื้นฟูการกระดก/งอข้อมือและคว่ำ/หงายมือหลังถอดเฝือก หลีกเลี่ยงกีฬาปะทะ 3 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to identify occult displacement or humpback deformity (pre-treatment CT scan recommended)\n• Chronic scaphoid nonunion leading to SNAC (Scaphoid Nonunion Advanced Collapse) wrist",
+                    "th": "• ตรวจไม่พบการเคลื่อนตัวซ่อนเร้นหรือมุมโก่งงอ Humpback (แนะนำทำ CT scan ก่อนตัดสินใจ)\n• ปล่อยให้กระดูกไม่ติดเรื้อรังจนเกิดภาวะข้อข้อมือทรุดพัง (SNAC wrist)"
+                  }
                 },
                 "operative": {
-                  "en": "Percutaneous or open reduction and internal fixation (ORIF) with a headless compression screw (e.g., Herbert screw) for displacement >1mm, unstable pattern, or active patients seeking early mobility.",
-                  "th": "ผ่าตัดจัดกระดูกและยึดตรึงภายใน (ORIF) ด้วยสกรูไร้หัว (Herbert screw) ในรายที่กระดูกเคลื่อน >1 มม. หรือต้องการขยับข้อมือเร็ว"
+                  "indication": {
+                    "en": "• Displaced scaphoid waist fracture (displacement ≥ 1 mm, step-off ≥ 1 mm)\n• Kyphotic scaphoid deformity (Humpback deformity, lateral intrascaphoid angle > 35°)\n• Instability (Herbert Type B2), associated perilunate injury, or active patient/athlete requesting early mobilization",
+                    "th": "• รอยหักเอวสะแคฟอยด์เคลื่อนตัว (เคลื่อน ≥ 1 มม. หรือผิวข้อเหลื่อม ≥ 1 มม.)\n• กระดูกยุบโก่งงอ (Humpback deformity, มุม Intrascaphoid > 35°)\n• รอยหักไม่มั่นคง (Herbert B2) หรือผู้ป่วย/นักกีฬาที่ต้องการขยับข้อมือเร็ว"
+                  },
+                  "method": {
+                    "en": "• Volar percutaneous or open approach (volar Russe or dorsal percutaneous): Rigid fixation with central coaxial Headless Compression Screw (e.g., Herbert, Acutrak) along central long axis of scaphoid ± Structural corticocancellous bone graft if humpback deformity present",
+                    "th": "• ผ่าตัดเปิดเข้าทางด้านหน้า (Volar Russe) หรือแทงสกรูผ่านผิวหนัง: ขันสกรูไร้หัว (Headless Compression Screw) ตรงกึ่งกลางแกนยาวของสะแคฟอยด์ ± ปลูกกระดูกชิ้นโครงสร้าง (Structural Bone Graft) หากมีมุมโก่งงอ Humpback"
+                  },
+                  "rehabilitation": {
+                    "en": "• Removable wrist splint for comfort; active wrist ROM starting at 2 weeks post-op; progressive strengthening at 6–8 weeks",
+                    "th": "• ใส่เฝือกอ่อนประคองชั่วคราว; เริ่มฝึกขยับข้อมือที่ 2 สัปดาห์หลังผ่าตัด; ฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Off-center screw placement reducing biomechanical stiffness\n• Screw protrusion into radiocarpal or STT joint",
+                    "th": "• ขันสกรูเฉออกนอกแกนกึ่งกลางทำให้ความแข็งแรงลดลง\n• ปลายสกรูโผล่ทะลุเข้าข้อ Radiocarpal หรือข้อ STT"
+                  }
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_waist.png",
@@ -275,13 +341,46 @@ export const handBone: BoneData = {
                 "th": "แรงกดกระแทกตามแนวแกนพลังงานสูงตรงเข้าข้อข้อมือ มักเกิดในอุบัติเหตุยานยนต์รุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Retrograde intraosseous arterial supply is severed completely by the fracture line; high avascular necrosis (AVN >30%–50%) and nonunion rate (>50% with casting); primary surgical fixation (ORIF) with headless compression screw via dorsal approach is mandatory.",
+                  "th": "หลอดเลือดหล่อเลี้ยงที่วิ่งย้อนศรถูกรอยหักตัดขาดสมบูรณ์ ทำให้เสี่ยงหัวกระดูกตายขาดเลือด (AVN >30%–50%) และอัตรากระดูกไม่ติดสูงมาก (>50% หากใส่เฝือก) จำเป็นต้องผ่าตัดยึดตรึง (Primary ORIF) ขันสกรูไร้หัวเข้าทางด้านหลังมือเสมอ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended. Very high rate of nonunion with cast treatment alone (requires long arm cast for >6 weeks, then short arm cast, with poor success).",
-                  "th": "ไม่แนะนำให้ใช้ เนื่องจากอัตรากระดูกไม่ติดสูงมากหากเข้าเฝือกอย่างเดียว (หากทำต้องใส่เฝือกยาวเหนือศอก >6 สัปดาห์และต่อด้วยเฝือกสั้น แต่อัตราติดต่ำมาก)"
+                  "indication": {
+                    "en": "• Strictly reserved for non-surgical candidates or severely medically compromised patients (High failure/nonunion rate >50%)",
+                    "th": "• สงวนไว้เฉพาะผู้ป่วยที่ไม่สามารถรับการผ่าตัดได้หรือมีโรคร่วมรุนแรง (อัตรากระดูกไม่ติดสูงมาก >50%)"
+                  },
+                  "method": {
+                    "en": "• Long-arm thumb spica cast for 6 weeks followed by short-arm thumb spica for 6–12 weeks (total 12–24 weeks)",
+                    "th": "• ใส่เฝือก Thumb Spica ยาวเหนือศอก 6 สัปดาห์ ตามด้วยเฝือกสั้นอีก 6–12 สัปดาห์ (รวม 12–24 สัปดาห์)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Prolonged wrist stiffness rehabilitation",
+                    "th": "• กายภาพฟื้นฟูข้อมือติดแข็งระยะยาว"
+                  },
+                  "pitfalls": {
+                    "en": "• Nonunion, proximal pole fragmentation, and rapid SNAC wrist arthritis",
+                    "th": "• กระดูกไม่ติด หัวกระดูกสลายแตกป่น และข้อมือเสื่อมทรุดตัว (SNAC wrist) อย่างรวดเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "Primary surgical fixation (ORIF) with a headless compression screw. Bone grafting (vascularized or non-vascularized) is frequently required to promote healing.",
-                  "th": "แนะนำให้ผ่าตัดยึดตรึงเป็นอันดับแรก (Primary ORIF) ด้วยสกรูชนิดจมร่วมกับการปลูกกระดูก (Bone graft) เพื่อเพิ่มโอกาสเชื่อมติด"
+                  "indication": {
+                    "en": "• All acute proximal pole scaphoid fractures (displaced or non-displaced)",
+                    "th": "• กระดูกสะแคฟอยด์หักส่วนต้น (Proximal Pole) ทุกรายทั้งชนิดเคลื่อนและไม่เคลื่อนตัว"
+                  },
+                  "method": {
+                    "en": "• Dorsal open/percutaneous approach: Anatomical reduction + Retrograde/antegrade central placement of Headless Compression Screw (mini/micro diameter) entirely countersunk into articular cartilage ± Vascularized distal radius bone graft (e.g., 1,2-intercompartmental supraretinacular artery - 1,2 ICSRA graft) if avascular necrosis suspected",
+                    "th": "• ผ่าตัดเปิดเข้าทางด้านหลังมือ (Dorsal approach): จัดกระดูกเข้าที่ + ขันสกรูไร้หัวขนาดจิ๋ว (Mini/Micro Headless Screw) ฝังมิดใต้ผิวกระดูกอ่อน ± ปลูกถ่ายกระดูกติดก้านหลอดเลือด (Vascularized Bone Graft เช่น 1,2 ICSRA) หากสงสัยภาวะกระดูกขาดเลือด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Thumb spica splint for 2–4 weeks; early gentle active-assisted motion under guidance; avoid heavy axial loads until CT confirms union (12–16 weeks)",
+                    "th": "• ใส่เฝือกอ่อน Thumb spica 2–4 สัปดาห์; เริ่มขยับข้อมือเบาๆ ตามคำแนะนำ; หลีกเลี่ยงแรงกดหนักจนกว่า CT จะยืนยันกระดูกติด (12–16 สัปดาห์)"
+                  },
+                  "pitfalls": {
+                    "en": "• Proximal pole fragmentation during screw insertion (requires micro headless screw and delicate insertion)\n• Failure of screw threads to gain purchase in small proximal fragment",
+                    "th": "• ชิ้นกระดูกส่วนต้นแตกกระจายขณะขันสกรู (ต้องใช้สกรูจิ๋วและขันด้วยความระมัดระวัง)\n• เกลียวสกรูเกาะชิ้นกระดูกขนาดเล็กไม่อยู่"
+                  }
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_proximal.png",
@@ -486,14 +585,46 @@ export const handBone: BoneData = {
                 "th": "การล้มเอาข้อมือยันพื้นขณะข้อมือแอ่นสุด คว่ำมือ และปัดเบี่ยงไปทางนิ้วก้อย (Ulnar deviation)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete disruption of Scapholunate Interosseous Ligament (SLIL); widened SL gap >3 mm ('Terry Thomas sign') and DISI deformity (SL angle >60°); urgent anatomical reduction + primary SL ligament repair/capsulodesis + K-wire stabilization prevents progressive SLAC wrist.",
+                  "th": "เอ็น Scapholunate Interosseous Ligament (SLIL) ฉีกขาดสมบูรณ์ ทำให้ช่อง SL ถ่างกว้าง >3 มม. ('Terry Thomas sign') และเกิดมุม DISI (>60°) จำเป็นต้องผ่าตัดจัดกระดูกเข้าที่ + เย็บซ่อมเอ็น SL / ดึงพาสตรึงแคปซูล (Capsulodesis) + ปัก K-wire ยึดชั่วคราว เพื่อป้องกันข้อมือทรุดเสื่อม (SLAC Wrist)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY for partial/dynamic instability without fixed deformity. Short arm thumb spica cast for 6-8 weeks.",
-                  "th": "พิจารณาเฉพาะรอยขาดบางส่วนที่ยังไม่มีกระดูกเกยผิดรูปถาวร ใส่เฝือก Thumb spica สั้นนาน 6-8 สัปดาห์"
+                  "indication": {
+                    "en": "• Strictly partial or pre-dynamic SLIL sprains with normal static radiographs and normal SL gap (<2 mm) on stress views",
+                    "th": "• รอยเอ็นเคล็ดหรือฉีกขาดเพียงบางส่วนที่ภาพเอกซเรย์ปกติ และช่อง SL ไม่ถ่าง (<2 มม.) ในท่ากำหมัดกดแรง"
+                  },
+                  "method": {
+                    "en": "• Short arm thumb spica cast for 6 weeks",
+                    "th": "• ใส่เฝือก Thumb Spica สั้นนาน 6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle active wrist ROM at 6 weeks",
+                    "th": "• เริ่มฝึกขยับข้อมือเบาๆ หลังถอดเฝือกที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Progression to chronic dynamic/static dissociation with untreated complete tears",
+                    "th": "• การละเลยรอยขาดสมบูรณ์ทำให้ข้อข้อมือหลวมหลุดถาวรและข้อเสื่อมรวดเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR ACUTE COMPLETE TEAR. Open/arthroscopic Scapholunate ligament repair, capsulodesis, or RASL/suture button technique + K-wire stabilization for 6-8 weeks.",
-                  "th": "แนะนำผ่าตัด (ORIF/Arthroscopy) ซ่อมแซมเอ็น Scapholunate ร่วมกับเย็บพาสตรึงแคปซูล (Capsulodesis) หรือใส่เชือกยึด (Suture button) และปัก K-wire นาน 6-8 สัปดาห์"
+                  "indication": {
+                    "en": "• Acute complete Scapholunate Ligament tear (Static SL gap > 3 mm, Terry Thomas sign, or DISI deformity on lateral view)",
+                    "th": "• เอ็น Scapholunate ฉีกขาดสมบูรณ์เฉียบพลัน (ช่อง SL อ้า > 3 มม., Terry Thomas sign หรือมุม DISI > 60°)"
+                  },
+                  "method": {
+                    "en": "• Dorsal open wrist approach: Direct anatomical repair of dorsal SLIL using micro-suture anchors (1.3–2.0 mm) + Dorsal capsulodesis (Blatt or Berger modification) or Suture-tape internal brace augmentation + Temporary 1.6 mm K-wire transfixation (Scaphocapitate and Scapholunate wires) for 8–10 weeks",
+                    "th": "• ผ่าตัดเปิดเข้าทางด้านหลังข้อมือ: เย็บซ่อมเอ็น SLIL ด้านหลังด้วย Micro-Suture Anchors (1.3–2.0 มม.) + ทำ Dorsal Capsulodesis (Blatt/Berger) หรือเสริมด้วยแถบ FiberTape + ปักลวด K-wire 1.6 มม. ยึดตรึงชั่วคราว (Scaphocapitate & Scapholunate wires) นาน 8–10 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Cast immobilization for 8 weeks until K-wire removal; progressive active ROM and dart-thrower motion rehabilitation thereafter",
+                    "th": "• ใส่เฝือก 8 สัปดาห์จนกระทั่งถอดลวด K-wire; หลังจากนั้นฝึกกายภาพท่าขยับ Dart-thrower motion และฟื้นฟูการเคลื่อนไหว"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate reduction leaving residual SL gap or rotatory scaphoid subluxation\n• Premature K-wire removal before ligamentous collagen maturation",
+                    "th": "• จัดกระดูกไม่สนิททำให้เหลือก้นช่อง SL อ้าหรือกระดูกสะแคฟอยด์บิดหมุน\n• ถอดลวด K-wire เร็วเกินไปก่อนที่เอ็นจะเชื่อมสมานตัวเหนียวแน่น"
+                  }
                 }
               },
               "illustrationId": "/images/mayfield/mayfield_1.png",
@@ -517,14 +648,46 @@ export const handBone: BoneData = {
                 "th": "อุบัติเหตุรถจักรยานยนต์ความเร็วสูง หรือตกจากที่สูงโดยข้อมือรับแรงอัดในท่าแอ่นสุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Progressive disruption extending through Capitolunate joint (Space of Poirier); Capitate dislocates dorsally around Lunate; urgent closed reduction under sedation in ER followed by definitive dual-approach ORIF + ligamentous repair + pinning.",
+                  "th": "การฉีกขาดลุกลามผ่านข้อ Capitolunate (Space of Poirier) ทำให้กระดูก Capitate หลุดไปด้านหลัง ต้องดึงจัดข้อเข้าที่ฉุกเฉินในห้องฉุกเฉิน (Tavernier maneuver) แล้วตามด้วยการผ่าตัด ORIF สองทาง (Dual-approach) ซ่อมเอ็นและปัก K-wire"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Closed reduction alone has high failure rate with recurrent displacement.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ การดึงเข้าที่อย่างเดียวมีอัตราหลุดซ้ำสูงมาก"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED as definitive treatment (Recurrent dislocation and severe arthritis rate ~100%)",
+                    "th": "• ห้ามใช้วิธีนี้ในการรักษาขั้นสุดท้าย (อัตราข้อหลุดซ้ำและข้อเสื่อมรุนแรงเกือบ 100%)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Persistent subluxation, median nerve compression, and severe midcarpal arthrosis",
+                    "th": "• ข้อหลุดค้าง เส้นประสาท Median ถูกกดทับ และข้อต่อข้อมือเสื่อมพังอย่างรุนแรง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Urgent closed reduction in ER under sedation, followed by prompt ORIF: dorsal/volar dual approach, SL & CL ligament repair, and K-wire pinning.",
-                  "th": "ดึงจัดข้อเข้าที่ฉุกเฉินใน ER แล้วผ่าตัด ORIF เปิดสองทางหน้า-หลัง เพื่อซ่อมแซมเอ็นและปักเข็ม K-wire ยึดกระดูกข้อมือ"
+                  "indication": {
+                    "en": "• All Mayfield Stage II perilunate dislocations",
+                    "th": "• ภาวะ Perilunate Dislocation (Mayfield Stage II) ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Immediate closed reduction in ER (Tavernier maneuver): Longitudinal finger-trap traction + wrist extension followed by volar pressure on lunate with wrist flexion\n• Definitive Surgery (ORIF): Combined dorsal and volar approaches, anatomical reduction of capitolunate and scapholunate joints, primary suture anchor repair of SLIL and radiocarpal ligaments, and multi-planar K-wire stabilization (SC, SL, and LC pins)",
+                    "th": "• ดึงจัดข้อเข้าที่ฉุกเฉินใน ER (Tavernier maneuver): ดึงนิ้วตามแนวแกน + แอ่นข้อมือแล้วกดดันกระดูก Lunate จากด้านหน้าพร้อมงอข้อมือลง\n• ผ่าตัดเปิดจัดกระดูก (ORIF Dual Approach): เปิดแผลด้านหน้าและด้านหลังข้อมือ จัดเรียงข้อ Capitolunate และ Scapholunate ให้ตรง + เย็บซ่อมเอ็น SLIL และเอ็น Radiocarpal ด้วย Suture Anchors + ปักลวด K-wire ยึดข้อมือหลายจุด (SC, SL, LC pins)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Splint immobilization for 8–10 weeks; K-wire removal at 10 weeks; aggressive occupational therapy for wrist mobility",
+                    "th": "• ใส่เฝือกดาม 8–10 สัปดาห์; ถอดลวด K-wire ที่ 10 สัปดาห์; ทำกายภาพบำบัดฟื้นฟูการขยับข้อมืออย่างจริงจัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Missed diagnosis on initial ER radiographs (always check Gilula's arcs)\n• Neglecting median nerve decompression if acute carpal tunnel symptoms exist",
+                    "th": "• วินิจฉัยพลาดในห้องฉุกเฉิน (ต้องตรวจเช็คเส้น Gilula's arcs เสมอ)\n• ละเลยการผ่าตัดลดแรงกดเส้นประสาท Median หากผู้ป่วยมีอาการชาฝ่ามือเฉียบพลัน"
+                  }
                 }
               },
               "illustrationId": "/images/mayfield/mayfield_2.png",
@@ -548,14 +711,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกมหาศาลบังคับให้ข้อมือแอ่นสุด ปัดไปทางนิ้วก้อย และหงายข้อต่อข้อมืออย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete disruption of SLIL, capitolunate, and Lunotriquetral (LT) ligaments; entire carpus dislocates dorsally around the isolated Lunate; mandatory prompt closed reduction and staged/immediate dual-approach open repair of all perilunate ligaments with K-wire transfixation.",
+                  "th": "เอ็นรอบกระดูก Lunate ฉีกขาดเกือบทั้งหมด (SLIL, Capitolunate, Lunotriquetral) กระดูกมือทั้งหมดหลุดไปด้านหลังรอบ Lunate ต้องดึงจัดข้อเข้าที่ฉุกเฉินและผ่าตัดเปิดสองทาง ORIF ซ่อมเอ็น SLIL และ LT ร่วมกับปัก K-wire ขึงยึดรอบกระดูกข้อมือ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe chronic carpal collapse, intractable pain, and complete loss of hand function",
+                    "th": "• ข้อมือทรุดพังถาวร ปวดเรื้อรังรุนแรง และสูญเสียการใช้งานของมือ"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY OPERATIVE FIXATION. Urgent reduction + ORIF with dual dorsal/volar access, repair of SL, CL, and LT ligaments, and multi-pin K-wire fixation.",
-                  "th": "ผ่าตัดฉุกเฉิน (Mandatory ORIF) เปิดซ่อมแซมเอ็น SL, CL และ LT ร่วมกับปัก K-wire ยึดกระดูกข้อมือทุกชิ้นให้กลับเข้าตำแหน่ง"
+                  "indication": {
+                    "en": "• All Mayfield Stage III perilunate dislocations (Dorsal perilunate dislocation)",
+                    "th": "• ภาวะ Perilunate Dislocation (Mayfield Stage III) ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Urgent ER closed reduction + splinting\n• Definitive ORIF: Combined dorsal and volar wrist exploration: Anatomical reduction of lunate, scaphoid, triquetrum, and capitate + Suture anchor repair of both SLIL and LT interosseous ligaments + Capsulodesis + Transcarpal K-wires (Scapholunate, Lunotriquetral, and Scaphocapitate pins)",
+                    "th": "• ดึงจัดข้อเข้าที่ฉุกเฉินใน ER + ดามเฝือก\n• ผ่าตัด ORIF เปิดหน้า-หลัง: จัดกระดูก Lunate, Scaphoid, Triquetrum และ Capitate เข้าที่ให้เรียบสนิท + เย็บซ่อมเอ็น SLIL และ LT ด้วย Suture Anchors + ปักลวด K-wires ขึงยึด (SL, LT, และ Scaphocapitate pins)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Volar/dorsal splint for 8–10 weeks; pin removal at 10–12 weeks; gradual progressive functional wrist rehabilitation",
+                    "th": "• ใส่เฝือก 8–10 สัปดาห์; ถอดลวดที่ 10–12 สัปดาห์; ค่อยๆ กายภาพฟื้นฟูการใช้งานข้อมือตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Underestimating LT ligament injury leading to residual VISI instability or ulnar-sided wrist pain",
+                    "th": "• มองข้ามการซ่อมเอ็น LT ทำให้นิ้วก้อยปวดเรื้อรังและเกิดภาวะ VISI instability"
+                  }
                 }
               },
               "illustrationId": "/images/mayfield/mayfield_3.png",
@@ -579,14 +774,46 @@ export const handBone: BoneData = {
                 "th": "อุบัติเหตุแรงทับบดพลังงานสูง หรือชนความเร็วสูงงอแอ่นข้อมือถึงขีดสุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete avulsion of all perilunate ligaments; Lunate extruded 90° volarly into carpal tunnel compressing the median nerve; EMERGENCY requiring urgent Carpal Tunnel Release (CTR), open lunate reduction, and comprehensive multi-ligament reconstruction.",
+                  "th": "เอ็นรอบกระดูก Lunate ขาดหมดทุกเส้น กระดูก Lunate หมุนคว่ำ 90 องศาทะลักเข้า Carpal Tunnel กดทับเส้นประสาท Median เป็นภาวะฉุกเฉินเร่งด่วนที่สุด! ต้องผ่าตัดคลายพังผืด Carpal Tunnel Release (CTR) + จัดกระดูก Lunate เข้าเบ้า + ซ่อมแซมเอ็นรอบข้อมือและปัก K-wire ยึดตรึง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Causes irreversible median nerve damage and crippling wrist stiffness.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ทำให้เส้นประสาท Median บาดเจ็บถาวรและข้อมือพิการ"
+                  "indication": {
+                    "en": "• Strictly PROHIBITED / MEDICAL MALPRACTICE",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด / เกิดความพิการถาวร"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Irreversible acute ischemic necrosis of median nerve, permanent thenar paralysis, and crippled hand",
+                    "th": "• เส้นประสาท Median ขาดเลือดตายถาวร กล้ามเนื้ออุ้งมือลีบอัมพาต และมือพิการถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY OPERATIVE DECOMPRESSION & RECONSTRUCTION. Urgent Carpal Tunnel Release (CTR) for median nerve decompression + open reduction of lunate + ORIF with robust SL/LT ligament repair and K-wire pinning.",
-                  "th": "ผ่าตัดฉุกเฉินด่วนที่สุด! ผ่าตัดเปิดผังผืดข้อมือ (Carpal Tunnel Release) ลดแรงกดเส้นประสาท Median + จัดกระดูก Lunate เข้าที่ + ซ่อมเอ็นและปัก K-wire"
+                  "indication": {
+                    "en": "• All Mayfield Stage IV Volar Lunate Dislocations (EMERGENCY)",
+                    "th": "• ภาวะกระดูก Lunate หลุดทะลักมาด้านหน้า (Mayfield Stage IV) ทุกราย (ภาวะฉุกเฉินด่วนที่สุด)"
+                  },
+                  "method": {
+                    "en": "• EMERGENCY operative intervention: Volar Carpal Tunnel Release (extended median nerve decompression and hematoma evacuation) + Dorsal approach for anatomical reduction of the rotated lunate back into radial fossa + Suture anchor repair of SLIL and LT ligaments + Repair of volar Space of Poirier capsule + Multi-point K-wire fixation (Radiolunate, Scapholunate, Lunotriquetral, and Scaphocapitate wires)",
+                    "th": "• ผ่าตัดฉุกเฉินทันที: กรีดเปิดแผลด้านหน้ามือทำ Carpal Tunnel Release (คลายแรงกดเส้นประสาท Median และระบายเลือดคั่ง) + เปิดแผลด้านหลังมือเพื่อดันหมุนกระดูก Lunate กลับเข้าเบ้า Radial fossa + เย็บซ่อมเอ็น SLIL, LT และแคปซูล Space of Poirier + ปักลวด K-wire ยึดยึดตรึงหลายจุด (Radiolunate, SL, LT, SC pins)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Bulky posterior splint for 2 weeks; short-arm thumb spica cast until K-wire removal at 10–12 weeks; prolonged nerve desensitization and thenar muscle re-education",
+                    "th": "• ดามเฝือกหนา 2 สัปดาห์แรก; ใส่เฝือกต่อจนถอดลวด K-wire ที่ 10–12 สัปดาห์; ทำกายภาพฟื้นฟูระบบประสาทและฝึกเกร็งกล้ามเนื้ออุ้งมือนิ้วหัวแม่มือ"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting forceful closed reduction in ER without immediate surgical release if median nerve is acutely compromised\n• High risk of avascular necrosis of lunate (Kienböck-like disease)",
+                    "th": "• พยายามดึงดัดแรงๆ ใน ER ซ้ำซากโดยไม่รีบผ่าตัดคลายเส้นประสาท\n• เสี่ยงต่อภาวะกระดูก Lunate ขาดเลือดตาย (Avascular necrosis / Kienböck-like)"
+                  }
                 }
               },
               "illustrationId": "/images/mayfield/mayfield_4.png",
@@ -797,13 +1024,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกตามแนวแกนต่อกระดูกนิ้วหัวแม่มือขณะงอเล็กน้อย (เช่น การชกต่อย หรือล้มกระแทกนิ้วโป้ง)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "2-part intra-articular fracture-dislocation; small volar beak fragment remains anchored to trapezium by Anterior Oblique Ligament (AOL), while metacarpal shaft is displaced proximally, dorsally, and radially by APL pull; closed reduction and percutaneous pinning (CRIF/CRP) or ORIF with mini-screws.",
+                  "th": "กระดูกหักเข้าข้อต่อ 2 ชิ้นร่วมกับข้อหลุด ชิ้นส่วน Volar Beak ยึดแน่นกับกระดูก Trapezium ด้วยเอ็น AOL ขณะที่ตัวกระดูกฝ่ามือถูกเอ็น APL ดึงรั้งหลุดขึ้นบน/หลัง/นอก ต้องผ่าตัดจัดกระดูกแทงลวด K-wire (CRIF/CRP) หรือผ่าตัด ORIF ขันสกรูจิ๋วเพื่อจัดผิวข้อให้เรียบสนิท"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Sling and thumb spica cast only if non-displaced (<1mm) and stable (extremely rare due to continuous tendon pulling forces).",
-                  "th": "ใส่เฝือก Thumb spica เฉพาะรายที่ไม่เคลื่อนเลย (<1 มม.) ซึ่งพบได้ยากมากเนื่องจากมีแรงดึงจากเอ็นกล้ามเนื้อตลอดเวลา"
+                  "indication": {
+                    "en": "• Strictly non-displaced fracture (<1 mm articular step-off) with perfect stability (Extremely rare <5%)",
+                    "th": "• รอยหักไม่เคลื่อนตัวเด็ดขาด (ผิวข้อเหลื่อม <1 มม.) และข้อมีความมั่นคงสมบูรณ์ (พบได้ยากมาก <5%)"
+                  },
+                  "method": {
+                    "en": "• Thumb spica cast with constant abduction molding for 4–6 weeks",
+                    "th": "• ใส่เฝือก Thumb Spica Cast ดัดกางนิ้วหัวแม่มือ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active thumb mobilization at 6 weeks",
+                    "th": "• เริ่มฝึกขยับนิ้วหัวแม่มือที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Inevitable secondary displacement and dorsal subluxation due to continuous deforming tone of APL tendon",
+                    "th": "• เกิดการเคลื่อนหลุดซ้ำจากแรงดึงรั้งต่อเนื่องของกล้ามเนื้อ APL"
+                  }
                 },
                 "operative": {
-                  "en": "Closed reduction and percutaneous pinning (CRP) or open reduction and internal fixation (ORIF) with mini-screws or K-wires to restore joint congruity and counteract APL pull.",
-                  "th": "ผ่าตัดดึงจัดกระดูกและยึดด้วยเข็มผ่านผิวหนัง (CRP) หรือผ่าตัดเปิดจัดกระดูกยึดตรึงภายใน (ORIF) ด้วยสกรูขนาดเล็กหรือเข็ม K-wire เพื่อฟื้นฟูผิวข้อและสู้กับแรงดึง APL"
+                  "indication": {
+                    "en": "• Displaced Bennett fracture-dislocation (articular step-off ≥ 1 mm or CMC subluxation)",
+                    "th": "• กระดูกหักแบบ Bennett ที่มีการเคลื่อนตัว (ผิวข้อเหลื่อม ≥ 1 มม. หรือข้อ CMC หลุดกึ่งหลุด)"
+                  },
+                  "method": {
+                    "en": "• Closed Reduction and Percutaneous Pinning (CRIF/CRP): Longitudinal thumb traction, pronation, and volar pressure at metacarpal base + Transfixation with two 1.6 mm K-wires (Metacarpal-to-Trapezium and Metacarpal-to-2nd Metacarpal)\n• Open Reduction and Internal Fixation (ORIF via Wagner approach) with 1.5–2.0 mm Headless Compression Screws if articular step-off ≥1 mm persists after closed reduction",
+                    "th": "• ดึงจัดกระดูกแทงลวดยึดผ่านผิวหนัง (CRIF/CRP): ดึงนิ้วตามยาว คว่ำมือ และกดดันฐานกระดูกฝ่ามือไปด้านหน้า + ปักลวด K-wires 1.6 มม. สองเส้น (ยึดเข้า Trapezium และยึดเข้าแกนนิ้วชี้)\n• ผ่าตัดเปิดจัดกระดูก (ORIF Wagner approach): ขันสกรูหัวจม 1.5–2.0 มม. Headless Screws หากจัดกระดูกแบบปิดแล้วผิวข้อยังเหลื่อม ≥ 1 มม."
+                  },
+                  "rehabilitation": {
+                    "en": "• Thumb spica splint for 4–6 weeks until pin removal; progressive active thumb pinch and opposition exercises at 6 weeks",
+                    "th": "• ใส่เฝือก Thumb Spica 4–6 สัปดาห์จนกระทั่งถอดลวด K-wire; เริ่มฝึกหนีบนิ้วและแตะปลายนิ้วที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Accepting articular incongruity >1 mm causing rapid post-traumatic trapeziometacarpal arthrosis",
+                    "th": "• ยอมรับผิวข้อเหลื่อม >1 มม. นำไปสู่ข้อโคนนิ้วหัวแม่มือเสื่อมรุนแรงและปวดเรื้อรัง"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_bennett.png",
@@ -827,13 +1087,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกแนวแกนพลังงานสูงเข้าที่ปลายสุดของนิ้วหัวแม่มือโดยตรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Comminuted ≥3-part Y- or T-shaped intra-articular base fracture; high articular incongruity and loss of first web space; ORIF with pre-contoured mini-locking T-plate / Y-plate or external fixator/traction for severely comminuted small fragments.",
+                  "th": "กระดูกโคนนิ้วโป้งหักเข้าข้อแตกละเอียดรูปตัว Y หรือ T (≥3 ชิ้น) เสี่ยงต่อข้อเสื่อมและง่ามนิ้วโป้งหดติด แนะนำผ่าตัด ORIF ด้วยแผ่นเหล็กดัดรูป Mini-T/Y-Plate หรือใช้โครงยึดภายนอก (External Fixator) ร่วมกับลวด K-wire กรณีแตกป่นเป็นชิ้นเล็ก"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Cast immobilization for highly comminuted fractures where fragments are too small for surgical fixation (often managed with early mobilization after short splinting).",
-                  "th": "ใส่เฝือกในกรณีที่กระดูกแตกละเอียดชิ้นเล็กเกินกว่าจะผ่าตัดยึดได้ (มักดามช่วงสั้นๆ แล้วให้ขยับเร็วเพื่อป้องกันข้อยึดติด)"
+                  "indication": {
+                    "en": "• Non-surgical elderly patients or extreme multi-fragmentary comminution where fragments are <2 mm (traction splinting preferred)",
+                    "th": "• ผู้ป่วยสูงอายุที่มีโรคร่วมรุนแรง หรือกระดูกแตกป่นเป็นชิ้นเล็กมาก <2 มม. ที่ไม่สามารถยึดสกรูได้"
+                  },
+                  "method": {
+                    "en": "• Thumb spica cast or dynamic traction splint",
+                    "th": "• ใส่เฝือก Thumb Spica หรือเฝือกดึงถ่วงน้ำหนัก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early gentle motion to prevent stiffness",
+                    "th": "• ฝึกขยับเบาๆ เพื่อป้องกันข้อยึดติด"
+                  },
+                  "pitfalls": {
+                    "en": "• Collapse of first web space and severe thumb adduction contracture",
+                    "th": "• ง่ามนิ้วโป้งหดสั้นติดแข็ง (Adduction contracture) สูญเสียการกางนิ้ว"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF using a mini-T-plate if fragment sizes allow, or external fixation/traction if highly comminuted to maintain length and alignment.",
-                  "th": "ผ่าตัดเปิดยึดกระดูกด้วยแผ่นเหล็กรูปตัว T ขนาดเล็ก (Mini-T-plate) หรือใช้โครงยึดตรึงภายนอก (External Fixator) ในรายที่แตกละเอียดมาก"
+                  "indication": {
+                    "en": "• All reconstructible comminuted Rolando fractures with articular step-off ≥ 1 mm or web-space collapse",
+                    "th": "• กระดูกหัก Rolando ที่ชิ้นกระดูกสามารถจัดเรียงได้ มีผิวข้อเหลื่อม ≥ 1 มม. หรือง่ามนิ้วหดสั้น"
+                  },
+                  "method": {
+                    "en": "• Reconstructible Large Fragments: Wagner volar-radial approach: Anatomical reduction of articular fragments + 2.0 mm Pre-contoured Mini-T / Y-plate fixation\n• Severely Comminuted Small Fragments: Mini External Fixator spanning CMC joint (ligamentotaxis) + supplementary percutaneous K-wires to maintain thumb length and first web space",
+                    "th": "• ชิ้นกระดูกขนาดใหญ่: ผ่าตัดเปิดจัดผิวข้อให้เรียบ + ดามด้วยแผ่นเหล็ก 2.0 mm Mini-T/Y-plate\n• ชิ้นกระดูกแตกป่นเล็กมาก: ใส่โครงยึดภายนอกขนาดเล็ก (Mini External Fixator) ข้ามข้อ CMC ดึงตรึงความยาว (Ligamentotaxis) + ปักลวด K-wires เสริม เพื่อรักษาง่ามนิ้วโป้งและความยาวกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active motion out of removable splint at 2–4 weeks (for plate) or external fixator removal at 6 weeks; occupational therapy for first web space maintenance",
+                    "th": "• เริ่มฝึกขยับนิ้วในเฝือกอ่อนที่ 2–4 สัปดาห์ (กรณีใส่เพลท) หรือถอดโครงยึดภายนอกที่ 6 สัปดาห์; ทำกายภาพบำบัดรักษาง่ามนิ้วโป้ง"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtightening screws into small osteochondral fragments causing bone comminution",
+                    "th": "• ขันสกรูแน่นเกินไปในชิ้นกระดูกอ่อนเล็กจนกระดูกแตกละเอียดเพิ่มขึ้น"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_rolando.png",
@@ -857,13 +1150,46 @@ export const handBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกโดยตรงหรือแรงดัดโค้งบริเวณแกนนิ้วหัวแม่มือ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Transverse or oblique fracture distal to 1st CMC joint capsule; highly mobile saddle joint compensates for up to 20°–30° apex dorsal angulation; closed reduction and thumb spica casting achieves excellent outcomes; ORIF indicated only for angulation >30°.",
+                  "th": "รอยหักนอกข้อต่อฐานนิ้วหัวแม่มือ ข้อต่อรูปอานม้า (Saddle Joint) มีความยืดหยุ่นสูงสามารถชดเชยมุมโก่งไปด้านหลัง (Apex Dorsal) ได้ถึง 20°–30° รักษาแบบไม่ผ่าตัดด้วยการจัดกระดูกใส่เฝือก Thumb Spica; ผ่าตัดเฉพาะรายที่มุมโก่ง >30°"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Closed reduction and thumb spica cast for 3-4 weeks. Up to 30 degrees of apex dorsal angulation is acceptable due to CMC joint mobility compensations.",
-                  "th": "ดึงจัดกระดูกและใส่เฝือก Thumb spica นาน 3-4 สัปดาห์ สามารถยอมรับมุมโก่งงอได้ถึง 30 องศา เนื่องจากข้อ CMC ขยับชดเชยได้ดี"
+                  "indication": {
+                    "en": "• Extra-articular 1st metacarpal base fracture with apex dorsal angulation < 20°–30° and zero rotational deformity",
+                    "th": "• กระดูกหักนอกข้อต่อฐานนิ้วโป้งที่มีมุมโก่งไปด้านหลัง < 20°–30° และไม่มีการบิดหมุนผิดรูป"
+                  },
+                  "method": {
+                    "en": "• Closed reduction (hyperextension + longitudinal traction + direct dorsal pressure) + Short arm thumb spica cast with thumb in wide abduction for 4 weeks",
+                    "th": "• ดึงจัดกระดูก (แอ่นนิ้ว + ดึงตามยาว + กดดันตรงจุดโก่ง) + ใส่เฝือก Thumb Spica สั้นกางนิ้วหัวแม่มือเต็มที่ 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active thumb ROM and pinch strengthening starting at 4 weeks post-injury",
+                    "th": "• เริ่มฝึกขยับนิ้วหัวแม่มือและฝึกแรงหนีบที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Confusing extra-articular fracture with Bennett fracture (verify non-involvement of articular surface on Robert's view)",
+                    "th": "• สับสนระหว่างกระดูกหักนอกข้อกับ Bennett (ต้องตรวจเช็คภาพถ่าย Robert's view เพื่อยืนยันว่าไม่เข้าข้อ)"
+                  }
                 },
                 "operative": {
-                  "en": "Percutaneous pinning (K-wires) or mini-plate fixation if angulation is >30 degrees, rotated, or unstable after closed reduction.",
-                  "th": "ใส่เข็มยึดผ่านผิวหนัง (K-wire) หรือแผ่นเหล็กขนาดเล็กเฉพาะกรณีที่มุมโก่ง >30 องศา หรือไม่มั่นคงหลังจัดกระดูก"
+                  "indication": {
+                    "en": "• Residual apex dorsal angulation > 30° after closed reduction\n• Severe shortening (>3 mm), rotational deformity, or unstable fracture pattern",
+                    "th": "• มุมโก่งงอไปด้านหลังค้างอยู่ > 30 องศาหลังการดึงจัดกระดูก\n• กระดูกสั้นลง > 3 มม. หรือมีนิ้วบิดหมุนผิดรูป"
+                  },
+                  "method": {
+                    "en": "• Closed reduction and percutaneous pinning (two cross 1.6 mm K-wires) OR Mini-locking plate (2.0 mm) via dorsal approach",
+                    "th": "• ดึงจัดกระดูกปักลวดไขว้ 1.6 mm K-wires ผ่านผิวหนัง หรือผ่าตัดเปิดดามแผ่นเหล็ก 2.0 mm Mini-locking Plate ทางด้านหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early thumb mobilization at 2–4 weeks",
+                    "th": "• เริ่มฝึกขยับนิ้วโป้งที่ 2–4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Injury to superficial radial nerve sensory branches during dorsal exposure",
+                    "th": "• บาดเจ็บต่อแขนงประสาทรับความรู้สึก Superficial Radial Nerve บริเวณหลังมือ"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_extra.png",
@@ -1101,14 +1427,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงพลังงานสูงเข้าที่สันหมัด (Knuckle) หรือแรงกดตามแนวแกนขณะข้อ MCP เหยียด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "High-energy intra-articular fracture involving collateral ligament origins; step-off <1 mm and <20% joint involvement managed conservatively in intrinsic plus splint; step-off ≥1 mm or fragment >20% requires ORIF with mini-screws / K-wires to prevent early MCP arthritis.",
+                  "th": "กระดูกส่วนหัวหักเข้าข้อต่อบริเวณจุดเกาะเอ็น Collateral Ligament หากผิวข้อเหลื่อม <1 มม. และรอยหัก <20% รักษาแบบไม่ผ่าตัดด้วยเฝือกท่า Intrinsic Plus; หากผิวข้อเหลื่อม ≥1 มม. หรือชิ้นหัก >20% ต้องผ่าตัด ORIF ด้วยสกรูจิ๋วหรือ K-wire เพื่อป้องกันข้อเสื่อม"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Indicated if non-displaced (<1mm step-off). Immobilize in Intrinsic Plus position (MCP flexed 70-90°, PIP/DIP extended) in gutter splint for 3-4 weeks.",
-                  "th": "แนะนำสำหรับรายที่ไม่เคลื่อน (<1 มม.) ใส่เฝือกอ่อน Gutter Splint ในท่า Intrinsic Plus (งอข้อ MCP 70-90 องศา) นาน 3-4 สัปดาห์"
+                  "indication": {
+                    "en": "• Non-displaced metacarpal head fracture with articular step-off < 1 mm and < 20% joint involvement\n• Intact collateral ligament stability",
+                    "th": "• กระดูกส่วนหัวหักชนิดไม่เคลื่อนตัว (ผิวข้อเหลื่อม < 1 มม. และรอยหักเข้าข้อ < 20%)\n• เอ็น Collateral Ligament ยังยึดมั่นคงดี"
+                  },
+                  "method": {
+                    "en": "• Gutter splint in Intrinsic Plus position (MCP flexed 70°–90°, PIP/DIP in full extension) for 3 weeks",
+                    "th": "• ใส่เฝือกดาม Gutter Splint ในท่า Intrinsic Plus (งอข้อ MCP 70°–90°, เหยียดข้อ PIP/DIP ตรง) นาน 3 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active MCP range of motion out of splint at 3 weeks; buddy taping to adjacent digit for additional 3 weeks",
+                    "th": "• ถอดเฝือกเริ่มฝึกขยับข้อ MCP ที่ 3 สัปดาห์; พันเทปดามคู่นิ้วข้างเคียง (Buddy Taping) ต่ออีก 3 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Splinting MCP joint in extension leading to irreversible collateral ligament contracture (MCP stiffness)",
+                    "th": "• ดามข้อนิ้วในท่าเหยียดตรงทำให้เอ็น Collateral หดสั้นและข้อ MCP ติดแข็งถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for articular step-off ≥ 1 mm, >25% joint involvement, or comminution. ORIF using mini-screws or K-wires to restore joint congruity.",
-                  "th": "แนะนำเมื่อผิวข้อต่อเหลื่อม ≥ 1 มม., แตกเข้าข้อ > 25% หรือแตกละเอียด ผ่าตัด ORIF ด้วยสกรูจิ๋วหรือ K-wire"
+                  "indication": {
+                    "en": "• Articular step-off ≥ 1 mm, fragment involving > 20%–25% of articular surface, or collateral ligament avulsion fragment with joint subluxation",
+                    "th": "• ผิวข้อต่อเหลื่อมขั้นบันได ≥ 1 มม., ชิ้นกระดูกแตกเข้าข้อ > 20%–25% หรือมีเอ็น Collateral หลุดกะเทาะร่วมกับข้อหลุด"
+                  },
+                  "method": {
+                    "en": "• Dorsal approach: Split extensor tendon longitudinally + Anatomical reduction of articular cartilage + Fixation with 1.2–1.5 mm Headless Compression Mini-Screws (countersunk below cartilage) or fine K-wires",
+                    "th": "• ผ่าตัดเปิดทางด้านหลังมือ: แหวกแยกเอ็นเหยียดนิ้วตามยาว + จัดเรียงผิวกระดูกอ่อนข้อต่อให้เรียบสนิท + ขันยึดด้วยสกรูจิ๋วหัวจม 1.2–1.5 mm Headless Screws ฝังมิดใต้ผิวกระดูกอ่อน หรือปักลวด K-wires ขนาดเล็ก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early protected active motion starting at 1–2 weeks post-op with buddy taping",
+                    "th": "• เริ่มฝึกขยับนิ้วมือหลังผ่าตัด 1–2 สัปดาห์ร่วมกับการพันเทปดามนิ้วคู่"
+                  },
+                  "pitfalls": {
+                    "en": "• Prominent screw heads causing extensor tendon attrition or cartilage wear",
+                    "th": "• หัวสกรูโผล่พ้นผิวกระดูกทำให้เอ็นเหยียดนิ้วถูขาดหรือขูดทำลายกระดูกอ่อน"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal_other/head.png",
@@ -1132,14 +1490,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกตามแนวแกนเข้าที่กำปั้นโดยตรง (เช่น การชกกำแพง หรือชกของแข็ง)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Most common metacarpal fracture; acceptable apex dorsal angulation: 2nd/3rd MC <10°–15°, 4th MC <30°–40°, 5th MC (Boxer's) <40°–50°; ZERO tolerance for rotational scissoring; closed reduction (Jahss maneuver) + ulnar gutter splint; operative pinning/plating for angulation > limits or any digital overlap.",
+                  "th": "กระดูกคอฝ่ามือหักพบบ่อยสุด เกณฑ์มุมโก่งไปด้านหลังที่ยอมรับได้: นิ้วชี้/กลาง <10°–15°, นิ้วนาง <30°–40°, นิ้วก้อย (Boxer's) <40°–50° แต่ห้ามมีการหมุนบิดซ้อนกันเด็ดขาด (Rotation = 0°) ดึงจัดกระดูกวิธี Jahss maneuver และใส่เฝือก Ulnar Gutter Splint; ผ่าตัดเมื่อโก่งเกินเกณฑ์หรือนิ้วเกยกัน"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Indicated if angulation is within limits & zero rotation. Jahss reduction maneuver, then gutter splint in Intrinsic Plus position for 3-4 weeks.",
-                  "th": "แนะนำหากมุมโก่งอยู่ในเกณฑ์ที่ยอมรับได้และไม่มีนิ้วบิด ดึงจัดกระดูกด้วยวิธี Jahss maneuver แล้วใส่เฝือกดาม Gutter Splint ในท่า Intrinsic Plus นาน 3-4 สัปดาห์"
+                  "indication": {
+                    "en": "• Metacarpal neck fracture within acceptable angulation thresholds (2nd/3rd <10°–15°, 4th <30°–40°, 5th <40°–50°)\n• ZERO rotational deformity (no scissoring on flexion)\n• Extensor lag < 10°",
+                    "th": "• คอกระดูกหักในเกณฑ์มุมโก่งที่ยอมรับได้ (นิ้วชี้/กลาง <10°–15°, นิ้วนาง <30°–40°, นิ้วก้อย <40°–50°)\n• ไม่มีการหมุนบิดผิดรูปเด็ดขาด (นิ้วไม่เกยซ้อนกันเวลาพับกำมือ)\n• เหยียดนิ้วตกค้าง (Extensor lag) < 10°"
+                  },
+                  "method": {
+                    "en": "• Closed reduction via Jahss maneuver (flex MCP and PIP to 90°, apply upward pressure through proximal phalanx while stabilizing shaft) + Ulnar/Radial gutter splint in Intrinsic Plus position for 3–4 weeks",
+                    "th": "• ดึงจัดกระดูกด้วยวิธี Jahss maneuver (งอข้อ MCP และ PIP 90 องศา แล้วออกแรงดันขึ้นที่ข้อ PIP พร้อมกับกดตรึงแกนกระดูก) + ใส่เฝือกอ่อน Ulnar/Radial Gutter Splint ในท่า Intrinsic Plus นาน 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active finger flexion/extension exercises immediately upon splint removal at 3–4 weeks; full grip strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกกำมือและเหยียดนิ้วทันทีหลังถอดเฝือกที่ 3–4 สัปดาห์; ฝึกเพิ่มแรงกำมือเต็มที่ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing rotational malalignment by examining fingers in extension only (MUST examine during active fist formation)\n• Missing human bite ('Fight Bite') puncture wound requiring emergency debridement",
+                    "th": "• ตรวจไม่พบนิ้วบิดเกยกันจากการตรวจนิ้วในท่าเหยียดตรง (ต้องให้ผู้ป่วยพับกำมือตรวจเสมอ)\n• ละเลยแผลถูกฟันมนุษย์กัด (Fight Bite) บริเวณสันหมัด ซึ่งต้องผ่าตัดล้างแผลฉุกเฉิน"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for angulation >limits (>15° for 2nd/3rd, >50° for 5th), rotational overlap (scissoring), or extensor lag. CRP with K-wires (bouquet) or mini-plate fixation.",
-                  "th": "แนะนำเมื่อมุมโก่งเกินเกณฑ์ (>15° นิ้วชี้/กลาง, >50° นิ้วก้อย), มีนิ้วหมุนซ้อนกัน หรือเหยียดนิ้วไม่สุด ผ่าตัดใส่เข็ม K-wire หรือแผ่นดามเหล็กจิ๋ว"
+                  "indication": {
+                    "en": "• Angulation exceeding tolerance (>15° for index/middle, >50° for little finger)\n• Any rotational malalignment (digital overlap / scissoring)\n• Open fracture or fight bite injury with joint penetration",
+                    "th": "• มุมโก่งงอเกินเกณฑ์ที่ยอมรับได้ (>15° นิ้วชี้/กลาง, >50° นิ้วก้อย)\n• มีการบิดหมุนผิดรูป (นิ้วเกยซ้อนกันเวลาพับกำมือ)\n• แผลเปิดเข้าข้อต่อ หรือแผล Fight Bite"
+                  },
+                  "method": {
+                    "en": "• Closed Reduction and Percutaneous Pinning (CRPP): Retrograde or antegrade Intramedullary K-wires (Bouquet technique with two 1.2–1.6 mm wires) OR Transverse K-wire pinning to adjacent intact metacarpal neck\n• Mini-locking plate (1.5–2.0 mm) via dorsal approach for unstable patterns",
+                    "th": "• ดึงจัดกระดูกแทงลวดตรึงผ่านผิวหนัง (CRPP): ปักลวดเข้าในโพรงกระดูกแบบช่อดอกไม้ (Bouquet technique ด้วยลวด K-wires 1.2–1.6 มม. 2 เส้น) หรือปักลวดแนวขวางยึดเข้ากับคอกระดูกฝ่ามือนิ้วข้างเคียง\n• ผ่าตัดเปิดดามแผ่นเหล็กล็อคขนาดจิ๋ว (1.5–2.0 mm Mini-locking plate) ทางด้านหลังมือ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Splint for 1–2 weeks, then early active motion with K-wires in situ; pin removal at 4–6 weeks",
+                    "th": "• ใส่เฝือกประคอง 1–2 สัปดาห์ แล้วเริ่มขยับนิ้วขณะยังมีลวด; ถอดลวด K-wire ที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-reduction causing loss of MCP flexion or tendon adhesion over dorsal plates",
+                    "th": "• จัดกระดูกดันมากเกินไปทำให้งอข้อ MCP ไม่ลง หรือเกิดพังผืดเอ็นยึดติดกับแผ่นเหล็กหลังมือ"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal_other/neck.png",
@@ -1163,14 +1553,46 @@ export const handBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงที่หลังมือ อุบัติเหตุทับบด หรือแรงบิดหมุนมืออย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Diaphyseal transverse, oblique, spiral, or comminuted fractures; acceptable angulation: 2nd/3rd <10°, 4th/5th <20°, shortening <3 mm; ZERO rotational tolerance (1° rotation = 5° overlap); single stable shaft fracture treated with cast; multiple fractures, shortening >3 mm, or rotation treated with mini-locking plates.",
+                  "th": "แกนกระดูกฝ่ามือหัก เกณฑ์มุมโก่งที่ยอมรับได้: นิ้วชี้/กลาง <10°, นิ้วนาง/ก้อย <20°, กระดูกสั้น <3 มม. และห้ามบิดหมุนผิดรูปเด็ดขาด (Rotation = 0°) รอยหักแกนเดียวที่มั่นคงรักษาด้วยเฝือก Intrinsic Plus; หากหักหลายแกน, สั้น >3 มม. หรือมีนิ้วเกยกัน แนะนำผ่าตัด ORIF ดามแผ่นเหล็กล็อคจิ๋ว"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Indicated for isolated, non-displaced shaft fractures with no rotation. Cast or gutter splint in Intrinsic Plus position for 4-6 weeks with weekly X-rays.",
-                  "th": "แนะนำสำหรับรอยหักแกนเดียวที่ไม่เคลื่อนและไม่มีนิ้วบิด ใส่เฝือกดามในท่า Intrinsic Plus นาน 4-6 สัปดาห์"
+                  "indication": {
+                    "en": "• Isolated, non-displaced or minimally displaced metacarpal shaft fracture (2nd/3rd angulation <10°, 4th/5th <20°, shortening <3 mm)\n• Absolutely zero rotational deformity",
+                    "th": "• กระดูกฝ่ามือหักแกนเดียวชนิดไม่เคลื่อนหรือเคลื่อนน้อยมาก (มุมโก่งนิ้วชี้/กลาง <10°, นิ้วนาง/ก้อย <20°, สั้นลง <3 มม.)\n• ไม่มีการบิดหมุนผิดรูปโดยเด็ดขาด"
+                  },
+                  "method": {
+                    "en": "• Gutter splint or short-arm cast in Intrinsic Plus position for 4 weeks with weekly follow-up radiographs",
+                    "th": "• ใส่เฝือก Gutter Splint หรือเฝือกสั้นในท่า Intrinsic Plus นาน 4 สัปดาห์ พร้อมติดตามภาพถ่ายเอกซเรย์ทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active finger ROM and gentle grip strengthening after 4 weeks",
+                    "th": "• เริ่มฝึกขยับนิ้วและฝึกแรงกำมือเบาๆ หลัง 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary rotatory displacement during swelling resolution (re-check finger alignment weekly)",
+                    "th": "• กระดูกบิดหมุนเคลื่อนตัวซ้ำขณะยุบบวม (ต้องตรวจเช็คการเรียงตัวของนิ้วทุกสัปดาห์)"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for rotational deformity, >3mm shortening, angulation >20°, or multiple shaft fractures. ORIF with mini-locking plates or K-wires.",
-                  "th": "แนะนำหากมีนิ้วบิดซ้อน, ขาสั้น >3 มม., มุมโก่ง >20° หรือหักหลายแกนพร้อมกัน ผ่าตัดเปิดยึดด้วยแผ่นเหล็กล็อคจิ๋ว หรือ K-wires"
+                  "indication": {
+                    "en": "• Any rotational scissoring deformity (0° tolerance)\n• Metacarpal shortening > 3 mm (causes ~20° extensor lag and intrinsic weakness)\n• Angulation exceeding limits (>10° index/middle, >20° ring/little)\n• Multiple metacarpal shaft fractures (floating metacarpal arch)",
+                    "th": "• มีการบิดหมุนผิดรูป (นิ้วเกยซ้อนกัน)\n• กระดูกสั้นลง > 3 มม. (ทำให้เหยียดนิ้วได้ไม่สุดและแรงกำมือลดลงอย่างมาก)\n• มุมโก่งเกินเกณฑ์ (>10° นิ้วชี้/กลาง, >20° นิ้วนาง/ก้อย)\n• กระดูกฝ่ามือหักพร้อมกันหลายแกน (โครงสร้างฝ่ามือเสียความมั่นคง)"
+                  },
+                  "method": {
+                    "en": "• Open Reduction and Internal Fixation (ORIF): Dorsal longitudinal incision + Low-profile 1.5–2.0 mm Pre-contoured Locking Plate (applied on tension/dorsal side) with at least 3 bicortical screws per main fragment OR Lag screw fixation alone for long oblique/spiral fractures (fracture length > 2x bone diameter)",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกและยึดตรึงภายใน (ORIF): เปิดแผลตามยาวหลังมือ + ดามแผ่นเหล็กล็อค 1.5–2.0 mm Low-profile Locking Plate ทางด้านหลังมือ ขันสกรูทะลุสองชั้นกระดูกอย่างน้อยฝั่งละ 3 ตัว หรือใช้ Lag Screws ขันยึดอัดรอยหักเฉียงยาว (ความยาวรอยหัก > 2 เท่าของความกว้างกระดูก)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active finger ROM on post-op day 3–5; progressive resistance and grip strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกขยับนิ้วทันทีในวันที่ 3–5 หลังผ่าตัด; เริ่มฝึกเพิ่มกำลังแรงกำมือเต็มที่ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Extensor tendon adhesions to dorsal plate (place plate beneath periosteum and ensure low-profile implants)",
+                    "th": "• เอ็นเหยียดนิ้วเกิดพังผืดยึดติดกับแผ่นเหล็กดามหลังมือ (ต้องเลือกเพลทที่แบนราบและวางใต้เยื่อหุ้มกระดูก)"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal_other/shaft.png",
@@ -1194,14 +1616,46 @@ export const handBone: BoneData = {
                 "th": "แรงกดตามแนวแกนพลังงานสูงกระแทกเข้าที่ขอบมือฝั่งนิ้วก้อย/ชี้ หรือแรงทับบดตรงข้อ CMC"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular vs intra-articular base fracture-dislocations; 5th MC base (Reverse Bennett) is intrinsically unstable due to extensor carpi ulnaris (ECU) tendon pull; acceptable step-off <1 mm; CRP or ORIF with mini-screws/K-wires to restore CMC joint congruity and grip mechanics.",
+                  "th": "กระดูกฐานฝ่ามือหักหรือหลุด โดยเฉพาะฐานนิ้วก้อย (Reverse Bennett) มีความไม่มั่นคงสูงมากเนื่องจากถูกแรงดึงเอ็น ECU ดึงรั้งให้เคลื่อนหลุด ยอมรับผิวข้อเหลื่อมได้ <1 มม. แนะนำผ่าตัดจัดกระดูกแทงลวด CRP หรือผ่าตัด ORIF ขันสกรูจิ๋วเพื่อจัดผิวข้อ CMC ให้เรียบสนิท"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated only for stable extra-articular non-displaced base fractures (<1mm). Gutter cast for 4-6 weeks with weekly X-rays.",
-                  "th": "พิจารณาเฉพาะกรณีหักนอกข้อที่ไม่เคลื่อน (<1 มม.) ใส่เฝือกดาม Gutter cast นาน 4-6 สัปดาห์"
+                  "indication": {
+                    "en": "• Stable extra-articular non-displaced base fracture (<1 mm displacement) with intact CMC joint",
+                    "th": "• กระดูกหักนอกข้อต่อบริเวณฐานชนิดไม่เคลื่อนตัว (<1 มม.) และข้อต่อ CMC มีความมั่นคงสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Ulnar/radial gutter cast in Intrinsic Plus position for 4–6 weeks",
+                    "th": "• ใส่เฝือก Gutter Cast ในท่า Intrinsic Plus นาน 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive ROM after 4–6 weeks",
+                    "th": "• เริ่มฝึกขยับนิ้วหลังถอดเฝือกที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing subtle CMC subluxation or dislocation (30° oblique view mandatory)",
+                    "th": "• มองไม่เห็นข้อ CMC เคลื่อนหลุดกึ่งหลุดที่ซ่อนเร้น (ต้องถ่ายภาพเอกซเรย์ท่าเฉียง 30 องศาเสมอ)"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for 5th base (Reverse Bennett), CMC step-off ≥1mm, or subluxation. Closed reduction and percutaneous pinning (CRP) or ORIF with mini-screws.",
-                  "th": "แนะนำสำหรับ Reverse Bennett (ฐานนิ้วก้อย), รอยหักเข้าข้อ CMC ≥ 1 มม. หรือข้อหลุด ผ่าตัดจัดกระดูกและยึดด้วยเข็ม K-wire หรือสกรูจิ๋ว"
+                  "indication": {
+                    "en": "• 5th Metacarpal Base fracture-dislocation (Reverse Bennett fracture)\n• Intra-articular CMC joint step-off ≥ 1 mm\n• Unreduced CMC joint subluxation / dislocation",
+                    "th": "• ฐานกระดูกฝ่ามือนิ้วก้อยหักร่วมกับข้อหลุด (Reverse Bennett)\n• รอยหักเข้าข้อ CMC มีผิวข้อเหลื่อม ≥ 1 มม.\n• ข้อต่อ CMC เคลื่อนหลุดหรือไม่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Closed Reduction and Percutaneous Pinning (CRPP): Longitudinal traction, pronation, and direct pressure at 5th MC base + Transfixation with two 1.6 mm K-wires pinning 5th MC base to 4th MC base and hamate\n• Open reduction (ORIF) with 1.5–2.0 mm mini-screws / plate if closed reduction fails",
+                    "th": "• ดึงจัดกระดูกแทงลวดตรึงผ่านผิวหนัง (CRPP): ดึงนิ้วตามยาว คว่ำมือ และกดดันฐานกระดูกฝ่ามือนิ้วก้อย + ปักลวด K-wires 1.6 มม. สองเส้นยึดฐานนิ้วก้อยเข้ากับฐานนิ้วนางและกระดูก Hamate\n• ผ่าตัดเปิดจัดกระดูก (ORIF): ขันสกรูจิ๋ว 1.5–2.0 มม. หรือดามแผ่นเหล็กหากจัดกระดูกแบบปิดแล้วผิวข้อยังไม่เรียบ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Ulnar gutter splint for 4–6 weeks until K-wire removal; progressive grip strengthening at 6–8 weeks",
+                    "th": "• ใส่เฝือกอ่อน Ulnar Gutter Splint 4–6 สัปดาห์จนกระทั่งถอดลวด K-wire; เริ่มฝึกเพิ่มแรงกำมือที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Unrecognized chronic Reverse Bennett subluxation causing weak grip and painful ulnar CMC arthrosis",
+                    "th": "• ข้อหลุด Reverse Bennett เรื้อรังจากการตรวจพลาด ทำให้แรงกำมือลดลงอย่างมากและข้อข้อมือฝั่งนิ้วก้อยเสื่อมปวดตลอดเวลา"
+                  }
                 }
               },
               "illustrationId": "/images/metacarpal_other/base.png",

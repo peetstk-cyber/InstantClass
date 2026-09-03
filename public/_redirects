@@ -1,0 +1,3 @@
+# Cloudflare Pages SPA rewrite rule
+# Direct all path requests to index.html to allow React client-side routing
+/*    /index.html   200

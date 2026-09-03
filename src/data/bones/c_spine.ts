@@ -149,14 +149,46 @@ export const cSpineBone: BoneData = {
                 "th": "การแหงนคอไปด้านหลังร่วมกับแรงกดอัดตามแนวแกน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Isolated fracture of anterior or posterior arch only; Transverse Atlanto-Axial Ligament (TAL) is completely intact (Rule of Spence overhang = 0 mm); mechanically stable ring; non-operative immobilization in a rigid cervical collar yields >98% union rate.",
+                  "th": "รอยหักเฉพาะส่วนวงโค้งหน้าหรือหลังเพียงจุดเดียว เอ็น Transverse Ligament (TAL) สมบูรณ์ 100% (ระยะเกย Rule of Spence = 0 มม.) โครงสร้างวงแหวน C1 ยังมั่นคง รักษาแบบไม่ผ่าตัดโดยใส่เฝือกคอชนิดแข็ง (Rigid Collar) ให้ผลกระดูกเชื่อมติด >98%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Rigid Cervical Collar (Hard Collar) for 6-8 weeks. Excellent union rate (>98%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกคอชนิดแข็ง (Rigid Collar) 6-8 สัปดาห์ อัตรากระดูกติดดีเยี่ยม"
+                  "indication": {
+                    "en": "• Isolated anterior arch or posterior arch fracture with intact Transverse Atlanto-Axial Ligament (TAL)",
+                    "th": "• รอยหักเฉพาะวงโค้งด้านหน้าหรือด้านหลังของ C1 โดยเอ็น Transverse Ligament (TAL) สมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J or Aspen collar) worn continuously for 6–8 weeks with serial upright radiographs at 2, 6, and 8 weeks",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J หรือ Aspen collar) ต่อเนื่องตลอดเวลา 6–8 สัปดาห์ ร่วมกับเอกซเรย์ติดตามอาการที่ 2, 6 และ 8 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Isometric neck strengthening and gentle range-of-motion exercises starting after 6–8 weeks upon confirmed bony union",
+                    "th": "• เริ่มฝึกบริหารกล้ามเนื้อคอและหมุนคอเบาๆ หลังถอดเฝือกที่ 6–8 สัปดาห์เมื่อกระดูกติดสนิท"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing an occult concomitant C2 fracture (odontoid/pars) or subtle contralateral arch fracture converting it into a burst pattern",
+                    "th": "• ตรวจไม่พบกระดูก C2 หักร่วม หรือรอยหักซ่อนเร้นของวงโค้งอีกด้านทำให้พลาดการวินิจฉัย Jefferson Burst Fracture"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Strictly not indicated for isolated Landells Type I fractures",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัดสำหรับกระดูกหัก Landells Type I จุดเดียว"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Inappropriate surgical overtreatment of an inherently stable fracture",
+                    "th": "• ผ่าตัดโดยไม่จำเป็นในรอยหักที่มั่นคงและติดได้เอง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -180,14 +212,46 @@ export const cSpineBone: BoneData = {
                 "th": "แรงกดอัดกระแทกตามแนวแกนอย่างรุนแรงเข้าที่กลางศีรษะ (เช่น ดำน้ำกระแทกพื้นสระน้ำ)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Burst fracture involving anterior and posterior arches; stability hinges entirely on Transverse Atlanto-Axial Ligament (TAL) integrity; Rule of Spence overhang ≤6.9 mm indicates intact TAL managed conservatively with Halo-vest or rigid collar; overhang >6.9 mm or MRI-confirmed TAL tear represents gross atlantoaxial instability requiring C1–C2 posterior instrumented fusion.",
+                  "th": "กระดูกแตกกระจายทั้งวงโค้งหน้าและหลัง ความมั่นคงขึ้นอยู่กับความสมบูรณ์ของเอ็น Transverse Ligament (TAL) เป็นสำคัญ; หากผลรวมระยะเกย Rule of Spence ≤6.9 มม. (TAL สมบูรณ์) รักษาแบบไม่ผ่าตัดด้วย Halo-vest หรือ Rigid Collar; หากระยะเกย >6.9 มม. หรือ MRI ยืนยันว่าเอ็น TAL ขาด แสดงถึงข้อคอ C1–C2 หลวมหลุดรุนแรง ต้องผ่าตัดเชื่อมกระดูก C1–C2 ทางด้านหลัง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED FOR STABLE PATTERNS (TAL intact, overhang <6.9mm). Immobilization in Halo-vest or Rigid Collar for 8-12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดหากเอ็น TAL สมบูรณ์ (ระยะเกย < 6.9มม.) โดยใส่ Halo-vest หรือ Rigid Collar 8-12 สัปดาห์"
+                  "indication": {
+                    "en": "• Stable Jefferson burst fracture with intact TAL (Spence overhang ≤ 6.9 mm on open-mouth peg view and intact ligament on MRI)",
+                    "th": "• กระดูก C1 Burst fracture ชนิดมั่นคงที่เอ็น TAL ไม่ขาด (ระยะเกย Spence ≤ 6.9 มม. และ MRI ปกติ)"
+                  },
+                  "method": {
+                    "en": "• Halo-vest immobilization for 10–12 weeks OR Rigid Cervical Orthosis (Miami J) for 10–12 weeks in compliant low-risk patients",
+                    "th": "• ใส่อุปกรณ์ตรึงกะโหลกศีรษะ Halo-vest นาน 10–12 สัปดาห์ หรือใส่เฝือกคอชนิดแข็ง (Miami J) 10–12 สัปดาห์ในผู้ป่วยที่ให้ความร่วมมือดี"
+                  },
+                  "rehabilitation": {
+                    "en": "• Flexion-extension stress radiographs at 10–12 weeks after collar/halo removal to confirm no dynamic atlantoaxial instability",
+                    "th": "• เอกซเรย์ท่าก้ม-เงยคอ (Flexion-Extension Views) ที่ 10–12 สัปดาห์หลังถอดอุปกรณ์เพื่อยืนยันว่าข้อต่อ C1–C2 ไม่หลวมเคลื่อน"
+                  },
+                  "pitfalls": {
+                    "en": "• Underestimating TAL tear due to radiographic magnification error; always obtain thin-slice CT and STIR MRI\n• Pin-site infection and skull pin loosening with Halo vest",
+                    "th": "• ประเมินเอ็น TAL ขาดต่ำกว่าจริงจากภาพ X-ray ขยาย ควรส่ง CT และ MRI ยืนยันเสมอ\n• การติดเชื้อหรือสลักยึดกะโหลกศีรษะหลวมในผู้ป่วยที่ใส่ Halo vest"
+                  }
                 },
                 "operative": {
-                  "en": "INDICATED FOR UNSTABLE PATTERNS (TAL rupture, overhang >6.9mm / ADI >3mm). C1-C2 Posterior instrumented fusion (Harms technique) or C1 ring reconstruction.",
-                  "th": "แนะนำผ่าตัดหากเอ็น TAL ขาด (ระยะเกย >6.9มม. / ADI >3มม.) ผ่าตัดดามยึดกระดูกคอ C1-C2 ด้านหลัง (Harms technique)"
+                  "indication": {
+                    "en": "• Unstable Jefferson fracture with TAL rupture (Rule of Spence overhang > 6.9 mm, ADI > 3 mm, or MRI-confirmed TAL tear)\n• Progressive lateral mass displacement or concomitant unstable C2 odontoid/pars fracture",
+                    "th": "• กระดูก C1 Burst fracture ชนิดไม่มั่นคงที่เอ็น TAL ขาดหลุด (ระยะเกย Spence > 6.9 มม., ADI > 3 มม. หรือ MRI พบเอ็นขาด)\n• มวลกระดูกด้านข้างเคลื่อนถ่างออกเรื่อยๆ หรือมีกระดูกคอ C2 หักร่วมชนิดไม่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Posterior C1–C2 Instrumented Fusion (Harms / Goel technique: C1 lateral mass screws + C2 pedicle or pars/isthmus screws with connecting rods and autologous bone graft)\n• Alternative: C1-ring osteosynthesis (motion-preserving C1 lateral mass screw-rod bridge fixation)",
+                    "th": "• ผ่าตัดเชื่อมตรึงกระดูกคอ C1–C2 ทางด้านหลัง (Harms / Goel technique: ขันสกรูยึด C1 Lateral Mass + C2 Pedicle/Pars screws เชื่อมดามด้วยแท่ง Rods และใส่กระดูกปลูก)\n• ทางเลือก: ผ่าตัดยึดตรึงเฉพาะวงแหวน C1 (C1 Ring Osteosynthesis) เพื่อสงวนการหมุนของคอ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Postoperative rigid collar for 6 weeks; progressive gentle neck mobilization from week 6; full solid fusion expected at 3–6 months",
+                    "th": "• ใส่เฝือกคอแข็งประคอง 6 สัปดาห์หลังผ่าตัด; เริ่มฝึกขยับคอเบาๆ ที่ 6 สัปดาห์; กระดูกเชื่อมติดสมบูรณ์ที่ 3–6 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Vertebral artery injury during C1 lateral mass screw placement (must stay on inferior half of C1 posterior arch) or C2 pedicle screw insertion\n• Occipitocervical fusion overtreatment when C1–C2 fusion is sufficient",
+                    "th": "• บาดเจ็บต่อเส้นเลือดแดง Vertebral Artery ระหว่างขันสกรู C1 Lateral mass หรือ C2 Pedicle\n• ผ่าตัดเชื่อมลามขึ้นไปถึงฐานกะโหลกศีรษะ (Occipitocervical fusion) เกินความจำเป็น"
+                  }
                 }
               },
               "illustrationId": "",
@@ -211,14 +275,46 @@ export const cSpineBone: BoneData = {
                 "th": "การเอียงคอไปด้านข้างร่วมกับแรงกดอัดตามแนวแกน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Unilateral C1 lateral mass fracture; non-displaced fractures with intact TAL treated in rigid cervical orthosis; severe intra-articular facet incongruity (>2 mm step-off) or rotational/tilt deformity requires operative reduction and C1–C2 fusion to prevent post-traumatic occipitocervical arthritis and torticollis.",
+                  "th": "รอยหักมวลกระดูกด้านข้าง C1 ซีกเดียว หากไม่เคลื่อนตัวและเอ็น TAL สมบูรณ์รักษาด้วยเฝือกคอชนิดแข็ง; หากผิวข้อแตกเหลื่อม >2 มม. หรือคอเอียงบิดผิดรูป จำเป็นต้องผ่าตัดจัดกระดูกและเชื่อมข้อ C1–C2 เพื่อป้องกันข้อเสื่อมและคอเอียงเรื้อรัง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED FOR NON-DISPLACED FRACTURES. Rigid Collar or Halo-vest for 8-12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดในรอยหักไม่เคลื่อนตัว ใส่ Rigid Collar หรือ Halo-vest 8-12 สัปดาห์"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced C1 lateral mass fracture (<2 mm articular step-off, intact TAL, coronal head tilt < 5°)",
+                    "th": "• กระดูก C1 lateral mass หักชนิดไม่เคลื่อนตัวหรือเคลื่อนน้อย (<2 มม., เอ็น TAL สมบูรณ์, คอเอียง < 5°)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J) or Halo-vest for 8–12 weeks depending on fracture displacement",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J) หรือ Halo-vest นาน 8–12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Dynamic flexion-extension and rotational radiographs at 8–12 weeks before weaning collar",
+                    "th": "• ตรวจเอกซเรย์ท่าก้ม-เงยและหมุนคอที่ 8–12 สัปดาห์ก่อนถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• Persistent lateral tilt and painful restricted neck rotation due to asymmetric articular healing",
+                    "th": "• ภาวะคอเอียงถาวรและปวดขัดเวลาหมุนคอจากผิวข้อเชื่อมติดไม่เรียบ"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for severe articular step-off >2mm or TAL disruption. C1-C2 posterior fusion.",
-                  "th": "ผ่าตัดเฉพาะกรณีผิวข้อเหลื่อม >2มม. หรือเอ็น TAL ขาด"
+                  "indication": {
+                    "en": "• Severely comminuted lateral mass with >2 mm articular incongruity\n• Concomitant TAL rupture, rotational C1–C2 subluxation, or progressive torticollis",
+                    "th": "• ผิวข้อ lateral mass แตกป่นเหลื่อม >2 มม.\n• เอ็น TAL ฉีกขาดร่วมด้วย, ข้อ C1–C2 หลุดบิดหมุน หรือมีภาวะคอเอียงเกร็งรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Posterior C1–C2 instrumented fusion (Harms technique) OR Occiput-to-C2 fusion if C1 lateral mass screw purchase is impossible due to severe comminution",
+                    "th": "• ผ่าตัดเชื่อมข้อ C1–C2 ด้านหลัง (Harms technique) หรือเชื่อมจากฐานกะโหลกถึง C2 (Occipitocervical Fusion) หากมวลกระดูก C1 แตกป่นจนขันสกรูไม่ได้"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected cervical orthosis for 6 weeks; progressive mobilization thereafter",
+                    "th": "• ใส่เฝือกคอประคอง 6 สัปดาห์; เริ่มกายภาพขยับคอหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Excessive loss of neck rotational range of motion (C1–C2 fusion eliminates ~50% of total cervical rotation)",
+                    "th": "• สูญเสียพิสัยการหมุนคอประมาณ 50% หลังผ่าตัดเชื่อมข้อ C1–C2 (ต้องให้ข้อมูลผู้ป่วยล่วงหน้า)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -325,14 +421,46 @@ export const cSpineBone: BoneData = {
                 "th": "การแหงนคอไปด้านหลังรุนแรงร่วมกับแรงอัดกระแทก (เช่น หน้าผากชนกระจกหน้ารถ)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Minimally displaced C2 bilateral pars fracture (<3 mm translation, 0° angulation); C2–C3 intervertebral disc and ALL/PLL intact; mechanically stable; non-operative treatment in rigid cervical collar for 10–12 weeks achieves >95% bony union.",
+                  "th": "กระดูกคอ C2 pars หักสองข้างชนิดเคลื่อนน้อย (<3 มม., ไม่เอียงบิด 0°) หมอนรองกระดูก C2–C3 และเอ็น ALL/PLL สมบูรณ์ โครงสร้างมั่นคง รักษาแบบไม่ผ่าตัดด้วยเฝือกคอชนิดแข็ง 10–12 สัปดาห์ กระดูกเชื่อมติด >95%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Immobilization in a Rigid Cervical Collar or Halo-vest for 10-12 weeks. High union rate (>95%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกคอชนิดแข็ง (Rigid Collar) หรือ Halo-vest 10-12 สัปดาห์ อัตรากระดูกติดสูงมาก"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced Levine Type I fractures (<3 mm translation and no kyphotic angulation)",
+                    "th": "• กระดูก C2 pars หักชนิดไม่เคลื่อนตัวหรือเคลื่อนน้อย (เคลื่อน <3 มม. และไม่มีการก้มเอียง)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J or Philadelphia collar) worn continuously for 10–12 weeks with upright lateral radiographs at weeks 1, 2, 6, and 12",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J หรือ Philadelphia collar) ต่อเนื่อง 10–12 สัปดาห์ ร่วมกับเอกซเรย์ท่ายืนสัปดาห์ที่ 1, 2, 6 และ 12"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active gentle range-of-motion and isometric strengthening after radiographic bony consolidation at 10–12 weeks",
+                    "th": "• เริ่มฝึกบริหารกล้ามเนื้อคอและเคลื่อนไหวเบาๆ หลังกระดูกติดแน่นที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking subtle C2–C3 angulation indicating an occult Type IIA flexion-distraction injury",
+                    "th": "• มองข้ามการก้มเอียงของกระดูก C2–C3 ทำให้พลาดการวินิจฉัย Type IIA ซึ่งห้ามดึงคอ"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Strictly not indicated for Type I fractures with intact disc",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัดสำหรับ Type I"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery for an easily treatable collar case",
+                    "th": "• ผ่าตัดเกินความจำเป็นในกรณีที่หายได้ด้วยเฝือกคอ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -356,14 +484,46 @@ export const cSpineBone: BoneData = {
                 "th": "การแหงนคอแล้วสะบัดก้มคอกระชากอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced C2 pars fracture (>3 mm translation, >11° angulation) with torn C2–C3 disc and PLL; initial closed reduction via axial traction in slight extension followed by Halo-vest for 12 weeks; surgery (anterior C2–C3 ACDF or direct C2 pars screws) indicated if reduction cannot be maintained or in polytrauma/elderly patients.",
+                  "th": "กระดูก C2 pars หักเคลื่อนตัว (>3 มม., ก้มเอียง >11°) ร่วมกับหมอนรองกระดูก C2–C3 และเอ็น PLL ฉีกขาด; ขั้นแรกทำการดึงจัดกระดูกเข้าที่ (Traction ในท่าแหงนเล็กน้อย) แล้วใส่ Halo-vest 12 สัปดาห์; ผ่าตัดเชื่อม C2–C3 (ACDF) หรือยึด C2 pars screw หากจัดกระดูกไม่อยู่ หรือในผู้ป่วยบาดเจ็บหลายระบบ/ผู้สูงอายุ"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED INITIAL TREATMENT. Closed traction reduction in slight extension followed by Halo-vest immobilization for 12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นอันดับแรก ดึงจัดกระดูกให้เข้าที่ในท่าแหงนคอเล็กน้อย แล้วใส่ Halo-vest นาน 12 สัปดาห์"
+                  "indication": {
+                    "en": "• Displaced Levine Type II fractures successfully reduced to <3 mm translation and <5° angulation under monitored traction",
+                    "th": "• กระดูก C2 หัก Levine Type II ที่สามารถดึงจัดกระดูกเข้าที่ได้ดี (เคลื่อน <3 มม. และเอียง <5°)"
+                  },
+                  "method": {
+                    "en": "• Closed reduction using 5–10 lbs of axial traction under fluoroscopy with neck in slight extension, followed by Halo-vest immobilization for 12 weeks",
+                    "th": "• ดึงกระดูกคอถ่วงน้ำหนัก 5–10 ปอนด์ใต้เครื่องเอกซเรย์ในท่าแหงนคอเล็กน้อย แล้วใส่ Halo-vest นาน 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Serial upright cervical radiographs at weeks 1, 2, 4, 8, 12 in Halo; transition to rigid collar for 4 weeks after Halo removal",
+                    "th": "• เอกซเรย์คอด้านข้างติดตามอาการสัปดาห์ที่ 1, 2, 4, 8, 12; เปลี่ยนเป็นเฝือกคอแข็งอีก 4 สัปดาห์หลังถอด Halo"
+                  },
+                  "pitfalls": {
+                    "en": "• Loss of reduction inside Halo vest leading to symptomatic C2–C3 nonunion and malunion kyphosis",
+                    "th": "• กระดูกเคลื่อนตัวซ้ำใน Halo vest ทำให้เกิดกระดูกไม่ติดและคอค่อมผิดรูปเรื้อรัง"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if closed reduction fails or persistent C2-C3 instability. Anterior C2-C3 discectomy & fusion (ACDF) or posterior C2-C3 fusion.",
-                  "th": "ผ่าตัดเมื่อดึงจัดกระดูกไม่สำเร็จ หรือ C2-C3 ยังคงหลวมเคลื่อน โดยผ่าตัดเชื่อมข้อ C2-C3 ทางด้านหน้า (ACDF) หรือด้านหลัง"
+                  "indication": {
+                    "en": "• Failure of closed reduction (>3 mm persistent translation or >11° kyphosis)\n• Inability to tolerate Halo-vest (elderly, pulmonary disease, severe polytrauma)\n• Chronic symptomatic C2–C3 nonunion",
+                    "th": "• จัดกระดูกไม่เข้าที่ (ยังคงเคลื่อน >3 มม. หรือค่อม >11°)\n• ผู้ป่วยทนใส่ Halo-vest ไม่ได้ (ผู้สูงอายุ, โรคปอด, บาดเจ็บหลายระบบ)\n• ภาวะกระดูกไม่ติดและปวดเรื้อรัง"
+                  },
+                  "method": {
+                    "en": "• Anterior C2–C3 Discectomy and Fusion (ACDF) with anterior plate fixation (biomechanically restores anterior/middle columns across torn disc)\n• Alternative: Direct C2 pars/isthmus screw osteosynthesis or posterior C2–C3 instrumented fusion",
+                    "th": "• ผ่าตัดเชื่อมกระดูกและหมอนรอง C2–C3 ทางด้านหน้า (Anterior C2–C3 ACDF พร้อมแผ่นเหล็กดาม)\n• ทางเลือก: ผ่าตัดขันสกรูยึดข้ามรอยหัก C2 Pars Direct Screw หรือผ่าตัดดาม C2–C3 ทางด้านหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks postoperatively; early upright ambulation; gentle active ROM at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์หลังผ่าตัด; ลุกเดินได้เร็ว; เริ่มฝึกขยับคอที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting posterior C2–C3 fusion alone without addressing the torn anterior C2–C3 disc leading to construct failure",
+                    "th": "• ผ่าตัดดามด้านหลังอย่างเดียวโดยไม่จัดการหมอนรองกระดูกด้านหน้าที่ฉีกขาดจนเหล็กดามล้าหัก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -387,14 +547,46 @@ export const cSpineBone: BoneData = {
                 "th": "กลไกก้มคอพร้อมกับแรงดึงถ่างอ้ารุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Severe flexion-angulation deformity with minimal translation and oblique pars fracture line; C2–C3 disc torn via flexion-distraction; CERVICAL TRACTION IS STRICTLY CONTRAINDICATED (causes catastrophic over-distraction and spinal cord transection); closed reduction performed ONLY via manual gentle extension and compression, then Halo-vest; early anterior C2–C3 ACDF preferred if reduction unstable.",
+                  "th": "รอยหักเฉียงของ C2 pars ที่มีการก้มเอียงรุนแรงแต่ไม่เกย เกิดจากกลไกก้มคอดึงถ่าง; **ห้ามดึงถ่วงน้ำหนัก (TRACTION) เด็ดขาด** เพราะจะทำให้ข้ออ้าแยกและไขสันหลังขาดได้ทันที; การจัดกระดูกทำได้เฉพาะการดันแหงนคอเบาๆ (Extension-Compression) แล้วใส่ Halo-vest; แนะนำผ่าตัด ACDF C2–C3 หากจัดกระดูกไม่อยู่"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Closed reduction manually in EXTENSION (WITHOUT TRACTION) followed by Halo-vest for 12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด โดยจัดกระดูกในท่าแหงนคอ **(โดยไม่ดึงถ่วงน้ำหนัก)** แล้วใส่ Halo-vest 12 สัปดาห์"
+                  "indication": {
+                    "en": "• Levine Type IIA fractures where anatomic reduction is successfully achieved by manual extension-compression under fluoroscopy",
+                    "th": "• กระดูก C2 Type IIA ที่จัดกระดูกในท่าแหงนคอเข้าที่ได้สมบูรณ์ใต้เครื่องเอกซเรย์"
+                  },
+                  "method": {
+                    "en": "• **NO AXIAL TRACTION**. Closed reduction performed by gentle manual extension combined with posterior translation/axial compression under fluoroscopy; immediate application of Halo-vest in slight extension for 12 weeks",
+                    "th": "• **ห้ามดึงถ่วงน้ำหนัก (No Traction)** ทำการจัดกระดูกด้วยการดันแหงนคอเบาๆ ร่วมกับดันกระดูกไปด้านหลังใต้เครื่องเอกซเรย์; ใส่ Halo-vest ในท่าแหงนคอเล็กน้อยนาน 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict weekly upright radiographic checks during the first 3 weeks to rule out late kyphotic collapse in Halo",
+                    "th": "• ตรวจเอกซเรย์ท่ายืนทุกสัปดาห์ในช่วง 3 สัปดาห์แรกเพื่อเฝ้าระวังแนวกระดูกค่อมตัวซ้ำใน Halo"
+                  },
+                  "pitfalls": {
+                    "en": "• Applying cervical tongs traction leading to fatal spinal cord overdistraction and permanent tetraplegia\n• Failure of Halo to maintain extension leading to severe progressive kyphosis",
+                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะ (Traction) จนไขสันหลังถูกดึงยืดขาดเป็นอัมพาตถาวร\n• Halo-vest ไม่สามารถล็อกท่าแหงนคอได้จนคอค่อมพับไปข้างหน้า"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if inability to maintain reduction in Halo. Direct C2 transpedicular screw fixation or posterior C2-C3 fusion.",
-                  "th": "ผ่าตัดหากใส่ Halo แล้วกระดูกยังเคลื่อนบิด โดยขันสกรู C2 pedicle screw หรือผ่าตัดดาม C2-C3 ด้านหลัง"
+                  "indication": {
+                    "en": "• Inability to achieve/maintain reduction in extension without traction\n• Persistent C2–C3 angulation > 10°\n• Polytrauma or intolerance of Halo-vest",
+                    "th": "• ไม่สามารถจัดกระดูกท่าแหงนให้อยู่ในแนวปกติได้\n• กระดูกยังคงก้มเอียงค่อม > 10°\n• บาดเจ็บหลายระบบ หรือทนใส่ Halo-vest ไม่ได้"
+                  },
+                  "method": {
+                    "en": "• Anterior C2–C3 Discectomy and Fusion (ACDF) with structural interbody graft/cage and locking plate\n• Alternative: Posterior C2–C3 instrumented fusion or bilateral C2 direct pars screw osteosynthesis",
+                    "th": "• ผ่าตัดเชื่อมหมอนรองและกระดูก C2–C3 ด้านหน้า (ACDF พร้อม Cage และ Locking Plate)\n• ทางเลือก: ผ่าตัดดาม C2–C3 ด้านหลัง หรือยึด C2 pars screws สองข้าง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks; progressive physical therapy at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting traction during intraoperative positioning (must position neck manually in extension)",
+                    "th": "• เผลอดึงคอระหว่างจัดท่าผ่าตัดในห้องผ่าตัด (ต้องจัดท่าแหงนคอด้วยมือเท่านั้น)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -418,14 +610,46 @@ export const cSpineBone: BoneData = {
                 "th": "กลไกก้มคออัดกระแทกแล้วสะบัดแหงนคอกลับรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Severe C2 pars fracture combined with locked or perched bilateral C2–C3 facet joints; gross 3-column disruption with extreme instability; non-operative care is contraindicated; emergency open reduction of locked facets and rigid posterior C2–C3 fusion (or combined anterior-posterior 360° stabilization) is mandatory.",
+                  "th": "กระดูก C2 pars หักร่วมกับข้อต่อ Facet C2–C3 หลุดล็อคเกยกันทั้งสองข้าง โครงสร้างทั้ง 3 เสาพังทลายอย่างสิ้นเชิง ไม่มั่นคงรุนแรงสูงสุด ห้ามรักษาแบบไม่ผ่าตัด; ต้องผ่าตัดเปิดจัดข้อ Facet ที่หลุดฉุกเฉินและดามยึดกระดูกเชื่อมข้อ C2–C3 ด้านหลัง (หรือผ่าตัดหน้า-หลัง 360°)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Impossible to reduce and stabilize non-operatively.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ไม่สามารถดึงดามให้อยู่ในแนวปกติได้"
+                  "indication": {
+                    "en": "• Strictly contraindicated (locked facets cannot be reduced or maintained closed; catastrophic instability)",
+                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ข้อ Facet ที่หลุดล็อคไม่สามารถดึงเข้าที่หรือยึดตรึงได้ด้วยเฝือก)"
+                  },
+                  "method": {
+                    "en": "• N/A (Urgent operative preparation)",
+                    "th": "• N/A (เตรียมผ่าตัดฉุกเฉิน)"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• High mortality and irreversible tetraplegia if surgery is delayed",
+                    "th": "• เสี่ยงต่ออัมพาตถาวรและเสียชีวิตหากผ่าตัดล่าช้า"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT (EMERGENCY SURGERY). Open reduction of C2-C3 facet dislocation + posterior C2-C3 instrumented fusion or combined anterior/posterior reconstruction.",
-                  "th": "แนะนำผ่าตัดรักษาด่วนที่สุด (ORIF) เปิดผ่าตัดจัดข้อ C2-C3 facet ที่หลุดให้เข้าที่ แล้วดามด้วยแผ่นเหล็ก/สกรู C2-C3 ด้านหลัง"
+                  "indication": {
+                    "en": "• All Levine-Edwards Type III Hangman fractures (C2 pars fracture + bilateral locked/subluxated C2–C3 facets)",
+                    "th": "• กระดูก C2 หักหลุด Levine Type III ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Emergency Operative Reconstruction:\n  1. Posterior Approach: Open reduction of locked C2–C3 facets (partial facetectomy if locked) + Posterior C2–C3 instrumented fusion (C2 pedicle/pars screws + C3 lateral mass screws with rods)\n  2. Anterior C2–C3 ACDF performed secondarily if severe anterior disc herniation/kyphosis persists (360° reconstruction)",
+                    "th": "• ผ่าตัดสร้างความมั่นคงฉุกเฉิน:\n  1. ผ่าตัดเปิดทางด้านหลัง: จัดข้อ C2–C3 Facet ที่หลุดล็อคให้เข้าที่ (ตัดแต่งขอบข้อ Facet หากติดขัด) + ผ่าตัดดามยึด C2–C3 ด้วยสกรูและแท่ง Rods (C2 Pedicle/Pars screws + C3 Lateral Mass screws)\n  2. ผ่าตัดเสริมทางด้านหน้า C2–C3 ACDF ร่วมด้วยหากมีหมอนรองกระดูกแตกทะลักหรือแนวกระดูกยังค่อม (ผ่าตัดรอบทิศ 360 องศา)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6–8 weeks; aggressive neuro-rehabilitation if preexisting neurologic deficit",
+                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; กายภาพบำบัดฟื้นฟูระบบประสาทเข้มข้นหากมีอาการอัมพาต"
+                  },
+                  "pitfalls": {
+                    "en": "• Blind closed traction attempts that cause cord herniation against retropulsed C2 body or extruded disc fragments\n• Inadequate posterior fixation purchase in fractured C2 pars",
+                    "th": "• พยายามดึงดัดข้อแบบปิดแบบสุ่มสี่สุ่มห้าจนหมอนรองกระดูกกดทับไขสันหลัง\n• สกรูยึด C2 หลวมหลุดเนื่องจากเนื้อกระดูก pars แตกหัก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -528,14 +752,46 @@ export const cSpineBone: BoneData = {
                 "th": "การหมุนหรือเอียงศีรษะอย่างรุนแรงดึงกระชากเอ็น Alar ligament"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Avulsion fracture of the superior tip of the odontoid process above the transverse ligament; alar/apical ligament insertion; mechanically stable atlantoaxial complex; conservative immobilization in a rigid cervical collar for 6–8 weeks yields >99% union.",
+                  "th": "รอยหักกะเทาะยอดปลายเดือย C2 เหนือแนวเอ็น Transverse ligament จุดเกาะของเอ็น Alar ligament โครงสร้างข้อ C1–C2 ยังคงมั่นคง รักษาแบบไม่ผ่าตัดโดยใส่เฝือกคอชนิดแข็ง (Rigid Collar) 6–8 สัปดาห์ กระดูกเชื่อมติด >99%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Rigid Cervical Collar (Hard Collar) for 6-8 weeks for pain control. Union rate >99%.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกคอชนิดแข็ง (Rigid Collar) 6-8 สัปดาห์ อัตรากระดูกติดดีเยี่ยม"
+                  "indication": {
+                    "en": "• Isolated Anderson-D'Alonzo Type I odontoid tip avulsion fractures with intact C1–C2 alignment",
+                    "th": "• กระดูกยอดเดือย C2 หักกะเทาะ Type I โดยแนวข้อ C1–C2 ยังเรียงตัวปกติ"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J or Aspen collar) for 6–8 weeks for comfort and symptom control",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J หรือ Aspen) นาน 6–8 สัปดาห์เพื่อระงับปวดและประคองคอ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wean collar at 6–8 weeks as pain subsides; begin gentle active range of motion",
+                    "th": "• ปลดเฝือกคอที่ 6–8 สัปดาห์เมื่อหายปวด; เริ่มฝึกขยับคอเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Misdiagnosing an Occipitocervical Dislocation (Atlanto-Occipital Dissociation) as an isolated Type I avulsion fracture; evaluate CCJ alignment metrics (BDI/BAI, Powers ratio) on CT/MRI",
+                    "th": "• วินิจฉัยผิดพลาดระหว่างข้อต่อกะโหลก-คอหลุด (Atlanto-Occipital Dislocation) กับ Type I แตกกะเทาะ; ต้องวัดมุมและระยะ BDI/BAI และ Powers ratio บน CT/MRI เสมอ"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Strictly not indicated unless part of a devastating atlanto-occipital dissociation",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัด เว้นแต่เกิดร่วมกับข้อกะโหลกศีรษะหลุด (Atlanto-occipital Dissociation)"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtreatment of a benign, stable avulsion fracture",
+                    "th": "• ผ่าตัดเกินความจำเป็นในรอยหักที่ไม่มีอันตราย"
+                  }
                 }
               },
               "illustrationId": "",
@@ -559,14 +815,46 @@ export const cSpineBone: BoneData = {
                 "th": "การแหงนคอหรือก้มคอรุนแรงจากการล้ม หรืออุบัติเหตุทางถนน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Transverse fracture through narrow watershed base of dens; high nonunion risk (30%–40% overall, >60%–80% in elderly >65 years); Halo-vest trial acceptable ONLY in young non-smokers with <5 mm displacement and <10° tilt; surgical stabilization (Anterior Odontoid Screw if fracture line horizontal/oblique posterior-down, or C1–C2 Posterior Fusion if comminuted/osteoporotic/transverse ligament torn) is preferred, especially in elderly to avoid high halo-related mortality.",
+                  "th": "รอยหักโคนเดือย C2 ในเขตอับเลือด เสี่ยงกระดูกไม่ติดสูง (30%–40% ในคนทั่วไป, >60%–80% ในผู้สูงอายุ >65 ปี); การใส่ Halo-vest พิจารณาเฉพาะผู้ป่วยอายุน้อย ไม่สูบบุหรี่ และกระดูกเคลื่อน <5 มม. เอียง <10°; การผ่าตัดดามกระดูก (ผ่าตัดยึดสกรูด้านหน้า Anterior Odontoid Screw หรือผ่าตัดเชื่อม C1–C2 ด้านหลัง) เป็นการรักษาที่แนะนำ โดยเฉพาะในผู้สูงอายุเพื่อเลี่ยงอัตราตายสูงจากการใส่ Halo-vest"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Trial of Halo-vest or Rigid Collar ONLY in young patients with non-displaced (<5mm) fractures. Poor nonunion outcomes in elderly.",
-                  "th": "พิจารณาใส่ Halo-vest หรือ Rigid Collar เฉพาะในผู้ป่วยอายุน้อยที่กระดูกไม่เคลื่อน (<5มม.)"
+                  "indication": {
+                    "en": "• Young patients (<50–65 years) with strictly non-displaced fractures (<2 mm displacement, <5° angulation, no comminution, non-smoker)\n• Non-surgical candidates with prohibitive anesthetic risk (Rigid collar for comfort / palliative care)",
+                    "th": "• ผู้ป่วยอายุน้อย (<50–65 ปี) ที่กระดูกไม่เคลื่อนตัว (<2 มม., เอียง <5°, ไม่มีชิ้นแตกย่อย, ไม่สูบบุหรี่)\n• ผู้ป่วยที่มีความเสี่ยงต่อการดมยาสลบสูงมากจนผ่าตัดไม่ได้ (ใส่เฝือกคอแข็งประคองอาการ)"
+                  },
+                  "method": {
+                    "en": "• Halo-vest immobilization for 10–12 weeks OR Rigid Cervical Collar (Miami J) with accepted 20–30% nonunion risk",
+                    "th": "• ใส่ชุดอุปกรณ์ Halo-vest นาน 10–12 สัปดาห์ หรือใส่เฝือกคอชนิดแข็ง (Miami J) โดยยอมรับความเสี่ยงกระดูกไม่ติด 20–30%"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict biweekly upright radiographs; CT scan at 12 weeks to assess fusion prior to halo/collar removal",
+                    "th": "• ตรวจเอกซเรย์ท่ายืนทุก 2 สัปดาห์; ทำ CT scan ที่ 12 สัปดาห์เพื่อยืนยันกระดูกติดก่อนถอดอุปกรณ์"
+                  },
+                  "pitfalls": {
+                    "en": "• Using Halo-vest in elderly patients (>65 yrs) causes severe cardiopulmonary complications, aspiration pneumonia, and up to 42% 1-year mortality\n• Cigarette smoking increases nonunion rate fourfold",
+                    "th": "• ใส่ Halo-vest ในผู้สูงอายุ (>65 ปี) ก่อให้เกิดภาวะแทรกซ้อนทางปอดรุนแรง ปอดบวมสำลัก และอัตราตายสูงถึง 42% ใน 1 ปี\n• การสูบบุหรี่เพิ่มอัตรากระดูกไม่ติดขึ้น 4 เท่า"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR ELDERLY (>65 yrs), DISPLACEMENT >5mm, ANGULATION >10°, OR GAP >1mm. Anterior Odontoid Screw Fixation (if TAL intact and fracture horizontal), OR C1-C2 Posterior Fusion (Harms technique).",
-                  "th": "แนะนำผ่าตัดรักษาในผู้สูงอายุ (>65 ปี), เคลื่อน >5มม., เอียง >10° โดยผ่าตัดยึดสกรูทางด้านหน้า (Anterior Odontoid Screw) หรือผ่าตัดเชื่อม C1-C2 ด้านหลัง (Harms technique)"
+                  "indication": {
+                    "en": "• Primary Operative Criteria:\n  1. Age ≥ 65 years\n  2. Displacement ≥ 5 mm or Angulation ≥ 10°\n  3. Nonunion risk factors (smoking, fracture gap > 1 mm, comminuted Type IIA)\n  4. Inability to tolerate Halo-vest or polytrauma",
+                    "th": "• ข้อบ่งชี้หลักในการผ่าตัด:\n  1. ผู้ป่วยอายุ ≥ 65 ปี\n  2. กระดูกเคลื่อน ≥ 5 มม. หรือมุมเอียง ≥ 10°\n  3. มีปัจจัยเสี่ยงกระดูกไม่ติด (สูบบุหรี่, ช่องว่างรอยหัก > 1 มม., มีชิ้นแตกย่อย Type IIA)\n  4. ทนใส่ Halo-vest ไม่ได้ หรือบาดเจ็บหลายระบบ"
+                  },
+                  "method": {
+                    "en": "• Technique 1: Anterior Direct Odontoid Screw Fixation (Motion-preserving):\n  - Indicated for acute (<6 months) horizontal or anterior-superior/posterior-inferior oblique fractures with intact transverse ligament, reducible fracture, and good bone quality\n  - 1 or 2 cannulated 3.5–4.5 mm partially threaded lag screws placed via retropharyngeal approach\n• Technique 2: Posterior C1–C2 Instrumented Fusion (Harms technique):\n  - Indicated for anterior-inferior oblique fractures (barrel-stave angle), comminution (Type IIA), osteoporosis, nonunion (>6 months), torn TAL, or barrel chest preventing anterior trajectory\n  - C1 lateral mass screws + C2 pedicle/pars/isthmus screws connected with rods + autologous bone graft",
+                    "th": "• วิธีที่ 1: ผ่าตัดขันสกรูยึดโคนเดือยทางด้านหน้า (Anterior Odontoid Screw - สงวนการหมุนของคอ):\n  - เหมาะสำหรับรอยหักเฉียบพลัน (<6 เดือน) แนวขวางหรือเฉียงลงด้านหลัง โดยเอ็น TAL สมบูรณ์ กระดูกดึงเข้าที่ได้ และเนื้อกระดูกแข็งแรง\n  - ขันสกรู Cannulated Lag Screw ขนาด 3.5–4.5 มม. 1 หรือ 2 ตัวผ่านช่องคอด้านหน้า\n• วิธีที่ 2: ผ่าตัดเชื่อมตรึงกระดูกคอ C1–C2 ทางด้านหลัง (Harms Posterior C1–C2 Fusion):\n  - เหมาะสำหรับรอยหักเฉียงลงด้านหน้า, มีชิ้นแตกย่อย (Type IIA), กระดูกพรุนในผู้สูงอายุ, กระดูกไม่ติดเรื้อรัง (>6 เดือน), เอ็น TAL ขาด หรือหน้าอกหนาจนวางมุมสกรูหน้าไม่ได้\n  - ยึด C1 Lateral Mass + C2 Pedicle/Pars Screws ร่วมกับดามแท่ง Rods และใส่กระดูกปลูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Anterior screw: Rigid collar for 4–6 weeks; immediate full cervical rotation preserved\n• Posterior C1–C2 fusion: Rigid collar for 6–8 weeks; patient warned of 50% permanent loss of neck rotation",
+                    "th": "• ผ่าตัดสกรูด้านหน้า: ใส่เฝือกคอแข็ง 4–6 สัปดาห์ สงวนพิสัยการหมุนคอได้ 100%\n• ผ่าตัดเชื่อม C1–C2 ด้านหลัง: ใส่เฝือกคอแข็ง 6–8 สัปดาห์ สูญเสียการหมุนคอถาวรประมาณ 50%"
+                  },
+                  "pitfalls": {
+                    "en": "• Placing anterior screw across an anterior-inferior oblique fracture line causing fracture displacement ('plowing effect')\n• Vertebral artery injury during C1–C2 posterior instrumentation",
+                    "th": "• ขันสกรูด้านหน้าในรอยหักแนวเฉียงลงด้านหน้า ทำให้รอยหักไถลเคลื่อนแยกตัวออก\n• บาดเจ็บต่อหลอดเลือดแดง Vertebral Artery ระหว่างขันสกรู C1–C2 ด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -590,14 +878,46 @@ export const cSpineBone: BoneData = {
                 "th": "การก้มหรือแหงนคอร่วมกับแรงกดอัดตามแนวแกนอย่างหนัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture line extends deeply into the rich cancellous body of C2 axis; large surface contact area with abundant vascular supply; high union rate (>90%–95%) with conservative immobilization in rigid cervical collar or halo; surgery reserved strictly for severe displacement (>5 mm), angulation (>10°), or neurologic compromise.",
+                  "th": "รอยหักลามลึกลงไปในเนื้อกระดูกพรุนของลำตัว C2 พื้นที่สัมผัสกว้างและเลือดมาเลี้ยงอุดมสมบูรณ์ อัตรากระดูกเชื่อมติดสูงมาก (>90%–95%) ด้วยการรักษาแบบไม่ผ่าตัดใส่เฝือกคอชนิดแข็งหรือ Halo-vest; ผ่าตัดเฉพาะรายที่กระดูกเคลื่อนมาก (>5 มม.), ก้มเอียงมาก (>10°) หรือมีการกดทับเส้นประสาท"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Immobilization in a Rigid Cervical Collar or Halo-vest for 8-12 weeks. High healing rate (>90%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกคอชนิดแข็ง (Rigid Collar) หรือ Halo-vest 8-12 สัปดาห์ อัตรากระดูกเชื่อมติดสูงมาก"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced Anderson Type III fractures (<5 mm translation, <10° angulation, neurologically intact)",
+                    "th": "• กระดูก C2 หัก Type III ชนิดไม่เคลื่อนตัวหรือเคลื่อนน้อย (เคลื่อน <5 มม., เอียง <10°, ระบบประสาทปกติ)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J or Aspen) for 8–12 weeks OR Halo-vest for 8–12 weeks if significant initial displacement was reduced closed",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J หรือ Aspen) นาน 8–12 สัปดาห์ หรือใส่ Halo-vest 8–12 สัปดาห์หากมีการเคลื่อนตัวช่วงแรก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Follow-up radiographs at 2, 6, 8, and 12 weeks; weaning to soft collar at 10–12 weeks followed by isometric neck strengthening",
+                    "th": "• เอกซเรย์ติดตามอาการที่ 2, 6, 8, 12 สัปดาห์; เปลี่ยนเป็นเฝือกอ่อนที่ 10–12 สัปดาห์และเริ่มบริหารกล้ามเนื้อคอ"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking high-riding vertebral artery anatomy or associated C2 superior articular facet comminution",
+                    "th": "• มองข้ามความผิดปกติของหลอดเลือดแดง Vertebral Artery หรือผิวข้อต่อ C2 facet แตกยุบร่วมด้วย"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated ONLY if severe displacement >5mm, angulation, or neurological compromise. C1-C2 posterior fusion.",
-                  "th": "ผ่าตัดเฉพาะกรณีเคลื่อนเกย >5มม. หรือมีรอยกดทับไขสันหลัง"
+                  "indication": {
+                    "en": "• Severe irreducible displacement (>5 mm translation, >10° severe angulation)\n• Significant facet joint subluxation or neurological deficit\n• Symptomatic nonunion or malunion",
+                    "th": "• กระดูกเคลื่อนตัวรุนแรงจัดไม่เข้าที่ (เคลื่อน >5 มม., เอียง >10°)\n• ข้อต่อ Facet หลุดเกย หรือมีอาการกดทับระบบประสาท\n• ภาวะกระดูกไม่ติดหรือติดผิดรูปและมีอาการปวดเรื้อรัง"
+                  },
+                  "method": {
+                    "en": "• Posterior C1–C2 Instrumented Fusion (Harms technique) with lateral mass and pedicle screws\n• Anterior Odontoid Screw Fixation is generally NOT recommended for Type III due to poor distal screw purchase in comminuted C2 body",
+                    "th": "• ผ่าตัดเชื่อมตรึงกระดูกคอ C1–C2 ด้านหลัง (Harms technique) ด้วยสกรูยึด C1 Lateral Mass + C2 Pedicle/Pars screws\n• ไม่แนะนำให้ขันสกรูเดือยทางด้านหน้า (Anterior Screw) สำหรับ Type III เนื่องจากตัวกระดูก C2 แตกทำให้สกรูยึดไม่อยู่"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 6 weeks postoperatively; active shoulder and gentle neck ROM at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์หลังผ่าตัด; เริ่มขยับไหล่และคอเบาๆ ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting anterior odontoid screw fixation resulting in poor screw purchase and fixation cutout through fractured C2 body cancellous bone",
+                    "th": "• ดันทุรังขันสกรูเดือยทางด้านหน้าจนสกรูหลุดถอนจากเนื้อกระดูก C2 body ที่แตก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -752,14 +1072,46 @@ export const cSpineBone: BoneData = {
                 "th": "แรงกดอัดตามแนวแกนพลังงานต่ำถึงปานกลาง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Total SLIC score < 4 points; represents mechanically stable subaxial fracture (e.g., simple compression, intact/indeterminate DLC, neurologically intact); non-operative immobilization in a rigid cervical orthosis for 8–12 weeks achieves predictable stability and bony healing without surgery.",
+                  "th": "คะแนน SLIC รวม < 4 คะแนน แสดงถึงการบาดเจ็บกระดูกคอที่มั่นคงทางกลศาสตร์ (เช่น รอยหักยุบธรรมดา เอ็น DLC สมบูรณ์ และระบบประสาทปกติ) รักษาแบบไม่ผ่าตัดโดยใส่เฝือกดามคอชนิดแข็ง 8–12 สัปดาห์ กระดูกเชื่อมติดได้ดีโดยไม่ต้องผ่าตัด"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). External immobilization with Rigid Cervical Collar (Miami J or Philadelphia Collar) for 8-12 weeks, with serial radiographs at 2, 4, 8, and 12 weeks to ensure no secondary displacement.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นมาตรฐานหลัก ใส่เฝือกคอชนิดแข็ง (Miami J หรือ Philadelphia Collar) 8-12 สัปดาห์ ร่วมกับติดตามเอกซเรย์ประเมินเป็นระยะ"
+                  "indication": {
+                    "en": "• Total SLIC score ≤ 3 points (Mechanically stable fracture pattern, intact DLC, neurologically intact)",
+                    "th": "• คะแนน SLIC รวม ≤ 3 คะแนน (กระดูกหักชนิดมั่นคง เอ็น DLC สมบูรณ์ และระบบประสาทปกติ)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J or Aspen collar) worn continuously for 8–12 weeks with serial upright radiographs at 2, 4, 8, and 12 weeks",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J หรือ Aspen) ต่อเนื่อง 8–12 สัปดาห์ พร้อมเอกซเรย์ท่ายืนติดตามผลที่ 2, 4, 8, 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wean collar after 8–12 weeks once upright stability and bony healing are confirmed; isometric neck extensor strengthening",
+                    "th": "• ปลดเฝือกคอหลัง 8–12 สัปดาห์เมื่อเอกซเรย์กระดูกติดมั่นคง; เริ่มบริหารกล้ามเนื้อคอด้านหลัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to identify occult posterior ligamentous injury (DLC disruption) on initial radiographs; obtain STIR MRI if interspinous widening is questionable",
+                    "th": "• ตรวจไม่พบการบาดเจ็บของเอ็นส่วนหลัง (DLC ขาด) จากภาพเอกซเรย์ธรรมดา; ควรตรวจ MRI หากระยะช่องว่าง interspinous ดูกว้างผิดปกติ"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Strictly not indicated for stable SLIC < 4 scores",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัดสำหรับคะแนน SLIC < 4"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Surgical overtreatment of stable fractures exposing patients to unnecessary instrumentation risks",
+                    "th": "• ผ่าตัดโดยไม่จำเป็นในรอยหักที่มั่นคง เพิ่มความเสี่ยงต่อภาวะแทรกซ้อนจากการผ่าตัด"
+                  }
                 }
               },
               "illustrationId": "",
@@ -783,14 +1135,46 @@ export const cSpineBone: BoneData = {
                 "th": "แรงก้มคออัดกระแทกพลังงานปานกลาง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Total SLIC score = 4 points; borderline/equivocal stability; treatment individualized based on patient factors: operative stabilization favored in young active patients, burst fractures with canal compromise, or persistent severe pain; non-operative rigid bracing favored in elderly, medically frail, or low-demand patients.",
+                  "th": "คะแนน SLIC รวม = 4 คะแนน อยู่ในเกณฑ์ก้ำกึ่ง (Equivocal); พิจารณาตามลักษณะเฉพาะรายบุคคล: แนะนำผ่าตัดในผู้ป่วยอายุน้อย, กระดูกแตก burst ยื่นเข้าช่องไขสันหลัง หรือปวดรุนแรง; แนะนำใส่เฝือกคอในผู้สูงอายุ, ผู้ป่วยที่มีโรคร่วมหลายอย่าง หรือมีความเสี่ยงผ่าตัดสูง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Trial of Rigid Cervical Collar or Halo-vest immobilization in patients who are poor surgical candidates or have minimal pain.",
-                  "th": "พิจารณาใส่ Rigid Collar หรือ Halo-vest ในผู้ป่วยที่ไม่เหมาะกับการผ่าตัดหรือปวดน้อย"
+                  "indication": {
+                    "en": "• Medically frail patients, poor operative candidates, or stable burst patterns without neurological compromise and minimal kyphosis (<15°)",
+                    "th": "• ผู้ป่วยที่มีโรคร่วมเสี่ยงสูงต่อการผ่าตัด หรือกระดูกแตก Burst ที่ไม่มีอาการทางระบบประสาทและคอค่อมน้อย (<15°)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J/Aspen) or Halo-vest for 10–12 weeks with close weekly radiographic monitoring",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J/Aspen) หรือ Halo-vest นาน 10–12 สัปดาห์ พร้อมเอกซเรย์ตรวจติดตามอย่างใกล้ชิดทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Serial upright radiographs; gentle active motion after radiographic union at 10–12 weeks",
+                    "th": "• เอกซเรย์ติดตามแนวกระดูก; เริ่มขยับคอเบาๆ เมื่อกระดูกติดที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Progressive late post-traumatic kyphotic deformity or delayed neurological deficit requiring late reconstructive surgery",
+                    "th": "• แนวกระดูกคอค่อยๆ ค่อมตัวลงเรื่อยๆ หรือเกิดอาการทางระบบประสาทล่าช้าจนต้องผ่าตัดแก้ไขในภายหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "Surgical stabilization (ACDF or Posterior Fusion) indicated in young active patients, persistent kyphotic deformity, or intractable pain.",
-                  "th": "พิจารณาผ่าตัดยึดตรึง (ACDF หรือ Posterior Fusion) ในผู้ป่วยอายุน้อย คอผิดรูป หรือปวดรุนแรง"
+                  "indication": {
+                    "en": "• Young active patients desiring early mobilization\n• Significant vertebral body collapse (>50% height loss), canal occlusion >30%–50%, or kyphotic angle >15°\n• Incomplete neurological deficit",
+                    "th": "• ผู้ป่วยอายุน้อยที่ต้องการลุกขยับตัวได้เร็ว\n• ลำตัวกระดูกยุบตัว >50%, กระดูกแตกดันช่องไขสันหลัง >30%–50% หรือคอค่อม >15°\n• มีอาการบาดเจ็บของเส้นประสาทหรือไขสันหลังบางส่วน"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Discectomy and Fusion (ACDF) or Anterior Cervical Corpectomy and Fusion (ACCF) with expandable/mesh cage and anterior locking plate\n• Alternative: Posterior lateral mass screw-rod instrumented fusion (C3–C6) ± laminectomy",
+                    "th": "• ผ่าตัดเชื่อมหมอนรองกระดูกคอด้านหน้า (ACDF) หรือตัดลำตัวกระดูกเชื่อมข้อ (ACCF พร้อม Cage และ Locking Plate)\n• ทางเลือก: ผ่าตัดดามสกรู Lateral Mass Screws ทางด้านหลัง (C3–C6) ± ตัดเปิดช่องไขสันหลัง (Laminectomy)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 4–6 weeks; immediate out-of-bed mobilization; physical therapy at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 4–6 สัปดาห์; ลุกเดินจากเตียงได้ทันที; เริ่มทำกายภาพบำบัดที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Construct pullout in osteoporotic bone if anterior single-level fixation is inadequate for comminuted fractures",
+                    "th": "• แผ่นเหล็กหรือสกรูด้านหน้าถอนหลุดในผู้ป่วยกระดูกบางหากยึดตรึงไม่แข็งแรงพอ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -814,14 +1198,46 @@ export const cSpineBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกพลังงานสูงรุนแรง (รถยนต์ชน, ตกจากที่สูง, ดำน้ำกระแทก)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Total SLIC score > 4 points; indicates gross biomechanical instability, complete disruption of the ligamentous complex (DLC), or progressive spinal cord injury; urgent surgical decompression (within 24 hours for incomplete cord injury) and rigid anterior/posterior instrumentation is mandatory.",
+                  "th": "คะแนน SLIC รวม > 4 คะแนน แสดงถึงความไม่มั่นคงทางชีวกลศาสตร์รุนแรง, เอ็นยึดและหมอนรอง (DLC) ฉีกขาดสมบูรณ์ หรือมีภาวะบาดเจ็บไขสันหลัง; ต้องผ่าตัดลดการกดทับไขสันหลังด่วน (ภายใน 24 ชั่วโมงในผู้ป่วยที่มีอาการอัมพาตบางส่วน) ร่วมกับดามยึดกระดูกอย่างแข็งแรงทางด้านหน้า/หลัง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. High risk of progressive kyphosis, nonunion, and catastrophic paralysis.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ เสี่ยงสูงต่อคอผิดรูป กระดูกไม่ติด และอัมพาต"
+                  "indication": {
+                    "en": "• Strictly contraindicated (causes catastrophic progressive kyphosis, nonunion, and irreversible spinal cord transection)",
+                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ทำให้คอค่อมผิดรูป กระดูกไม่ติด และไขสันหลังถูกกดทับจนเป็นอัมพาตถาวร)"
+                  },
+                  "method": {
+                    "en": "• Urgent closed reduction / skull traction only as a bridge to definitive surgery",
+                    "th": "• การดึงถ่วงกะโหลกศีรษะ (Traction) ทำได้เฉพาะเพื่อรอการผ่าตัดรักษาที่แน่นอนเท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Irreversible tetraplegia and chronic neuropathic pain from delayed or missed surgical decompression",
+                    "th": "• อัมพาตแขนขาสี่ข้างถาวรและปวดแสบประสาทเรื้อรังจากการผ่าตัดล่าช้า"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). Surgical decompression and stabilization: Anterior Cervical Discectomy & Fusion (ACDF), Corpectomy with mesh cage, or Posterior Instrumented Fusion (Pedicle / Lateral mass screws). Emergency surgery if incomplete neurological deficit with ongoing compression.",
-                  "th": "แนะนำผ่าตัดมาตรฐานหลัก (Gold Standard): ผ่าตัด減壓และดามยึดกระดูก เช่น ACDF, Corpectomy หรือ Posterior Lateral Mass Screw Fusion ผ่าตัดด่วนที่สุดหากมีอาการอัมพาตครึ่งท่อน"
+                  "indication": {
+                    "en": "• All patients with SLIC score ≥ 5 (Translational/rotational dislocations, burst fractures with cord injury or DLC disruption)",
+                    "th": "• ผู้ป่วยที่มีคะแนน SLIC ≥ 5 ทุกราย (กระดูกเคลื่อนหลุด Translation, กระดูกแตก Burst ร่วมกับไขสันหลังบาดเจ็บหรือเอ็น DLC ขาด)"
+                  },
+                  "method": {
+                    "en": "• Anterior Decompression & Fusion: ACDF with plate for distractive flexion/facet dislocations after reduction; Corpectomy (ACCF) with titanium mesh cage for burst fractures with canal retropulsion\n• Posterior Instrumented Fusion: Lateral mass screw fixation (Roy-Camille/Magerl technique) with rods ± laminectomy\n• Combined 360° Reconstruction (Anterior + Posterior) for severe 3-column disruption, bilateral facet fracture-dislocations, or severe osteopenia",
+                    "th": "• ผ่าตัดเปิดกดทับและเชื่อมข้อด้านหน้า: ACDF พร้อม Locking Plate สำหรับข้อหลุดเกย; Corpectomy (ACCF) พร้อม Mesh cage สำหรับกระดูกแตก Burst ดันช่องไขสันหลัง\n• ผ่าตัดดามยึดด้านหลัง: ขันสกรูยึด Lateral Mass Screws (เทคนิค Magerl) เชื่อมด้วยแท่ง Rods ± ตัดขยายช่องไขสันหลัง Laminectomy\n• ผ่าตัดรอบทิศ 360 องศา (หน้าและหลัง): สำหรับการบาดเจ็บรุนแรง 3 เสา, ข้อ Facet หลุดแตก 2 ข้าง หรือกระดูกพรุนรุนแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6–8 weeks post-op; early intensive inpatient spinal cord neuro-rehabilitation",
+                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มทำกายภาพบำบัดฟื้นฟูไขสันหลังและระบบประสาทอย่างเข้มข้นทันที"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting closed reduction of locked facets in patients with extruded herniated disc without prior MRI, causing cord transection\n• Insufficient construct length failing to span unstable segments",
+                    "th": "• ดึงดัดข้อ Facet ที่หลุดล็อคโดยไม่ทำ MRI ตรวจหาหมอนรองกระดูกที่แตกทะลัก ซึ่งอาจถูกเบียดไปตัดไขสันหลังได้\n• ดามกระดูกสั้นเกินไปจนครอบคลุมรอยโรคไม่หมด"
+                  }
                 }
               },
               "illustrationId": "",
@@ -908,14 +1324,46 @@ export const cSpineBone: BoneData = {
                 "th": "แรงกดอัดตามแนวแกนร่วมกับการก้มคอ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Subaxial compression injuries without ligamentous distraction; minor non-structural fractures (A0–A2) and stable incomplete burst (A3) with intact neurological status managed conservatively in a rigid collar; complete burst fractures (A4), severe canal occlusion (>50%), kyphosis >20°, or neurological deficit require surgical decompression and stabilization (ACDF or ACCF).",
+                  "th": "การบาดเจ็บกระดูกคอจากแรงกดอัดโดยไม่มีการดึงถ่างของเอ็นส่วนหลัง; รอยหักเล็กน้อย (A0–A2) และ Incomplete Burst ที่มั่นคง (A3) ที่ไม่มีอาการทางระบบประสาทรักษาด้วยเฝือกคอชนิดแข็ง; ส่วน Complete Burst (A4), กระดูกแตกกดช่องไขสันหลัง (>50%), คอค่อม >20° หรือมีอาการอัมพาต ต้องผ่าตัดคลายการกดทับและดามกระดูก (ACDF หรือ Corpectomy ACCF)"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED FOR A0, A1, A2, AND STABLE A3. Rigid Cervical Collar for 8-12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดใน A0, A1, A2 และ A3 ที่มั่นคง ใส่ Rigid Collar 8-12 สัปดาห์"
+                  "indication": {
+                    "en": "• AO Type A0 (Minor spinous/transverse process fracture)\n• AO Type A1 (Wedge compression) & A2 (Split) fractures with intact PLC\n• Stable AO Type A3 (Incomplete burst) without neurological deficit and canal compromise <30%",
+                    "th": "• AO Type A0 (หักยอด spinous/transverse process)\n• AO Type A1 (หักยุบรูปิ่ม) และ A2 (หักแยกแนวตั้ง) โดยเอ็น PLC สมบูรณ์\n• AO Type A3 (Incomplete burst) ชนิดมั่นคง ไม่มีอาการทางระบบประสาทและกระดูกยื่นเข้าช่องไขสันหลัง <30%"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J or Aspen) worn continuously for 8–12 weeks; weekly upright lateral X-rays for first 3 weeks to ensure maintenance of sagittal alignment",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J หรือ Aspen) ต่อเนื่อง 8–12 สัปดาห์; เอกซเรย์ท่ายืนสัปดาห์ละครั้งใน 3 สัปดาห์แรกเพื่อเฝ้าระวังแนวกระดูกค่อม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gradual collar weaning at 8–12 weeks upon solid bridging bony trabeculae on CT; gentle isometric neck strengthening",
+                    "th": "• ค่อยๆ ปลดเฝือกคอที่ 8–12 สัปดาห์เมื่อเอกซเรย์เห็นกระดูกติดแน่น; เริ่มบริหารกล้ามเนื้อคอเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking subtle vertical split fractures (A2) that develop late nonunion or pseudoarthrosis\n• Missing associated posterior ligamentous injury converting an apparent Type A into Type B",
+                    "th": "• มองข้ามรอยหักแยกแนวตั้ง (A2) ซึ่งอาจเกิดภาวะกระดูกไม่ติดเรื้อรัง\n• พลาดการตรวจเอ็นด้านหลังที่ฉีกขาดร่วมด้วยทำให้วินิจฉัยผิดจาก Type B เป็น Type A"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for A4 complete burst fractures, severe kyphosis >20°, or neurological deficit. ACDF or Corpectomy.",
-                  "th": "ผ่าตัดเฉพาะ A4 burst fracture, คอโก่ง >20° หรือมีอาการอัมพาต โดยผ่าตัด ACDF หรือ Corpectomy"
+                  "indication": {
+                    "en": "• AO Type A4 (Complete burst fracture involving both endplates and posterior wall)\n• Unstable A3 fractures with kyphosis >20°, vertebral height loss >50%, or canal occlusion >50%\n• Any Type A fracture with associated radiculopathy or myelopathy (N1–N4)",
+                    "th": "• AO Type A4 (Complete burst fracture แตกทะลุทั้งขอบบน-ล่างและผนังหลัง)\n• AO Type A3 ชนิดไม่มั่นคงที่คอค่อม >20°, ความสูงลำตัวกระดูกยุบ >50% หรือกดช่องไขสันหลัง >50%\n• มีอาการปวดร้าวตามรากประสาทหรือไขสันหลังถูกกดทับ (N1–N4)"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Resection of comminuted vertebral body, decompression of spinal canal, expandable titanium mesh cage packed with autologous bone graft, and anterior locking plate spanning construct\n• Anterior Cervical Discectomy and Fusion (ACDF) for A3 incomplete burst if one endplate is intact",
+                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดกระดูกชิ้นที่แตกกดช่องไขสันหลังออก ขยายช่องไขสันหลัง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัด ACDF ข้ามระดับสำหรับ A3 incomplete burst หากขอบกระดูกอีกด้านยังสมบูรณ์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks; early upright mobilization; structured physical therapy from week 6",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ลุกเดินได้เร็ว; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Cage subsidence into osteoporotic adjacent endplates leading to hardware loosening and loss of cervical lordosis",
+                    "th": "• ตัวหนุน Cage จมทรุดลงในเนื้อกระดูกข้างเคียงที่มีภาวะกระดูกพรุน ทำให้เหล็กดามหลวมและคอค่อม"
+                  }
                 }
               },
               "illustrationId": "",
@@ -939,14 +1387,46 @@ export const cSpineBone: BoneData = {
                 "th": "กลไกก้มคอดึงถ่าง หรือแหงนคอดึงถ่างอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Tension band disruption via flexion-distraction (B1 osseous, B2 ligamentous/PLC) or hyperextension-distraction (B3 anterior tension band/ALL tear); intrinsically unstable with high nonunion and progressive deformity rate; surgical stabilization (ACDF for B2/B3, posterior fusion or dual approach for severe ligamentous tears) is the definitive treatment of choice.",
+                  "th": "การฉีกขาดของแนวรั้งความมั่นคงจากแรงดึงถ่าง (B1 หักผ่านกระดูก, B2 เอ็นส่วนหลัง PLC ขาด, B3 เอ็นด้านหน้า ALL ขาด); ขาดความมั่นคงสูง เสี่ยงต่อกระดูกไม่ติดและคอค่อมผิดรูป; การผ่าตัดยึดตรึง (ACDF สำหรับ B2/B3, หรือผ่าตัดดามด้านหลัง/หน้า-หลังสำหรับเอ็นขาดรุนแรง) เป็นการรักษาหลักที่แนะนำ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "High nonunion and progressive deformity rate.",
-                  "th": "เสี่ยงสูงต่อกระดูกไม่ติดและคอโก่งผิดรูป"
+                  "indication": {
+                    "en": "• Purely osseous Chance fractures (B1) in compliant non-displaced patients willing to wear a Halo-vest for 12 weeks (Extremely rare in cervical spine)",
+                    "th": "• รอยหักผ่านกระดูกล้วนๆ B1 (Bony Chance) ชนิดไม่เคลื่อนตัวในผู้ป่วยที่ยินยอมใส่ Halo-vest 12 สัปดาห์ (พบน้อยมากในกระดูกคอ)"
+                  },
+                  "method": {
+                    "en": "• Halo-vest immobilization for 12 weeks with weekly radiographic alignment monitoring",
+                    "th": "• ใส่ชุดอุปกรณ์ Halo-vest นาน 12 สัปดาห์ พร้อมเอกซเรย์ตรวจติดตามแนวกระดูกทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict immobilization until solid bony union confirmed on CT scan at 12 weeks",
+                    "th": "• ดามคออย่างเข้มงวดจนกว่า CT scan จะยืนยันว่ากระดูกเชื่อมติดสนิทที่ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• High failure rate in ligamentous B2/B3 injuries if managed in collar/halo, leading to chronic painful kyphosis and delayed myelopathy",
+                    "th": "• อัตราล้มเหลวสูงมากหากรักษาการบาดเจ็บของเอ็น B2/B3 ด้วยเฝือก/Halo ทำให้คอค่อมเรื้อรังและไขสันหลังทำงานบกพร่อง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR ALL TYPE B INJURIES. Surgical stabilization via ACDF, Posterior instrumented fusion, or combined dual-approach.",
-                  "th": "แนะนำผ่าตัดยึดตรึงในผู้ป่วย Type B ทุกราย เพื่อสร้างความมั่นคงของแนวเอ็นยึด"
+                  "indication": {
+                    "en": "• All AO Type B2 (Posterior ligamentous/facet capsule disruption) and Type B3 (Anterior tension band/hyperextension injuries)\n• Displaced B1 osseous distraction fractures or polytrauma",
+                    "th": "• การบาดเจ็บ AO Type B2 (เอ็นส่วนหลังและปลอกข้อ Facet ขาด) และ Type B3 (เอ็น ALL ด้านหน้าขาด) ทุกราย\n• รอยหักกระดูก B1 ที่เคลื่อนตัว หรือผู้ป่วยบาดเจ็บหลายระบบ"
+                  },
+                  "method": {
+                    "en": "• For Type B2: Posterior instrumented fusion (lateral mass screws + rods) OR Anterior ACDF with interbody cage and rigid locking plate (or combined 360° fusion if severe facet subluxation)\n• For Type B3 (Hyperextension): Anterior Cervical Discectomy and Fusion (ACDF) with long locking plate to restore anterior tension band constraint",
+                    "th": "• สำหรับ Type B2: ผ่าตัดดามยึดด้านหลัง (Lateral mass screws + Rods) หรือผ่าตัด ACDF ด้านหน้าพร้อมแผ่นเหล็กล็อค (หรือผ่าตัด 360 องศาหากข้อ Facet เคลื่อนมาก)\n• สำหรับ Type B3 (แหงนคอดึงถ่าง): ผ่าตัดเชื่อมหมอนรองกระดูกคอด้านหน้า (ACDF) พร้อมดามแผ่นเหล็กล็อคเพื่อสร้างแนวยึดรั้งด้านหน้าทดแทนเอ็น ALL ที่ฉีกขาด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks; active physical therapy and shoulder mobilization from week 6",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดขยับคอและไหล่หลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing posterior facet fractures associated with B2 distractive injuries\n• Placing an undersized anterior plate in B3 injuries leading to screw pullout upon neck extension",
+                    "th": "• ตรวจไม่พบกระดูกข้อ Facet ด้านหลังแตกหักร่วมกับการบาดเจ็บแบบ B2\n• ดามแผ่นเหล็กด้านหน้าสั้นหรือเล็กเกินไปใน B3 ทำให้สกรูถอนหลุดเวลากระดกคอ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -970,14 +1450,46 @@ export const cSpineBone: BoneData = {
                 "th": "แรงเฉือนพลังงานสูงรุนแรงร่วมกับการหมุนและก้มคอ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Translational displacement and 3-column disruption in any plane (unilateral/bilateral locked facets, frank spondyloptosis); extremely unstable with catastrophic spinal cord injury risk; non-operative care is contraindicated; emergency closed reduction under continuous neurologic monitoring (pre-reduction MRI mandatory if obtunded or herniated disc suspected) followed by urgent rigid anterior/posterior surgical reconstruction.",
+                  "th": "กระดูกเคลื่อนหลุดแปลกแนวและทำลายโครงสร้างทั้ง 3 เสา (ข้อ Facet หลุดล็อคข้างเดียว/สองข้าง หรือกระดูกคอหลุดข้ามระดับ); ไม่มั่นคงขั้นวิกฤต เสี่ยงต่อการเกิดอัมพาตถาวร; ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด; ต้องดึงจัดข้อฉุกเฉินภายใต้การตรวจติดตามระบบประสาทอย่างใกล้ชิด (ต้องส่ง MRI ก่อนดึงหากผู้ป่วยหมดสติหรือสงสัยหมอนรองกระดูกแตกทะลัก) แล้วตามด้วยการผ่าตัดดามยึดเชื่อมกระดูกคอด้านหน้า/หลังทันที"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "FATAL / CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Absolutely contraindicated (closed maintenance is impossible; fatal/paralyzing instability)",
+                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ไม่สามารถจัดกระดูกให้อยู่ในแนวปกติได้ เสี่ยงต่ออัมพาตและเสียชีวิต)"
+                  },
+                  "method": {
+                    "en": "• Urgent closed traction with Gardner-Wells tongs / cranial halo under fluoroscopy as an acute reduction maneuver prior to OR",
+                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะ (Gardner-Wells Tongs) ฉุกเฉินใต้เครื่องเอกซเรย์เพื่อดัดจัดข้อเข้าที่ก่อนเข้าห้องผ่าตัด"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting closed reduction in an unmonitored or obtunded patient without prior MRI ruling out an extruded herniated disc that could compress and transect the spinal cord",
+                    "th": "• ดึงดัดข้อคอในผู้ป่วยหมดสติโดยไม่ได้ทำ MRI ตรวจหาหมอนรองกระดูกแตก ซึ่งอาจดันไปตัดไขสันหลังจนอัมพาตถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY OPERATIVE TREATMENT. Closed reduction with cranial tongs traction (if awake and monitored), followed by urgent open reduction and anterior/posterior instrumented fusion.",
-                  "th": "แนะนำผ่าตัดด่วนที่สุด (EMERGENCY SURGERY): ดึงจัดข้อให้เข้าที่ แล้วเปิดผ่าตัดดามยึดกระดูกเชื่อมข้อทั้งด้านหน้าและด้านหลัง"
+                  "indication": {
+                    "en": "• All AO Type C subaxial translational injuries (Unilateral/bilateral locked facets, fracture-dislocations, translational shear)",
+                    "th": "• การบาดเจ็บกระดูกคอ AO Type C ทุกราย (ข้อ Facet หลุดล็อคข้างเดียว/สองข้าง, กระดูกคอหักหลุด, แรงเฉือนหลุด)"
+                  },
+                  "method": {
+                    "en": "• Protocol 1 (Closed Reduction Successful + Herniated Disc Excluded):\n  - Posterior Instrumented Fusion (C3–C7 Lateral Mass Screws + rods) OR Anterior Cervical Discectomy & Fusion (ACDF) with plate\n• Protocol 2 (Closed Reduction Failed / Irreducible Facets / Disc Extrusion):\n  - Anterior-first approach: ACDF discectomy to remove extruded disc fragment -> Open manual reduction using Caspar pins -> Anterior plate fixation ± secondary posterior stabilization (360° fusion)\n  - Posterior-first approach: Open reduction of locked facets via partial facetectomy -> Posterior lateral mass fixation -> Secondary anterior ACDF",
+                    "th": "• แผนการรักษาที่ 1 (จัดข้อปิดสำเร็จ + ไม่มีหมอนรองกระดูกแตกทะลัก):\n  - ผ่าตัดดามยึดด้านหลัง (Lateral Mass Screws + Rods) หรือผ่าตัดเชื่อมหมอนรองด้านหน้า ACDF พร้อมแผ่นเหล็ก\n• แผนการรักษาที่ 2 (ดัดข้อไม่เข้า / มีหมอนรองกระดูกแตกทะลักกดไขสันหลัง):\n  - ผ่าตัดเข้าทางด้านหน้าก่อน: คว้านตัดหมอนรองกระดูกที่แตกกดไขสันหลังออก -> ดัดงัดจัดกระดูกให้เข้าที่ -> ดามด้วยแผ่นเหล็กล็อค ± ผ่าตัดเสริมด้านหลัง (360° Fusion)\n  - หรือผ่าตัดเปิดทางด้านหลัง: เล็มกระดูกขอบ Facet จัดข้อที่ล็อคให้เข้าที่ -> ดาม Lateral mass screws -> ผ่าตัดเสริม ACDF ด้านหน้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6–8 weeks; aggressive early spinal cord rehabilitation and functional training",
+                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มโปรแกรมฟื้นฟูสมรรถภาพไขสันหลังและกายภาพบำบัดเข้มข้นทันที"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-distraction during skull traction leading to brainstem/cord stretch injury\n• Failure of single-level anterior construct in grossly unstable bilateral facet dislocations (consider posterior supplementation)",
+                    "th": "• ถ่วงน้ำหนักดึงคอมากเกินไปจนก้านสมองและไขสันหลังถูกดึงยืดบาดเจ็บ\n• แผ่นเหล็กด้านหน้าหลุดถอนในข้อ Facet หลุดสองข้างที่มีความหลวมรุนแรง (ควรพิจารณาดามด้านหลังเสริม)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1068,14 +1580,46 @@ export const cSpineBone: BoneData = {
                 "th": "ดำน้ำกระแทกพื้นสระ หรือหัวกระแทกชนด้านหน้า"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Compressive flexion spectrum ranging from minor anterior beak (CF1–CF2) to catastrophic Flexion Teardrop fracture (CF3–CF5); CF1–CF2 with intact posterior column managed in rigid collar; CF3–CF5 represents complete 3-column disruption with retropulsed body fragment and high anterior cord syndrome risk requiring emergency anterior corpectomy (ACCF) and rigid plating ± posterior fusion.",
+                  "th": "การบาดเจ็บก้มคออัดกระแทก ตั้งแต่รอยหักจะงอยขอบหน้า (CF1–CF2) ไปจนถึง Flexion Teardrop Fracture (CF3–CF5); CF1–CF2 ที่เอ็นส่วนหลังสมบูรณ์รักษาด้วยเฝือกคอแข็ง; CF3–CF5 โครงสร้าง 3 เสาพังทลายสมบูรณ์ ชิ้นกระดูกทรุดดันกดไขสันหลังด้านหน้า เสี่ยงต่ออัมพาตสูงมาก ต้องผ่าตัด Corpectomy ด้านหน้าด่วน ร่วมกับดามแผ่นเหล็กล็อค ± ดามด้านหลังเสริม"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Conservative for CF1-CF2 only.",
-                  "th": "รักษาไม่ผ่าตัดเฉพาะ CF1-CF2"
+                  "indication": {
+                    "en": "• Low-grade CF1 (Blunting of anterior-superior margin) and CF2 (Anterior beak fracture without posterior involvement)",
+                    "th": "• CF1 (ขอบกระดูกด้านหน้าบนบิ่น) และ CF2 (รอยหักเป็นจะงอยด้านหน้าโดยเอ็นส่วนหลังไม่ฉีกขาด)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J) for 8–10 weeks with serial upright radiographs",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J) นาน 8–10 สัปดาห์ ร่วมกับเอกซเรย์ท่ายืนติดตามอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle active neck exercises upon confirmed union at 8–10 weeks",
+                    "th": "• เริ่มฝึกบริหารขยับคอเมื่อกระดูกติดสนิทที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Misdiagnosing a true CF3–CF5 Flexion Teardrop fracture as a benign CF1/CF2 beak fracture; always evaluate sagittal CT/MRI for posterior body retropulsion and interspinous widening",
+                    "th": "• วินิจฉัยผิดพลาดคิดว่า Flexion Teardrop เป็นแค่รอยหักจะงอยหน้าธรรมดา; ต้องตรวจ CT/MRI ดูชิ้นกระดูกที่ดันไปกดไขสันหลังและเอ็นส่วนหลังขาดเสมอ"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR CF3-CF5 (TEAR-DROP). Emergency ACDF or Corpectomy with mesh cage.",
-                  "th": "แนะนำผ่าตัดด่วนใน CF3-CF5 (Flexion Tear-drop) โดยทำ ACDF หรือ Corpectomy"
+                  "indication": {
+                    "en": "• All CF3, CF4, and CF5 fractures (Flexion Teardrop fractures with posterior body retropulsion, canal compromise, or acute anterior cord syndrome)",
+                    "th": "• รอยหัก CF3, CF4 และ CF5 ทุกราย (Flexion Teardrop ที่มีชิ้นกระดูกดันกดไขสันหลัง หรือมีอาการอัมพาต Anterior Cord Syndrome)"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete resection of the shattered vertebral body and retropulsed fragments, neural canal decompression, reconstruction with titanium mesh cage/strut autograft, and rigid anterior locking plate\n• Combined 360° Fusion (ACCF + Posterior lateral mass screws) if posterior tension band disruption is severe (CF4/CF5)",
+                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดกระดูกลำตัวชิ้นที่แตกป่นและชิ้นที่ดันกดไขสันหลังออกทั้งหมด ปลดปล่อยไขสันหลังให้โล่ง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัดรอบทิศ 360 องศา (ACCF ร่วมกับดามสกรู Lateral Mass ด้านหลัง) หากเอ็นและกระดูกส่วนหลังพังทลายรุนแรง (CF4/CF5)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6–8 weeks post-op; early aggressive spinal cord neuro-rehabilitation",
+                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มทำกายภาพบำบัดฟื้นฟูระบบประสาทและไขสันหลังเข้มข้นทันที"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate decompression leaving residual retropulsed bone fragments compressing the anterior spinal cord\n• Attempting standalone posterior fusion without removing the anterior compressing bone",
+                    "th": "• กรอตัดชิ้นกระดูกที่กดด้านหน้าออกไม่หมด ทำให้ไขสันหลังยังคงถูกกดทับ\n• ผ่าตัดดามด้านหลังอย่างเดียวโดยไม่เอาชิ้นกระดูกที่กดทับไขสันหลังด้านหน้าออก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1099,14 +1643,46 @@ export const cSpineBone: BoneData = {
                 "th": "อุบัติเหตุรถยนต์เบรกกระทันหันเหวี่ยงศีรษะก้มไปด้านหน้าอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distractive flexion spectrum from interspinous widening (DF1) to unilateral locked facet (DF2, 25% translation), bilateral locked facets (DF3, 50% translation), and floating vertebra (DF4, 100% translation); DF1 with intact facet joints can be braced; DF2–DF4 requires urgent reduction (closed traction under monitoring or open reduction) and rigid instrumented stabilization (ACDF or posterior fusion) to prevent progressive neurologic loss.",
+                  "th": "การบาดเจ็บก้มคอดึงถ่าง ตั้งแต่เอ็นขอบหลังฉีกขาด (DF1), ข้อ Facet หลุดล็อคข้างเดียว (DF2 เกย 25%), ข้อ Facet หลุดล็อคสองข้าง (DF3 เกย 50%) ไปจนถึงข้อคอหลุดสมบูรณ์ (DF4 เกย 100%); DF1 รักษาด้วยเฝือกคอแข็งได้; DF2–DF4 ต้องดึงจัดข้อเข้าที่ด่วน (ดึงถ่วงน้ำหนักหรือเปิดผ่าตัดจัดข้อ) และผ่าตัดดามยึดกระดูก (ACDF หรือ Posterior Fusion) เพื่อป้องกันอัมพาต"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED FOR DF2-DF4.",
-                  "th": "ห้ามใช้ใน DF2-DF4"
+                  "indication": {
+                    "en": "• DF1 injuries (Interspinous widening without facet perched/locked or subluxation on dynamic flexion views)",
+                    "th": "• การบาดเจ็บระดับ DF1 (ช่องว่าง interspinous กว้างขึ้นเล็กน้อยโดยข้อ Facet ไม่หลุดเกย)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar for 8–10 weeks with close weekly radiographic follow-up",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง 8–10 สัปดาห์ ร่วมกับตรวจเอกซเรย์ติดตามแนวกระดูกทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Flexion-extension stress radiographs at 8–10 weeks to rule out occult dynamic instability",
+                    "th": "• เอกซเรย์ท่าก้ม-เงยคอที่ 8–10 สัปดาห์เพื่อยืนยันว่าข้อต่อคอไม่หลวมขยับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing a subtle DF2 unilateral facet lock that presents with only mild rotational asymmetry and ~25% anterior translation on lateral X-ray",
+                    "th": "• พลาดการวินิจฉัยข้อ Facet หลุดล็อคข้างเดียว (DF2) ซึ่งสังเกตเห็นการเคลื่อนไปข้างหน้าเพียง 25%"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Urgent closed/open reduction of locked facets + ACDF / Posterior Fusion.",
-                  "th": "แนะนำผ่าตัดด่วน: ดึงจัดข้อ Facet ที่ล็อคให้หลุดเข้าที่ แล้วผ่าตัดเชื่อมข้อ ACDF หรือ Posterior Fusion"
+                  "indication": {
+                    "en": "• All DF2 (Unilateral locked facet), DF3 (Bilateral locked facets), and DF4 (Complete displacement) injuries",
+                    "th": "• ข้อต่อ Facet หลุดล็อคข้างเดียว (DF2), หลุดสองข้าง (DF3) และหลุดสมบูรณ์ (DF4) ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Urgent closed reduction with cranial tongs traction (5 lbs per cervical level added incrementally under serial fluoroscopy and frequent neuro exams)\n• Definitive Surgery: Anterior Cervical Discectomy & Fusion (ACDF) with locking plate OR Posterior Cervical Instrumented Fusion (Lateral Mass Screws + rods) OR Combined 360° Fusion if locked facets are irreducible closed or gross multidirectional instability exists",
+                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะฉุกเฉิน (เพิ่มน้ำหนักทีละ 5 ปอนด์ต่อระดับกระดูกคอใต้เครื่องเอกซเรย์ พร้อมตรวจระบบประสาทอย่างสม่ำเสมอ)\n• ผ่าตัดเชื่อมตรึงถาวร: ACDF พร้อมแผ่นเหล็กล็อคด้านหน้า หรือผ่าตัดดาม Lateral Mass Screws ด้านหลัง หรือผ่าตัดรอบทิศ 360 องศาหากดึงจัดข้อไม่เข้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 6 weeks; active progressive range of motion and strengthening at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดขยับคอและเพิ่มความแข็งแรงหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Performing closed traction in obtunded patients without MRI to rule out disc herniation, leading to disc fragment migration and cord transection",
+                    "th": "• ดึงคอในผู้ป่วยหมดสติโดยไม่ตรวจ MRI เพื่อคัดกรองหมอนรองกระดูกแตก ซึ่งอาจเคลื่อนไปตัดไขสันหลังได้"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1130,14 +1706,46 @@ export const cSpineBone: BoneData = {
                 "th": "วัตถุหนักตกใส่กลางศีรษะตรงๆ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Pure axial compression injury spectrum; VC1 (single endplate cupping) treated in rigid cervical collar; VC2–VC3 (central multi-fragment burst with canal retropulsion) with cord compression or severe comminution requires anterior cervical corpectomy (ACCF) with titanium cage and locking plate to decompress the spinal canal and restore anterior column load bearing.",
+                  "th": "การบาดเจ็บจากแรงกดอัดตามแนวดิ่งตรง; VC1 (หักยุบขอบบนหรือล่างแผ่นเดียว) รักษาด้วยเฝือกคอชนิดแข็ง; VC2–VC3 (กระดูกแตก Burst แตกกระจายหลายชิ้นดันช่องไขสันหลัง) ที่มีการกดทับไขสันหลังหรือแตกป่นรุนแรง ต้องผ่าตัด Corpectomy (ACCF) ใส่ Mesh cage และดามแผ่นเหล็กล็อคเพื่อคลายการกดทับและรับน้ำหนักเสาด้านหน้า"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Conservative for VC1.",
-                  "th": "รักษาไม่ผ่าตัดเฉพาะ VC1"
+                  "indication": {
+                    "en": "• VC1 fractures (Single endplate cupping deformity with intact posterior wall and normal neurologic exam)\n• Stable VC2 in medically frail patients without canal compromise",
+                    "th": "• กระดูกหัก VC1 (ขอบบนหรือล่างยุบตัวโดยผนังหลังไม่แตกและระบบประสาทปกติ)\n• VC2 ชนิดมั่นคงในผู้ป่วยที่มีความเสี่ยงผ่าตัดสูงและกระดูกไม่กดช่องไขสันหลัง"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J) or Halo-vest for 10–12 weeks with serial radiographs",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J) หรือ Halo-vest นาน 10–12 สัปดาห์ พร้อมเอกซเรย์ติดตามอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wean collar after 10–12 weeks upon confirmed bony trabecular bridging; isometric strengthening",
+                    "th": "• ปลดเฝือกคอที่ 10–12 สัปดาห์เมื่อกระดูกเชื่อมติดสนิท; เริ่มบริหารกล้ามเนื้อคอ"
+                  },
+                  "pitfalls": {
+                    "en": "• Late collapse and progressive spinal canal stenosis in comminuted VC2/VC3 fractures managed conservatively",
+                    "th": "• ลำตัวกระดูกยุบตัวลงเรื่อยๆ และช่องไขสันหลังตีบแคบลงในรอยหัก VC2/VC3 ที่รักษาด้วยเฝือก"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR VC2-VC3. Anterior Corpectomy + Strut graft / cage + plate.",
-                  "th": "แนะนำผ่าตัดใน VC2-VC3 โดยทำ Corpectomy ตัดลำตัวกระดูกแล้วใส่ Cage ดามแผ่นเหล็ก"
+                  "indication": {
+                    "en": "• VC2 and VC3 comminuted central burst fractures with >30%–50% spinal canal retropulsion\n• Neurological deficit (Radiculopathy or Myelopathy)\n• Severe vertebral height loss (>50%) or focal kyphosis",
+                    "th": "• กระดูกแตก Central Burst VC2 และ VC3 ที่มีชิ้นกระดูกดันเข้าช่องไขสันหลัง >30%–50%\n• มีอาการบาดเจ็บของรากประสาทหรือไขสันหลัง\n• ลำตัวกระดูกยุบตัวรุนแรง (>50%) หรือแนวกระดูกค่อมผิดรูป"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete corpectomy of fractured vertebra, decompression of the dural sac, placement of expandable titanium cage/structural autograft, and rigid anterior cervical locking plate fixation spanning adjacent healthy vertebral bodies",
+                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดลำตัวกระดูกที่แตกออกทั้งหมดเพื่อคลายการกดทับถุงไขสันหลัง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้ายึดข้ามข้อกระดูกที่แข็งแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks; early upright mobilization; progressive physical therapy from week 6",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ลุกเดินได้เร็ว; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate corpectomy width leaving lateral uncinate bone fragments compressing exiting nerve roots\n• Failure of endplate preparation causing cage subsidence",
+                    "th": "• ตัดกระดูกแคบเกินไปจนเหลือชิ้นกระดูกด้านข้างกดทับรากประสาท\n• ขูดแต่งผิวข้อกระดูกไม่ดีพอจน Cage จมทรุดตัว"
+                  }
                 }
               },
               "illustrationId": "",

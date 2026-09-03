@@ -188,7 +188,7 @@ export function AuthModal({
         {/* Header */}
         <div style={{ borderColor: border }} className="px-6 py-4 border-b flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-xl bg-[#00CED1]/15 border border-[#00CED1]/30 flex items-center justify-center text-[#00CED1]">
+            <div className="w-9 h-9 rounded-xl bg-teal-600/15 dark:bg-[#00CED1]/15 border border-teal-600/30 dark:border-[#00CED1]/30 flex items-center justify-center text-teal-800 dark:text-[#00CED1]">
               <ShieldCheck size={18} />
             </div>
             <div>
@@ -220,8 +220,8 @@ export function AuthModal({
               onClick={() => { setMode("signin"); setErrorMsg(null); }}
               className={`flex-1 py-2 text-center text-xs font-extrabold rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                 mode === "signin"
-                  ? "bg-[#00CED1] text-slate-950 shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? (darkMode ? "bg-[#00CED1] text-slate-950 shadow-xs" : "bg-[#0F766E] text-white shadow-xs")
+                  : (darkMode ? "text-slate-400 hover:text-slate-200" : "text-slate-600 hover:text-slate-900")
               }`}
             >
               <LogIn size={13} />
@@ -231,8 +231,8 @@ export function AuthModal({
               onClick={() => { setMode("signup"); setErrorMsg(null); }}
               className={`flex-1 py-2 text-center text-xs font-extrabold rounded-lg transition-all cursor-pointer flex items-center justify-center gap-1.5 ${
                 mode === "signup"
-                  ? "bg-[#00CED1] text-slate-950 shadow-xs"
-                  : "text-slate-400 hover:text-slate-200"
+                  ? (darkMode ? "bg-[#00CED1] text-slate-950 shadow-xs" : "bg-[#0F766E] text-white shadow-xs")
+                  : (darkMode ? "text-slate-400 hover:text-slate-200" : "text-slate-600 hover:text-slate-900")
               }`}
             >
               <UserPlus size={13} />
@@ -260,7 +260,7 @@ export function AuthModal({
                       value={loginInput}
                       onChange={e => setLoginInput(e.target.value)}
                       style={{ background: cardBg, borderColor: border, color: text }}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                     />
                   </div>
                 </div>
@@ -278,7 +278,7 @@ export function AuthModal({
                       value={password}
                       onChange={e => setPassword(e.target.value)}
                       style={{ background: cardBg, borderColor: border, color: text }}
-                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                     />
                   </div>
                 </div>
@@ -292,7 +292,9 @@ export function AuthModal({
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full py-2.5 rounded-xl bg-[#00CED1] hover:bg-[#00CED1]/90 text-slate-950 font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 mt-1 disabled:opacity-50"
+                  className={`w-full py-2.5 rounded-xl ${
+                    darkMode ? "bg-[#00CED1] hover:bg-[#00CED1]/90 text-slate-950" : "bg-[#0F766E] hover:bg-[#115E59] text-white"
+                  } font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-2 mt-1 disabled:opacity-50`}
                 >
                   <LogIn size={15} />
                   <span>{isLoading ? (language === "en" ? "Signing In..." : "กำลังเข้าสู่ระบบ...") : (language === "en" ? "Sign In" : "เข้าสู่ระบบ")}</span>
@@ -315,7 +317,7 @@ export function AuthModal({
                 onClick={handleGoogleSignIn}
                 disabled={isLoading}
                 style={{ background: darkMode ? "#1F2937" : "#FFFFFF", borderColor: darkMode ? "#374151" : "#E5E7EB" }}
-                className="w-full py-3 px-4 rounded-xl border font-bold text-xs transition-all hover:border-[#00CED1] hover:shadow-md cursor-pointer flex items-center justify-center gap-3 active:scale-98"
+                className="w-full py-3 px-4 rounded-xl border font-bold text-xs transition-all hover:border-teal-600 dark:hover:border-[#00CED1] hover:shadow-md cursor-pointer flex items-center justify-center gap-3 active:scale-98"
               >
                 <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -345,7 +347,7 @@ export function AuthModal({
                     value={username}
                     onChange={e => setUsername(e.target.value)}
                     style={{ background: cardBg, borderColor: border, color: text }}
-                    className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                    className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                   />
                 </div>
               </div>
@@ -363,7 +365,7 @@ export function AuthModal({
                     value={signupEmail}
                     onChange={e => setSignupEmail(e.target.value)}
                     style={{ background: cardBg, borderColor: border, color: text }}
-                    className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                    className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                   />
                 </div>
               </div>
@@ -383,7 +385,7 @@ export function AuthModal({
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                         style={{ background: cardBg, borderColor: border, color: text }}
-                        className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                        className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                       />
                     </div>
                   </div>
@@ -401,7 +403,7 @@ export function AuthModal({
                         value={confirmPassword}
                         onChange={e => setConfirmPassword(e.target.value)}
                         style={{ background: cardBg, borderColor: border, color: text }}
-                        className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-[#00CED1] transition-colors"
+                        className="w-full pl-9 pr-3 py-2 rounded-xl border text-xs outline-none focus:border-teal-600 dark:focus:border-[#00CED1] transition-colors"
                       />
                     </div>
                   </div>
@@ -432,7 +434,9 @@ export function AuthModal({
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="flex-1 py-2.5 rounded-xl bg-[#00CED1] hover:bg-[#00CED1]/90 text-slate-950 font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-1.5 disabled:opacity-50"
+                  className={`flex-1 py-2.5 rounded-xl ${
+                    darkMode ? "bg-[#00CED1] hover:bg-[#00CED1]/90 text-slate-950" : "bg-[#0F766E] hover:bg-[#115E59] text-white"
+                  } font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center justify-center gap-1.5 disabled:opacity-50`}
                 >
                   <CheckCircle2 size={15} />
                   <span>

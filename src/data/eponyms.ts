@@ -424,6 +424,65 @@ export const FRACTURE_EPONYMS: EponymEntry[] = [
       en: "Mnemonic SALTR: I=Straight across, II=Above (Metaphysis), III=Lower (Epiphysis), IV=Through all three, V=cRushed physis.",
       th: "จำสูตร SALTR: I = หักตรงแผ่น, II = เลยไป Metaphysis (พบบ่อยสุด), III = ลง Epiphysis, IV = ทะลุทั้ง 3 ส่วน, V = ยุบอัดบดขยี้"
     }
+  },
+  {
+    id: "ruedi-allgower",
+    name: "Rüedi-Allgöwer Pilon / Plafond Fracture",
+    thName: "กระดูกผิวข้อหน้าแข้งส่วนล่างหัก (Rüedi-Allgöwer Tibial Plafond)",
+    boneId: "tibia",
+    regionId: "distal",
+    category: "lower",
+    keywords: [
+      "ruedi",
+      "allgower",
+      "ruedi-allgower",
+      "ruedi allgower",
+      "pilon",
+      "plafond",
+      "tibial pilon",
+      "tibial plafond",
+      "die-punch",
+      "central impaction",
+      "ผิวข้อหน้าแข้ง",
+      "ไพลอน",
+      "เพลาฟอนด์"
+    ],
+    description: {
+      en: "Classic 3-tier classification of intra-articular tibial pilon fractures based on displacement, comminution, and central die-punch impaction.",
+      th: "ระบบจำแนกกระดูกผิวข้อหน้าแข้งส่วนปลาย (Pilon / Plafond) หัก 3 ระดับตามการเคลื่อน ความแตกละเอียด และการยุบอัดแน่นของกระดูกแกนกลาง"
+    },
+    clinicalTip: {
+      en: "Type III injuries require the 'Span-Scan-Plan' protocol: Initial delta-frame spanning external fixation until soft tissues wrinkle (10-14 days), followed by fine-cut CT and definitive reconstruction.",
+      th: "ใน Type III ต้องใช้แนวทาง 'Span-Scan-Plan': ใส่ Spanning Ex-Fix ข้ามข้อเท้าทันที รอจนผิวหนังย่น (Wrinkle sign 10-14 วัน) จากนั้นทำ 3D CT scan แล้วจึงผ่าตัดจัดข้อเข้าที่ขั้นสมบูรณ์"
+    }
+  },
+  {
+    id: "hoffa",
+    name: "Hoffa Fracture (Distal Femur Coronal Shear)",
+    thName: "รอยหักเฉือนแนวโคโรนอลของปุ่มกระดูกต้นขาส่วนปลาย (Hoffa Fracture)",
+    boneId: "femur",
+    regionId: "distal",
+    category: "lower",
+    keywords: [
+      "hoffa",
+      "hoffa's",
+      "distal femur",
+      "supracondylar femur",
+      "unicondylar",
+      "bicondylar",
+      "coronal shear",
+      "ฮอฟฟา",
+      "ปลายกระดูกต้นขา",
+      "เหนือข้อเข่า"
+    ],
+    description: {
+      en: "Coronal plane shear fracture of the femoral condyle (usually lateral condyle), often missed on plain AP radiographs and requiring 3D CT imaging.",
+      th: "รอยหักเฉือนในแนว Coronal ของปุ่มกระดูกข้อเข่าด้านล่าง (พบบ่อยที่ปุ่มนอก) มักมองไม่เห็นในภาพเอกซเรย์ AP ธรรมดาและจำเป็นต้องทำ 3D CT scan"
+    },
+    clinicalTip: {
+      en: "Requires anatomical open reduction and countersunk AP or PA headless compression screws (Herbert screws) placed underneath the articular cartilage.",
+      th: "ต้องผ่าตัดจัดผิวข้อให้เรียบสนิทและยึดด้วยสกรูหัวจม Headless Compression Screws (AP หรือ PA) ฝังมิดใต้ผิวข้อต่อ"
+    }
   }
 ];
 

@@ -101,6 +101,11 @@ function adminSaveApiPlugin(): Plugin {
                           reg.regionConcept = {};
                         }
                         reg.regionConcept.imageUrl = targetPath;
+                        if (!Array.isArray(reg.regionConcept.images)) {
+                          reg.regionConcept.images = [targetPath];
+                        } else if (!reg.regionConcept.images.some((img: any) => (typeof img === 'string' ? img === targetPath : img?.url === targetPath))) {
+                          reg.regionConcept.images.push(targetPath);
+                        }
                       }
                     }
 

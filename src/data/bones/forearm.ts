@@ -192,13 +192,37 @@ export const forearmBone: BoneData = {
               },
               "treatment": {
                 "preferred": "conservative",
+                "decisionPrinciple": {
+                  "en": "Non-operative treatment for non-displaced fractures without mechanical block; excellent outcomes (>95%) with brief rest.",
+                  "th": "รักษาแบบไม่ผ่าตัดสำหรับรอยหักไม่เคลื่อนตัวและไม่มีข้อขัด ฟื้นตัวได้ดีมาก (>95%) โดยพักชั่วคราว"
+                },
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Short-term sling immobilization for 2-7 days for comfort, followed by early active motion (pronation/supination) as pain tolerates. Excellent outcome (>95%).",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน (Sling) ช่วงสั้นๆ 2-7 วันบรรเทาปวด แล้วเริ่มขยับหมุนข้อมือ/ข้อศอกทันที อัตราฟื้นตัวสูงมาก (>95%)"
+                  "indication": {
+                    "en": "Non-displaced or minimally displaced fracture (<2 mm)\nNo mechanical block to active/passive pronation and supination\nIntact elbow joint stability",
+                    "th": "รอยหักไม่เคลื่อนตัว หรือเคลื่อนตัวน้อยมาก (<2 มม.)\nไม่มีอาการข้อศอกขัด หมุนคว่ำ-หงายแขนได้ราบรื่น\nข้อศอกมีความมั่นคงดี ไม่หลุดหลวม"
+                  },
+                  "method": {
+                    "en": "Sling immobilization for comfort for 2–7 days only\nCryotherapy and oral analgesics for pain control",
+                    "th": "ใส่สายคล้องแขน (Sling) ประคอง 2–7 วันเฉพาะช่วงปวดมาก\nประคบเย็นและรับประทานยาแก้ปวดบรรเทาอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "Early active elbow flexion/extension and forearm rotation as tolerated after day 2–3\nRepeat clinical and radiographic check at 1–2 weeks",
+                    "th": "เริ่มฝึกงอ-เหยียดข้อศอกและหมุนคว่ำหงายแขนทันทีหลังวันที่ 2–3 ตามอาการปวด\nนัดตรวจติดตามอาการและถ่ายภาพ X-ray ซ้ำที่ 1–2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "DO NOT immobilize for >7 days to prevent irreversible elbow stiffness\nEnsure aspiration of hemarthrosis if severe pain limits assessment",
+                    "th": "ห้ามดามแขนนานเกิน 7 วันเด็ดขาดเพื่อป้องกันข้อศอกยึดติดถาวร\nหากปวดมากจนตรวจหมุนแขนไม่ได้ ควรเจาะดูดเลือดในข้อ (Hemarthrosis) ออกก่อนประเมิน"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated for true Type I fractures.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "Not indicated for true Mason Type I fractures",
+                    "th": "ไม่มีข้อบ่งชี้ในการผ่าตัดสำหรับรอยหัก Type I แท้"
+                  },
+                  "method": {
+                    "en": "Not applicable",
+                    "th": "ไม่มีความจำเป็นต้องทำหัตถการผ่าตัด"
+                  }
                 }
               },
               "illustrationId": "/images/radial_head/mason_1.png",
@@ -223,13 +247,45 @@ export const forearmBone: BoneData = {
               },
               "treatment": {
                 "preferred": "operative",
+                "decisionPrinciple": {
+                  "en": "Surgery indicated if mechanical block is present or fragment involves >30% articular surface with >2mm displacement.",
+                  "th": "แนะนำผ่าตัดหากมีข้อศอกขัดขวางการหมุนแขน หรือชิ้นกระดูกกินพื้นที่ผิวข้อ >30% ร่วมกับเคลื่อนตัว >2 มม."
+                },
                 "conservative": {
-                  "en": "Indicated ONLY if there is NO mechanical block to rotation during physical examination under local anesthesia.",
-                  "th": "พิจารณาเฉพาะกรณีที่ตรวจร่างกายทดสอบการหมุนคว่ำหงายแขนแล้วลื่นไหลดี ไม่มีอาการข้อศอกขัด"
+                  "indication": {
+                    "en": "Displaced >2mm BUT smooth full forearm rotation without mechanical block (tested under local anesthesia block)\nPatient with high surgical risks or low functional demand",
+                    "th": "เคลื่อนตัว >2 มม. แต่หมุนแขนคว่ำหงายได้เต็มที่ไม่ติดขัด (ทดสอบหลังฉีดยาชาเฉพาะที่)\nผู้ป่วยที่มีความเสี่ยงสูงจากการผ่าตัด หรือใช้งานแขนน้อยมาก"
+                  },
+                  "method": {
+                    "en": "Posterior splint or sling for 5–7 days\nEarly active motion under supervision",
+                    "th": "ใส่เฝือกดามหลังแขนหรือ Sling สั้นๆ 5–7 วัน\nเริ่มฝึกขยับข้อศอกทันทีหลังทุเลาปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "Active-assisted pronation/supination from week 1\nClose radiographic follow-up at 1, 2, and 4 weeks",
+                    "th": "ฝึกหมุนแขนตั้งแต่สัปดาห์แรก\nติดตามภาพเอกซเรย์สม่ำเสมอที่ 1, 2 และ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "Secondary displacement may lead to late mechanical impingement and osteoarthritis",
+                    "th": "อาจเกิดการเคลื่อนตัวเพิ่มขึ้นจนเกิดข้อติดขัดหรือข้อเสื่อมตามมาในภายหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT IF MECHANICAL BLOCK PRESENT OR >30% DISPLACED. Open reduction and internal fixation (ORIF) with mini-screws (1.5mm - 2.0mm) or headless compression screws placed in the safe zone.",
-                  "th": "แนะนำผ่าตัด (ORIF) หากมีอาการข้อศอกขัด หรือกระดูกเคลื่อน > 30% โดยยึดด้วยสกรูจมขนาดเล็ก (Mini/Headless Screws) บริเวณ Safe zone"
+                  "indication": {
+                    "en": "Mechanical block to forearm pronation/supination\nArticular step-off >2mm involving >30% of radial head\nAssociated elbow instability or ligamentous injury",
+                    "th": "มีอาการข้อศอกขัดขวางการหมุนคว่ำ-หงายแขน\nผิวข้อเหลื่อม >2 มม. และกินพื้นที่ผิวข้อ >30%\nมีภาวะข้อศอกหลวมหรือไม่มั่นคงร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "Open Reduction and Internal Fixation (ORIF)\nHeadless compression screws (1.5–2.4 mm) countersunk beneath cartilage\nLow-profile mini-locking plate placed strictly in the Safe Zone (90°–110° non-articulating arc)",
+                    "th": "ผ่าตัดจัดกระดูกและยึดตรึงภายใน (ORIF)\nใช้ Headless compression screws (1.5–2.4 มม.) ฝังจมมิดใต้ผิวกระดูกอ่อน\nหรือดามแผ่นโลหะขนาดเล็ก (Mini-plate) เฉพาะบริเวณ Safe Zone เท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "Posterior splint for 7–10 days until soft tissue healing\nEarly active ROM immediately after suture removal",
+                    "th": "ดามเฝือกอ่อนหลังแขน 7–10 วันเพื่อรอแผลหาย\nเริ่มฝึกขยับงอ-เหยียดและหมุนข้อศอกทันทีหลังตัดไหม"
+                  },
+                  "pitfalls": {
+                    "en": "NEVER place hardware outside the Safe Zone to avoid impingement against the Proximal Radioulnar Joint (PRUJ)\nAvoid posterior interosseous nerve (PIN) injury during lateral approach (maintain pronation)",
+                    "th": "ห้ามวางโลหะนอกบริเวณ Safe Zone เด็ดขาด เพื่อป้องกันการขัดสีกับข้อ PRUJ\nระวังอันตรายต่อเส้นประสาท PIN ขณะผ่าตัด (ควรจัดแขนในท่า Pronation)"
+                  }
                 }
               },
               "illustrationId": "/images/radial_head/mason_2.png",
@@ -254,13 +310,45 @@ export const forearmBone: BoneData = {
               },
               "treatment": {
                 "preferred": "operative",
+                "decisionPrinciple": {
+                  "en": "Excision with Radial Head Arthroplasty (prosthesis) is standard; preserve elbow stability and length.",
+                  "th": "ผ่าตัดเปลี่ยนหัวกระดูกข้อศอกเทียม (Arthroplasty) เป็นมาตรฐานหลักเพื่อรักษาความมั่นคงและความยาวแขน"
+                },
                 "conservative": {
-                  "en": "CONTRAINDICATED. Leads to severe elbow stiffness, chronic pain, and nonunion.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ผลลัพธ์แย่มาก ทำให้ข้อศอกยึดติดและปวดเรื้อรัง"
+                  "indication": {
+                    "en": "Strictly limited to non-ambulatory elderly patients unfit for any surgery",
+                    "th": "จำกัดเฉพาะผู้ป่วยสูงอายุที่ไม่สามารถรับการผ่าตัดได้เลย"
+                  },
+                  "method": {
+                    "en": "Sling for comfort and early passive movement",
+                    "th": "ใส่ Sling บรรเทาปวดและฝึกขยับเท่าที่ทนได้"
+                  },
+                  "rehabilitation": {
+                    "en": "High risk of permanent stiffness, malunion, and chronic pain",
+                    "th": "มักเกิดภาวะข้อศอกยึดติดเรื้อรังและปวดต่อเนื่อง"
+                  },
+                  "pitfalls": {
+                    "en": "CONTRAINDICATED in active patients due to guaranteed severe joint stiffness and functional loss",
+                    "th": "ห้ามใช้ในผู้ป่วยทั่วไป เพราะจะทำให้ข้อศอกพิการติดแข็งและสูญเสียการใช้งาน"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY OPERATIVE TREATMENT. Radial head excision (resection) + primary Radial Head Arthroplasty (prosthetic replacement) if elbow or interosseous membrane is unstable. ORIF only if reconstructible into <3 main pieces.",
-                  "th": "ผ่าตัดฉุกเฉิน (Mandatory Surgery) ตัดชิ้นส่วนหัวกระดูกที่แตกออก (Excision) และใส่หัวข้อศอกเทียม (Radial Head Arthroplasty) เพื่อรักษาความมั่นคงข้อศอก"
+                  "indication": {
+                    "en": "Comminuted radial head fractures (>3 pieces) not amenable to stable ORIF\nAssociated ligamentous instability (MCL / LCL) or Essex-Lopresti injury",
+                    "th": "กระดูกหัว Radius แตกละเอียด >3 ชิ้นขึ้นไปซึ่งไม่สามารถยึด ORIF ให้มั่นคงได้\nมีการบาดเจ็บของเส้นเอ็นยึดข้อศอกหรือเยื่อ Interosseous membrane ร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "Radial head excision + Modular Metallic Radial Head Arthroplasty (RHA)\nORIF attempted ONLY if reconstructible into ≤3 large fragments\nRepair lateral collateral ligament (LCL / LUCL) complex using suture anchors",
+                    "th": "ผ่าตัดตัดหัวกระดูกที่แตกออก ร่วมกับใส่หัวข้อศอกเทียมโลหะ (Radial Head Arthroplasty)\nพิจารณา ORIF เฉพาะกรณีที่ประกอบกระดูกได้มั่นคง (≤3 ชิ้นใหญ่)\nเย็บซ่อมเอ็นยึดข้อศอกด้านนอก (LCL/LUCL) ด้วย Suture anchors"
+                  },
+                  "rehabilitation": {
+                    "en": "Hinged elbow brace locked at 90° for 10–14 days\nEarly active-assisted flexion/extension from week 2 within safe arc",
+                    "th": "ใส่สนับศอกชนิดปรับองศาได้ (Hinged brace) ล็อก 90° นาน 10–14 วัน\nเริ่มฝึกงอเหยียดข้อศอกในมุมที่ปลอดภัยตั้งแต่สัปดาห์ที่ 2"
+                  },
+                  "pitfalls": {
+                    "en": "CRITICAL: NEVER perform radial head excision ALONE without prosthesis if interosseous membrane is torn (prevents proximal radial migration and wrist pain)\nAvoid overstuffing the radiocapitellar joint with an oversized prosthetic head",
+                    "th": "ข้อห้ามวิกฤต: ห้ามตัดหัวกระดูกออกโดยไม่ใส่ข้อเทียมเด็ดขาดหากมีเอ็น Interosseous membrane ฉีกขาด (ป้องกันหัวกระดูกเลื่อนชนข้อมือ)\nหลีกเลี่ยงการเลือกขนาดหัวข้อเทียมที่ใหญ่เกินไป (Overstuffing) เพราะจะทำลายผิวกระดูกอ่อน Capitellum"
+                  }
                 }
               },
               "illustrationId": "/images/radial_head/mason_3.png",
@@ -285,13 +373,45 @@ export const forearmBone: BoneData = {
               },
               "treatment": {
                 "preferred": "operative",
+                "decisionPrinciple": {
+                  "en": "Emergency concentric reduction + bone fixation/replacement + ligamentous reconstruction.",
+                  "th": "ดึงจัดข้อศอกเข้าที่ฉุกเฉิน + ผ่าตัดยึด/เปลี่ยนข้อหัวกระดูก + เย็บซ่อมเอ็นยึดข้อศอกรอบทิศทาง"
+                },
                 "conservative": {
-                  "en": "CONTRAINDICATED. Extremely high risk of recurrent dislocation and joint destruction.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ข้อศอกจะหลุดซ้ำและทำลายผิวข้ออย่างรุนแรง"
+                  "indication": {
+                    "en": "Contraindicated as primary definitive treatment",
+                    "th": "ห้ามใช้เป็นการรักษาหลักเด็ดขาด"
+                  },
+                  "method": {
+                    "en": "Emergency closed reduction + long arm splint ONLY as temporary bridge to surgery",
+                    "th": "ดึงข้อศอกเข้าที่ฉุกเฉินและดามเฝือกยาวชั่วคราวเพื่อรอการผ่าตัดเท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "Extremely high risk of recurrent dislocation, joint collapse, and permanent stiffness",
+                    "th": "เสี่ยงต่อการหลุดซ้ำ ข้อศอกหลุดหลวม และข้อติดแข็งถาวรสูงมาก"
+                  },
+                  "pitfalls": {
+                    "en": "Do not attempt cast immobilization for unstable Mason IV patterns",
+                    "th": "ห้ามรักษาด้วยเฝือกเพียงอย่างเดียวในเคสข้อศอกไม่มั่นคง"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY OPERATIVE RECONSTRUCTION. Urgent reduction of elbow dislocation, followed by Radial Head Arthroplasty/ORIF + LCL complex repair ± hinged external fixator to restore stability.",
-                  "th": "ผ่าตัดฉุกเฉินจัดข้อศอกที่หลุดให้เข้าที่ ผ่าตัดเปลี่ยนหัวกระดูกเทียม/ORIF ร่วมกับผ่าตัดซ่อมแซมชุดเส้นเอ็นด้านข้าง (LCL repair) เพื่อคืนความมั่นคง"
+                  "indication": {
+                    "en": "All Mason Type IV fracture-dislocations\nTerrible Triad of the elbow (Radial head fracture + Coronoid fracture + LCL tear)",
+                    "th": "ผู้ป่วย Mason Type IV ทุกราย\nกลุ่มอาการ Terrible triad (หัว Radius หัก + Coronoid หัก + เอ็น LCL ขาด)"
+                  },
+                  "method": {
+                    "en": "Radial Head ORIF or Arthroplasty (RHA)\nCoronoid process fixation (suture lasso or screw/plate)\nLCL / LUCL complex anatomical reattachment to lateral epicondyle using suture anchors\nMCL repair or hinged external fixator if residual instability persists >30° extension",
+                    "th": "ผ่าตัดยึดกระดูก ORIF หรือใส่ข้อเทียมหัวเรเดียส (RHA)\nยึดตรึงกระดูก Coronoid (Suture lasso หรือ Screw/Plate)\nเย็บซ่อมเอ็น LCL/LUCL กลับเข้าจุดเกาะเดิมด้วย Suture anchors\nเย็บซ่อมเอ็น MCL หรือใส่ Hinged External Fixator หากข้อศอกยังหลุดเมื่อเหยียดเกิน 30°"
+                  },
+                  "rehabilitation": {
+                    "en": "Hinged elbow brace with extension block (typically locked 30°–90° for first 2–3 weeks)\nActive-assisted motion within protected stable arc\nGradual extension to full over 6 weeks",
+                    "th": "ใส่ Hinged brace บล็อกมุมเหยียด (ล็อก 30°–90° ใน 2–3 สัปดาห์แรก)\nเริ่มฝึกขยับในมุมที่มั่นคงปลอดภัย\nค่อยๆ เพิ่มมุมเหยียดจนเต็มที่ภายใน 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "Test elbow stability through full arc before leaving OR (ensure no subluxation at >30° extension)\nPost-op heterotopic ossification prophylaxis (Indomethacin or radiation)",
+                    "th": "ต้องทดสอบความมั่นคงของข้อศอกทุกองศาก่อนปิดแผลผ่าตัด (ต้องไม่หลุดเมื่อเหยียดถึง 30°)\nพิจารณาให้ยาป้องกันการเกิดกระดูกงอกผิดรูป (Heterotopic Ossification) เช่น Indomethacin"
+                  }
                 }
               },
               "illustrationId": "/images/radial_head/mason_4.png",
@@ -479,14 +599,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงพลังงานต่ำเข้าที่ด้านหลังข้อศอกขณะล้ม"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Non-displaced simple transverse fracture (<2 mm displacement); intact extensor mechanism; long arm posterior splint/cast with elbow flexed 45–90° for 2–3 weeks achieves high union rate.",
+                  "th": "กระดูกหักขวางเรียบไม่เคลื่อนตัว (<2 มม.) กลไกการเหยียดข้อศอกยังปกติ รักษาแบบไม่ผ่าตัดด้วยเฝือกยาวเหนือศอก (Long arm splint/cast) งอศอก 45–90 องศา นาน 2–3 สัปดาห์ กระดูกติดดีเยี่ยม"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Long arm posterior splint/cast with elbow flexed 45-90° for 2-3 weeks, followed by progressive active flexion/extension. High union rate.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกหลังยาว (Long arm splint) งอศอก 45-90 องศา นาน 2-3 สัปดาห์ แล้วเริ่มฝึกเหยียดงอข้อศอก อัตรากระดูกติดสูงมาก"
+                  "indication": {
+                    "en": "• True non-displaced Mayo IA fracture (< 2 mm displacement)\n• Intact active elbow extension against gravity",
+                    "th": "• กระดูกหัก Mayo IA ไม่เคลื่อนตัว (< 2 มม.)\n• สามารถเหยียดข้อศอกตรงต้านแรงโน้มถ่วงได้เอง"
+                  },
+                  "method": {
+                    "en": "• Long arm posterior splint or cast flexed at 45°–90° for 2–3 weeks",
+                    "th": "• ใส่เฝือกหลังยาวเหนือศอก (Long arm splint/cast) งอศอก 45°–90° นาน 2–3 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start active-assisted elbow flexion and extension out of splint at 3 weeks; active strengthening at 6–8 weeks",
+                    "th": "• เริ่มฝึกช่วยงอเหยียดข้อศอกที่ 3 สัปดาห์ และเริ่มฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to verify intact active extension against gravity — occult triceps rupture leads to secondary displacement",
+                    "th": "• ละเลยการตรวจการเหยียดศอกต้านแรงโน้มถ่วง หากเอ็น Triceps ขาดซ่อนอยู่จะทำให้กระดูกเลื่อนหลุดตามมา"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely needed; only if secondary displacement occurs during follow-up.",
-                  "th": "แทบไม่ต้องผ่าตัด พิจารณาเฉพาะกรณีที่กระดูกเคลื่อนตัวเพิ่มขึ้นระหว่างนัดติดตาม"
+                  "indication": {
+                    "en": "• Secondary displacement > 2 mm or loss of extensor mechanism during follow-up",
+                    "th": "• กระดูกเคลื่อนตัว > 2 มม. หรือสูญเสียแรงเหยียดข้อศอกจากการติดตามอาการ"
+                  },
+                  "method": {
+                    "en": "• Tension Band Wiring (TBW)",
+                    "th": "• ผ่าตัดยึดกระดูกด้วยวิธี Tension Band Wiring (TBW)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active motion from post-op week 1",
+                    "th": "• เริ่มฝึกขยับข้อศอกได้ตั้งแต่สัปดาห์แรกหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery for undisplaced fractures",
+                    "th": "• ผ่าตัดเกินจำเป็นในกระดูกหักที่ไม่เคลื่อน"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_1a.png",
@@ -510,14 +662,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่ด้านหลังข้อศอกจนกระดูกแตกละเอียด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Non-displaced comminuted fracture (<2 mm); stable joint; close weekly radiographic monitoring during cast immobilization to detect displacement under triceps pull.",
+                  "th": "กระดูกแตกละเอียดแต่ไม่เคลื่อนตัว (<2 มม.) ข้อศอกมั่นคง ใส่เฝือกยาวและนัดติดตามภาพเอกซเรย์ทุกสัปดาห์เพื่อเฝ้าระวังชิ้นกระดูกเลื่อนหลุดจากแรงดึงของ Triceps"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED INITIAL TREATMENT. Long arm cast immobilization with close weekly radiographic follow-up to check for displacement.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นอันดับแรก ใส่เฝือกยาวเหนือศอก นัดเอกซเรย์ติดตามทุกสัปดาห์เพื่อป้องกันกระดูกเคลื่อน"
+                  "indication": {
+                    "en": "• Non-displaced comminuted olecranon fracture (< 2 mm displacement)\n• Reliable patient able to attend weekly follow-up",
+                    "th": "• กระดูกหักแตกละเอียดไม่เคลื่อนตัว (< 2 มม.)\n• ผู้ป่วยสามารถมาตรวจเอกซเรย์ติดตามได้ทุกสัปดาห์"
+                  },
+                  "method": {
+                    "en": "• Long arm posterior cast at 60°–90° flexion for 3–4 weeks with weekly serial X-rays",
+                    "th": "• ใส่เฝือกยาวเหนือศอก (งอศอก 60°–90°) นาน 3–4 สัปดาห์ พร้อมเอกซเรย์ติดตามทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle progressive active ROM after 3–4 weeks once early callus forms",
+                    "th": "• เริ่มฝึกขยับข้อศอกเบาๆ ที่ 3–4 สัปดาห์เมื่อเริ่มมีกระดูกสมาน"
+                  },
+                  "pitfalls": {
+                    "en": "• Triceps muscle tone displacing comminuted fragments into the joint undetected without serial radiographs",
+                    "th": "• ชิ้นกระดูกแตกอาจเลื่อนหลุดเข้าช่องข้อจากแรงดึงของกล้ามเนื้อ Triceps หากไม่ได้เอกซเรย์ติดตามอย่างสม่ำเสมอ"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if fragments displace during conservative treatment.",
-                  "th": "ผ่าตัดเฉพาะกรณีที่ชิ้นกระดูกเริ่มเคลื่อนตัวหลุดออกจากกัน"
+                  "indication": {
+                    "en": "• Secondary displacement > 2 mm or fragment depression",
+                    "th": "• ชิ้นกระดูกเคลื่อนตัว > 2 มม. หรือผิวข้อยุบตัว"
+                  },
+                  "method": {
+                    "en": "• Contoured Olecranon Locking Compression Plate (LCP) ORIF (TBW is contraindicated for comminution)",
+                    "th": "• ผ่าตัดดามแผ่นเหล็กล็อค Olecranon LCP (ห้ามทำ TBW ในกระดูกแตกละเอียด)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active ROM",
+                    "th": "• เริ่มฝึกขยับข้อศอกได้ทันทีหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting TBW on comminuted bone",
+                    "th": "• ฝืนทำ TBW บนกระดูกที่แตกละเอียด"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_1b.png",
@@ -541,14 +725,46 @@ export const forearmBone: BoneData = {
                 "th": "การหดตัวอย่างรุนแรงฉับพลันของกล้ามเนื้อ Triceps ร่วมกับแรงกระแทกหลังข้อศอก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced simple transverse/oblique fracture (>2 mm); stable ulnohumeral joint; classic indication for Tension Band Wiring (TBW) with K-wires and figure-of-8 wire loop converting tensile triceps pull into articular compression.",
+                  "th": "กระดูกหักขวางเคลื่อนตัว >2 มม. ข้อศอกยังมั่นคง เป็นข้อบ่งชี้มาตรฐานของการผ่าตัด Tension Band Wiring (TBW) เพื่อเปลี่ยนแรงดึงของกล้ามเนื้อ Triceps ให้เป็นแรงอัดกระชับผิวข้อศอก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended in active patients due to loss of triceps extension power and joint incongruity.",
-                  "th": "ไม่แนะนำเนื่องจากจะทำให้สูญเสียแรงเหยียดข้อศอกและผิวข้อขรุขระ"
+                  "indication": {
+                    "en": "• Non-ambulatory elderly patients with severe medical comorbidities",
+                    "th": "• ผู้ป่วยสูงอายุติดเตียงที่มีโรคร่วมรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Sling immobilization",
+                    "th": "• ใส่สายคล้องแขนประคองอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive motion",
+                    "th": "• ขยับแขนเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Nonunion and permanent loss of active elbow extension",
+                    "th": "• กระดูกไม่ติดและสูญเสียแรงเหยียดข้อศอกถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) using Tension Band Wiring (TBW) with K-wires and figure-of-8 wire loop, converting tensile triceps forces into compressive forces.",
-                  "th": "แนะนำผ่าตัด ORIF ด้วยวิธี Tension Band Wiring (TBW) ใช้ K-wires ร่วมกับลวดเหล็กเปลี่ยนแรงดึงของ Triceps ให้เป็นแรงอัดกระดูก"
+                  "indication": {
+                    "en": "• All displaced Mayo IIA olecranon fractures in active patients\n• Inability to actively extend elbow against gravity",
+                    "th": "• กระดูกหัก Mayo IIA ที่เคลื่อนตัวในผู้ป่วยทั่วไปทุกราย\n• ไม่สามารถเหยียดข้อศอกตรงต้านแรงโน้มถ่วงได้"
+                  },
+                  "method": {
+                    "en": "• Tension Band Wiring (TBW): Parallel 1.6–2.0 mm K-wires engaged in anterior ulnar cortex (or down intramedullary canal) + 1.0–1.2 mm figure-of-8 stainless steel wire loop passed through distal ulnar drill hole\n• Alternative: Pre-contoured olecranon plate if oblique pattern extends distal to coronoid",
+                    "th": "• ผ่าตัดยึดด้วย Tension Band Wiring (TBW): ปักลวด K-wires ขนาด 1.6–2.0 มม. คู่ขนานเกาะผนังกระดูกด้านหน้า + ร้อยลวดสแตนเลสเบอร์ 18/20 เป็นรูปเลข 8 (Figure-of-8 loop) ผ่านรูกระดูกส่วนล่าง\n• ทางเลือก: ใช้แผ่นเหล็กล็อค Olecranon Plate หากรอยหักเฉียงยาวพาดผ่านระดับกระดูก Coronoid"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active and active-assisted elbow flexion/extension on post-op day 2; no splinting after 1 week; avoid resisted triceps extension for 6 weeks",
+                    "th": "• เริ่มฝึกงอเหยียดข้อศอกได้ทันทีตั้งแต่วันที่ 2 หลังผ่าตัด ถอดเฝือกหลัง 1 สัปดาห์ หลีกเลี่ยงการเหยียดศอกต้านแรง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• K-wire back-out and skin irritation (~20–30%) — ensure K-wires are bent 180° and tamped flush onto bone\n• Using TBW for comminuted fractures",
+                    "th": "• ลวด K-wire ถอยร่นทิ่มผิวหนังระคายเคือง (~20–30%) ต้องงอปลายลวด 180° และตอกให้แนบสนิทกับผิวกระดูก\n• การนำ TBW ไปใช้ในกระดูกหักแตกละเอียด"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_2a.png",
@@ -572,14 +788,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงกระแทกทับบดพลังงานสูงเข้าที่ปุ่มข้อศอก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced comminuted olecranon fracture with stable joint; absolute contraindication for Tension Band Wiring (TBW crushes fragments and shortens trochlear notch); mandatory anatomical Olecranon Contour Locking Plating (LCP).",
+                  "th": "กระดูกหักแตกละเอียดและเคลื่อนตัว ข้อศอกยังมั่นคง ห้ามผ่าตัดด้วย Tension Band Wiring เด็ดขาด (TBW จะบดอัดชิ้นกระดูกให้ทรุดและช่องข้อแคบลง) ต้องผ่าตัดดามด้วยแผ่นเหล็กล็อค Olecranon Contour Locking Plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in functional patients",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe joint incongruity and loss of elbow function",
+                    "th": "• ผิวข้อขรุขระรุนแรงและสูญเสียการทำงานของข้อศอก"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with a contoured Olecranon Locking Compression Plate (LCP) and intra-fragmentary screws to restore trochlear notch anatomy.",
-                  "th": "แนะนำผ่าตัด (ORIF) ดามด้วยแผ่นเหล็กล็อคข้อศอก (Olecranon LCP) เพื่อดึงรอยหักแตกละเอียดให้กลับเป็นทรง Trochlear notch"
+                  "indication": {
+                    "en": "• All displaced comminuted Mayo IIB olecranon fractures",
+                    "th": "• กระดูกหัก Mayo IIB ที่เคลื่อนตัวและแตกละเอียดทุกราย"
+                  },
+                  "method": {
+                    "en": "• Posterior approach: Anatomical reduction of trochlear notch + Pre-contoured Olecranon Locking Compression Plate (LCP) applied to dorsal tensile surface with home-run proximal screws into the coronoid base ± lag screws",
+                    "th": "• ผ่าตัดเปิดทางด้านหลัง: จัดเรียงผิวข้อ Trochlear notch ให้เรียบสนิท ดามด้วยแผ่นเหล็กล็อคดัดเข้ารูป Olecranon LCP วางบนผิวด้านหลัง โดยขันสกรูตัวยาวจากหัว Olecranon พุ่งตรงไปยึดฐานกระดูก Coronoid (Home-run screw) ± Lag screws"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active elbow ROM on post-op day 1–2; active extension against gravity at 6 weeks",
+                    "th": "• เริ่มฝึกขยับงอเหยียดข้อศอกได้ทันทีตั้งแต่วันที่ 1–2 หลังผ่าตัด เริ่มเหยียดศอกต้านแรงที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Applying TBW causing fracture collapse, joint narrowing, and rapid osteoarthritis",
+                    "th": "• การฝืนทำ TBW จะบีบให้รอยหักแตกละเอียดทรุดตัว ผิวข้อแคบลงและข้อเสื่อมรวดเร็ว"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_2b.png",
@@ -603,14 +851,46 @@ export const forearmBone: BoneData = {
                 "th": "อุบัติเหตุพลังงานสูงจากแรงอัดร่วมกับแรงเฉือนรุนแรงเข้าที่ข้อศอก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced simple fracture associated with ulnohumeral joint subluxation/dislocation (Fracture-Dislocation); emergency joint reduction and rigid anatomical locking plate ORIF ± collateral ligament repair.",
+                  "th": "กระดูกหักร่วมกับข้อศอกหลุดหลวม (Fracture-dislocation) ต้องดึงจัดข้อศอกเข้าที่ฉุกเฉินและผ่าตัดดามแผ่นเหล็กล็อค Olecranon Locking Plate ที่แข็งแรง ± ซ่อมแซมเส้นเอ็นข้อศอก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Causes total elbow joint destruction and disability.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ผลลัพธ์แย่มาก เสี่ยงข้อศอกหลุดพิการ"
+                  "indication": {
+                    "en": "• CONTRAINDICATED (Guaranteed persistent joint subluxation and catastrophic disability)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ทำให้ข้อศอกหลุดค้าง พิการ และติดแข็งถาวร)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Chronic joint dislocation and flail elbow",
+                    "th": "• ข้อศอกหลุดเรื้อรังและสูญเสียการใช้งานแขน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Emergency joint reduction + ORIF with heavy pre-contoured locking plate ± collateral ligament repair.",
-                  "th": "แนะนำผ่าตัดดึงข้อศอกเข้าที่ฉุกเฉิน + ดามแผ่นเหล็กล็อคหนาแน่น (ORIF) ร่วมกับผ่าตัดซ่อมแซมเส้นเอ็นข้อศอก"
+                  "indication": {
+                    "en": "• All Mayo IIIA fracture-dislocations",
+                    "th": "• กระดูกหักร่วมกับข้อศอกหลุด Mayo IIIA ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Emergency closed/open reduction of ulnohumeral joint + Heavy pre-contoured proximal ulnar locking plate bridging the fracture + Coronoid fixation + Repair lateral/medial collateral ligaments with suture anchors",
+                    "th": "• ดึงจัดข้อศอกเข้าที่ฉุกเฉิน + ผ่าตัดดามแผ่นเหล็กล็อคขนาดใหญ่ (Heavy Olecranon Locking Plate) + ยึดกระดูก Coronoid + เย็บซ่อมเอ็นข้อศอกด้านข้าง (LCL/MCL) ด้วย Suture Anchors"
+                  },
+                  "rehabilitation": {
+                    "en": "• Hinged elbow brace with 30° extension block for 2–3 weeks; active-assisted ROM within stable arc",
+                    "th": "• ใส่สนับศอกชนิดปรับองศาได้ (Hinged brace) บล็อกเหยียด 30° นาน 2–3 สัปดาห์ ฝึกขยับในมุมที่มั่นคง"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking associated coronoid or radial head fractures (Trans-olecranon fracture-dislocation)",
+                    "th": "• มองข้ามรอยหักของกระดูก Coronoid หรือหัวกระดูก Radius ร่วมด้วย"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_3a.png",
@@ -634,14 +914,46 @@ export const forearmBone: BoneData = {
                 "th": "การบาดเจ็บพลังงานสูงรุนแรงสุดขีด (อุบัติเหตุรถจักรยานยนต์ความเร็วสูง หรือตกจากที่สูง)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "High-energy comminuted fracture with gross ulnohumeral joint dislocation; severe ligamentous and bony disruption; complex multi-column ORIF (long locking plate + coronoid fixation + ligament repair ± hinged external fixator).",
+                  "th": "กระดูกแตกละเอียดรุนแรงร่วมกับข้อศอกหลุดสมบูรณ์ มีการฉีกขาดของกระดูกและเอ็นรอบข้อ ต้องผ่าตัด ORIF ดามแผ่นเหล็กล็อคขนาดยาว + ยึดกระดูก Coronoid + ซ่อมเอ็นรอบข้อ ± ใส่โครงดามกระดูกภายนอก Hinged Ex-Fix"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• CONTRAINDICATED",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Complete loss of limb function",
+                    "th": "• แขนพิการสูญเสียการใช้งานอย่างสมบูรณ์"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY HIGH-COMPLEXITY SURGERY. ORIF with dual plating or long olecranon locking plate, coronoid fixation, and LCL/MCL reconstruction ± hinged external fixator.",
-                  "th": "ผ่าตัดซับซ้อนสูง (Mandatory ORIF) ดามแผ่นเหล็กคู่หรือแผ่นเหล็กยาว ยึดกระดูก Coronoid และซ่อมแซมเอ็นรอบข้อศอกทั้งหมด"
+                  "indication": {
+                    "en": "• All Mayo IIIB complex fracture-dislocations",
+                    "th": "• กระดูกหักซับซ้อนร่วมกับข้อศอกหลุด Mayo IIIB ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Comprehensive surgical reconstruction: Long anatomically contoured Olecranon Locking Plate spanning the comminuted zone + Rigid coronoid fixation + Suture anchor repair of LCL/MCL complexes ± Hinged External Fixator if residual instability persists",
+                    "th": "• ผ่าตัดบูรณะโครงสร้างครบวงจร: ดามแผ่นเหล็กล็อค Olecranon LCP ขนาดยาวข้ามบริเวณที่แตกละเอียด + ยึดกระดูก Coronoid + เย็บซ่อมเอ็น LCL/MCL ด้วย Suture anchors ± ใส่โครงยึดภายนอกชนิดปรับมุมได้ (Hinged External Fixator) หากยังมีข้อหลุดหลวม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected active-assisted ROM in hinged brace; indomethacin / radiation prophylaxis for heterotopic ossification",
+                    "th": "• ฝึกขยับข้อศอกในสนับศอกปรับองศา; ให้ยา Indomethacin หรือฉายรังสีเพื่อป้องกันหินปูนเกาะข้อ (Heterotopic ossification)"
+                  },
+                  "pitfalls": {
+                    "en": "• Persistent ulnohumeral subluxation leading to rapid cartilage destruction\n• High risk of heterotopic ossification and ulnar nerve neuropathy",
+                    "th": "• ข้อศอกยังคงหลุดหลวมเล็กน้อยทำให้กระดูกอ่อนพังทลายอย่างรวดเร็ว\n• เสี่ยงสูงต่อการเกิดหินปูนเกาะข้อและการบาดเจ็บของเส้นประสาท Ulnar"
+                  }
                 }
               },
               "illustrationId": "/images/olecranon/mayo_3b.png",
@@ -845,13 +1157,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Ulna หักส่วนต้น (Proximal 1/3) ร่วมกับข้อศอกส่วนหัว Radius เคลื่อนหลุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Proximal 1/3 ulna fracture + radial head dislocation (PRUJ); mandatory anatomical rigid ORIF of the ulna with 3.5 mm dynamic compression / locking plate which almost always achieves spontaneous concentric radial head reduction; check PIN function (high neuropraxia risk).",
+                  "th": "กระดูก Ulna ส่วนต้น 1/3 หักร่วมกับหัวกระดูก Radius ที่ข้อศอกเคลื่อนหลุด ต้องผ่าตัดเปิดจัดและดามกระดูก Ulna ด้วยแผ่นเหล็ก 3.5 mm LC-DCP/LCP ให้ตรงเป๊ะตามกายวิภาค ซึ่งจะดึงหัว Radius ให้เด้งกลับเข้าข้อศอกเองโดยอัตโนมัติ พร้อมตรวจการทำงานของเส้นประสาท PIN"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Rarely indicated (children only)",
-                  "th": "มักใช้ในเด็กเท่านั้น ผู้ใหญ่มักไม่ค่อยได้ผล"
+                  "indication": {
+                    "en": "• Pediatric closed Monteggia fractures with successful stable closed reduction (long arm cast in supination/flexion)",
+                    "th": "• กระดูกหัก Monteggia ในเด็กที่สามารถดึงจัดกระดูกและหัวข้อศอกเข้าที่ได้มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Long arm cast with elbow flexed >90° and supinated (for Bado I)",
+                    "th": "• ใส่เฝือกยาวเหนือศอก งอศอก >90 องศา และหงายมือ (สำหรับ Bado I)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Cast for 4–6 weeks in children; weekly X-ray monitoring",
+                    "th": "• ดามเฝือก 4–6 สัปดาห์ในเด็ก พร้อมเอกซเรย์ติดตามทุกสัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• CONTRAINDICATED in adults — 100% failure rate with chronic radial head dislocation, severe loss of forearm rotation, and late arthrosis",
+                    "th": "• ห้ามใช้วิธีไม่ผ่าตัดในผู้ใหญ่ ล้มเหลว 100% ทำให้หัวกระดูกเรเดียสหลุดค้าง ข้อศอกพิการ และหมุนแขนไม่ได้ถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF of ulna, reduce radial head",
-                  "th": "ผ่าตัดยึดกระดูก Ulna ด้วยแผ่นเหล็ก และจัดกระดูก Radius เข้าที่"
+                  "indication": {
+                    "en": "• All adult Monteggia fracture-dislocations (Bado Types I, II, III, IV)\n• Irreducible pediatric fractures or failed closed reduction",
+                    "th": "• กระดูกหัก Monteggia ในผู้ใหญ่ทุกราย (Bado Types I, II, III, IV)\n• กระดูกหักในเด็กที่ดึงจัดกระดูกไม่เข้าที่"
+                  },
+                  "method": {
+                    "en": "• Posterior approach to ulna: Anatomical reduction and rigid internal fixation with 3.5 mm dynamic compression plate (LC-DCP) or locking compression plate (LCP) with minimum 6–8 cortices above and below fracture\n• Radial Head Management: Spontaneous reduction occurs once ulna length and alignment are restored; open reduction via lateral (Kaplan/Kocher) approach ONLY if annular ligament or capsule blocks reduction",
+                    "th": "• ผ่าตัดเข้าทางด้านหลังกระดูก Ulna: จัดกระดูกให้เข้าที่สมบูรณ์ 100% และดามแผ่นเหล็ก 3.5 mm LC-DCP หรือ LCP (ยึดสกรูอย่างน้อยข้างละ 6–8 Cortices)\n• การจัดการหัวกระดูก Radius: เมื่อจัดความยาวและแนว Ulna ตรงแล้ว หัว Radius จะเข้าที่เอง หากยังมีเนื้อเยื่อ Annular ligament ขวางอยู่ จึงเปิดเข้าทางด้านข้าง (Kocher approach) เพื่อนำสิ่งกีดขวางออก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Posterior splint for 7–10 days until wound healing; early active elbow flexion/extension and forearm pronation/supination immediately thereafter",
+                    "th": "• ดามเฝือกอ่อน 7–10 วันเพื่อรอแผลหาย แล้วเริ่มฝึกงอเหยียดข้อศอกและหมุนคว่ำหงายแขนได้ทันที"
+                  },
+                  "pitfalls": {
+                    "en": "• Incomplete anatomical reduction of the ulna preventing concentric radial head reduction\n• Iatrogenic Posterior Interosseous Nerve (PIN) injury during anterior radial head exploration",
+                    "th": "• จัดกระดูก Ulna ไม่ตรงสนิททำให้หัว Radius ไม่ยอมเข้าที่\n• อันตรายต่อเส้นประสาท PIN ขณะผ่าตัดเปิดสำรวจหัว Radius ด้านหน้า"
+                  }
                 }
               },
               "illustrationId": "/images/eponyms/monteggia.png",
@@ -871,13 +1216,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Radius หักส่วนปลาย (Distal 1/3) ร่วมกับข้อข้อมือ DRUJ เคลื่อนหลุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal 1/3 radius shaft fracture + DRUJ dislocation; known as the 'Fracture of Necessity' because conservative cast treatment fails in ~100% of adults; mandatory anatomical ORIF of the radius with 3.5 mm LCP to restore radial bow and reduce DRUJ; assess DRUJ stability intra-operatively.",
+                  "th": "กระดูก Radius ส่วนปลาย 1/3 หักร่วมกับข้อ DRUJ ที่ข้อมือหลุด ได้ชื่อว่า 'Fracture of Necessity' เพราะการใส่เฝือกในผู้ใหญ่ล้มเหลวเกือบ 100% ต้องผ่าตัด ORIF ดามแผ่นเหล็ก 3.5 mm LCP กระดูก Radius คืนความยาวและส่วนโค้ง Radial Bow แล้วทดสอบความมั่นคงของข้อ DRUJ ในห้องผ่าตัด"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended in adults",
-                  "th": "ไม่แนะนำให้รักษาแบบไม่ผ่าตัดในผู้ใหญ่"
+                  "indication": {
+                    "en": "• Pediatric Galeazzi equivalent fractures (distal radius fracture with distal ulnar physeal injury) treated with closed reduction and long arm cast in supination",
+                    "th": "• กระดูกหัก Galeazzi ในเด็กที่ดึงจัดกระดูกเข้าที่ได้ ใส่เฝือกยาวในท่าหงายมือ"
+                  },
+                  "method": {
+                    "en": "• Long arm cast for children",
+                    "th": "• ใส่เฝือกยาวเหนือศอกในเด็ก"
+                  },
+                  "rehabilitation": {
+                    "en": "• 4–6 weeks cast immobilization",
+                    "th": "• ดามเฝือก 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• CONTRAINDICATED IN ADULTS — 'Fracture of Necessity' with ~100% failure rate due to deforming pull of Brachioradialis and Pronator Quadratus",
+                    "th": "• ห้ามใช้วิธีไม่ผ่าตัดในผู้ใหญ่ ('Fracture of Necessity') ล้มเหลวเกือบ 100% จากแรงดึงของกล้ามเนื้อ Brachioradialis และ Pronator quadratus"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF of radius, assess DRUJ stability",
-                  "th": "ผ่าตัดยึดกระดูก Radius ด้วยแผ่นเหล็ก และประเมินความมั่นคงของข้อ DRUJ"
+                  "indication": {
+                    "en": "• All adult Galeazzi fracture-dislocations\n• Unstable pediatric Galeazzi variants",
+                    "th": "• กระดูกหัก Galeazzi ในผู้ใหญ่ทุกราย\n• ชนิดไม่มั่นคงในเด็ก"
+                  },
+                  "method": {
+                    "en": "• Volar Henry approach: Anatomical reduction of the radius restoring radial bow and length + 3.5 mm LC-DCP / LCP plate fixation\n• Intra-operative DRUJ Stability Assessment:\n  - If DRUJ is stable in supination: Long arm splint in 30°–45° supination for 4 weeks\n  - If DRUJ is gross unstable: Transfixation with 1–2 transverse 1.6–2.0 mm K-wires from ulna to radius in full supination (removed at 4–6 weeks) ± TFCC suture repair",
+                    "th": "• ผ่าตัดเข้าทาง Volar Henry: จัดกระดูก Radius คืนความยาวและส่วนโค้ง Radial Bow ดามแผ่นเหล็ก 3.5 mm LC-DCP / LCP\n• ทดสอบความมั่นคงข้อ DRUJ ในห้องผ่าตัด:\n  - หากข้อ DRUJ มั่นคงในท่าหงายมือ: ดามเฝือกยาวในท่าหงายมือ 30°–45° นาน 4 สัปดาห์\n  - หากข้อ DRUJ หลุดหลวมรุนแรง: ปักลวด K-wires ขนาด 1.6–2.0 มม. ขวางจาก Ulna ไป Radius ในท่าหงายมือเต็มที่ (ถอดลวดที่ 4–6 สัปดาห์) ± เย็บซ่อมเอ็น TFCC"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected active forearm rotation starting at 4–6 weeks after K-wire removal",
+                    "th": "• เริ่มฝึกหมุนคว่ำหงายแขนที่ 4–6 สัปดาห์หลังถอดลวด K-wires"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing DRUJ subluxation on post-reduction radiograph\n• Failing to test DRUJ stability in full pronation/supination after plate fixation",
+                    "th": "• มองข้ามข้อ DRUJ ที่ยังหลุดเคลื่อนในภาพเอกซเรย์\n• ไม่ได้ทดสอบความมั่นคงของข้อ DRUJ ในท่าคว่ำและหงายมือหลังขันแผ่นเหล็กเสร็จ"
+                  }
                 }
               },
               "illustrationId": "/images/eponyms/galeazzi.png",
@@ -901,14 +1279,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่กลางแกนกระดูก Ulna (การยกแขนรับการตีหรือของแข็ง)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Isolated mid-ulnar shaft fracture from direct blow; no PRUJ or DRUJ dislocation; non-operative functional bracing for minimal displacement (<50% translation, <10° angulation); 3.5 mm compression plating for displaced patterns.",
+                  "th": "กระดูกแกน Ulna หักเดี่ยวจากการถูกกระแทกตรงโดยไม่มีข้อศอกหรือข้อมือหลุด หากเคลื่อนตัวน้อย (<50% ความกว้างกระดูก และเอียง <10°) รักษาด้วยเฝือกสั้นหรือ Sarmiento Functional Brace หากเคลื่อนเกินเกณฑ์ให้ผ่าตัดดามแผ่นเหล็ก 3.5 mm LC-DCP"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED FOR MINIMAL DISPLACEMENT (<50% displacement, <10° angulation). Short-arm / long-arm cast or functional brace for 4-6 weeks with early forearm rotation.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดกรณีเคลื่อนตัวน้อย (<50% และเอียง <10°) ใส่เฝือกหรือ Functional brace 4-6 สัปดาห์ ร่วมกับการฝึกหมุนแขน"
+                  "indication": {
+                    "en": "• Isolated closed ulnar shaft fracture with < 50% displacement, < 10° angulation, and intact PRUJ/DRUJ",
+                    "th": "• กระดูก Ulna หักเดี่ยวแบบปิด เคลื่อนตัว < 50% ทำมุม < 10° และข้อศอก/ข้อมือปกติ"
+                  },
+                  "method": {
+                    "en": "• Posterior splint for 7–10 days for comfort, then transition to functional forearm sleeve / Sarmiento fracture brace for 4–6 weeks",
+                    "th": "• ใส่เฝือกชั่วคราว 7–10 วันเพื่อบรรเทาปวด แล้วเปลี่ยนเป็น Sarmiento Functional Brace นาน 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active wrist, hand, and elbow motion; early active pronation/supination exercises as tolerated",
+                    "th": "• เริ่มฝึกขยับนิ้วมือ ข้อมือ และข้อศอกทันที ฝึกหมุนคว่ำหงายแขนเบาๆ เท่าที่ทนได้"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing an associated subtle radial head dislocation (Monteggia) — always check elbow and wrist radiographs",
+                    "th": "• ตรวจพลาดหัวกระดูก Radius หลุดซ่อนอยู่ (Monteggia) ต้องถ่ายภาพเอกซเรย์เห็นทั้งข้อศอกและข้อมือเสมอ"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for displacement >50% or angulation >10°. ORIF with 3.5mm compression plate.",
-                  "th": "ผ่าตัดเฉพาะกรณีเคลื่อนตัว >50% หรือทำมุม >10° โดยผ่าตัดยึดแผ่นเหล็กดามกระดูก (ORIF)"
+                  "indication": {
+                    "en": "• Displacement > 50% cortical diameter\n• Angulation > 10° in any plane\n• Proximal third ulnar shaft fracture (higher nonunion rate with conservative treatment)",
+                    "th": "• กระดูกเคลื่อนตัว > 50% ของความกว้างกระดูก\n• กระดูกทำมุมเอียง > 10 องศา\n• รอยหักบริเวณ 1/3 ส่วนต้นของ Ulna (เสี่ยงกระดูกไม่ติดสูงหากไม่ผ่าตัด)"
+                  },
+                  "method": {
+                    "en": "• Subcutaneous border ulnar approach: Anatomical ORIF using 3.5 mm dynamic compression plate (LC-DCP) or locking plate with interfragmentary lag screws (minimum 6–8 cortices on each side)",
+                    "th": "• ผ่าตัดเข้าทางขอบหลังกระดูก Ulna: ผ่าตัดจัดกระดูกและดามแผ่นเหล็ก 3.5 mm LC-DCP หรือ Locking Plate พร้อม Lag screws (ยึดสกรูอย่างน้อยข้างละ 6–8 Cortices)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate unrestricted active ROM on post-op day 1",
+                    "th": "• เริ่มฝึกขยับแขนและหมุนข้อมือได้เต็มที่ตั้งแต่วันแรกหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• High nonunion rate (~10–15%) if managed non-operatively with excessive displacement",
+                    "th": "• อัตรากระดูกไม่ติดสูง (~10–15%) หากฝืนรักษาแบบไม่ผ่าตัดในกระดูกที่เคลื่อนตัวมาก"
+                  }
                 }
               },
               "illustrationId": "/images/eponyms/nightstick.png",
@@ -1136,13 +1546,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Radius หักส่วนปลายแบบไม่เข้าข้อ และมีการเคลื่อนไปทางด้านหลังมือ (Dorsal)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular distal radius fracture with dorsal displacement / dinner fork deformity; closed reduction and short arm cast for stable patterns in low-demand patients; Volar Locking Plate (VLP) ORIF for unstable or redisplaced fractures exceeding acceptable alignment criteria (dorsal tilt >10°, shortening >3 mm).",
+                  "th": "กระดูกปลายแขนหักนอกข้อเคลื่อนไปทางหลังมือ (Dinner fork deformity) หากดึงเข้าที่แล้วมั่นคงให้ใส่เฝือกแขนสั้น (Short arm cast) 4–6 สัปดาห์ หากไม่มั่นคงหรือยุบตัวเกินเกณฑ์ (Dorsal tilt >10°, สั้น >3 มม.) แนะนำผ่าตัดดามแผ่นเหล็กล็อคด้านหน้า Volar Locking Plate"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Closed reduction and cast (if stable)",
-                  "th": "ดึงจัดกระดูกเข้าที่และใส่เฝือก (ถ้ากระดูกมั่นคง)"
+                  "indication": {
+                    "en": "• Stable extra-articular distal radius fracture meeting acceptable alignment criteria after closed reduction (Radial height loss < 3 mm, radial inclination > 15°, dorsal tilt < 10°)\n• Low-demand elderly patients",
+                    "th": "• กระดูกหักนอกข้อที่มั่นคงและแนวเข้าเกณฑ์ยอมรับได้หลังดึงจัดกระดูก (สั้น < 3 มม., มุมเอียง > 15°, Dorsal tilt < 10°)\n• ผู้สูงอายุที่ใช้งานแขนน้อย"
+                  },
+                  "method": {
+                    "en": "• Hematoma block / Bier block: Closed reduction (traction + volar translation + ulnar deviation) -> Sugar-tong or short-arm radial gutter cast in neutral flexion (avoid hyperflexion Cotton-Loder position)",
+                    "th": "• ฉีดยาชาเฉพาะที่เข้าโพรงกระดูกหัก (Hematoma block): ดึงจัดกระดูกเข้าที่ (Traction + Volar translation + Ulnar deviation) -> ใส่เฝือก Sugar-tong หรือเฝือกสั้นในท่าข้อมือตรง (ห้ามดัดงอข้อมือมากเกินไปในท่า Cotton-Loder)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active finger, thumb, and shoulder motion; convert to short arm cast at 2–3 weeks; total cast time 4–6 weeks; repeat weekly X-rays for 3 weeks",
+                    "th": "• ขยับนิ้วมือ นิ้วโป้ง และหัวไหล่ทันที เปลี่ยนเป็นเฝือกสั้นที่ 2–3 สัปดาห์ ดามรวม 4–6 สัปดาห์ และถ่ายภาพเอกซเรย์ติดตามทุกสัปดาห์ใน 3 สัปดาห์แรก"
+                  },
+                  "pitfalls": {
+                    "en": "• Extreme wrist flexion casting (Cotton-Loder position) causing acute carpal tunnel syndrome and complex regional pain syndrome (CRPS)",
+                    "th": "• การดัดงอข้อมือในเฝือกมากเกินไป (Cotton-Loder position) ทำให้เกิดการกดทับเส้นประสาท Median ฉุกเฉิน (Acute CTS) และภาวะปวดแสบร้อน CRPS"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF with volar locking plate",
-                  "th": "ผ่าตัดยึดกระดูกด้วยแผ่นเหล็กดามด้านหน้า (Volar plate)"
+                  "indication": {
+                    "en": "• Unstable Colles fracture: Dorsal comminution > 50%, dorsal tilt > 10°, shortening > 3 mm, or failure of closed reduction\n• Secondary displacement during cast treatment",
+                    "th": "• ชนิดไม่มั่นคง: ผนังกระดูกด้านหลังแตกละเอียด > 50%, Dorsal tilt > 10°, กระดูกหดสั้น > 3 มม. หรือดึงจัดกระดูกไม่เข้าที่\n• กระดูกเลื่อนหลุดซ้ำระหว่างใส่เฝือก"
+                  },
+                  "method": {
+                    "en": "• Volar Henry approach: Anatomical reduction and Volar Locking Plate (VLP) fixation with distal subchondral locking peg/screw support",
+                    "th": "• ผ่าตัดเข้าทางด้านหน้า (Volar Henry approach): จัดกระดูกให้เรียบเสมอและดามแผ่นเหล็กล็อคด้านหน้า Volar Locking Plate โดยขันสกรูล็อคค้ำใต้ผิวกระดูกอ่อน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist flexion/extension and forearm rotation out of splint at 10–14 days",
+                    "th": "• ถอดเฝือกและเริ่มฝึกขยับข้อมือและหมุนแขนได้ตั้งแต่ 10–14 วันหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Distal screws placed through dorsal cortex into extensor compartments (EPL attrition rupture)",
+                    "th": "• สกรูตัวปลายยาวทะลุผนังกระดูกด้านหลังไปขัดสีจนเอ็นเหยียดนิ้วโป้ง (EPL) ขาด"
+                  }
                 }
               },
               "illustrationId": "/images/der_eponyms/colles.png",
@@ -1162,13 +1605,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Radius หักส่วนปลายแบบไม่เข้าข้อ และมีการเคลื่อนไปทางด้านหน้ามือ (Volar)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular distal radius fracture with volar displacement / garden spade deformity; inherently unstable due to volar flexor tendon deforming forces; Volar Locking Plate (VLP) ORIF is the treatment of choice; cast immobilization has high redisplacement rates.",
+                  "th": "กระดูกปลายแขนหักนอกข้อเคลื่อนไปทางฝ่ามือ (Garden spade deformity) เป็นรอยหักที่ไม่มั่นคงอย่างยิ่งจากแรงดึงของเอ็นงอข้อมือ การผ่าตัดดามแผ่นเหล็กล็อคด้านหน้า Volar Locking Plate (VLP) เป็นการรักษาหลักที่แนะนำ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Closed reduction and cast (difficult to hold)",
-                  "th": "ดึงจัดกระดูกเข้าที่และใส่เฝือก (มักหลุดง่าย)"
+                  "indication": {
+                    "en": "• Truly non-displaced fractures or high-risk non-surgical elderly patients",
+                    "th": "• กระดูกไม่เคลื่อนตัวเลย หรือผู้ป่วยสูงอายุที่มีข้อห้ามผ่าตัดรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Long-arm cast in slight wrist extension and supination for 4–6 weeks",
+                    "th": "• ใส่เฝือกยาวดามแขนในท่าข้อมือกระดกขึ้นเล็กน้อยและหงายมือ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active finger motion; serial weekly radiographs",
+                    "th": "• ขยับนิ้วมือและเอกซเรย์ติดตามทุกสัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Extremely high risk of secondary volar redisplacement and acute carpal tunnel syndrome",
+                    "th": "• เสี่ยงสูงมากที่กระดูกจะเลื่อนหลุดซ้ำไปทางฝ่ามือและกดทับเส้นประสาท Median"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF with volar plate",
-                  "th": "ผ่าตัดยึดกระดูกด้วยแผ่นเหล็กดามด้านหน้า (Volar plate)"
+                  "indication": {
+                    "en": "• All displaced Smith fractures in active patients\n• Inability to maintain reduction in cast",
+                    "th": "• กระดูกหัก Smith ที่เคลื่อนตัวในผู้ป่วยทั่วไปทุกราย\n• ไม่สามารถดึงกระดูกให้อยู่ในแนวปกติได้ด้วยเฝือก"
+                  },
+                  "method": {
+                    "en": "• Volar Henry approach: Anatomical reduction of volar cortical buttress and Volar Locking Buttress Plate fixation",
+                    "th": "• ผ่าตัดเข้าทาง Volar Henry: จัดกระดูกให้เข้าที่สนิทและดามแผ่นเหล็ก Volar Locking Buttress Plate ค้ำยันขอบกระดูกด้านหน้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Removable wrist splint for 1–2 weeks; immediate active finger and thumb ROM; active wrist ROM at 2 weeks",
+                    "th": "• ใส่เฝือกอ่อนถอดได้ 1–2 สัปดาห์ ขยับนิ้วมือทันที และเริ่มฝึกขยับข้อมือที่ 2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Placement of volar plate distal to watershed line causing flexor pollicis longus (FPL) tendon irritation or rupture",
+                    "th": "• วางแผ่นเหล็กล้ำเกินแนว Watershed line ไปทางปลายมือ จะทำให้ขัดสีจนเอ็นงอนิ้วโป้ง (FPL) ขาด"
+                  }
                 }
               },
               "illustrationId": "/images/der_eponyms/smith.png",
@@ -1192,14 +1668,46 @@ export const forearmBone: BoneData = {
                 "th": "การล้มเอามือยันพื้นขณะข้อมือเหยียดและคว้ำ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular fracture-dislocation with carpal subluxation and displaced dorsal rim fragment; inherently unstable; mandatory anatomical reduction and dorsal buttress plate / low-profile locked plate ORIF.",
+                  "th": "กระดูกหักเข้าข้อร่วมกับข้อข้อมือหลุดไปด้านหลัง (Fracture-dislocation) ไม่มั่นคงอย่างยิ่ง ต้องผ่าตัดเปิดจัดผิวข้อให้เรียบสนิทและดามแผ่นเหล็กค้ำยันด้านหลัง Dorsal Buttress Locking Plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended. Highly unstable intra-articular fracture-dislocation.",
-                  "th": "ไม่แนะนำ เนื่องจากเป็นกระดูกหักเข้าข้อและหลุดหลวมไม่มั่นคงอย่างยิ่ง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in functional patients (Inevitably redisplaces into carpal subluxation and post-traumatic arthritis)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (กระดูกจะเลื่อนหลุดซ้ำ ข้อข้อมือหลุดค้าง และข้อเสื่อมรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe radiocarpal osteoarthritis and permanent wrist deformity",
+                    "th": "• ข้อข้อมือเสื่อมพังทลายและพิการถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) with buttress plate or volar/dorsal locking plate.",
-                  "th": "แนะนำผ่าตัด (ORIF) ยึดแผ่นเหล็กดามกระดูก (Buttress/Locking plate)"
+                  "indication": {
+                    "en": "• All Dorsal Barton intra-articular fracture-dislocations",
+                    "th": "• กระดูกหักเข้าข้อร่วมกับข้อหลุด Dorsal Barton ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Dorsal approach (between 3rd and 4th extensor compartments): Transposition of EPL tendon + Anatomical reduction of dorsal articular rim + Low-profile Dorsal Buttress Locking Plate",
+                    "th": "• ผ่าตัดเข้าทางด้านหลังข้อมือ (ระหว่างช่องเอ็นที่ 3 และ 4): ยกหลบเอ็น EPL + จัดผิวข้อด้านหลังให้เรียบสนิท + ดามแผ่นเหล็ก Low-profile Dorsal Buttress Locking Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Volar wrist splint for 2 weeks; progressive active wrist ROM from week 2; strengthening at 6–8 weeks",
+                    "th": "• ดามเฝือกด้านหน้า 2 สัปดาห์ เริ่มฝึกขยับข้อมือที่ 2 สัปดาห์ และเพิ่มกำลังที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Extensor tendon irritation from prominent dorsal hardware (often requires hardware removal at 6–12 months)",
+                    "th": "• แผ่นเหล็กด้านหลังขัดสีกับเอ็นเหยียดนิ้วมือ (มักต้องผ่าตัดถอดเหล็กออกที่ 6–12 เดือน)"
+                  }
                 }
               },
               "illustrationId": "/images/der_eponyms/dorsal_barton.png",
@@ -1223,14 +1731,46 @@ export const forearmBone: BoneData = {
                 "th": "การล้มล้มกระแทกขณะข้อมืองอ หรือแรงกระแทกตรงเข้าด้านหลังข้อมือ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular fracture-dislocation with carpal subluxation and displaced volar rim fragment; highly unstable; mandatory anatomical reduction and Volar Locking Buttress Plating via Henry approach to prevent persistent carpal subluxation.",
+                  "th": "กระดูกหักเข้าข้อร่วมกับข้อข้อมือหลุดไปด้านหน้าฝ่ามือ มีความไม่มั่นคงสูงสุด ต้องผ่าตัดเปิดจัดผิวข้อและดามแผ่นเหล็ก Volar Locking Buttress Plate ผ่านทาง Volar Henry approach เพื่อป้องกันข้อข้อมือหลุดซ้ำ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended. Extremely unstable.",
-                  "th": "ไม่แนะนำ เนื่องจากไม่มั่นคงอย่างยิ่ง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Guaranteed volar subluxation of the carpus)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ข้อข้อมือจะหลุดเคลื่อนไปด้านหน้าแน่นอน)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Carpal subluxation and total wrist joint destruction",
+                    "th": "• ข้อมือหลุดพิการและผิวข้อพังทลายถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) with Volar Locking Buttress Plate.",
-                  "th": "แนะนำผ่าตัด (ORIF) ยึดแผ่นเหล็ก Volar Locking Buttress Plate"
+                  "indication": {
+                    "en": "• All Volar Barton intra-articular fracture-dislocations",
+                    "th": "• กระดูกหักเข้าข้อร่วมกับข้อหลุด Volar Barton ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Modified Henry approach: Pronator quadratus reflection, anatomical reduction of volar articular margin, and Volar Buttress Locking Plate (buttressing the volar rim below watershed line)",
+                    "th": "• ผ่าตัดเข้าทาง Modified Henry approach: เปิดกล้ามเนื้อ Pronator quadratus จัดขอบผิวข้อด้านหน้าให้เรียบสนิท และดามแผ่นเหล็ก Volar Buttress Locking Plate ค้ำยันขอบกระดูกด้านหน้า (ระวังไม่ให้ล้ำเส้น Watershed line)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist and finger ROM at 10–14 days after soft tissue healing",
+                    "th": "• เริ่มฝึกขยับข้อมือและนิ้วมือได้ตั้งแต่ 10–14 วันหลังแผลผ่าตัดหายดี"
+                  },
+                  "pitfalls": {
+                    "en": "• Volar plate placed too distal past the watershed line leading to late FPL tendon rupture (Soong grade 2)",
+                    "th": "• วางแผ่นเหล็กล้ำเกินเส้น Watershed line (Soong grade 2) ทำให้เอ็นงอนิ้วโป้ง FPL ขาดในภายหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/der_eponyms/volar_barton.png",
@@ -1347,13 +1887,46 @@ export const forearmBone: BoneData = {
                 "th": "ล้มเท้าต่อมือ (FOOSH) โดยแรงดัดพาดผ่านกระดูก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular fracture from bending force (Colles/Smith); closed reduction and cast for stable patterns; Volar Locking Plate ORIF for unstable/redisplaced patterns.",
+                  "th": "กระดูกหักนอกข้อจากแรงดัด (Colles/Smith) หากดึงเข้าที่แล้วมั่นคงให้ใส่เฝือก 4–6 สัปดาห์ หากไม่มั่นคงหรือกระดูกทรุดตัวซ้ำ แนะนำผ่าตัดดามแผ่นเหล็กล็อค Volar Locking Plate"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Closed reduction and cast immobilization if stable.",
-                  "th": "ดึงจัดกระดูกและใส่เฝือกหากโครงสร้างมั่นคงเพียงพอ"
+                  "indication": {
+                    "en": "• Stable extra-articular fracture without comminution meeting acceptable reduction parameters",
+                    "th": "• กระดูกหักนอกข้อมั่นคง ไม่แตกละเอียด และแนวจัดกระดูกได้เกณฑ์ยอมรับ"
+                  },
+                  "method": {
+                    "en": "• Closed reduction + short/long arm cast for 4–6 weeks",
+                    "th": "• ดึงจัดกระดูกเข้าที่ + ใส่เฝือกแขน 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active finger exercises immediately; active wrist ROM after cast removal",
+                    "th": "• ขยับนิ้วมือทันที และเริ่มฝึกขยับข้อมือหลังถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• Loss of reduction in cast during the first 2–3 weeks",
+                    "th": "• กระดูกเลื่อนหลุดซ้ำในเฝือกช่วง 2–3 สัปดาห์แรก"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF with volar locking plate if unstable or redisplaced.",
-                  "th": "ผ่าตัดยึดกระดูกด้วยแผ่นเหล็กล็อคด้านหน้า (Volar Locking Plate) หากไม่มั่นคง"
+                  "indication": {
+                    "en": "• Unstable bending fracture (dorsal comminution, shortening >3 mm, tilt >10°)\n• Loss of reduction in cast",
+                    "th": "• ชนิดไม่มั่นคง (ผนังด้านหลังแตกละเอียด, สั้น > 3 มม., มุมเอียง > 10°)\n• กระดูกเลื่อนหลุดซ้ำขณะใส่เฝือก"
+                  },
+                  "method": {
+                    "en": "• Volar Locking Plate (VLP) fixation via Henry approach",
+                    "th": "• ผ่าตัดดามแผ่นเหล็กล็อค Volar Locking Plate (VLP) ผ่านทาง Henry approach"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist ROM at 10–14 days",
+                    "th": "• เริ่มฝึกขยับข้อมือได้ตั้งแต่ 10–14 วันหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Extensor tendon irritation from over-penetrating screws",
+                    "th": "• สกรูยาวเกินไปทะลุไปขัดสีเอ็นเหยียดนิ้วมือด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/fernandez/fernan1.png",
@@ -1377,13 +1950,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงเฉือนกระทำต่อผิวข้อโดยตรง มักเป็นอุบัติเหตุพลังงานสูง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular fracture from shearing force (Barton / Chauffeur); inherently unstable; requires rigid buttress plate fixation to neutralize shear loads.",
+                  "th": "กระดูกหักเข้าข้อจากแรงเฉือน (Barton / Chauffeur) ไม่มั่นคงอย่างยิ่ง ต้องผ่าตัดดามแผ่นเหล็กแบบ Buttress Plate เพื่อต้านทานแรงเฉือนและป้องกันข้อหลุด"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Rarely indicated due to articular involvement and instability.",
-                  "th": "แทบไม่แนะนำเพราะมีรอยหักเข้าข้อและมักไม่มั่นคง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Shear fractures displace under carpal loading in cast)",
+                    "th": "• ห้ามใช้วิธีนี้ (แรงเฉือนจะทำให้กระดูกและข้อมือเลื่อนหลุดในเฝือก)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Rapid carpal subluxation and articular step-off",
+                    "th": "• ข้อมือหลุดเคลื่อนและผิวข้อขรุขระรวดเร็ว"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF to restore articular congruity; buttress plate for volar rim.",
-                  "th": "ผ่าตัดจัดและยึดกระดูกเพื่อฟื้นฟูผิวข้อ ใช้แผ่นค้ำยัน (Buttress Plate) สำหรับขอบด้าน Volar"
+                  "indication": {
+                    "en": "• All Fernandez Type II shearing fractures (Barton's volar/dorsal rim or Chauffeur's radial styloid)",
+                    "th": "• กระดูกหักเข้าข้อจากแรงเฉือน Fernandez Type II ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Volar / Dorsal Buttress Locking Plate or percutaneous / open cannulated headless compression screws (for isolated radial styloid)",
+                    "th": "• ผ่าตัดดามแผ่นเหล็ก Volar/Dorsal Buttress Locking Plate หรือยึดด้วยสกรู Headless Compression Screws (สำหรับ Chauffeur radial styloid)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist ROM at 2 weeks",
+                    "th": "• เริ่มฝึกขยับข้อมือที่ 2 สัปดาห์หลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Relying solely on screws without buttress plate for small volar rim shear fragments",
+                    "th": "• ใช้สกรูเดี่ยวๆ โดยไม่ดามแผ่นเหล็กค้ำยัน Buttress plate สำหรับชิ้นขอบหน้าชิ้นเล็ก"
+                  }
                 }
               },
               "illustrationId": "/images/fernandez/fernan2.png",
@@ -1407,13 +2013,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงกดตามแนวแกนจากข้อมือส่งตรงลงบนผิวข้อปลายกระดูก Radius"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular compression fracture with central articular depression (Die-punch); mandatory open reduction, elevation of depressed subchondral fragments, structural bone grafting, and Volar Locking Plating.",
+                  "th": "กระดูกหักเข้าข้อจากแรงกดร่วมกับผิวข้อยุบตัว (Die-punch) ต้องผ่าตัดเปิดจัดงัดยกผิวข้อที่ยุบตัวขึ้นมาให้เรียบ เติมกระดูกปลูก (Bone graft) ใต้ผิวข้อ และดามด้วยแผ่นเหล็กล็อค Volar Locking Plate"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended; articular step-off requires reduction.",
-                  "th": "ไม่แนะนำเนื่องจากผิวข้อยุบ ต้องได้รับการจัดผิวข้อกลับเข้าที่"
+                  "indication": {
+                    "en": "• CONTRAINDICATED in active patients (Depressed articular step-off >2 mm causes rapid osteoarthritis)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (ผิวข้อยุบ > 2 มม. ทำให้ข้อเสื่อมรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Post-traumatic osteoarthritis",
+                    "th": "• ข้อข้อมือเสื่อมรุนแรงจากผิวข้อขรุขระ"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF; bone graft or substitute may be needed to fill subchondral void.",
-                  "th": "ผ่าตัดยึดกระดูก อาจต้องใช้กระดูกเสริม (Bone Graft) เพื่ออุดช่องใต้ผิวกระดูกอ่อน"
+                  "indication": {
+                    "en": "• Articular surface depression / step-off > 1–2 mm\n• Lunate fossa Die-punch impaction",
+                    "th": "• ผิวข้อยุบตัวหรือเหลื่อม > 1–2 มม.\n• ชิ้นกระดูก Lunate fossa ยุบจม (Die-punch)"
+                  },
+                  "method": {
+                    "en": "• Volar or dorsal approach: Direct/arthroscopic-assisted elevation of impacted articular lunate facet + Structural allograft/autograft packing of subchondral void + Volar Locking Plate with subchondral pegs",
+                    "th": "• ผ่าตัดเปิดหรือส่องกล้องช่วย: งัดยกชิ้นผิวข้อ Lunate facet ที่ยุบขึ้นมาให้เรียบ + อัดกระดูกปลูก (Bone graft) เติมช่องโหว่ใต้ข้อ + ดามแผ่นเหล็กล็อค Volar Locking Plate ขันสกรูค้ำใต้ผิวกระดูกอ่อน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected active wrist motion at 2 weeks; progressive load-bearing at 6–8 weeks",
+                    "th": "• ฝึกขยับข้อมือเบาๆ ที่ 2 สัปดาห์ และเริ่มลงน้ำหนักที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failing to graft subchondral void leading to secondary articular collapse",
+                    "th": "• ละเลยการเติมกระดูกปลูกใต้ช่องโหว่ ทำให้ผิวข้อยุบตัวซ้ำลงมา"
+                  }
                 }
               },
               "illustrationId": "/images/fernandez/fernan3.png",
@@ -1437,13 +2076,46 @@ export const forearmBone: BoneData = {
                 "th": "แรงดึงรั้งผ่านเอ็นบริเวณจุดยึด เกิดขณะข้อมือแพลง หรือเคลื่อนหลุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Avulsion fracture of ligament attachment sites (Radial styloid, Ulnar styloid) with radiocarpal dislocation; represents high-energy ligamentous disruption; anatomical fixation of avulsed bone and ligament repair.",
+                  "th": "กระดูกหักกะเทาะจุดเกาะเส้นเอ็นร่วมกับข้อมือหลุดหลวม (Fracture-dislocation) แสดงถึงการฉีกขาดของเอ็นยึดข้อมือ ต้องผ่าตัดยึดชิ้นกระดูกกะเทาะและเย็บซ่อมเอ็นยึดข้อต่อ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Cast immobilization for non-displaced avulsion; assess carpal stability.",
-                  "th": "ใส่เฝือกในกรณีที่กระดูกไม่เคลื่อน และประเมินความมั่นคงของข้อมือ"
+                  "indication": {
+                    "en": "• Truly non-displaced avulsion with documented carpal stability on stress views",
+                    "th": "• ชิ้นกระดูกกะเทาะไม่เคลื่อนตัวและทดสอบแล้วว่าข้อข้อมือมั่นคงดี"
+                  },
+                  "method": {
+                    "en": "• Short arm cast for 4 weeks",
+                    "th": "• ใส่เฝือกสั้น 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive ROM",
+                    "th": "• เริ่มฝึกขยับข้อตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing underlying carpal instability (scapholunate dissociation)",
+                    "th": "• มองข้ามการฉีกขาดของเอ็นในข้อมือ (Scapholunate dissociation)"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF of styloid if displaced or carpal instability is present; ligament repair.",
-                  "th": "ผ่าตัดยึดกระดูก Styloid หากเคลื่อนหรือข้อมือไม่มั่นคง พร้อมซ่อมแซมเอ็น"
+                  "indication": {
+                    "en": "• Displaced avulsion fragments\n• Associated radiocarpal dislocation or carpal instability",
+                    "th": "• ชิ้นกระดูกจุดเกาะเอ็นเคลื่อนตัว\n• มีข้อข้อมือหลุดเคลื่อนหรือข้อมือหลวม"
+                  },
+                  "method": {
+                    "en": "• ORIF of styloid fragments with headless compression screws or suture anchors + Direct repair of radiocarpal ligaments / TFCC",
+                    "th": "• ผ่าตัดยึดชิ้นกระดูก Styloid ด้วยสกรู Headless screws หรือ Suture anchors + ผ่าตัดเย็บซ่อมเอ็นยึดข้อมือและ TFCC"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wrist splint for 4–6 weeks; protected ROM",
+                    "th": "• ดามเฝือก 4–6 สัปดาห์ และฝึกขยับข้อมือแบบจำกัดมุม"
+                  },
+                  "pitfalls": {
+                    "en": "• Neglected scapholunate or lunotriquetral ligament ruptures",
+                    "th": "• ละเลยการตรวจและรักษาเอ็น Scapholunate หรือ Lunotriquetral ที่ฉีกขาด"
+                  }
                 }
               },
               "illustrationId": "/images/fernandez/fernan4.png",
@@ -1467,13 +2139,46 @@ export const forearmBone: BoneData = {
                 "th": "อุบัติเหตุพลังงานสูง เช่น อุบัติเหตุจราจร หรือตกจากที่สูง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Combined high-energy multi-mechanism fracture with severe comminution and soft tissue compromise; staged surgical management (spanning external fixator / distraction bridge plate followed by definitive locked plating and bone grafting).",
+                  "th": "กระดูกแตกละเอียดรุนแรงจากหลายกลไกผสมกันร่วมกับเนื้อเยื่อบวมช้ำรุนแรง ต้องรักษาแบบเป็นขั้นตอน (Staged management): ใส่โครงยึดภายนอก Spanning Ex-Fix หรือ Bridge plate ก่อน แล้วจึงผ่าตัดจัดดามแผ่นเหล็กล็อคถาวรและปลูกกระดูกเมื่อเนื้อเยื่อยุบบวม"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended for high-energy injuries.",
-                  "th": "ไม่แนะนำสำหรับกระดูกหักจากพลังงานสูง"
+                  "indication": {
+                    "en": "• CONTRAINDICATED",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Flail wrist, severe deformity, nerve injury, and total loss of function",
+                    "th": "• ข้อมือผิดรูปถาวร ชาเส้นประสาท และสูญเสียการใช้งานมืออย่างสิ้นเชิง"
+                  }
                 },
                 "operative": {
-                  "en": "Complex ORIF, external fixation, or combined fixation; staged approach may be needed.",
-                  "th": "ผ่าตัดซับซ้อน อาจใช้การยึดกระดูกภายนอก (External Fixator) ร่วมกับแผ่นเหล็ก หรือทำเป็นขั้นตอน"
+                  "indication": {
+                    "en": "• All Fernandez Type V high-energy fractures",
+                    "th": "• กระดูกหักพลังงานสูง Fernandez Type V ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Staged Protocol:\n  - Stage 1: Spanning Radiocarpal External Fixator or Dorsal Bridge Plate + Carpal tunnel release if median neuropathy present\n  - Stage 2 (once swelling subsides): Definitive Volar Locking Plating, bone grafting, fragment-specific fixation, and DRUJ reconstruction",
+                    "th": "• แนวทางรักษาแบบเป็นขั้นตอน (Staged protocol):\n  - ขั้นที่ 1: ดามยึดข้อข้อมือด้วย Spanning External Fixator หรือ Dorsal Bridge Plate + ผ่าตัดคลายเส้นประสาท Median หากมีอาการชา\n  - ขั้นที่ 2 (เมื่อแผลและเนื้อเยื่อยุบบวมดี): ผ่าตัดเปิดจัดดามกระดูกถาวรด้วย Volar Locking Plate, ปลูกกระดูก (Bone graft), ยึดชิ้นกระดูกเฉพาะส่วน และซ่อมแซมข้อ DRUJ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Finger motion on post-op day 1; bridge plate / external fixator removed at 8–12 weeks once articular healing occurs",
+                    "th": "• ขยับนิ้วมือตั้งแต่วันแรก ถอดโครงยึดภายนอกหรือ Bridge plate ออกที่ 8–12 สัปดาห์เมื่อกระดูกผิวข้อติดดี"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-distraction across radiocarpal joint leading to permanent finger stiffness and CRPS",
+                    "th": "• ดึงดามข้อมือตึงเกินไป (Over-distraction) ทำให้ข้อนิ้วมือยึดติดแข็งถาวรและเกิดโรค CRPS"
+                  }
                 }
               },
               "illustrationId": "/images/fernandez/fernan5.png",
@@ -1557,13 +2262,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Radius ส่วนปลายหักนอกข้อ โดยไม่มีกระดูก Ulnar styloid หักร่วม"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular fracture without ulnar styloid involvement; closed reduction and casting 4–6 weeks for stable patterns; VLP ORIF for unstable patterns.",
+                  "th": "กระดูกหักนอกข้อโดยไม่มีกระดูก Ulnar styloid หักร่วม หากจัดเข้าที่และมั่นคงให้ใส่เฝือก 4–6 สัปดาห์ หากไม่มั่นคงให้ผ่าตัด Volar Locking Plate"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Closed reduction and cast immobilization for 4-6 weeks.",
-                  "th": "ดึงจัดกระดูกและใส่เฝือก 4-6 สัปดาห์"
+                  "indication": {
+                    "en": "• Stable extra-articular fracture meeting acceptable alignment criteria (<3 mm shortening, <10° dorsal tilt)",
+                    "th": "• กระดูกหักนอกข้อที่มั่นคงและแนวเข้าเกณฑ์ยอมรับได้ (สั้น < 3 มม., Dorsal tilt < 10°)"
+                  },
+                  "method": {
+                    "en": "• Closed reduction and cast immobilization for 4-6 weeks with weekly X-rays",
+                    "th": "• ดึงจัดกระดูกและใส่เฝือก 4-6 สัปดาห์ พร้อมเอกซเรย์ติดตามทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active finger ROM; wrist ROM after cast removal",
+                    "th": "• ขยับนิ้วมือทันที และเริ่มฝึกขยับข้อมือหลังถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary displacement in cast",
+                    "th": "• กระดูกเลื่อนหลุดซ้ำขณะใส่เฝือก"
+                  }
                 },
                 "operative": {
-                  "en": "Volar locking plate if unstable or redisplaced.",
-                  "th": "ผ่าตัด Volar locking plate หากไม่มั่นคงหรือเคลื่อนหลุดซ้ำ"
+                  "indication": {
+                    "en": "• Unstable extra-articular fracture or failure of closed reduction",
+                    "th": "• ชนิดไม่มั่นคง หรือดึงจัดกระดูกไม่เข้าที่"
+                  },
+                  "method": {
+                    "en": "• Volar locking plate (VLP) ORIF via Henry approach",
+                    "th": "• ผ่าตัดยึดกระดูกด้วย Volar Locking Plate (VLP)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist motion at 10–14 days",
+                    "th": "• เริ่มฝึกขยับข้อมือที่ 10–14 วันหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Extensor tendon irritation from dorsal screw protrusion",
+                    "th": "• สกรูยาวเกินทะลุไปขัดสีเอ็นด้านหลังข้อมือ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1583,13 +2321,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูก Radius ส่วนปลายหักนอกข้อ ร่วมกับมีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular distal radius fracture with associated ulnar styloid fracture; evaluate DRUJ stability; cast for stable fractures, Volar Locking Plate ORIF for radius + assess DRUJ.",
+                  "th": "กระดูกหักนอกข้อร่วมกับมีกระดูก Ulnar styloid หัก ต้องตรวจประเมินความมั่นคงของข้อ DRUJ ใส่เฝือกหากมั่นคง หรือผ่าตัดดามแผ่นเหล็ก Volar Locking Plate หากไม่มั่นคง"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Closed reduction and cast immobilization.",
-                  "th": "ดึงจัดกระดูกและใส่เฝือก"
+                  "indication": {
+                    "en": "• Non-displaced or stable extra-articular fracture with stable DRUJ on exam",
+                    "th": "• กระดูกหักนอกข้อที่มั่นคงและข้อ DRUJ ไม่หลุดหลวม"
+                  },
+                  "method": {
+                    "en": "• Closed reduction and sugar-tong / short arm cast in neutral rotation for 4–6 weeks",
+                    "th": "• ดึงจัดกระดูกและใส่เฝือกในท่าหมุนแขนปกติ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Finger motion immediately; forearm rotation out of splint at 4–6 weeks",
+                    "th": "• ขยับนิ้วมือทันที และเริ่มฝึกหมุนแขนที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking persistent DRUJ instability after casting",
+                    "th": "• มองข้ามข้อ DRUJ ที่ยังหลวมไม่มั่นคง"
+                  }
                 },
                 "operative": {
-                  "en": "Volar locking plate for radius; assess DRUJ stability.",
-                  "th": "ผ่าตัด Volar locking plate สำหรับ Radius และประเมินข้อ DRUJ"
+                  "indication": {
+                    "en": "• Unstable radius fracture or gross DRUJ instability",
+                    "th": "• กระดูกเรเดียสหักไม่มั่นคง หรือข้อ DRUJ หลุดหลวมรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Volar Locking Plate ORIF of radius; assess DRUJ stability intraoperatively ± ulnar styloid screw/pinning if DRUJ unstable",
+                    "th": "• ผ่าตัด Volar Locking Plate กระดูกเรเดียส และตรวจเช็คความมั่นคงข้อ DRUJ ± ยึดกระดูก Ulnar styloid หากข้อ DRUJ ยังหลวม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected ROM at 2 weeks",
+                    "th": "• เริ่มฝึกขยับข้อมือแบบจำกัดมุมที่ 2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Nonunion of ulnar styloid base causing persistent ulnar wrist pain",
+                    "th": "• กระดูก Ulnar styloid ไม่ติดทำให้เจ็บข้อมือเรื้อรังด้านอัลนาร์"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1609,13 +2380,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูกหักเข้าข้อ Radiocarpal โดยไม่มีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular radiocarpal fracture; anatomical articular restoration (<1–2 mm step-off) via Volar Locking Plate ORIF to prevent post-traumatic radiocarpal arthritis.",
+                  "th": "กระดูกหักเข้าข้อ Radiocarpal ต้องจัดเรียงผิวข้อให้เรียบสนิท (<1–2 มม.) ด้วยการผ่าตัดดามแผ่นเหล็กล็อค Volar Locking Plate เพื่อป้องกันข้อเสื่อม"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Cast if non-displaced (<2mm step-off).",
-                  "th": "ใส่เฝือกหากกระดูกไม่เคลื่อน (<2 มม.)"
+                  "indication": {
+                    "en": "• Truly non-displaced intra-articular fracture (<1 mm step-off) in compliant patient",
+                    "th": "• กระดูกหักเข้าข้อที่ไม่เคลื่อนตัวเลย (<1 มม.) ในผู้ป่วยที่มาตรวจสม่ำเสมอ"
+                  },
+                  "method": {
+                    "en": "• Short arm cast for 4–6 weeks with strict serial weekly radiographs",
+                    "th": "• ใส่เฝือกสั้น 4–6 สัปดาห์ พร้อมเอกซเรย์ติดตามอย่างใกล้ชิดทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Finger ROM immediately; wrist ROM after cast removal",
+                    "th": "• ขยับนิ้วมือทันที และฝึกข้อมือหลังถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• Late articular collapse causing step-off and arthritis",
+                    "th": "• ผิวข้อยุบตัวซ้ำทำให้เกิดขั้นบันไดและข้อเสื่อม"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF with volar locking plate to restore articular congruity.",
-                  "th": "ผ่าตัด ORIF ด้วย Volar locking plate เพื่อเรียงผิวข้อ"
+                  "indication": {
+                    "en": "• Displaced intra-articular radiocarpal fracture (>1–2 mm step-off or gap)",
+                    "th": "• กระดูกหักเข้าข้อ Radiocarpal ที่เคลื่อนตัว (>1–2 มม.)"
+                  },
+                  "method": {
+                    "en": "• Volar Henry approach: Anatomical articular reduction under direct / fluoroscopic visualization + Volar Locking Plate with subchondral locking screws",
+                    "th": "• ผ่าตัด Volar Henry: จัดผิวข้อให้เรียบสนิท 100% ภายใต้เอกซเรย์ fluoroscopy และดามด้วย Volar Locking Plate ขันสกรูค้ำใต้ผิวกระดูกอ่อน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist ROM at 10–14 days",
+                    "th": "• เริ่มฝึกขยับข้อมือได้ตั้งแต่ 10–14 วันหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Intra-articular screw penetration destroying cartilage",
+                    "th": "• ขันสกรูยาวเกินจนแทงทะลุเข้าไปในโพรงข้อทำลายกระดูกอ่อน"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1635,13 +2439,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูกหักเข้าข้อ Radiocarpal ร่วมกับมีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular radiocarpal fracture with ulnar styloid fracture; Volar Locking Plate ORIF of radius + assess DRUJ stability.",
+                  "th": "กระดูกหักเข้าข้อ Radiocarpal ร่วมกับกระดูก Ulnar styloid หัก แนะนำผ่าตัด ORIF Volar Locking Plate จัดผิวข้อ และตรวจประเมินความมั่นคงข้อ DRUJ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Cast for undisplaced fractures.",
-                  "th": "ใส่เฝือกกรณีไม่เคลื่อนตัว"
+                  "indication": {
+                    "en": "• Truly non-displaced fractures in low-demand patients",
+                    "th": "• กระดูกไม่เคลื่อนตัวเลยในผู้ป่วยสูงอายุ"
+                  },
+                  "method": {
+                    "en": "• Cast immobilization for 4–6 weeks",
+                    "th": "• ใส่เฝือก 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Finger motion",
+                    "th": "• ขยับนิ้วมือ"
+                  },
+                  "pitfalls": {
+                    "en": "• Incongruous joint surface and DRUJ pain",
+                    "th": "• ผิวข้อขรุขระและปวดข้อ DRUJ"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF radius + evaluate DRUJ stability.",
-                  "th": "ผ่าตัด ORIF Radius + ประเมินความมั่นคงข้อ DRUJ"
+                  "indication": {
+                    "en": "• Displaced radiocarpal intra-articular fracture in active patients",
+                    "th": "• กระดูกหักเข้าข้อ Radiocarpal ที่เคลื่อนตัวในผู้ป่วยทั่วไป"
+                  },
+                  "method": {
+                    "en": "• Volar Locking Plate ORIF to restore radiocarpal congruity + Evaluate DRUJ stability; repair/pin ulnar styloid if DRUJ unstable",
+                    "th": "• ผ่าตัด Volar Locking Plate ORIF จัดผิวข้อ Radiocarpal ให้เรียบสนิท + ตรวจความมั่นคงข้อ DRUJ (ยึด ulnar styloid หากข้อ DRUJ หลวม)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active motion at 2 weeks",
+                    "th": "• เริ่มฝึกขยับข้อมือที่ 2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing combined radiocarpal arthrosis and DRUJ stiffness",
+                    "th": "• ภาวะข้อเสื่อมร่วมกับข้อข้อมือยึดติด"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1661,13 +2498,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูกหักเข้าข้อ DRUJ โดยไม่มีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular sigmoid notch (DRUJ) fracture; anatomical reduction of sigmoid notch to prevent painful forearm rotation; Volar Locking Plate ORIF.",
+                  "th": "กระดูกหักเข้าข้อ DRUJ (Sigmoid notch) ต้องจัดผิวข้อ Sigmoid notch ให้เรียบสนิทเพื่อป้องกันอาการปวดและขัดสะดุดเวลาหมุนคว่ำหงายแขน แนะนำผ่าตัด Volar Locking Plate ORIF"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Cast with forearm in supination/neutral if DRUJ is stable.",
-                  "th": "ใส่เฝือกดามแขนในท่าหงาย/ท่ากลาง หากข้อ DRUJ มั่นคง"
+                  "indication": {
+                    "en": "• Non-displaced sigmoid notch fracture with preserved forearm rotation",
+                    "th": "• กระดูกหักเข้าข้อ DRUJ ที่ไม่เคลื่อนตัวและหมุนแขนได้ปกติ"
+                  },
+                  "method": {
+                    "en": "• Sugar-tong or long arm cast in slight supination for 4 weeks",
+                    "th": "• ใส่เฝือก Sugar-tong หรือเฝือกยาวในท่าหงายมือเล็กน้อย 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early forearm rotation exercises at 4 weeks",
+                    "th": "• เริ่มฝึกหมุนคว่ำหงายแขนที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Incongruous sigmoid notch causing severe loss of pronation/supination",
+                    "th": "• ผิวข้อ Sigmoid notch ขรุขระทำให้สูญเสียการหมุนแขนถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF radius ± DRUJ pinning if unstable.",
-                  "th": "ผ่าตัด ORIF Radius ± ปักเข็มยึดข้อ DRUJ หากไม่มั่นคง"
+                  "indication": {
+                    "en": "• Displaced sigmoid notch fracture (>1–2 mm step-off) or blocked forearm rotation",
+                    "th": "• กระดูกหักเข้าข้อ Sigmoid notch ที่เคลื่อนตัว (>1–2 มม.) หรือติดขัดเวลาหมุนแขน"
+                  },
+                  "method": {
+                    "en": "• Volar Henry approach: Anatomical reduction of sigmoid notch facet + Volar Locking Plate ORIF ± direct K-wire pinning of sigmoid fragment",
+                    "th": "• ผ่าตัด Volar Henry: จัดผิวข้อ Sigmoid notch ให้เรียบสนิท + ดามแผ่นเหล็ก Volar Locking Plate ± ปักลวด K-wire ยึดชิ้นกระดูก Sigmoid notch"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active forearm pronation and supination at 2 weeks",
+                    "th": "• เริ่มฝึกหมุนคว่ำหงายแขนที่ 2 สัปดาห์หลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Screw penetration into the sigmoid notch / DRUJ space",
+                    "th": "• สกรูยาวเกินทะลุเข้าไปในช่องข้อ DRUJ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1687,13 +2557,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูกหักเข้าข้อ DRUJ ร่วมกับมีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular DRUJ fracture with ulnar styloid fracture; high risk of DRUJ instability; Volar Locking Plate ORIF + DRUJ stabilization / styloid fixation if unstable.",
+                  "th": "กระดูกหักเข้าข้อ DRUJ ร่วมกับกระดูก Ulnar styloid หัก เสี่ยงสูงต่อข้อ DRUJ หลุดหลวมเรื้อรัง แนะนำผ่าตัด Volar Locking Plate จัดผิวข้อ Sigmoid notch และตรวจยึดความมั่นคงข้อ DRUJ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Immobilization only if non-displaced and stable.",
-                  "th": "ดามเฝือกเฉพาะกรณีไม่เคลื่อนและข้อมั่นคง"
+                  "indication": {
+                    "en": "• Truly non-displaced and stable DRUJ injury in low-demand patient",
+                    "th": "• กระดูกไม่เคลื่อนตัวและข้อ DRUJ มั่นคงในผู้ป่วยสูงอายุ"
+                  },
+                  "method": {
+                    "en": "• Long arm cast in supination for 4–6 weeks",
+                    "th": "• ใส่เฝือกยาวในท่าหงายมือ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle ROM after cast removal",
+                    "th": "• ฝึกขยับแขนเบาๆ หลังถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• High incidence of chronic DRUJ instability and wrist pain",
+                    "th": "• เสี่ยงสูงต่อข้อ DRUJ หลวมเรื้อรังและปวดข้อมือ"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF radius + fix ulnar styloid if DRUJ remains unstable.",
-                  "th": "ผ่าตัด ORIF Radius + ยึด Ulnar styloid หากข้อ DRUJ ยังไม่มั่นคง"
+                  "indication": {
+                    "en": "• Displaced Frykman VI fracture or persistent DRUJ instability",
+                    "th": "• กระดูกหัก Frykman VI ที่เคลื่อนตัว หรือข้อ DRUJ หลุดหลวม"
+                  },
+                  "method": {
+                    "en": "• Volar Locking Plate ORIF for radius sigmoid notch + Intraoperative DRUJ stress testing: If unstable, perform ulnar styloid base screw fixation or transfixing radioulnar K-wires for 4 weeks",
+                    "th": "• ผ่าตัด Volar Locking Plate ORIF จัดผิวข้อ Sigmoid notch + ทดสอบความมั่นคงข้อ DRUJ: หากหลวม ให้ยึดกระดูก Ulnar styloid ด้วยสกรู หรือปักลวด K-wires ยึดข้อ DRUJ ไว้ 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected rotation exercises at 4 weeks (after K-wire removal)",
+                    "th": "• เริ่มฝึกหมุนแขนที่ 4 สัปดาห์ (หลังถอดลวด K-wire)"
+                  },
+                  "pitfalls": {
+                    "en": "• Neglecting DRUJ instability leading to weak grip and painful forearm rotation",
+                    "th": "• ละเลยข้อ DRUJ ที่หลวม ทำให้แรงบีบมือลดลงและปวดเวลาหมุนแขน"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1713,13 +2616,46 @@ export const forearmBone: BoneData = {
                 "th": "กระดูกหักเข้าข้อทั้ง Radiocarpal และ DRUJ โดยไม่มีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complex bicompartmental intra-articular fracture involving both Radiocarpal and DRUJ joints; mandatory multi-planar anatomical ORIF with Volar Locking Plate.",
+                  "th": "กระดูกหักเข้าข้อซับซ้อนลามทั้งข้อ Radiocarpal และข้อ DRUJ ต้องผ่าตัดเปิดจัดผิวข้อทั้งสองส่วนให้เรียบสนิทและดามแผ่นเหล็กล็อค Volar Locking Plate"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Rarely indicated.",
-                  "th": "แทบไม่แนะนำ"
+                  "indication": {
+                    "en": "• CONTRAINDICATED in functional patients (High rate of post-traumatic arthritis in both joints)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (ทำให้เกิดข้อเสื่อมรุนแรงทั้ง 2 ข้อ)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe wrist arthrosis and rigid stiffness",
+                    "th": "• ข้อข้อมือเสื่อมพังทลายและยึดติดแข็ง"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF with volar locking plate + anatomical reduction of both joints.",
-                  "th": "ผ่าตัด ORIF ด้วย Volar locking plate + จัดเรียงผิวข้อทั้งสองเข้าที่สมบูรณ์"
+                  "indication": {
+                    "en": "• All Frykman Type VII bicompartmental intra-articular fractures",
+                    "th": "• กระดูกหักเข้าข้อทั้งสองส่วน Frykman Type VII ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Volar Locking Plate ORIF with multi-column distal screws supporting both scaphoid and lunate facets + anatomical reduction of sigmoid notch ± fragment-specific pins/plates",
+                    "th": "• ผ่าตัด Volar Locking Plate ORIF ขันสกรูกระจายค้ำทั้ง Scaphoid facet, Lunate facet และจัดขอบ Sigmoid notch ให้เรียบสนิท ± ใช้อุปกรณ์ยึดชิ้นกระดูกเฉพาะส่วน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active wrist and forearm ROM at 10–14 days",
+                    "th": "• เริ่มฝึกขยับข้อมือและหมุนแขนได้ตั้งแต่ 10–14 วันหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Unrecognized articular step-off in either joint leading to arthritis",
+                    "th": "• ผิวข้อส่วนใดส่วนหนึ่งยังเหลื่อมอยู่ทำให้เกิดข้อเสื่อมตามมา"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1739,13 +2675,46 @@ export const forearmBone: BoneData = {
                 "th": "รูปแบบซับซ้อนที่สุด: กระดูกหักเข้าข้อทั้ง Radiocarpal และ DRUJ ร่วมกับมีกระดูก Ulnar styloid หัก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Most severe Frykman pattern (both joints + ulnar styloid); high post-traumatic arthritis risk; comprehensive multi-column ORIF with Volar Locking Plate, fragment-specific fixation, and DRUJ repair.",
+                  "th": "กระดูกหักรุนแรงที่สุดในระบบ Frykman (ลามเข้าทั้ง 2 ข้อ ร่วมกับ Ulnar styloid หัก) เสี่ยงข้อเสื่อมสูงสุด ต้องผ่าตัด ORIF ครบวงจรด้วย Volar Locking Plate ร่วมกับจัดเรียงผิวข้อและสร้างความมั่นคงให้ข้อ DRUJ"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• CONTRAINDICATED",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe wrist deformity, post-traumatic arthritis, and permanent disability",
+                    "th": "• ข้อมือผิดรูป ข้อเสื่อมรุนแรง และพิการถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "Comprehensive ORIF with Volar Locking Plate, articular surface reconstruction, and DRUJ stabilization.",
-                  "th": "ผ่าตัด ORIF ครบวงจรด้วย Volar Locking Plate จัดเรียงผิวข้อและสร้างความมั่นคงให้ข้อ DRUJ"
+                  "indication": {
+                    "en": "• All Frykman Type VIII complex intra-articular fracture-dislocations",
+                    "th": "• กระดูกหักซับซ้อนเข้าข้อทั้งสองส่วน Frykman Type VIII ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Comprehensive surgical reconstruction: Anatomical Volar Locking Plate ORIF + Fragment-specific fixation (dorsal/lunate facet pins/plates) + Bone graft if impacted + DRUJ stabilization (ulnar styloid screw / K-wire transfixation)",
+                    "th": "• ผ่าตัดบูรณะโครงสร้างครบวงจร: ผ่าตัด Volar Locking Plate ORIF + ยึดชิ้นกระดูกเฉพาะส่วน (Lunate facet) + ปลูกกระดูกหากผิวข้อยุบ + สร้างความมั่นคงข้อ DRUJ (ยึด ulnar styloid หรือปักลวด K-wire ยึดขวาง DRUJ)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected active ROM at 2–3 weeks; full active strengthening at 8–12 weeks",
+                    "th": "• เริ่มฝึกขยับข้อแบบระมัดระวังที่ 2–3 สัปดาห์ และฝึกเพิ่มกำลังเต็มที่ที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Residual articular incongruity, chronic DRUJ instability, and severe stiffness",
+                    "th": "• ผิวข้อต่อไม่เรียบ ข้อ DRUJ หลุดหลวมเรื้อรัง และข้อมือยึดติดแข็ง"
+                  }
                 }
               },
               "illustrationId": "",

@@ -160,14 +160,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงก้มคอหรือแรงกดอัดดิ่งลงล่าง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Isolated anterior column failure (ALL, anterior 2/3 of vertebral body and disc) with intact middle and posterior columns; mechanically stable fracture with zero risk of neural compromise or progressive translation; non-operative care using a molded TLSO or Jewett hyperextension brace for 8–12 weeks is the gold standard.",
+                  "th": "การสูญเสียสภาพเฉพาะเสาหลักด้านหน้า (เอ็น ALL, ตัวกระดูกและหมอนรอง 2/3 ส่วนหน้า) โดยเสาหลักส่วนกลางและส่วนหลังยังสมบูรณ์; เป็นรอยหักที่มั่นคงทางกลศาสตร์ ไม่เสี่ยงต่อการกดทับเส้นประสาทหรือการเลื่อนตัว; การรักษาแบบไม่ผ่าตัดด้วยเฝือกดามพยุงหลัง TLSO หรือ Jewett Hyperextension Brace นาน 8–12 สัปดาห์เป็นมาตรฐานหลัก"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED. Rigid TLSO brace for 8-12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกพยุงหลัง TLSO 8-12 สัปดาห์"
+                  "indication": {
+                    "en": "• Isolated anterior column compression fractures with intact middle column\n• Anterior vertebral height loss <50% and local kyphosis <30°",
+                    "th": "• กระดูกหักยุบตัวเฉพาะเสาหลักด้านหน้าโดยเสาหลักส่วนกลางยังสมบูรณ์\n• ความสูงลำตัวกระดูกยุบ <50% และมุมหลังค่อม <30°"
+                  },
+                  "method": {
+                    "en": "• Custom molded Thoracolumbosacral Orthosis (TLSO) or Jewett hyperextension brace worn when upright for 8–12 weeks; early ambulation encouraged; standing lateral radiographs at 2, 4, 8, and 12 weeks",
+                    "th": "• ใส่เฝือกพยุงหลัง TLSO หรือ Jewett Hyperextension Brace ขณะลุกนั่ง/เดิน นาน 8–12 สัปดาห์; ส่งเสริมให้ลุกเดินเร็ว; เอกซเรย์ท่ายืนติดตามที่ 2, 4, 8, 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Core muscle and paraspinal extensor strengthening starting at 8 weeks; progressive brace weaning once solid trabecular bridging is documented",
+                    "th": "• บริหารกล้ามเนื้อแกนกลางลำตัวและกล้ามเนื้อหลังเริ่มที่ 8 สัปดาห์; ค่อยๆ ปลดเฝือกพยุงหลังเมื่อเอกซเรย์เห็นกระดูกติดแน่น"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to recognize occult middle column involvement or posterior ligamentous rupture on initial plain radiographs",
+                    "th": "• ตรวจไม่พบการบาดเจ็บของเสากลางหรือเอ็นส่วนหลังที่ฉีกขาดร่วมด้วยจากภาพเอกซเรย์ธรรมดา"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Rarely indicated; consider only in severe anterior collapse (>50% height loss) with dynamic mechanical instability or severe intractable pain in osteoporotic compression fractures (Vertebroplasty/Kyphoplasty)",
+                    "th": "• แทบไม่มีข้อบ่งชี้; พิจารณาเฉพาะกรณีกระดูกยุบตัวรุนแรง (>50%) ร่วมกับแนวกระดูกไม่มั่นคง หรือปวดรุนแรงในกระดูกพรุน (พิจารณาฉีดซีเมนต์ Vertebroplasty/Kyphoplasty)"
+                  },
+                  "method": {
+                    "en": "• Percutaneous balloon kyphoplasty/vertebroplasty (for osteoporotic collapse) OR short-segment posterior instrumented fusion (pedicle screws)",
+                    "th": "• ฉีดซีเมนต์เสริมกระดูกผ่านผิวหนัง (Percutaneous Kyphoplasty/Vertebroplasty) หรือผ่าตัดดามสกรู Pedicle Screws ระยะสั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate pain relief and out-of-bed mobilization within 24 hours post-kyphoplasty",
+                    "th": "• อาการปวดทุเลาลงทันทีและสามารถลุกเดินได้ภายใน 24 ชั่วโมงหลังฉีดซีเมนต์"
+                  },
+                  "pitfalls": {
+                    "en": "• Cement leakage into the epidural space or spinal canal during percutaneous augmentation",
+                    "th": "• ซีเมนต์รั่วซึมเข้าสู่ช่องไขสันหลังขณะทำหัตถการฉีดซีเมนต์"
+                  }
                 }
               },
               "illustrationId": "",
@@ -191,14 +223,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงกดอัดตามแนวแกนดิ่ง หรือแรงดึงถ่างอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Middle column disruption (posterior 1/3 vertebral body, posterior annulus, PLL) represents loss of the cornerstone of spinal stability with potential neural canal compromise (Burst fracture mechanism); non-operative TLSO is strictly reserved for stable burst patterns (<50% canal retropulsion, <25° kyphosis, neurologically intact); surgical stabilization (posterior pedicle screws ± canal decompression) is required for neurological deficits or gross structural instability.",
+                  "th": "การเสียสภาพของเสาหลักส่วนกลาง (ตัวกระดูก 1/3 หลัง, หมอนรอง และเอ็น PLL) หมายถึงการสูญเสียเสาหลักความมั่นคงที่สำคัญที่สุด และเสี่ยงต่อการกดทับช่องไขสันหลัง (กลไก Burst fracture); การใส่ TLSO สงวนไว้เฉพาะ Burst fracture ที่มั่นคง (กระดูกดันช่องไขสันหลัง <50%, หลังค่อม <25° และระบบประสาทปกติ); การผ่าตัดยึดดามสกรู Pedicle Screws ± เปิดระบายช่องไขสันหลัง จำเป็นในผู้ป่วยที่มีอาการทางระบบประสาทหรือโครงสร้างไม่มั่นคง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Trial of TLSO brace ONLY if non-displaced and canal occlusion <50%.",
-                  "th": "ใส่ TLSO เฉพาะกรณีไม่เคลื่อนตัวและช่องไขสันหลังกด <50%"
+                  "indication": {
+                    "en": "• Non-displaced or stable burst fractures with middle column retropulsion <50% canal occlusion\n• Neurologically intact patient and kyphosis <20°–25°",
+                    "th": "• กระดูกแตก Burst ชนิดมั่นคงที่ชิ้นส่วนเสากลางดันเข้าช่องไขสันหลัง <50%\n• ระบบประสาทปกติสมบูรณ์ และมุมหลังค่อม <20°–25°"
+                  },
+                  "method": {
+                    "en": "• Strict bed rest initially, then custom rigid TLSO body jacket worn for 10–12 weeks; weekly upright lateral X-rays for first month to monitor sagittal balance",
+                    "th": "• พักบนเตียงในระยะแรก จากนั้นใส่เสื้อเกราะพยุงหลัง Rigid TLSO นาน 10–12 สัปดาห์; เอกซเรย์ท่ายืนสัปดาห์ละครั้งในเดือนแรกเพื่อตรวจติดตามแนวกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Canal remodeling occurs over 1–2 years; active back extension and core stabilization exercises starting after brace removal at 12 weeks",
+                    "th": "• ชิ้นกระดูกที่ดันช่องไขสันหลังจะค่อยๆ สลายตัวปรับรูป (Remodeling) ใน 1–2 ปี; เริ่มบริหารกล้ามเนื้อหลังและแกนกลางลำตัวหลังถอดเฝือกที่ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Progressive late collapse with secondary neurologic deterioration (delayed cauda equina syndrome)",
+                    "th": "• แนวกระดูกทรุดตัวค่อมลงเรื่อยๆ จนเกิดอาการทางระบบประสาทแย่ลงในภายหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR DISRUPTED MIDDLE COLUMN. Posterior Pedicle Screw Fusion or Corpectomy.",
-                  "th": "แนะนำผ่าตัดยึดตรึงกระดูกกรณี Middle Column แตกป่นหลุดดัน"
+                  "indication": {
+                    "en": "• Middle column retropulsion causing progressive or incomplete neurological deficit (Conus/Cauda equina syndrome)\n• Spinal canal occlusion ≥50% or kyphotic deformity ≥25°–30°\n• Associated posterior ligamentous complex (PLC) disruption",
+                    "th": "• เสากลางแตกดันกดทับไขสันหลังหรือ Cauda Equina จนมีอาการอัมพาตบางส่วนหรือแย่ลง\n• ชิ้นกระดูกดันเข้าช่องไขสันหลัง ≥50% หรือมุมหลังค่อม ≥25°–30°\n• มีการฉีกขาดของเอ็นยึดด้านหลัง (PLC) ร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion: Pedicle screw fixation 1–2 levels above and below fractured vertebra (short-segment or long-segment construct) ± posterior laminectomy and indirect canal decompression via ligamentotaxis\n• Anterior Corpectomy and Fusion (ACCF): Direct anterior decompression with expandable titanium cage and plating for severe anterior/middle column comminution with persistent canal occlusion",
+                    "th": "• ผ่าตัดดามยึดด้านหลัง (Posterior Pedicle Screw Fusion): ขันสกรูยึด 1–2 ระดับบนและล่าง ± ผ่าตัดเปิดระบายช่องไขสันหลัง (Laminectomy) และดึงจัดกระดูกทางอ้อม (Ligamentotaxis)\n• ผ่าตัดตัดลำตัวกระดูกด้านหน้า (Anterior Corpectomy & Fusion): เปิดผ่าตัดเอาชิ้นกระดูกที่กดช่องไขสันหลังออกโดยตรง ใส่ Expandable Cage และดามแผ่นเหล็กด้านหน้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early mobilization within 48 hours post-op with or without soft brace; structured physical therapy from 6 weeks",
+                    "th": "• ลุกเดินขยับตัวได้เร็วภายใน 48 ชั่วโมงหลังผ่าตัด; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Insufficient fixation length leading to screw breakage or hardware pullout in high-stress thoracolumbar junction\n• Inadequate decompression in the presence of an extruded disc fragment",
+                    "th": "• ดามกระดูกสั้นเกินไปจนสกรูหักหรือถอนหลุดในจุดรอยต่ออก-เอวที่มีแรงเค้นสูง\n• เปิดคลายการกดทับไม่เพียงพอในรายที่มีหมอนรองกระดูกแตกทะลักร่วมด้วย"
+                  }
                 }
               },
               "illustrationId": "",
@@ -222,14 +286,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงดึงถ่าง หรือแรงก้มคอดึงถ่าง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Posterior column disruption involves either the osseous neural arch or the ligamentous tension band (PLC: supraspinous, interspinous, ligamentum flavum, facet capsules); isolated non-displaced bony spinous process fractures heal reliably with non-operative support; rupture of the ligamentous PLC complex causes catastrophic mechanical instability under flexion and requires posterior instrumented stabilization to prevent progressive kyphosis.",
+                  "th": "การเสียสภาพของเสาหลักด้านหลังครอบคลุมทั้งวงโค้งกระดูกและแนวเอ็นยึดรั้ง (PLC: Supraspinous, Interspinous, Ligamentum flavum, ปลอกข้อ Facet); กระดูกยอด Spinous process หักเดี่ยวๆ ชนิดไม่เคลื่อนตัวรักษาแบบไม่ผ่าตัดได้ผลดี; แต่หากเอ็น PLC ฉีกขาด จะส่งผลให้กระดูกสันหลังขาดความมั่นคงอย่างรุนแรงเมื่อก้มตัว จำเป็นต้องผ่าตัดดามยึดตรึงด้านหลังเพื่อป้องกันหลังโก่งค่อมถาวร"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Conservative for isolated bony spinous process fracture.",
-                  "th": "รักษาไม่ผ่าตัดเฉพาะหักยอด spinous process"
+                  "indication": {
+                    "en": "• Isolated non-displaced bony spinous or transverse process fractures with intact ligamentous complex\n• Pure bony horizontal lamina/spinous fracture (Bony Chance) with minimal displacement",
+                    "th": "• รอยหักเฉพาะยอด spinous หรือ transverse process ชนิดไม่เคลื่อนตัวโดยเอ็นยึดยังสมบูรณ์\n• รอยหักผ่านกระดูกแนวนอน (Bony Chance) ที่เคลื่อนตัวน้อยมาก"
+                  },
+                  "method": {
+                    "en": "• Hyperextension TLSO brace or molded thoracolumbar orthosis for 8–10 weeks; serial upright radiographs to verify maintenance of lordosis",
+                    "th": "• ใส่เฝือกพยุงหลัง Hyperextension TLSO นาน 8–10 สัปดาห์; เอกซเรย์ท่ายืนติดตามแนวความโค้งของกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive isometric back extension exercises upon radiographic bony consolidation at 8–10 weeks",
+                    "th": "• เริ่มฝึกบริหารกล้ามเนื้อหลังเมื่อเอกซเรย์เห็นกระดูกติดที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Misinterpreting a complete ligamentous PLC rupture as a stable isolated bony fracture",
+                    "th": "• วินิจฉัยผิดพลาดคิดว่าเอ็น PLC ฉีกขาดเป็นเพียงรอยหักกระดูกธรรมดาที่มั่นคง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR PLC LIGAMENTOUS DISRUPTION. Posterior instrumented fusion.",
-                  "th": "แนะนำผ่าตัดยึดตรึงด้านหลังกรณีเอ็นยึด PLC ฉีกขาด"
+                  "indication": {
+                    "en": "• Ligamentous disruption of the Posterior Ligamentous Complex (PLC) with interspinous gap widening\n• Subluxed or locked facet joints\n• Progressive kyphotic angulation >20° under physiological loading",
+                    "th": "• เอ็นยึดด้านหลัง (PLC) ฉีกขาดและมีช่องว่างระหว่างยอดกระดูกกว้างขึ้น\n• ข้อต่อ Facet เคลื่อนหลุดหรือล็อคเกยกัน\n• แนวกระดูกหลังค่อมโก่ง >20° เมื่อลงน้ำหนัก"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion: Open reduction, pedicle screw fixation 1 level above and below the injured segment, compression across screws to restore posterior tension band constraint and lordosis, decortication, and posterolateral autologous bone grafting",
+                    "th": "• ผ่าตัดดามยึดตรึงด้านหลัง (Posterior Instrumented Fusion): เปิดจัดแนวกระดูก ขันสกรู Pedicle Screws 1 ระดับบนและล่าง ดึงบีบกระชับแท่ง Rod เพื่อสร้างแนวยึดรั้งด้านหลังและดึงแนวกระดูกให้แอ่นปกติ พร้อมปลูกกระดูกเชื่อมข้อ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Out-of-bed ambulation post-op day 1; gentle trunk mobility exercises at 6 weeks; full activity at 3–4 months",
+                    "th": "• ลุกเดินตั้งแต่วันแรกหลังผ่าตัด; เริ่มฝึกขยับลำตัวเบาๆ ที่ 6 สัปดาห์; ทำกิจกรรมได้เต็มที่หลัง 3–4 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to compress the posterior construct, leaving persistent distraction across the disc space",
+                    "th": "• ไม่ได้ขันบีบกระชับแกนเหล็กด้านหลัง ทำให้เกิดช่องว่างอ้าค้างที่หมอนรองกระดูก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -253,14 +349,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงชีวกลศาสตร์ในทิศทางต่างๆ"
               },
               "treatment": {
-                "preferred": "none",
+                "decisionPrinciple": {
+                  "en": "Instability spectrum based on Denis columns: Stable (1 column -> conservative TLSO); 1st Degree / Mechanical Instability (2 columns under distraction -> progressive kyphosis risk -> operative or hyperextension bracing); 2nd Degree / Neurological Instability (Middle column burst -> canal compromise risk -> operative if canal >50% or neuro deficit); 3rd Degree / Severe Mechanical + Neurological Instability (3 columns disrupted -> Fracture-Dislocation -> emergency 360°/posterior reconstruction).",
+                  "th": "ระดับความไม่มั่นคงตามหลักการ 3 เสาหลัก Denis: มั่นคง (เสีย 1 เสา -> ใส่ TLSO); ไม่มั่นคงเชิงกลศาสตร์ขั้นที่ 1 (เสีย 2 เสาจากแรงดึงถ่าง -> เสี่ยงหลังโก่ง -> ผ่าตัดหรือใส่ hyperextension brace); ไม่มั่นคงเชิงระบบประสาทขั้นที่ 2 (เสากลางแตก Burst -> เสี่ยงอัมพาต -> ผ่าตัดหากกดช่อง >50% หรือมีอาการประสาท); ไม่มั่นคงขั้นสูงสุดระดับที่ 3 (พังทลายครบ 3 เสา -> Fracture-Dislocation -> ผ่าตัดดามยึดฉุกเฉิน)"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Conservative for STABLE (1-column failure).",
-                  "th": "รักษาไม่ผ่าตัดในรอยหัก STABLE (เสียสภาพ 1 เสาหลัก)"
+                  "indication": {
+                    "en": "• STABLE injuries (Isolated anterior column failure, intact middle column, no neurological deficit)",
+                    "th": "• รอยหักชนิดมั่นคง STABLE (เสียเฉพาะเสาหน้า เสากลางสมบูรณ์ และไม่มีอาการทางระบบประสาท)"
+                  },
+                  "method": {
+                    "en": "• Rigid TLSO brace for 8–12 weeks with early progressive ambulation and serial radiographic surveillance",
+                    "th": "• ใส่เฝือกพยุงหลัง Rigid TLSO 8–12 สัปดาห์ พร้อมลุกเดินเร็วและตรวจติดตามภาพเอกซเรย์สม่ำเสมอ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Back extensor isometric conditioning and gradual brace weaning upon union at 10–12 weeks",
+                    "th": "• บริหารกล้ามเนื้อหลังและค่อยๆ ปลดเฝือกพยุงหลังเมื่อกระดูกติดที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Applying non-operative bracing to unstable 2nd or 3rd degree injuries resulting in catastrophic progressive paralysis",
+                    "th": "• นำการรักษาด้วยเฝือกไปใช้ในผู้ป่วยที่มีความไม่มั่นคงขั้นที่ 2 หรือ 3 จนทำให้เกิดอัมพาตถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "OPERATIVE FOR 1st, 2nd, and 3rd DEGREE INSTABILITY.",
-                  "th": "ผ่าตัดรักษาในรอยหัก Instability ขั้นที่ 1, 2 และ 3"
+                  "indication": {
+                    "en": "• 1st Degree Instability with ligamentous distraction or progressive kyphosis >25°\n• 2nd Degree Instability (Burst fractures with canal occlusion ≥50% or neurological impairment)\n• 3rd Degree Instability (All 3-column fracture-dislocations)",
+                    "th": "• ไม่มั่นคงขั้นที่ 1 ที่มีเอ็นฉีกขาดหรือหลังโก่งค่อม >25°\n• ไม่มั่นคงขั้นที่ 2 (Burst fracture ที่กดช่องไขสันหลัง ≥50% หรือมีอาการอัมพาต)\n• ไม่มั่นคงขั้นที่ 3 (กระดูกสันหลังหักเคลื่อนหลุด 3 เสาหลักทุกราย)"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion (Pedicle screws and rods spanning 1–2 levels above and below) ± decompression laminectomy\n• Combined anterior-posterior reconstruction for severe 3-column comminution or vertebral body deficiency",
+                    "th": "• ผ่าตัดดามยึดด้านหลัง (Pedicle Screws + Rods 1–2 ระดับบนและล่าง) ± ผ่าตัดเปิดระบายช่องไขสันหลัง (Laminectomy)\n• ผ่าตัดบูรณะทั้งด้านหน้าและด้านหลังในรายที่กระดูก 3 เสาแตกป่นรุนแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate post-op mobilization; progressive physical therapy and vocational rehabilitation from week 6",
+                    "th": "• ลุกเดินได้ทันทีหลังผ่าตัด; เริ่มโปรแกรมกายภาพบำบัดและฟื้นฟูสมรรถภาพหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Underestimating biomechanical instability and choosing inadequate fixation levels",
+                    "th": "• ประเมินความไม่มั่นคงต่ำเกินไปและยึดตรึงกระดูกสั้นเกินไป"
+                  }
                 }
               },
               "illustrationId": "",
@@ -365,14 +493,46 @@ export const tlSpineBone: BoneData = {
                 "th": "การก้มคอดิ่งลงล่าง หรือลื่นล้มก้นกระแทกพื้น"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Denis Type 1 compression fracture involves anterior column failure under flexion; middle column is intact and posterior column is stable; non-operative immobilization in a molded TLSO or Jewett hyperextension brace for 8–12 weeks is the standard of care unless anterior collapse exceeds 50% or local kyphosis exceeds 30°.",
+                  "th": "กระดูกหัก Denis Type 1 (Compression Fracture) เกิดจากการยุบตัวของเสาหน้าจากแรงก้ม; เสากลางและเสาหลังยังสมบูรณ์ดี; การรักษาหลักคือใส่เฝือกดามพยุงหลัง TLSO หรือ Jewett Hyperextension Brace นาน 8–12 สัปดาห์ ยกเว้นกรณีกระดูกยุบตัวเกิน 50% หรือหลังค่อมเกิน 30°"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). External immobilization with Thoracolumbar Sacral Orthosis (TLSO) or Jewett Hyperextension Brace for 8-12 weeks, with early ambulation as tolerated.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นมาตรฐานหลัก ใส่เฝือกพยุงหลัง TLSO หรือ Jewett Brace 8-12 สัปดาห์ ร่วมกับเริ่มเดินตามที่ไหว"
+                  "indication": {
+                    "en": "• Denis Type 1 wedge compression fractures with anterior height loss <50% and kyphosis <30°\n• Intact middle column on CT and normal neurological examination",
+                    "th": "• กระดูกหักยุบตัว Denis Type 1 ที่ความสูงด้านหน้ายุบ <50% และมุมหลังค่อม <30°\n• เสากลางสมบูรณ์จากภาพ CT scan และระบบประสาทปกติสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Thoracolumbosacral Orthosis (TLSO) or Jewett 3-point hyperextension brace worn when out of bed for 8–12 weeks; early progressive ambulation encouraged; serial upright lateral radiographs at 2, 4, 8, and 12 weeks",
+                    "th": "• ใส่เฝือกพยุงหลัง TLSO หรือ Jewett Brace ขณะลุกนั่ง/เดิน นาน 8–12 สัปดาห์; ส่งเสริมให้ลุกเดินเร็ว; ตรวจเอกซเรย์ท่ายืนติดตามที่ 2, 4, 8, 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Isometric core and paraspinal extensor strengthening starting at 8 weeks; gradual brace weaning upon solid radiographic trabecular bridging at 10–12 weeks",
+                    "th": "• บริหารกล้ามเนื้อแกนกลางและหลังเริ่มที่ 8 สัปดาห์; ค่อยๆ ปลดเฝือกพยุงหลังเมื่อกระดูกติดแน่นที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing posterior ligamentous complex rupture or subtle middle column retropulsion, mistaking a Type 2 Burst or Type 3 Chance for a simple Type 1 compression",
+                    "th": "• ตรวจไม่พบเอ็นส่วนหลังฉีกขาดหรือเสากลางแตกดัน ทำให้วินิจฉัยผิดคิดว่า Type 2 Burst หรือ Type 3 Chance เป็นแค่ Type 1"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely indicated unless severe anterior height loss >50% or kyphosis >30° causing mechanical instability.",
-                  "th": "ผ่าตัดเฉพาะกรณีความสูงยุบ >50% หรือคอโก่ง >30 องศา"
+                  "indication": {
+                    "en": "• Severe anterior height loss >50% or progressive kyphosis >30° with dynamic mechanical instability\n• Painful osteoporotic vertebral compression fractures failing conservative care (Kyphoplasty/Vertebroplasty)",
+                    "th": "• ลำตัวกระดูกยุบตัวรุนแรง >50% หรือหลังค่อมโก่ง >30° ร่วมกับแนวกระดูกไม่มั่นคง\n• รอยหักยุบจากกระดูกพรุนที่ปวดรุนแรงไม่ตอบสนองต่อยา (พิจารณาฉีดซีเมนต์ Kyphoplasty/Vertebroplasty)"
+                  },
+                  "method": {
+                    "en": "• Percutaneous Balloon Kyphoplasty / Vertebroplasty for osteoporotic fractures\n• Short-segment posterior instrumented pedicle screw fusion (1 level above and 1 level below) for high-energy traumatic collapse",
+                    "th": "• ฉีดซีเมนต์เสริมกระดูกผ่านผิวหนัง (Percutaneous Kyphoplasty/Vertebroplasty) ในกระดูกพรุน\n• ผ่าตัดดามสกรู Pedicle Screws ระยะสั้น (1 ระดับบนและล่าง) ในรายที่กระดูกยุบรุนแรงจากอุบัติเหตุ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate pain relief and out-of-bed mobilization within 24 hours post-kyphoplasty",
+                    "th": "• ลุกเดินได้ทันทีภายใน 24 ชั่วโมงหลังฉีดซีเมนต์ อาการปวดทุเลาลงเร็ว"
+                  },
+                  "pitfalls": {
+                    "en": "• Cement leakage into the spinal canal or perivertebral venous plexus during injection",
+                    "th": "• ซีเมนต์รั่วไหลเข้าสู่ช่องไขสันหลังหรือหลอดเลือดดำรอบกระดูกสันหลัง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -396,14 +556,46 @@ export const tlSpineBone: BoneData = {
                 "th": "ตกจากที่สูงลงมากระแทกเท้า/ก้น หรืออุบัติเหตุทางถนนรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Denis Type 2 burst fracture involves failure of both anterior and middle columns with posterior wall retropulsion into the spinal canal; stable burst fractures (<50% canal occlusion, <25° kyphosis, intact PLC, neurologically intact) achieve solid remodeling with non-operative TLSO bracing; unstable burst fractures (neurologic deficit, canal compromise ≥50%, kyphosis ≥25°, or PLC rupture) require surgical decompression and posterior instrumented stabilization.",
+                  "th": "กระดูกแตก Denis Type 2 (Burst Fracture) เสียสภาพทั้งเสาหน้าและเสากลางโดยชิ้นกระดูกผนังหลังทรุดดันเข้าช่องไขสันหลัง; รอยหักชนิดมั่นคง (กระดูกดันช่องไขสันหลัง <50%, หลังค่อม <25°, เอ็น PLC สมบูรณ์ และระบบประสาทปกติ) รักษาด้วยเฝือก TLSO ได้ผลดีและกระดูกเกิด Remodeling ได้; แต่ถ้ารอยหักไม่มั่นคง (มีอาการอัมพาต, ช่องไขสันหลังถูกกด ≥50%, หลังค่อม ≥25° หรือเอ็น PLC ขาด) ต้องผ่าตัดลดการกดทับและดามสกรู Pedicle Screws ด้านหลัง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Indications for Conservative Care: Neurologically intact patients with <50% spinal canal occlusion, <25° kyphosis, and <50% height loss. TLSO hyperextension brace for 10-12 weeks.",
-                  "th": "รักษาแบบไม่ผ่าตัดในผู้ป่วยที่ระบบประสาทปกติ, ช่องไขสันหลังถูกกด <50%, คอโก่ง <25° และความสูงยุบ <50% โดยใส่ TLSO 10-12 สัปดาห์"
+                  "indication": {
+                    "en": "• Neurologically intact patient with stable burst fracture (Subtypes 2A/2B/2C)\n• Spinal canal occlusion <50%, local kyphosis <25°, and anterior height loss <50%\n• Intact Posterior Ligamentous Complex (PLC) confirmed on STIR MRI",
+                    "th": "• ผู้ป่วยที่ระบบประสาทปกติสมบูรณ์ในรอยหัก Burst ชนิดมั่นคง (ประเภทย่อย 2A/2B/2C)\n• ชิ้นกระดูกดันเข้าช่องไขสันหลัง <50%, มุมหลังค่อม <25° และความสูงยุบ <50%\n• เอ็นยึดด้านหลัง (PLC) ยังสมบูรณ์ดีจากการตรวจ STIR MRI"
+                  },
+                  "method": {
+                    "en": "• Rigid custom-molded TLSO body jacket worn for 10–12 weeks; weekly upright standing radiographs during initial 4 weeks to monitor sagittal alignment and prevent progressive kyphosis",
+                    "th": "• ใส่เสื้อเกราะพยุงหลัง Rigid TLSO นาน 10–12 สัปดาห์; เอกซเรย์ท่ายืนสัปดาห์ละครั้งใน 4 สัปดาห์แรกเพื่อเฝ้าระวังหลังโก่งค่อม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Spontaneous canal clearance (bone resorption/remodeling) documented over 1–2 years; active spinal extensor and abdominal core rehabilitation starting after brace removal at 12 weeks",
+                    "th": "• ชิ้นกระดูกในช่องไขสันหลังจะค่อยๆ สลายตัวยุบลงได้เองตามธรรมชาติใน 1–2 ปี; เริ่มโปรแกรมบริหารกล้ามเนื้อหลังและหน้าท้องหลังถอดเฝือกที่ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Progressive late post-traumatic kyphosis or delayed neurologic deterioration (cauda equina syndrome) if patient is non-compliant with brace",
+                    "th": "• แนวกระดูกหลังค่อยๆ ค่อมตัวลงเรื่อยๆ หรือเกิดอาการกดทับเส้นประสาทตามมาในภายหลังหากใส่เฝือกไม่สม่ำเสมอ"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR UNSTABLE BURST FRACTURES. Surgical decompression & stabilization: Posterior Pedicle Screw Instrumented Fusion (short-segment or long-segment) ± Laminectomy/Decompression, OR Anterior Corpectomy with mesh cage. Mandatory if neurological deficit present.",
-                  "th": "แนะนำผ่าตัดรักษาในรอยหักไม่มั่นคง: ผ่าตัดคลายการกดทับและดามยึดกระดูก Posterior Pedicle Screw Fusion หรือ Anterior Corpectomy จำเป็นด่วนที่สุดหากมีอาการอัมพาต"
+                  "indication": {
+                    "en": "• Any neurological deficit (Incomplete spinal cord, conus medullaris, or cauda equina syndrome)\n• Severe spinal canal compromise ≥50% or local kyphosis ≥25°–30°\n• Disruption of Posterior Ligamentous Complex (PLC)",
+                    "th": "• มีอาการบาดเจ็บทางระบบประสาททุกชนิด (ไขสันหลัง, Conus Medullaris หรือ Cauda Equina ถูกกดทับ)\n• ชิ้นกระดูกดันเข้าช่องไขสันหลัง ≥50% หรือมุมหลังค่อม ≥25°–30°\n• มีการฉีกขาดของเอ็นยึดด้านหลัง (PLC)"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion: Pedicle screw fixation 1–2 levels above and below fractured vertebra (short-segment or long-segment construct) ± posterior laminectomy / transpedicular indirect decompression via ligamentotaxis\n• Anterior Cervical/Thoracic/Lumbar Corpectomy and Fusion (ACCF): Expandable titanium cage packed with autograft and anterior plate/rod for severe comminution with persistent direct canal compromise",
+                    "th": "• ผ่าตัดดามยึดด้านหลัง (Posterior Pedicle Screw Fusion): ดามสกรู 1–2 ระดับบนและล่าง ± ผ่าตัดเปิดช่องไขสันหลัง (Laminectomy) หรือดึงจัดกระดูกทางอ้อม (Ligamentotaxis)\n• ผ่าตัดตัดลำตัวกระดูกด้านหน้า (Corpectomy ACCF): ใส่ Expandable Titanium Cage ร่วมกับกระดูกปลูกและแผ่นเหล็กล็อคด้านหน้าในรายที่กระดูกแตกป่นและกดช่องไขสันหลังโดยตรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early out-of-bed mobilization within 24–48 hours post-op; progressive isometric strengthening at 6 weeks; vocational training at 3 months",
+                    "th": "• ลุกเดินได้เร็วภายใน 24–48 ชั่วโมงหลังผ่าตัด; เริ่มบริหารกล้ามเนื้อที่ 6 สัปดาห์; ฟื้นฟูสมรรถภาพการทำงานที่ 3 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Construct failure (screw pullout/breakage) if short-segment fixation is attempted across a highly comminuted burst fracture without anterior column support (load-sharing score >6)",
+                    "th": "• โลหะดามถอนหลุดหรือหักหากผ่าตัดดามสกรูระยะสั้นในกระดูกที่แตกป่นรุนแรงโดยไม่มีการเสริมเสาด้านหน้า"
+                  }
                 }
               },
               "illustrationId": "",
@@ -427,14 +619,46 @@ export const tlSpineBone: BoneData = {
                 "th": "อุบัติเหตุรถยนต์ขณะคาดเข็มขัดนิรภัยเฉพาะหน้าตัก (Lap-belt) เหวี่ยงตัวไปด้านหน้าอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Denis Type 3 Seat-Belt/Chance injury results from distraction failure of middle and posterior columns (with anterior hinge); pure bony Chance fractures (Type 3A) heal reliably in a hyperextension TLSO brace; ligamentous Chance injuries (Type 3B) fail conservative bracing due to poor ligamentous healing and require posterior compression pedicle screw fixation; mandatory exclusion of blunt bowel/mesenteric perforation (~30%–50% co-incidence).",
+                  "th": "กระดูกหัก Denis Type 3 (Seat-Belt / Chance Injury) เกิดจากแรงดึงถ่างทำให้เสากลางและเสาหลังฉีกอ้าแยก; รอยหักผ่านกระดูกล้วนๆ Bony Chance (Type 3A) กระดูกเชื่อมติดได้ดีด้วยเฝือก Hyperextension TLSO; ส่วน Ligamentous Chance (Type 3B) เอ็นเชื่อมติดยากมักล้มเหลวจากการใส่เฝือก จึงต้องผ่าตัดดามสกรู Pedicle Screws ด้านหลัง; ต้องตรวจคัดกรองภาวะลำไส้หรือเส้นเลือดช่องท้องฉีกขาดเสมอ (พบร่วมสูง 30%–50%)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Trial of Hyperextension TLSO brace ONLY for pure Bony Chance (Type 3A) with <15° kyphosis and intact neurological status.",
-                  "th": "พิจารณาใส่ Hyperextension TLSO เฉพาะใน Bony Chance (Type 3A) ที่หักผ่านกระดูกและคอโก่ง <15°"
+                  "indication": {
+                    "en": "• Pure Bony Chance fracture (Type 3A: Horizontal fracture line traversing spinous process, pedicle, and vertebral body)\n• Non-displaced or reducible in extension, kyphosis <15°, and neurologically intact",
+                    "th": "• รอยหักผ่านกระดูกล้วนๆ Bony Chance (Type 3A: รอยหักพาดผ่าน spinous process, pedicle และตัวกระดูก)\n• กระดูกไม่เคลื่อนหรือจัดเข้าที่ได้ในท่าแอ่นหลัง, มุมหลังค่อม <15° และระบบประสาทปกติ"
+                  },
+                  "method": {
+                    "en": "• Custom molded hyperextension TLSO brace worn continuously for 10–12 weeks; weekly upright lateral X-rays to verify lordotic alignment",
+                    "th": "• ใส่เฝือกพยุงหลัง Hyperextension TLSO นาน 10–12 สัปดาห์; ตรวจเอกซเรย์ท่ายืนทุกสัปดาห์เพื่อควบคุมแนวกระดูกให้แอ่นปกติ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wean brace at 10–12 weeks once solid bony union is confirmed on CT scan; gentle progressive back extensor conditioning",
+                    "th": "• ปลดเฝือกที่ 10–12 สัปดาห์เมื่อ CT ยืนยันว่ากระดูกเชื่อมติดแน่น; เริ่มฝึกบริหารกล้ามเนื้อหลัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing concomitant intra-abdominal hollow viscus injury (bowel perforation, mesenteric avulsion) leading to fatal sepsis\n• Attempting conservative brace treatment for ligamentous Chance injuries (Type 3B)",
+                    "th": "• พลาดการตรวจภาวะลำไส้ทะลุหรือเส้นเลือดในช่องท้องฉีกขาดจนเกิดการติดเชื้อในกระแสเลือด\n• นำการใส่เฝือกไปรักษาใน Ligamentous Chance (Type 3B) ทำให้เอ็นไม่ติดและหลังค่อมถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR LIGAMENTOUS CHANCE (3B) OR KYPHOSIS >15°. Posterior Pedicle Screw Fixation across 1 level above and below fracture zone to re-establish posterior tension band.",
-                  "th": "แนะนำผ่าตัดรักษาใน Ligamentous Chance (3B) หรือคอโก่ง >15° โดยผ่าตัดยึด Pedicle Screw ด้านหลัง"
+                  "indication": {
+                    "en": "• All Ligamentous Chance injuries (Type 3B: Disruption traversing interspinous ligament, facet capsule, and intervertebral disc)\n• Displaced bony Chance fractures, kyphosis ≥15°, polytrauma, or neurological deficit",
+                    "th": "• การบาดเจ็บผ่านแนวเอ็น Ligamentous Chance (Type 3B) ทุกราย (ขาดผ่านเอ็น interspinous, ปลอกข้อ และหมอนรองกระดูก)\n• Bony Chance ที่เคลื่อนตัว, มุมหลังค่อม ≥15°, ผู้ป่วยบาดเจ็บหลายระบบ หรือมีอาการทางระบบประสาท"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Compression Fixation: Open reduction, pedicle screw fixation 1 level above and 1 level below injury zone, compression applied across contoured lordotic rods to re-approximate the posterior tension band, followed by posterolateral fusion and bone grafting",
+                    "th": "• ผ่าตัดดามยึดและดึงบีบกระชับด้านหลัง (Posterior Compression Fixation): เปิดจัดแนวกระดูก ขันสกรู Pedicle Screws 1 ระดับบนและล่าง ดึงบีบกระชับแท่ง Rod ดัดแอ่นเพื่อดึงแนวเอ็นส่วนหลังให้ชิดเข้าหากัน พร้อมปลูกกระดูกเชื่อมข้อ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate post-op mobilization on day 1; active range of motion at 6 weeks; return to unrestricted activity at 3–4 months",
+                    "th": "• ลุกเดินได้ตั้งแต่วันแรกหลังผ่าตัด; เริ่มฝึกขยับลำตัวที่ 6 สัปดาห์; กลับไปทำกิจกรรมปกติได้ที่ 3–4 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Applying distractive force during rod placement, worsening the posterior gapping\n• Missing a concomitant anterior teardrop or burst fracture component",
+                    "th": "• ดันถ่างแกนเหล็กขณะผ่าตัด ทำให้รอยแยกด้านหลังยิ่งอ้ากว้างขึ้น\n• มองข้ามรอยหัก Teardrop หรือ Burst ด้านหน้าที่เกิดร่วมด้วย"
+                  }
                 }
               },
               "illustrationId": "",
@@ -458,14 +682,46 @@ export const tlSpineBone: BoneData = {
                 "th": "อุบัติเหตุรุนแรงสุดขีด (รถพลิกคว่ำความเร็วสูง, วัตถุทับบดรุนแรง, ตกจากตึก)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Denis Type 4 Fracture-Dislocation represents complete 3-column disruption in shear, rotation, or violent distraction; gross multidirectional mechanical instability with very high incidence of complete/incomplete spinal cord transection (50%–75%); conservative care is absolutely contraindicated; emergency surgical open reduction, neural canal decompression, and rigid multi-level posterior pedicle screw instrumentation (± anterior column reconstruction) is mandatory.",
+                  "th": "กระดูกหักหลุด Denis Type 4 (Fracture-Dislocation) คือการพังทลายของโครงสร้างทั้ง 3 เสาหลักอย่างสมบูรณ์จากแรงเฉือน หมุน หรือดึงถ่าง; ขาดความมั่นคงรอบทิศทางอย่างรุนแรงสูงสุด และมีอัตราเกิดอัมพาตจากไขสันหลังฉีกขาดสูงมาก (50%–75%); ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด; ต้องผ่าตัดเปิดจัดแนวกระดูกฉุกเฉิน เปิดระบายคลายการกดทับไขสันหลัง และดามสกรู Pedicle Screws หลายระดับทางด้านหลัง (± เสริมเสาด้านหน้า) ทันที"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "FATAL / CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Absolutely contraindicated (causes nonunion, progressive devastating deformity, and catastrophic permanent paralysis)",
+                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ทำให้กระดูกไม่ติด หลังค่อมบิดเบี้ยวรุนแรง และเป็นอัมพาตถาวร)"
+                  },
+                  "method": {
+                    "en": "• Strict bed rest and spine board immobilization solely as a temporary holding measure pending emergency surgery",
+                    "th": "• ดามบนบอร์ดและนอนพักบนเตียงเพื่อรอการผ่าตัดฉุกเฉินเท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting closed reduction maneuvers in the emergency room which can aggravate neural transection",
+                    "th": "• พยายามดึงดัดจัดกระดูกที่ห้องฉุกเฉิน ซึ่งอาจทำให้ไขสันหลังถูกตัดขาดถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY OPERATIVE TREATMENT (GOLD STANDARD). Urgent open reduction, spinal cord decompression, and rigid posterior instrumented pedicle screw fusion spanning 2-3 levels above and below dislocation.",
-                  "th": "แนะนำผ่าตัดด่วนที่สุด (EMERGENCY SURGERY): เปิดผ่าตัดจัดกระดูกที่หลุดให้เข้าที่, ผ่าตัด減壓คลายการกดทับไขสันหลัง และดามยึดกระดูกหลังด้วย Pedicle Screw 2-3 ระดับบนและล่าง"
+                  "indication": {
+                    "en": "• All Denis Type 4 thoracolumbar fracture-dislocations (Flexion-rotation, shear, flexion-distraction dislocations)",
+                    "th": "• กระดูกสันหลังหักเคลื่อนหลุด Denis Type 4 ทุกราย (ก้มหมุน, แรงเฉือน, ก้มดึงถ่างหลุด)"
+                  },
+                  "method": {
+                    "en": "• Emergency Open Reduction and Rigid Instrumented Fusion: Posterior midline exposure, open reduction of displaced/locked facets, extensive laminectomy/decompression of the dural sac, long-segment posterior pedicle screw instrumentation (spanning 2 levels above and 2 levels below dislocation), rigid cross-link placement, and extensive posterolateral bone grafting\n• Secondary Anterior Column Reconstruction (Cage / Corpectomy) indicated if significant anterior vertebral body deficiency persists after posterior reduction",
+                    "th": "• ผ่าตัดเปิดจัดแนวกระดูกและดามยึดฉุกเฉิน (Emergency Open Reduction & Fusion): เปิดแผลผ่าตัดด้านหลัง จัดกระดูกและข้อ Facet ที่เกยให้เข้าที่, ผ่าตัดเปิดระบายช่องไขสันหลัง (Laminectomy) ให้โล่ง, ดามสกรู Pedicle Screws ระยะยาว (2 ระดับบนและ 2 ระดับล่าง), ใส่ Cross-link เพิ่มความแข็งแรง และปลูกกระดูกเชื่อมข้อ\n• ผ่าตัดบูรณะเสาด้านหน้าเสริม (Anterior Cage / Corpectomy) หากลำตัวกระดูกด้านหน้าแตกยุบหายไปมากหลังจากจัดแนวด้านหลังแล้ว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate intensive inpatient spinal cord injury neuro-rehabilitation; early wheelchair transfer and pressure ulcer prevention protocols",
+                    "th": "• เริ่มโปรแกรมฟื้นฟูสมรรถภาพไขสันหลังและระบบประสาทอย่างเข้มข้นทันที; ฝึกเคลื่อนย้ายตัวขึ้นรถเข็นและป้องกันแผลกดทับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Construct pullout from using too short a fixation construct (short-segment instrumentation is contraindicated in fracture-dislocations)\n• Missed dural tears leading to pseudomeningocele or CSF fistula",
+                    "th": "• โลหะดามถอนหลุดจากการดามสั้นเกินไป (ห้ามดามระยะสั้นในกระดูกหักหลุดเด็ดขาด)\n• ตรวจไม่พบเยื่อหุ้มไขสันหลังฉีกขาด ทำให้เกิดน้ำไขสันหลังรั่วซึมเรื้อรัง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -563,14 +819,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงกดอัดตามแนวแกนพลังงานต่ำถึงปานกลาง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Total TLICS score < 4 points represents a mechanically stable thoracolumbar fracture (e.g., compression fracture [1 pt] + intact PLC [0 pt] + neurologically intact [0 pt] = 1 pt); non-operative immobilization in a custom molded TLSO or Jewett hyperextension brace for 8–12 weeks achieves excellent bony consolidation without surgical risks.",
+                  "th": "คะแนน TLICS รวม < 4 คะแนน แสดงถึงกระดูกสันหลังหักชนิดมั่นคงทางชีวกลศาสตร์ (เช่น รอยหักยุบ [1 คะแนน] + เอ็น PLC สมบูรณ์ [0 คะแนน] + ระบบประสาทปกติ [0 คะแนน] = 1 คะแนน); การรักษาแบบไม่ผ่าตัดด้วยเฝือกดามพยุงหลัง TLSO หรือ Jewett Brace นาน 8–12 สัปดาห์ กระดูกเชื่อมติดได้ดีเยี่ยมโดยไม่ต้องเสี่ยงต่อการผ่าตัด"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). External immobilization with Rigid Thoracolumbar Sacral Orthosis (TLSO) or Jewett Brace for 8-12 weeks, with serial radiographs at 2, 4, 8, and 12 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นมาตรฐานหลัก ใส่เฝือกพยุงหลัง TLSO หรือ Jewett Brace 8-12 สัปดาห์ ร่วมกับติดตามเอกซเรย์ประเมินเป็นระยะ"
+                  "indication": {
+                    "en": "• Total TLICS score ≤ 3 points (Mechanically stable fracture pattern, intact PLC, neurologically intact)",
+                    "th": "• คะแนน TLICS รวม ≤ 3 คะแนน (กระดูกหักชนิดมั่นคง เอ็น PLC สมบูรณ์ และระบบประสาทปกติ)"
+                  },
+                  "method": {
+                    "en": "• Custom molded Thoracolumbosacral Orthosis (TLSO) or Jewett hyperextension brace worn when upright for 8–12 weeks; serial upright standing radiographs at 2, 4, 8, and 12 weeks",
+                    "th": "• ใส่เฝือกพยุงหลัง TLSO หรือ Jewett Brace ขณะลุกนั่ง/เดิน นาน 8–12 สัปดาห์; เอกซเรย์ท่ายืนติดตามที่ 2, 4, 8, 12 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Core muscle and paraspinal extensor strengthening starting at 8 weeks; gradual brace weaning once solid trabecular union is documented",
+                    "th": "• บริหารกล้ามเนื้อแกนกลางและหลังเริ่มที่ 8 สัปดาห์; ค่อยๆ ปลดเฝือกพยุงหลังเมื่อเอกซเรย์เห็นกระดูกติดแน่น"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to identify subtle posterior ligamentous complex (PLC) disruption on initial plain films; obtain STIR MRI if interspinous palpation reveals step-off",
+                    "th": "• มองข้ามการฉีกขาดของเอ็นยึดด้านหลัง (PLC) จากภาพเอกซเรย์ธรรมดา; ควรตรวจ MRI หากคลำพบรอยแยกของยอดกระดูก"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Strictly not indicated for stable TLICS < 4 scores",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัดสำหรับคะแนน TLICS < 4"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgical intervention exposing stable patients to infection, blood loss, and adjacent segment disease",
+                    "th": "• ผ่าตัดโดยไม่จำเป็นในรอยหักที่มั่นคง เพิ่มความเสี่ยงต่อการติดเชื้อและข้อต่อกระดูกข้างเคียงเสื่อม"
+                  }
                 }
               },
               "illustrationId": "",
@@ -594,14 +882,46 @@ export const tlSpineBone: BoneData = {
                 "th": "แรงก้มคออัดกระแทกหรือแรงดึงถ่างพลังงานปานกลาง"
               },
               "treatment": {
-                "preferred": "none",
+                "decisionPrinciple": {
+                  "en": "Total TLICS score = 4 points represents an equivocal / borderline injury; management must be personalized: operative stabilization (short-segment pedicle screws) is preferred in young active patients, burst fractures with significant canal retropulsion (>40%), or local kyphosis >20°; non-operative TLSO bracing is preferred in elderly, medically frail, or low-demand patients.",
+                  "th": "คะแนน TLICS รวม = 4 คะแนน อยู่ในเกณฑ์กึ่งก้ำกึ่ง (Equivocal); พิจารณาการรักษาตามลักษณะผู้ป่วยแต่ละราย: แนะนำผ่าตัดดามสกรู Pedicle Screws ในผู้ป่วยอายุน้อย, กระดูกแตก Burst ยื่นเข้าช่องไขสันหลัง (>40%) หรือหลังค่อม >20°; แนะนำใส่เฝือกพยุงหลัง TLSO ในผู้สูงอายุ, ผู้ป่วยที่มีโรคร่วมหลายอย่าง หรือมีความเสี่ยงผ่าตัดสูง"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Trial of Rigid TLSO orthosis in patients who are poor surgical candidates or have minimal pain.",
-                  "th": "พิจารณาใส่เฝือกพยุงหลัง TLSO ในผู้ป่วยที่ไม่เหมาะกับการผ่าตัดหรือปวดน้อย"
+                  "indication": {
+                    "en": "• Medically frail patients, poor operative candidates, or stable burst patterns without neurological deficit and minimal kyphosis (<20°)",
+                    "th": "• ผู้ป่วยที่มีโรคร่วมเสี่ยงสูงต่อการผ่าตัด หรือกระดูกแตก Burst ที่ไม่มีอาการทางระบบประสาทและหลังค่อมน้อย (<20°)"
+                  },
+                  "method": {
+                    "en": "• Rigid molded TLSO body jacket worn for 10–12 weeks with weekly standing radiographs for the first month",
+                    "th": "• ใส่เสื้อเกราะพยุงหลัง Rigid TLSO นาน 10–12 สัปดาห์ พร้อมเอกซเรย์ท่ายืนตรวจติดตามทุกสัปดาห์ในเดือนแรก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive mobilization as tolerated; gentle isometric trunk strengthening at 10–12 weeks after brace removal",
+                    "th": "• ค่อยๆ ลุกเดินตามที่ไหว; เริ่มฝึกบริหารกล้ามเนื้อลำตัวที่ 10–12 สัปดาห์หลังถอดเฝือก"
+                  },
+                  "pitfalls": {
+                    "en": "• Progressive late post-traumatic kyphosis or delayed neurologic compromise requiring late complex reconstruction",
+                    "th": "• แนวกระดูกหลังค่อยๆ ค่อมตัวลงเรื่อยๆ หรือเกิดอาการทางระบบประสาทล่าช้าจนต้องผ่าตัดแก้ไขในภายหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "Surgical stabilization (Posterior Pedicle Screw Fusion) in young active patients, persistent kyphosis >25°, or intractable pain.",
-                  "th": "พิจารณาผ่าตัดยึดตรึง (Posterior Pedicle Screw Fusion) ในผู้ป่วยอายุน้อย คอโก่ง >25° หรือปวดรุนแรง"
+                  "indication": {
+                    "en": "• Young active patients desiring early mobilization\n• Significant vertebral body collapse (>50% height loss), canal occlusion >40%–50%, or kyphotic angle >20°\n• Incomplete nerve root deficit or severe intractable pain",
+                    "th": "• ผู้ป่วยอายุน้อยที่ต้องการลุกขยับตัวได้เร็ว\n• ลำตัวกระดูกยุบตัว >50%, กระดูกแตกดันช่องไขสันหลัง >40%–50% หรือหลังค่อม >20°\n• มีอาการบาดเจ็บของรากประสาทบางส่วน หรือปวดรุนแรงไม่ทุเลา"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion: Short-segment pedicle screw fixation (1 level above and 1 level below ± fracture level index screws) ± posterior decompression laminectomy\n• Percutaneous minimally invasive (MIS) pedicle screw fixation for polytrauma or fast recovery",
+                    "th": "• ผ่าตัดดามยึดด้านหลัง (Posterior Instrumented Fusion): ขันสกรู Pedicle Screws ระยะสั้น (1 ระดับบนและ 1 ระดับล่าง ± ขันสกรูที่ตัวกระดูกหัก) ± ผ่าตัดเปิดระบายช่องไขสันหลัง (Laminectomy)\n• ผ่าตัดดามสกรูผ่านผิวหนังแผลเล็ก (MIS Pedicle Screws) สำหรับผู้ป่วยบาดเจ็บหลายระบบเพื่อฟื้นตัวเร็ว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early out-of-bed mobilization on post-op day 1 without external orthosis; physical therapy from week 6",
+                    "th": "• ลุกเดินได้ตั้งแต่วันแรกหลังผ่าตัดโดยไม่ต้องใส่เฝือกนอก; เริ่มทำกายภาพบำบัดหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Hardware pullout or construct kyphosis if short-segment fixation is used in severe anterior column deficiency without anterior support",
+                    "th": "• สกรูถอนหลุดหรือหลังโก่งหากดามระยะสั้นในรายที่เสาด้านหน้าแตกป่นมากโดยไม่เสริมความแข็งแรงด้านหน้า"
+                  }
                 }
               },
               "illustrationId": "",
@@ -625,14 +945,46 @@ export const tlSpineBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกพลังงานสูงรุนแรง (รถยนต์ชน, ตกจากที่สูง, อุบัติเหตุโรงงาน)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Total TLICS score > 4 points indicates gross mechanical instability, definitive Posterior Ligamentous Complex (PLC) rupture, or spinal cord / cauda equina deficit; conservative care is contraindicated; urgent posterior instrumented pedicle screw fixation with direct/indirect neural decompression (± anterior reconstruction) is mandatory to prevent progressive paralysis and kyphosis.",
+                  "th": "คะแนน TLICS รวม > 4 คะแนน แสดงถึงความไม่มั่นคงทางกลศาสตร์รุนแรง, เอ็นยึดด้านหลัง (PLC) ฉีกขาดสมบูรณ์ หรือมีภาวะกดทับไขสันหลัง/Cauda Equina; ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด; ต้องผ่าตัดดามสกรู Pedicle Screws ด้านหลังด่วน ร่วมกับเปิดคลายการกดทับเส้นประสาท (± ผ่าตัดบูรณะเสาด้านหน้า) เพื่อป้องกันอัมพาตและหลังโก่งถาวร"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. High risk of progressive kyphosis, nonunion, and catastrophic paralysis.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ เสี่ยงสูงต่อคอโก่งผิดรูป กระดูกไม่ติด และอัมพาต"
+                  "indication": {
+                    "en": "• Strictly contraindicated (leads to progressive kyphosis, nonunion, and catastrophic irreversible neurological deterioration)",
+                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ทำให้หลังค่อมรุนแรง กระดูกไม่ติด และไขสันหลังถูกกดทับจนอัมพาตถาวร)"
+                  },
+                  "method": {
+                    "en": "• Strict flat bed rest only as a temporary measure while preparing for urgent surgery",
+                    "th": "• นอนพักราบบนเตียงเพื่อเตรียมตัวเข้ารับการผ่าตัดด่วนเท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• N/A"
+                  },
+                  "pitfalls": {
+                    "en": "• Delayed surgical decompression in patients with incomplete cord/cauda equina injury leading to permanent paralysis",
+                    "th": "• ผ่าตัดคลายการกดทับล่าช้าในผู้ป่วยที่มีอาการอัมพาตบางส่วน ทำให้เส้นประสาทถูกทำลายถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). Surgical decompression and posterior instrumented pedicle screw fusion across 1-2 levels above and below injury zone ± anterior corpectomy. Emergency surgery if incomplete neuro deficit with ongoing cord compression.",
-                  "th": "แนะนำผ่าตัดมาตรฐานหลัก (Gold Standard): ผ่าตัด減壓และดามยึด Pedicle Screw ด้านหลัง 1-2 ระดับบนและล่าง ± Corpectomy ผ่าตัดด่วนที่สุดหากมีอาการอัมพาตครึ่งท่อน"
+                  "indication": {
+                    "en": "• All patients with TLICS score ≥ 5 (Distraction injuries, translation/rotational dislocations, burst fractures with PLC disruption or neurologic deficit)",
+                    "th": "• ผู้ป่วยที่มีคะแนน TLICS ≥ 5 ทุกราย (กระดูกฉีกอ้า Distraction, กระดูกเคลื่อนหลุด Translation, กระดูกแตก Burst ร่วมกับเอ็น PLC ขาดหรือมีอาการอัมพาต)"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Fusion: Open reduction, posterior pedicle screw instrumentation spanning 1–2 levels above and below injury zone (or long-segment for fracture-dislocations) + wide laminectomy for direct neural decompression + posterolateral fusion\n• Combined Anterior-Posterior Reconstruction (360°): Anterior corpectomy with expandable titanium cage and plating + posterior pedicle screw instrumentation for severe comminution with anterior column load-sharing score >6",
+                    "th": "• ผ่าตัดดามยึดด้านหลัง (Posterior Instrumented Fusion): เปิดจัดแนวกระดูก ขันสกรู Pedicle Screws 1–2 ระดับบนและล่าง (หรือระยะยาวในกระดูกหักเคลื่อนหลุด) + ผ่าตัดเปิดระบายช่องไขสันหลัง (Laminectomy) ให้โล่ง + ปลูกกระดูกเชื่อมข้อ\n• ผ่าตัดบูรณะรอบทิศทาง 360 องศา (หน้าและหลัง): ตัดลำตัวกระดูกด้านหน้าใส่ Expandable Cage ร่วมกับดามสกรูด้านหลังในรายที่กระดูกแตกป่นรุนแรง (Load-sharing score >6)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early aggressive in-bed turning protocols; out-of-bed mobilization within 24–48 hours post-op; early inpatient spinal cord rehabilitation",
+                    "th": "• พลิกตัวป้องกันแผลกดทับ; ลุกนั่ง/เดินได้เร็วภายใน 24–48 ชั่วโมงหลังผ่าตัด; เริ่มโปรแกรมฟื้นฟูสมรรถภาพไขสันหลังอย่างเข้มข้น"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate decompression leaving residual retropulsed bone fragments in the spinal canal\n• Construct failure from insufficient fixation levels in high-energy shear/distraction injuries",
+                    "th": "• ผ่าตัดคลายการกดทับไม่หมด เหลือชิ้นกระดูกกดทับไขสันหลัง\n• โลหะดามถอนหลุดจากการดามสั้นเกินไปในแรงกระแทกเฉือนรุนแรง"
+                  }
                 }
               },
               "illustrationId": "",

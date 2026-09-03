@@ -1,12 +1,10 @@
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
-import { BONE_CATEGORY } from "./TopNavBar";
 import { ChevronRight, BookOpen, Hand, Footprints } from "lucide-react";
 import { 
   getBoneIcon, 
   SkullIcon, 
-  TLSpineIcon, 
-  PhysisIcon 
+  TLSpineIcon
 } from "../common/BoneIcons";
 import { RegionConceptPanel } from "./RegionConceptPanel";
 
@@ -16,8 +14,8 @@ interface LeftSidebarProps {
   bones: BoneData[];
   selectedBone: BoneData | null;
   selectedRegionId?: string | null;
-  activeCategory: string;
-  onCategoryChange: (c: string) => void;
+  activeCategory?: string;
+  onCategoryChange?: (c: string) => void;
   onSelectBone: (bone: BoneData, regionId?: string) => void;
   onBackToList?: () => void;
   searchQuery: string;
@@ -48,17 +46,11 @@ const CATEGORY_GROUPS = [
     icon: TLSpineIcon,
     boneIds: ["c-spine", "tl-spine"],
   },
-  {
-    id: "pedi",
-    label: { en: "Pediatric", th: "กระดูกเด็ก" },
-    icon: PhysisIcon,
-    boneIds: ["pediatric-physis"],
-  },
 ];
 
 export function LeftSidebar({
   darkMode, language, bones, selectedBone, selectedRegionId,
-  activeCategory, onSelectBone, onBackToList, searchQuery,
+  onSelectBone, onBackToList, searchQuery,
 }: LeftSidebarProps) {
   const bg          = darkMode ? "#161B27" : "#FFFFFF";
   const border      = darkMode ? "#252F42" : "#E2E8F0";
@@ -72,8 +64,8 @@ export function LeftSidebar({
   const currentRegion = selectedBone?.regions.find(r => r.id === selectedRegionId) || selectedBone?.regions[0];
   const hasRegionConcept = selectedBone && currentRegion && currentRegion.regionConcept;
 
-  // Filter by searchQuery or category
-  const isFiltering = searchQuery.trim().length > 0 || activeCategory !== "all";
+  // Filter by searchQuery
+  const isFiltering = searchQuery.trim().length > 0;
 
   const getFilteredBones = () => {
     if (searchQuery.trim()) {
@@ -85,9 +77,6 @@ export function LeftSidebar({
           )
         )
       );
-    }
-    if (activeCategory !== "all") {
-      return bones.filter(b => BONE_CATEGORY[b.id] === activeCategory);
     }
     return bones;
   };

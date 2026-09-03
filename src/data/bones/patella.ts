@@ -210,14 +210,46 @@ export const patellaBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงพลังงานต่ำเข้าที่หน้าเข่าขณะล้ม"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intact extensor mechanism (Active SLR test positive without lag), fracture separation gap <2–3 mm, and articular step-off <1–2 mm; non-operative cylinder cast / locked extension brace with >99% union.",
+                  "th": "กลไกการเหยียดข้อเข่าสมบูรณ์ (ผู้ป่วยนอนยกขาตรง Active SLR ได้โดยไม่มีตก), รอยหักอ้าแยก <2–3 มม. และผิวข้อเหลื่อม <1–2 มม. รักษาแบบไม่ผ่าตัดด้วย Cylinder Cast หรือปลอกดามเข่าล็อคตรง กระดูกติดได้ดี >99%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Cylinder cast or hinged knee brace locked in extension for 4-6 weeks with immediate weight-bearing as tolerated. Early isometric quadriceps exercises.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่เฝือกดามขาตรง (Cylinder cast) หรือเฝือกดามข้อเข่าล็อคตรง นาน 4-6 สัปดาห์ ลงน้ำหนักได้เท่าที่ทนไหวร่วมกับฝึกเกร็งหน้าขา"
+                  "indication": {
+                    "en": "• Intact extensor mechanism with ability to perform active Straight Leg Raise (SLR)\n• Fracture gap < 2–3 mm and articular step-off < 1–2 mm\n• Intact medial and lateral retinacula",
+                    "th": "• กลไกการเหยียดเข่าสมบูรณ์ สามารถนอนยกขาตรง (Active SLR) ได้\n• ช่องอ้ารอยหัก < 2–3 มม. และผิวข้อเหลื่อม < 1–2 มม.\n• พังผืดเอ็น Retinaculum ด้านข้างทั้งสองข้างไม่ฉีกขาด"
+                  },
+                  "method": {
+                    "en": "• Cylinder cast or rigid knee immobilizer locked in full extension for 4–6 weeks\n• Immediate full weight-bearing as tolerated with crutches",
+                    "th": "• ใส่เฝือกดามขาตรง (Cylinder cast) หรือ Knee Immobilizer ล็อคเข่าเหยียดตรง 4–6 สัปดาห์\n• ลงน้ำหนักได้เต็มที่ทันทีตามที่ทนไหวร่วมกับใช้ไม้ค้ำยัน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start immediate isometric quadriceps setting and straight leg raising on post-injury day 1; convert to hinged knee brace at 4 weeks allowing progressive 0°–30° flexion, advancing by 15° weekly",
+                    "th": "• เริ่มฝึกเกร็งกล้ามเนื้อหน้าขา (Quadriceps setting) และฝึกยกขาตรงตั้งแต่วันแรก; เปลี่ยนเป็น Hinged Brace ที่ 4 สัปดาห์ ปรับงอเข่า 0°–30° และเพิ่มสัปดาห์ละ 15 องศา"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to verify active SLR clinically (a non-displaced appearance on X-ray with inability to SLR indicates torn retinaculum requiring surgery)\n• Prolonged immobilization causing knee flexion arthrofibrosis",
+                    "th": "• ไม่ได้ตรวจการยกขาตรง SLR ทางคลินิก (ภาพ X-ray ดูไม่เคลื่อนแต่ยกขาตรงไม่ได้แสดงว่าเอ็น Retinaculum ฉีกขาดต้องผ่าตัด)\n• ดามขานิ่งนานเกินไปทำให้ข้อเข่าติดแข็งงอไม่ลง"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated unless secondary displacement occurs during follow-up.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Secondary displacement during serial radiographic follow-up (gap > 3 mm or step-off > 2 mm)\n• Delayed failure of active extension",
+                    "th": "• กระดูกทรุดเคลื่อนตัวเพิ่มขึ้นขณะติดตามภาพเอกซเรย์ (ช่องอ้า > 3 มม. หรือผิวข้อเหลื่อม > 2 มม.)\n• กลไกเหยียดเข่าล้มเหลวภายหลัง"
+                  },
+                  "method": {
+                    "en": "• Percutaneous cannulated lag screws (4.0 mm) or Tension Band Wiring",
+                    "th": "• ผ่าตัดยึดด้วยสกรู 4.0 mm Cannulated Screws หรือ Tension Band Wiring"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active motion post-op",
+                    "th": "• เริ่มกายภาพขยับข้อเข่าเร็วหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery for stable fracture",
+                    "th": "• การผ่าตัดโดยไม่จำเป็นในรอยหักที่มั่นคงดี"
+                  }
                 }
               },
               "illustrationId": "/images/patella/nondisplaced.png",
@@ -241,14 +273,46 @@ export const patellaBone: BoneData = {
                 "th": "การหดตัวอย่างรุนแรงฉับพลันของกล้ามเนื้อ Quadriceps หรือล้มกระแทกหน้าเข่าอย่างจัง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Disrupted extensor mechanism (inability to perform active SLR / extension lag >10°), fracture separation gap >2–3 mm, or articular step-off >1–2 mm; gold standard ORIF using modified Tension Band Wiring (TBW) to convert anterior distraction forces into dynamic articular compression upon knee flexion.",
+                  "th": "กลไกการเหยียดเข่าฉีกขาด (ยกขาตรง Active SLR ไม่ได้ / เข่าตกค้าง >10°), ช่องอ้ารอยหัก >2–3 มม. หรือผิวข้อเหลื่อม >1–2 มม. เป็นข้อบ่งชี้มาตรฐานหลัก (Gold Standard) ในการผ่าตัด ORIF ด้วย Modified Tension Band Wiring (TBW) เพื่อเปลี่ยนแรงดึงด้านหน้าให้กลายเป็นแรงอัดแน่นผิวข้อขณะงอเข่า"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Results in permanent extension lag, nonunion, and severe disability.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ทำให้สูญเสียการเหยียดขาถาวร กระดูกไม่ติด และพิการ"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in ambulatory patients (Causes permanent extension lag, nonunion, and severe gait handicap)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (ทำให้สูญเสียการเหยียดขาถาวร กระดูกไม่ติด และพิการเดินกะเผลก)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Complete loss of knee extension power, permanent quadriceps atrophy, and patellofemoral arthrosis",
+                    "th": "• สูญเสียแรงเหยียดเข่าถาวร กล้ามเนื้อหน้าขาลีบ และข้อสะบ้าเสื่อมรุนแรง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). Open reduction and internal fixation (ORIF) using Tension Band Wiring (TBW) with 2 longitudinal K-wires and a figure-of-8 stainless steel wire loop + retinacular repair.",
-                  "th": "แนะนำผ่าตัดมาตรฐาน (Gold Standard ORIF) ด้วยวิธี Tension Band Wiring (TBW) ปัก K-wires คู่ขนานร่วมกับลวดเลข 8 และผ่าตัดซ่อมเอ็น Retinaculum"
+                  "indication": {
+                    "en": "• Displaced transverse patellar fracture (gap > 2–3 mm or articular step-off > 1–2 mm)\n• Complete disruption of extensor mechanism (loss of active SLR ability)",
+                    "th": "• กระดูกสะบ้าหักแนวขวางชนิดเคลื่อนตัว (ช่องอ้า > 2–3 มม. หรือผิวข้อเหลื่อม > 1–2 มม.)\n• กลไกเหยียดเข่าฉีกขาดสมบูรณ์ (นอนยกขาตรง SLR ไม่ได้)"
+                  },
+                  "method": {
+                    "en": "• Open reduction and internal fixation (ORIF) with Modified Tension Band Wiring (TBW): Anatomical reduction of articular surface + Two parallel 2.0 mm K-wires or 4.0 mm Cannulated Screws + 18-gauge Figure-of-8 stainless steel wire loop tensioned anteriorly + Direct repair of medial and lateral retinacular tears with heavy non-absorbable sutures",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกเข้าที่ (ORIF Modified TBW): จัดผิวข้อให้เรียบสนิท + ปักลวด K-wires 2.0 มม. คู่ขนาน (หรือ 4.0 mm Cannulated Screws) + คล้องลวดสแตนเลสเบอร์ 18 เป็นรูปเลข 8 ขึงตึงด้านหน้าสะบ้า + เย็บซ่อมพังผืดเอ็น Retinaculum ด้านข้างทั้งสองข้างด้วยไหมไม่ละลาย"
+                  },
+                  "rehabilitation": {
+                    "en": "• Hinged knee brace: immediate active-assisted knee ROM (0°–90° for first 4 weeks); immediate weight-bearing in full extension; progressive full flexion and quadriceps strengthening after 6 weeks",
+                    "th": "• ใส่ Hinged Knee Brace: ฝึกงอเข่าช่วย 0°–90° ใน 4 สัปดาห์แรก; ลงน้ำหนักเต็มที่ในท่าเหยียดตรงทันที; ฝึกงอเข่าสุดและเพิ่มกำลังกล้ามเนื้อหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prominent wire knots under thin anterior skin causing soft tissue irritation (bend and bury K-wire tips into bone)\n• Inadequate articular reduction resulting in rapid patellofemoral chondrosis",
+                    "th": "• ปมลวดนูนระคายเคืองผิวหนังด้านหน้าที่บาง (ต้องดัดปลายลวดพับฝังในเนื้อกระดูก)\n• จัดผิวข้อไม่เรียบเนียนทำให้เกิดข้อสะบ้าเสื่อมอย่างรวดเร็ว"
+                  }
                 }
               },
               "illustrationId": "/images/patella/displaced_transverse.png",
@@ -272,14 +336,46 @@ export const patellaBone: BoneData = {
                 "th": "การหดตัวกระชากอย่างรุนแรงของกล้ามเนื้อ Quadriceps ในนักกีฬา (เช่น การกระโดดลงพื้น)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Avulsion fracture of inferior pole (patellar tendon avulsion) or superior pole (quadriceps tendon avulsion); disrupted extensor mechanism and high-riding patella (Patella Alta); surgical re-attachment via transosseous tunnels, suture anchors, or basket plate.",
+                  "th": "ขั้วล่างสะบ้าหักกะเทาะ (เอ็น Patellar Tendon หลุด) หรือขั้วบนหัก (เอ็น Quadriceps หลุด) กลไกเหยียดเข่าฉีกขาด ลูกสะบ้ายกลอยสูง (Patella Alta) แนะนำผ่าตัดยึดตรึงเอ็นกลับเข้ากระดูกด้วย Transosseous Suture Tunnels, Suture Anchors หรือ Basket Plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY if non-displaced (<2mm) with intact SLR.",
-                  "th": "พิจารณาเฉพาะกรณีที่ไม่เคลื่อน (<2มม.) และยกขาตรงได้"
+                  "indication": {
+                    "en": "• Strictly non-displaced pole fracture (<2 mm gap) with completely intact active SLR",
+                    "th": "• ขั้วสะบ้าหักไม่เคลื่อนตัว (<2 มม.) และยกขาตรง Active SLR ได้ปกติสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Cylinder cast or extension brace for 6 weeks",
+                    "th": "• ใส่เฝือกดามขาตรง Cylinder Cast นาน 6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle protected range of motion after 6 weeks",
+                    "th": "• เริ่มฝึกขยับข้อเข่าอย่างระมัดระวังหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary proximal migration of patella due to quadriceps muscle tone",
+                    "th": "• ลูกสะบ้าถูกกล้ามเนื้อหน้าขาดึงรั้งลอยสูงขึ้นเรื่อยๆ จนเอ็นติดผิดรูป"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Transosseous suture repair with K-wires/suture anchors or basket plate to re-attach the patellar tendon tightly to bone. Partial pole resection if fragment is un-fixable.",
-                  "th": "แนะนำผ่าตัด ORIF หรือเย็บร้อยกระดูก (Transosseous sutures / Suture anchors) ยึดเอ็น Patellar tendon กลับเข้าขั้วกระดูกสะบ้า"
+                  "indication": {
+                    "en": "• Displaced inferior or superior pole avulsion fracture (>2 mm displacement)\n• Disruption of extensor mechanism / Patella Alta on lateral radiograph",
+                    "th": "• ขั้วสะบ้าหักเคลื่อนตัว (> 2 มม.)\n• กลไกเหยียดเข่าฉีกขาด หรือลูกสะบ้ายกลอยสูง (Patella Alta)"
+                  },
+                  "method": {
+                    "en": "• Large reconstructible pole fragment: Anatomical reduction + Headless compression screws or mini-basket plate with tension band\n• Comminuted / small avulsion fragment (<1 cm): Excision of comminuted bone flakes (Partial Patellectomy) + Transosseous bone tunnel suturing (Krackow technique with #5 non-absorbable suture) or Suture Anchors + Patellar Tendon augmentation (wire loop/FiberTape cerclage through tibial tubercle)",
+                    "th": "• ชิ้นขั้วขนาดใหญ่: จัดกระดูกเข้าที่ + ขันสกรูหัวจม Headless Screws หรือดาม Basket Plate\n• ชิ้นขั้วแตกป่น/ขนาดเล็ก (<1 ซม.): ตัดเศษกระดูกป่นออก (Partial Patellectomy) + ร้อยเย็บเอ็นผ่านรูเจาะในกระดูกสะบ้า (Krackow Transosseous Tunnels ด้วยไหมเบอร์ 5) หรือใช้ Suture Anchors + คล้องลวด/FiberTape เสริมแรงยึดกับปุ่มกระดูกหน้าแข้ง (Tibial tubercle)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Extension brace locked at 0° for 4 weeks with weight-bearing as tolerated; passive flexion 0°–45° at 2 weeks, 0°–90° at 4 weeks; active knee extension at 6 weeks",
+                    "th": "• ใส่ Knee Brace ล็อคตรง 0 องศา 4 สัปดาห์ ลงน้ำหนักได้; ฝึกงอเข่าช่วย 0°–45° ที่ 2 สัปดาห์, 0°–90° ที่ 4 สัปดาห์; เริ่มเตะเหยียดขาเองที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtightening the tendon repair resulting in low-riding patella (Patella Baja) or patellofemoral overpressure",
+                    "th": "• ดึงเย็บเอ็นตึงสั้นเกินไปจนลูกสะบ้าจมต่ำ (Patella Baja) ทำให้ปวดและงอเข่าไม่ลง"
+                  }
                 }
               },
               "illustrationId": "/images/patella/polar_avulsion.png",
@@ -303,14 +399,46 @@ export const patellaBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่ด้านข้างของลูกสะบ้า"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Vertical fracture line parallel to extensor mechanism; retinacula and quadriceps expansion remain intact; minimal tensile distraction; non-operative knee extension brace for 4 weeks (>98% union); ORIF reserved for articular step-off >2 mm.",
+                  "th": "รอยหักแนวดิ่งขนานกับแนวแรงดึงของกล้ามเนื้อเหยียดเข่า เอ็น Retinaculum ยังสมบูรณ์ แรงดึงไม่ทำให้รอยหักอ้าแยก รักษาแบบไม่ผ่าตัดด้วยปลอกดามเข่า 4 สัปดาห์ (กระดูกติด >98%) ผ่าตัดเฉพาะกรณีผิวข้อเหลื่อม >2 มม."
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Immobilization in extension brace/cast for 4 weeks followed by progressive knee flexion. Excellent prognosis.",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัด ใส่เฝือกดามขาตรงนาน 4 สัปดาห์ แล้วเริ่มฝึกงอเข่า อัตราฟื้นตัวสูงมาก"
+                  "indication": {
+                    "en": "• Vertical patellar fracture with articular step-off < 1–2 mm\n• Intact extensor mechanism (ability to perform active SLR)",
+                    "th": "• สะบ้าหักแนวดิ่ง ผิวข้อเหลื่อม < 1–2 มม.\n• กลไกเหยียดเข่าสมบูรณ์ (ยกขาตรง Active SLR ได้ปกติ)"
+                  },
+                  "method": {
+                    "en": "• Hinged knee brace locked in extension or cylinder cast for 3–4 weeks with immediate weight-bearing as tolerated",
+                    "th": "• ใส่ Hinged Knee Brace ล็อคตรงหรือ Cylinder Cast นาน 3–4 สัปดาห์ ลงน้ำหนักได้ทันที"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive knee flexion ROM out of brace starting at 3–4 weeks; full quadriceps strengthening at 6 weeks",
+                    "th": "• ถอดปลอกดามฝึกงอเข่าที่ 3–4 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อเต็มที่ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing vertical fractures on standard AP/lateral views (Skyline/Merchant axial view is mandatory)",
+                    "th": "• มองไม่เห็นรอยหักแนวดิ่งในภาพเอกซเรย์ท่า AP/ด้านข้างปกติ (ต้องส่งตรวจ Skyline/Merchant View เสมอ)"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if articular step-off >2mm or wide gap. Fixation with 3.5mm cannulated lag screws horizontally.",
-                  "th": "ผ่าตัดเฉพาะกรณีผิวข้อเกยเหลื่อม > 2 มม. ยึดด้วยสกรูเกลียวตามแนวขวาง (Lag screw)"
+                  "indication": {
+                    "en": "• Intra-articular step-off or gap > 2 mm visible on Skyline view\n• Displaced sagittal split fragment compromising patellofemoral tracking",
+                    "th": "• ผิวข้อเหลื่อมหรืออ้ากว้าง > 2 มม. ในท่า Skyline View\n• ชิ้นกระดูกแตกแยกขัดขวางการเคลื่อนตัวของสะบ้าในร่องข้อ"
+                  },
+                  "method": {
+                    "en": "• Direct anterior approach: Anatomical articular reduction + Horizontal interfragmentary 3.5 mm / 4.0 mm Cannulated Lag Screws placed perpendicular to the vertical fracture line",
+                    "th": "• ผ่าตัดเข้าทางด้านหน้า: จัดผิวข้อให้เรียบ + ขันสกรูดึงอัด 3.5 mm / 4.0 mm Cannulated Lag Screws ในแนวขวางตั้งฉากกับรอยหักแนวดิ่ง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active-assisted knee motion immediately post-op",
+                    "th": "• เริ่มฝึกขยับข้อเข่าเร็วหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Misdirecting horizontal lag screws into the posterior articular cartilage facet",
+                    "th": "• สกรูแนวขวางเจาะทะลุโผล่เข้าผิวข้อสะบ้าด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/patella/vertical_sagittal.png",
@@ -334,14 +462,46 @@ export const patellaBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงปานกลางเข้าที่สะบ้าด้านหน้า"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Multi-fragmentary starburst pattern without displacement (<2 mm gap, <1–2 mm step-off); intact extensor mechanism and retinacula; non-operative cylinder cast / locked brace with serial weekly radiographs.",
+                  "th": "สะบ้าแตกละเอียดรูปดาวกระจายแต่ไม่เคลื่อนตัว (ช่องอ้า <2 มม., ผิวข้อเหลื่อม <1–2 มม.) กลไกเหยียดเข่ายังสมบูรณ์ รักษาแบบไม่ผ่าตัดด้วย Cylinder Cast หรือปลอกดามเข่า พร้อมติดตามภาพถ่ายเอกซเรย์ทุกสัปดาห์"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT FOR INTACT SLR. Cylinder cast or extension brace for 4-6 weeks with protected weight-bearing. Close X-ray monitoring.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดกรณี SLR ได้ปกติ ใส่เฝือก Cylinder cast ดามขาตรง 4-6 สัปดาห์ พร้อมติดตาม X-ray ใกล้ชิด"
+                  "indication": {
+                    "en": "• Comminuted/stellate fracture with minimal displacement (gap < 2 mm, step-off < 1–2 mm)\n• Intact active SLR without extension lag",
+                    "th": "• สะบ้าแตกละเอียดแต่ไม่เคลื่อนตัว (ช่องอ้า < 2 มม., ผิวข้อเหลื่อม < 1–2 มม.)\n• นอนยกขาตรง Active SLR ได้ปกติ ไม่มีอาการเข่าตกค้าง"
+                  },
+                  "method": {
+                    "en": "• Cylinder cast or rigid extension brace for 4–6 weeks with protected weight-bearing",
+                    "th": "• ใส่เฝือกดามขาตรง Cylinder Cast หรือ Knee Immobilizer 4–6 สัปดาห์ ลงน้ำหนักแบบระวัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle isometric quadriceps exercises from week 1; transition to active ROM after radiographic consolidation at 6 weeks",
+                    "th": "• ฝึกเกร็งหน้าขาตั้งแต่สัปดาห์แรก และเริ่มฝึกงอเข่าหลังเห็นกระดูกเริ่มเชื่อมติดที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Late displacement caused by early unprotected knee flexion (weekly X-ray monitoring required for first 3 weeks)",
+                    "th": "• ชิ้นกระดูกทรุดเคลื่อนหลุดจากการงอเข่าเร็วเกินไป (ต้องติดตามเอกซเรย์ทุกสัปดาห์ใน 3 สัปดาห์แรก)"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if secondary displacement occurs or SLR becomes impossible.",
-                  "th": "ผ่าตัดเฉพาะกรณีชิ้นกระดูกเคลื่อนหลุดเพิ่มขึ้นภายหลัง"
+                  "indication": {
+                    "en": "• Secondary displacement or late extensor mechanism failure",
+                    "th": "• ชิ้นกระดูกเคลื่อนตัวหลุดเพิ่มขึ้น หรือกลไกเหยียดเข่าล้มเหลวภายหลัง"
+                  },
+                  "method": {
+                    "en": "• Low-profile multi-planar mesh plate or circumferential cerclage wiring",
+                    "th": "• ผ่าตัดดามแผ่นเหล็กล็อคตาข่าย Patellar Mesh Plate หรือร้อยลวดพันรอบวง (Cerclage wiring)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Guided early motion",
+                    "th": "• กายภาพฝึกขยับข้อตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary fragment devascularization during open exploration",
+                    "th": "• เลาะเนื้อเยื่อมากเกินไปจนชิ้นกระดูกขาดเลือดตาย"
+                  }
                 }
               },
               "illustrationId": "/images/patella/comminuted_undisplaced.png",
@@ -365,14 +525,46 @@ export const patellaBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าหน้าเข่าพลังงานสูง (Dashboard injury เข่าชนหน้ารถ หรือตกที่สูงกระแทกเข่า)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "High-energy comminuted fracture with severe articular disruption and loss of extensor mechanism; surgical reconstruction with low-profile mesh locking plate, combination TBW + circumferential cerclage, or partial patellectomy for non-reconstructible poles.",
+                  "th": "สะบ้าแตกละเอียดป่นพลังงานสูง ผิวข้อเสียรูปทรงและกลไกเหยียดเข่าฉีกขาด แนะนำผ่าตัดจัดเรียงชิ้นกระดูกดามด้วยแผ่นเหล็กตาข่าย Patellar Mesh Plate, หรือ Modified TBW ร่วมกับลวดพันรอบวง Cerclage หรือผ่าตัดตัดชิ้นส่วนป่นออก (Partial Patellectomy)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY if non-displaced with intact extensor retinaculum.",
-                  "th": "พิจารณาเฉพาะกรณีที่ไม่เคลื่อนและเอ็น Retinaculum สมบูรณ์"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in functional patients",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe debilitating patellofemoral arthritis and complete loss of knee extension",
+                    "th": "• ข้อสะบ้าเสื่อมรุนแรง ข้อยึดติด และสูญเสียการเหยียดเข่าถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with Modified Tension Band Wiring + Circumferential Purse-string Wire, low-profile Patellar Locking Plate, or Partial Patellectomy if fragments are un-fixable.",
-                  "th": "แนะนำผ่าตัด ORIF ด้วยวิธี Modified TBW ร่วมกับลวดพันรอบวง หรือใช้แผ่นเหล็กล็อค Patella Plate (หากชิ้นกระดูกเล็กป่นเกินผ่าตัด อาจต้องตัดชิ้นส่วนป่นออก Partial Patellectomy)"
+                  "indication": {
+                    "en": "• All displaced comminuted / starburst patellar fractures with disrupted articular surface or extensor mechanism",
+                    "th": "• กระดูกสะบ้าแตกละเอียดเคลื่อนตัวทุกรายที่มีผิวข้อเสียรูปทรงหรือกลไกเหยียดเข่าฉีกขาด"
+                  },
+                  "method": {
+                    "en": "• Anatomical Reconstruction: Low-profile Pre-contoured Patellar Mesh Locking Plate OR Modified TBW with Anterior Circumferential Purse-string (Cerclage) 18-gauge wire\n• Severely Comminuted / Unreconstructible Poles: Partial Patellectomy (preserving the largest articular fragment) + Tendon reattachment with transosseous tunnels\n• Total Patellectomy reserved strictly as a last resort for complete irreparable destruction of entire bone",
+                    "th": "• ผ่าตัดจัดเรียงกระดูก: ดามแผ่นเหล็กล็อคตาข่าย (Patellar Mesh Plate) หรือใช้ Modified TBW ร่วมกับลวดพันรอบวง (Circumferential Cerclage Wire)\n• กรณีขั้วแตกป่นไม่สามารถต่อได้: ทำ Partial Patellectomy (เก็บชิ้นส่วนหลักที่ผิวข้อใหญ่ที่สุดไว้) + เย็บร้อยเอ็นผ่านรูเจาะกระดูก\n• การตัดสะบ้าออกทั้งหมด (Total Patellectomy) สงวนไว้เป็นทางเลือกสุดท้ายเมื่อแตกป่นยับเยินจนไม่สามารถเก็บชิ้นส่วนใดได้"
+                  },
+                  "rehabilitation": {
+                    "en": "• Hinged knee brace locked in extension for 2 weeks; protected passive ROM 0°–60° from weeks 2–4; active ROM and progressive resistance at 6–8 weeks",
+                    "th": "• ใส่ Hinged Knee Brace ล็อคตรง 2 สัปดาห์แรก; กายภาพงอเข่าช่วย 0°–60° ในสัปดาห์ที่ 2–4; เริ่มขยับเองและฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Total patellectomy reduces knee extensor moment arm by 30%–50% (preserve as much patellar bone stock as possible)",
+                    "th": "• การตัดสะบ้าออกทั้งหมดจะลดแรงเหยียดเข่าลง 30%–50% (ต้องพยายามเก็บรักษาเนื้อกระดูกสะบ้าไว้ให้ได้มากที่สุด)"
+                  }
                 }
               },
               "illustrationId": "/images/patella/stellate_comminuted.png",
@@ -396,14 +588,46 @@ export const patellaBone: BoneData = {
                 "th": "แรงเฉือนขณะลูกสะบ้าเคลื่อนหลุดกระแทกกับขอบ Femoral Condyle"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Osteochondral shear fracture associated with patellar dislocation; small fragments removed arthroscopically; large articular fragments (>1 cm) anatomically refixed using headless compression screws or bioabsorbable pins + MPFL repair.",
+                  "th": "กระดูกอ่อนผิวข้อสะบ้าแตกกะเทาะจากแรงเฉือนขณะลูกสะบ้าหลุด หากชิ้นเล็กส่องกล้องคีบออก หากชิ้นผิวข้อใหญ่ (>1 ซม.) แนะนำผ่าตัดยึดตรึงด้วยสกรูหัวจมหรือหมุดละลาย Bioabsorbable Pins ร่วมกับเย็บซ่อมเอ็น MPFL"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY for very small marginal non-articular fragments. Immobilization for 2-3 weeks.",
-                  "th": "พิจารณาเฉพาะชิ้นกะเทาะเล็กๆ นอกเขตผิวข้อ ใส่เฝือกดาม 2-3 สัปดาห์"
+                  "indication": {
+                    "en": "• Very small (<5 mm) extra-articular or non-weight-bearing marginal flake fractures without intra-articular loose bodies",
+                    "th": "• ชิ้นกระดูกกะเทาะขนาดเล็กมาก (<5 มม.) อยู่นอกเขตผิวข้อ และไม่มีชิ้นกระดูกหลุดลอยในข้อเข่า"
+                  },
+                  "method": {
+                    "en": "• Hinged knee brace with patellar stabilizing pad for 3 weeks",
+                    "th": "• ใส่ Hinged Knee Brace พร้อมแผ่นพยุงสะบ้า 3 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive active-assisted motion at 2–3 weeks",
+                    "th": "• เริ่มฝึกขยับข้อเข่าที่ 2–3 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing trapped intra-articular chondral loose bodies causing mechanical locking and cartilage destruction",
+                    "th": "• มองข้ามชิ้นกระดูกอ่อนที่หลุดลอยขัดในช่องข้อเข่า ทำให้ข้อล็อคและขูดทำลายผิวข้อ"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR LOOSE BODIES / ARTICULAR FRAGMENTS. Arthroscopic or open removal of small loose fragment, or refixation with bioabsorbable pins / headless compression screws if >1cm articular surface.",
-                  "th": "แนะนำผ่าตัดส่องกล้องหรือเปิดข้อเข่าเพื่อหยิบชิ้นกระดูกหลุดออก (Loose body removal) หรือผ่าตัดยึดชิ้นผิวข้อหากมีขนาดใหญ่ > 1 ซม."
+                  "indication": {
+                    "en": "• Intra-articular osteochondral loose body causing joint locking or clicking\n• Large articular cartilage fragment (> 10 mm) from patellar facet or lateral femoral condyle\n• Associated acute Medial Patellofemoral Ligament (MPFL) tear with lateral patellar instability",
+                    "th": "• มีชิ้นกระดูกอ่อนหลุดลอยในช่องข้อ (Loose Body) ทำให้เข่าล็อคหรือมีเสียงดัง\n• ชิ้นกระดูกอ่อนผิวข้อมีขนาดใหญ่ (> 10 มม.)\n• มีเอ็น MPFL ด้านในฉีกขาดและลูกสะบ้าหลุดหลวมไม่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Arthroscopic or mini-open approach: Removal of small un-fixable loose fragments OR Anatomical Refixation of large osteochondral fragments using 1.5 mm / 2.0 mm Headless Bioabsorbable Pins or Headless Compression Screws counter-sunk below cartilage + MPFL repair / reconstruction",
+                    "th": "• ผ่าตัดส่องกล้องหรือเปิดแผลเล็ก: คีบเอาชิ้นกระดูกอ่อนขนาดเล็กที่ไม่สามารถยึดได้ออก (Loose Body Removal) หรือ จัดยึดชิ้นผิวข้อขนาดใหญ่ด้วยหมุดละลาย 1.5/2.0 mm Bioabsorbable Pins หรือสกรูหัวจม Headless Screws ฝังมิดใต้ผิวกระดูกอ่อน + เย็บซ่อมหรือสร้างเอ็น MPFL ใหม่"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected partial weight-bearing with knee brace locked in extension for 4 weeks; continuous passive motion (CPM) 0°–90°; active quadriceps strengthening at 6 weeks",
+                    "th": "• จำกัดลงน้ำหนักบางส่วน ใส่ Knee Brace ล็อคตรง 4 สัปดาห์; ทำกายภาพงอเข่าช่วย 0°–90°; เริ่มฝึกเพิ่มกำลังกล้ามเนื้อหน้าขาที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Leaving screws proud above the articular cartilage facet causing rapid opposing femoral trochlea gouging",
+                    "th": "• หัวสกรูโผล่พ้นผิวข้อขึ้นมาขูดทำลายร่องกระดูกต้นขา (Femoral Trochlea) พังเสียหาย"
+                  }
                 }
               },
               "illustrationId": "/images/patella/osteochondral.png",

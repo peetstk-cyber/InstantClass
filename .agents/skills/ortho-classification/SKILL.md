@@ -37,10 +37,15 @@ When a Type card is selected, the detail section MUST render all 5 of the follow
 2. **Description**: Bulleted list of anatomical/clinical criteria (separated by `\n`).
 3. **X-Ray Findings**: Dedicated block detailing radiographic signs on X-ray films.
 4. **Mechanism of Injury (MOI)**: Dedicated block with a lightning bolt icon (`Zap`) describing how the injury occurs.
-5. **Management (Comparative 2-Column)**:
+5. **Management (Comparative 2-Column with 4-Core Structure)**:
    - Two columns comparing **Conservative** vs **Operative** treatment.
-   - **Preferred Choice Glowing Highlight**: If one treatment is preferred/recommended (e.g. recommended, gold standard, primary choice, vs not recommended, contraindicated), the UI highlights it with a glowing neon border and `★ PREFERRED` / `★ แนะนำ` badge.
-   - You can explicitly set `preferred: "conservative" | "operative"` on the `treatment` object, or rely on auto-keyword detection.
+   - **Preferred Choice Star**: When a treatment is preferred/recommended, the UI renders a prominent glowing star badge `★` next to the column title (no text words like PREFERRED).
+   - **Optional Top Banner**: `decisionPrinciple: { en: "...", th: "..." }` for the core decision rule (TL;DR).
+   - **Uniform 4-Core Subsections** inside each treatment column:
+     - `indication`: 🎯 Criteria/conditions when to choose this option (use `\n` for bullets).
+     - `method`: 🛠 Specific procedure, cast/splint type, or surgical fixation implants (use `\n` for bullets).
+     - `rehabilitation`: ⏱ Immobilization duration, weight-bearing status, ROM timing (use `\n` for bullets).
+     - `pitfalls`: ⚠️ High-yield warnings, contraindications, or risk to nerves/tendons (use `\n` for bullets).
 
 ### 6. Investigation / X-Ray Requirements (Tab 2)
 Each classification system MUST include an `investigations` array containing at least 2-3 standard radiographic views for that subregion.
@@ -51,7 +56,7 @@ For each view, specify:
 
 ---
 
-## Standard Code Template (`src/data/bones.ts`)
+## Standard Code Template (`src/data/bones.ts` / `src/data/bones/*.ts`)
 
 ```typescript
 {
@@ -90,14 +95,46 @@ For each view, specify:
         th: "กลไกการบาดเจ็บภาษาไทย"
       },
       treatment: {
-        preferred: "conservative", // optional explicit hint: "conservative" | "operative"
+        preferred: "conservative", // "conservative" | "operative" | "none" | "neutral"
+        decisionPrinciple: {
+          en: "Core decision rule in English.",
+          th: "หลักการตัดสินใจรักษาหลักภาษาไทย"
+        },
         conservative: {
-          en: "Detailed conservative treatment protocol in English.",
-          th: "รายละเอียดการรักษาแบบไม่ผ่าตัดภาษาไทย"
+          indication: {
+            en: "Nondisplaced fracture (<2mm)\nIntact stability",
+            th: "กระดูกไม่เคลื่อนตัว (<2 มม.)\nข้อต่อมีความมั่นคงดี"
+          },
+          method: {
+            en: "Short arm splint for 2 weeks\nTransition to short arm cast for 4 weeks",
+            th: "ใส่เฝือกชั่วคราวดามแขน 2 สัปดาห์\nเปลี่ยนเป็นเฝือกกลมต่ออีก 4 สัปดาห์"
+          },
+          rehabilitation: {
+            en: "Non-weight bearing (NWB) for 6 weeks\nActive finger motion immediately",
+            th: "งดลงน้ำหนัก 6 สัปดาห์\nเริ่มขยับนิ้วมือทันทีตั้งแต่วันแรก"
+          },
+          pitfalls: {
+            en: "Avoid immobilization in extreme flexion (median nerve compression)",
+            th: "หลีกเลี่ยงการดัดข้อมืองอมากเกินไป เพราะเสี่ยงกดทับเส้นประสาท Median"
+          }
         },
         operative: {
-          en: "Detailed operative treatment protocol in English.",
-          th: "รายละเอียดการรักษาแบบผ่าตัดภาษาไทย"
+          indication: {
+            en: "Displaced >2mm\nArticular step-off >1mm\nFailed closed reduction",
+            th: "เคลื่อนตัว >2 มม.\nผิวข้อเหลื่อม >1 มม.\nดึงจัดกระดูกไม่เข้าที่"
+          },
+          method: {
+            en: "Open Reduction and Internal Fixation (ORIF)\nVolar Locking Compression Plate (LCP)",
+            th: "ผ่าตัดจัดกระดูกและยึดตรึงภายใน (ORIF)\nใช้แผ่นโลหะดามชนิด Volar Locking Plate"
+          },
+          rehabilitation: {
+            en: "Removable splint for 10-14 days\nEarly active wrist ROM after suture removal",
+            th: "ใส่เฝือกอ่อนถอดได้ 10-14 วัน\nเริ่มฝึกขยับข้อมือทันทีหลังตัดไหม"
+          },
+          pitfalls: {
+            en: "Ensure screws do not penetrate dorsal cortex and irritate extensor tendons",
+            th: "ระวังไม่ให้ปลายสกรูทะลุ Cortด้านหลังไปเสียดสีเส้นเอ็น Extensor"
+          }
         }
       },
       illustrationId: "/images/systemname/type1_filename.png",

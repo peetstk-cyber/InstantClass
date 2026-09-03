@@ -14,6 +14,8 @@ import {
   Bookmark, 
   User, 
   ChevronRight, 
+  ChevronDown,
+  Check,
   X, 
   Trash2 
 } from "lucide-react";
@@ -22,8 +24,69 @@ import { searchEponyms } from "./data/eponyms";
 import { FeedbackModal } from "./components/feedback/FeedbackModal";
 import { getBoneIcon } from "./components/common/BoneIcons";
 import { QuizModal } from "./components/Quiz/QuizModal";
+import { PediatricPage } from "./components/pediatric/PediatricPage";
+import { AOOTAPage } from "./components/aoota/AOOTAPage";
 
 export type Language = "en" | "th";
+
+interface MobileComingSoonProps {
+  moduleName: string;
+  icon: string;
+  darkMode: boolean;
+  language: Language;
+  onBack: () => void;
+}
+
+function MobileComingSoon({ moduleName, icon, darkMode, language, onBack }: MobileComingSoonProps) {
+  return (
+    <div 
+      style={{
+        background: darkMode ? "#0E1117" : "#F8FAFC",
+        color: darkMode ? "#F1F5F9" : "#0F172A",
+      }}
+      className="flex-1 flex flex-col items-center justify-center p-6 text-center select-none"
+    >
+      <div 
+        style={{
+          background: darkMode ? "rgba(22, 27, 39, 0.85)" : "rgba(255, 255, 255, 0.9)",
+          borderColor: darkMode ? "rgba(255, 255, 255, 0.1)" : "#E2E8F0",
+          boxShadow: darkMode ? "0 10px 30px rgba(0,0,0,0.35)" : "0 10px 30px rgba(0,0,0,0.06)",
+        }}
+        className="max-w-xs w-full p-6 rounded-3xl border backdrop-blur-md flex flex-col items-center space-y-3.5 animate-fadeIn"
+      >
+        <div className="w-16 h-16 rounded-2xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-3xl shadow-inner">
+          {icon}
+        </div>
+
+        <div className="space-y-1">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 inline-block">
+            {language === "en" ? "Coming Soon" : "เร็วๆ นี้"}
+          </span>
+          <h3 className="text-base font-black text-slate-900 dark:text-slate-100">
+            {moduleName}
+          </h3>
+          <p className="text-xs font-medium text-slate-500 dark:text-slate-400 leading-relaxed pt-1">
+            {language === "en"
+              ? "This module is currently optimized for iPad & Desktop. Mobile version is under development!"
+              : "ระบบนี้ยังไม่พร้อมสำหรับมือถือ แนะนำเปิดใช้งานบน iPad หรือ Desktop เพื่อประสบการณ์ที่ดีที่สุดครับ"}
+          </p>
+        </div>
+
+        <button
+          type="button"
+          onClick={onBack}
+          style={{
+            background: darkMode ? "#00CED1" : "#0F766E",
+            color: darkMode ? "#0E1117" : "#FFFFFF",
+          }}
+          className="w-full py-2.5 px-4 rounded-xl text-xs font-black transition-all active:scale-95 cursor-pointer shadow-sm hover:opacity-90 mt-2"
+        >
+          {language === "en" ? "← Back to All Bones" : "← กลับไปหน้า All Bones"}
+        </button>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -43,7 +106,7 @@ function App() {
   const [selectedSystemIdx, setSelectedSystemIdx] = useState(0);
   const [selectedTypeIdx, setSelectedTypeIdx] = useState(0);
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState<string>("all");
+  const [activeCategory, setActiveCategory] = useState<string>("all_bones");
   const [hoveredBoneId, setHoveredBoneId] = useState<string | null>(null);
   const [showAdmin, setShowAdmin] = useState(false);
   const [showAuthModal, setShowAuthModal] = useState(false);
@@ -53,6 +116,13 @@ function App() {
   const [showQuizModal, setShowQuizModal] = useState(false);
   const [showBookmarksModal, setShowBookmarksModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [showMobileModuleDropdown, setShowMobileModuleDropdown] = useState(false);
+
+  const MODULE_OPTIONS = [
+    { id: "all_bones", label: { en: "All Bones", th: "กระดูกทั้งหมด" }, icon: "🦴" },
+    { id: "pediatric", label: { en: "Pediatric", th: "กระดูกเด็ก" }, icon: "🧸" },
+    { id: "ao_ota",    label: { en: "AO/OTA", th: "ระบบ AO/OTA" }, icon: "📐" },
+  ];
 
   // User Auth State Persisted in LocalStorage
   const [currentUser, setCurrentUser] = useState<UserProfile | null>(() => {
@@ -208,63 +278,186 @@ function App() {
         onOpenFeedback={() => setShowFeedbackModal(true)}
       />
 
-      {/* ── Main body layout ── */}
-      <div className="flex flex-1 overflow-hidden relative">
-        {/* Left sidebar - Hidden on mobile */}
-        <LeftSidebar
-          darkMode={darkMode}
-          language={language}
-          bones={bonesData}
-          selectedBone={selectedBone}
-          selectedRegionId={selectedRegionId}
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-          onSelectBone={handleSelectBone}
-          onBackToList={handleClose}
-          searchQuery={searchQuery}
-        />
-
-        {/* Center full-screen canvas */}
-        <SkeletonCanvas
-          darkMode={darkMode}
-          selectedBoneId={selectedBone?.id ?? null}
-          hoveredBoneId={hoveredBoneId}
-          onHoverBone={setHoveredBoneId}
-          onSelectBone={handleSelectBoneById}
-          hasDetailOpen={!!selectedBone}
-        />
-
-        {/* Mobile Backdrop overlay when panel is open */}
-        {selectedBone && (
-          <div 
-            onClick={handleClose} 
-            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
+      {/* ── Mobile Floating Compact Module Dropdown (Equidistant Top & Right Margins) ── */}
+      <div 
+        style={{
+          top: "calc(53px + env(safe-area-inset-top, 0px) + 12px)",
+          right: "12px",
+        }}
+        className="fixed z-40 md:hidden select-none"
+      >
+        <button
+          type="button"
+          onClick={() => setShowMobileModuleDropdown(prev => !prev)}
+          style={{
+            background: darkMode ? "rgba(22, 27, 39, 0.75)" : "rgba(255, 255, 255, 0.75)",
+            borderColor: darkMode ? "rgba(255, 255, 255, 0.12)" : "rgba(203, 213, 225, 0.7)",
+            boxShadow: darkMode ? "0 2px 8px rgba(0,0,0,0.25)" : "0 2px 8px rgba(0,0,0,0.06)",
+          }}
+          className="flex items-center gap-1.5 h-7 px-2.5 rounded-full border backdrop-blur-md transition-all active:scale-95 cursor-pointer group"
+        >
+          <span className="text-xs">
+            {MODULE_OPTIONS.find(m => m.id === activeCategory)?.icon || "🦴"}
+          </span>
+          <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200 tracking-tight">
+            {MODULE_OPTIONS.find(m => m.id === activeCategory)?.label[language] || "All Bones"}
+          </span>
+          <ChevronDown 
+            size={11} 
+            className={`text-slate-400 dark:text-slate-500 transition-transform duration-200 ${showMobileModuleDropdown ? "rotate-180 text-teal-600 dark:text-[#00CED1]" : ""}`} 
           />
-        )}
+        </button>
 
-        {/* Right detail panel (Bottom sheet on mobile / Sidebar on desktop) */}
-        <DetailPanel
-          darkMode={darkMode}
-          language={language}
-          bone={selectedBone}
-          bones={bonesData}
-          currentUser={currentUser}
-          onUpdateUser={handleLogin}
-          onOpenAuth={() => setShowAuthModal(true)}
-          onOpenQuiz={() => setShowQuizModal(true)}
-          onSelectBoneAndRegion={handleSelectBone}
-          selectedRegionId={selectedRegionId}
-          onSelectRegion={setSelectedRegionId}
-          selectedSystemIdx={selectedSystemIdx}
-          onSelectSystem={setSelectedSystemIdx}
-          selectedTypeIdx={selectedTypeIdx}
-          onSelectType={setSelectedTypeIdx}
-          onClose={handleClose}
-        />
+        {/* Dropdown Menu Card */}
+        {showMobileModuleDropdown && (
+          <>
+            {/* Invisible backdrop to dismiss on click outside */}
+            <div 
+              onClick={() => setShowMobileModuleDropdown(false)}
+              className="fixed inset-0 z-30" 
+            />
+
+            <div
+              style={{
+                background: darkMode ? "rgba(22, 27, 39, 0.95)" : "rgba(255, 255, 255, 0.95)",
+                borderColor: darkMode ? "rgba(255, 255, 255, 0.1)" : "rgba(226, 232, 240, 0.9)",
+                boxShadow: darkMode ? "0 10px 25px rgba(0,0,0,0.4)" : "0 10px 25px rgba(0,0,0,0.08)",
+              }}
+              className="absolute top-full right-0 mt-1 w-40 rounded-xl border p-1 z-40 space-y-0.5 backdrop-blur-xl animate-fadeIn"
+            >
+              {MODULE_OPTIONS.map(m => {
+                const isSelected = activeCategory === m.id;
+                const isComingSoon = m.id === "pediatric" || m.id === "ao_ota";
+                return (
+                  <button
+                    key={m.id}
+                    onClick={() => {
+                      setActiveCategory(m.id);
+                      setShowMobileModuleDropdown(false);
+                    }}
+                    style={{
+                      background: isSelected 
+                        ? (darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)") 
+                        : "transparent",
+                      color: isSelected 
+                        ? (darkMode ? "#00CED1" : "#0F766E") 
+                        : (darkMode ? "#CBD5E1" : "#334155"),
+                    }}
+                    className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] transition-all text-left cursor-pointer ${
+                      isSelected ? "font-extrabold" : "font-medium hover:bg-slate-100 dark:hover:bg-slate-800/40"
+                    }`}
+                  >
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <span className="text-xs">{m.icon}</span>
+                      <span className="truncate">{m.label[language]}</span>
+                      {isComingSoon && (
+                        <span className="text-[8.5px] font-extrabold px-1.5 py-0.2 rounded-full bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 flex-shrink-0">
+                          {language === "en" ? "Soon" : "เร็วๆ นี้"}
+                        </span>
+                      )}
+                    </div>
+                    {isSelected && <Check size={12} className="text-teal-700 dark:text-[#00CED1] flex-shrink-0 ml-1" />}
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
       </div>
 
+      {/* ── Main body layout ── */}
+      {activeCategory === "pediatric" ? (
+        <>
+          {/* Desktop & iPad View */}
+          <div className="hidden md:flex flex-1 overflow-hidden h-full">
+            <PediatricPage darkMode={darkMode} language={language} />
+          </div>
+          {/* Mobile View: Coming Soon placeholder */}
+          <div className="flex md:hidden flex-1 overflow-hidden h-full">
+            <MobileComingSoon
+              moduleName={language === "en" ? "Pediatric Orthopedics Hub" : "ระบบกระดูกและข้อเด็ก (Pediatric)"}
+              icon="🧸"
+              darkMode={darkMode}
+              language={language}
+              onBack={() => setActiveCategory("all_bones")}
+            />
+          </div>
+        </>
+      ) : activeCategory === "ao_ota" ? (
+        <>
+          {/* Desktop & iPad View */}
+          <div className="hidden md:flex flex-1 overflow-hidden h-full">
+            <AOOTAPage darkMode={darkMode} language={language} />
+          </div>
+          {/* Mobile View: Coming Soon placeholder */}
+          <div className="flex md:hidden flex-1 overflow-hidden h-full">
+            <MobileComingSoon
+              moduleName={language === "en" ? "AO/OTA Classification System" : "ระบบจำแนก AO/OTA"}
+              icon="📐"
+              darkMode={darkMode}
+              language={language}
+              onBack={() => setActiveCategory("all_bones")}
+            />
+          </div>
+        </>
+      ) : (
+        <div className="flex flex-1 overflow-hidden relative">
+          {/* Left sidebar - Hidden on mobile */}
+          <LeftSidebar
+            darkMode={darkMode}
+            language={language}
+            bones={bonesData}
+            selectedBone={selectedBone}
+            selectedRegionId={selectedRegionId}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            onSelectBone={handleSelectBone}
+            onBackToList={handleClose}
+            searchQuery={searchQuery}
+          />
+
+          {/* Center full-screen canvas */}
+          <SkeletonCanvas
+            darkMode={darkMode}
+            selectedBoneId={selectedBone?.id ?? null}
+            hoveredBoneId={hoveredBoneId}
+            onHoverBone={setHoveredBoneId}
+            onSelectBone={handleSelectBoneById}
+            hasDetailOpen={!!selectedBone}
+          />
+
+          {/* Mobile Backdrop overlay when panel is open */}
+          {selectedBone && (
+            <div 
+              onClick={handleClose} 
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 md:hidden transition-opacity duration-300"
+            />
+          )}
+
+          {/* Right detail panel (Bottom sheet on mobile / Sidebar on desktop) */}
+          <DetailPanel
+            darkMode={darkMode}
+            language={language}
+            bone={selectedBone}
+            bones={bonesData}
+            currentUser={currentUser}
+            onUpdateUser={handleLogin}
+            onOpenAuth={() => setShowAuthModal(true)}
+            onOpenQuiz={() => setShowQuizModal(true)}
+            onSelectBoneAndRegion={handleSelectBone}
+            selectedRegionId={selectedRegionId}
+            onSelectRegion={setSelectedRegionId}
+            selectedSystemIdx={selectedSystemIdx}
+            onSelectSystem={setSelectedSystemIdx}
+            selectedTypeIdx={selectedTypeIdx}
+            onSelectType={setSelectedTypeIdx}
+            onClose={handleClose}
+          />
+        </div>
+      )}
+
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
-      {!selectedBone && (
+      {!selectedBone && activeCategory === "all_bones" && (
         <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
           {/* Top Icon: Search Classification */}
           <button
@@ -641,7 +834,7 @@ function App() {
                           </div>
                         </div>
                       </div>
-                      <ChevronRight size={15} className="text-slate-400 group-hover:text-[#00CED1] flex-shrink-0" />
+                      <ChevronRight size={15} className="text-slate-400 group-hover:text-teal-700 dark:group-hover:text-[#00CED1] flex-shrink-0" />
                     </button>
                   );
                 })

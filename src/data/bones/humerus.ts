@@ -212,14 +212,46 @@ export const humerusBone: BoneData = {
                 "th": "ล้มเอามือยันพื้นในผู้สูงอายุ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Minimal displacement (<1 cm and <45° angulation, GT <5 mm); stable impacted bone fragments; conservative management with arm sling immobilization and early passive rehabilitation yields >90% excellent outcomes.",
+                  "th": "กระดูกไม่เคลื่อนหรือเคลื่อนน้อย (<1 ซม. และทำมุม <45°, ชิ้น GT <5 มม.) รอยหักมั่นคง รักษาแบบไม่ผ่าตัดด้วยสายคล้องแขน (Arm Sling) ร่วมกับการทำกายภาพขยับข้อไหล่ระยะแรกให้ผลการรักษาดีเยี่ยม >90%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT FOR 1-PART. Sling immobilization for 1-2 weeks, followed by early passive ROM exercises. Excellent outcomes (>90%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นหลัก ใส่สายคล้องแขน (Sling) 1-2 สัปดาห์ และเริ่มบริหารข้อไหล่แบบผู้ช่วยดึง (Passive ROM)"
+                  "indication": {
+                    "en": "• All Neer 1-part fractures (displacement < 1 cm, angulation < 45°, GT displacement < 5 mm)\n• Stable impacted surgical neck or tuberosity fractures",
+                    "th": "• กระดูกหัก Neer 1-part ทุกราย (เคลื่อน <1 ซม., เอียง <45°, ชิ้น GT เคลื่อน <5 มม.)\n• รอยหักแบบกดอัดแน่นที่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Arm sling or shoulder immobilizer for 1–2 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm Sling) หรืออุปกรณ์พยุงข้อไหล่ 1–2 สัปดาห์แรก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start gentle Codman pendulum exercises and passive forward flexion at 10–14 days; advance to active-assisted ROM at 4–6 weeks, strengthening at 8–10 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนเบาๆ (Codman pendulum) และช่วยยกแขน (Passive ROM) ที่ 10–14 วัน เพิ่มการขยับแขนเองที่ 4–6 สัปดาห์ และเริ่มฝึกเพิ่มกำลังกล้ามเนื้อที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prolonged shoulder immobilization >3 weeks causing severe adhesive capsulitis and shoulder stiffness",
+                    "th": "• การใส่สายคล้องแขนนานเกิน 3 สัปดาห์ จะทำให้ข้อไหล่ติดแข็งรุนแรง (Adhesive capsulitis / Frozen shoulder)"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely needed unless GT displacement >5mm causing subacromial impingement.",
-                  "th": "แทบไม่ต้องผ่าตัด ยกเว้นชิ้น GT เคลื่อน >5มม."
+                  "indication": {
+                    "en": "• Secondary displacement into 2-part or greater displacement during serial radiograph follow-up",
+                    "th": "• กระดูกเคลื่อนหลุดกลายเป็น 2-part จากการติดตามภาพเอกซเรย์"
+                  },
+                  "method": {
+                    "en": "• Closed or open reduction and internal fixation (PHILOS locking plate)",
+                    "th": "• ผ่าตัดจัดกระดูกและดามแผ่นเหล็กล็อค PHILOS Locking Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early passive ROM from week 2",
+                    "th": "• เริ่มทำ Passive ROM ตั้งแต่สัปดาห์ที่ 2"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtreating minimally displaced fractures with surgery",
+                    "th": "• การผ่าตัดเกินจำเป็นในกระดูกหักที่ไม่เคลื่อน"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_1part.png",
@@ -243,14 +275,46 @@ export const humerusBone: BoneData = {
                 "th": "ล้มกระแทกไหล่ หรือข้อไหล่หลุด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Greater tuberosity displaced >5 mm due to supraspinatus/infraspinatus tendon pull; causes subacromial impingement and loss of abduction; surgical fixation (suture anchor / screw / low-profile plate) is recommended.",
+                  "th": "ชิ้น GT ถูกแรงดึงกล้ามเนื้อดึงเคลื่อน >5 มม. เสี่ยงต่อการขัดชนใต้เบ้า (Impingement) และกางแขนไม่ได้ แนะนำผ่าตัดยึดตรึง (Suture Anchor / Screw / Plate)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Only indicated if GT displacement <5mm.",
-                  "th": "พิจารณาเฉพาะกรณี GT เคลื่อนตัวน้อยกว่า 5 มม."
+                  "indication": {
+                    "en": "• Truly non-displaced or minimally displaced GT fracture (< 3–5 mm displacement in sedentary patient)",
+                    "th": "• ชิ้น GT ไม่เคลื่อนหรือเคลื่อนน้อยมาก (< 3–5 มม. ในผู้ป่วยสูงอายุใช้งานน้อย)"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive forward flexion and external rotation at 2 weeks; avoid active abduction until 6 weeks",
+                    "th": "• เริ่มฝึกช่วยยกแขนและหมุนออกที่ 2 สัปดาห์ ห้ามกางแขนเองจนกว่าจะครบ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary retraction of GT under the acromion during muscle spasm",
+                    "th": "• ชิ้น GT อาจถูกดึงรั้งหลุดขึ้นไปใต้เบ้า Acromion ภายหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR DISPLACEMENT >5mm. Open reduction and internal fixation (ORIF) using heavy non-absorbable sutures, suture anchors, or cannulated screws to prevent impingement.",
-                  "th": "แนะนำผ่าตัดยึดกระดูก (ORIF) กรณีเคลื่อน >5 มม. ด้วย Suture Anchors หรือ Screw"
+                  "indication": {
+                    "en": "• GT displacement > 5 mm in active patients (> 3 mm in overhead athletes)\n• Associated shoulder dislocation with unreduced GT fragment",
+                    "th": "• ชิ้น GT เคลื่อนตัว > 5 มม. ในผู้ป่วยทั่วไป (> 3 มม. ในนักกีฬาที่ใช้แขนเหนือศีรษะ)\n• ข้อไหล่หลุดร่วมกับชิ้น GT ไม่เข้าที่หลังดึงข้อ"
+                  },
+                  "method": {
+                    "en": "• Open or arthroscopic reduction: Heavy non-absorbable transosseous sutures, suture anchor construct, cannulated 4.0 mm cancellous screws with washers, or low-profile GT hook/locking plate",
+                    "th": "• ผ่าตัดเปิดหรือส่องกล้องจัดกระดูก: เย็บผูกด้วยไหมเบอร์ใหญ่, ยึดด้วย Suture Anchors, สกรู Cannulated Screws 4.0 มม. พร้อมแหวนรอง หรือแผ่นเหล็ก Low-profile GT Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive forward elevation on post-op day 1; active abduction and rotator cuff strengthening initiated at 6 weeks",
+                    "th": "• ใส่สายคล้องแขน 4–6 สัปดาห์ เริ่มฝึกช่วยยกแขนตั้งแต่วันแรก และเริ่มกางแขนเองพร้อมฝึกเพิ่มกำลังกล้ามเนื้อที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Hardware impingement against acromion if plate or screw heads are prominent",
+                    "th": "• หัวสกรูหรือแผ่นเหล็กหนาเกินไปจนขัดชนใต้เบ้า Acromion"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_2part_gt.png",
@@ -274,14 +338,46 @@ export const humerusBone: BoneData = {
                 "th": "การล้มกระแทกปลายไหล่หรือยันมือ"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Surgical neck fracture displaced >1 cm or angulated >45°; head in neutral attached to tuberosities; stable anatomical reduction and locked plating (PHILOS) or intramedullary nail in active individuals; non-operative sling for low-demand/frail patients.",
+                  "th": "คอกระดูกหักเคลื่อน >1 ซม. หรือเอียง >45° โดยหัวกระดูกยังอยู่ตรงกลาง แนะนำผ่าตัดดามแผ่นเหล็กล็อค PHILOS หรือใส่แกนเหล็ก IM Nail ในผู้ป่วยวัยทำงาน หรือใส่สายคล้องแขนในผู้สูงอายุติดเตียง"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Considered in elderly patients with low demand or impacted fractures.",
-                  "th": "พิจารณาในผู้สูงอายุที่ใช้งานแขนน้อย หรือรอยหักแบบกดติดกันแน่น"
+                  "indication": {
+                    "en": "• Impacted valgus or varus fractures meeting acceptable alignment (<45° angulation, <1 cm displacement)\n• Medically frail, elderly, or low-demand non-ambulatory patients",
+                    "th": "• กระดูกหักแบบกดอัดแน่นที่มุมเอียงอยู่ในเกณฑ์ (<45°, เคลื่อน <1 ซม.)\n• ผู้ป่วยสูงอายุที่มีโรคร่วมรุนแรงหรือติดเตียง"
+                  },
+                  "method": {
+                    "en": "• Collar and cuff / arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm Sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle pendulum exercises starting at 2 weeks; progressive active-assisted ROM at 4–6 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนเบาๆ ที่ 2 สัปดาห์ เริ่มฝึกช่วยยกแขนที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Varus collapse and painful nonunion / malunion",
+                    "th": "• กระดูกทรุดเอียงเข้าด้านใน (Varus collapse) และกระดูกไม่ติด"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR ACTIVE PATIENTS. Closed or open reduction and internal fixation with PHILOS locking plate or intramedullary nail.",
-                  "th": "แนะนำผ่าตัดดามแผ่นเหล็กล็อค PHILOS Locking Plate หรือ Intramedullary Nail"
+                  "indication": {
+                    "en": "• Displaced surgical neck fracture (>1 cm displacement or >45° angulation)\n• Unstable translational displacement with pectoralis major medial deforming pull\n• Active functional patients",
+                    "th": "• คอกระดูกหักเคลื่อนตัว > 1 ซม. หรือทำมุม > 45 องศา\n• กระดูกเลื่อนหลุดไม่มั่นคงจากแรงดึงของกล้ามเนื้อ Pectoralis major\n• ผู้ป่วยที่มีการใช้งานแขนเป็นประจำ"
+                  },
+                  "method": {
+                    "en": "• Deltopectoral or anterolateral deltoid-splitting approach: Proximal humeral locking plate (PHILOS plate) with calcar screws for medial column support OR locked proximal humeral intramedullary nail",
+                    "th": "• ผ่าตัดเข้าทาง Deltopectoral หรือ Deltoid-splitting: ดามแผ่นเหล็กล็อค PHILOS Locking Plate พร้อมใส่ Calcar Screws ค้ำเสากระดูกด้านใน หรือใส่แกนดามในโพรงกระดูก Proximal Humeral IM Nail"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive forward flexion and pendulum exercises on post-op day 2; active-assisted ROM at 4 weeks; full active strengthening at 8–12 weeks",
+                    "th": "• เริ่มฝึกช่วยยกแขนและแกว่งแขนวันที่ 2 หลังผ่าตัด ฝึกช่วยขยับแขนที่ 4 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing medial calcar comminution leading to screw cut-out and secondary varus collapse",
+                    "th": "• หากไม่ใส่ Calcar screws ค้ำเสาด้านในที่แตกละเอียด จะทำให้สกรูทะลุหัวกระดูกและกระดูกทรุดเอียง Varus"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_2part_sn.png",
@@ -305,14 +401,46 @@ export const humerusBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกสูง หรือล้มรุนแรงในผู้ป่วยกระดูกพรุน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced surgical neck + displaced GT; subscapularis pulls head into internal rotation; moderate AVN risk (~15–30%); anatomical ORIF with locked plate and rotator cuff tuberosity suture cerclage in active patients; Reverse TSA in osteoporotic elderly.",
+                  "th": "คอกระดูกหักเคลื่อนร่วมกับชิ้น GT เคลื่อน หัวกระดูกหมุนบิดเข้าด้านใน เสี่ยง AVN 15–30% ผ่าตัด ORIF ดามแผ่นเหล็กล็อค PHILOS ร่วมกับเย็บผูกเอ็นรอบข้อไหล่ (Suture cerclage) ในผู้ป่วยวัยทำงาน หรือผ่าตัดเปลี่ยนข้อไหล่เทียม (Reverse TSA) ในผู้สูงอายุ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended in active patients.",
-                  "th": "ไม่แนะนำในผู้ป่วยทั่วไป"
+                  "indication": {
+                    "en": "• Strictly reserved for non-surgical elderly patients with prohibitive operative risks",
+                    "th": "• สงวนไว้เฉพาะผู้ป่วยสูงอายุที่มีข้อห้ามผ่าตัดขั้นรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Sling immobilization x 4 weeks",
+                    "th": "• ใส่สายคล้องแขน 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive pendulum exercises as tolerated",
+                    "th": "• ฝึกแกว่งแขนเบาๆ เท่าที่ทนได้"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe malunion, severe loss of external rotation and abduction",
+                    "th": "• กระดูกติดผิดรูปรุนแรงและสูญเสียการกางและหมุนแขนถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) with locking plate (PHILOS) and heavy tuberosity suture reconstruction. Hemiarthroplasty considered in elderly.",
-                  "th": "แนะนำผ่าตัด (ORIF) ยึดแผ่นเหล็กล็อค PHILOS ร่วมกับรัดเย็บเอ็นผูกกระดูก GT"
+                  "indication": {
+                    "en": "• All active patients with 3-part GT fractures\n• Failure of closed reduction or significant fragment retraction",
+                    "th": "• กระดูกหัก 3-part GT ในผู้ป่วยที่มีการใช้งานแขนทุกราย\n• ชิ้นกระดูกเคลื่อนตัวมากหรือดึงจัดไม่เข้าที่"
+                  },
+                  "method": {
+                    "en": "• ORIF via Deltopectoral approach: Proximal humeral locking plate (PHILOS) + heavy suture cerclage (Ethibond / FiberWire) through rotator cuff tendons to anchor the tuberosity to the plate\n• Reverse Total Shoulder Arthroplasty (RTSA) for elderly patients (>70 years) with poor bone stock",
+                    "th": "• ผ่าตัด ORIF ผ่าน Deltopectoral: ดามแผ่นเหล็กล็อค PHILOS + เย็บผูกเอ็น Rotator cuff ด้วยไหมเบอร์ใหญ่ (FiberWire) ยึดชิ้น Tuberosity เข้ากับแผ่นเหล็ก\n• ผ่าตัดเปลี่ยนข้อไหล่เทียม Reverse TSA ในผู้สูงอายุ (>70 ปี) ที่กระดูกพรุนรุนแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive forward flexion and ER at 2 weeks; active-assisted ROM at 6 weeks; active strengthening at 10–12 weeks",
+                    "th": "• เริ่มฝึกช่วยยกแขนและหมุนออกที่ 2 สัปดาห์ เริ่มฝึกช่วยขยับแขนที่ 6 สัปดาห์ และเพิ่มกำลังกล้ามเนื้อที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Tuberosity escape and nonunion if heavy tendon suture cerclage is omitted\n• Head devascularization during excessive surgical dissection",
+                    "th": "• ชิ้น Tuberosity เลื่อนหลุดหากไม่เย็บผูกเอ็นรอบข้อไหล่\n• หัวกระดูกขาดเลือดหากเลาะเนื้อเยื่อรอบคอกระดูกมากเกินไป"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_3part_gt.png",
@@ -336,14 +464,46 @@ export const humerusBone: BoneData = {
                 "th": "การชัก, ไฟฟ้าช็อต หรือข้อไหล่หลุดไปด้านหลังรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced surgical neck + displaced LT (rare; associated with posterior dislocation); intact posterior cuff rotates head externally; ORIF with locked plate and lesser tuberosity suture repair.",
+                  "th": "คอกระดูกหักเคลื่อนร่วมกับชิ้น LT หลุด (มักพบร่วมกับข้อไหล่หลุดไปด้านหลัง) หัวกระดูกหมุนบิดออกด้านนอก ผ่าตัด ORIF ดามแผ่นเหล็กล็อค PHILOS ร่วมกับเย็บซ่อมเอ็น Subscapularis/LT"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended.",
-                  "th": "ไม่แนะนำ"
+                  "indication": {
+                    "en": "• Non-ambulatory patients with extreme medical comorbidities",
+                    "th": "• ผู้ป่วยติดเตียงที่มีโรคร่วมรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Sling immobilization",
+                    "th": "• ใส่สายคล้องแขน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive motion",
+                    "th": "• ขยับแขนเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Loss of internal rotation and chronic anterior instability",
+                    "th": "• สูญเสียการหมุนแขนเข้าด้านในและข้อไหล่หลุดหลวมเรื้อรัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with locking plate and lesser tuberosity suture repair.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดแผ่นเหล็กล็อคและเย็บซ่อมเอ็น LT"
+                  "indication": {
+                    "en": "• All active patients with 3-part LT fractures\n• Associated locked posterior shoulder dislocation",
+                    "th": "• กระดูกหัก 3-part LT ในผู้ป่วยทั่วไปทุกราย\n• พบร่วมกับข้อไหล่หลุดล็อกไปด้านหลัง"
+                  },
+                  "method": {
+                    "en": "• Deltopectoral approach: Reduce posterior dislocation, reduce head, fix with locking plate (PHILOS) + transosseous suture repair of subscapularis/LT fragment",
+                    "th": "• ผ่าตัดเข้าทาง Deltopectoral: ดึงข้อไหล่ที่หลุดไปด้านหลังเข้าที่ จัดกระดูกและดามแผ่นเหล็กล็อค PHILOS + เย็บซ่อมชิ้น LT และเอ็น Subscapularis"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive external rotation restricted to neutral for 4 weeks to protect subscapularis repair, then progressive active ROM",
+                    "th": "• จำกัดการหมุนแขนออกด้านนอกไม่เกินแนวตรง 4 สัปดาห์แรกเพื่อป้องกันเอ็น Subscapularis ฉีกซ้ำ แล้วเริ่มฝึกขยับแขน"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtightening subscapularis tendon causing severe internal rotation contracture",
+                    "th": "• เย็บดึงเอ็น Subscapularis ตึงเกินไปจนหมุนแขนออกไม่ได้"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_3part_lt.png",
@@ -367,14 +527,46 @@ export const humerusBone: BoneData = {
                 "th": "อุบัติเหตุรุนแรงพลังงานสูง หรือล้มกระแทกรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "All 4 parts displaced; humeral head completely detached from vascular supply; high AVN rate (>80–90%); Reverse Total Shoulder Arthroplasty (RTSA) is gold standard in elderly (>65–70 y/o); joint-preserving ORIF with locking plate + bone graft reserved for young active patients.",
+                  "th": "กระดูกหักเคลื่อนแยก 4 ชิ้นสมบูรณ์ หัวกระดูกขาดเลือดเลี้ยง เสี่ยง AVN สูง >80–90% การผ่าตัดเปลี่ยนข้อไหล่เทียม Reverse TSA เป็นมาตรฐานหลักในผู้สูงอายุ (>65–70 ปี) ส่วนในผู้ป่วยอายุน้อยควรผ่าตัด ORIF ดามแผ่นเหล็กล็อค PHILOS ร่วมกับปลูกกระดูก Bone graft"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Reserved ONLY for non-ambulatory, medically fragile elderly patients.",
-                  "th": "พิจารณาเฉพาะในผู้สูงอายุที่ป่วยหนักและไม่สามารถเดินได้แล้ว"
+                  "indication": {
+                    "en": "• Non-ambulatory, bedbound, or medically prohibitive elderly patients",
+                    "th": "• ผู้ป่วยสูงอายุติดเตียง หรือมีโรคร่วมรุนแรงที่ไม่สามารถดมยาสลบได้"
+                  },
+                  "method": {
+                    "en": "• Arm sling for comfort only",
+                    "th": "• ใส่สายคล้องแขนเพื่อบรรเทาอาการปวดเท่านั้น"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive pain-free pendulum exercises",
+                    "th": "• ขยับแขนเบาๆ เท่าที่ไม่ปวด"
+                  },
+                  "pitfalls": {
+                    "en": "• Painful nonunion, avascular necrosis with head collapse, severe permanent functional disability",
+                    "th": "• หัวกระดูกขาดเลือดทรุดตัว กระดูกไม่ติด ปวดเรื้อรัง และสูญเสียการทำงานของแขนถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Reverse Total Shoulder Arthroplasty (RTSA) or Hemiarthroplasty in elderly; ORIF with locking plate + bone graft in young active patients.",
-                  "th": "แนะนำผ่าตัดเปลี่ยนข้อไหล่เทียม (Reverse TSA / Hemiarthroplasty) ในผู้สูงอายุ หรือ ORIF ในผู้ป่วยอายุน้อย"
+                  "indication": {
+                    "en": "• All functional patients with 4-part classic fractures",
+                    "th": "• กระดูกหัก 4-part classic ในผู้ป่วยที่ช่วยเหลือตัวเองได้ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Elderly / Osteoporotic (>65–70 yrs): Reverse Total Shoulder Arthroplasty (RTSA) with anatomical tuberosity repair\n• Young active (<60–65 yrs): Joint preservation ORIF with PHILOS locking plate, medial calcar support screws, and structural cancellous autograft/allograft packing",
+                    "th": "• ผู้สูงอายุ/กระดูกพรุน (>65–70 ปี): ผ่าตัดเปลี่ยนข้อไหล่เทียมแบบกลับด้าน (Reverse TSA) ร่วมกับเย็บตรึงชิ้น Tuberosity\n• ผู้ป่วยอายุน้อย (<60–65 ปี): ผ่าตัดรักษาหัวกระดูกเดิม (ORIF) ดามแผ่นเหล็กล็อค PHILOS ใส่ Calcar screws และปลูกกระดูก Bone graft เสริมใต้หัวกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• For RTSA: Early active-assisted forward elevation at 2 weeks; sling for 4–6 weeks\n• For ORIF: Protected passive ROM x 6 weeks; strict radiographic surveillance for AVN/collapse",
+                    "th": "• กรณี Reverse TSA: เริ่มฝึกช่วยยกแขนที่ 2 สัปดาห์ ใส่สายคล้องแขน 4–6 สัปดาห์\n• กรณี ORIF: ทำ Passive ROM อย่างระมัดระวัง 6 สัปดาห์แรก และติดตามภาพเอกซเรย์เฝ้าระวัง AVN"
+                  },
+                  "pitfalls": {
+                    "en": "• Performing hemiarthroplasty in elderly with tuberosity resorption leading to superior migration and pseudoparalysis (RTSA preferred)",
+                    "th": "• การผ่าตัดเปลี่ยนหัวกระดูกเทียม Hemiarthroplasty ในผู้สูงอายุ ชิ้น Tuberosity มักไม่ติดและละลาย ทำให้กางแขนไม่ได้ (แนะนำ Reverse TSA เป็นหลัก)"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_4part_classic.png",
@@ -398,14 +590,46 @@ export const humerusBone: BoneData = {
                 "th": "ล้มกระแทกขณะแขนเหยียดกดอัดหัวกระดูกเข้าหาลำกระดูก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Humeral head driven down in valgus into shaft; tuberosities splayed but posteromedial periosteum intact; lower AVN risk (~10–20%); joint-preserving ORIF with gentle head elevation, subchondral bone graft, and locking plate is the treatment of choice.",
+                  "th": "หัวกระดูกถูกกดอัดลงบนแกนกระดูกในแนว Valgus เยื่อหุ้มกระดูกด้านหลังยังไม่ขาด อัตรา AVN ต่ำกว่า (~10–20%) แนะนำผ่าตัด ORIF งัดยกหัวกระดูกขึ้น ปลูกกระดูก Bone graft และดามแผ่นเหล็กล็อค PHILOS"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "May be attempted in low-demand patients with minimal tuberosity displacement (<5mm).",
-                  "th": "อาจพิจารณาในผู้ป่วยใช้งานน้อยที่ชิ้น Tuberosity เคลื่อน <5มม."
+                  "indication": {
+                    "en": "• Low-demand elderly patients with minimally displaced tuberosities (<5 mm) and intact medial hinge",
+                    "th": "• ผู้สูงอายุใช้งานน้อยที่ชิ้น Tuberosity เคลื่อน <5 มม. และกระดูกค้ำด้านในยังต่อกันอยู่"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive passive ROM from week 2",
+                    "th": "• เริ่มฝึกช่วยขยับแขนตั้งแต่สัปดาห์ที่ 2"
+                  },
+                  "pitfalls": {
+                    "en": "• Loss of reduction into severe varus",
+                    "th": "• กระดูกเลื่อนหลุดทรุดตัวกลายเป็น Varus"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with gentle head elevation, bone grafting, and PHILOS locking plate.",
-                  "th": "แนะนำผ่าตัด ORIF งัดจัดหัวกระดูกขึ้น ใส่กระดูกปลูก และดามแผ่นเหล็กล็อค PHILOS"
+                  "indication": {
+                    "en": "• Displaced 4-part valgus impacted fractures in active patients\n• Tuberosity displacement > 5 mm",
+                    "th": "• กระดูกหัก 4-part valgus impacted ในผู้ป่วยวัยทำงาน\n• ชิ้น Tuberosity เคลื่อนตัว > 5 มม."
+                  },
+                  "method": {
+                    "en": "• Joint-preserving ORIF: Deltopectoral approach, gentle elevation of impacted articular head fragment with bone tamp, pack subchondral metaphyseal void with allograft/calcium phosphate, reduce tuberosities and fix with PHILOS locking plate + calcar screws + cuff suture cerclage",
+                    "th": "• ผ่าตัดเปิดเก็บรักษาหัวกระดูกเดิม (ORIF): ผ่าตัดเข้าทาง Deltopectoral งัดยกหัวกระดูกที่ยุบขึ้นมาอย่างนุ่มนวล ปลูกกระดูกทดแทนโพรงใต้หัวกระดูก (Bone graft) จัดชิ้น Tuberosity เข้าที่ และดามแผ่นเหล็กล็อค PHILOS พร้อม Calcar screws และเย็บผูกเอ็นรอบข้อไหล่"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive ROM at 2 weeks; active-assisted at 6 weeks; full active strengthening at 10–12 weeks",
+                    "th": "• ทำ Passive ROM ที่ 2 สัปดาห์ เริ่มฝึกช่วยขยับแขนที่ 6 สัปดาห์ และเพิ่มกำลังกล้ามเนื้อที่ 10–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-aggressive disimpaction tearing the intact posteromedial periosteal hinge and precipitating AVN",
+                    "th": "• การงัดยกหัวกระดูกรุนแรงเกินไปจนฉีกขาดเยื่อหุ้มกระดูกด้านหลังที่มีเส้นเลือดเลี้ยง จะทำให้หัวกระดูกขาดเลือดตาย (AVN)"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_4part_valgus.png",
@@ -429,14 +653,46 @@ export const humerusBone: BoneData = {
                 "th": "แรงบิดหมุนรุนแรง หรือข้อไหล่หุดไปด้านหลัง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Rare 4-part variant with displaced lesser tuberosity and posterior head subluxation; severe articular incongruity; anatomical ORIF or RTSA based on patient age and bone quality.",
+                  "th": "กระดูกหัก 4-part ชนิดพิเศษที่มีชิ้น LT หลุดและหัวกระดูกเคลื่อนไปด้านหลัง ผ่าตัด ORIF ในผู้ป่วยอายุน้อย หรือผ่าตัดเปลี่ยนข้อไหล่เทียม Reverse TSA ในผู้สูงอายุ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended.",
-                  "th": "ไม่แนะนำ"
+                  "indication": {
+                    "en": "• Strictly non-operative in non-surgical candidates",
+                    "th": "• ผู้ป่วยที่มีข้อห้ามผ่าตัดรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Sling",
+                    "th": "• ใส่สายคล้องแขน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive ROM",
+                    "th": "• ขยับแขนเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Chronic locked dislocation",
+                    "th": "• ข้อไหล่ล็อกหลุดค้างไปด้านหลังเรื้อรัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Surgical reconstruction or Reverse Total Shoulder Arthroplasty.",
-                  "th": "แนะนำผ่าตัด ORIF หรือผ่าตัดเปลี่ยนข้อไหล่เทียม (Reverse TSA)"
+                  "indication": {
+                    "en": "• All functional patients with 4-part LT variant fractures",
+                    "th": "• กระดูกหัก 4-part LT variant ในผู้ป่วยทั่วไปทุกราย"
+                  },
+                  "method": {
+                    "en": "• ORIF with locking plate and subscapularis reconstruction in young patients; Reverse Total Shoulder Arthroplasty (RTSA) in elderly",
+                    "th": "• ผ่าตัด ORIF ดามแผ่นเหล็กล็อคและเย็บซ่อมเอ็น Subscapularis ในผู้ป่วยอายุน้อย หรือผ่าตัดเปลี่ยนข้อไหล่เทียม Reverse TSA ในผู้สูงอายุ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected passive ROM x 4–6 weeks, progressive strengthening",
+                    "th": "• ทำ Passive ROM อย่างระมัดระวัง 4–6 สัปดาห์แรก แล้วค่อยเริ่มฝึกเพิ่มกำลัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Undetected posterior glenohumeral subluxation",
+                    "th": "• ตรวจไม่พบข้อไหล่ที่ยังคงหลุดไปด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/neer_humerus/neer_4part_lt.png",
@@ -563,6 +819,30 @@ export const humerusBone: BoneData = {
             "en": "Functional bracing (Sarmiento brace) relies on hydrostat pressure of arm musculature and gravity; patient must remain upright during initial healing.",
             "th": "การรักษาด้วย Sarmiento brace อาศัยแรงดันน้ำในกล้ามเนื้อและแรงโน้มถ่วง ผู้ป่วยต้องนั่งหรือยืนตัวตรงในช่วงแรกของการรักษา"
           }
+        ],
+        "images": [
+          {
+            "url": "/images/xrays/humerus/middle_13_xray.jpg",
+            "title": {
+              "en": "Midshaft Diaphyseal Radiograph",
+              "th": "ฟิล์มเอกซเรย์ลำกระดูกต้นแขนส่วนกลาง"
+            },
+            "caption": {
+              "en": "Full-length AP view demonstrating displaced transverse-oblique fracture with varus shortening and intact joint visualization.",
+              "th": "ภาพเอกซเรย์ AP เต็มความยาวกระดูกต้นแขน แสดงรอยหักกลางก้านกระดูกร่วมกับมุมเอียง Varus และหดสั้น"
+            }
+          },
+          {
+            "url": "/images/xrays/humerus/holstein_lewis_xray.jpg",
+            "title": {
+              "en": "Holstein-Lewis Distal Spiral Pattern",
+              "th": "รอยหักเกลียว Holstein-Lewis ส่วนปลาย 1/3"
+            },
+            "caption": {
+              "en": "Spiral fracture of distal third diaphysis with radial spike into lateral intermuscular septum (up to 22% radial nerve entrapment).",
+              "th": "รอยหักบิดเกลียวส่วนปลาย 1/3 ที่มีปลายกระดูกแหลมเฉียงออกด้านข้างเสี่ยงหนีบเส้นประสาทเรเดียลสูงถึง 22%"
+            }
+          }
         ]
       },
       "classifications": [
@@ -644,17 +924,50 @@ export const humerusBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่ต้นแขนส่วนบน หรือล้มเอาหัตถ์ยันพื้น (FOOSH)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Upper third shaft fracture below surgical neck; deforming forces from pectoralis major (adduction/internal rotation) and deltoid (abduction); non-operative coaptation splint to functional Sarmiento brace achieves >90% union; ORIF for polytrauma or unacceptable alignment.",
+                  "th": "กระดูกแกนต้นแขน 1/3 ส่วนบนหักใต้ต่อ Surgical neck มีแรงดึงจากกล้ามเนื้อ Pectoralis major และ Deltoid รักษาแบบไม่ผ่าตัดด้วย Coaptation splint แล้วเปลี่ยนเป็น Sarmiento brace กระดูกติดดี >90% ผ่าตัดเมื่อมุมผิดรูปเกินเกณฑ์หรือมีภาวะบาดเจ็บหลายระบบ"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED INITIAL TREATMENT. Coaptation splint initially, converted to a functional Sarmiento brace at 1-2 weeks. High healing rate (>90%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นอันดับแรก ใส่ Coaptation splint ชั่วคราว แล้วเปลี่ยนเป็น Sarmiento Functional Brace ที่ 1-2 สัปดาห์ อัตรากระดูกติดสูง >90%"
+                  "indication": {
+                    "en": "• Closed proximal 1/3 humeral shaft fracture meeting acceptable alignment criteria (<20° AP angulation, <15° varus/valgus, <2–3 cm shortening, <30° rotation)\n• Intact soft tissue envelope in upright/compliant patient",
+                    "th": "• กระดูกหักแบบปิดบริเวณ 1/3 ส่วนต้นที่มุมเอียงอยู่ในเกณฑ์ (<20° หน้าหลัง, <15° ซ้ายขวา, สั้น <2–3 ซม., บิดหมุน <30°)\n• เนื้อเยื่อรอบกระดูกปกติและผู้ป่วยสามารถนั่ง/เดินตัวตรงได้"
+                  },
+                  "method": {
+                    "en": "• Coaptation splint or U-slab for 1–2 weeks; transition to Sarmiento functional brace once acute swelling subsides",
+                    "th": "• ใส่เฝือก Coaptation Splint หรือ U-slab 1–2 สัปดาห์แรก แล้วเปลี่ยนเป็น Sarmiento Functional Brace เมื่อยุบบวม"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early pendulum and active elbow/wrist/hand ROM immediately; active shoulder elevation at 4–6 weeks as callus bridges",
+                    "th": "• เริ่มฝึกแกว่งแขนและขยับข้อศอก/ข้อมือ/นิ้วมือทันที เริ่มยกแขนเองที่ 4–6 สัปดาห์เมื่อเริ่มมีกระดูกงอก"
+                  },
+                  "pitfalls": {
+                    "en": "• Patient lying supine eliminates gravity reduction force; patient must sit upright or sleep on recliners in first 2–4 weeks",
+                    "th": "• การนอนราบจะทำให้สูญเสียแรงโน้มถ่วงที่ช่วยดึงจัดแนวกระดูก ผู้ป่วยต้องนั่งตัวตรงหรือนอนกึ่งนั่งกึ่งนอนใน 2–4 สัปดาห์แรก"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if unacceptable alignment (AP >20°, Varus/Valgus >15°, shortening >3cm), open fracture, or polytrauma. ORIF with locking plate or intramedullary nail.",
-                  "th": "พิจารณาผ่าตัดหากมุมผิดรูปเกินเกณฑ์ยอมรับ แผลเปิด หรือผู้ป่วยบาดเจ็บหลายระบบ (Polytrauma) ดามแผ่นเหล็กล็อคหรือใส่ตะมอยดามกระดูก (IM Nail)"
+                  "indication": {
+                    "en": "• Unacceptable deformity exceeding Sarmiento alignment parameters\n• Polytrauma, bilateral arm fractures, or open fracture\n• Associated neurovascular injury",
+                    "th": "• กระดูกผิดรูปเกินเกณฑ์ยอมรับของ Sarmiento\n• ผู้ป่วยบาดเจ็บหลายระบบ, แขนหักสองข้าง หรือกระดูกหักแผลเปิด\n• มีการบาดเจ็บของหลอดเลือดหรือเส้นประสาท"
+                  },
+                  "method": {
+                    "en": "• Open reduction and internal fixation with broad 4.5 mm dynamic compression plate / locking plate (minimum 6–8 cortices proximal and distal) OR antegrade locked intramedullary nail",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกและดามแผ่นเหล็ก Broad 4.5 mm Compression / Locking Plate (ยึดสกรูอย่างน้อย 6–8 Cortices บนและล่าง) หรือใส่แกนดามในโพรงกระดูก Antegrade IM Nail"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active-assisted shoulder and elbow ROM on post-op day 1–2",
+                    "th": "• เริ่มฝึกช่วยขยับข้อไหล่และข้อศอกได้ทันทีในวันที่ 1–2 หลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Proximal screw purchase failure in soft osteoporotic metaphyseal bone; rotator cuff damage with antegrade IM nail insertion",
+                    "th": "• สกรูส่วนบนยึดเกาะกระดูกพรุนได้ไม่แน่น หรือเอ็น Rotator cuff บาดเจ็บจากการสอดแกน IM Nail"
+                  }
                 }
               },
               "illustrationId": "/images/humerus_shaft/proximal_13.png",
+              "xrayUrl": "/images/xrays/humerus/proximal_13_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse/oblique fracture in proximal shaft with pectoralis major muscle pull displacement.",
                 "th": "รอยหักแนวขวาง/เฉียงบริเวณ 1/3 ส่วนต้น พร้อมชิ้นกระดูกเคลื่อนตามทิศทางดึงของกล้ามเนื้อ Pectoralis Major"
@@ -675,17 +988,50 @@ export const humerusBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้ากลางต้นแขน (อุบัติเหตุรถยนต์) หรือแรงบิดหมุน (การงัดข้อ)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Most common shaft fracture (~60%); excellent soft tissue envelope; functional Sarmiento bracing with gravity-assisted alignment achieves >95% union; locked compression plating is gold standard for operative indications.",
+                  "th": "ตำแหน่งหักที่พบบ่อยที่สุด (~60%) มีกล้ามเนื้อหุ้มหนาแน่น การรักษาด้วย Sarmiento Brace อาศัยแรงโน้มถ่วงช่วยจัดแนวให้กระดูกติดสูง >95% ผ่าตัดดามแผ่นเหล็ก 4.5 mm LC-DCP เมื่อมีข้อบ่งชี้ผ่าตัด"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Functional Sarmiento bracing with gravity-assisted reduction. Pendulum exercises initiated early. Excellent union rate (>95%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใช้เฝือกพลาสติก Sarmiento Brace อาศัยแรงโน้มถ่วงช่วยจัดแนว เริ่มฝึกแกว่งแขน (Pendulum) ได้เร็ว อัตรากระดูกติดสูงถึง 95%"
+                  "indication": {
+                    "en": "• Closed, isolated middle 1/3 humeral shaft fracture within acceptable alignment parameters\n• Primary closed radial nerve neuropraxia (90% spontaneous recovery)",
+                    "th": "• กระดูกต้นแขนส่วนกลางหักแบบปิดที่มุมเอียงอยู่ในเกณฑ์\n• มีภาวะ Radial nerve palsy แบบปิดร่วมด้วยแต่แรก (90% หายได้เอง)"
+                  },
+                  "method": {
+                    "en": "• Coaptation U-splint for 7–10 days -> Sarmiento prefabricated functional brace tightened daily",
+                    "th": "• ใส่เฝือก Coaptation U-splint 7–10 วันแรก แล้วเปลี่ยนเป็น Sarmiento Functional Brace ดึงสายรัดให้กระชับทุกวัน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active elbow flexion/extension, wrist/hand ROM, and Codman pendulum exercises on day 1–2 in brace; avoid active abduction until clinical union (6–8 weeks)",
+                    "th": "• เริ่มงอเหยียดข้อศอก ขยับข้อมือ และแกว่งแขนเบาๆ ตั้งแต่วันที่ 1–2 ในเฝือก หลีกเลี่ยงการกางแขนเองจนกว่ากระดูกจะเริ่มติด (6–8 สัปดาห์)"
+                  },
+                  "pitfalls": {
+                    "en": "• Loosening of Sarmiento brace as arm swelling subsides leads to angular collapse; patients must adjust straps daily",
+                    "th": "• ปล่อยให้เฝือก Sarmiento หลวมเมื่อยุบบวมจะทำให้กระดูกคดผิดรูป ผู้ป่วยต้องดึงสายรัดปรับให้แน่นทุกวัน"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for floating elbow, open fracture, vascular injury, or nonunion. ORIF with 4.5mm narrow LC-DCP / compression plate.",
-                  "th": "ผ่าตัดเฉพาะกรณี Floating elbow, แผลเปิด, เส้นเลือดบาดเจ็บ หรือกระดูกไม่ติด ดามด้วยแผ่นเหล็ก 4.5mm LC-DCP"
+                  "indication": {
+                    "en": "• Floating elbow (ipsilateral forearm fracture)\n• Open fracture or failed conservative alignment\n• Radial nerve palsy developing AFTER closed reduction (secondary palsy / nerve entrapment)\n• Polytrauma requiring early weight-bearing through arms",
+                    "th": "• แขนหักร่วมสองระดับ Floating Elbow\n• กระดูกหักแผลเปิด หรือมุมกระดูกผิดรูปเกินเกณฑ์ยอมรับ\n• เกิด Radial nerve palsy ขึ้นใหม่หลังดึงจัดกระดูก (Secondary palsy จากเส้นประสาทถูกหนีบ)\n• ผู้ป่วยบาดเจ็บหลายระบบที่ต้องใช้แขนยันตัว"
+                  },
+                  "method": {
+                    "en": "• Anatomical ORIF: Anterolateral or posterior approach; Broad 4.5 mm narrow/broad LC-DCP or locking compression plate with minimum 3–4 bicortical screws (6–8 cortices) on each side of fracture",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกและดามแผ่นเหล็ก (ORIF): ผ่าน Anterolateral หรือ Posterior approach ดามแผ่นเหล็ก 4.5 mm LC-DCP / Locking Plate โดยขันสกรูทะลุสองผนังกระดูกอย่างน้อยข้างละ 3–4 ตัว (6–8 Cortices)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate unrestricted active elbow and shoulder ROM from post-op day 1",
+                    "th": "• เริ่มฝึกขยับข้อไหล่และข้อศอกได้เต็มที่ตั้งแต่วันแรกหลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate fixation length (short plates with <6 cortices) leading to plate fatigue failure and nonunion",
+                    "th": "• ใช้แผ่นเหล็กสั้นเกินไป (ยึดสกรูไม่ถึง 6 Cortices) ทำให้เหล็กหักล้าและกระดูกไม่ติด"
+                  }
                 }
               },
               "illustrationId": "/images/humerus_shaft/middle_13.png",
+              "xrayUrl": "/images/xrays/humerus/middle_13_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse, spiral, or butterfly fragment in middle third shaft with varus/valgus or sagittal angulation.",
                 "th": "เห็นรอยหักแนวขวาง เกลียว หรือมีชิ้นผีเสื้อ (Butterfly) บริเวณกลางแกนต้นแขน"
@@ -706,17 +1052,50 @@ export const humerusBone: BoneData = {
                 "th": "แรงบิดหมุนหรือแรงดัดโค้งบริเวณต้นแขนส่วนปลาย (การล้มบิดตัว หรืออุบัติเหตุ)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal 1/3 spiral fracture with high risk of radial nerve entrapment (~22%) at the lateral intermuscular septum; closed fracture with primary palsy can be observed conservatively for 3–4 months with cock-up splint; mandatory surgical exploration and ORIF if secondary palsy occurs after reduction or in open fractures.",
+                  "th": "กระดูกหักเกลียว 1/3 ส่วนปลายเสี่ยงต่อ Radial nerve ถูกหนีบที่ Lateral intermuscular septum สูง (~22%) หากเป็นแผลปิดที่มีอาการชา/ข้อมือตกแต่แรก สามารถรักษาแบบไม่ผ่าตัดเฝ้าระวัง 3–4 เดือนร่วมกับใส่ Cock-up splint (90% หายเอง) แต่หากเกิดอัมพาตขึ้นใหม่หลังดึงจัดกระดูกหรือเป็นแผลเปิด ต้องผ่าตัดเปิดสำรวจเส้นประสาทและดามแผ่นเหล็กทันที"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "INDICATED FOR CLOSED FRACTURE WITH INTACT NERVE OR CLOSED PALSY. Sarmiento bracing + Cock-up wrist splint. Observe radial nerve recovery for 3-4 months (90% spontaneous resolution).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นอันดับแรกสำหรับ Closed fracture แม้มี Radial Nerve Palsy ร่วมด้วย ใส่ Sarmiento Brace + Cock-up splint เฝ้าระวัง 3-4 เดือน (90% หายเอง)"
+                  "indication": {
+                    "en": "• Closed Holstein-Lewis fracture with intact radial nerve OR closed primary radial nerve palsy (90% spontaneous recovery in 3–4 months)\n• Fracture alignment within acceptable parameters in Sarmiento brace",
+                    "th": "• กระดูกหักแบบปิด Holstein-Lewis ที่เส้นประสาทปกติ หรือเป็น Radial nerve palsy แบบปิดแต่แรก (90% หายเองใน 3–4 เดือน)\n• มุมกระดูกอยู่ในเกณฑ์ยอมรับได้"
+                  },
+                  "method": {
+                    "en": "• Sarmiento functional brace + dynamic or static cock-up wrist splint to prevent wrist drop flexion contracture",
+                    "th": "• ใส่เฝือก Sarmiento Functional Brace + ใส่เฝือกดามข้อมือ Cock-up Splint ป้องกันข้อมือตกติดแข็ง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active finger and thumb extension exercises; occupational therapy with dynamic splinting; EMG/NCS monitoring at 3–4 months if no reinnervation",
+                    "th": "• ฝึกกระดกนิ้วมือและนิ้วโป้ง กายภาพบำบัดด้วย Dynamic splint ตรวจคลื่นไฟฟ้ากล้ามเนื้อ (EMG/NCV) ที่ 3–4 เดือนหากยังไม่ฟื้นตัว"
+                  },
+                  "pitfalls": {
+                    "en": "• Attempting repeated aggressive closed reduction maneuvers which can trap or transect the radial nerve between sharp spiral bone spikes",
+                    "th": "• การพยายามดึงดัดกระดูกรุนแรงซ้ำๆ อาจทำให้เส้นประสาท Radial ถูกหนีบหรือถูกคมกระดูกตัดขาด"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED IF OPEN FRACTURE, SECONDARY PALSY AFTER REDUCTION, OR UNREDUCIBLE. Surgical exploration of radial nerve and ORIF with distal anatomical locking plate.",
-                  "th": "แนะนำผ่าตัดเปิดสำรวจเส้นประสาท (Nerve Exploration) และดามแผ่นเหล็ก (ORIF) กรณี: แผลหักเปิด (Open fracture), เส้นประสาทเป็นอัมพาตหลังดึงจัดกระดูก (Secondary palsy) หรือไม่สามารถดึงกระดูกเข้าเกณฑ์ได้"
+                  "indication": {
+                    "en": "• Secondary radial nerve palsy developing AFTER closed reduction or splint application (indicates nerve entrapment in fracture gap)\n• Open Holstein-Lewis fracture\n• Unacceptable reduction in brace or soft tissue interposition preventing reduction",
+                    "th": "• ภาวะ Radial nerve palsy เกิดขึ้นใหม่หลังการดึงจัดกระดูกหรือใส่เฝือก (แสดงว่าเส้นประสาทถูกหนีบในรอยหัก)\n• กระดูกหักแผลเปิด (Open fracture)\n• มุมกระดูกผิดรูปเกินเกณฑ์หรือไม่สามารถจัดกระดูกเข้าที่ได้"
+                  },
+                  "method": {
+                    "en": "• Posterior or anterolateral approach: Direct radial nerve exploration and neurolysis from spiral groove through lateral intermuscular septum + ORIF with pre-contoured distal humerus extra-articular locking plate",
+                    "th": "• ผ่าตัดเปิดสำรวจเส้นประสาท Radial (Nerve Exploration & Neurolysis) ผ่านทาง Posterior หรือ Anterolateral approach เลาะเส้นประสาทออกจากรอยหัก + ผ่าตัดดามแผ่นเหล็ก Distal Humerus Extra-articular Locking Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active elbow/wrist motion; cock-up splint until radial nerve motor recovery (Brachioradialis -> ECRL -> EDC/EPL)",
+                    "th": "• เริ่มขยับข้อศอกและข้อมือทันที ใส่ Cock-up splint พยุงไว้จนกว่ากล้ามเนื้อที่เลี้ยงโดย Radial nerve จะฟื้นตัวตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Iatrogenic radial nerve transection during posterior or lateral plating if nerve is not formally identified and mobilized",
+                    "th": "• ตัดโดนเส้นประสาท Radial ขาดขณะวางแผ่นเหล็กดามกระดูก หากไม่หาและเลาะแยกเส้นประสาทออกมาก่อน"
+                  }
                 }
               },
               "illustrationId": "/images/humerus_shaft/holstein_lewis.png",
+              "xrayUrl": "/images/xrays/humerus/holstein_lewis_xray.jpg",
               "xrayDescription": {
                 "en": "Spiral/oblique fracture line in distal 1/3 shaft extending proximally and laterally into the spiral groove region.",
                 "th": "รอยหักบิดเกลียวบริเวณ 1/3 ส่วนปลายของต้นแขน พาดเฉียงขึ้นด้านบนฝั่ง Radial เข้าหาตำแหน่ง Spiral groove"
@@ -820,48 +1199,48 @@ export const humerusBone: BoneData = {
         {
           "system": "AO/OTA 13",
           "fullName": {
-            "en": "AO/OTA Classification for Distal Humerus Fractures (13-A, 13-B, 13-C)",
-            "th": "ระบบจำแนกการหักของกระดูกต้นแขนส่วนปลาย AO/OTA (13-A, 13-B, 13-C)"
+            "en": "AO/OTA Distal Humerus Fracture Classification (Type A, B, C)",
+            "th": "การจำแนกกระดูกต้นแขนส่วนปลายหัก AO/OTA (Type A, B, C)"
           },
           "description": {
-            "en": "Comprehensive classification system for distal humerus fractures based on articular involvement:\n• Type 13-A: Extra-articular fractures (Spares the joint surface)\n• Type 13-B: Partial articular fractures (Part of articular surface remains attached to shaft)\n• Type 13-C: Complete articular fractures (Joint surface completely separated from shaft)",
-            "th": "ระบบจำแนกมาตรฐานหลัก AO/OTA สำหรับการหักของกระดูกต้นแขนส่วนปลาย แบ่งตามการพาดผ่านข้อต่อข้อศอก:\n• Type 13-A: Extra-articular (หักนอกข้อต่อ)\n• Type 13-B: Partial articular (หักเข้าข้อต่อบางส่วน)\n• Type 13-C: Complete articular (หักเข้าข้อต่อสมบูรณ์ ชิ้นข้อต่อหลุดแยกจากแกนกระดูกทั้งหมด)"
+            "en": "Classification of distal humerus fractures based on joint surface involvement:\n• Type A: Extra-articular (Spares the joint surface completely)\n• Type B: Partial articular (Part of joint remains attached to shaft)\n• Type C: Complete articular (Joint block completely disconnected from shaft)",
+            "th": "ระบบจำแนกกระดูกต้นแขนส่วนปลายหักตามการพาดผ่านข้อต่อข้อศอก:\n• Type A: Extra-articular (หักนอกข้อต่อทั้งหมด)\n• Type B: Partial articular (หักเข้าข้อต่อบางส่วน)\n• Type C: Complete articular (หักเข้าข้อต่อสมบูรณ์ ผิวข้อหลุดแยกจากแกนกระดูกทั้งหมด)"
           },
           "concept": {
             "title": {
               "en": "AO/OTA 13 Distal Humerus Clinical Concept",
-              "th": "หลักการคิดและเกณฑ์ตัดสินใจ AO/OTA 13 Distal Humerus"
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Distal Humerus AO/OTA"
             },
             "corePrinciple": {
-              "en": "Classifies distal humerus fractures based on articular involvement (13-A extra-articular, 13-B partial articular, 13-C complete articular). Restoration of articular congruity (< 1-2 mm step-off) and rigid dual-column stability are essential for early joint mobilization.",
-              "th": "จำแนกกระดูกต้นแขนส่วนปลายหักตามการพาดผ่านข้อต่อ (13-A เหนือข้อ, 13-B เข้าข้อบางส่วน, 13-C เข้าข้อสมบูรณ์) หัวใจหลักคือการจัดเรียงผิวข้อให้เรียบเสมอ (< 1-2 มม.) และการยึดตรึงเสากระดูกคู่ (Dual column) ให้แข็งแรงเพื่อเริ่มบริหารข้อศอกได้ทันที"
+              "en": "Classifies distal humerus fractures into 3 groups based on articular involvement (Type A Extra-articular, Type B Partial articular, Type C Complete articular). Anatomical articular restoration (< 1-2 mm step-off) and rigid dual-column stability are essential to allow immediate post-operative active elbow range of motion.",
+              "th": "จำแนกกระดูกต้นแขนส่วนปลายหักเป็น 3 กลุ่มตามการพาดผ่านข้อต่อ (Type A เหนือนอกข้อ, Type B เข้าข้อบางส่วน, Type C เข้าข้อสมบูรณ์) หัวใจสำคัญคือการจัดผิวข้อให้เรียบเสมอ (< 1-2 มม.) และการยึดตรึงเสากระดูกคู่ (Dual-Column Plating) ให้แข็งแรงพอที่จะเริ่มบริหารข้อศอกได้ทันทีหลังผ่าตัด"
             },
             "rules": [
               {
-                "en": "13-A (Extra-articular): Fracture line spares the articular surface of distal humerus.",
-                "th": "13-A (Extra-articular): รอยหักอยู่นอกข้อต่อ ผิวข้อศอกสมบูรณ์ไม่เสียหาย"
+                "en": "Type A (Extra-articular): Fracture line spares the trochlea and capitellum completely -> Stable articular dome -> Dual locking plate ORIF for displaced",
+                "th": "Type A (Extra-articular): รอยหักอยู่นอกข้อต่อ ผิวข้อ Trochlea และ Capitellum สมบูรณ์ -> ผ่าตัด ORIF ยึดแผ่นเหล็กล็อคคู่ในชนิดหักเคลื่อน"
               },
               {
-                "en": "13-B (Partial Articular): Part of the articular surface remains attached to the humeral shaft (B1 lateral condyle, B2 medial condyle, B3 coronal shear / capitellum).",
-                "th": "13-B (Partial Articular): รอยหักเข้าข้อบางส่วน โดยชิ้นผิวข้อบางส่วนยังคงเชื่อมต่อกับแกนกระดูกต้นแขน (B1 ปุ่มนอก, B2 ปุ่มใน, B3 รอยหักเฉือนแนว Coronal)"
+                "en": "Type B (Partial Articular): Part of articular surface remains attached to humeral shaft (B1 lateral condyle, B2 medial condyle, B3 coronal shear) -> Anatomical lag screws / headless screws",
+                "th": "Type B (Partial Articular): รอยหักเข้าข้อบางส่วน โดยมีเสากระดูกข้างหนึ่งเชื่อมต่อกับแกนกระดูก (B1 ปุ่มนอก, B2 ปุ่มใน, B3 รอยหักเฉือน Coronal) -> ยึดด้วย Lag screws หรือ Headless screws"
               },
               {
-                "en": "13-C (Complete Articular): Articular surface is completely separated from the humeral shaft (C1 simple articular & metaphyseal, C2 simple articular comminuted metaphyseal, C3 comminuted articular).",
-                "th": "13-C (Complete Articular): ผิวข้อหลุดแยกจากแกนกระดูกต้นแขนสมบูรณ์ (C1 เข้าข้อเรียบ, C2 Metaphysis แตกละเอียด, C3 เข้าข้อแตกละเอียด)"
+                "en": "Type C (Complete Articular): Articular block is completely detached and dissociated from humeral shaft -> Mandatory trans-olecranon osteotomy + dual parallel locking plates",
+                "th": "Type C (Complete Articular): ชิ้นผิวข้อทั้งหมดหลุดแยกขาดจากแกนกระดูกต้นแขน -> ผ่าตัดเปิดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating)"
               }
             ],
             "clinicalSignificance": [
               {
-                "en": "13-A (Extra-articular): Operative indication for displaced fractures using dual locking plates (parallel or orthogonal 90-90 architecture). Conservative long arm splint for non-displaced.",
-                "th": "13-A: ผ่าตัด ORIF ยึดแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ในชนิดเคลื่อนตัว; ใส่เฝือกอ่อนแขนยาวในชนิดไม่เคลื่อนตัว"
+                "en": "Type A (Extra-articular): Operative indication for displaced fractures using dual locking plates (parallel or orthogonal 90-90 architecture). Conservative long arm splint for true non-displaced.",
+                "th": "Type A: ผ่าตัด ORIF ยึดแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ในชนิดเคลื่อนตัว; ใส่เฝือกอ่อนแขนยาวเฉพาะในชนิดไม่เคลื่อนตัว"
               },
               {
-                "en": "13-B (Partial Articular): ORIF with headless compression screws (Herbert screws) for B3 coronal shear or condylar plates for B1/B2. Articular step-off must be < 1-2 mm.",
-                "th": "13-B: ผ่าตัด ORIF จัดผิวข้อให้เรียบเสมอ (< 1-2 มม.) ยึดด้วย Headless compression screw สำหรับ B3 coronal shear หรือ Condylar plate สำหรับ B1/B2"
+                "en": "Type B (Partial Articular): ORIF with headless compression screws (Herbert screws) for B3 coronal shear or condylar plates for B1/B2. Articular step-off must be < 1-2 mm.",
+                "th": "Type B: ผ่าตัด ORIF จัดผิวข้อให้เรียบเสมอ (< 1-2 มม.) ยึดด้วย Headless compression screw สำหรับ B3 coronal shear หรือ Condylar plate สำหรับ B1/B2"
               },
               {
-                "en": "13-C (Complete Articular): Trans-olecranon osteotomy approach + dual anatomical parallel locking plates to allow immediate active ROM. In elderly low-demand patients with severe C3 comminution -> Total Elbow Arthroplasty (TEA).",
-                "th": "13-C: ผ่าตัดเปิดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating) เพื่อยึดแน่นที่สุดให้ทำ ROM ได้ทันทีหลังผ่าตัด ในผู้สูงอายุที่แตกละเอียด C3 พิจารณาทำ Total Elbow Arthroplasty (TEA)"
+                "en": "Type C (Complete Articular): Trans-olecranon osteotomy approach + dual anatomical parallel locking plates to allow immediate active ROM. In elderly low-demand patients with severe C3 comminution -> Total Elbow Arthroplasty (TEA).",
+                "th": "Type C: ผ่าตัดเปิดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating) เพื่อยึดแน่นที่สุดให้ทำ ROM ได้ทันทีหลังผ่าตัด ในผู้สูงอายุที่แตกละเอียด C3 พิจารณาทำ Total Elbow Arthroplasty (TEA)"
               }
             ]
           },
@@ -869,119 +1248,215 @@ export const humerusBone: BoneData = {
             {
               "name": "AP Elbow View",
               "details": {
-                "en": "Standard Anteroposterior view of the elbow in full extension to evaluate distal humerus alignment, condylar columns, and articular displacement.",
-                "th": "ภาพเอกซเรย์ข้อศอกท่าหน้าหลัง (AP) เหยียดศอกเต็มที่ ประเมินแนวเสากระดูก Condyle และการเคลื่อนในข้อ"
+                "en": "Standard Anteroposterior view of the elbow in full extension to evaluate distal humerus alignment, medial/lateral condylar columns, and articular step-off.",
+                "th": "ภาพเอกซเรย์ข้อศอกท่าหน้าหลัง (AP) เหยียดศอกเต็มที่ ประเมินแนวเสากระดูก Condyle ด้านในและนอก และการเลื่อนของผิวข้อ"
               },
               "imageUrl": "/images/investigations/forearm/ap_elbow_view.jpg"
             },
             {
               "name": "Lateral Elbow View",
               "details": {
-                "en": "Standard 90-degree flexed lateral view to assess anterior/posterior condylar displacement, anterior humeral line, and tear-drop angle.",
-                "th": "ภาพเอกซเรย์ข้อศอกท่าด้านข้าง (Lateral) งอศอก 90 องศา ประเมินมุมองศาและแนวเคลื่อนหน้าหลัง"
+                "en": "Standard 90-degree flexed lateral view to assess anterior/posterior condylar displacement, anterior humeral line (AHL), and fat pad signs (sail sign / posterior fat pad).",
+                "th": "ภาพเอกซเรย์ข้อศอกท่าด้านข้าง (Lateral) งอศอก 90 องศา ประเมินมุมองศา แนว Anterior Humeral Line (AHL) และสัญญาณ Fat pad sign"
               },
               "imageUrl": "/images/investigations/forearm/lateral_elbow_view.jpg"
             },
             {
               "name": "Traction / Motion AP View & CT 3D",
               "details": {
-                "en": "Traction radiograph or CT scan with 3D reconstruction indispensable for planning complex Type C articular reconstruction.",
-                "th": "เอกซเรย์ท่าดึงกระดูก (Traction View) หรือ CT Scan 3D สำคัญอย่างยิ่งในการวางแผนผ่าตัดจัดข้อ Type C"
+                "en": "Traction radiograph or 3D CT scan indispensable for pre-operative templating of complex Type B coronal shear and Type C multi-fragmentary articular reconstructions.",
+                "th": "ภาพเอกซเรย์ท่าดึงกระดูก (Traction View) หรือ CT Scan 3D สำคัญอย่างยิ่งในการวางแผนผ่าตัดจัดข้อ Type B และ Type C ที่แตกซับซ้อน"
               }
             }
           ],
           "types": [
             {
-              "type": "Type 13-A",
+              "type": "Type A",
               "name": {
-                "en": "Type 13-A: Extra-articular Fractures",
-                "th": "Type 13-A: Extra-articular (รอยหักอยู่นอกข้อต่อทั้งหมด)"
+                "en": "Type A (Extra-articular)",
+                "th": "Type A (รอยหักอยู่นอกข้อต่อ / Extra-articular)"
               },
               "description": {
-                "en": "Extra-articular distal humerus fracture; joint surface remains completely intact and uninvolved.\n• A1: Extra-articular epicondylar avulsion (Medial/Lateral epicondyle)\n• A2: Extra-articular simple metaphyseal (Supracondylar simple)\n• A3: Extra-articular comminuted metaphyseal (Supracondylar comminuted)",
-                "th": "รอยหักอยู่นอกข้อต่อกระดูกต้นแขนส่วนปลาย ผิวข้อต่อศอกสมบูรณ์ไม่เสียหาย\n• A1: Avulsion หักกะเทาะปุ่มกระดูก Epicondyle\n• A2: Metaphyseal simple รอยหักเหนือข้อแบบเรียบ (Supracondylar)\n• A3: Metaphyseal comminuted รอยหักเหนือข้อแบบแตกละเอียด"
+                "en": "Fracture line spares the articular surface of the distal humerus completely\nIncludes epicondylar avulsions (A1) and simple/comminuted supracondylar fractures (A2/A3)\nTrochlea and capitellum articular surfaces remain intact\nHigh risk of brachial artery and median nerve injury in displaced extension-type supracondylar patterns",
+                "th": "รอยหักอยู่นอกข้อต่อกระดูกต้นแขนส่วนปลายทั้งหมด ผิวข้อศอกสมบูรณ์\nครอบคลุมการกะเทาะปุ่มกระดูก (A1) และรอยหักเหนือข้อแบบเรียบ/แตกละเอียด (A2/A3)\nผิวข้อ Trochlea และ Capitellum ไม่มีความเสียหาย\nเสี่ยงต่อการบาดเจ็บของหลอดเลือด Brachial artery และเส้นประสาท Median nerve ในชนิดหักเคลื่อน"
               },
               "moi": {
-                "en": "Fall on out-stretched hand (FOOSH) with elbow extended or direct blow to distal humerus.",
-                "th": "ล้มมือยันพื้นขณะศอกเหยียด หรือแรงกระแทกโดยตรงเข้าเหนือข้อศอก"
+                "en": "Fall on out-stretched hand (FOOSH) with hyperextended elbow or direct blow to distal humerus.",
+                "th": "ล้มมือยันพื้นขณะข้อศอกเหยียดเต็มที่ หรือแรงกระแทกโดยตรงเข้าเหนือข้อศอก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Extra-articular supracondylar/epicondylar fracture sparing the joint; displaced fractures require rigid dual-column plate fixation (parallel or orthogonal 90-90 architecture) to allow immediate active elbow motion; non-operative long arm cast only for true non-displaced patterns.",
+                  "th": "รอยหักเหนือข้อศอกอยู่นอกข้อต่อทั้งหมด หากเคลื่อนตัวต้องผ่าตัดยึดแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ทั้งสองเสาเพื่อความแข็งแรงให้เริ่มขยับข้อศอกได้ทันที ใส่เฝือกเฉพาะกรณีไม่เคลื่อนตัว"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY for non-displaced A2 supracondylar fractures in low-demand patients. Long arm splint/cast for 3-4 weeks.",
-                  "th": "พิจารณาเฉพาะรอยหักไม่เคลื่อนตัว (A2) ใส่เฝือกยาวดามแขน 3-4 สัปดาห์"
+                  "indication": {
+                    "en": "• Truly non-displaced extra-articular distal humerus fractures (AO 13-A2) in low-demand or high-risk surgical patients",
+                    "th": "• กระดูกหักเหนือข้อนอกข้อต่อที่ไม่เคลื่อนตัว (AO 13-A2) ในผู้ป่วยที่มีความเสี่ยงผ่าตัดสูง"
+                  },
+                  "method": {
+                    "en": "• Long arm posterior splint or cast with elbow at 90° flexion for 3–4 weeks",
+                    "th": "• ใส่เฝือกยาวดามแขน (งอศอก 90 องศา) นาน 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle active-assisted elbow ROM out of splint at 3–4 weeks",
+                    "th": "• เริ่มฝึกช่วยขยับข้อศอกเบาๆ ที่ 3–4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prolonged elbow casting >4 weeks causes irreversible elbow joint capsule contracture and permanent loss of extension",
+                    "th": "• การใส่เฝือกข้อศอกนานเกิน 4 สัปดาห์ จะทำให้ปลอกหุ้มข้อศอกหดรั้งและสูญเสียการเหยียดข้อศอกถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED FOR DISPLACED FRACTURES. Open reduction and internal fixation (ORIF) with dual anatomical locking plates (parallel or orthogonal 90-90 configuration).",
-                  "th": "แนะนำผ่าตัด ORIF ยึดแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ในทิศทางขนานหรือตั้งฉาก 90-90"
+                  "indication": {
+                    "en": "• All displaced extra-articular distal humerus fractures (AO 13-A2, 13-A3)\n• Comminuted supracondylar column failure",
+                    "th": "• กระดูกหักเหนือข้อนอกข้อต่อที่เคลื่อนตัวทุกราย (AO 13-A2, 13-A3)\n• เสากระดูกเหนือข้อแตกละเอียด"
+                  },
+                  "method": {
+                    "en": "• Posterior approach (triceps-sparing or triceps-reflecting): Rigid Dual Locking Plate osteosynthesis (Parallel or 90-90 Orthogonal configuration) across medial and lateral columns",
+                    "th": "• ผ่าตัดเปิดทางด้านหลัง: ดามแผ่นเหล็กล็อคคู่ (Dual Locking Plates) ยึดเสากระดูกด้านในและด้านนอกในทิศทาง Parallel หรือ 90-90 Orthogonal"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active and active-assisted elbow flexion/extension on post-op day 1–2; no sling after 1 week",
+                    "th": "• เริ่มฝึกงอเหยียดข้อศอกได้ทันทีตั้งแต่วันที่ 1–2 หลังผ่าตัด ถอดสายคล้องแขนหลัง 1 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Single column plating leads to early mechanical failure and nonunion; must always bridge both medial and lateral columns",
+                    "th": "• การดามแผ่นเหล็กเพียงเสาเดียวจะทำให้เหล็กหักล้มเหลวและกระดูกไม่ติด ต้องดามคู่ทั้งสองเสาเสมอ"
+                  }
                 }
               },
               "illustrationId": "/images/humerus/ao_13_a.png",
               "xrayDescription": {
-                "en": "Metaphyseal or epicondylar fracture line sparing the trochlea and capitellum articular surfaces.",
-                "th": "เห็นรอยหักบริเวณเหนือข้อหรือปุ่ม Epicondyle โดยผิวข้อ Trochlea และ Capitellum สมบูรณ์ดี"
+                "en": "Metaphyseal or epicondylar fracture line above the olecranon fossa without articular cartilage disruption.",
+                "th": "เห็นรอยหักเหนือข้อหรือที่ปุ่ม Epicondyle โดยผิวข้อ Trochlea และ Capitellum เรียบเสมอกันสมบูรณ์"
               }
             },
             {
-              "type": "Type 13-B",
+              "type": "Type B",
               "name": {
-                "en": "Type 13-B: Partial Articular Fractures",
-                "th": "Type 13-B: Partial Articular (รอยหักเข้าข้อต่อบางส่วน)"
+                "en": "Type B (Partial Articular / Unicondylar)",
+                "th": "Type B (รอยหักเข้าข้อต่อบางส่วน / Partial Articular)"
               },
               "description": {
-                "en": "Partial articular fracture; part of the articular surface remains continuously attached to the main humeral shaft column.\n• B1: Lateral sagittal fracture (Lateral condyle / Capitellum)\n• B2: Medial sagittal fracture (Medial condyle / Trochlea)\n• B3: Frontal / Coronal plane fracture (Capitellum / Trochlea coronal shear fracture)",
-                "th": "รอยหักพาดผ่านเข้าข้อต่อบางส่วน โดยชิ้นข้อต่อส่วนหนึ่งยังคงยึดติดกับแกนกระดูกต้นแขนหลัก\n• B1: Sagittal ด้านนอก (Lateral condyle)\n• B2: Sagittal ด้านใน (Medial condyle)\n• B3: Coronal Shear หักเฉือนผิวข้อด้านหน้า (Capitellum/Trochlea)"
+                "en": "Partial articular fracture; part of the articular surface remains in continuity with the humeral shaft\n• B1: Lateral sagittal condylar fracture (Lateral condyle / Capitellum)\n• B2: Medial sagittal condylar fracture (Medial condyle / Trochlea)\n• B3: Coronal shear fracture of capitellum/trochlea (Hahn-Steinthal / Kocher-Lorenz patterns)\nHigh risk of mechanical block to elbow flexion/extension if displaced",
+                "th": "รอยหักเข้าข้อต่อบางส่วน โดยผิวข้อส่วนหนึ่งยังคงยึดติดกับแกนกระดูกต้นแขน\n• B1: Sagittal ด้านนอก (Lateral condyle)\n• B2: Sagittal ด้านใน (Medial condyle)\n• B3: Coronal shear หักเฉือนผิวข้อด้านหน้า (Capitellum/Trochlea)\nเสี่ยงต่อการติดขัดของข้อศอก (Mechanical block) หากผิวข้อเคลื่อนหลุด"
               },
               "moi": {
-                "en": "Direct shear force transmitted through the radial head or olecranon into the distal humeral articular surface.",
-                "th": "แรงเฉือนส่งผ่านจากหัวกระดูก Radius หรือ Olecranon กระแทกเข้าผิวข้อปลายกระดูกต้นแขน"
+                "en": "Direct shear force transmitted through the radial head or coronoid process into the distal humeral articular surface.",
+                "th": "แรงเฉือนส่งผ่านจากหัวกระดูกเรเดียสหรือโคโรนอยด์กระแทกเข้าผิวข้อปลายกระดูกต้นแขน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Unicondylar sagittal (B1/B2) or coronal shear (B3 Capitellum/Trochlea) fracture; articular incongruity or mechanical block; mandatory anatomical ORIF with buried headless compression screws (B3) or condylar buttress plates (B1/B2).",
+                  "th": "รอยหักเข้าข้อต่อบางส่วน (ปุ่มนอก B1, ปุ่มใน B2 หรือเฉือนผิวข้อหน้า B3) ผิวข้อสะดุดหรือขัดล็อก ต้องผ่าตัดเปิดจัดผิวข้อให้เรียบสนิทและยึดด้วยสกรูหัวจม Headless compression screws (B3) หรือแผ่นเหล็ก Condylar plate (B1/B2)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended for displaced fractures. High risk of articular step-off, stiffness, and early post-traumatic arthritis.",
-                  "th": "ไม่แนะนำในชนิดเคลื่อนตัว เสี่ยงต่อข้อศอกติดแข็งและข้อเสื่อมรุนแรง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED for displaced fractures (Causes mechanical block, severe stiffness, and rapid arthrosis)",
+                    "th": "• ห้ามใช้วิธีนี้ในกระดูกที่เคลื่อนตัว (ทำให้ข้อศอกขัดติด ติดแข็ง และข้อเสื่อมรวดเร็ว)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Joint incongruity and rapid joint destruction",
+                    "th": "• ผิวข้อสะดุดและข้อศอกพังทลาย"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Anatomical ORIF with countersunk headless compression screws (Herbert screws) for B3 coronal shear or condylar locking plates for B1/B2.",
-                  "th": "แนะนำผ่าตัด ORIF จัดผิวข้อให้เรียบสนิท ยึดสกรูจม Headless compression screws สำหรับ B3 หรือแผ่นเหล็ก Condylar plate สำหรับ B1/B2"
+                  "indication": {
+                    "en": "• All displaced partial articular distal humerus fractures (AO 13-B1, B2, B3)\n• Capitellar / Trochlear coronal shear displacement > 1 mm",
+                    "th": "• กระดูกหักเข้าข้อต่อบางส่วนที่เคลื่อนตัวทุกราย (AO 13-B1, B2, B3)\n• ชิ้นกระดูกผิวข้อ Capitellum / Trochlea เคลื่อนตัว > 1 มม."
+                  },
+                  "method": {
+                    "en": "• Lateral column (B1) / Medial column (B2): Anatomical reduction and pre-contoured condylar buttress plate + lag screws\n• Coronal shear (B3 Hahn-Steinthal / Kocher-Lorenz): Anterolateral or lateral Kocher approach; headless compression screws (Herbert screws) inserted from anterior-to-posterior countersunk below articular cartilage ± posterior buttress plate",
+                    "th": "• ปุ่มนอก (B1) / ปุ่มใน (B2): ผ่าตัดจัดกระดูกและดามแผ่นเหล็ก Condylar Buttress Plate + Lag screws\n• รอยหักเฉือนผิวข้อ Coronal Shear (B3): ผ่าตัดเข้าทาง Lateral Kocher approach ยึดด้วยสกรูหัวจม Headless Compression Screws ขันจากหน้าไปหลังฝังจมใต้ผิวกระดูกอ่อน ± ดามแผ่นเหล็กต้านแรงเฉือนด้านหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active elbow ROM exercises on post-op day 2; avoid resisted loading for 6–8 weeks",
+                    "th": "• เริ่มฝึกงอเหยียดข้อศอกได้ตั้งแต่วันที่ 2 หลังผ่าตัด หลีกเลี่ยงการยกของหนัก 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Screws left proud on the articular surface destroying the radial head or trochlear groove\n• Overlooking posterior trochlear comminution",
+                    "th": "• หัวสกรูโผล่ล้ำขึ้นมาบนผิวข้อทำลายหัวกระดูกเรเดียส\n• มองข้ามรอยแตกละเอียดของ Trochlea ด้านหลัง"
+                  }
                 }
               },
               "illustrationId": "/images/humerus/ao_13_b.png",
               "xrayDescription": {
                 "en": "Articular fracture line extending through capitellum or trochlea with part of the condyle connected to shaft.",
-                "th": "เห็นรอยหักพาดผ่านผิวข้อ Capitellum หรือ Trochlea โดยมีส่วนหนึ่งยึดติดแกนกระดูก"
+                "th": "เห็นรอยหักพาดผ่านผิวข้อ Capitellum หรือ Trochlea โดยมีเสากระดูกอีกฝั่งหนึ่งเชื่อมต่อกับแกนกระดูก"
               }
             },
             {
-              "type": "Type 13-C",
+              "type": "Type C",
               "name": {
-                "en": "Type 13-C: Complete Articular Fractures",
-                "th": "Type 13-C: Complete Articular (รอยหักเข้าข้อต่อสมบูรณ์ - Bicondylar)"
+                "en": "Type C (Complete Articular / Bicondylar)",
+                "th": "Type C (รอยหักเข้าข้อต่อสมบูรณ์ / Complete Articular)"
               },
               "description": {
-                "en": "Complete articular disruption; the articular block is completely disconnected and separated from the main humeral shaft.\n• C1: Simple articular & simple metaphyseal (Classic T- or Y-type fracture)\n• C2: Simple articular & comminuted metaphyseal\n• C3: Comminuted articular & comminuted metaphyseal (Severe articular crush)",
-                "th": "รอยหักเข้าข้อต่อสมบูรณ์ ชิ้นข้อต่อทั้งหมดหลุดแยกออกจากแกนกระดูกหลักอย่างสิ้นเชิง (Bicondylar Disruption)\n• C1: Simple articular & simple metaphyseal (รูป T หรือ Y เรียบง่าย)\n• C2: Simple articular & comminuted metaphyseal (ผิวข้อเรียบ แต่เหนือข้อแตกละเอียด)\n• C3: Comminuted articular & comminuted metaphyseal (แตกละเอียดทั้งผิวข้อและเหนือข้อ)"
+                "en": "Complete articular disruption; the articular block is completely disconnected and dissociated from the main humeral shaft\n• C1: Simple articular & simple metaphyseal (Classic T- or Y-type)\n• C2: Simple articular with comminuted metaphyseal\n• C3: Severely comminuted articular & metaphyseal crushing\nHigh risk of stiffness, nonunion, ulnar neuropathy, and post-traumatic arthritis",
+                "th": "รอยหักเข้าข้อต่อสมบูรณ์ ชิ้นข้อต่อหลุดแยกขาดจากแกนกระดูกต้นแขนทั้งหมด (Bicondylar Disruption)\n• C1: Simple articular & metaphyseal (รูป T หรือ Y เรียบง่าย)\n• C2: ผิวข้อแตกเรียบ แต่เหนือข้อแตกละเอียด\n• C3: แตกละเอียดรุนแรงทั้งผิวข้อและส่วนเหนือข้อ\nเสี่ยงสูงต่อข้อศอกติดแข็ง กระดูกไม่ติด ชาเส้นประสาท Ulnar และข้อเสื่อม"
               },
               "moi": {
-                "en": "High-energy motor vehicle accident, severe fall, or direct wedge impact of the olecranon driving between the two condyles.",
-                "th": "อุบัติเหตุทางถนนพลังงานสูง หรือปลายกระดูก Olecranon ตอกอัดแทรกตรงกลางระหว่างสอง Condyle"
+                "en": "High-energy axial compression driving the wedge of the olecranon into the distal humeral trochlea, exploding both condylar columns.",
+                "th": "แรงกระแทกพลังงานสูง โดยปลายกระดูก Olecranon ตอกอัดแทรกตรงกลางระหว่างสอง Condyle ทำให้ผิวข้อระเบิดแยกจากกัน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete articular dissociation from humeral shaft; complex bicondylar injury; mandatory trans-olecranon osteotomy + anatomical articular reconstruction + dual parallel locking plates (Parallel Plating architecture) to enable immediate active elbow motion; Total Elbow Arthroplasty (TEA) for unreconstructable C3 comminution in elderly (>65–70 y/o).",
+                  "th": "ชิ้นผิวข้อหลุดแยกขาดจากแกนกระดูกทั้งหมด ต้องผ่าตัดเปิดผ่าน Chevron Trans-Olecranon Osteotomy เพื่อจัดผิวข้อให้เรียบสนิทและดามแผ่นเหล็กล็อคคู่ขนาน (Dual Parallel Plating) ให้แข็งแรงสูงสุดเพื่อเริ่มทำกายภาพทันที หรือผ่าตัดใส่ข้อศอกเทียม (Total Elbow Arthroplasty) ในผู้สูงอายุที่ผิวข้อแตกละเอียด C3 จนซ่อมไม่ได้"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED in functional patients. Results in severe flail elbow or painful ankylosis.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้ ทำให้ข้อศอกหลุดพิการและติดแข็งปวดรุนแรง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in functional patients (Results in nonunion, flail elbow, severe pain, and joint destruction)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (ทำให้กระดูกไม่ติด ข้อศอกพิการหลุดหลวม ติดแข็ง และปวดรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Complete loss of elbow function and permanent disability",
+                    "th": "• สูญเสียการทำงานของข้อศอกถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "MANDATORY SURGICAL RECONSTRUCTION. Olecranon osteotomy approach + dual pre-contoured anatomical locking plates (Parallel plating architecture) for stable construct permitting immediate post-op early active ROM exercises. Total Elbow Arthroplasty (TEA) for unreconstructable C3 in elderly.",
-                  "th": "จำเป็นต้องผ่าตัดจัดข้อโดยด่วน! เปิดผ่าตัดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating) เพื่อยึดให้แน่นที่สุดให้ฝึกขยับข้อศอกได้ทันทีหลังผ่าตัด (พิจารณาผ่าตัดใส่ข้อศอกเทียม TEA ในผู้สูงอายุที่แตกละเอียด C3)"
+                  "indication": {
+                    "en": "• All AO/OTA 13-C complete articular distal humerus fractures (C1, C2, C3)",
+                    "th": "• กระดูกปลายต้นแขนหักเข้าข้อต่อสมบูรณ์ AO/OTA 13-C ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Standard Surgical Exposure: Chevron Trans-Olecranon Osteotomy for direct 360° articular visualization\n• Step 1: Anatomical articular reduction of trochlea and capitellum; convert Type C to Type A with interfragmentary lag screws\n• Step 2: Fix articular block to shaft using Dual Parallel Pre-contoured Locking Plates (medial and lateral columns) with long interdigitating screws through distal fragments\n• Step 3: Anatomical olecranon osteotomy repair with tension band wiring or olecranon locking plate\n• In elderly patients (>65–70 yrs) with unreconstructable catastrophic C3 comminution: Total Elbow Arthroplasty (TEA)",
+                    "th": "• ทางเข้าผ่าตัดมาตรฐาน: ตัดกระดูกรูปตัววี Chevron Trans-Olecranon Osteotomy เพื่อเปิดเห็นผิวข้อได้ 360 องศา\n• ขั้นตอนที่ 1: จัดเรียงผิวข้อ Trochlea และ Capitellum ให้เรียบสนิท ยึดด้วย Lag screws แปลง C เป็น A\n• ขั้นตอนที่ 2: ยึดชิ้นข้อต่อเข้ากับแกนกระดูกด้วยแผ่นเหล็กล็อคคู่ขนาน Dual Parallel Locking Plates (เสาในและเสานอก) โดยขันสกรูยาวไขว้สอดประสานกันที่ส่วนปลาย\n• ขั้นตอนที่ 3: ซ่อมกระดูก Olecranon ด้วย Tension Band Wiring หรือ Olecranon Plate\n• ในผู้สูงอายุ (>65–70 ปี) ที่ผิวข้อแตกละเอียด C3 จนต่อไม่ได้: ผ่าตัดใส่ข้อศอกเทียม Total Elbow Arthroplasty (TEA)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Immediate active and active-assisted elbow ROM from post-op day 1–2; no splinting after 48 hours; lifelong 5 kg lifting restriction for TEA",
+                    "th": "• เริ่มฝึกงอเหยียดข้อศอกทันทีตั้งแต่วันที่ 1–2 หลังผ่าตัด ไม่ต้องใส่เฝือกหลัง 48 ชม. (จำกัดการยกของไม่เกิน 5 กก. ตลอดชีวิตในเคส TEA)"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate rigid fixation leading to post-operative immobilization and severe elbow stiffness (Normal functional arc = 30°–130°)\n• Ulnar nerve traction/injury — routine subcutaneous anterior transposition recommended",
+                    "th": "• การยึดตรึงไม่แข็งแรงพอจนต้องใส่เฝือกหลังผ่าตัด จะทำให้ข้อศอกติดแข็งถาวร (ช่วงการขยับใช้งานปกติ = 30°–130°)\n• การบาดเจ็บของเส้นประสาท Ulnar แนะนำให้ย้ายเส้นประสาทมาไว้ด้านหน้า (Anterior Transposition) เสมอ"
+                  }
                 }
               },
               "illustrationId": "/images/humerus/ao_13_c.png",
               "xrayDescription": {
-                "en": "Complete separation of trochlear and capitellar articular block from shaft with variable articular and metaphyseal comminution.",
-                "th": "เห็นชิ้นข้อต่อ Trochlea/Capitellum หลุดแยกขาดจากแกนกระดูกต้นแขนทั้งหมด"
+                "en": "Complete separation of trochlea/capitellum articular surface from humeral shaft with intercondylar T- or Y-split and variable comminution.",
+                "th": "เห็นชิ้นข้อต่อ Trochlea และ Capitellum หลุดแยกขาดจากแกนกระดูกต้นแขนทั้งหมด พร้อมรอยแยกรูปตัว T หรือ Y"
               }
             }
           ]
@@ -990,3 +1465,4 @@ export const humerusBone: BoneData = {
     }
   ]
 };
+

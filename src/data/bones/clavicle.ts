@@ -188,13 +188,46 @@ export const clavicleBone: BoneData = {
                 "th": "ล้มกระแทกไหล่โดยตรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "AC ligament sprain; intact CC ligaments; normal radiograph; non-operative treatment with sling for 1–2 weeks followed by early full ROM.",
+                  "th": "เอ็น AC บาดเจ็บเล็กน้อย เอ็น CC ปกติ ภาพเอกซเรย์ปกติ รักษาแบบไม่ผ่าตัดด้วยสายคล้องแขน (Arm sling) 1–2 สัปดาห์ แล้วเริ่มฝึกขยับข้อศอกและไหล่ได้เร็ว"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Sling for 1-2 weeks, early ROM",
-                  "th": "ใส่สายคล้องแขน 1-2 สัปดาห์ และเริ่มขยับข้อ"
+                  "indication": {
+                    "en": "• Rockwood Type I AC joint sprain\n• Normal CC distance and clavicle height on Zanca view",
+                    "th": "• ข้อต่อ AC เคล็ดระดับที่ 1 (Type I)\n• ระยะห่างเอ็น CC และระดับกระดูกไหปลาร้าปกติในภาพเอกซเรย์ท่า Zanca"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 7–10 days for pain relief and resting the limb",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 7–10 วันเพื่อบรรเทาอาการปวดและพักแขน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start active-assisted forward flexion and pendulum exercises at 1 week; return to full sports/activity at 2–4 weeks",
+                    "th": "• เริ่มฝึกยกแขนช่วยและแกว่งแขนวงกลม (Pendulum) ที่ 1 สัปดาห์ และกลับไปเล่นกีฬาได้ใน 2–4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prolonged immobilization leading to adhesive capsulitis / shoulder stiffness",
+                    "th": "• ดามแขนนิ่งนานเกินไปทำให้เกิดข้อไหล่ติดแข็ง (Frozen shoulder)"
+                  }
                 },
                 "operative": {
-                  "en": "None",
-                  "th": "ไม่ต้องผ่าตัด"
+                  "indication": {
+                    "en": "• No acute surgical indication\n• Late chronic AC joint arthrosis refractory to injections",
+                    "th": "• ไม่มีข้อบ่งชี้ผ่าตัดในระยะเฉียบพลัน\n• พิจารณาเฉพาะกรณีข้อ AC เสื่อมเรื้อรังที่รักษาด้วยยาหรือการฉีดยาไม่ดีขึ้น"
+                  },
+                  "method": {
+                    "en": "• Distal clavicle excision (Mumford procedure) only for late chronic arthritis",
+                    "th": "• ผ่าตัดตัดปลายกระดูกไหปลาร้า (Mumford procedure) เฉพาะกรณีข้อเสื่อมเรื้อรัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery for acute Type I sprains",
+                    "th": "• การผ่าตัดเกินจำเป็นในระยะเฉียบพลัน"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type1.png",
@@ -218,13 +251,46 @@ export const clavicleBone: BoneData = {
                 "th": "ล้มกระแทกไหล่โดยตรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete AC ligament tear with CC ligament sprain; clavicle elevated <25%; stable horizontal alignment; non-operative treatment with sling for 1–2 weeks followed by progressive rotator cuff / scapular rehabilitation.",
+                  "th": "เอ็น AC ขาดสมบูรณ์ร่วมกับเอ็น CC เคล็ด ไหปลาร้ายกลอยขึ้น <25% แนวราบยังมั่นคง รักษาแบบไม่ผ่าตัดใส่ Sling 1–2 สัปดาห์ แล้วฝึกกายภาพกล้ามเนื้อสะบักและ Rotator cuff"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Sling for 1-2 weeks, early ROM",
-                  "th": "ใส่สายคล้องแขน 1-2 สัปดาห์ และเริ่มขยับข้อ"
+                  "indication": {
+                    "en": "• Rockwood Type II AC separation (<25% vertical displacement on Zanca view)",
+                    "th": "• ข้อต่อ AC เคลื่อนหลุด Type II (ไหปลาร้ายกลอยขึ้น <25% ในภาพเอกซเรย์ท่า Zanca)"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 1–2 weeks for symptom control",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 1–2 สัปดาห์เพื่อควบคุมอาการปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive active-assisted ROM starting at 1–2 weeks; rotator cuff strengthening at 3–4 weeks; return to sports at 4–6 weeks",
+                    "th": "• เริ่มฝึกขยับข้อไหล่ที่ 1–2 สัปดาห์ ฝึกเพิ่มกำลังกล้ามเนื้อหมุนข้อไหล่ที่ 3–4 สัปดาห์ และกลับไปเล่นกีฬาที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to obtain axillary lateral radiograph to rule out subtle posterior displacement (Type IV)",
+                    "th": "• ละเลยการถ่ายภาพเอกซเรย์ท่า Axillary lateral เพื่อแยกชนิดเคลื่อนไปด้านหลัง (Type IV)"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely needed",
-                  "th": "แทบไม่ต้องผ่าตัด ยกเว้นในนักกีฬาที่ต้องใช้งานหนัก"
+                  "indication": {
+                    "en": "• Rare in acute phase; considered only for high-demand overhead throwing athletes with persistent pain at 3–6 months",
+                    "th": "• แทบไม่มีข้อบ่งชี้ในระยะเฉียบพลัน พิจารณาเฉพาะนักกีฬาขว้างที่ยังมีอาการปวดเรื้อรังหลัง 3–6 เดือน"
+                  },
+                  "method": {
+                    "en": "• Arthroscopic CC ligament reconstruction or distal clavicle resection",
+                    "th": "• ผ่าตัดส่องกล้องสร้างเอ็น CC ใหม่ หรือตัดปลายกระดูกไหปลาร้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected shoulder rehabilitation",
+                    "th": "• กายภาพบำบัดข้อไหล่แบบระมัดระวัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtreating an acute Type II injury with surgery",
+                    "th": "• การผ่าตัดรักษาเกินความจำเป็นในระยะเฉียบพลัน"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type2.png",
@@ -248,13 +314,46 @@ export const clavicleBone: BoneData = {
                 "th": "ล้มกระแทกไหล่โดยตรงรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complete rupture of both AC and CC ligaments; 25%–100% vertical elevation; trial of conservative sling treatment is initial standard of care; surgical CC reconstruction reserved for elite overhead athletes, manual laborers, or persistent symptomatic instability.",
+                  "th": "เอ็น AC และ CC ขาดสมบูรณ์ ไหปลาร้ายกตัวขึ้น 25%–100% การทดลองรักษาแบบไม่ผ่าตัดด้วย Sling เป็นแนวทางมาตรฐานอันดับแรกสำหรับผู้ป่วยส่วนใหญ่ พิจารณาผ่าตัดสร้างเอ็น CC เฉพาะในนักกีฬา overhead, ผู้ใช้แรงงานหนัก หรือผู้ป่วยที่มีอาการปวดล้าเรื้อรัง"
+                },
+                "preferred": "conservative",
                 "conservative": {
-                  "en": "Sling for 3-4 weeks. Trial of non-operative management for most patients.",
-                  "th": "ใส่สายคล้องแขน 3-4 สัปดาห์ แนะนำให้รักษาแบบไม่ผ่าตัดเป็นทางเลือกแรกในผู้ป่วยส่วนใหญ่"
+                  "indication": {
+                    "en": "• Initial first-line treatment for most patients with Rockwood Type III AC separation\n• Non-manual laborers and sedentary individuals",
+                    "th": "• ทางเลือกแรกสำหรับผู้ป่วยข้อ AC หลุด Type III ส่วนใหญ่\n• ผู้ป่วยทั่วไปและผู้ที่ไม่ได้ทำงานใช้แรงงานยกของหนักเหนือศีรษะ"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 2–3 weeks with ice and analgesics",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์ ร่วมกับประคบเย็นและยาลดปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive/active-assisted ROM out of sling at 2 weeks; progressive deltoid and periscapular strengthening at 4–6 weeks; full return to activities by 8–12 weeks",
+                    "th": "• เริ่มฝึกขยับข้อไหล่ที่ 2 สัปดาห์ ฝึกสร้างกล้ามเนื้อรอบสะบักและ Deltoid ที่ 4–6 สัปดาห์ และกลับไปใช้งานเต็มที่ที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Persistent pain or fatigue in heavy overhead laborers (~15–20%)",
+                    "th": "• อาจมีอาการปวดล้าข้อไหล่เรื้อรังในกลุ่มผู้ใช้แรงงานหนัก (~15–20%)"
+                  }
                 },
                 "operative": {
-                  "en": "Consider in high-level athletes or heavy laborers",
-                  "th": "พิจารณาผ่าตัดในนักกีฬาอาชีพ หรือผู้ที่ต้องใช้แรงงานหนัก"
+                  "indication": {
+                    "en": "• High-demand overhead athletes (pitchers, quarterbacks, swimmers)\n• Heavy manual laborers\n• Failed conservative trial with persistent painful shoulder fatigue/dyskinesis at 3–6 months",
+                    "th": "• นักกีฬาใช้แขนเหนือศีรษะ (นักขว้าง, ว่ายน้ำ, แบดมินตัน)\n• ผู้ใช้แรงงานแบกหามของหนัก\n• รักษาแบบไม่ผ่าตัดแล้วไม่ดีขึ้น มีอาการปวดล้าไหล่และสะบักเคลื่อนผิดปกติที่ 3–6 เดือน"
+                  },
+                  "method": {
+                    "en": "• Anatomic Coracoclavicular (CC) Ligament Reconstruction using Suture Tape Button (TightRope / Twinloop) ± semitendinosus autograft/allograft + AC ligament imbrication / Hook Plate",
+                    "th": "• ผ่าตัดสร้างเอ็น Coracoclavicular (CC) ใหม่ตามกายวิภาคด้วย Suture Tape Button (TightRope / Twinloop) ± ใช้เส้นเอ็น Semitendinosus ปลูกถ่าย + เย็บซ่อมเอ็น AC / ดาม Hook Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; passive ROM limited to 90° forward flexion for 6 weeks; active strengthening at 8–12 weeks; contact sports at 6 months",
+                    "th": "• ใส่ Sling 6 สัปดาห์ จำกัดการยกแขนไม่เกิน 90 องศาใน 6 สัปดาห์แรก เริ่มฝึกเพิ่มกำลังที่ 8–12 สัปดาห์ และกลับไปเล่นกีฬาปะทะที่ 6 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Coracoid process fracture from drill holes placed too large or eccentric\n• Hardware failure / loss of reduction with non-biological fixation alone in chronic cases",
+                    "th": "• กระดูก Coracoid แตกหักจากการเจาะรูกว้างหรือชิดขอบเกินไป\n• อุปกรณ์คลายตัวหรือกระดูกยกลอยซ้ำหากไม่ใช้เอ็นปลูกถ่ายในเคสเรื้อรัง"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type3.png",
@@ -278,13 +377,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกจากด้านหน้าไปหลัง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal clavicle displaced posteriorly into or through the trapezius muscle; buttonholed locked displacement; mandatory open reduction and anatomical CC ligament reconstruction.",
+                  "th": "ปลายกระดูกไหปลาร้าเคลื่อนหลุดไปด้านหลังทะลุเข้ากล้ามเนื้อ Trapezius ติดล็อคแน่น ต้องผ่าตัดเปิดจัดกระดูกออกจากกล้ามเนื้อและผ่าตัดสร้างเอ็น CC ใหม่"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended",
-                  "th": "ไม่แนะนำ"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Clavicle is buttonholed and locked in trapezius muscle belly)",
+                    "th": "• ห้ามใช้วิธีนี้ (กระดูกไหปลาร้าติดล็อคอยู่ในกล้ามเนื้อ Trapezius ไม่สามารถเข้าที่เองได้)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Chronic posterior locked deformity and severe scapulothoracic dyskinesis",
+                    "th": "• กระดูกติดล็อคด้านหลังเรื้อรังและสะบักขยับผิดรูปอย่างรุนแรง"
+                  }
                 },
                 "operative": {
-                  "en": "Surgical reconstruction (e.g., CC ligament reconstruction/fixation)",
-                  "th": "ผ่าตัดยึดตรึงข้อและซ่อมแซม/สร้างเอ็น CC ใหม่"
+                  "indication": {
+                    "en": "• All acute Rockwood Type IV AC joint dislocations",
+                    "th": "• ข้อต่อ AC หลุดชนิด Rockwood Type IV ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Open reduction of locked distal clavicle out of trapezius muscle + Anatomic CC ligament reconstruction with suture button device (TightRope) + Repair of deltotrapezial fascia",
+                    "th": "• ผ่าตัดเปิดปลดปลายกระดูกไหปลาร้าออกจากกล้ามเนื้อ Trapezius + ผ่าตัดสร้างเอ็น CC ใหม่ด้วย Suture Button (TightRope) + เย็บซ่อมพังผืด Deltotrapezial"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; protected pendulum ROM; active ROM at 6 weeks",
+                    "th": "• ใส่ Sling 6 สัปดาห์ เริ่มฝึกแกว่งแขนเบาๆ และเริ่มยกแขนเองที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing diagnosis on standard AP X-ray — MUST obtain Axillary Lateral or Stryker Notch view",
+                    "th": "• วินิจฉัยพลาดในภาพเอกซเรย์ท่า AP ทั่วไป ต้องถ่ายท่า Axillary Lateral เสมอ"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type4.png",
@@ -308,13 +440,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกกดไหล่ลงอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Gross superior displacement (100%–300%) with complete deltotrapezial fascia stripping and severe tenting of skin; high risk of skin necrosis and permanent shoulder dysfunction; mandatory anatomical surgical reduction and CC reconstruction.",
+                  "th": "ไหปลาร้ายกลอยสูงขึ้นอย่างรุนแรง (100%–300%) ร่วมกับพังผืด Deltotrapezial ฉีกขาดหลุดลอก กระดูกทิ่มดันผิวหนังตึงเสี่ยงต่อผิวหนังเน่าตาย ต้องผ่าตัดจัดดึงกระดูกลงและสร้างเอ็น CC ร่วมกับเย็บพังผืดคลุม"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended",
-                  "th": "ไม่แนะนำ"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Severe cosmetic and functional shoulder impairment with high risk of skin necrosis)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (สูญเสียการทำงานของไหล่ ไหล่ผิดรูปชัดเจน และเสี่ยงผิวหนังทะลุ)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Extreme skin tenting leading to skin breakdown and open joint contamination",
+                    "th": "• กระดูกทิ่มดันผิวหนังจนขาดเลือดและทะลุกลายเป็นแผลติดเชื้อ"
+                  }
                 },
                 "operative": {
-                  "en": "Surgical reconstruction",
-                  "th": "ผ่าตัดจัดกระดูกและซ่อมแซมเอ็น"
+                  "indication": {
+                    "en": "• All Rockwood Type V AC joint dislocations",
+                    "th": "• ข้อต่อ AC หลุดชนิด Rockwood Type V ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Open / arthroscopic-assisted anatomical reduction + Robust dual CC suture tape button fixation (anatomic conoid and trapezoid tunnels) + Meticulous repair and reattachment of deltotrapezial fascia over the clavicle",
+                    "th": "• ผ่าตัดเปิดหรือส่องกล้องช่วยจัดกระดูกเข้าที่ + ผ่าตัดยึดตรึงเอ็น CC คู่ด้วย Dual Suture Tape Button (เจาะรูตามแนว Conoid และ Trapezoid) + เย็บซ่อมแซมพังผืด Deltotrapezial คลุมทับกระดูกอย่างแน่นหนา"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict sling immobilization for 6 weeks; no overhead lifting for 3 months; return to contact sports at 6 months",
+                    "th": "• ใส่ Sling เคร่งครัด 6 สัปดาห์ ห้ามยกของหนักเหนือศีรษะ 3 เดือน และกลับไปเล่นกีฬาปะทะที่ 6 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Failing to repair the stripped deltotrapezial fascia leading to secondary superior migration",
+                    "th": "• ละเลยการเย็บซ่อมพังผืด Deltotrapezial ทำให้กระดูกยกลอยซ้ำขึ้นมาอีก"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type5.png",
@@ -338,13 +503,46 @@ export const clavicleBone: BoneData = {
                 "th": "การบาดเจ็บรุนแรงแบบแขนกางและบิดออก"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Rare high-energy injury with inferior displacement under the acromion or coracoid process; severe brachial plexus and vascular stretch risk; emergency reduction and operative CC reconstruction.",
+                  "th": "การบาดเจ็บพลังงานสูงที่พบได้ยาก ไหปลาร้าเคลื่อนหลุดลงล่างไปติดใต้กระดูก Coracoid หรือ Acromion เสี่ยงต่อการดึงรั้งเส้นประสาท Brachial Plexus และหลอดเลือด ต้องผ่าตัดจัดงัดกระดูกขึ้นฉุกเฉินและสร้างเอ็น CC ใหม่"
+                },
+                "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended",
-                  "th": "ไม่แนะนำ"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Subcoracoid lock with neurovascular traction)",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด (กระดูกติดล็อคใต้ Coracoid และดึงรั้งเส้นประสาท/หลอดเลือด)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Neurovascular compression and permanent loss of shoulder girdle mechanics",
+                    "th": "• การกดทับเส้นประสาทและหลอดเลือด และสูญเสียการทำงานของไหล่ถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "Surgical reconstruction",
-                  "th": "ผ่าตัดจัดกระดูกและซ่อมแซมเอ็น"
+                  "indication": {
+                    "en": "• All acute Rockwood Type VI AC joint dislocations",
+                    "th": "• ข้อต่อ AC หลุดชนิด Rockwood Type VI ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Emergency open disimpaction of subcoracoid/subacromial clavicle + Neurovascular decompression + CC ligament reconstruction with suture buttons + Deltotrapezial repair",
+                    "th": "• ผ่าตัดเปิดฉุกเฉินงัดปลดกระดูกไหปลาร้าออกจากใต้ Coracoid + ตรวจเช็คเส้นประสาทหลอดเลือด + ผ่าตัดสร้างเอ็น CC ด้วย Suture Button + เย็บซ่อมพังผืด Deltotrapezial"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; progressive guided physical therapy",
+                    "th": "• ใส่ Sling 6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Iatrogenic brachial plexus / axillary artery injury during disimpaction from subcoracoid bed",
+                    "th": "• อันตรายต่อเส้นประสาท Brachial Plexus หรือหลอดเลือด Axillary ขณะงัดกระดูกออกจากใต้ Coracoid"
+                  }
                 }
               },
               "illustrationId": "/images/rockwood_ac/type6.png",
@@ -452,6 +650,19 @@ export const clavicleBone: BoneData = {
             "en": "Closed reduction of midshaft clavicle fractures cannot be maintained conservatively; splints and slings serve for immobilization and pain relief only.",
             "th": "การจัดกระดูกแบบไม่ผ่าตัดไม่สามารถรักษาแนวไว้ได้ การใส่เฝือกอ่อนและ Sling มีจุดประสงค์เพื่อลดปวดและดามนิ่งเท่านั้น"
           }
+        ],
+        "images": [
+          {
+            "url": "/images/allman_clavicle/allman_overview.png",
+            "title": {
+              "en": "Allman Anatomical Zones (JBJS 1967)",
+              "th": "โซนกายวิภาคกระดูกไหปลาร้า Allman (JBJS 1967)"
+            },
+            "caption": {
+              "en": "Group I: Midshaft (69-85%), Group II: Distal third (12-28%), Group III: Medial third (3-6%).",
+              "th": "Group I: ลำกระดูกส่วนกลาง (69-85%), Group II: ส่วนปลายชิดไหล่ (12-28%), Group III: ส่วนต้นชิดอก (3-6%)"
+            }
+          }
         ]
       },
       "classifications": [
@@ -543,14 +754,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าด้านข้างหัวไหล่จากการล้ม หรืออุบัติเหตุเล่นกีฬา"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Middle 1/3 clavicle shaft fracture; non-operative sling for non-displaced or minimally displaced (<2 cm shortening, <100% displacement) with >95% union; anatomical superior/anteroinferior locking plate ORIF for displaced (>2 cm shortening, 100% displacement, skin tenting, neurovascular compromise).",
+                  "th": "กระดูกไหปลาร้าส่วนกลางหัก หากไม่เคลื่อนตัวหรือหดสั้น <2 ซม. (เกย <100%) รักษาแบบไม่ผ่าตัดด้วย Arm sling ได้ผลกระดูกติด >95% หากเคลื่อนตัวมาก (สั้น >2 ซม., เกยหลุด 100%, ทิ่มดันผิวหนัง, โดนเส้นเลือด/เส้นประสาท) แนะนำผ่าตัดดามแผ่นเหล็กล็อค Superior/Anteroinferior Locking Plate"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT FOR NON-DISPLACED / MINIMALLY DISPLACED (<2cm shortening). Simple arm sling or figure-of-eight bandage for 4-6 weeks, with early passive pendulum exercises at 2 weeks. Excellent union rate (>95%).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดในผู้ป่วยทั่วไป (สำหรับกระดูกไม่เคลื่อนหรือหดสั้น <2 ซม.) ใส่สายคล้องแขน (Arm Sling) 4-6 สัปดาห์ ร่วมกับฝึกแกว่งแขน อัตรากระดูกติดดีเยี่ยม (>95%)"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced midshaft clavicle fracture (< 2 cm shortening, < 100% displacement)\n• Intact neurovascular examination and no skin compromise",
+                    "th": "• กระดูกหักส่วนกลางไม่เคลื่อนตัว หรือหดสั้น < 2 ซม. (เคลื่อนตัว < 100%)\n• ตรวจระบบประสาทและหลอดเลือดปกติ ไม่มีผิวดันดันหนัง"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling (figure-of-eight offers no benefit and risks pressure sores) for 3–4 weeks for comfort",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์เพื่อความสบาย (ไม่จำเป็นต้องใส่ Figure-of-eight เพราะไม่ได้ช่วยดึงกระดูกและเสี่ยงเกิดแผลกดทับ)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start gentle pendulum exercises at 1–2 weeks; active-assisted forward elevation at 3–4 weeks; active strengthening at 6–8 weeks; contact sports at 12 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนเบาๆ ที่ 1–2 สัปดาห์ ยกแขนช่วยที่ 3–4 สัปดาห์ ฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์ และกลับไปเล่นกีฬาปะทะที่ 12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Using tight figure-of-eight bandage causing skin breakdown or transient brachial plexopathy\n• Underestimating shortening >2 cm resulting in symptomatic malunion",
+                    "th": "• การรัดสาย Figure-of-eight แน่นเกินไปทำให้เกิดแผลกดทับหรือมือชาจากกดทับเส้นประสาท Brachial plexus\n• ประเมินระยะหดสั้นผิดพลาด (>2 ซม.) ทำให้กระดูกติดผิดรูปและไหล่ทรุดเสียสมดุล"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for shortening > 2 cm, >100% displacement (no cortical contact), skin tenting, open fracture, or neurovascular injury. ORIF with superior or anteroinferior anatomical locking plate.",
-                  "th": "พิจารณาผ่าตัด (ORIF) กรณีขอบกระดูกหดสั้น >2 ซม., ชิ้นกระดูกเคลื่อนหลุด >100%, ทิ่มผิวหนัง หรือบาดเจ็บต่อเส้นเลือดเส้นประสาท ดามแผ่นเหล็กล็อค Anatomical Locking Plate"
+                  "indication": {
+                    "en": "• Displaced midshaft fracture with > 2 cm shortening\n• 100% displacement (no cortical contact)\n• Comminuted / vertical Z-fragment\n• Impending skin tenting or open fracture\n• Subclavian vessel or brachial plexus injury\n• Floating shoulder (ipsilateral scapular neck fracture)",
+                    "th": "• กระดูกเคลื่อนตัวหดสั้น > 2 ซม.\n• ชิ้นกระดูกเคลื่อนเกยหลุด 100% (ขอบกระดูกไม่แตะกัน)\n• มีชิ้นกระดูกแตกตั้งฉาก (Vertical Z-fragment)\n• กระดูกทิ่มดันผิวหนังตึงเสี่ยงทะลุ หรือแผลหักเปิด\n• มีการบาดเจ็บต่อหลอดเลือด Subclavian หรือเส้นประสาท Brachial plexus\n• ภาวะ Floating shoulder (กระดูกคอสะบักหักข้างเดียวกัน)"
+                  },
+                  "method": {
+                    "en": "• Supraclavicular or infraclavicular incision: Anatomical reduction of length and rotation + Pre-contoured Superior or Anteroinferior 3.5 mm Clavicle Locking Compression Plate (minimum 3 bicortical screws [6 cortices] on each side) ± lag screws",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกคืนความยาวและการหมุน: ดามด้วยแผ่นเหล็กล็อคดัดเข้ารูป 3.5 mm Superior หรือ Anteroinferior Clavicle Locking Plate (ยึดสกรู Bicortical อย่างน้อยข้างละ 3 ตัว [6 cortices]) ± Lag screws"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for comfort for 7–10 days; early active-assisted shoulder ROM on post-op day 1–2; unrestricted overhead motion by 6 weeks",
+                    "th": "• ใส่ Sling พักแขน 7–10 วัน เริ่มฝึกขยับข้อไหล่ได้ตั้งแต่วันที่ 1–2 หลังผ่าตัด และยกแขนเหนือศีรษะได้เต็มที่ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Drilling too deep through inferior cortex risking subclavian artery/vein or apex lung puncture\n• Inadequate purchase (<6 cortices) leading to plate pullout",
+                    "th": "• เจาะสว่านลึกเกินไปทะลุผนังกระดูกด้านล่างโดนหลอดเลือด Subclavian หรือยอดปอด\n• ขันสกรูยึดกระดูกน้อยเกินไป (<6 cortices) ทำให้แผ่นเหล็กหลุดถอน"
+                  }
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_1.png",
@@ -574,14 +817,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าที่ปลายไหล่ (Acromion) ขณะหุบแขน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal 1/3 clavicle fracture subclassified by Neer (Types I–V); stable patterns (Neer I, III, IV) managed non-operatively; unstable patterns (Neer IIA, IIB, V) with detached CC ligaments have high nonunion rate (~30%) requiring Distal Clavicle Locking Plate + CC augmentation.",
+                  "th": "กระดูกไหปลาร้าส่วนปลายหัก จำแนกตาม Neer (Types I–V) โดยชนิดมั่นคง (Neer I, III, IV) รักษาแบบไม่ผ่าตัด ส่วนชนิดไม่มั่นคงที่เอ็น CC หลุด (Neer IIA, IIB, V) มีอัตรากระดูกไม่ติดสูง (~30%) จำเป็นต้องผ่าตัด Distal Clavicle Locking Plate ร่วมกับการยึดเสริมเอ็น CC"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY for stable non-displaced fractures (Neer Type I and III). Arm sling for 3-4 weeks.",
-                  "th": "พิจารณาเฉพาะชนิดไม่เคลื่อนตัว (Neer Type I และ III) ใส่สายคล้องแขน 3-4 สัปดาห์"
+                  "indication": {
+                    "en": "• Stable distal clavicle fractures (Neer Type I, III, IV) with intact CC ligament attachment",
+                    "th": "• กระดูกไหปลาร้าส่วนปลายชนิดมั่นคง (Neer Type I, III, IV) ที่เอ็น CC ยังยึดติดปกติ"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early pendulum motion at 2 weeks; progressive active ROM at 4 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 2 สัปดาห์ และฝึกยกแขนที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Mistaking an unstable Neer IIA/IIB for Type I resulting in nonunion",
+                    "th": "• วินิจฉัยชนิดไม่มั่นคง Neer IIA/IIB พลาดเป็น Type I ทำให้กระดูกไม่ติด"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR DISPLACED PATTERNS (Neer Type II & V). Open reduction and internal fixation (ORIF) with superior distal clavicle locking plate + coracoclavicular (CC) suture tape / button augmentation or Hook Plate.",
-                  "th": "แนะนำผ่าตัดรักษาในชนิดเคลื่อนตัว (Neer Type II & V) เปิดผ่าตัดดามแผ่นเหล็กล็อคส่วนปลาย (Distal Clavicle Locking Plate) ร่วมกับการรัดยึดเอ็น CC"
+                  "indication": {
+                    "en": "• All displaced/unstable distal clavicle fractures (Neer Type IIA, IIB, V)",
+                    "th": "• กระดูกไหปลาร้าส่วนปลายชนิดเคลื่อนตัว/ไม่มั่นคง (Neer Type IIA, IIB, V) ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Distal Clavicle Anatomical Locking Plate with divergent subchondral locking screws in the small lateral fragment + Coracoclavicular (CC) suture tape button (TightRope) augmentation OR Clavicle Hook Plate (requires removal at 3–4 months)",
+                    "th": "• ผ่าตัดดามแผ่นเหล็กล็อคส่วนปลาย (Distal Clavicle Locking Plate) พร้อมขันสกรูกระจายค้ำชิ้นกระดูกปลายชิ้นเล็ก + ผ่าตัดรัดเสริมเอ็น CC ด้วย Suture Tape Button (TightRope) หรือใส่ Clavicle Hook Plate (ต้องผ่าตัดถอดออกที่ 3–4 เดือน)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; progressive guided physical therapy",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Subacromial osteolysis / rotator cuff impingement with retained hook plates (must be removed after union)",
+                    "th": "• การใส่ Hook Plate ทิ้งไว้นานเกินไปทำให้กระดูก Acromion ละลายหรือขัดสีเอ็น Rotator cuff (ต้องผ่าตัดถอดออกเมื่อกระดูกติด)"
+                  }
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_2.png",
@@ -605,14 +880,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกอัดพลังงานสูงเข้าที่หน้าอก หรืออุบัติเหตุทางรถยนต์"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Medial 1/3 proximal clavicle fracture; mostly non-displaced or anteriorly displaced, treated non-operatively with sling (>95% union); emergency reduction and medial locking plate ORIF for posterior displacement compressing mediastinal structures (trachea, esophagus, great vessels).",
+                  "th": "กระดูกไหปลาร้าส่วนต้นด้านในหัก ส่วนใหญ่ไม่เคลื่อนตัวหรือเคลื่อนไปด้านหน้ารักษาแบบไม่ผ่าตัดด้วย Sling (กระดูกติด >95%) หากเคลื่อนไปด้านหลังกดทับอวัยวะสำคัญในช่องอก (หลอดเลือดใหญ่, ท่อลม, หลอดอาหาร) ต้องรีบผ่าตัดจัดกระดูกและดามแผ่นเหล็ก Medial T-plate ฉุกเฉิน"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT FOR NON-DISPLACED / ANTERIORLY DISPLACED FRACTURES. Arm sling for 3-4 weeks, followed by progressive active shoulder ROM. Excellent prognosis.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดในผู้ป่วยส่วนใหญ่ (ชนิดไม่เคลื่อนตัวหรือเคลื่อนไปด้านหน้า) ใส่สายคล้องแขน 3-4 สัปดาห์ แล้วฝึกบริหารไหล่"
+                  "indication": {
+                    "en": "• Non-displaced or anteriorly displaced medial 1/3 clavicle fractures without mediastinal symptoms",
+                    "th": "• กระดูกหักส่วนต้นไม่เคลื่อนตัว หรือเคลื่อนไปด้านหน้า โดยไม่มีอาการกดทับช่องอก"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive shoulder motion as tolerated; active shoulder elevation after 4 weeks",
+                    "th": "• ขยับข้อไหล่เบาๆ เท่าที่ทนได้ และเริ่มยกแขนเองหลัง 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failing to order 3D CT scan for posterior displacement threatening mediastinum",
+                    "th": "• ละเลยการส่งตรวจ 3D CT scan ในเคสที่กระดูกเคลื่อนไปด้านหลัง"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated ONLY for posterior displacement threatening mediastinal organs, severe skin tenting, or painful nonunion. ORIF with medial T-plate or tension-band wiring.",
-                  "th": "ผ่าตัดเฉพาะกรณีเคลื่อนไปด้านหลังทับกดอวัยวะช่องอก ทิ่มผิวหนัง หรือกระดูกไม่ติด ดามแผ่นเหล็ก Medial T-plate"
+                  "indication": {
+                    "en": "• Posteriorly displaced fracture threatening or compressing retrosternal structures (subclavian vessels, superior vena cava, trachea, esophagus)\n• Severe painful nonunion",
+                    "th": "• กระดูกเคลื่อนไปด้านหลังกดทับหรือเสี่ยงต่อหลอดเลือดใหญ่ SVC, เส้นเลือด Subclavian, ท่อลม หรือหลอดอาหาร\n• ภาวะกระดูกไม่ติดเรื้อรังและมีอาการปวดรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Cardiothoracic backup on standby: Open reduction + Medial Clavicle Pre-contoured T-Plate or mesh locking plate ± sternoclavicular ligament reconstruction (avoid smooth K-wires due to fatal migration risk)",
+                    "th": "• มีทีมศัลยแพทย์ทรวงอกเตรียมพร้อม: ผ่าตัดเปิดจัดกระดูก + ดามแผ่นเหล็กล็อค Medial Clavicle T-Plate หรือ Mesh Plate ± ผ่าตัดเย็บสร้างเอ็น SC (ห้ามใช้ลวดเรียบ K-wire เด็ดขาดเพราะเสี่ยงลวดเลื่อนทะลุเข้าหัวใจ)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Protected shoulder motion in sling for 4–6 weeks",
+                    "th": "• ดามแขนใน Sling 4–6 สัปดาห์ และฝึกขยับข้อไหล่อย่างระมัดระวัง"
+                  },
+                  "pitfalls": {
+                    "en": "• Fatal intra-thoracic migration of K-wires or pins into heart/great vessels (smooth pins STRICTLY PROHIBITED)",
+                    "th": "• การใช้ลวด K-wire ปักยึดกระดูกส่วนต้นอาจเลื่อนหลุดทะลุเข้าหัวใจหรือหลอดเลือดใหญ่จนเสียชีวิต (ห้ามใช้ลวดเรียบเด็ดขาด)"
+                  }
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_3.png",
@@ -770,14 +1077,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงเข้าที่ด้านข้างของหัวไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distal clavicle fracture lateral to or between intact CC ligaments; stable AC and CC complexes; high union rate (>95%) with non-operative sling management.",
+                  "th": "กระดูกไหปลาร้าส่วนปลายหักอยู่ปลายต่อเอ็น CC หรือระหว่างเอ็น CC ที่ยังสมบูรณ์ โครงสร้างมั่นคงดี อัตรากระดูกติดสูงมาก (>95%) ด้วยการรักษาแบบไม่ผ่าตัดใส่ Arm sling"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Sling immobilization for 3-4 weeks for comfort, followed by progressive range of motion and strengthening. Excellent healing rate (>95%).",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัดเป็นอันดับแรก ใส่สายคล้องแขน (Sling) นาน 3-4 สัปดาห์ แล้วเริ่มกายภาพบำบัดขยับข้อ อัตรากระดูกติดสูงมาก (>95%)"
+                  "indication": {
+                    "en": "• Truly non-displaced or minimally displaced distal clavicle fracture\n• Intact CC ligaments and stable CC interval",
+                    "th": "• กระดูกไหปลาร้าส่วนปลายหักไม่เคลื่อนตัวหรือเคลื่อนน้อยมาก\n• เอ็น CC สมบูรณ์และระยะห่าง CC ปกติ"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 3–4 weeks for comfort",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์เพื่อบรรเทาอาการปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active elbow and pendulum exercises at 1–2 weeks; progressive active shoulder ROM at 3–4 weeks; active strengthening at 6–8 weeks",
+                    "th": "• เริ่มฝึกขยับข้อศอกและแกว่งแขนวงกลมที่ 1–2 สัปดาห์ ยกแขนเองที่ 3–4 สัปดาห์ และเริ่มเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prolonged shoulder immobilization leading to stiffness",
+                    "th": "• ดามแขนนิ่งนานเกินไปทำให้ข้อไหล่ติดแข็ง"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely indicated; reserved for active patients with symptomatic nonunion.",
-                  "th": "แทบไม่ต้องผ่าตัด พิจารณาเฉพาะกรณีที่มีกระดูกไม่ติดและมีอาการปวด"
+                  "indication": {
+                    "en": "• Rare; only for secondary displacement or symptomatic nonunion",
+                    "th": "• แทบไม่มีข้อบ่งชี้ พิจารณาเฉพาะกรณีเลื่อนหลุดเพิ่มขึ้นหรือกระดูกไม่ติดเรื้อรัง"
+                  },
+                  "method": {
+                    "en": "• ORIF with distal clavicle plate",
+                    "th": "• ผ่าตัดดามแผ่นเหล็กล็อคส่วนปลาย (Distal Clavicle Plate)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early ROM",
+                    "th": "• เริ่มขยับข้อตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Overtreatment of a stable fracture",
+                    "th": "• ผ่าตัดเกินจำเป็นในกระดูกหักที่มั่นคงดี"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_1.png",
@@ -801,14 +1140,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกพลังงานสูงเข้าที่ Acromion กดไหล่ลงด้านล่างอย่างรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture line medial to intact CC ligaments; CC ligaments stay attached to the distal fragment while proximal fragment displaces superiorly; high nonunion rate (30%–40%); Distal Clavicle Locking Plate + CC augmentation is the treatment of choice.",
+                  "th": "รอยหักอยู่ด้านในต่อเอ็น CC ทำให้ชิ้นกระดูกส่วนต้นยกลอยขึ้นสูงและหลุดออกจากเอ็น CC มีอัตรากระดูกไม่ติดสูงมาก (30%–40%) การผ่าตัด Distal Clavicle Locking Plate ร่วมกับการยึดเสริมเอ็น CC เป็นการรักษาหลักที่แนะนำ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended for young, active individuals due to high rate of painful nonunion (30-40%). Trial of sling reserved for elderly low-demand patients.",
-                  "th": "ไม่แนะนำในผู้ป่วยวัยทำงานเนื่องจากเสี่ยงกระดูกไม่ติดสูง (30-40%) พิจารณาใส่ Sling เฉพาะผู้สูงอายุที่ไม่ค่อยใช้งานแขน"
+                  "indication": {
+                    "en": "• Non-ambulatory elderly patients with high surgical risks",
+                    "th": "• ผู้ป่วยสูงอายุติดเตียงที่มีความเสี่ยงต่อการผ่าตัดสูงมาก"
+                  },
+                  "method": {
+                    "en": "• Sling immobilization for 4–6 weeks",
+                    "th": "• ใส่สายคล้องแขนประคองอาการ 4–6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive motion",
+                    "th": "• กายภาพบำบัดเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Extremely high nonunion rate (30%–40%), persistent shoulder pain, and prominent deformity",
+                    "th": "• อัตรากระดูกไม่ติดสูงมาก (30%–40%) มีอาการปวดไหล่เรื้อรังและกระดูกปูดผิดรูปชัดเจน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Surgical fixation using superior distal clavicle locking plate with CC button reconstruction, coracoclavicular suture tape augmentation, or hook plate fixation.",
-                  "th": "แนะนำให้ผ่าตัดรักษา (ORIF) โดยใช้แผ่นเหล็กล็อคส่วนปลาย (Distal clavicle locking plate) ร่วมกับการยึดเชือก CC Tape หรือใส่ Hook plate"
+                  "indication": {
+                    "en": "• All displaced Neer IIA distal clavicle fractures in active functional patients",
+                    "th": "• กระดูกหัก Neer IIA ที่เคลื่อนตัวในผู้ป่วยวัยทำงานและผู้ที่ใช้งานแขนทุกราย"
+                  },
+                  "method": {
+                    "en": "• Superior approach: Anatomical reduction of medial fragment + Distal Clavicle Locking Plate (multi-hole lateral cluster) combined with Coracoclavicular (CC) suture button (TightRope / Twinloop) or suture tape augmentation",
+                    "th": "• ผ่าตัดเข้าทางด้านบน: จัดดึงกระดูกชิ้นโคนลงมาให้เข้าที่สมบูรณ์ + ดามแผ่นเหล็กล็อคส่วนปลาย (Distal Clavicle Locking Plate) ร่วมกับการรัดยึดเอ็น CC ด้วย Suture Button (TightRope / Twinloop) หรือ Suture Tape Augmentation"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive forward elevation <90° for 4 weeks; active ROM and strengthening at 6–8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ จำกัดการยกแขนไม่เกิน 90 องศาใน 4 สัปดาห์แรก เริ่มฝึกยกแขนเองและเพิ่มกำลังที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Plate fixation without CC ligament augmentation leading to screw pullout from the small distal fragment",
+                    "th": "• ดามแผ่นเหล็กอย่างเดียวโดยไม่ยึดเสริมเอ็น CC ทำให้สกรูในชิ้นกระดูกปลายชิ้นเล็กหลุดถอน"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_2a.png",
@@ -832,14 +1203,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงบน Acromion ขณะหุบแขน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture line between CC ligaments with conoid ligament torn; proximal fragment displaces superiorly; unstable with high nonunion rate; mandatory Distal Clavicle Plate ORIF + Conoid/CC ligament reconstruction.",
+                  "th": "รอยหักอยู่ระหว่างเอ็น CC โดยเอ็น Conoid ฉีกขาด ทำให้กระดูกชิ้นโคนยกลอยสูงขึ้นและไม่มั่นคง เสี่ยงกระดูกไม่ติดสูง ต้องผ่าตัด ORIF ดามแผ่นเหล็กส่วนปลายร่วมกับการซ่อมสร้างเอ็น Conoid/CC"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "High risk of symptomatic nonunion and shoulder asymmetry.",
-                  "th": "ความเสี่ยงสูงต่อกระดูกไม่ติดและไหล่เสียรูปทรง"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in active individuals",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Painful nonunion, shoulder weakness, and scapular dyskinesis",
+                    "th": "• กระดูกไม่ติด ปวดเรื้อรัง กล้ามเนื้อไหล่อ่อนแรง และสะบักเสียสมดุล"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) with distal clavicle plate + Coracoclavicular ligament repair or suture button augmentation (e.g., TightRope).",
-                  "th": "แนะนำให้ผ่าตัด (ORIF) ยึดแผ่นเหล็กดามไหปลาร้าส่วนปลาย ร่วมกับผ่าตัดซ่อมแซมเอ็น CC หรือใส่เชือกยึด Suture button (TightRope)"
+                  "indication": {
+                    "en": "• All displaced Neer IIB distal clavicle fractures",
+                    "th": "• กระดูกหัก Neer IIB ที่เคลื่อนตัวทุกราย"
+                  },
+                  "method": {
+                    "en": "• ORIF with Pre-contoured Distal Clavicle Locking Plate + Anatomical CC suture tape / button augmentation (restoring conoid constraint) ± direct conoid ligament suture repair",
+                    "th": "• ผ่าตัด ORIF ดามแผ่นเหล็กล็อคส่วนปลาย (Distal Clavicle Locking Plate) + รัดยึดเสริมเอ็น CC ด้วย Suture Tape Button (ทดแทนเอ็น Conoid) ± เย็บซ่อมเอ็น Conoid โดยตรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; progressive guided physical therapy",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Neglecting conoid ligament insufficiency resulting in persistent superior migration",
+                    "th": "• ละเลยการสร้างเสริมเอ็น Conoid ทำให้กระดูกยกลอยซ้ำ"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_2b.png",
@@ -863,14 +1266,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงผ่าน Acromion ส่งผ่านเข้าข้อต่อ AC"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Intra-articular fracture extending into AC joint without CC ligament disruption; stable vertical alignment; conservative management with sling; monitor for post-traumatic AC joint arthritis (managed with Mumford distal clavicle excision).",
+                  "th": "กระดูกหักเข้าข้อ AC โดยเอ็น CC ยังสมบูรณ์ แนวแนวดิ่งมั่นคงดี รักษาแบบไม่ผ่าตัดด้วย Sling และเฝ้าระวังข้อ AC เสื่อมในระยะยาว (ซึ่งรักษาด้วยการตัดปลายไหปลาร้า Mumford procedure)"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED INITIAL TREATMENT. Sling immobilization for 2-3 weeks for pain relief, followed by early mobilization. Symptomatic treatment.",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัดเป็นอันดับแรก ใส่ Sling ดาม 2-3 สัปดาห์บรรเทาปวด แล้วเริ่มฝึกขยับข้อ"
+                  "indication": {
+                    "en": "• Non-displaced intra-articular distal clavicle fracture",
+                    "th": "• กระดูกหักเข้าข้อ AC ชนิดไม่เคลื่อนตัว"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 2–3 weeks for pain control",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์เพื่อบรรเทาอาการปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active-assisted ROM as pain allows; strengthening at 4–6 weeks",
+                    "th": "• เริ่มฝึกขยับข้อไหล่ตามอาการปวด และฝึกเพิ่มกำลังที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing late post-traumatic AC joint osteoarthritis (presents with cross-body adduction pain at 6–12 months)",
+                    "th": "• มองข้ามภาวะข้อ AC เสื่อมในระยะยาว (มีอาการกดเจ็บและปวดเมื่อหุบแขนข้ามลำตัวที่ 6–12 เดือน)"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for late symptomatic AC joint osteoarthritis. Managed with distal clavicle excision (Mumford procedure).",
-                  "th": "ผ่าตัดเฉพาะกรณีเกิดภาวะข้อ AC เสื่อมและปวดเรื้อรังในระยะยาว โดยผ่าตัดตัดปลายกระดูกไหปลาร้า (Mumford procedure)"
+                  "indication": {
+                    "en": "• Acute: severely displaced intra-articular fragment blocking AC motion\n• Chronic: post-traumatic AC joint arthritis refractory to conservative therapy",
+                    "th": "• ระยะเฉียบพลัน: ชิ้นกระดูกในข้อเคลื่อนตัวมากขัดขวางการขยับข้อ\n• ระยะเรื้อรัง: ข้อ AC เสื่อมและปวดเรื้อรังหลังรักษาด้วยยาไม่ดีขึ้น"
+                  },
+                  "method": {
+                    "en": "• Open or arthroscopic Distal Clavicle Excision (Mumford procedure, removing distal 5–8 mm of clavicle)",
+                    "th": "• ผ่าตัดเปิดหรือส่องกล้องตัดปลายกระดูกไหปลาร้า (Mumford procedure ตัดออก 5–8 มม.)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active shoulder motion immediately after Mumford procedure",
+                    "th": "• เริ่มฝึกขยับข้อไหล่ได้ทันทีหลังผ่าตัด Mumford"
+                  },
+                  "pitfalls": {
+                    "en": "• Resecting >10 mm of distal clavicle compromising CC ligament attachments",
+                    "th": "• ตัดปลายกระดูกไหปลาร้าออกมากเกินไป (>10 มม.) จนโดนจุดเกาะของเอ็น CC ทำให้ข้อหลวม"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_3.jpg",
@@ -894,14 +1329,46 @@ export const clavicleBone: BoneData = {
                 "th": "ล้มกระแทกไหล่ในผู้ป่วยเด็ก/วัยรุ่นที่กระดูกยังเจริญเติบโตไม่เต็มที่ (<18 ปี)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Pediatric/adolescent injury (<18 yo); proximal fragment erupts through periosteal sleeve while CC ligaments remain attached to the sleeve; exceptional remodeling potential; non-operative sling immobilization.",
+                  "th": "การบาดเจ็บในเด็ก/วัยรุ่น (<18 ปี) ชิ้นกระดูกส่วนต้นทะลุเยื่อหุ้มกระดูกขึ้นบนแต่เอ็น CC ยังยึดกับเยื่อหุ้มกระดูกด้านล่าง มีศักยภาพในการสร้างปรับแต่งกระดูก (Remodeling) สูงมาก รักษาแบบไม่ผ่าตัดด้วย Arm sling"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Sling immobilization for 3-4 weeks. Excellent remodeling capacity usually restores alignment without surgery.",
-                  "th": "แนะนำให้รักษาแบบไม่ผ่าตัดเป็นหลัก ใส่ Sling นาน 3-4 สัปดาห์ กระดูกเด็กจะสร้างปรับทรง (Remodeling) กลับมาสมบูรณ์ได้เอง"
+                  "indication": {
+                    "en": "• Closed Neer IV pediatric distal clavicle sleeve fractures without skin compromise",
+                    "th": "• กระดูกไหปลาร้าส่วนปลายหัก Neer IV ในเด็กแบบปิด ไม่มีผิวดันดันหนัง"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early progressive shoulder mobilization after 3 weeks; complete remodeling within 6–12 months",
+                    "th": "• เริ่มขยับข้อไหล่หลัง 3 สัปดาห์ กระดูกจะปรับทรงเชื่อมติดสมบูรณ์ใน 6–12 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary open surgery in children disrupting natural remodeling biology",
+                    "th": "• การผ่าตัดเปิดเกินจำเป็นในเด็กซึ่งทำลายกระบวนการสมานและปรับรูปทรงตามธรรมชาติ"
+                  }
                 },
                 "operative": {
-                  "en": "Reserved only for severe skin tenting, open injuries, or failure of closed reduction.",
-                  "th": "ผ่าตัดเฉพาะกรณีผิวดันดันหนังดึงรั้งมาก หรือเป็นแผลเปิด"
+                  "indication": {
+                    "en": "• Severe skin tenting, open fracture, or failed closed reduction in older adolescents near skeletal maturity",
+                    "th": "• กระดูกทิ่มดันผิวหนังตึงเสี่ยงทะลุ แผลเปิด หรือดึงจัดกระดูกไม่เข้าที่ในวัยรุ่นที่กระดูกใกล้ปิด"
+                  },
+                  "method": {
+                    "en": "• Open reduction of bone into periosteal sleeve + Periosteal suture repair ± transfixing smooth K-wires",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกกลับเข้าเยื่อหุ้มกระดูก + เย็บซ่อมเยื่อหุ้มกระดูกคลุมทับ ± ปักลวด K-wire ยึดชั่วคราว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 3–4 weeks",
+                    "th": "• ใส่ Sling 3–4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• K-wire migration",
+                    "th": "• ลวด K-wire เลื่อนหลุด"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_4.jpg",
@@ -925,14 +1392,46 @@ export const clavicleBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงพลังงานสูงบริเวณไหปลาร้าส่วนปลาย"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Comminuted distal clavicle fracture with a small inferior cortical fragment retaining CC ligament attachments; proximal clavicle is completely dissociated; highly unstable; mandatory anatomical locking plate ORIF + incorporation of inferior fragment or CC augmentation.",
+                  "th": "กระดูกไหปลาร้าส่วนปลายแตกละเอียดโดยมีชิ้นกระดูกส่วนล่างยึดติดกับเอ็น CC ทำให้กระดูกชิ้นโคนหลุดลอยอย่างอิสระ ไม่มั่นคงอย่างยิ่ง ต้องผ่าตัด ORIF ดามแผ่นเหล็กล็อคส่วนปลาย + ยึดชิ้นกระดูกส่วนล่าง หรือรัดยึดเสริมเอ็น CC"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended. Very high nonunion rate due to interposition of fragments and loss of CC ligament continuity.",
-                  "th": "ไม่แนะนำ อัตรากระดูกไม่ติดสูงมากเนื่องจากสูญเสียการยึดเกาะของเอ็น CC"
+                  "indication": {
+                    "en": "• CONTRAINDICATED in functional patients (Guaranteed nonunion)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (กระดูกไม่ติดแน่นอน)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe nonunion and permanent shoulder weakness",
+                    "th": "• กระดูกไม่ติดรุนแรงและสูญเสียแรงยกไหล่ถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF with distal clavicle plate, incorporating the inferior fragment with lag screws or suture cerclage, combined with CC ligament augmentation.",
-                  "th": "แนะนำให้ผ่าตัดรักษา (ORIF) ด้วยแผ่นเหล็กดามส่วนปลาย ร่วมกับการยึดชิ้นกระดูกล่างและเสริมความแข็งแรงของเอ็น CC"
+                  "indication": {
+                    "en": "• All Neer Type V comminuted distal clavicle fractures",
+                    "th": "• กระดูกหัก Neer Type V ที่แตกละเอียดทุกราย"
+                  },
+                  "method": {
+                    "en": "• Distal Clavicle Anatomical Locking Plate ORIF + Lag screw / cerclage suture fixation of the inferior avulsion fragment + Direct CC suture button (TightRope) augmentation",
+                    "th": "• ผ่าตัด ORIF ดามแผ่นเหล็กล็อค Distal Clavicle Locking Plate + ขันสกรู Lag screw หรือร้อยไหม Cerclage ยึดชิ้นกระดูกส่วนล่าง + ผ่าตัดยึดเสริมเอ็น CC ด้วย Suture Button (TightRope)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; progressive passive ROM; active strengthening at 8 weeks",
+                    "th": "• ใส่ Sling 6 สัปดาห์ เริ่มฝึกขยับข้อไหล่ตามลำดับ และเริ่มฝึกเพิ่มกำลังที่ 8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Discarding or missing the small inferior CC-bearing cortical fragment",
+                    "th": "• มองข้ามหรือทิ้งชิ้นกระดูกส่วนล่างที่มีจุดเกาะของเอ็น CC"
+                  }
                 }
               },
               "illustrationId": "/images/neer_clavicle/neer_5.jpg",

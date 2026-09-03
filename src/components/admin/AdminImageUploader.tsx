@@ -247,79 +247,92 @@ export function AdminImageUploader({
     }
   };
 
-  // 3. Handle Anatomy Concept Drop
+  // 3. Handle Anatomy Concept Drop (Multi-image support)
   const handleConceptFileDrop = async (region: BoneRegion, files: FileList | null) => {
     if (!files || files.length === 0) return;
-    const file = files[0];
-    if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file (PNG, JPG, WebP)");
+    const validFiles = Array.from(files).filter(f => f.type.startsWith("image/"));
+    if (validFiles.length === 0) {
+      alert("Please upload image files (PNG, JPG, WebP)");
       return;
     }
 
-    const previewUrl = URL.createObjectURL(file);
-    const baseFilename = region.regionConcept?.imageUrl && region.regionConcept.imageUrl.includes("/")
-      ? region.regionConcept.imageUrl.split("/").pop() || `anatomy_${region.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
-      : `anatomy_${region.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`;
+    const existingCount = Array.isArray(region.regionConcept?.images) 
+      ? region.regionConcept.images.length 
+      : (region.regionConcept?.imageUrl ? 1 : 0);
 
-    const targetPath = `/images/concepts/${baseFilename}`;
+    for (let i = 0; i < validFiles.length; i++) {
+      const file = validFiles[i];
+      const previewUrl = URL.createObjectURL(file);
+      const idxSuffix = (existingCount > 0 || validFiles.length > 1) ? `_${existingCount + i + 1}` : "";
+      const baseFilename = `anatomy_${region.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}${idxSuffix}.png`;
+      const targetPath = `/images/concepts/${baseFilename}`;
 
-    setConceptUploads(prev => ({
-      ...prev,
-      [region.id]: {
+      setConceptUploads(prev => ({
+        ...prev,
+        [region.id]: {
+          file,
+          previewUrl,
+          targetPath,
+          suggestedFilename: baseFilename,
+          title: `${region.name[language]} Concept Anatomy ${existingCount + i + 1}`,
+          status: "saving",
+          statusMessage: `Saving image ${i + 1} of ${validFiles.length}...`,
+        },
+      }));
+
+      const result = await saveImageToServer(
         file,
-        previewUrl,
         targetPath,
-        suggestedFilename: baseFilename,
-        title: `${region.name[language]} Concept Anatomy`,
-        status: "saving",
-        statusMessage: "Saving anatomy diagram...",
-      },
-    }));
+        selectedBoneId,
+        region.id,
+        0,
+        0,
+        "",
+        "concept"
+      );
 
-    const result = await saveImageToServer(
-      file,
-      targetPath,
-      selectedBoneId,
-      region.id,
-      0,
-      0,
-      "",
-      "concept"
-    );
+      if (result.success) {
+        if (!region.regionConcept) {
+          region.regionConcept = {};
+        }
+        region.regionConcept.imageUrl = targetPath;
+        if (!Array.isArray(region.regionConcept.images)) {
+          region.regionConcept.images = [targetPath];
+        } else if (!region.regionConcept.images.some((img: any) => (typeof img === 'string' ? img === targetPath : img?.url === targetPath))) {
+          region.regionConcept.images.push(targetPath);
+        }
 
-    if (result.success) {
-      if (!region.regionConcept) {
-        region.regionConcept = {};
+        setConceptUploads(prev => ({
+          ...prev,
+          [region.id]: {
+            ...prev[region.id],
+            status: "saved",
+            updatedFile: result.updatedFile,
+            statusMessage: `Auto-saved image(s) to ${targetPath}!`,
+          },
+        }));
+      } else {
+        setConceptUploads(prev => ({
+          ...prev,
+          [region.id]: {
+            ...prev[region.id],
+            status: "error",
+            statusMessage: result.error,
+          },
+        }));
+        setGlobalBanner({
+          type: "error",
+          message: `⚠️ Auto-save error: ${result.error}`,
+        });
+        return;
       }
-      region.regionConcept.imageUrl = targetPath;
-      setConceptUploads(prev => ({
-        ...prev,
-        [region.id]: {
-          ...prev[region.id],
-          status: "saved",
-          updatedFile: result.updatedFile,
-          statusMessage: `Auto-saved to ${targetPath}!`,
-        },
-      }));
-      setGlobalBanner({
-        type: "success",
-        message: `✅ Anatomy diagram saved to ${targetPath} and updated in ${result.updatedFile}!`,
-      });
-      setTimeout(() => setGlobalBanner(null), 5000);
-    } else {
-      setConceptUploads(prev => ({
-        ...prev,
-        [region.id]: {
-          ...prev[region.id],
-          status: "error",
-          statusMessage: result.error,
-        },
-      }));
-      setGlobalBanner({
-        type: "error",
-        message: `⚠️ Auto-save error: ${result.error}`,
-      });
     }
+
+    setGlobalBanner({
+      type: "success",
+      message: `✅ Saved ${validFiles.length} anatomy concept image(s)!`,
+    });
+    setTimeout(() => setGlobalBanner(null), 5000);
   };
 
   const currentUploads = activeTab === "illustrations" 
@@ -369,7 +382,7 @@ export function AdminImageUploader({
           className="px-6 py-4 border-b flex items-center justify-between flex-shrink-0"
         >
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400">
+            <div className="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-700 dark:text-teal-400">
               <Upload size={20} />
             </div>
             <div>
@@ -377,8 +390,8 @@ export function AdminImageUploader({
                 <h2 className="text-lg font-extrabold tracking-tight">
                   Auto-Sync Media Manager & X-Ray Uploader
                 </h2>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-500/10 text-teal-400 border border-teal-500/30 uppercase tracking-widest flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-teal-500/10 text-teal-800 dark:text-teal-400 border border-teal-600/30 dark:border-teal-500/30 uppercase tracking-widest flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 dark:bg-teal-400 animate-pulse" />
                   Auto-Save Active
                 </span>
               </div>
@@ -586,7 +599,7 @@ export function AdminImageUploader({
                         borderColor: upload?.status === "saved" 
                           ? "#2ECC71" 
                           : upload?.status === "saving"
-                          ? "#00CED1"
+                          ? (darkMode ? "#00CED1" : "#0F766E")
                           : upload?.status === "error"
                           ? "#EF4444"
                           : border 
@@ -595,7 +608,7 @@ export function AdminImageUploader({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="font-extrabold text-sm text-teal-400">{t.type}</div>
+                          <div className="font-extrabold text-sm text-teal-700 dark:text-teal-400">{t.type}</div>
                           <div className="text-xs font-semibold leading-snug line-clamp-1" style={{ color: text }}>
                             {t.name[language]}
                           </div>
@@ -625,7 +638,7 @@ export function AdminImageUploader({
                         }}
                         style={{
                           height: 150,
-                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? (darkMode ? "#00CED1" : "#0F766E") : border,
                           background: darkMode ? "#0B0F17" : "#FFFFFF",
                         }}
                         className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
@@ -654,11 +667,11 @@ export function AdminImageUploader({
                           </div>
                         ) : (
                           <div className="flex flex-col items-center justify-center text-center gap-2 p-3">
-                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
+                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-teal-400">
                               <Palette size={18} />
                             </div>
                             <div>
-                              <div className="text-xs font-bold text-slate-300">Drag & Drop Classification Diagram</div>
+                              <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Drag & Drop Classification Diagram</div>
                               <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/{targetFolder}/</div>
                             </div>
                           </div>
@@ -674,22 +687,22 @@ export function AdminImageUploader({
                           {upload && (
                             <button
                               onClick={() => handleDownloadSingle(upload)}
-                              className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
+                              className="text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
                             >
                               <Download size={10} /> Backup
                             </button>
                           )}
                         </div>
-                        <div className="text-slate-300 font-bold truncate text-[10px]">
+                        <div className="text-slate-700 dark:text-slate-300 font-bold truncate text-[10px]">
                           public/images/{targetFolder}/{targetFilename}
                         </div>
                         {upload?.statusMessage && (
                           <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
                             upload.status === "saved" 
-                              ? "text-emerald-400" 
+                              ? "text-emerald-700 dark:text-emerald-400" 
                               : upload.status === "saving" 
-                              ? "text-teal-400" 
-                              : "text-red-400"
+                              ? "text-teal-700 dark:text-teal-400" 
+                              : "text-red-700 dark:text-red-400"
                           }`}>
                             {upload.statusMessage}
                           </div>
@@ -734,7 +747,7 @@ export function AdminImageUploader({
                         borderColor: upload?.status === "saved" 
                           ? "#2ECC71" 
                           : upload?.status === "saving"
-                          ? "#00CED1"
+                          ? (darkMode ? "#00CED1" : "#0F766E")
                           : upload?.status === "error"
                           ? "#EF4444"
                           : border 
@@ -743,7 +756,7 @@ export function AdminImageUploader({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="font-extrabold text-sm text-teal-400">{t.type}</div>
+                          <div className="font-extrabold text-sm text-teal-700 dark:text-teal-400">{t.type}</div>
                           <div className="text-xs font-semibold leading-snug line-clamp-1" style={{ color: text }}>
                             {t.name[language]}
                           </div>
@@ -773,7 +786,7 @@ export function AdminImageUploader({
                         }}
                         style={{
                           height: 150,
-                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? (darkMode ? "#00CED1" : "#0F766E") : border,
                           background: darkMode ? "#0B0F17" : "#FFFFFF",
                         }}
                         className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
@@ -802,11 +815,11 @@ export function AdminImageUploader({
                           </div>
                         ) : (
                           <div className="flex flex-col items-center justify-center text-center gap-2 p-3">
-                            <div className="w-9 h-9 rounded-full bg-slate-800/50 flex items-center justify-center text-slate-400">
+                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-teal-400">
                               <Film size={18} />
                             </div>
                             <div>
-                              <div className="text-xs font-bold text-slate-300">Drag & Drop Real X-Ray</div>
+                              <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Drag & Drop True Radiograph</div>
                               <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/xrays/{targetFolder}/</div>
                             </div>
                           </div>
@@ -822,22 +835,22 @@ export function AdminImageUploader({
                           {upload && (
                             <button
                               onClick={() => handleDownloadSingle(upload)}
-                              className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
+                              className="text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
                             >
                               <Download size={10} /> Backup
                             </button>
                           )}
                         </div>
-                        <div className="text-slate-300 font-bold truncate text-[10px]">
+                        <div className="text-slate-700 dark:text-slate-300 font-bold truncate text-[10px]">
                           public/images/xrays/{targetFolder}/{targetFilename}
                         </div>
                         {upload?.statusMessage && (
                           <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
                             upload.status === "saved" 
-                              ? "text-emerald-400" 
+                              ? "text-emerald-700 dark:text-emerald-400" 
                               : upload.status === "saving" 
-                              ? "text-teal-400" 
-                              : "text-red-400"
+                              ? "text-teal-700 dark:text-teal-400" 
+                              : "text-red-700 dark:text-red-400"
                           }`}>
                             {upload.statusMessage}
                           </div>
@@ -852,7 +865,7 @@ export function AdminImageUploader({
             /* ── TAB 3: Region Anatomy Concepts Grid ── */
             <>
               <div className="flex items-center justify-between">
-                <h3 className="text-sm font-extrabold uppercase tracking-wider text-teal-400 flex items-center gap-2">
+                <h3 className="text-sm font-extrabold uppercase tracking-wider text-teal-800 dark:text-teal-400 flex items-center gap-2">
                   <BookOpen size={16} />
                   <span>{selectedBone.name[language]} ({selectedBone.name.en}) — All Regions</span>
                   <span className="text-xs font-normal" style={{ color: muted }}>
@@ -864,8 +877,8 @@ export function AdminImageUploader({
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {regions.map(r => {
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {selectedBone.regions.map((r) => {
                   const upload = conceptUploads[r.id];
                   const targetFilename = r.regionConcept?.imageUrl && r.regionConcept.imageUrl.includes("/")
                     ? r.regionConcept.imageUrl.split("/").pop() || `anatomy_${r.name.en.toLowerCase().replace(/[^a-z0-9]/g, "_")}.png`
@@ -879,7 +892,7 @@ export function AdminImageUploader({
                         borderColor: upload?.status === "saved" 
                           ? "#2ECC71" 
                           : upload?.status === "saving"
-                          ? "#00CED1"
+                          ? (darkMode ? "#00CED1" : "#0F766E")
                           : upload?.status === "error"
                           ? "#EF4444"
                           : border 
@@ -888,7 +901,7 @@ export function AdminImageUploader({
                     >
                       <div className="flex items-start justify-between gap-2">
                         <div>
-                          <div className="font-extrabold text-sm text-teal-400">{r.name[language]}</div>
+                          <div className="font-extrabold text-sm text-teal-700 dark:text-teal-400">{r.name[language]}</div>
                           <div className="text-xs font-semibold leading-snug" style={{ color: muted }}>
                             {r.name.en} Anatomy Frame
                           </div>
@@ -918,7 +931,7 @@ export function AdminImageUploader({
                         }}
                         style={{
                           height: 150,
-                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? "#00CED1" : border,
+                          borderColor: upload?.status === "saved" ? "#2ECC71" : upload ? (darkMode ? "#00CED1" : "#0F766E") : border,
                           background: darkMode ? "#0B0F17" : "#FFFFFF",
                         }}
                         className={`rounded-lg border-2 border-dashed flex flex-col items-center justify-center p-2 cursor-pointer transition-all hover:border-teal-400 overflow-hidden relative ${
@@ -928,6 +941,7 @@ export function AdminImageUploader({
                         <input
                           type="file"
                           accept="image/*"
+                          multiple
                           className="hidden"
                           onChange={e => handleConceptFileDrop(r, e.target.files)}
                         />
@@ -941,48 +955,69 @@ export function AdminImageUploader({
                             />
                             <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2 rounded">
                               <span className="text-[11px] font-bold text-white bg-teal-600/90 px-2.5 py-1 rounded-md flex items-center gap-1 shadow">
-                                <RefreshCw size={12} /> Replace Anatomy
+                                <RefreshCw size={12} /> Add / Replace Images
                               </span>
                             </div>
                           </div>
                         ) : (
                           <div className="flex flex-col items-center justify-center text-center gap-2 p-3">
-                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-400">
+                            <div className="w-9 h-9 rounded-full bg-teal-500/10 flex items-center justify-center text-teal-700 dark:text-teal-400">
                               <BookOpen size={18} />
                             </div>
                             <div>
-                              <div className="text-xs font-bold text-slate-300">Drag & Drop Anatomy Diagram</div>
-                              <div className="text-[10px]" style={{ color: muted }}>Saves to public/images/concepts/</div>
+                              <div className="text-xs font-bold text-slate-700 dark:text-slate-300">Drag & Drop Diagram(s)</div>
+                              <div className="text-[10px]" style={{ color: muted }}>Supports multiple files (Gallery View)</div>
                             </div>
                           </div>
                         )}
                       </label>
+
+                      {/* Existing Concept Images Strip if multiple exist */}
+                      {Array.isArray(r.regionConcept?.images) && r.regionConcept.images.length > 0 && (
+                        <div className="flex items-center gap-1.5 overflow-x-auto py-1">
+                          <span className="text-[10px] font-bold text-slate-500 flex-shrink-0">
+                            {r.regionConcept.images.length} in gallery:
+                          </span>
+                          {r.regionConcept.images.map((imgItem, imgIdx) => {
+                            const imgUrl = typeof imgItem === "string" ? imgItem : imgItem.url;
+                            return (
+                              <img
+                                key={imgIdx}
+                                src={imgUrl}
+                                alt={`concept ${imgIdx + 1}`}
+                                title={imgUrl}
+                                className="w-7 h-7 object-contain rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 flex-shrink-0"
+                              />
+                            );
+                          })}
+                        </div>
+                      )}
 
                       <div
                         style={{ background: darkMode ? "#0B0F17" : "#F1F5F9", borderColor: border }}
                         className="p-2.5 rounded-lg border text-[11px] font-mono flex flex-col gap-1.5"
                       >
                         <div className="flex items-center justify-between text-[10px]" style={{ color: muted }}>
-                          <span className="font-bold">Target imageUrl:</span>
+                          <span className="font-bold">Target Path / Images:</span>
                           {upload && (
                             <button
                               onClick={() => handleDownloadSingle(upload)}
-                              className="text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
+                              className="text-teal-700 dark:text-teal-400 hover:underline flex items-center gap-0.5 cursor-pointer font-sans font-bold"
                             >
                               <Download size={10} /> Backup
                             </button>
                           )}
                         </div>
-                        <div className="text-slate-300 font-bold truncate text-[10px]">
+                        <div className="text-slate-700 dark:text-slate-300 font-bold truncate text-[10px]">
                           public/images/concepts/{targetFilename}
                         </div>
                         {upload?.statusMessage && (
                           <div className={`text-[9.5px] font-sans font-semibold leading-tight ${
                             upload.status === "saved" 
-                              ? "text-emerald-400" 
+                              ? "text-emerald-700 dark:text-emerald-400" 
                               : upload.status === "saving" 
-                              ? "text-teal-400" 
-                              : "text-red-400"
+                              ? "text-teal-700 dark:text-teal-400" 
+                              : "text-red-700 dark:text-red-400"
                           }`}>
                             {upload.statusMessage}
                           </div>

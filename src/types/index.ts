@@ -3,10 +3,22 @@ export interface Translation {
   th: string;
 }
 
+export interface TreatmentDetailBlock {
+  /** 🎯 ข้อบ่งชี้และเกณฑ์การตัดสินใจ (Indication & Criteria) */
+  indication?: Translation;
+  /** 🛠 วิธีการ / หัตถการ / ชนิดเฝือก / อุปกรณ์ยึดตรึง (Method & Implants) */
+  method: Translation;
+  /** ⏱ ระยะเวลาการดาม / การลงน้ำหนัก / แผนการทำกายภาพ (Rehab & Protocol) */
+  rehabilitation?: Translation;
+  /** ⚠️ ข้อพึงระวังทางคลินิก / ภาวะแทรกซ้อน (Pitfalls & Pearls) */
+  pitfalls?: Translation;
+}
+
 export interface TreatmentType {
-  conservative: Translation;
-  operative: Translation;
+  conservative: TreatmentDetailBlock | Translation;
+  operative: TreatmentDetailBlock | Translation;
   preferred?: "conservative" | "operative" | "none" | "neutral";
+  decisionPrinciple?: Translation;
   pearls?: Translation;
 }
 
@@ -41,6 +53,15 @@ export interface ClassificationConcept {
   showTable?: boolean;
 }
 
+export interface TextbookReference {
+  textbook: "Rockwood" | "Campbell" | "Miller" | "AO/OTA" | "Classic Citation";
+  title: string;
+  chapter?: string;
+  pageOrSection?: string;
+  classicCitation?: string;
+  notes?: Translation;
+}
+
 export interface ClassificationSystem {
   system: string;
   fullName: Translation;
@@ -48,6 +69,7 @@ export interface ClassificationSystem {
   concept?: ClassificationConcept;
   investigations?: InvestigationView[];
   types: FractureClassificationType[];
+  references?: TextbookReference[];
 }
 
 // ─── Region Concept (per-region clinical summary) ───────────────────────────
@@ -74,13 +96,22 @@ export interface AssociatedInjury {
   trigger?: Translation;
 }
 
+export interface RegionConceptImage {
+  url: string;
+  caption?: Translation;
+  title?: Translation;
+}
+
 export interface RegionConcept {
   imageUrl?: string;
+  imageUrls?: string[];
+  images?: (string | RegionConceptImage)[];
   physicalExam?: PhysicalExamSign[];
   acceptableAlignment?: AlignmentRow[];
   redFlags?: Translation[];
   associatedInjuries?: AssociatedInjury[];
   clinicalPearls?: Translation[];
+  references?: TextbookReference[];
 }
 
 // ────────────────────────────────────────────────────────────────────────────

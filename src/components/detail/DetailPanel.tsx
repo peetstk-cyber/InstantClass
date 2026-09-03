@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import type { Language } from "../../App";
 import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
-import { X, Zap, Info, Bookmark, Image as ImageIcon, Film } from "lucide-react";
+import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp } from "lucide-react";
 import { FractureIllustration } from "./FractureIllustration";
 import { SpineScoreCalculator } from "./SpineScoreCalculator";
 import { RegionConceptPanel } from "../layout/RegionConceptPanel";
@@ -10,6 +10,7 @@ import { LearningHubPanel } from "../layout/LearningHubPanel";
 
 import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
+import { getSystemReferences } from "../../data/references";
 
 interface DetailPanelProps {
   darkMode: boolean;
@@ -106,7 +107,7 @@ function ClassificationMediaViewerModal({
         <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b" style={{ borderColor: border }}>
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <span className="px-2 py-0.5 rounded-md bg-[#00CED1]/15 text-[#00CED1] border border-[#00CED1]/30 font-extrabold text-xs">
+              <span className="px-2 py-0.5 rounded-md bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 font-extrabold text-xs">
                 {fracType.type}
               </span>
               <h3 className="text-sm md:text-base font-extrabold truncate" style={{ color: textColor, margin: 0 }}>
@@ -194,14 +195,14 @@ function ClassificationMediaViewerModal({
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-8 text-center gap-3">
-                <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400 text-2xl">
+                <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-700 dark:text-teal-400 text-2xl">
                   🩻
                 </div>
                 <div>
-                  <div className="text-sm font-extrabold text-teal-400">
+                  <div className="text-sm font-extrabold text-teal-800 dark:text-teal-400">
                     {language === "en" ? "X-Ray Film Coming Soon" : "กำลังเตรียมภาพเอกซเรย์จริง"}
                   </div>
-                  <div className="text-xs text-slate-400 mt-1 max-w-xs leading-relaxed">
+                  <div className="text-xs text-slate-500 dark:text-slate-400 mt-1 max-w-xs leading-relaxed">
                     {language === "en"
                       ? `Real radiograph sample for ${fracType.name.en} is being curated.`
                       : `ภาพฟิล์มเอกซเรย์ตัวอย่างสำหรับ ${fracType.name.th} กำลังอยู่ระหว่างการอัปโหลด`}
@@ -222,7 +223,7 @@ function ClassificationMediaViewerModal({
         <div className="mt-3 p-3 rounded-xl border text-xs" style={{ background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC", borderColor: border }}>
           {activeMediaTab === "xray" && fracType.xrayDescription ? (
             <div>
-              <div className="font-extrabold text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+              <div className="font-extrabold text-emerald-700 dark:text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                 <Film size={13} />
                 <span>{language === "en" ? "Key Radiographic Signs" : "จุดสังเกตในภาพเอกซเรย์"}</span>
               </div>
@@ -232,7 +233,7 @@ function ClassificationMediaViewerModal({
             </div>
           ) : (
             <div>
-              <div className="font-extrabold text-teal-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+              <div className="font-extrabold text-teal-800 dark:text-teal-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
                 <Info size={13} />
                 <span>{language === "en" ? "Fracture Pattern Summary" : "สรุปลักษณะและกลไกการหัก"}</span>
               </div>
@@ -279,7 +280,7 @@ function MetacarpalAlignmentTable({
       <div 
         className="px-3.5 py-2.5 flex items-center justify-between"
         style={{ 
-          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(0, 206, 209, 0.08)",
+          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)",
           borderBottom: `1px solid ${border}` 
         }}
       >
@@ -385,7 +386,7 @@ function PatellaConceptTable({
       category: language === "en" ? "Articular Flake / Loose Body" : "ชิ้นกระดูกกะเทาะผิวข้อ (Loose Body)",
       pattern: language === "en" ? "Osteochondral / Marginal Fragment" : "Osteochondral / Marginal Fragment",
       treatment: language === "en" ? "Arthroscopic / Open Removal vs Refixation (>1cm)" : "ส่องกล้อง/เปิดข้อเข่าหยิบออก หรือยึดตรึงหากชิ้นใหญ่ >1ซม.",
-      statusColor: "#00CED1",
+      statusColor: darkMode ? "#00CED1" : "#0F766E",
     },
   ];
 
@@ -491,7 +492,7 @@ function TibialShaftAlignmentTable({
       param: language === "en" ? "Anteroposterior (AP) Angulation" : "มุมเอียงหน้า-หลัง (AP Angulation)",
       threshold: "< 10°",
       clinicalNote: language === "en" ? "Anterior / Posterior apex angulation tolerance" : "ยอมรับมุมเอียงมุมยอดหน้า-หลังได้ไม่เกิน 10°",
-      color: "#00CED1",
+      color: darkMode ? "#00CED1" : "#0F766E",
     },
     {
       param: language === "en" ? "Leg Shortening / Overlap" : "ความสั้นของขา (Shortening)",
@@ -525,7 +526,7 @@ function TibialShaftAlignmentTable({
       <div 
         className="px-3.5 py-2.5 flex items-center justify-between"
         style={{ 
-          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(0, 206, 209, 0.08)",
+          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)",
           borderBottom: `1px solid ${border}` 
         }}
       >
@@ -636,6 +637,8 @@ function ClassificationTitleWithInfo({
   fullName,
   description,
   concept,
+  system,
+  references,
   textColor,
   darkMode,
   language = "en",
@@ -645,6 +648,8 @@ function ClassificationTitleWithInfo({
   fullName: string;
   description: string;
   concept?: ClassificationConcept;
+  system?: string;
+  references?: import("../../types").TextbookReference[];
   textColor: string;
   mutedText?: string;
   darkMode: boolean;
@@ -653,48 +658,54 @@ function ClassificationTitleWithInfo({
   onToggleBookmark?: () => void;
 }) {
   const [showInfoModal, setShowInfoModal] = useState(false);
-  const [activeTab, setActiveTab] = useState<"overview" | "concept">("overview");
+  const [activeTab, setActiveTab] = useState<"overview" | "concept" | "references">("overview");
+
+  const effectiveRefs = references && references.length > 0 
+    ? references 
+    : getSystemReferences(system || fullName);
 
   return (
     <div style={{ position: "relative", marginBottom: 12 }}>
-      <div className="flex items-center justify-between gap-2">
-        {/* Title + Info Button inline */}
-        <div className="flex items-center gap-2 flex-1 min-w-0">
-          <h3
-            style={{
-              color: textColor,
-              fontSize: 17,
-              fontWeight: 800,
-              letterSpacing: "-0.01em",
-              margin: 0,
-              lineHeight: 1.25,
-            }}
-          >
-            {cleanSystemName(fullName)}
-          </h3>
+      <div className="flex items-start justify-between gap-2">
+        {/* Title + Info Button inline + Verified Badge */}
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2">
+            <h3
+              style={{
+                color: textColor,
+                fontSize: 17,
+                fontWeight: 800,
+                letterSpacing: "-0.01em",
+                margin: 0,
+                lineHeight: 1.25,
+              }}
+            >
+              {cleanSystemName(fullName)}
+            </h3>
 
-          {/* Info Button (Inline right after class title) */}
-          <button
-            onClick={() => {
-              setActiveTab("overview");
-              setShowInfoModal(true);
-            }}
-            aria-label="System Info & Concept"
-            title={language === "en" ? "System Info & Concept" : "ข้อมูลและแนวคิดระบบ"}
-            className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
-            style={{
-              width: 26,
-              height: 26,
-              borderRadius: "50%",
-              background: darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)",
-              color: darkMode ? "#94A3B8" : "#64748B",
-              border: `1.5px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
-              boxShadow: "none",
-              padding: 0,
-            }}
-          >
-            <Info size={13} />
-          </button>
+            {/* Info Button (Inline right after class title) */}
+            <button
+              onClick={() => {
+                setActiveTab("overview");
+                setShowInfoModal(true);
+              }}
+              aria-label="System Info & Concept"
+              title={language === "en" ? "System Info & Concept" : "ข้อมูลและแนวคิดระบบ"}
+              className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
+              style={{
+                width: 26,
+                height: 26,
+                borderRadius: "50%",
+                background: darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)",
+                color: darkMode ? "#94A3B8" : "#64748B",
+                border: `1.5px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
+                boxShadow: "none",
+                padding: 0,
+              }}
+            >
+              <Info size={13} />
+            </button>
+          </div>
         </div>
 
         {/* Bookmark Button (Far Right Edge) */}
@@ -702,7 +713,7 @@ function ClassificationTitleWithInfo({
           onClick={onToggleBookmark}
           aria-label="Bookmark system"
           title={isBookmarked ? (language === "en" ? "Bookmarked (Click to remove)" : "บันทึกแล้ว (คลิกเพื่อถอนการบันทึก)") : (language === "en" ? "Bookmark System" : "บันทึกเป็นรายการโปรด")}
-          className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
+          className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95 mt-0.5"
           style={{
             width: 26,
             height: 26,
@@ -758,7 +769,7 @@ function ClassificationTitleWithInfo({
             <div className="flex items-center justify-between gap-2 mb-3 pb-3" style={{ borderBottom: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "#E2E8F0"}` }}>
               <div>
                 <div className="text-[10.5px] font-bold text-teal-800 dark:text-[#00CED1] uppercase tracking-wider">
-                  Classification Guide
+                  Classification Guide & Evidence
                 </div>
                 <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800, color: textColor }}>
                   {fullName}
@@ -777,8 +788,8 @@ function ClassificationTitleWithInfo({
               </button>
             </div>
 
-            {/* Modal Tabs: Overview vs Clinical Concept */}
-            <div className="flex p-1 mb-4 rounded-xl" style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "#E2E8F0" }}>
+            {/* Modal Tabs: Overview vs Clinical Concept vs References */}
+            <div className="flex p-1 mb-4 rounded-xl gap-1" style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "#E2E8F0" }}>
               <button
                 onClick={() => setActiveTab("overview")}
                 className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
@@ -787,7 +798,7 @@ function ClassificationTitleWithInfo({
                     : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
                 }`}
               >
-                📘 {language === "en" ? "Overview" : "ภาพรวมระบบ"}
+                📘 {language === "en" ? "Overview" : "ภาพรวม"}
               </button>
               <button
                 onClick={() => setActiveTab("concept")}
@@ -797,7 +808,17 @@ function ClassificationTitleWithInfo({
                     : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
                 }`}
               >
-                💡 {language === "en" ? "Clinical Concept" : "แนวคิดหลัก & เกณฑ์พิจารณา"}
+                💡 {language === "en" ? "Concept" : "แนวคิดหลัก"}
+              </button>
+              <button
+                onClick={() => setActiveTab("references")}
+                className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                  activeTab === "references"
+                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
+                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
+                }`}
+              >
+                📚 {language === "en" ? "Textbooks" : "ตำราอ้างอิง"}
               </button>
             </div>
 
@@ -909,10 +930,388 @@ function ClassificationTitleWithInfo({
                 ) : null}
               </div>
             )}
+
+            {/* Tab 3: Textbook References */}
+            {activeTab === "references" && (
+              <div className="space-y-2.5 text-xs leading-relaxed">
+                <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+                  {language === "en" ? "Referenced Textbooks & Literature" : "ตำราและเอกสารอ้างอิง"}
+                </div>
+
+                <div className="space-y-2">
+                  {effectiveRefs.map((ref, idx) => (
+                    <div
+                      key={idx}
+                      className="p-2.5 rounded-xl border transition-all"
+                      style={{
+                        background: darkMode ? "rgba(255, 255, 255, 0.03)" : "#F8FAFC",
+                        borderColor: darkMode ? "rgba(255, 255, 255, 0.08)" : "#E2E8F0",
+                      }}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
+                          {ref.textbook}
+                        </span>
+                        <div className="font-extrabold text-[12px] truncate" style={{ color: textColor }}>
+                          {ref.title}
+                        </div>
+                      </div>
+
+                      {ref.chapter && (
+                        <div className="text-[11px] font-medium text-slate-700 dark:text-slate-300 mt-1 pl-0.5">
+                          📖 {ref.chapter}
+                        </div>
+                      )}
+
+                      {ref.classicCitation && (
+                        <div className="text-[10.5px] font-mono p-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 text-slate-700 dark:text-slate-300 mt-1.5">
+                          <span className="font-bold text-amber-600 dark:text-amber-400">Landmark: </span>
+                          {ref.classicCitation}
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>,
         document.body
       )}
+    </div>
+  );
+}
+
+function ManagementSection({
+  treatment,
+  language,
+  darkMode,
+  textColor,
+  border,
+}: {
+  treatment: any;
+  language: "en" | "th";
+  darkMode: boolean;
+  textColor: string;
+  mutedText?: string;
+  border: string;
+}) {
+  const [showPrinciple, setShowPrinciple] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const determinePreferred = (t: any): "conservative" | "operative" | null => {
+    if (!t) return null;
+    if (t.preferred === "none" || t.preferred === "neutral") return null;
+    if (t.preferred) return t.preferred;
+
+    const consEn = (t.conservative?.method?.en || t.conservative?.en || "").toLowerCase();
+    const consTh = (t.conservative?.method?.th || t.conservative?.th || "").toLowerCase();
+    const opEn = (t.operative?.method?.en || t.operative?.en || "").toLowerCase();
+    const opTh = (t.operative?.method?.th || t.operative?.th || "").toLowerCase();
+
+    // Negative signals for conservative
+    const consNeg =
+      consEn.includes("not recommended") ||
+      consEn.includes("not indicated") ||
+      consEn.includes("rarely recommended") ||
+      consEn.includes("rarely indicated") ||
+      consEn.includes("contraindicated") ||
+      consEn.includes("poor success") ||
+      consTh.includes("ไม่แนะนำ") ||
+      consTh.includes("ห้ามใช้") ||
+      consTh.includes("อัตรากระดูกไม่ติดสูง");
+
+    // Negative signals for operative
+    const opNeg =
+      opEn.includes("rarely indicated") ||
+      opEn.includes("not indicated") ||
+      opEn.includes("rarely needed") ||
+      opEn.includes("rarely recommended") ||
+      opEn.includes("contraindicated") ||
+      opTh.includes("แทบไม่มีความจำเป็น") ||
+      opTh.includes("แทบไม่จำเป็น") ||
+      opTh.includes("ห้ามใช้");
+
+    // Positive signals for conservative
+    const consPos =
+      consEn.includes("primary choice") ||
+      consEn.includes("first choice") ||
+      consEn.includes("highly successful") ||
+      consEn.includes("mainstay") ||
+      consTh.includes("อัตราการติดสูง") ||
+      consTh.includes("อัตราติดเกือบ 100%") ||
+      consTh.includes("แนะนำเป็นหลัก");
+
+    // Positive signals for operative
+    const opPos =
+      opEn.includes("gold standard") ||
+      opEn.includes("primary surgical") ||
+      opEn.includes("primary fixation") ||
+      opEn.includes("recommended") ||
+      opEn.includes("indicated") ||
+      opTh.includes("มาตรฐานหลัก") ||
+      opTh.includes("แนะนำอย่างยิ่ง") ||
+      opTh.includes("แนะนำให้ผ่าตัด") ||
+      opTh.includes("เป็นอันดับแรก") ||
+      opTh.includes("เป็นหลัก");
+
+    if (consNeg && !opNeg) return "operative";
+    if (opNeg && !consNeg) return "conservative";
+    if (consPos && !opPos) return "conservative";
+    if (opPos && !consPos) return "operative";
+
+    return null;
+  };
+
+  const preferred = determinePreferred(treatment);
+  const isConsPreferred = preferred === "conservative";
+  const isOpPreferred = preferred === "operative";
+
+  const renderBulletLines = (text: string, bulletColor: string) => {
+    if (!text) return null;
+    const lines = text
+      .split(/\n+/)
+      .map((l) => l.trim())
+      .filter((l) => l.length > 0);
+
+    if (lines.length === 0) return null;
+
+    return (
+      <ul className="space-y-1 my-1 pl-0 list-none">
+        {lines.map((line, idx) => {
+          const cleanLine = line.replace(/^[\s•\-\*\u2022\u25E6\u25AA]+\s*/, "").replace(/^\d+[\.\)]\s*/, "");
+          return (
+            <li key={idx} className="flex items-start gap-1.5 text-[11.5px] leading-relaxed" style={{ color: textColor }}>
+              <span className="font-black shrink-0 leading-relaxed text-[10px]" style={{ color: bulletColor }}>•</span>
+              <span className="flex-1">{cleanLine}</span>
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
+  const renderTreatmentColumn = (block: any, isCons: boolean, isPref: boolean) => {
+    const headerColor = isCons
+      ? (darkMode ? "#00CED1" : "#0F766D")
+      : (darkMode ? "#60A5FA" : "#2563EB");
+    const subHeaderColor = isCons
+      ? (darkMode ? "#2DD4BF" : "#0F766E")
+      : (darkMode ? "#93C5FD" : "#1D4ED8");
+    const bulletColor = isCons
+      ? (darkMode ? "#00CED1" : "#0F766D")
+      : (darkMode ? "#3B82F6" : "#2563EB");
+
+    const isStructured =
+      block &&
+      typeof block === "object" &&
+      (block.method || block.indication || block.rehabilitation || block.pitfalls);
+
+    const hasIndication = Boolean(block?.indication);
+
+    return (
+      <div
+        style={{
+          background: darkMode ? "rgba(255, 255, 255, 0.03)" : "#F8FAFC",
+          border: `1px solid ${border}`,
+          borderRadius: 10,
+          padding: "12px 14px",
+        }}
+        className="flex flex-col gap-2.5"
+      >
+        {/* Column Header */}
+        <div
+          style={{
+            color: headerColor,
+            fontSize: 11,
+            fontWeight: 800,
+            textTransform: "uppercase",
+            letterSpacing: "0.06em",
+            display: "flex",
+            alignItems: "center",
+            gap: 4,
+          }}
+        >
+          <span>{isCons ? "Conservative" : "Operative"}</span>
+          {isPref && (
+            <span
+              style={{
+                color: "#F59E0B",
+                fontSize: 13,
+                lineHeight: 1,
+                textShadow: "0 0 4px rgba(245, 158, 11, 0.6)",
+              }}
+              className="select-none"
+              title={language === "en" ? "Preferred" : "แนะนำ"}
+            >
+              ★
+            </span>
+          )}
+        </div>
+
+        {isStructured ? (
+          <div className="space-y-2.5">
+            {/* Primary Display: Indication (or fallback to Method if no Indication) */}
+            {hasIndication ? (
+              <div>
+                <div className="font-bold flex items-center gap-1 text-[10.5px] uppercase tracking-wide" style={{ color: subHeaderColor }}>
+                  <span>🎯</span>
+                  <span>{language === "en" ? "Indication & Criteria" : "ข้อบ่งชี้และเกณฑ์"}</span>
+                </div>
+                {renderBulletLines(block.indication[language] || block.indication.en, bulletColor)}
+              </div>
+            ) : block.method ? (
+              <div>
+                <div className="font-bold flex items-center gap-1 text-[10.5px] uppercase tracking-wide" style={{ color: subHeaderColor }}>
+                  <span>🛠</span>
+                  <span>{language === "en" ? "Method & Device" : "วิธีการและอุปกรณ์"}</span>
+                </div>
+                {renderBulletLines(block.method[language] || block.method.en, bulletColor)}
+              </div>
+            ) : null}
+
+            {/* Expandable Section: Method, Rehab, Pitfalls */}
+            {isExpanded && (
+              <div className="space-y-2.5 pt-1.5 border-t border-dashed" style={{ borderColor: darkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)", animation: "scaleIn 0.2s ease both" }}>
+                {/* Method (if indication was already rendered above) */}
+                {hasIndication && block.method && (
+                  <div>
+                    <div className="font-bold flex items-center gap-1 text-[10.5px] uppercase tracking-wide" style={{ color: subHeaderColor }}>
+                      <span>🛠</span>
+                      <span>{language === "en" ? "Method & Device" : "วิธีการและอุปกรณ์"}</span>
+                    </div>
+                    {renderBulletLines(block.method[language] || block.method.en, bulletColor)}
+                  </div>
+                )}
+
+                {/* Rehabilitation */}
+                {block.rehabilitation && (
+                  <div>
+                    <div className="font-bold flex items-center gap-1 text-[10.5px] uppercase tracking-wide" style={{ color: subHeaderColor }}>
+                      <span>⏱</span>
+                      <span>{language === "en" ? "Rehab & Protocol" : "การดูแลและฟื้นฟู"}</span>
+                    </div>
+                    {renderBulletLines(block.rehabilitation[language] || block.rehabilitation.en, bulletColor)}
+                  </div>
+                )}
+
+                {/* Pitfalls */}
+                {block.pitfalls && (
+                  <div
+                    className="p-2 rounded-lg"
+                    style={{
+                      background: darkMode ? "rgba(245, 158, 11, 0.08)" : "#FFFBEB",
+                      border: `1px solid ${darkMode ? "rgba(245, 158, 11, 0.25)" : "#FDE68A"}`,
+                    }}
+                  >
+                    <div className="font-bold flex items-center gap-1 text-[10.5px] text-amber-600 dark:text-amber-400 uppercase tracking-wide">
+                      <span>⚠️</span>
+                      <span>{language === "en" ? "Pitfalls & Pearls" : "ข้อพึงระวัง"}</span>
+                    </div>
+                    {renderBulletLines(block.pitfalls[language] || block.pitfalls.en, "#F59E0B")}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        ) : (
+          <div>
+            {renderBulletLines(
+              block ? (block[language] || block.en || String(block)) : "",
+              bulletColor
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const hasExpandableDetails = Boolean(
+    (treatment?.conservative && typeof treatment.conservative === "object" && (treatment.conservative.rehabilitation || treatment.conservative.pitfalls || (treatment.conservative.indication && treatment.conservative.method))) ||
+    (treatment?.operative && typeof treatment.operative === "object" && (treatment.operative.rehabilitation || treatment.operative.pitfalls || (treatment.operative.indication && treatment.operative.method)))
+  );
+
+  return (
+    <div>
+      {/* Header with Title + Info Button on Left, and Expand Button on Far Right */}
+      <div className="flex items-center justify-between gap-2 mb-2.5">
+        <div className="flex items-center gap-2">
+          <div style={{ color: textColor, fontSize: 13, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            {language === "en" ? "Management" : "การรักษา"}
+          </div>
+
+          {treatment?.decisionPrinciple && (
+            <button
+              onClick={() => setShowPrinciple(!showPrinciple)}
+              aria-label="Management Principle"
+              title={language === "en" ? "Management Principle (Click to toggle)" : "หลักการตัดสินใจรักษา (คลิกเพื่อแสดง/ซ่อน)"}
+              className="flex items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95 shadow-sm"
+              style={{
+                width: 18,
+                height: 18,
+                borderRadius: "50%",
+                background: showPrinciple
+                  ? (darkMode ? "#00CED1" : "#0F766D")
+                  : (darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)"),
+                color: showPrinciple
+                  ? "#FFFFFF"
+                  : (darkMode ? "#94A3B8" : "#64748B"),
+                border: `1.5px solid ${showPrinciple ? (darkMode ? "#00CED1" : "#0F766D") : (darkMode ? "rgba(255, 255, 255, 0.2)" : "#CBD5E1")}`,
+                padding: 0,
+              }}
+            >
+              <Info size={11} />
+            </button>
+          )}
+        </div>
+
+        {/* Expand Button on Top-Right */}
+        {hasExpandableDetails && (
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            aria-label="Expand management details"
+            className="flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer hover:opacity-90 active:scale-95 select-none"
+            style={{
+              background: isExpanded
+                ? (darkMode ? "rgba(0, 206, 209, 0.15)" : "rgba(15, 118, 109, 0.12)")
+                : (darkMode ? "rgba(255, 255, 255, 0.06)" : "rgba(0, 0, 0, 0.04)"),
+              border: `1px solid ${isExpanded ? (darkMode ? "rgba(0, 206, 209, 0.35)" : "rgba(15, 118, 109, 0.3)") : border}`,
+              color: darkMode ? "#00CED1" : "#0F766D",
+            }}
+          >
+            <span>{isExpanded ? (language === "en" ? "Collapse" : "ย่อ") : (language === "en" ? "Expand" : "ขยาย")}</span>
+            {isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />}
+          </button>
+        )}
+      </div>
+
+      {/* Toggleable Decision Principle Callout Box */}
+      {showPrinciple && treatment?.decisionPrinciple && (
+        <div
+          className="mb-2.5 px-3 py-2 rounded-xl text-xs flex items-start gap-2"
+          style={{
+            background: darkMode ? "rgba(0, 206, 209, 0.08)" : "rgba(15, 118, 109, 0.06)",
+            border: `1px solid ${darkMode ? "rgba(0, 206, 209, 0.25)" : "rgba(15, 118, 109, 0.2)"}`,
+            animation: "scaleIn 0.2s ease both",
+          }}
+        >
+          <span className="shrink-0 text-sm leading-none mt-0.5">💡</span>
+          <div>
+            <span className="font-bold text-[10.5px] uppercase tracking-wider block mb-0.5" style={{ color: darkMode ? "#00CED1" : "#0F766D" }}>
+              {language === "en" ? "Management Principle" : "หลักการตัดสินใจรักษา"}
+            </span>
+            <p className="m-0 text-[11.5px] leading-relaxed" style={{ color: textColor }}>
+              {treatment.decisionPrinciple[language] || treatment.decisionPrinciple.en}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* 2-Column Comparative Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        {renderTreatmentColumn(treatment?.conservative, true, isConsPreferred)}
+        {renderTreatmentColumn(treatment?.operative, false, isOpPreferred)}
+      </div>
     </div>
   );
 }
@@ -1310,7 +1709,7 @@ export function DetailPanel({
           onTouchStart={handleSwipeTouchStart} 
           onTouchEnd={handleSwipeTouchEnd} 
           className="md:hidden flex-1 flex flex-col animate-slide-in-r overflow-y-auto"
-          style={{ paddingBottom: "calc(36px + env(safe-area-inset-bottom, 16px))" }}
+          style={{ paddingBottom: 0 }}
         >
           <RegionConceptPanel
             concept={region.regionConcept}
@@ -1418,6 +1817,8 @@ export function DetailPanel({
                 fullName={classSystem.fullName[language]}
                 description={classSystem.description[language]}
                 concept={classSystem.concept}
+                system={classSystem.system}
+                references={classSystem.references}
                 textColor={textColor}
                 mutedText={mutedText}
                 darkMode={darkMode}
@@ -1531,7 +1932,7 @@ export function DetailPanel({
 
                         {/* Row 2: Associated Types */}
                         <div>
-                          <div style={{ color: "#E67E22", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                          <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "Associated Types (5)" : "รูปแบบซับซ้อน (Associated Types)"}
                           </div>
                           <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1564,7 +1965,7 @@ export function DetailPanel({
 
                         {/* Row 2: LC Types */}
                         <div>
-                          <div style={{ color: "#2ECC71", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                          <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "LC - Lateral Compression" : "LC - แรงบีบด้านข้าง (Lateral Compression)"}
                           </div>
                           <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1574,7 +1975,7 @@ export function DetailPanel({
 
                         {/* Row 3: VS Types */}
                         <div>
-                          <div style={{ color: "#E74C3C", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                          <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "VS - Vertical Shear" : "VS - แรงเฉือนแนวตั้ง (Vertical Shear)"}
                           </div>
                           <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1611,7 +2012,7 @@ export function DetailPanel({
                         {/* Row 2: SA Types */}
                         {saItems.length > 0 && (
                           <div>
-                            <div style={{ color: "#2ECC71", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                            <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "SA - Supination-Adduction" : "SA - หงายเท้าหุบเข้าใน (Supination-Adduction)"}
                             </div>
                             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1623,7 +2024,7 @@ export function DetailPanel({
                         {/* Row 3: PER Types */}
                         {perItems.length > 0 && (
                           <div>
-                            <div style={{ color: "#F39C12", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                            <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "PER - Pronation-External Rotation" : "PER - คว่ำเท้าหมุนออกนอก (Pronation-External Rotation)"}
                             </div>
                             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1635,7 +2036,7 @@ export function DetailPanel({
                         {/* Row 4: PA Types */}
                         {paItems.length > 0 && (
                           <div>
-                            <div style={{ color: "#E74C3C", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
+                            <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "PA - Pronation-Abduction" : "PA - คว่ำเท้ากางออกนอก (Pronation-Abduction)"}
                             </div>
                             <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
@@ -1768,138 +2169,15 @@ export function DetailPanel({
                     </div>
                   )}
 
-                  {/* Treatment comparison */}
-                  {(() => {
-                    const determinePreferred = (treatment: any): "conservative" | "operative" | null => {
-                      if (treatment.preferred === "none" || treatment.preferred === "neutral") return null;
-                      if (treatment.preferred) return treatment.preferred;
-
-                      const consEn = (treatment.conservative?.en || "").toLowerCase();
-                      const consTh = (treatment.conservative?.th || "").toLowerCase();
-                      const opEn = (treatment.operative?.en || "").toLowerCase();
-                      const opTh = (treatment.operative?.th || "").toLowerCase();
-
-                      // Negative signals for conservative
-                      const consNeg =
-                        consEn.includes("not recommended") ||
-                        consEn.includes("not indicated") ||
-                        consEn.includes("rarely recommended") ||
-                        consEn.includes("rarely indicated") ||
-                        consEn.includes("contraindicated") ||
-                        consEn.includes("poor success") ||
-                        consTh.includes("ไม่แนะนำ") ||
-                        consTh.includes("ห้ามใช้") ||
-                        consTh.includes("อัตรากระดูกไม่ติดสูง");
-
-                      // Negative signals for operative
-                      const opNeg =
-                        opEn.includes("rarely indicated") ||
-                        opEn.includes("not indicated") ||
-                        opEn.includes("rarely needed") ||
-                        opEn.includes("rarely recommended") ||
-                        opEn.includes("contraindicated") ||
-                        opTh.includes("แทบไม่มีความจำเป็น") ||
-                        opTh.includes("แทบไม่จำเป็น") ||
-                        opTh.includes("ห้ามใช้");
-
-                      // Positive signals for conservative
-                      const consPos =
-                        consEn.includes("primary choice") ||
-                        consEn.includes("first choice") ||
-                        consEn.includes("highly successful") ||
-                        consEn.includes("mainstay") ||
-                        consTh.includes("อัตราการติดสูง") ||
-                        consTh.includes("อัตราติดเกือบ 100%") ||
-                        consTh.includes("แนะนำเป็นหลัก");
-
-                      // Positive signals for operative
-                      const opPos =
-                        opEn.includes("gold standard") ||
-                        opEn.includes("primary surgical") ||
-                        opEn.includes("primary fixation") ||
-                        opEn.includes("recommended") ||
-                        opEn.includes("indicated") ||
-                        opTh.includes("มาตรฐานหลัก") ||
-                        opTh.includes("แนะนำอย่างยิ่ง") ||
-                        opTh.includes("แนะนำให้ผ่าตัด") ||
-                        opTh.includes("เป็นอันดับแรก") ||
-                        opTh.includes("เป็นหลัก");
-
-                      if (consNeg && !opNeg) return "operative";
-                      if (opNeg && !consNeg) return "conservative";
-                      if (consPos && !opPos) return "conservative";
-                      if (opPos && !consPos) return "operative";
-
-                      return null;
-                    };
-
-                    const preferred = determinePreferred(fracType.treatment);
-                    const isConsPreferred = preferred === "conservative";
-                    const isOpPreferred = preferred === "operative";
-
-                    return (
-                      <div>
-                        <div style={{ color: mutedText, fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 8 }}>
-                          {language === "en" ? "Management" : "การรักษา"}
-                        </div>
-                        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                          {/* Conservative */}
-                          <div style={{
-                            background: darkMode ? "rgba(255, 255, 255, 0.03)" : "#F8FAFC",
-                            border: `1px solid ${border}`,
-                            borderRadius: 10,
-                            padding: "12px 14px",
-                          }}>
-                            <div style={{ color: "#2ECC71", fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6, display: "flex", alignItems: "center", gap: 4 }}>
-                              <span>Conservative</span>
-                              {isConsPreferred && (
-                                <span 
-                                  style={{ 
-                                    color: "#F59E0B", 
-                                    fontSize: 12, 
-                                    textShadow: "0 0 3px rgba(245, 158, 11, 0.5)"
-                                  }} 
-                                  title={language === "en" ? "Preferred Treatment" : "การรักษาที่แนะนำเป็นหลัก"}
-                                >
-                                  ★
-                                </span>
-                              )}
-                            </div>
-                            <p style={{ color: textColor, fontSize: 11.5, margin: 0, lineHeight: 1.6 }}>
-                              {fracType.treatment.conservative[language]}
-                            </p>
-                          </div>
-
-                          {/* Operative */}
-                          <div style={{
-                            background: darkMode ? "rgba(255, 255, 255, 0.03)" : "#F8FAFC",
-                            border: `1px solid ${border}`,
-                            borderRadius: 10,
-                            padding: "12px 14px",
-                          }}>
-                            <div style={{ color: "#3B82F6", fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6, display: "flex", alignItems: "center", gap: 4 }}>
-                              <span>Operative</span>
-                              {isOpPreferred && (
-                                <span 
-                                  style={{ 
-                                    color: "#F59E0B", 
-                                    fontSize: 12, 
-                                    textShadow: "0 0 3px rgba(245, 158, 11, 0.5)"
-                                  }} 
-                                  title={language === "en" ? "Preferred Treatment" : "การรักษาที่แนะนำเป็นหลัก"}
-                                >
-                                  ★
-                                </span>
-                              )}
-                            </div>
-                            <p style={{ color: textColor, fontSize: 11.5, margin: 0, lineHeight: 1.6 }}>
-                              {fracType.treatment.operative[language]}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })()}
+                  {/* Treatment Section with inline (i) principle toggle */}
+                  <ManagementSection
+                    treatment={fracType.treatment}
+                    language={language}
+                    darkMode={darkMode}
+                    textColor={textColor}
+                    mutedText={mutedText}
+                    border={border}
+                  />
                 </div>
               )}
             </div>
@@ -1908,12 +2186,12 @@ export function DetailPanel({
           <div className="flex flex-col gap-3" style={{ animation: "scaleIn 0.25s ease both" }}>
             {getInvestigations().map((inv, idx) => (
               <div key={idx} style={{
-                background: darkMode ? "rgba(46,204,113,0.05)" : "rgba(46,204,113,0.05)",
-                border: `1px solid ${darkMode ? "rgba(46,204,113,0.2)" : "rgba(46,204,113,0.3)"}`,
-                borderRadius: 8,
+                background: darkMode ? "rgba(0, 206, 209, 0.06)" : "rgba(15, 118, 109, 0.05)",
+                border: `1px solid ${darkMode ? "rgba(0, 206, 209, 0.25)" : "rgba(15, 118, 109, 0.25)"}`,
+                borderRadius: 10,
                 padding: "12px 14px",
               }}>
-                <div style={{ color: "#2ECC71", fontSize: 13, fontWeight: 800, marginBottom: 6 }}>
+                <div style={{ color: darkMode ? "#00CED1" : "#0F766D", fontSize: 13, fontWeight: 800, marginBottom: 6 }}>
                   {inv.name}
                 </div>
                 <p style={{ color: textColor, fontSize: 12.5, margin: 0, lineHeight: 1.5 }}>

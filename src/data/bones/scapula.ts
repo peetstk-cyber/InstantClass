@@ -188,14 +188,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกโดยตรงพลังงานสูงเข้าที่ผนังอกด้านหลัง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Scapular blade/fossa fracture effectively splinted by subscapularis and infraspinatus muscles; >99% heal with non-operative sling management; ORIF reserved for extreme displacement (>2 cm translation) causing painful scapulothoracic crepitus.",
+                  "th": "กระดูกสะบักส่วนลำตัวหักมีกล้ามเนื้อ Subscapularis และ Infraspinatus โอบอุ้มดามไว้เป็นอย่างดี กระดูกติดได้เอง >99% รักษาแบบไม่ผ่าตัดด้วย Arm sling พิจารณาผ่าตัดเฉพาะกรณีเกยเคลื่อนตัวรุนแรง (>2 ซม.) ที่ทำให้เกิดเสียงและอาการปวดจากการเสียดสีกับผนังซี่โครง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Simple arm sling for 2-3 weeks for pain control, followed by early active-assisted shoulder range of motion. Union rate >99%.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน (Sling) 2-3 สัปดาห์บรรเทาปวด แล้วเริ่มฝึกขยับข้อไหล่"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced scapular body/fossa fractures (<2 cm translation, <45° angulation)\n• Absence of life-threatening chest wall compromise",
+                    "th": "• กระดูกลำตัวสะบักหักไม่เคลื่อนตัว หรือเคลื่อนตัวน้อย (<2 ซม., มุมโก่ง <45 องศา)\n• ไม่มีภาวะบาดเจ็บรุนแรงในช่องอกที่ต้องผ่าตัดด่วน"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 2–3 weeks for pain relief and resting the limb",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์เพื่อบรรเทาอาการปวดและพักแขน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Start pendulum exercises and passive shoulder ROM at 1–2 weeks; active-assisted ROM at 3 weeks; progressive rotator cuff and scapular stabilizer strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขน (Pendulum) และขยับข้อไหล่ที่ 1–2 สัปดาห์ ยกแขนช่วยที่ 3 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อรอบสะบักที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking occult thoracic trauma (pneumothorax, hemothorax, multiple rib fractures present in >80%)\n• Prolonged immobilization causing shoulder stiffness",
+                    "th": "• มองข้ามการบาดเจ็บในช่องอก (ลมรั่ว, เลือดออกช่องอก, ซี่โครงหักหลายซี่ พบร่วม >80%)\n• ดามแขนนิ่งนานเกินไปทำให้ข้อไหล่ติดแข็ง"
+                  }
                 },
                 "operative": {
-                  "en": "Rarely indicated unless severe displacement >2cm causing painful rib-cage grinding (scapulothoracic crepitus).",
-                  "th": "ผ่าตัดเฉพาะกรณีเกยเคลื่อน >2 ซม. ทิ่มเสียดสีผนังซี่โครง"
+                  "indication": {
+                    "en": "• Severe body translation > 20 mm causing painful rib-cage contact/grinding\n• Severe apex-dorsal angulation > 45°\n• Open scapular fractures",
+                    "th": "• ชิ้นกระดูกเกยเคลื่อน > 20 มม. เสียดสีกับผนังซี่โครงจนปวดเรื้อรัง\n• มุมโก่งงอด้านหลัง > 45 องศา\n• แผลกระดูกหักเปิด"
+                  },
+                  "method": {
+                    "en": "• Modified Judet posterior approach: Anatomical reduction + Contoured 2.7 mm / 3.5 mm Reconstruction Locking Plates along lateral and medial borders (avoiding thin central fossa)",
+                    "th": "• ผ่าตัดเข้าทางด้านหลัง (Modified Judet approach): จัดกระดูก + ดามแผ่นเหล็กล็อค 2.7 mm / 3.5 mm ตามแนวขอบกระดูกด้านนอกและด้านใน (หลีกเลี่ยงการยึดกลางแผ่นสะบักที่บาง)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 2–4 weeks; early gentle active-assisted motion post-op day 2",
+                    "th": "• ใส่ Sling 2–4 สัปดาห์ เริ่มฝึกขยับข้อไหล่เบาๆ ได้ตั้งแต่วันที่ 2 หลังผ่าตัด"
+                  },
+                  "pitfalls": {
+                    "en": "• Placing screws in thin central fossa where bone purchase is inadequate (must place plates along thick lateral/medial pillars)",
+                    "th": "• ขันสกรูยึดกลางแผ่นสะบักซึ่งบางมากทำให้สกรูหลวมหลุด (ต้องวางแผ่นเหล็กตามเสาขอบกระดูกที่หนาเท่านั้น)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -219,14 +251,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าหลังส่วนบน หรือการหดเกร็งรุนแรงของกล้ามเนื้อไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Scapular spine fracture serving as attachment for deltoid and trapezius; conservative sling for non-displaced; ORIF with locking plate for displaced (>1 cm) or inferiorly tilted fractures compromising subacromial space.",
+                  "th": "สันสะบักหักเป็นจุดเกาะของกล้ามเนื้อ Deltoid และ Trapezius หากไม่เคลื่อนตัวรักษาแบบไม่ผ่าตัดด้วย Sling หากเคลื่อนตัวมาก (>1 ซม.) หรือเอียงกดต่ำลงทำให้ช่องใต้ Acromion แคบลง แนะนำผ่าตัดดามแผ่นเหล็กล็อค"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT FOR NON-DISPLACED FRACTURES. Sling for 3-4 weeks with progressive shoulder motion.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดในรอยหักไม่เคลื่อนตัว ใส่ Sling 3-4 สัปดาห์"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced scapular spine fractures (<1 cm displacement, no inferior subacromial tilt)",
+                    "th": "• สันสะบักหักไม่เคลื่อนตัว หรือเคลื่อนตัวน้อย (<1 ซม. และไม่เอียงกดต่ำลง)"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early pendulum motion at 2 weeks; progressive active shoulder abduction and elevation at 4 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 2 สัปดาห์ และฝึกยกกางแขนเองที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing inferiorly tilted displacement narrowing the subacromial arch",
+                    "th": "• มองข้ามชิ้นกระดูกที่เอียงกดต่ำลงซึ่งทำให้ช่องใต้ Acromion แคบลง"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for displacement >1cm or inferior tilt causing shoulder impingement. ORIF with reconstruction plate.",
-                  "th": "ผ่าตัดเฉพาะกรณีเคลื่อนตัว >1 ซม. หรือกดทับช่องใต้ Acromion"
+                  "indication": {
+                    "en": "• Displacement > 1 cm\n• Inferior displacement causing subacromial space narrowing (<6 mm) and rotator cuff impingement\n• Symptomatic nonunion",
+                    "th": "• กระดูกเคลื่อนตัว > 1 ซม.\n• ชิ้นกระดูกเอียงกดต่ำลงทำให้ช่องใต้ Acromion แคบลง (<6 มม.) และกดทับเอ็น Rotator cuff\n• กระดูกไม่ติดและมีอาการปวดเรื้อรัง"
+                  },
+                  "method": {
+                    "en": "• Direct dorsal approach over scapular spine: Open reduction + 2.7 mm / 3.5 mm Pre-contoured Reconstruction Locking Plate along the dorsal crest",
+                    "th": "• ผ่าตัดเปิดแผลตรงแนวสันสะบักด้านหลัง: จัดกระดูกเข้าที่ + ดามแผ่นเหล็กล็อค 2.7 mm / 3.5 mm Pre-contoured Locking Plate ตามแนวสันกระดูก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4 weeks; gradual deltoid strengthening after 6 weeks",
+                    "th": "• ใส่ Sling 4 สัปดาห์ เริ่มฝึกเพิ่มกำลังกล้ามเนื้อ Deltoid หลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Prominent hardware causing dorsal skin irritation due to thin subcutaneous cover",
+                    "th": "• หัวสกรูหรือแผ่นเหล็กนูนระคายเคืองผิวหนังด้านหลังเนื่องจากชั้นผิวหนังบาง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -250,14 +314,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงหรือแรงดึงกระชากของกล้ามเนื้อ Latissimus dorsi"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture isolated to thickened lateral/medial border or inferior angle; excellent bone stock; non-operative sling for non-displaced; ORIF indicated for gross displacement (>20 mm translation or >45° rotation).",
+                  "th": "รอยหักบริเวณขอบสะบักหรือมุมล่างสะบักซึ่งมีความหนาแน่นของกระดูกดี ส่วนใหญ่รักษาแบบไม่ผ่าตัดด้วย Arm sling พิจารณาผ่าตัดเฉพาะกรณีเคลื่อนตัวเกยกันมาก (>20 มม. หรือหมุนบิด >45 องศา)"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Arm sling immobilization for 2-3 weeks, followed by early mobilization.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน 2-3 สัปดาห์"
+                  "indication": {
+                    "en": "• Non-displaced or moderately displaced border/angle fractures (<20 mm translation, <45° rotation)",
+                    "th": "• รอยหักขอบสะบัก/มุมล่างไม่เคลื่อนตัว หรือเคลื่อนตัวน้อย (<20 มม., หมุนบิด <45 องศา)"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 2–3 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle pendulum exercises at 1–2 weeks; progressive active ROM at 3–4 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 1–2 สัปดาห์ และฝึกยกแขนเองที่ 3–4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failing to check for latissimus dorsi / teres major muscle avulsion symptoms",
+                    "th": "• ละเลยการตรวจอาการดึงกระชากของกล้ามเนื้อ Latissimus dorsi / Teres major"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated only if lateral border fragment is displaced >20mm or rotated >45°.",
-                  "th": "ผ่าตัดเฉพาะกรณีขอบนอกเบี้ยวเคลื่อน >20 มม. หรือหมุนบิด >45 องศา"
+                  "indication": {
+                    "en": "• Severe lateral border displacement > 20 mm or rotation > 45° interfering with chest wall excursion\n• Open fracture",
+                    "th": "• ขอบสะบักด้านนอกเคลื่อนตัว > 20 มม. หรือหมุนบิด > 45 องศา ขัดขวางการเคลื่อนไหวของทรวงอก\n• แผลกระดูกหักเปิด"
+                  },
+                  "method": {
+                    "en": "• Posterior approach along lateral border: Anatomical reduction + Contoured 3.5 mm Locking Compression Plate along the thick lateral pillar",
+                    "th": "• ผ่าตัดเปิดด้านหลังตามแนวขอบสะบักด้านนอก: จัดกระดูกเข้าที่ + ดามแผ่นเหล็กล็อค 3.5 mm Locking Plate ตามแนวเสากระดูกด้านนอกที่หนา"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 3–4 weeks; progressive active mobilization",
+                    "th": "• ใส่ Sling 3–4 สัปดาห์ และทำกายภาพฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Injury to suprascapular or circumflex scapular vessels during lateral border dissection",
+                    "th": "• อันตรายต่อหลอดเลือด Circumflex Scapular หรือเส้นประสาท Suprascapular ขณะเลาะเนื้อเยื่อขอบนอกสะบัก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -465,14 +561,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าด้านหน้าหรือด้านข้างหัวไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Isolated scapular neck fracture with intact clavicle/AC ring (single SSSC disruption); stable biomechanics; non-operative sling for translation <1 cm and Glenopolar Angle (GPA) >22°; ORIF for severe displacement.",
+                  "th": "คอสะบักหักเดี่ยวๆ โดยที่ไหปลาร้าและข้อ AC ปกติ (SSSC ขาด 1 จุด) มีความมั่นคงสูง รักษาแบบไม่ผ่าตัดด้วย Arm sling หากเคลื่อนตัว <1 ซม. และมุม GPA >22 องศา ผ่าตัดเฉพาะกรณีเกยเคลื่อนตัวหรือเอียงบิดมาก"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Arm sling for 3-4 weeks, followed by progressive shoulder range of motion. Excellent clinical outcomes.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน 3-4 สัปดาห์ แล้วฝึกบริหารขยับข้อไหล่"
+                  "indication": {
+                    "en": "• Isolated scapular neck fracture with intact clavicle and AC joint\n• Translation < 10 mm and angulation < 40° (GPA > 22°)",
+                    "th": "• คอสะบักหักเดี่ยว โดยไหปลาร้าและข้อ AC ปกติสมบูรณ์\n• การเคลื่อนตัวเกย < 10 มม. และมุมเอียง < 40 องศา (มุม GPA > 22 องศา)"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks for comfort",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์เพื่อบรรเทาอาการปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Pendulum and passive shoulder ROM at 1–2 weeks; active-assisted elevation at 3–4 weeks; strengthening at 6–8 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนและขยับข้อไหล่ที่ 1–2 สัปดาห์ ยกแขนช่วยที่ 3–4 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing an associated clavicle fracture or high-grade AC separation on chest X-ray",
+                    "th": "• มองข้ามการหักร่วมของกระดูกไหปลาร้าหรือข้อ AC หลุดในภาพเอกซเรย์"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated ONLY if severe displacement >1cm or glenopolar angle (GPA) <22°.",
-                  "th": "ผ่าตัดเฉพาะกรณีเกยเคลื่อน >1 ซม. หรือมุม GPA <22 องศา"
+                  "indication": {
+                    "en": "• Translational displacement > 10 mm (1 cm)\n• Neck angulation > 40°\n• Glenopolar Angle (GPA) < 22° (indicates severe rotator cuff mechanical compromise)",
+                    "th": "• ชิ้นกระดูกเคลื่อนเกย > 10 มม. (1 ซม.)\n• มุมเอียงบิด > 40 องศา\n• มุม Glenopolar Angle (GPA) < 22 องศา (บ่งบอกถึงแรงดึงของกล้ามเนื้อเอ็นไหล่เสียสมดุลรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Modified Judet posterior approach: Reduction of the glenoid neck block + 3.5 mm Anatomical Locking Plate along the thick lateral scapular pillar",
+                    "th": "• ผ่าตัดเปิดเข้าทางด้านหลัง (Modified Judet approach): จัดดึงเบ้าคอสะบักเข้าที่ + ดามแผ่นเหล็กล็อค 3.5 mm Anatomical Locking Plate ตามแนวเสากระดูกด้านนอก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4 weeks; early passive motion; active strengthening at 6–8 weeks",
+                    "th": "• ใส่ Sling 4 สัปดาห์ เริ่มขยับข้อไหล่เบาๆ และฝึกเพิ่มกำลังที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Suprascapular nerve traction or injury at the spinoglenoid notch during retraction",
+                    "th": "• ดึงรั้งโดนเส้นประสาท Suprascapular บริเวณ Spinoglenoid notch บาดเจ็บ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -496,14 +624,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกพลังงานสูงรุนแรง (รถจักรยานยนต์ชน, ตกจากที่สูง)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Double SSSC ring disruption (scapular neck fracture + ipsilateral clavicle fracture or AC dislocation); unstable shoulder girdle; ORIF of the clavicle fracture usually restores SSSC stability and indirectly reduces the scapular neck; secondary neck plating if residual displacement >1 cm.",
+                  "th": "ห่วงยึดข้อไหล่ขาด 2 จุด (คอสะบักหัก + ไหปลาร้าหัก/ข้อ AC หลุด) เบ้าไหล่หลุดลอยไม่มั่นคง การผ่าตัดดามแผ่นเหล็กกระดูกไหปลาร้าเป็นอันดับแรกมักช่วยดึงให้วง SSSC และคอสะบักคืนรูปได้ดี หากคอสะบักยังคงเกยเคลื่อน >1 ซม. จึงผ่าตัดดามคอสะบักร่วมด้วย"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED in active patients. Leads to severe shoulder drooping, malunion, and chronic pain.",
-                  "th": "ไม่แนะนำ ทำให้ไหล่ตกทรุด กระดูกติดผิดรูป และปวดเรื้อรัง"
+                  "indication": {
+                    "en": "• True minimally displaced floating shoulder (<5 mm displacement at both sites)\n• Medically unfit surgical candidates",
+                    "th": "• ภาวะ Floating shoulder ที่ไม่เคลื่อนตัว (<5 มม. ทั้งสองตำแหน่ง)\n• ผู้ป่วยที่มีความเสี่ยงต่อการผ่าตัดสูงมาก"
+                  },
+                  "method": {
+                    "en": "• Sling/shoulder immobilizer with close weekly radiographic monitoring",
+                    "th": "• ใส่ Shoulder Immobilizer พร้อมติดตามภาพถ่ายเอกซเรย์อย่างใกล้ชิดทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Delayed mobilization after initial callus formation at 4 weeks",
+                    "th": "• เริ่มขยับข้อไหล่หลัง 4 สัปดาห์เมื่อเริ่มมีกระดูกเชื่อมติด"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe shoulder drooping, functional loss of rotator cuff power, and cosmetic malunion",
+                    "th": "• ข้อไหล่ตกทรุด กล้ามเนื้อไหล่อ่อนแรงถาวร และกระดูกติดผิดรูปอย่างรุนแรง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) of the clavicle fracture (restores SSSC ring alignment), plus ORIF of scapular neck if residual displacement >1cm.",
-                  "th": "แนะนำให้ผ่าตัดรักษา (ORIF) ผ่าตัดยึดแผ่นเหล็กกระดูกไหปลาร้าก่อนเพื่อคืนรูปวง SSSC และดามคอสะบักหากยังคงเคลื่อนตัว >1ซม."
+                  "indication": {
+                    "en": "• All displaced Floating Shoulder injuries (>1 cm neck displacement, >1.5 cm clavicle shortening, or high-grade AC dislocation)",
+                    "th": "• ภาวะ Floating shoulder ชนิดเคลื่อนตัวทุกราย (คอสะบักเคลื่อน >1 ซม., ไหปลาร้าหดสั้น >1.5 ซม. หรือข้อ AC หลุดระดับรุนแรง)"
+                  },
+                  "method": {
+                    "en": "• Step 1: Anterior approach for Anatomical Clavicle Plating (ORIF with 3.5 mm Locking Plate) to re-establish the SSSC superior suspension\n• Step 2: Intra-operative assessment of scapular neck alignment: if residual neck displacement > 10 mm or GPA < 22°, proceed with posterior Judet approach for Scapular Neck Plating",
+                    "th": "• ขั้นที่ 1: ผ่าตัดเข้าด้านหน้า ดามแผ่นเหล็กล็อคกระดูกไหปลาร้า (ORIF Clavicle 3.5 mm Locking Plate) เพื่อคืนความตึงของห่วงยึด SSSC ด้านบน\n• ขั้นที่ 2: ตรวจประเมินแนวคอสะบักในห้องผ่าตัด หากยังคงเคลื่อนเกย > 10 มม. หรือ GPA < 22 องศา ให้เปิดแผลผ่าตัดด้านหลัง (Judet approach) เพื่อดามแผ่นเหล็กคอสะบักร่วมด้วย"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; early pendulum exercises post-op day 2; active ROM at 6 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ เริ่มฝึกแกว่งแขนเบาๆ หลังผ่าตัด 2 วัน และเริ่มยกแขนเองที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-operating: clavicle fixation alone often adequately reduces the scapular neck, avoiding unnecessary extensive posterior dissection",
+                    "th": "• ผ่าตัดเปิดด้านหลังโดยไม่จำเป็น: การดามไหปลาร้าเพียงอย่างเดียวมักดึงให้คอสะบักเข้าที่ได้เพียงพอแล้ว"
+                  }
                 }
               },
               "illustrationId": "",
@@ -527,14 +687,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงพลังงานสูงเข้าที่หน้าอกหรือหัวไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Severe translational displacement (>1 cm) or severe angulation (>40° / GPA <22°) of the surgical neck block; high risk of chronic rotator cuff weakness and impingement; mandatory posterior approach locking plate ORIF.",
+                  "th": "คอสะบักเคลื่อนตัวรุนแรง (>1 ซม. หรือเอียง >40 องศา / GPA <22 องศา) ส่งผลให้การทำงานของเอ็นหมุนข้อไหล่บกพร่องรุนแรง จำเป็นต้องผ่าตัด ORIF เข้าทางด้านหลังดามแผ่นเหล็กล็อค"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Poor outcome due to severe mechanical dysfunction.",
-                  "th": "ผลการรักษาไม่ดีเนื่องจากระบบกลไกข้อไหล่พังทลาย"
+                  "indication": {
+                    "en": "• Non-ambulatory patients with extreme surgical risk",
+                    "th": "• ผู้ป่วยที่ไม่สามารถผ่าตัดได้เนื่องจากมีโรคร่วมรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Comfort sling",
+                    "th": "• ใส่สายคล้องแขนประคองอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive exercises",
+                    "th": "• กายภาพบำบัดเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe chronic shoulder weakness, painful impingement, and permanent loss of abduction",
+                    "th": "• ข้อไหล่อ่อนแรงเรื้อรัง เกิดการขัดชนใต้เบ้า และกางแขนไม่ได้ถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF of scapular neck via posterior Judet or modified Judet approach using anatomical locking plates.",
-                  "th": "แนะนำผ่าตัด ORIF เปิดแผลด้านหลัง (Judet approach) ดามด้วยแผ่นเหล็กล็อค Anatomical Plate"
+                  "indication": {
+                    "en": "• Scapular surgical neck translation > 10 mm\n• Angulation > 40°\n• Glenopolar Angle (GPA) < 22°",
+                    "th": "• คอสะบักเคลื่อนเกย > 10 มม.\n• มุมเอียงบิด > 40 องศา\n• มุม Glenopolar Angle (GPA) < 22 องศา"
+                  },
+                  "method": {
+                    "en": "• Posterior approach (Modified Judet or vertical infraspinatus-sparing approach): Reduction of glenoid block to lateral scapular border + 3.5 mm Pre-contoured Anatomical Locking Plate",
+                    "th": "• ผ่าตัดเข้าทางด้านหลัง (Modified Judet หรือ Infraspinatus-sparing approach): จัดเบ้าข้อไหล่ให้ตรงกับแนวขอบสะบักด้านนอก + ดามด้วย 3.5 mm Anatomical Locking Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive forward elevation <90° for 4 weeks; progressive active strengthening at 6–8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ จำกัดยกแขน <90 องศาใน 4 สัปดาห์แรก เริ่มฝึกเพิ่มกำลังกล้ามเนื้อที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Excessive medial retraction endangering the suprascapular nerve and artery in the spinoglenoid notch",
+                    "th": "• ดึงรั้งเนื้อเยื่อเข้าด้านในมากเกินไปจนทำอันตรายต่อเส้นประสาทและหลอดเลือด Suprascapular ใน Spinoglenoid notch"
+                  }
                 }
               },
               "illustrationId": "",
@@ -743,14 +935,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุข้อไหล่หลุดเคลื่อน หรือหัวกระดูกแทรกกระแทกขอบเบ้า"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Glenoid rim avulsion; Ia (anterior Bankart) or Ib (posterior); conservative sling for small fragments (<20%–25% rim width) with reduced joint; operative fixation (arthroscopic/open suture anchor or cannulated screws) for large fragments (>25% anterior, >33% posterior) or persistent joint subluxation.",
+                  "th": "ขอบเบ้าข้อไหล่หักกะเทาะ (Ia ด้านหน้า Bankart, Ib ด้านหลัง) หากชิ้นกระดูกเล็ก (<20%–25% ของความกว้างเบ้า) และข้อเข้าที่เรียบร้อย รักษาแบบไม่ผ่าตัดใส่ Sling หากชิ้นกระดูกใหญ่ (>25% ด้านหน้า หรือ >33% ด้านหลัง) หรือข้อไหล่ยังคงหลวมหลุด ต้องผ่าตัดยึดกระดูกด้วยสกรูหรือ Suture anchor"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED FOR SMALL FRAGMENTS (<20-25% glenoid surface) WITH REDUCED JOINT. Sling 3-4 weeks.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดในชิ้นกระดูกเล็ก (<20-25%) ที่ข้อเข้าที่เรียบร้อย"
+                  "indication": {
+                    "en": "• Glenoid rim fracture involving < 20%–25% of the articular surface\n• Anatomically centered glenohumeral joint without subluxation on axillary view",
+                    "th": "• ชิ้นกระดูกขอบเบ้าแตก < 20%–25% ของความกว้างเบ้าข้อไหล่\n• หัวกระดูกข้อไหล่อยู่ตรงกลางเบ้าสมบูรณ์ ไม่มีการเลื่อนหลุดในภาพ Axillary view"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive pendulum exercises at 1–2 weeks; active-assisted internal/external rotation within safe zone at 3 weeks; progressive rotator cuff strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 1–2 สัปดาห์ หมุนข้อไหล่ช่วยในมุมปลอดภัยที่ 3 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อหมุนข้อไหล่ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking persistent subtle anterior or posterior subluxation of the humeral head",
+                    "th": "• มองข้ามการเลื่อนหลุดเล็กน้อยของหัวกระดูกข้อไหล่ที่ยังไม่เข้าที่"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated if fragment >25% of articular surface or persistent subluxation. Arthroscopic or open suture anchor / screw fixation.",
-                  "th": "ผ่าตัดเฉพาะชิ้นกระดูกใหญ่ >25% หรือข้อไหล่ยังคงหลวมหลุด ยึดด้วย Suture Anchor หรือสกรู"
+                  "indication": {
+                    "en": "• Rim fragment involving > 25% of anterior glenoid width (or >33% posterior rim)\n• Articular step-off > 2–4 mm\n• Persistent glenohumeral subluxation / joint instability",
+                    "th": "• ชิ้นกระดูกขอบเบ้าหน้าใหญ่ > 25% (หรือขอบหลัง > 33%)\n• ผิวข้อเหลื่อม > 2–4 มม.\n• ข้อไหล่ยังคงหลวมหลุดหรือไม่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Arthroscopic or open anterior (deltopectoral) / posterior approach: Anatomical reduction + 2.5 mm / 3.0 mm Cannulated Headless Compression Screws or Suture Anchors (Bony Bankart repair)",
+                    "th": "• ผ่าตัดส่องกล้องหรือเปิดแผลด้านหน้า (Deltopectoral) / ด้านหลัง: จัดกระดูกเข้าที่ + ขันสกรูหัวจม 2.5 mm / 3.0 mm Headless Screws หรือเย็บยึดด้วย Suture Anchors (Bony Bankart Repair)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; guided passive ROM; active strengthening at 8 weeks; return to contact sports at 4–6 months",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ กายภาพขยับข้อไหล่ตามลำดับ ฝึกเพิ่มกำลังที่ 8 สัปดาห์ และกลับไปเล่นกีฬาปะทะที่ 4–6 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Placing screws proud into the articular cartilage causing rapid destructive humeral head wear",
+                    "th": "• หัวสกรูโผล่เกินผิวข้อขูดทำลายกระดูกอ่อนหัวไหล่จนข้อพังอย่างรวดเร็ว"
+                  }
                 }
               },
               "illustrationId": "",
@@ -774,14 +998,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าด้านข้างไหล่ดันหัวกระดูกกระแทกเบ้า"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Transverse/oblique glenoid fracture exiting inferior lateral border; non-operative sling for non-displaced (<2 mm step-off); operative ORIF (posterior approach with screws or locking plate) for articular step-off ≥2 mm or humeral head subluxation.",
+                  "th": "รอยหักเข้าข้อพาดผ่านเบ้าส่วนล่างทะลุขอบนอก หากไม่เคลื่อนตัว (ผิวข้อเหลื่อม <2 มม.) รักษาแบบไม่ผ่าตัดด้วย Sling หากผิวข้อเหลื่อม ≥2 มม. หรือหัวกระดูกไหล่เคลื่อนหลุดลงล่าง แนะนำผ่าตัด ORIF เข้าทางด้านหลังดามสกรูหรือแผ่นเหล็ก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY if non-displaced (<2mm gap/step).",
-                  "th": "พิจารณาเฉพาะกรณีไม่เคลื่อนตัว (<2มม.)"
+                  "indication": {
+                    "en": "• Non-displaced Ideberg Type II glenoid fractures with articular step-off < 2 mm\n• Concentric glenohumeral joint",
+                    "th": "• กระดูกหัก Ideberg Type II ไม่เคลื่อนตัว ผิวข้อเหลื่อม < 2 มม.\n• หัวกระดูกข้อไหล่อยู่ในเบ้าตรงกลางสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early pendulum motion at 2 weeks; progressive active-assisted ROM at 4 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 2 สัปดาห์ และฝึกยกแขนช่วยที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Underestimating step-off without 3D CT digital subtraction views",
+                    "th": "• ประเมินรอยเหลื่อมผิวข้อต่ำเกินไปหากไม่ได้ตรวจ 3D CT ลบภาพหัวกระดูก"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR DISPLACEMENT >4mm. ORIF with cannulated screws or plate via posterior approach.",
-                  "th": "แนะนำผ่าตัด ORIF เมื่อผิวข้อเหลื่อม >4มม. ยึดด้วยสกรูจมหรือแผ่นเหล็ก"
+                  "indication": {
+                    "en": "• Intra-articular step-off or gap ≥ 2–4 mm\n• Inferior glenohumeral subluxation with the inferior glenoid fragment",
+                    "th": "• ผิวข้อเหลื่อมหรืออ้ากว้าง ≥ 2–4 มม.\n• ข้อไหล่เลื่อนหลุดลงล่างตามชิ้นกระดูกเบ้าล่าง"
+                  },
+                  "method": {
+                    "en": "• Posterior approach (Modified Judet or infraspinatus-sparing): Anatomical reduction of articular surface + 3.5 mm / 4.0 mm Cannulated Lag Screws or Buttress Locking Plate along the thick lateral border",
+                    "th": "• ผ่าตัดเข้าด้านหลัง (Modified Judet หรือ Infraspinatus-sparing): จัดเรียงผิวข้อให้เรียบสนิท + ขันสกรูดึงอัด 3.5 mm / 4.0 mm Cannulated Lag Screws หรือดาม Buttress Locking Plate ตามแนวขอบนอก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive forward elevation to 90° for 4 weeks; active ROM and strengthening at 6–8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ ยกแขนช่วยไม่เกิน 90 องศาใน 4 สัปดาห์แรก เริ่มยกแขนเองและเพิ่มกำลังที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate reduction leading to rapid post-traumatic glenohumeral osteoarthritis",
+                    "th": "• จัดผิวข้อไม่เรียบทำให้เกิดข้อไหล่เสื่อมรุนแรงตามมาอย่างรวดเร็ว"
+                  }
                 }
               },
               "illustrationId": "",
@@ -805,14 +1061,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงอัดกระแทกชี้ขึ้นด้านบนเข้าที่หัวกระดูกและเบ้าส่วนบน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Superior glenoid articular fracture exiting superiorly into suprascapular notch or coracoid base; frequently associated with AC joint separation or clavicle fracture; ORIF for articular step-off ≥2 mm or superior SSSC instability.",
+                  "th": "รอยหักพาดผ่านเบ้าข้อส่วนบนทะลุออกโคน Coracoid หรือรอยหวำ Suprascapular notch มักพบบาดเจ็บร่วมกับข้อ AC หรือไหปลาร้า หากผิวข้อเหลื่อม ≥2 มม. หรือห่วงยึด SSSC ไม่มั่นคง แนะนำผ่าตัด ORIF ดามสกรูหรือแผ่นเหล็ก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY if non-displaced.",
-                  "th": "พิจารณาเฉพาะกรณีไม่เคลื่อนตัว"
+                  "indication": {
+                    "en": "• Non-displaced Ideberg Type III fracture with step-off < 2 mm and intact SSSC suspension",
+                    "th": "• รอยหัก Ideberg Type III ไม่เคลื่อนตัว (ผิวข้อเหลื่อม < 2 มม.) และห่วงยึด SSSC ยังสมบูรณ์"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early gentle motion at 2 weeks; active elevation at 4 weeks",
+                    "th": "• เริ่มขยับข้อไหล่เบาๆ ที่ 2 สัปดาห์ และฝึกยกแขนที่ 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing associated coracoclavicular ligament disruption",
+                    "th": "• มองข้ามการฉีกขาดของเส้นเอ็น Coracoclavicular (CC)"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT FOR DISPLACEMENT >4mm. ORIF with superior locking plate or screws.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดสกรูหรือแผ่นเหล็กเมื่อผิวข้อเหลื่อม >4มม."
+                  "indication": {
+                    "en": "• Intra-articular step-off ≥ 2 mm\n• Associated unstable coracoid fracture or high-grade AC separation (double SSSC disruption)",
+                    "th": "• ผิวข้อเหลื่อม ≥ 2 มม.\n• มีจะงอย Coracoid หักไม่มั่นคง หรือข้อ AC หลุดรุนแรงร่วมด้วย (Double SSSC disruption)"
+                  },
+                  "method": {
+                    "en": "• Superior deltoid-splitting or anterior deltopectoral approach: Anatomical articular reduction + 3.5 mm Cannulated Cancellous Screws from superior to inferior ± Superior Glenoid Mini-Locking Plate",
+                    "th": "• ผ่าตัดเข้าทางด้านบน (Deltoid-splitting) หรือด้านหน้า (Deltopectoral): จัดเรียงผิวข้อ + ขันสกรู 3.5 mm Cannulated Screws จากบนลงล่าง ± ดามแผ่นเหล็กล็อคจิ๋ว Superior Glenoid Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; progressive guided physical therapy",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Endangering the suprascapular nerve as it passes through the suprascapular notch",
+                    "th": "• อันตรายต่อเส้นประสาท Suprascapular ขณะเจาะสกรูผ่านรอยหวำ Suprascapular notch"
+                  }
                 }
               },
               "illustrationId": "",
@@ -836,14 +1124,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงอัดกระแทกด้านข้างพลังงานสูงรุนแรงพาดผ่านข้อไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Horizontal fracture line completely traversing glenoid fossa and scapular body to medial border; divides scapula into upper and lower halves; ORIF via posterior approach indicated for articular step-off ≥2 mm or body malalignment.",
+                  "th": "รอยหักแนวนอนตัดผ่านเบ้าข้อไหล่และลำตัวสะบักทะลุถึงขอบด้านใน แยกสะบักเป็นครึ่งบนและล่าง แนะนำผ่าตัด ORIF เข้าทางด้านหลังดามแผ่นเหล็กยาวเมื่อผิวข้อเหลื่อม ≥2 มม. หรือลำตัวสะบักเคลื่อนเกยกัน"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Indicated ONLY if non-displaced.",
-                  "th": "พิจารณาเฉพาะกรณีไม่เคลื่อนตัว"
+                  "indication": {
+                    "en": "• Strictly non-displaced Ideberg Type IV fracture (articular step-off < 2 mm and no gross body displacement)",
+                    "th": "• กระดูกหัก Ideberg Type IV ที่ไม่เคลื่อนตัวอย่างแท้จริง (ผิวข้อเหลื่อม < 2 มม. และลำตัวไม่เกย)"
+                  },
+                  "method": {
+                    "en": "• Sling for 4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive motion after 2 weeks; active motion at 4–6 weeks",
+                    "th": "• ขยับข้อไหล่เบาๆ หลัง 2 สัปดาห์ และเริ่มยกแขนเองที่ 4–6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary displacement due to heavy arm traction",
+                    "th": "• กระดูกทรุดเคลื่อนหลุดเพิ่มขึ้นจากน้ำหนักแขนถ่วงดึง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. ORIF via posterior approach using long reconstruction locking plates.",
-                  "th": "แนะนำผ่าตัด ORIF เปิดแผลด้านหลังดามแผ่นเหล็กยาว"
+                  "indication": {
+                    "en": "• Intra-articular step-off ≥ 2 mm\n• Severe translational displacement between upper and lower scapular halves",
+                    "th": "• ผิวข้อเหลื่อม ≥ 2 มม.\n• ชิ้นกระดูกสะบักครึ่งบนและครึ่งล่างเกยเคลื่อนตัวออกจากกันชัดเจน"
+                  },
+                  "method": {
+                    "en": "• Posterior Judet approach: Direct visualization and anatomical reduction of the glenoid surface + Long 3.5 mm Reconstruction Locking Plate extending from glenoid neck across to the medial border",
+                    "th": "• ผ่าตัดเข้าด้านหลัง (Judet approach): ส่องดูและจัดผิวข้อเบ้าไหล่ให้เรียบสนิท + ดามแผ่นเหล็กล็อค 3.5 mm Reconstruction Locking Plate ยาวจากคอสะบักพาดไปถึงขอบสะบักด้านใน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; progressive passive ROM; active strengthening at 8–10 weeks",
+                    "th": "• ใส่ Sling 6 สัปดาห์ กายภาพขยับข้อไหล่ตามลำดับ และเริ่มฝึกเพิ่มกำลังที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to reconstruct articular congruity prior to applying the long body plate",
+                    "th": "• ไม่ได้จัดผิวข้อให้เรียบก่อนวางแผ่นเหล็กดามลำตัวสะบัก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -867,14 +1187,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุแรงกระแทกตรงพลังงานสูงรุนแรงสุดขีด"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Complex multi-fragmentary fracture combining transverse body split (Type IV) with secondary intra-articular lines (Type II or III); high energy; mandatory anatomical multi-column ORIF or primary arthroplasty in elderly.",
+                  "th": "รอยหักซับซ้อนหลายท่อน ผสมระหว่างรอยหักขวางลำตัวสะบักและรอยหักแตกเข้าข้อเบ้าไหล่ ต้องผ่าตัด ORIF จัดดามหลายทิศทางอย่างประณีต หรือพิจารณาผ่าตัดใส่ข้อไหล่เทียมในผู้สูงอายุ"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED in functional patients (Causes severe post-traumatic arthrosis and locked shoulder)",
+                    "th": "• ห้ามใช้วิธีนี้ในผู้ป่วยทั่วไป (ทำให้ข้อไหล่เสื่อมรุนแรงและข้อติดแข็งถาวร)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Joint destruction and permanent disabling pain",
+                    "th": "• ผิวข้อถูกทำลายและปวดทรมานเรื้อรัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Meticulous ORIF with dual plating or primary arthroplasty.",
-                  "th": "แนะนำผ่าตัด ORIF จัดดามแผ่นเหล็กสองทางอย่างประณีต"
+                  "indication": {
+                    "en": "• All Ideberg Type V complex combined glenoid fractures",
+                    "th": "• กระดูกหัก Ideberg Type V ชนิดซับซ้อนทุกราย"
+                  },
+                  "method": {
+                    "en": "• Extended posterior Judet approach: Sequential reduction of articular fragments with provisional K-wires, lag screws, and dual column Reconstruction Locking Plates (lateral and medial pillars) ± Primary Reverse Shoulder Arthroplasty for unreconstructible osteoporotic bone",
+                    "th": "• ผ่าตัดเปิดแผลกว้างด้านหลัง (Extended Judet approach): เรียงต่อชิ้นผิวข้อตามลำดับด้วยลวด K-wire, ขัน Lag screws และดามแผ่นเหล็กล็อคคู่ (เสาขอบนอกและขอบใน) ± ใส่ข้อไหล่เทียม Reverse TSA หากกระดูกพรุนแตกป่นไม่สามารถต่อได้"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict sling immobilization for 6 weeks; guided passive ROM; active rehab at 8–12 weeks",
+                    "th": "• ใส่ Sling เคร่งครัด 6 สัปดาห์ ขยับข้อไหล่ตามแพทย์แนะนำ และฝึกเพิ่มกำลังที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe wound breakdown or hematoma with extensive Judet flap elevation (meticulous hemostasis required)",
+                    "th": "• แผลผ่าตัดติดเชื้อหรือมีก้อนเลือดคั่งจากการเลาะเปิดแผล Judet กว้าง (ต้องห้ามเลือดอย่างประณีต)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -898,14 +1250,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุแรงทับบดพลังงานสูงรุนแรง หรือแผลกระสุนปืน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Severe articular comminution / destruction of glenoid concavity; primary reconstruction vs arthroplasty; ORIF with micro-fragment plates/screws for reconstructible bone or primary Reverse Total Shoulder Arthroplasty (rTSA) for severely destroyed articular vault in older patients.",
+                  "th": "แอ่งเบ้าข้อไหล่แตกละเอียดป่น สูญเสียความเว้าและความมั่นคง ในคนอายุน้อยผ่าตัด ORIF ต่อชิ้นกระดูกด้วยแผ่นเหล็กจิ๋วและปลูกถ่ายกระดูก ในผู้สูงอายุพิจารณาผ่าตัดใส่ข้อไหล่เทียมชนิดผันกลับ (Reverse Total Shoulder Arthroplasty)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Guaranteed arthrofibrosis and intractable arthrosis)",
+                    "th": "• ห้ามใช้วิธีนี้ (ข้อไหล่จะติดแข็งและเสื่อมทรมานแน่นอน)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Complete loss of shoulder girdle function",
+                    "th": "• สูญเสียการทำงานของข้อไหล่ถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED SURGICAL OPTIONS. ORIF with micro-plates/screws or primary Reverse Total Shoulder Arthrodesis/Arthroplasty.",
-                  "th": "แนะนำผ่าตัด ORIF ดามแผ่นเหล็กจิ๋ว หรือผ่าตัดใส่ข้อไหล่เทียมชนิดผันกลับ (Reverse TSA)"
+                  "indication": {
+                    "en": "• All Ideberg Type VI comminuted glenoid fractures",
+                    "th": "• แอ่งเบ้าข้อไหล่แตกละเอียด Ideberg Type VI ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Young/active: Extended approach, reduction of glenoid vault, bone grafting, and multi-fragment fixation with 2.4/2.7 mm mini-plates and subchondral screws\n• Elderly/severely comminuted: Primary Reverse Total Shoulder Arthroplasty (rTSA) with long-peg / bone-graft baseplate",
+                    "th": "• ผู้ป่วยอายุน้อย: ผ่าตัดเปิดจัดเรียงเบ้ากระดูก ปลูกถ่ายกระดูก (Bone graft) และดามด้วยแผ่นเหล็กจิ๋ว 2.4/2.7 mm Mini-plates\n• ผู้สูงอายุ/กระดูกป่นมาก: ผ่าตัดใส่ข้อไหล่เทียมชนิดผันกลับ (Primary Reverse Total Shoulder Arthroplasty)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; progressive passive-to-active rehabilitation",
+                    "th": "• ใส่ Sling 6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate glenoid bone stock for rTSA baseplate fixation (may require structural bone graft or custom implant)",
+                    "th": "• ฐานกระดูกเบ้าไหล่แตกป่นจนไม่สามารถยึดแป้นข้อเทียม Baseplate ได้ (อาจต้องใช้กระดูกปลูกถ่ายเสริมโครงสร้าง)"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1064,14 +1448,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงเข้าที่ยอดไหล่ด้านบน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Minimally displaced acromion fracture (<2 mm); preserved subacromial space; non-operative sling for 3–4 weeks with >98% union rate.",
+                  "th": "ยอดกระดูกสะบักหักไม่เคลื่อนตัวหรือเคลื่อนตัวน้อย (<2 มม.) ช่องใต้ Acromion ยังกว้างปกติ รักษาแบบไม่ผ่าตัดด้วย Arm sling 3–4 สัปดาห์ กระดูกติดได้ดี >98%"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Arm sling for 3-4 weeks for comfort, followed by active shoulder range of motion. Union rate >98%.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน 3-4 สัปดาห์ แล้วฝึกขยับข้อไหล่"
+                  "indication": {
+                    "en": "• Minimally displaced acromion fracture (<2 mm displacement)\n• Intact subacromial space (>6 mm) without inferior tilt or rotator cuff impingement",
+                    "th": "• ยอดกระดูกสะบักหักเคลื่อนตัวน้อย (<2 มม.)\n• ช่องใต้ Acromion กว้างปกติ (>6 มม.) ชิ้นกระดูกไม่เอียงกดต่ำลง และไม่มีการขัดชนเอ็นไหล่"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 3–4 weeks for comfort",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์เพื่อพักแขน"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle pendulum motion at 1–2 weeks; active-assisted shoulder elevation at 3–4 weeks; strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกแกว่งแขนที่ 1–2 สัปดาห์ ยกแขนช่วยที่ 3–4 สัปดาห์ และเริ่มฝึกเพิ่มกำลังกล้ามเนื้อที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Confusing acute fracture with asymptomatic Os Acromiale (which has rounded sclerotic edges)",
+                    "th": "• สับสนรอยหักเฉียบพลันกับภาวะ Os Acromiale (ซึ่งขอบกระดูกจะมนเรียบ)"
+                  }
                 },
                 "operative": {
-                  "en": "Not indicated.",
-                  "th": "ไม่มีข้อบ่งชี้ในการผ่าตัด"
+                  "indication": {
+                    "en": "• Not indicated acutely",
+                    "th": "• ไม่มีข้อบ่งชี้ในการผ่าตัดเฉียบพลัน"
+                  },
+                  "method": {
+                    "en": "• N/A",
+                    "th": "• ไม่จำเป็น"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่จำเป็น"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery",
+                    "th": "• การผ่าตัดโดยไม่จำเป็น"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1095,14 +1511,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรง หรือการดึงกระชากของกล้ามเนื้อ Deltoid"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced acromion fracture (>2 mm) without inferior tilt into subacromial space; trial of conservative management; operative fixation for symptomatic nonunion or high-demand athletes.",
+                  "th": "ยอดกระดูกสะบักหักเคลื่อนตัว (>2 มม.) แต่ไม่เอียงกดต่ำลงในช่องใต้ Acromion แนะนำลองรักษาแบบไม่ผ่าตัดก่อน พิจารณาผ่าตัดเฉพาะกรณีปวดจากกระดูกไม่ติด หรือนักกีฬาที่ต้องใช้แรงแขนสูง"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED INITIAL TREATMENT. Sling immobilization for 3-4 weeks. Operative treatment reserved for painful nonunion.",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัดเป็นหลัก ใส่ Sling 3-4 สัปดาห์ ผ่าตัดเฉพาะกรณีปวดจากกระดูกไม่ติด"
+                  "indication": {
+                    "en": "• Displaced acromion fracture without inferior tilt compromising subacromial clearance\n• Low to moderate demand individuals",
+                    "th": "• กระดูก Acromion หักเคลื่อนตัวแต่ไม่มีการเอียงกดต่ำลงไปเบียดช่องใต้ข้อ\n• ผู้ป่วยทั่วไปที่ไม่ใช่นักกีฬาพลังแขนสูง"
+                  },
+                  "method": {
+                    "en": "• Sling immobilization for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active-assisted ROM at 3 weeks; progressive deltoid strengthening at 6 weeks",
+                    "th": "• เริ่มฝึกยกแขนช่วยที่ 3 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อ Deltoid ที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing secondary displacement with inferior tilt on follow-up radiographs",
+                    "th": "• มองข้ามการทรุดเคลื่อนตัวเอียงกดต่ำลงในภาพเอกซเรย์ติดตามอาการ"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated for symptomatic nonunion or high-demand overhead athletes. Tension-band wiring or plate fixation.",
-                  "th": "ผ่าตัดในผู้ป่วยที่ปวดกระดูกไม่ติด หรือนักกีฬาใช้แขนเหนือศีรษะ ดามด้วย Tension-band wiring หรือแผ่นเหล็ก"
+                  "indication": {
+                    "en": "• High-demand overhead throwing athletes\n• Gross displacement (>1 cm) compromising deltoid origin mechanics\n• Symptomatic nonunion",
+                    "th": "• นักกีฬาที่ต้องใช้แขนขว้างหรือยกเหนือศีรษะ\n• กระดูกเคลื่อนตัวเกยกันมาก (>1 ซม.) ทำให้จุดเกาะกล้ามเนื้อ Deltoid ผิดรูป\n• ภาวะกระดูกไม่ติดเรื้อรังและมีอาการปวด"
+                  },
+                  "method": {
+                    "en": "• Direct dorsal approach: Anatomical reduction + Tension-Band Wiring (TBW) with K-wires or Pre-contoured 2.7/3.5 mm Acromion Locking Plate",
+                    "th": "• ผ่าตัดเปิดแผลด้านหลังตรงตำแหน่ง: จัดกระดูกเข้าที่ + ดามด้วย Tension-Band Wiring (TBW) หรือแผ่นเหล็กล็อค 2.7/3.5 mm Pre-contoured Acromion Locking Plate"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4 weeks; early active ROM",
+                    "th": "• ใส่ Sling 4 สัปดาห์ เริ่มฝึกขยับข้อไหล่ตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• K-wire migration or hardware prominence under thin skin",
+                    "th": "• ลวด K-wire เคลื่อนเลื่อนหลุด หรือหัวสกรู/แผ่นเหล็กนูนระคายเคืองใต้ผิวหนังที่บาง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1126,14 +1574,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงจากด้านบนกดสับยอด Acromion ยุบต่ำลงล่าง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Displaced acromion fracture with inferior tilt reducing subacromial space (<6 mm); causes direct mechanical impingement and tears of the supraspinatus tendon; mandatory anatomical reduction and locking plate / TBW fixation.",
+                  "th": "ยอดกระดูกสะบักหักเคลื่อนตัวเอียงกดต่ำลงทำให้ช่องใต้ Acromion แคบลง (<6 มม.) ซึ่งจะขัดชนและบาดเอ็น Supraspinatus จนขาด จำเป็นต้องผ่าตัด ORIF ยกชิ้นกระดูกขึ้นและดามด้วยแผ่นเหล็กล็อคหรือ Tension-Band Wiring"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED. Causes chronic rotator cuff tear and painful loss of abduction.",
-                  "th": "ไม่แนะนำ ทำให้เอ็นไหล่ขาดเรื้อรังและกางแขนไม่ได้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED (Guaranteed rotator cuff tear and painful abduction block)",
+                    "th": "• ห้ามใช้วิธีนี้ (ทำให้เอ็นหมุนข้อไหล่ขาดเรื้อรังและกางแขนไม่ได้แน่นอน)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Severe rotator cuff attritional rupture and chronic pain",
+                    "th": "• เอ็นไหล่เปื่อยขาดถาวรและปวดทรมานเรื้อรัง"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT (GOLD STANDARD). Open reduction and internal fixation (ORIF) with tension-band wiring or anatomical acromial locking plate to restore subacromial height.",
-                  "th": "แนะนำผ่าตัดมาตรฐานหลัก (Gold Standard ORIF) ดึงยกชิ้นกระดูกกลับเข้าที่ แล้วดามด้วย Tension-band wiring หรือแผ่นเหล็กล็อค"
+                  "indication": {
+                    "en": "• All Kuhn Type III acromial fractures with inferior tilt / subacromial space narrowing",
+                    "th": "• กระดูก Acromion หักชนิด Kuhn Type III ทุกรายที่มีการเอียงกดต่ำลงเบียดช่องใต้ข้อ"
+                  },
+                  "method": {
+                    "en": "• Direct superior/dorsal approach: Elevation of depressed acromial fragment to restore subacromial height + Subacromial inspection/rotator cuff repair + Rigid fixation using Pre-contoured Anatomical Acromial Locking Plate or Tension-Band Wiring",
+                    "th": "• ผ่าตัดเปิดแผลด้านบน/หลัง: ดึงยกชิ้นกระดูกที่ยุบต่ำขึ้นเพื่อคืนความสูงช่องใต้ Acromion + ตรวจซ่อมแซมเอ็น Rotator cuff + ดามตรึงแน่นด้วยแผ่นเหล็กล็อค Pre-contoured Locking Plate หรือ Tension-Band Wiring"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive forward elevation <90° for 4 weeks; progressive active rotator cuff strengthening at 6–8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ ยกแขนช่วยไม่เกิน 90 องศาใน 4 สัปดาห์แรก เริ่มฝึกเพิ่มกำลังเอ็นหมุนข้อไหล่ที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to inspect the underlying subacromial bursa and supraspinatus tendon for acute laceration",
+                    "th": "• ไม่ได้ตรวจดูรอยฉีกขาดของถุงน้ำใต้เบ้าและเอ็น Supraspinatus ใต้รอยหัก"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1287,14 +1767,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรงพลังงานสูง หรือการดึงกระชากรุนแรงของกล้ามเนื้อ Conjoint tendon"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture line proximal/posterior to CC ligament insertion; CC ligaments remain on the distal mobile fragment; disrupts SSSC ring; unstable; mandatory ORIF with cannulated screw down coracoid axis into scapular neck.",
+                  "th": "รอยหักอยู่โคนต่อจุดเกาะเอ็น Coracoclavicular (CC) ทำให้เอ็น CC ติดไปกับชิ้นกระดูกส่วนปลายที่หลุดลอย ทำลายวง SSSC ring ไม่มั่นคง จำเป็นต้องผ่าตัด ORIF ขันสกรู Cannulated Screw ตามแนวแกนจะงอยกระดูกเข้าสู่คอสะบัก"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "High nonunion rate and persistent shoulder instability.",
-                  "th": "อัตรากระดูกไม่ติดสูง และข้อไหล่หลุดหลวมเรื้อรัง"
+                  "indication": {
+                    "en": "• Medically unfit surgical candidates",
+                    "th": "• ผู้ป่วยที่มีข้อห้ามในการผ่าตัดอย่างยิ่งยวด"
+                  },
+                  "method": {
+                    "en": "• Shoulder immobilizer for 6 weeks",
+                    "th": "• ใส่ Shoulder Immobilizer นาน 6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Delayed mobilization",
+                    "th": "• ชะลอการทำกายภาพจนกว่ากระดูกจะเริ่มติด"
+                  },
+                  "pitfalls": {
+                    "en": "• High rate of nonunion, persistent shoulder fatigue, and AC joint instability",
+                    "th": "• อัตรากระดูกไม่ติดสูง ไหล่ล้าเรื้อรัง และข้อ AC หลุดหลวมถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Open reduction and internal fixation (ORIF) with a 3.5mm/4.0mm cannulated screw placed down the axis of the coracoid into the scapular neck.",
-                  "th": "แนะนำผ่าตัด ORIF ขันสกรู Cannulated screw ยึดตามแนวแกนจะงอย Coracoid เข้าสู่คอสะบัก"
+                  "indication": {
+                    "en": "• All Ogawa Type I coracoid fractures in active patients\n• Associated AC joint separation (Rockwood III-V) or clavicle fracture",
+                    "th": "• จะงอยกระดูกสะบักหัก Ogawa Type I ทุกรายในผู้ป่วยที่ใช้งานแขน\n• มีการหลุดของข้อ AC (Rockwood III–V) หรือไหปลาร้าหักร่วมด้วย"
+                  },
+                  "method": {
+                    "en": "• Anterior deltopectoral approach: Reduction of coracoid base + Insertion of 3.5 mm / 4.0 mm Cannulated Partially Threaded Cancellous Screw with washer down the long axis of the coracoid process into the thick scapular neck pillar ± clavicle/AC stabilization",
+                    "th": "• ผ่าตัดเข้าทางด้านหน้า (Deltopectoral approach): จัดโคนจะงอยกระดูกเข้าที่ + ขันสกรู 3.5 mm / 4.0 mm Cannulated Screw พร้อมแหวนรอง (Washer) ยึดตามแนวแกนยาวของ Coracoid เข้าสู่เสาคอสะบัก ± ผ่าตัดยึดกระดูกไหปลาร้า/ข้อ AC"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; passive ROM for 4 weeks; active bicep/conjoint loading at 8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ ขยับข้อไหล่ช่วยใน 4 สัปดาห์แรก เริ่มฝึกเกร็งกล้ามเนื้อ Biceps/Conjoint tendon ที่ 8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Misdirection of the screw into the suprascapular notch or glenoid articular cartilage",
+                    "th": "• สกรูแทงทะลุออกผิดทิศทางเข้าไปใน Suprascapular notch หรือผิวข้อเบ้าไหล่"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1318,14 +1830,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงดึงกระชากหลุดของกล้ามเนื้อ Conjoint tendon ขณะงอแขนสวนทาง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture line distal/anterior to CC ligament attachments; CC ligaments remain attached to intact scapular base; stable SSSC; conservative sling management (>98% union).",
+                  "th": "รอยหักอยู่ปลายต่อจุดเกาะเอ็น CC ซึ่งเอ็นยังคงยึดตรึงอยู่กับโคนสะบักที่สมบูรณ์ ห่วงยึด SSSC มีความมั่นคงสูง รักษาแบบไม่ผ่าตัดด้วย Arm sling (กระดูกติดได้เอง >98%)"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED TREATMENT. Simple arm sling for 2-3 weeks for comfort, followed by progressive shoulder motion. Excellent prognosis (>98% union).",
-                  "th": "แนะนำรักษาแบบไม่ผ่าตัด ใส่สายคล้องแขน 2-3 สัปดาห์บรรเทาปวด แล้วฝึกขยับข้อไหล่"
+                  "indication": {
+                    "en": "• Closed Ogawa Type II coracoid tip avulsion fractures",
+                    "th": "• ปลายจะงอยกระดูกสะบักหักกะเทาะ Ogawa Type II ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Simple arm sling for 2–3 weeks for comfort",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์เพื่อบรรเทาอาการปวด"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle passive shoulder motion at 1–2 weeks; active-assisted elbow flexion and supination at 3 weeks; full return to sports at 6–8 weeks",
+                    "th": "• เริ่มขยับข้อไหล่เบาๆ ที่ 1–2 สัปดาห์ ฝึกงอศอกและหงายมือช่วยที่ 3 สัปดาห์ และกลับไปเล่นกีฬาได้ที่ 6–8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Mistaking an unstable Type I base fracture for Type II due to inadequate radiographic views",
+                    "th": "• วินิจฉัยผิดพลาดระหว่าง Type I กับ Type II เนื่องจากภาพเอกซเรย์มองเห็นไม่ชัดเจน"
+                  }
                 },
                 "operative": {
-                  "en": "Indicated only in high-level athletes with painful displacement >1cm. ORIF or excision of small tip fragment.",
-                  "th": "ผ่าตัดเฉพาะนักกีฬารับแรงสูงที่ชิ้นกระดูกอ้าเคลื่อน >1ซม. โดยยึดสกรูหรือตัดชิ้นปลายออก"
+                  "indication": {
+                    "en": "• High-level overhead/throwing athletes with tip displacement > 10 mm causing symptomatic conjoint tendon weakness\n• Painful nonunion",
+                    "th": "• นักกีฬาขว้างหรือยกน้ำหนักที่ชิ้นปลายเคลื่อนห่าง > 10 มม. และกล้ามเนื้ออ่อนแรง\n• ภาวะกระดูกไม่ติดและมีอาการปวดเรื้อรัง"
+                  },
+                  "method": {
+                    "en": "• Open reduction + 2.7 mm / 3.5 mm small lag screw fixation OR excision of the small ununited tip fragment",
+                    "th": "• ผ่าตัดยึดตรึงด้วยสกรูจิ๋ว 2.7 mm / 3.5 mm Lag Screw หรือผ่าตัดเลาะชิ้นกระดูกปลายที่ไม่ติดออก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 3 weeks; progressive strengthening",
+                    "th": "• ใส่ Sling 3 สัปดาห์ และทำกายภาพฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Over-operating on an asymptomatic stable tip fragment",
+                    "th": "• ผ่าตัดโดยไม่จำเป็นในชิ้นกระดูกปลายที่ไม่มีอาการ"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1388,14 +1932,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงดึงกระชากของกล้ามเนื้อ Conjoint tendon"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Coracoid apex/tip avulsion by conjoint tendon distal to CC ligaments; stable; non-operative sling for 2–3 weeks.",
+                  "th": "ปลายจะงอย Coracoid หักกะเทาะจากการดึงของ Conjoint tendon อยู่ปลายต่อเอ็น CC มีความมั่นคง รักษาแบบไม่ผ่าตัดด้วย Arm sling 2–3 สัปดาห์"
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "RECOMMENDED. Arm sling for 2-3 weeks.",
-                  "th": "แนะนำใส่สายคล้องแขน 2-3 สัปดาห์"
+                  "indication": {
+                    "en": "• Eyres Type I tip avulsion fracture",
+                    "th": "• ปลายจะงอยกระดูกหักกะเทาะ Eyres Type I"
+                  },
+                  "method": {
+                    "en": "• Arm sling for 2–3 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 2–3 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Progressive shoulder and elbow ROM after 2 weeks",
+                    "th": "• เริ่มฝึกขยับข้อไหล่และข้อศอกหลัง 2 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Aggressive early resisted bicep loading causing nonunion",
+                    "th": "• ยกของหนักหรือเกร็งกล้ามเนื้อต้นแขนเร็วเกินไปทำให้กระดูกไม่ติด"
+                  }
                 },
                 "operative": {
-                  "en": "Excision or screw if symptomatic.",
-                  "th": "ผ่าตัดเฉพาะเมื่อมีอาการ"
+                  "indication": {
+                    "en": "• Symptomatic displacement > 1 cm in elite athletes",
+                    "th": "• นักกีฬาอาชีพที่มีชิ้นกระดูกเคลื่อน > 1 ซม. และมีอาการ"
+                  },
+                  "method": {
+                    "en": "• Mini-screw fixation or fragment excision",
+                    "th": "• ผ่าตัดยึดสกรูจิ๋ว หรือผ่าตัดเลาะชิ้นปลายออก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early active motion",
+                    "th": "• กายภาพฝึกขยับข้อไหล่"
+                  },
+                  "pitfalls": {
+                    "en": "• Unnecessary surgery",
+                    "th": "• การผ่าตัดโดยไม่จำเป็น"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1419,14 +1995,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงกระแทกตรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture through mid-portion of coracoid body; stable if non-displaced; sling for 3–4 weeks; ORIF for displacement >1 cm.",
+                  "th": "รอยหักพาดผ่านกลางลำตัวจะงอย Coracoid หากไม่เคลื่อนตัวรักษาด้วย Arm sling 3–4 สัปดาห์ ผ่าตัด ORIF เฉพาะกรณีเคลื่อนตัว >1 ซม."
+                },
                 "preferred": "conservative",
                 "conservative": {
-                  "en": "Sling 3-4 weeks if non-displaced.",
-                  "th": "ใส่ Sling 3-4 สัปดาห์หากไม่เคลื่อนตัว"
+                  "indication": {
+                    "en": "• Non-displaced or minimally displaced Eyres Type II fractures (<10 mm)",
+                    "th": "• ลำตัวจะงอยกระดูกหักไม่เคลื่อนตัว หรือเคลื่อนตัวน้อย (<10 มม.)"
+                  },
+                  "method": {
+                    "en": "• Sling for 3–4 weeks",
+                    "th": "• ใส่สายคล้องแขน (Arm sling) 3–4 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Early gentle motion at 2 weeks; active strengthening at 6 weeks",
+                    "th": "• เริ่มขยับข้อไหล่เบาๆ ที่ 2 สัปดาห์ และฝึกเพิ่มกำลังกล้ามเนื้อที่ 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Secondary displacement under bicep short head traction",
+                    "th": "• การทรุดเคลื่อนเพิ่มขึ้นจากแรงดึงของกล้ามเนื้อ Biceps short head"
+                  }
                 },
                 "operative": {
-                  "en": "ORIF if displaced >1cm.",
-                  "th": "ผ่าตัด ORIF หากเคลื่อน >1ซม."
+                  "indication": {
+                    "en": "• Displaced mid-coracoid fracture > 10 mm",
+                    "th": "• กระดูกกลางลำตัวจะงอยหักเคลื่อนตัว > 10 มม."
+                  },
+                  "method": {
+                    "en": "• Anterior approach: ORIF with 3.5 mm cannulated screw",
+                    "th": "• ผ่าตัดเข้าด้านหน้า: ยึดด้วย 3.5 mm Cannulated Screw"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4 weeks",
+                    "th": "• ใส่ Sling 4 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Drill hole penetration of underlying subscapularis muscle",
+                    "th": "• การเจาะทะลุโดนกล้ามเนื้อ Subscapularis ด้านล่าง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1450,14 +2058,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุพลังงานสูง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Fracture at coracoid base proximal to CC ligaments (Ogawa I equivalent); unstable SSSC; operative cannulated screw ORIF.",
+                  "th": "รอยหักบริเวณโคนจะงอยกระดูกด้านหลังต่อเอ็น CC (เทียบเท่า Ogawa Type I) ไม่มั่นคง แนะนำผ่าตัด ORIF ขันสกรู Cannulated Screw"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "High nonunion risk.",
-                  "th": "เสี่ยงกระดูกไม่ติดสูง"
+                  "indication": {
+                    "en": "• Severe surgical contraindications",
+                    "th": "• ผู้ป่วยที่มีความเสี่ยงผ่าตัดสูงมาก"
+                  },
+                  "method": {
+                    "en": "• Sling 6 weeks",
+                    "th": "• ใส่ Sling 6 สัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Delayed ROM",
+                    "th": "• ชะลอการทำกายภาพ"
+                  },
+                  "pitfalls": {
+                    "en": "• High nonunion and permanent shoulder instability",
+                    "th": "• กระดูกไม่ติดสูงและข้อไหล่หลุดหลวมถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED. ORIF with cannulated screw.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดสกรู"
+                  "indication": {
+                    "en": "• All Eyres Type III coracoid base fractures",
+                    "th": "• โคนจะงอยกระดูกหัก Eyres Type III ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Anterior deltopectoral approach: 3.5 mm / 4.0 mm Cannulated Lag Screw down the coracoid axis into the superior scapular neck",
+                    "th": "• ผ่าตัดเข้าด้านหน้า: ขันสกรู 3.5 mm / 4.0 mm Cannulated Lag Screw ตามแนวแกนยาวเข้าสู่คอสะบัก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 4–6 weeks; active strengthening at 8 weeks",
+                    "th": "• ใส่ Sling 4–6 สัปดาห์ และฝึกเพิ่มกำลังที่ 8 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Endangering the musculocutaneous nerve penetrating coracobrachialis medial/inferior to coracoid",
+                    "th": "• อันตรายต่อเส้นประสาท Musculocutaneous ที่ทอดผ่านกล้ามเนื้อ Coracobrachialis ด้านใน"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1481,14 +2121,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงอัดดันขึ้นด้านบน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Coracoid base fracture extending into the superior glenoid fossa (Ideberg III equivalent); intra-articular step-off and SSSC disruption; mandatory ORIF to restore glenoid congruity.",
+                  "th": "โคนจะงอยกระดูกหักลุกลามเข้าเบ้าข้อไหล่ส่วนบน (เทียบเท่า Ideberg Type III) เป็นการหักเข้าข้อและทำลายวง SSSC จำเป็นต้องผ่าตัด ORIF เพื่อจัดผิวข้อให้เรียบสนิท"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "CONTRAINDICATED.",
-                  "th": "ห้ามใช้การรักษาด้วยวิธีนี้"
+                  "indication": {
+                    "en": "• Strictly CONTRAINDICATED if displaced",
+                    "th": "• ห้ามใช้วิธีนี้ในเคสที่กระดูกเคลื่อนตัว"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Post-traumatic osteoarthritis and superior glenohumeral instability",
+                    "th": "• ข้อไหล่เสื่อมรุนแรงและข้อหลวมหลุดด้านบน"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED. ORIF with screw/plate.",
-                  "th": "แนะนำผ่าตัด ORIF ยึดสกรู/แผ่นเหล็ก"
+                  "indication": {
+                    "en": "• All Eyres Type IV fractures with articular step-off ≥ 2 mm",
+                    "th": "• กระดูกหัก Eyres Type IV ที่มีผิวข้อเหลื่อม ≥ 2 มม."
+                  },
+                  "method": {
+                    "en": "• Deltopectoral approach: Anatomical reduction of superior glenoid articular facet + Dual screw fixation (one into glenoid pillar, one down coracoid axis) ± mini-locking plate",
+                    "th": "• ผ่าตัดเข้าทางด้านหน้า: จัดเรียงผิวข้อเบ้าบนให้เรียบ + ขันสกรูคู่ (ตัวหนึ่งยึดเข้าเสาเบ้าข้อ อีกตัวยึดตามแนวแกนจะงอย) ± ดามแผ่นเหล็กล็อคจิ๋ว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; guided passive ROM",
+                    "th": "• ใส่ Sling 6 สัปดาห์ และทำกายภาพขยับข้อไหล่ตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Inaccurate articular reduction leading to glenohumeral arthrosis",
+                    "th": "• จัดผิวข้อไม่เรียบเนียนนำไปสู่ข้อไหล่เสื่อมอย่างรวดเร็ว"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1512,14 +2184,46 @@ export const scapulaBone: BoneData = {
                 "th": "อุบัติเหตุแรงอัดทับบดรุนแรง"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Coracoid base fracture extending deeply into main scapular body/spine; complex multi-segment injury; ORIF with reconstruction plate.",
+                  "th": "โคนจะงอยกระดูกหักลุกลามลึกเข้าสู่ตัวสะบักหรือสันสะบัก เป็นการบาดเจ็บซับซ้อนหลายท่อน แนะนำผ่าตัด ORIF ดามด้วยแผ่นเหล็กดัดรูป Reconstruction Locking Plate"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Poor outcome.",
-                  "th": "ผลการรักษาไม่ดี"
+                  "indication": {
+                    "en": "• Non-ambulatory patients with severe comorbidities",
+                    "th": "• ผู้ป่วยติดเตียงที่มีโรคร่วมรุนแรง"
+                  },
+                  "method": {
+                    "en": "• Comfort sling",
+                    "th": "• ใส่สายคล้องแขนประคองอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive motion as tolerated",
+                    "th": "• กายภาพเบาๆ"
+                  },
+                  "pitfalls": {
+                    "en": "• Disabling scapulothoracic dyskinesis",
+                    "th": "• การทำงานของสะบักกับผนังอกผิดรูปถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED. ORIF with reconstruction plate.",
-                  "th": "แนะนำผ่าตัด ORIF ดามแผ่นเหล็ก"
+                  "indication": {
+                    "en": "• All displaced Eyres Type V fractures",
+                    "th": "• กระดูกหัก Eyres Type V ชนิดเคลื่อนตัวทุกราย"
+                  },
+                  "method": {
+                    "en": "• Combined anterior/posterior approach as needed: Anatomical reduction + Contoured 3.5 mm Reconstruction Locking Plate linking coracoid base to scapular spine/body",
+                    "th": "• ผ่าตัดเข้าทางด้านหน้าและ/หรือด้านหลัง: จัดกระดูกเข้าที่ + ดามแผ่นเหล็กล็อค 3.5 mm Reconstruction Locking Plate เชื่อมระหว่างโคน Coracoid กับสันสะบัก/ลำตัวสะบัก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Sling for 6 weeks; progressive guided physical therapy",
+                    "th": "• ใส่ Sling 6 สัปดาห์ และทำกายภาพบำบัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Neurovascular injury during extensive anterior/superior exposure",
+                    "th": "• อันตรายต่อเส้นประสาทและหลอดเลือดขณะเลาะเปิดแผลกว้างด้านหน้า"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1598,14 +2302,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงดึงรั้งหรือแรงทับบดพลังงานสูงรุนแรงที่หัวไหล่"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Closed internal amputation of shoulder girdle with lateral scapular displacement >1 cm; neurovascular bundle intact; operative skeletal stabilization (clavicle/scapula) to re-establish structural suspension.",
+                  "th": "ภาวะสะบักกับผนังอกหลุดฉีก (สะบักเคลื่อนออกด้านข้าง >1 ซม.) โดยเส้นประสาทและหลอดเลือดยังสมบูรณ์ดี แนะนำผ่าตัดยึดตรึงกระดูกไหปลาร้าและสะบักเพื่อคืนรูปโครงสร้างไหล่"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "Not recommended due to severe shoulder girdle deformity and muscle detachment.",
-                  "th": "ไม่แนะนำเนื่องจากไหล่หลุดเสียรูปทรงและกล้ามเนื้อฉีกขาด"
+                  "indication": {
+                    "en": "• CONTRAINDICATED (Results in permanent flail shoulder and loss of arm power)",
+                    "th": "• ไม่แนะนำ (ทำให้ไหล่ตกหลุดลอย เสียรูปทรง และแขนอ่อนแรงถาวร)"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Massive muscle retraction and chronic shoulder droop",
+                    "th": "• กล้ามเนื้อหดรั้งรุนแรงและไหล่ตกถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Operative stabilization of the clavicle fracture / AC joint and scapula to re-establish shoulder girdle framework.",
-                  "th": "แนะนำผ่าตัดยึดตรึงกระดูกไหปลาร้า/ข้อ AC และสะบัก เพื่อคืนรูปโครงสร้างไหล่"
+                  "indication": {
+                    "en": "• All Type I scapulothoracic dissociation injuries",
+                    "th": "• ภาวะ Scapulothoracic Dissociation Type I ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Rigid skeletal stabilization: ORIF of clavicle shaft / AC joint reconstruction + ORIF of scapular neck/body with heavy locking plates to re-anchor the shoulder girdle to the axial skeleton",
+                    "th": "• ผ่าตัดยึดตรึงกระดูกให้มั่นคงแข็งแรง: ORIF กระดูกไหปลาร้า/เย็บซ่อมข้อ AC + ORIF คอสะบัก/ลำตัวสะบักด้วยแผ่นเหล็กล็อคหนา เพื่อดึงแขนงข้อไหล่กลับมายึดกับลำตัว"
+                  },
+                  "rehabilitation": {
+                    "en": "• Strict immobilization for 6 weeks; gradual passive-assisted physical therapy",
+                    "th": "• ดามแขนนิ่ง 6 สัปดาห์ และค่อยๆ เริ่มทำกายภาพบำบัดฟื้นฟู"
+                  },
+                  "pitfalls": {
+                    "en": "• Overlooking occult delayed subclavian pseudoaneurysm or intimal flap",
+                    "th": "• มองข้ามการเกิดหลอดเลือดแดงโป่งพองเทียม (Pseudoaneurysm) หรือผนังหลอดเลือดฉีกขาดแฝง"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1629,14 +2365,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงดึงกระชากอย่างรุนแรงสุดขีดที่สะบัดศีรษะและไหล่แยกออกจากกัน"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Musculoskeletal disruption + Brachial plexus injury (IIA incomplete, IIB complete root avulsion); skeletal stabilization + early nerve exploration / nerve transfers.",
+                  "th": "สะบักหลุดฉีกร่วมกับเส้นประสาท Brachial plexus บาดเจ็บ (IIA บาดเจ็บบางส่วน, IIB รากประสาทขาดหลุดถาวร) แนะนำผ่าตัดดามกระดูกร่วมกับการผ่าตัดสำรวจและย้ายเส้นประสาท (Nerve Transfer)"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "High invalidism.",
-                  "th": "เสี่ยงพิการสูง"
+                  "indication": {
+                    "en": "• Inoperable multi-trauma patients",
+                    "th": "• ผู้ป่วยที่มีการบาดเจ็บหลายระบบรุนแรงจนไม่สามารถผ่าตัดได้"
+                  },
+                  "method": {
+                    "en": "• Supportive care",
+                    "th": "• ประคับประคองอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Maintenance of passive joint mobility",
+                    "th": "• ดัดขยับข้อป้องกันข้อติด"
+                  },
+                  "pitfalls": {
+                    "en": "• Permanent complete flail upper extremity",
+                    "th": "• แขนอัมพาตปวกเปียกถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "RECOMMENDED TREATMENT. Skeletal stabilization + Nerve transfer / brachial plexus exploration, or functional muscle transfer.",
-                  "th": "แนะนำผ่าตัดดามกระดูก + ผ่าตัดต่อหรือย้ายเส้นประสาท (Nerve transfer) เพื่อฟื้นฟูแขน"
+                  "indication": {
+                    "en": "• All Type II scapulothoracic dissociation injuries",
+                    "th": "• ภาวะ Scapulothoracic Dissociation Type II ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Step 1: Rigid internal fixation of clavicle/scapula skeleton\n• Step 2: Brachial plexus surgical exploration ± early nerve transfers (e.g., spinal accessory to suprascapular, Oberlin nerve transfer for elbow flexion, intercostal nerves to musculocutaneous)",
+                    "th": "• ขั้นที่ 1: ผ่าตัดดามกระดูกไหปลาร้าและสะบักให้มั่นคง\n• ขั้นที่ 2: ผ่าตัดสำรวจเส้นประสาท Brachial plexus ± ผ่าตัดย้ายเส้นประสาท (Nerve Transfer เช่น Spinal accessory ไป Suprascapular, Oberlin transfer สำหรับงอศอก, Intercostal nerves ไป Musculocutaneous)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Long-term neuro-rehabilitation; electrical stimulation; splinting",
+                    "th": "• กายภาพฟื้นฟูระบบประสาทระยะยาว กระตุ้นไฟฟ้า และใส่อุปกรณ์พยุงแขน"
+                  },
+                  "pitfalls": {
+                    "en": "• Delaying nerve transfer beyond 6–9 months resulting in irreversible motor endplate loss",
+                    "th": "• ชะลอการผ่าตัดย้ายเส้นประสาทเกิน 6–9 เดือน จนกล้ามเนื้อฝ่อตายถาวร"
+                  }
                 }
               },
               "illustrationId": "",
@@ -1660,14 +2428,46 @@ export const scapulaBone: BoneData = {
                 "th": "แรงดึงรั้งทับบดพลังงานสูงรุนแรงสุดขีด (Internal Amputation)"
               },
               "treatment": {
+                "decisionPrinciple": {
+                  "en": "Traumatic complete transection / occlusion of subclavian or axillary artery/vein; life- and limb-threatening emergency; immediate emergency vascular bypass/repair + temporary skeletal stabilization.",
+                  "th": "หลอดเลือดแดง/ดำ Subclavian หรือ Axillary ขาดฉีกสมบูรณ์หรืออุดตัน เป็นภาวะฉุกเฉินอันตรายถึงแก่ชีวิตและแขน ต้องผ่าตัดต่อหลอดเลือดฉุกเฉินด่วนที่สุด (Emergency Vascular Repair/Bypass) ร่วมกับการดามกระดูกชั่วคราว"
+                },
                 "preferred": "operative",
                 "conservative": {
-                  "en": "FATAL.",
-                  "th": "อันตรายถึงชีวิต"
+                  "indication": {
+                    "en": "• STRICTLY PROHIBITED / FATAL",
+                    "th": "• ห้ามใช้วิธีนี้เด็ดขาด / อันตรายถึงแก่ชีวิต"
+                  },
+                  "method": {
+                    "en": "• Not indicated",
+                    "th": "• ไม่แนะนำ"
+                  },
+                  "rehabilitation": {
+                    "en": "• N/A",
+                    "th": "• ไม่ระบุ"
+                  },
+                  "pitfalls": {
+                    "en": "• Hemorrhagic shock, exsanguination, and limb loss",
+                    "th": "• ช็อกจากการเสียเลือดรุนแรงถึงแก่ชีวิต หรือสูญเสียแขนถาวร"
+                  }
                 },
                 "operative": {
-                  "en": "EMERGENCY SURGICAL RECONSTRUCTION. Immediate emergency vascular bypass/repair to save life and limb + temporary external fixation. Amputation if complete plexus avulsion + unsalvageable ischemia.",
-                  "th": "ผ่าตัดฉุกเฉินด่วนที่สุด! (EMERGENCY SURGERY) ผ่าตัดต่อหลอดเลือดแดงเพื่อชีวิตและแขน + ดามกระดูกยึดภายนอก หากไม่สามารถช่วยแขนได้อาจจำเป็นต้องตัดแขน"
+                  "indication": {
+                    "en": "• All Type III scapulothoracic dissociation injuries (LIFE THREAT)",
+                    "th": "• ภาวะ Scapulothoracic Dissociation Type III ทุกราย (อันตรายถึงชีวิต)"
+                  },
+                  "method": {
+                    "en": "• EMERGENCY multidisciplinary vascular/trauma intervention: Immediate infraclavicular/supraclavicular exposure + Temporary vascular shunting followed by Reverse Saphenous Vein Graft / PTFE Bypass of Subclavian/Axillary artery + Four-compartment forearm fasciotomies + Rigid internal or external skeletal fixation\n• Primary above-elbow amputation if combined with complete root avulsion (C5-T1) and prolonged warm ischemia (>8 hours)",
+                    "th": "• ผ่าตัดฉุกเฉินด่วนที่สุดร่วมกับศัลยแพทย์หลอดเลือด: เปิดแผลเหนือ/ใต้ไหปลาร้า + ใส่ท่อต่อหลอดเลือดชั่วคราว (Shunt) ตามด้วยการผ่าตัดต่อหลอดเลือดด้วยหลอดเลือดดำ Saphenous / ท่อเทียม PTFE + กรีดเปิดช่องกล้ามเนื้อแขน (Fasciotomy) ป้องกันความดันสูง + ดามกระดูกยึดภายนอกหรือภายใน\n• พิจารณาตัดแขนระดับเหนือข้อศอก (Amputation) หากรากประสาทขาดหลุดสมบูรณ์ (C5-T1) ร่วมกับแขนขาดเลือดนานเกิน 8 ชั่วโมง"
+                  },
+                  "rehabilitation": {
+                    "en": "• ICU resuscitation, extremity perfusion monitoring, staged limb reconstruction",
+                    "th": "• ดูแลในหอผู้ป่วยวิกฤต (ICU) ติดตามการไหลเวียนเลือดของแขนอย่างใกล้ชิด และวางแผนผ่าตัดฟื้นฟูตามลำดับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Reperfusion syndrome, myoglobinuric acute renal failure, and delayed compartment syndrome (mandate early prophylactic fasciotomies)",
+                    "th": "• ภาวะ Reperfusion syndrome, ไตวายเฉียบพลันจาก Myoglobin และกล้ามเนื้อบวมความดันสูง (ต้องกรีด Fasciotomy ทันทีเพื่อป้องกัน)"
+                  }
                 }
               },
               "illustrationId": "",

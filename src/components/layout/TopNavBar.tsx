@@ -24,21 +24,17 @@ interface TopNavBarProps {
 }
 
 const CATEGORIES = [
-  { id: "all",   label: { en: "All", th: "ทั้งหมด" } },
-  { id: "skull", label: { en: "Skull", th: "กะโหลกศีรษะ" } },
-  { id: "upper", label: { en: "Upper Extremity", th: "รยางค์บน (แขน)" } },
-  { id: "lower", label: { en: "Lower Extremity", th: "รยางค์ล่าง (ขา)" } },
-  { id: "spine", label: { en: "Spine Trauma", th: "กระดูกสันหลัง" } },
-  { id: "pedi",  label: { en: "Pediatric", th: "กระดูกเด็ก" } },
+  { id: "all_bones", label: { en: "All Bones", th: "กระดูกทั้งหมด" }, icon: "🦴" },
+  { id: "pediatric", label: { en: "Pediatric", th: "กระดูกเด็ก" }, icon: "🧸" },
+  { id: "ao_ota",    label: { en: "AO/OTA", th: "ระบบ AO/OTA" }, icon: "📐" },
 ];
 
-// Map bone id -> category
+// Map bone id -> category (for adult skeletal groups)
 export const BONE_CATEGORY: Record<string, string> = {
   head: "skull",
   clavicle: "upper", scapula: "upper", humerus: "upper", forearm: "upper", hand: "upper",
   "c-spine": "spine", "tl-spine": "spine",
   pelvis: "lower", femur: "lower", patella: "lower", tibia: "lower", foot: "lower",
-  "pediatric-physis": "pedi",
 };
 
 export function TopNavBar({
@@ -217,24 +213,28 @@ export function TopNavBar({
         )}
       </div>
 
-      {/* Category pills - Desktop & Tablet */}
-      <nav className="hidden lg:flex items-center gap-1.5 flex-shrink-0">
-        {CATEGORIES.map(cat => (
-          <button
-            key={cat.id}
-            onClick={() => onCategoryChange(cat.id)}
-            style={{
-              background: activeCategory === cat.id
-                ? (darkMode ? "rgba(0,206,209,0.15)" : "#0F766E")
-                : "transparent",
-              color: activeCategory === cat.id ? (darkMode ? "#00CED1" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#000000"),
-              border: activeCategory === cat.id ? (darkMode ? "1px solid rgba(0,206,209,0.4)" : "1px solid #0F766E") : "1px solid transparent",
-            }}
-            className="px-3 py-1 rounded-lg text-[12px] font-bold transition-all hover:text-teal-700 dark:hover:text-[#00CED1] cursor-pointer"
-          >
-            {cat.label[language]}
-          </button>
-        ))}
+      {/* Module Navigation Tabs - Desktop & Tablet */}
+      <nav className="hidden md:flex items-center gap-1 sm:gap-1.5 flex-shrink-0">
+        {CATEGORIES.map(cat => {
+          const isActive = activeCategory === cat.id;
+          return (
+            <button
+              key={cat.id}
+              onClick={() => onCategoryChange(cat.id)}
+              style={{
+                background: isActive
+                  ? (darkMode ? "rgba(0,206,209,0.15)" : "#0F766E")
+                  : (darkMode ? "rgba(255,255,255,0.03)" : "rgba(0,0,0,0.04)"),
+                color: isActive ? (darkMode ? "#00CED1" : "#FFFFFF") : (darkMode ? "#94A3B8" : "#334155"),
+                border: isActive ? (darkMode ? "1px solid rgba(0,206,209,0.4)" : "1px solid #0F766E") : `1px solid ${darkMode ? "transparent" : "#E2E8F0"}`,
+              }}
+              className="px-2.5 sm:px-3 py-1.5 rounded-xl text-xs font-bold transition-all hover:text-teal-700 dark:hover:text-[#00CED1] cursor-pointer flex items-center gap-1.5 shadow-2xs"
+            >
+              <span>{cat.icon}</span>
+              <span>{cat.label[language]}</span>
+            </button>
+          );
+        })}
       </nav>
 
       {/* Right controls */}
@@ -257,7 +257,7 @@ export function TopNavBar({
         <button
           onClick={onToggleLanguage}
           style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
-          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] md:text-[12px] font-bold hover:text-[#00CED1] hover:border-[#00CED1] transition-all cursor-pointer"
+          className="flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-[11px] md:text-[12px] font-bold hover:text-teal-700 dark:hover:text-[#00CED1] hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer"
         >
           <Globe size={13} />
           {language === "en" ? "TH" : "EN"}
@@ -265,7 +265,7 @@ export function TopNavBar({
         <button
           onClick={onToggleDark}
           style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
-          className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-[#00CED1] hover:border-[#00CED1] transition-all cursor-pointer"
+          className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-teal-700 dark:hover:text-[#00CED1] hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer"
         >
           {darkMode ? <Sun size={14} /> : <Moon size={14} />}
         </button>

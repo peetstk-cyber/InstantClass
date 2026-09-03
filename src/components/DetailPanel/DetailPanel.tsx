@@ -315,55 +315,60 @@ export const DetailPanel: React.FC<DetailPanelProps> = ({
                     </div>
                   )}
 
-                  {/* Quick Treatment Note */}
-                  <div className="space-y-1">
-                    <span className="text-xs font-semibold text-clinical-muted uppercase tracking-wider flex items-center gap-1.5">
-                      <Shield className="w-3.5 h-3.5 text-clinical-success" />
-                      {t("treatment")}
-                    </span>
-                    <p className="text-xs text-slate-300 leading-relaxed pl-5">
-                      {currentType.treatment.operative[language] || currentType.treatment.conservative[language]}
-                    </p>
+                    {/* Quick Treatment Note */}
+                    <div className="space-y-1">
+                      <span className="text-xs font-semibold text-clinical-muted uppercase tracking-wider flex items-center gap-1.5">
+                        <Shield className="w-3.5 h-3.5 text-clinical-success" />
+                        {t("treatment")}
+                      </span>
+                      <p className="text-xs text-slate-300 leading-relaxed pl-5">
+                        {(currentType.treatment.operative as any)?.method?.[language] ||
+                          (currentType.treatment.operative as any)?.[language] ||
+                          (currentType.treatment.conservative as any)?.method?.[language] ||
+                          (currentType.treatment.conservative as any)?.[language]}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
-          </div>
-        )}
+              )}
+            </div>
+          )}
 
-        {/* ================= TREATMENT TAB ================= */}
-        {activeTab === "treatment" && (
-          <div className="space-y-6 animate-fade-in">
-            {currentType ? (
-              <div className="space-y-6">
-                <div className="border-b border-clinical-border pb-3">
-                  <h3 className="text-base font-bold text-slate-200 flex items-center gap-2">
-                    <Shield className="w-5 h-5 text-clinical-success" />
-                    {t("treatmentSection")}: Type {currentType.type} ({currentType.name[language]})
-                  </h3>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* Conservative Card */}
-                  <div className="p-5 rounded-2xl border border-clinical-border bg-clinical-cardLight/5 space-y-3">
-                    <span className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-clinical-muted/10 text-slate-300 border border-clinical-muted/20">
-                      {t("conservative")}
-                    </span>
-                    <p className="text-xs text-slate-300 leading-relaxed text-justify">
-                      {currentType.treatment.conservative[language]}
-                    </p>
+          {/* ================= TREATMENT TAB ================= */}
+          {activeTab === "treatment" && (
+            <div className="space-y-6 animate-fade-in">
+              {currentType ? (
+                <div className="space-y-6">
+                  <div className="border-b border-clinical-border pb-3">
+                    <h3 className="text-base font-bold text-slate-200 flex items-center gap-2">
+                      <Shield className="w-5 h-5 text-clinical-success" />
+                      {t("treatmentSection")}: Type {currentType.type} ({currentType.name[language]})
+                    </h3>
                   </div>
 
-                  {/* Operative Card */}
-                  <div className="p-5 rounded-2xl border border-clinical-success/20 bg-clinical-success/5 space-y-3 shadow-sm shadow-clinical-success/5">
-                    <span className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-clinical-success/15 text-clinical-success border border-clinical-success/30">
-                      {t("operative")}
-                    </span>
-                    <p className="text-xs text-slate-300 leading-relaxed text-justify">
-                      {currentType.treatment.operative[language]}
-                    </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {/* Conservative Card */}
+                    <div className="p-5 rounded-2xl border border-clinical-border bg-clinical-cardLight/5 space-y-3">
+                      <span className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-clinical-muted/10 text-slate-300 border border-clinical-muted/20">
+                        {t("conservative")}
+                      </span>
+                      <p className="text-xs text-slate-300 leading-relaxed text-justify">
+                        {(currentType.treatment.conservative as any)?.method?.[language] ||
+                          (currentType.treatment.conservative as any)?.[language]}
+                      </p>
+                    </div>
+
+                    {/* Operative Card */}
+                    <div className="p-5 rounded-2xl border border-clinical-success/20 bg-clinical-success/5 space-y-3 shadow-sm shadow-clinical-success/5">
+                      <span className="px-2.5 py-1 rounded-lg text-xs font-extrabold bg-clinical-success/15 text-clinical-success border border-clinical-success/30">
+                        {t("operative")}
+                      </span>
+                      <p className="text-xs text-slate-300 leading-relaxed text-justify">
+                        {(currentType.treatment.operative as any)?.method?.[language] ||
+                          (currentType.treatment.operative as any)?.[language]}
+                      </p>
+                    </div>
                   </div>
-                </div>
 
                 {/* Clinical Pearls Callout */}
                 {currentType.treatment.pearls && (
