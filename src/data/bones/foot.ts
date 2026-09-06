@@ -81,10 +81,8 @@ export const footBone: BoneData = {
               "en": "Vascular supply: Artery of tarsal canal (from posterior tibial artery, supplies ~60% of the talar body), artery of sinus tarsi (perforating peroneal), and deltoid branches. Talar neck fractures disrupt this retrograde supply, leading to high AVN risk.",
               "th": "หลอดเลือดเลี้ยงสำคัญ: Artery of tarsal canal (จาก Posterior tibial เลี้ยง ~60% ของตัวกระดูก), Artery of sinus tarsi (จาก Peroneal) และกิ่ง Deltoid รอยหักบริเวณคอทาเลสจะตัดทางเดินเลือดที่วิ่งย้อนกลับ (Retrograde) ทำให้เสี่ยงเกิดภาวะหัวกระดูกตาย (AVN) สูงมาก"
             }
-          },
-          "/images/concepts/anatomy_talus__talar_neck__3.png"
-        ],
-        "imageUrl": "/images/concepts/anatomy_talus__talar_neck__3.png"
+          }
+        ]
       },
       "classifications": [
         {
@@ -506,10 +504,18 @@ export const footBone: BoneData = {
               "th": "มุมมองด้านบนแสดงผิวข้อต่อ Subtalar ทั้ง 3 ส่วน (Anterior, Middle, Posterior facets) และชิ้นกระดูก Sustentaculum tali ซึ่งเป็น Constant fragment ที่มักไม่เคลื่อนที่เนื่องจากมีเอ็น Deltoid ยึดตรึง มุมมองด้านล่างแสดงร่องเส้นเอ็น FHL และจุดเกาะเอ็นฝ่าเท้า"
             }
           },
-          "/images/concepts/anatomy_calcaneus_3.png",
-          "/images/concepts/anatomy_calcaneus_4.png"
-        ],
-        "imageUrl": "/images/concepts/anatomy_calcaneus_4.png"
+          {
+            "url": "/images/concepts/calcaneus_bohler_gissane_angles.jpg",
+            "title": {
+              "en": "Böhler & Gissane Angles (Calcaneal Radiograph)",
+              "th": "มุม Böhler และ Gissane บนภาพเอกซเรย์ส้นเท้า"
+            },
+            "caption": {
+              "en": "Normal Böhler angle (20°–40°): Loss of angle (<20° or negative) indicates posterior facet depression and loss of calcaneal height. Critical angle of Gissane (105°–135°): Formed by anterior process slope and posterior facet strut; disruption indicates articular collapse.",
+              "th": "มุม Böhler angle ปกติ (20°–40°): มุมที่ลดลง (<20° หรือติดลบ) บ่งชี้ว่าผิวข้อ Posterior facet ยุบตัวลงและสูญเสียความสูง ส่วนมุม Gissane angle (105°–135°) อยู่ใต้จุดค้ำของกระดูกทาเลส หากกางออกผิดรูปแสดงถึงการแตกลงข้อรุนแรง"
+            }
+          }
+        ]
       },
       "classifications": [
         {

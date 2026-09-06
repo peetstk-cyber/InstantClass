@@ -985,6 +985,463 @@ export const cSpineBone: BoneData = {
       },
       "classifications": [
         {
+          "system": "Allen-Ferguson",
+          "fullName": {
+            "en": "Allen-Ferguson Mechanistic Classification for Lower Cervical Spine Injuries",
+            "th": "การจำแนกการบาดเจ็บกระดูกคอตามกลไกการเกิดเหตุ Allen-Ferguson"
+          },
+          "description": {
+            "en": "Biomechanical classification categorizing injuries based on vector forces: Compressive Flexion (CF 1-5), Vertical Compression (VC 1-3), Distractive Flexion (DF 1-4 including locked facets), Compressive Extension (CE 1-5), Distractive Extension (DE 1-2), and Lateral Flexion (LF 1-2).",
+            "th": "ระบบจำแนกเชิงชีวกลศาสตร์แบ่งตามทิศทางของแรง: Compressive Flexion (ก้มคออัด), Vertical Compression (อัดตรง), Distractive Flexion (ก้มคอดึงถ่าง - ข้อ Facet ล็อค), Compressive Extension (แหงนคออัด), Distractive Extension (แหงนคอดึงถ่าง) และ Lateral Flexion (เอียงข้าง)"
+          },
+          "concept": {
+            "title": {
+              "en": "Allen-Ferguson Biomechanical Clinical Concept",
+              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Allen-Ferguson Classification"
+            },
+            "corePrinciple": {
+              "en": "Biomechanical mechanistic system classifying lower cervical spine trauma based on vector force direction and neck position at impact across 6 categories.",
+              "th": "ระบบจำแนกเชิงชีวกลศาสตร์ที่จัดหมวดหมู่การบาดเจ็บกระดูกคอส่วนล่างตามทิศทางของแรงและท่าทางของคอขณะเกิดเหตุใน 6 กลไกหลัก"
+            },
+            "rules": [
+              {
+                "en": "Lower Spectrum (CF 1-2, VC 1, DF 1, CE 1-2): Posterior ligamentous complex intact -> STABLE -> Conservative (Rigid Collar 6–8 weeks).",
+                "th": "กลุ่มความรุนแรงต่ำ (CF 1-2, VC 1, DF 1, CE 1-2): เอ็นส่วนหลัง PLC ยังสมบูรณ์ -> มั่นคง -> ใส่ Rigid Collar 6–8 สัปดาห์"
+              },
+              {
+                "en": "DF 2-4 (Locked Facets, Distractive Flexion): Ligamentous disruption -> UNSTABLE -> Urgent Reduction & Surgical Stabilization.",
+                "th": "DF 2-4 (ข้อ Facet หลุดล็อค): เอ็นยึดฉีกขาด -> ไม่มั่นคง -> ดึงจัดข้อและผ่าตัดยึดดามกระดูก"
+              },
+              {
+                "en": "CF 3-5 (Flexion Teardrop Fracture): Complete 3-column disruption -> HIGHLY UNSTABLE -> Emergency Surgical Fusion.",
+                "th": "CF 3-5 (Flexion Teardrop Fracture): โครงสร้าง 3 เสาถูกทำลายสมบูรณ์ -> ไม่มั่นคงอย่างรุนแรง -> ผ่าตัดฉุกเฉิน"
+              },
+              {
+                "en": "VC 2-3 (Burst fracture with canal retropulsion): Canal occlusion > 50% or neurological deficit -> Decompression & Fusion.",
+                "th": "VC 2-3 (Burst fracture ชิ้นส่วนกดช่องไขสันหลัง): กดช่องไขสันหลัง > 50% หรือมีอาการทางประสาท -> ผ่าตัดเปิดกดทับและยึดดาม"
+              },
+              {
+                "en": "CE 3-5 (Compressive Extension): Severe body comminution with anterior translation -> UNSTABLE -> Surgical Decompression & Instrumented Fusion.",
+                "th": "CE 3-5 (แหงนคออัดกระแทก): ลำตัวกระดูกแตกป่นร่วมกับเคลื่อนไปด้านหน้า -> ไม่มั่นคง -> ผ่าตัดลดการกดทับและยึดตรึงกระดูก"
+              },
+              {
+                "en": "DE 2 (Distractive Extension): Anterior tension band rupture with posterior body translation -> High cord injury risk (Central Cord Syndrome) -> Urgent Anterior Plating ± Posterior Fusion.",
+                "th": "DE 2 (แหงนคอดึงถ่าง): เอ็นด้านหน้าฉีกขาดและกระดูกเลื่อนถอยหลัง -> เสี่ยงอัมพาต Central Cord Syndrome สูง -> ผ่าตัดดามแผ่นเหล็กด้านหน้า ± ดามด้านหลัง"
+              },
+              {
+                "en": "LF 2 (Lateral Flexion): Asymmetric body compression with contralateral ligamentous disruption -> Coronal deformity > 10° -> Operative Reconstruction.",
+                "th": "LF 2 (เอียงคอด้านข้าง): ลำตัวกระดูกยุบตัวร่วมกับเอ็นด้านตรงข้ามฉีกขาด -> คอเอียงผิดรูป > 10 องศา -> ผ่าตัดจัดแนวและยึดดาม"
+              }
+            ],
+            "clinicalSignificance": [
+              {
+                "en": "Flexion Teardrop Fracture (CF 3-5) is the most devastating cervical injury; the anterior teardrop bone fragment is only the tip of the iceberg, representing complete posterior ligamentous disruption with high risk of quadriplegia.",
+                "th": "Flexion Teardrop Fracture (CF 3-5) เป็นการบาดเจ็บกระดูกคอที่รุนแรงที่สุด ชิ้นกระดูกสามเหลี่ยมด้านหน้าเป็นเพียงยอดภูเขาน้ำแข็ง แต่โครงสร้างเอ็นส่วนหลังขาดสมบูรณ์เสี่ยงอัมพาตสี่แผลมสูงมาก"
+              },
+              {
+                "en": "DF Stage 2 (unilateral locked facet) can present with subtle neck pain; inspect lateral radiograph carefully for 25% anterior translation.",
+                "th": "DF Stage 2 (ข้อ Facet หลุดล็อคข้างเดียว) ผู้ป่วยอาจปวดคอไม่มาก ต้องตรวจ X-ray Lateral อย่างละเอียดเพื่อดูการเคลื่อนไปข้างหน้า 25%"
+              }
+            ]
+          },
+          "investigations": [
+            {
+              "name": "Lateral Cervical Spine View",
+              "details": {
+                "en": "Lateral cervical radiograph to evaluate teardrop fragments, anterior compression height, facet subluxation/locking, and interspinous distance widening.",
+                "th": "ภาพเอกซเรย์คอท่าด้านข้าง เพื่อตรวจประเมินชิ้นกระดูก Tear-drop, ความสูงตัวกระดูกด้านหน้า, การหลุดล็อคของข้อ Facet และช่องว่างระหว่างยอดกระดูก"
+              }
+            },
+            {
+              "name": "3D CT Scan of Cervical Spine",
+              "details": {
+                "en": "Multiplanar 3D CT scan to accurately identify vector force category (CF, VC, DF, CE, DE, LF) and posterior element disruption.",
+                "th": "เอกซเรย์คอมพิวเตอร์ 3D ประเมินทิศทางแรงเวกเตอร์ CF, VC, DF, CE, DE, LF และรอยหักส่วนหลัง"
+              }
+            }
+          ],
+          "types": [
+            {
+              "type": "Compressive Flexion",
+              "name": {
+                "en": "Compressive Flexion (CF 1-5 / Tear-drop Fracture)",
+                "th": "1. Compressive Flexion (CF 1-5 / รอยหักก้มคออัด - Tear-drop)"
+              },
+              "description": {
+                "en": "Flexion force combined with axial compression\nCF1-CF2: Anterior beak fracture\nCF3-CF5: Flexion Tear-drop fracture with posterior body retropulsion into spinal canal",
+                "th": "แรงก้มคอร่วมกับแรงกดอัดตามแนวแกน CF1-2 หักเป็นจะงอยรูปิ่ม / CF4-5 รอยหัก **Flexion Tear-drop** ชิ้นกระดูกแตกเป็นหยดน้ำตาและดันไปกดไขสันหลังด้านหลัง"
+              },
+              "moi": {
+                "en": "Diving into shallow water or head-first collision.",
+                "th": "ดำน้ำกระแทกพื้นสระ หรือหัวกระแทกชนด้านหน้า"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Compressive flexion spectrum ranging from minor anterior beak (CF1–CF2) to catastrophic Flexion Teardrop fracture (CF3–CF5); CF1–CF2 with intact posterior column managed in rigid collar; CF3–CF5 represents complete 3-column disruption with retropulsed body fragment and high anterior cord syndrome risk requiring emergency anterior corpectomy (ACCF) and rigid plating ± posterior fusion.",
+                  "th": "การบาดเจ็บก้มคออัดกระแทก ตั้งแต่รอยหักจะงอยขอบหน้า (CF1–CF2) ไปจนถึง Flexion Teardrop Fracture (CF3–CF5); CF1–CF2 ที่เอ็นส่วนหลังสมบูรณ์รักษาด้วยเฝือกคอแข็ง; CF3–CF5 โครงสร้าง 3 เสาพังทลายสมบูรณ์ ชิ้นกระดูกทรุดดันกดไขสันหลังด้านหน้า เสี่ยงต่ออัมพาตสูงมาก ต้องผ่าตัด Corpectomy ด้านหน้าด่วน ร่วมกับดามแผ่นเหล็กล็อค ± ดามด้านหลังเสริม"
+                },
+                "preferred": "operative",
+                "conservative": {
+                  "indication": {
+                    "en": "• Low-grade CF1 (Blunting of anterior-superior margin) and CF2 (Anterior beak fracture without posterior involvement)",
+                    "th": "• CF1 (ขอบกระดูกด้านหน้าบนบิ่น) และ CF2 (รอยหักเป็นจะงอยด้านหน้าโดยเอ็นส่วนหลังไม่ฉีกขาด)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J) for 8–10 weeks with serial upright radiographs",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J) นาน 8–10 สัปดาห์ ร่วมกับเอกซเรย์ท่ายืนติดตามอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Gentle active neck exercises upon confirmed union at 8–10 weeks",
+                    "th": "• เริ่มฝึกบริหารขยับคอเมื่อกระดูกติดสนิทที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Misdiagnosing a true CF3–CF5 Flexion Teardrop fracture as a benign CF1/CF2 beak fracture; always evaluate sagittal CT/MRI for posterior body retropulsion and interspinous widening",
+                    "th": "• วินิจฉัยผิดพลาดคิดว่า Flexion Teardrop เป็นแค่รอยหักจะงอยหน้าธรรมดา; ต้องตรวจ CT/MRI ดูชิ้นกระดูกที่ดันไปกดไขสันหลังและเอ็นส่วนหลังขาดเสมอ"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• All CF3, CF4, and CF5 fractures (Flexion Teardrop fractures with posterior body retropulsion, canal compromise, or acute anterior cord syndrome)",
+                    "th": "• รอยหัก CF3, CF4 และ CF5 ทุกราย (Flexion Teardrop ที่มีชิ้นกระดูกดันกดไขสันหลัง หรือมีอาการอัมพาต Anterior Cord Syndrome)"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete resection of the shattered vertebral body and retropulsed fragments, neural canal decompression, reconstruction with titanium mesh cage/strut autograft, and rigid anterior locking plate\n• Combined 360° Fusion (ACCF + Posterior lateral mass screws) if posterior tension band disruption is severe (CF4/CF5)",
+                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดกระดูกลำตัวชิ้นที่แตกป่นและชิ้นที่ดันกดไขสันหลังออกทั้งหมด ปลดปล่อยไขสันหลังให้โล่ง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัดรอบทิศ 360 องศา (ACCF ร่วมกับดามสกรู Lateral Mass ด้านหลัง) หากเอ็นและกระดูกส่วนหลังพังทลายรุนแรง (CF4/CF5)"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6–8 weeks post-op; early aggressive spinal cord neuro-rehabilitation",
+                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มทำกายภาพบำบัดฟื้นฟูระบบประสาทและไขสันหลังเข้มข้นทันที"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate decompression leaving residual retropulsed bone fragments compressing the anterior spinal cord\n• Attempting standalone posterior fusion without removing the anterior compressing bone",
+                    "th": "• กรอตัดชิ้นกระดูกที่กดด้านหน้าออกไม่หมด ทำให้ไขสันหลังยังคงถูกกดทับ\n• ผ่าตัดดามด้านหลังอย่างเดียวโดยไม่เอาชิ้นกระดูกที่กดทับไขสันหลังด้านหน้าออก"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Anterior inferior triangular tear-drop fragment with retropulsed body fragment.",
+                "th": "เห็นชิ้นกระดูกสามเหลี่ยมหลุดตรงขอบล่างหน้า (Tear-drop) และตัวกระดูกทรุดดันเข้าช่องไขสันหลัง"
+              }
+            },
+            {
+              "type": "Vertical Compression",
+              "name": {
+                "en": "Vertical Compression (VC 1-3 / Central Burst)",
+                "th": "2. Vertical Compression (VC 1-3 / อัดตรงตามแนวแกน - Central Burst)"
+              },
+              "description": {
+                "en": "Pure axial compression force\nVC1: Single endplate fracture\nVC2: Cupping burst fracture\nVC3: Comminuted central burst fracture with canal retropulsion",
+                "th": "แรงกดอัดตามแนวแกนดิ่งบริสุทธิ์ VC1-2 หักยุบขอบ / VC3 **Central Burst fracture** กระดูกแตกป่นอัดทรุดรอบทิศทางดันเข้าช่องไขสันหลัง"
+              },
+              "moi": {
+                "en": "Heavy object falling directly onto top of head.",
+                "th": "วัตถุหนักตกใส่กลางศีรษะตรงๆ"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Pure axial compression injury spectrum; VC1 (single endplate cupping) treated in rigid cervical collar; VC2–VC3 (central multi-fragment burst with canal retropulsion) with cord compression or severe comminution requires anterior cervical corpectomy (ACCF) with titanium cage and locking plate to decompress the spinal canal and restore anterior column load bearing.",
+                  "th": "การบาดเจ็บจากแรงกดอัดตามแนวดิ่งตรง; VC1 (หักยุบขอบบนหรือล่างแผ่นเดียว) รักษาด้วยเฝือกคอชนิดแข็ง; VC2–VC3 (กระดูกแตก Burst แตกกระจายหลายชิ้นดันช่องไขสันหลัง) ที่มีการกดทับไขสันหลังหรือแตกป่นรุนแรง ต้องผ่าตัด Corpectomy (ACCF) ใส่ Mesh cage และดามแผ่นเหล็กล็อคเพื่อคลายการกดทับและรับน้ำหนักเสาด้านหน้า"
+                },
+                "preferred": "operative",
+                "conservative": {
+                  "indication": {
+                    "en": "• VC1 fractures (Single endplate cupping deformity with intact posterior wall and normal neurologic exam)\n• Stable VC2 in medically frail patients without canal compromise",
+                    "th": "• กระดูกหัก VC1 (ขอบบนหรือล่างยุบตัวโดยผนังหลังไม่แตกและระบบประสาทปกติ)\n• VC2 ชนิดมั่นคงในผู้ป่วยที่มีความเสี่ยงผ่าตัดสูงและกระดูกไม่กดช่องไขสันหลัง"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar (Miami J) or Halo-vest for 10–12 weeks with serial radiographs",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J) หรือ Halo-vest นาน 10–12 สัปดาห์ พร้อมเอกซเรย์ติดตามอาการ"
+                  },
+                  "rehabilitation": {
+                    "en": "• Wean collar after 10–12 weeks upon confirmed bony trabecular bridging; isometric strengthening",
+                    "th": "• ปลดเฝือกคอที่ 10–12 สัปดาห์เมื่อกระดูกเชื่อมติดสนิท; เริ่มบริหารกล้ามเนื้อคอ"
+                  },
+                  "pitfalls": {
+                    "en": "• Late collapse and progressive spinal canal stenosis in comminuted VC2/VC3 fractures managed conservatively",
+                    "th": "• ลำตัวกระดูกยุบตัวลงเรื่อยๆ และช่องไขสันหลังตีบแคบลงในรอยหัก VC2/VC3 ที่รักษาด้วยเฝือก"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• VC2 and VC3 comminuted central burst fractures with >30%–50% spinal canal retropulsion\n• Neurological deficit (Radiculopathy or Myelopathy)\n• Severe vertebral height loss (>50%) or focal kyphosis",
+                    "th": "• กระดูกแตก Central Burst VC2 และ VC3 ที่มีชิ้นกระดูกดันเข้าช่องไขสันหลัง >30%–50%\n• มีอาการบาดเจ็บของรากประสาทหรือไขสันหลัง\n• ลำตัวกระดูกยุบตัวรุนแรง (>50%) หรือแนวกระดูกค่อมผิดรูป"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete corpectomy of fractured vertebra, decompression of the dural sac, placement of expandable titanium cage/structural autograft, and rigid anterior cervical locking plate fixation spanning adjacent healthy vertebral bodies",
+                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดลำตัวกระดูกที่แตกออกทั้งหมดเพื่อคลายการกดทับถุงไขสันหลัง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้ายึดข้ามข้อกระดูกที่แข็งแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks; early upright mobilization; progressive physical therapy from week 6",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ลุกเดินได้เร็ว; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate corpectomy width leaving lateral uncinate bone fragments compressing exiting nerve roots\n• Failure of endplate preparation causing cage subsidence",
+                    "th": "• ตัดกระดูกแคบเกินไปจนเหลือชิ้นกระดูกด้านข้างกดทับรากประสาท\n• ขูดแต่งผิวข้อกระดูกไม่ดีพอจน Cage จมทรุดตัว"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Centrally comminuted vertebral body with outward displacement of anterior and posterior walls.",
+                "th": "เห็นลำตัวกระดูกแตกป่นกลางชิ้น โดยผนังหน้าและหลังโป่งขยายออก"
+              }
+            },
+            {
+              "type": "Flexion Distraction",
+              "name": {
+                "en": "Flexion Distraction (DF 1-4 / Distractive Flexion / Locked Facets)",
+                "th": "3. Flexion Distraction (DF 1-4 / ก้มคอดึงถ่าง - ข้อ Facet ล็อค)"
+              },
+              "description": {
+                "en": "Flexion force combined with distraction\nDF1: Interspinous widening / Facet subluxation\nDF2: Unilateral locked facet (25% translation)\nDF3: Bilateral locked facets (50% translation)\nDF4: Complete displacement (100% translation)",
+                "th": "แรงก้มคอร่วมกับแรงดึงถ่าง DF1 ข้อ Facet เผยอ / DF2 **Unilateral locked facet (ข้อหลุดล็อคข้างเดียว เกย 25%)** / DF3 **Bilateral locked facets (ข้อหลุดล็อคสองข้าง เกย 50%)** / DF4 หลุดสมบูรณ์"
+              },
+              "moi": {
+                "en": "Rapid deceleration MVA throwing head forward.",
+                "th": "อุบัติเหตุรถยนต์เบรกกระทันหันเหวี่ยงศีรษะก้มไปด้านหน้าอย่างรุนแรง"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distractive flexion spectrum from interspinous widening (DF1) to unilateral locked facet (DF2, 25% translation), bilateral locked facets (DF3, 50% translation), and floating vertebra (DF4, 100% translation); DF1 with intact facet joints can be braced; DF2–DF4 requires urgent reduction (closed traction under monitoring or open reduction) and rigid instrumented stabilization (ACDF or posterior fusion) to prevent progressive neurologic loss.",
+                  "th": "การบาดเจ็บก้มคอดึงถ่าง ตั้งแต่เอ็นขอบหลังฉีกขาด (DF1), ข้อ Facet หลุดล็อคข้างเดียว (DF2 เกย 25%), ข้อ Facet หลุดล็อคสองข้าง (DF3 เกย 50%) ไปจนถึงข้อคอหลุดสมบูรณ์ (DF4 เกย 100%); DF1 รักษาด้วยเฝือกคอแข็งได้; DF2–DF4 ต้องดึงจัดข้อเข้าที่ด่วน (ดึงถ่วงน้ำหนักหรือเปิดผ่าตัดจัดข้อ) และผ่าตัดดามยึดกระดูก (ACDF หรือ Posterior Fusion) เพื่อป้องกันอัมพาต"
+                },
+                "preferred": "operative",
+                "conservative": {
+                  "indication": {
+                    "en": "• DF1 injuries (Interspinous widening without facet perched/locked or subluxation on dynamic flexion views)",
+                    "th": "• การบาดเจ็บระดับ DF1 (ช่องว่าง interspinous กว้างขึ้นเล็กน้อยโดยข้อ Facet ไม่หลุดเกย)"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical collar for 8–10 weeks with close weekly radiographic follow-up",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง 8–10 สัปดาห์ ร่วมกับตรวจเอกซเรย์ติดตามแนวกระดูกทุกสัปดาห์"
+                  },
+                  "rehabilitation": {
+                    "en": "• Flexion-extension stress radiographs at 8–10 weeks to rule out occult dynamic instability",
+                    "th": "• เอกซเรย์ท่าก้ม-เงยคอที่ 8–10 สัปดาห์เพื่อยืนยันว่าข้อต่อคอไม่หลวมขยับ"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing a subtle DF2 unilateral facet lock that presents with only mild rotational asymmetry and ~25% anterior translation on lateral X-ray",
+                    "th": "• พลาดการวินิจฉัยข้อ Facet หลุดล็อคข้างเดียว (DF2) ซึ่งสังเกตเห็นการเคลื่อนไปข้างหน้าเพียง 25%"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• All DF2 (Unilateral locked facet), DF3 (Bilateral locked facets), and DF4 (Complete displacement) injuries",
+                    "th": "• ข้อต่อ Facet หลุดล็อคข้างเดียว (DF2), หลุดสองข้าง (DF3) และหลุดสมบูรณ์ (DF4) ทุกราย"
+                  },
+                  "method": {
+                    "en": "• Urgent closed reduction with cranial tongs traction (5 lbs per cervical level added incrementally under serial fluoroscopy and frequent neuro exams)\n• Definitive Surgery: Anterior Cervical Discectomy & Fusion (ACDF) with locking plate OR Posterior Cervical Instrumented Fusion (Lateral Mass Screws + rods) OR Combined 360° Fusion if locked facets are irreducible closed or gross multidirectional instability exists",
+                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะฉุกเฉิน (เพิ่มน้ำหนักทีละ 5 ปอนด์ต่อระดับกระดูกคอใต้เครื่องเอกซเรย์ พร้อมตรวจระบบประสาทอย่างสม่ำเสมอ)\n• ผ่าตัดเชื่อมตรึงถาวร: ACDF พร้อมแผ่นเหล็กล็อคด้านหน้า หรือผ่าตัดดาม Lateral Mass Screws ด้านหลัง หรือผ่าตัดรอบทิศ 360 องศาหากดึงจัดข้อไม่เข้า"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 6 weeks; active progressive range of motion and strengthening at 6 weeks",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดขยับคอและเพิ่มความแข็งแรงหลัง 6 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Performing closed traction in obtunded patients without MRI to rule out disc herniation, leading to disc fragment migration and cord transection",
+                    "th": "• ดึงคอในผู้ป่วยหมดสติโดยไม่ตรวจ MRI เพื่อคัดกรองหมอนรองกระดูกแตก ซึ่งอาจเคลื่อนไปตัดไขสันหลังได้"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Abrupt displacement >25% (unilateral) or >50% (bilateral locked facets) on lateral X-ray.",
+                "th": "เห็นกระดูกคอเคลื่อนเกย >25% (ข้างเดียว) หรือ >50% (สองข้าง) จากข้อ Facet ล็อคข้ามกัน"
+              }
+            },
+            {
+              "type": "Compressive Extension",
+              "name": {
+                "en": "Compressive Extension (CE 1-5 / Hyperextension Arch & Translation)",
+                "th": "4. Compressive Extension (CE 1-5 / แหงนคออัดกระแทก - หักส่วนหลังและเคลื่อนไปข้างหน้า)"
+              },
+              "description": {
+                "en": "Hyperextension force combined with axial compression\nCE1: Unilateral vertebral arch fracture (unilateral lamina, articular process, or pedicle)\nCE2: Bilateral arch fractures without anterior displacement\nCE3: Bilateral arch fractures with vertebral body comminution without translation\nCE4: Bilateral arch fractures with partial anterior body displacement (<50% translation)\nCE5: Bilateral arch fractures with full anterior displacement (>50% translation / floating vertebra)",
+                "th": "แรงแหงนคอไปด้านหลังร่วมกับแรงกดอัดตามแนวแกน\nCE1: วงโค้งกระดูกสันหลังด้านหลังหักข้างเดียว (Lamina / Facet / Pedicle ด้านเดียว)\nCE2: วงโค้งด้านหลังหักสองข้างโดยตัวกระดูกไม่เคลื่อน\nCE3: วงโค้งด้านหลังหักสองข้างร่วมกับตัวกระดูกด้านหน้าแตกป่นแต่ไม่เคลื่อนตัว\nCE4: วงโค้งด้านหลังหักสองข้างและตัวกระดูกเคลื่อนไปด้านหน้าบางส่วน (< 50%)\nCE5: วงโค้งด้านหลังหักสองข้างและตัวกระดูกเคลื่อนไปด้านหน้ารุนแรง (> 50% หรือหลุดสมบูรณ์)"
+              },
+              "moi": {
+                "en": "Direct impact to forehead or frontal scalp forcing neck into hyperextension with axial load (e.g., striking windshield or dashboard in MVA, falling forward hitting forehead).",
+                "th": "แรงกระแทกเข้าที่หน้าผากหรือศีรษะส่วนหน้าดันคอให้แหงนไปข้างหลังร่วมกับแรงกดอัดตามแนวดิ่ง (เช่น หน้าผากชนกระจกหน้ารถยนต์ หรือหกล้มหน้าผากกระแทกพื้น)"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Compressive extension spectrum from isolated stable unilateral arch fracture (CE1) to catastrophic 3-column disruption with anterior shear (CE4–CE5); CE1–CE2 without displacement managed conservatively in a rigid collar; CE3–CE5 features significant vertebral body fragmentation, anterior translation, and high cord compromise requiring surgical decompression and rigid anterior/posterior instrumentation.",
+                  "th": "การบาดเจ็บแหงนคออัดกระแทก ตั้งแต่รอยหักส่วนหลังข้างเดียวที่มั่นคง (CE1) ไปจนถึงโครงสร้าง 3 เสาพังทลายและเคลื่อนหลุดไปข้างหน้า (CE4–CE5); CE1–CE2 ที่ไม่เคลื่อนรักษาแบบไม่ผ่าตัดด้วยเฝือกคอแข็ง; CE3–CE5 มีการแตกป่นของลำตัวกระดูกคอและเคลื่อนตัวไปข้างหน้า เสี่ยงต่ออัมพาตสูง ต้องผ่าตัดลดการกดทับและยึดดามกระดูกด้านหน้า/ด้านหลัง"
+                },
+                "preferred": "operative",
+                "conservative": {
+                  "indication": {
+                    "en": "• Stable CE1 (Unilateral non-displaced lamina or articular process fracture)\n• Minimally displaced CE2 without anterior subluxation or neurological deficit",
+                    "th": "• รอยหัก CE1 ชนิดมั่นคง (Lamina หรือ Facet หักข้างเดียวไม่เคลื่อน)\n• รอยหัก CE2 ที่เคลื่อนตัวน้อยมากโดยไม่มีการเลื่อนของลำตัวกระดูกและระบบประสาทปกติ"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J / Aspen collar) or Halo-vest for 8–12 weeks\n• Close serial upright lateral radiographs at 1, 2, 4, and 8 weeks to detect late subluxation",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J / Aspen) หรือ Halo-vest นาน 8–12 สัปดาห์\n• ติดตามเอกซเรย์ท่ายืนสม่ำเสมอที่ 1, 2, 4 และ 8 สัปดาห์เพื่อเฝ้าระวังกระดูกเคลื่อนหลุดภายหลัง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Isometric neck strengthening and gradual active ROM exercises after collar removal upon confirmed bony healing at 8–12 weeks",
+                    "th": "• เริ่มฝึกบริหารกล้ามเนื้อคอแบบเกร็งค้าง (Isometric) และค่อยๆ ขยับคอเมื่อกระดูกติดสนิทหลังถอดเฝือกที่ 8–12 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing subtle contralateral arch disruption converting CE1 into unstable CE2/CE3\n• Overlooking occult anterior translation on initial supine films",
+                    "th": "• ตรวจไม่พบรอยหักของส่วนหลังอีกข้างหนึ่งทำให้ประเมินความรุนแรงจาก CE2 ต่ำไปเป็น CE1\n• มองไม่เห็นการเคลื่อนตัวไปด้านหน้าในภาพเอกซเรย์ท่านอนหงาย"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• CE3 with severe vertebral body comminution and retropulsion\n• All CE4 (<50% translation) and CE5 (>50% translation) fractures\n• Progressive neurologic deficit or mechanical cervical instability",
+                    "th": "• CE3 ที่ลำตัวกระดูกแตกป่นรุนแรงและชิ้นส่วนดันเข้าช่องไขสันหลัง\n• CE4 (เคลื่อนไปข้างหน้า < 50%) และ CE5 (เคลื่อนไปข้างหน้า > 50%) ทุกราย\n• ผู้ป่วยที่มีอาการทางระบบประสาทแย่ลง หรือแนวกระดูกคอไม่มั่นคง"
+                  },
+                  "method": {
+                    "en": "• Posterior Instrumented Reduction & Fusion (Lateral Mass Screws and rods) to restore posterior tension and alignment\n• Combined 360° Reconstruction (Anterior ACDF/ACCF with cage and plate + Posterior fixation) for severe CE4/CE5 multi-column destruction",
+                    "th": "• ผ่าตัดดัดจัดแนวกระดูกและยึดตรึงด้านหลัง (Posterior Instrumented Fusion ด้วย Lateral Mass Screws and rods) เพื่อดึงรั้งโครงสร้างส่วนหลัง\n• ผ่าตัดรอบทิศ 360 องศา (ดามด้านหน้า ACDF/ACCF ร่วมกับยึดดามสกรูด้านหลัง) ในราย CE4/CE5 ที่โครงสร้างถูกทำลายทุกเสา"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid cervical collar for 6 weeks postoperatively\n• Early upright mobilization and progressive physical therapy",
+                    "th": "• ใส่เฝือกคอชนิดแข็งประคอง 6 สัปดาห์หลังผ่าตัด\n• เริ่มลุกยืนเดินเร็วและทำกายภาพบำบัดฟื้นฟูต่อเนื่อง"
+                  },
+                  "pitfalls": {
+                    "en": "• Forcing closed reduction into extension in CE4/CE5 can cause posterior cord impingement\n• Screw pullout if lateral mass bone stock is fractured or comminuted",
+                    "th": "• การดัดคอในท่าแหงน (Extension) ในราย CE4/CE5 อาจทำให้กระดูกด้านหลังเบียดทับไขสันหลังรุนแรงขึ้น\n• สกรูยึดหลวมหลุดหากก้อนกระดูก Lateral Mass มีรอยหักแตกป่นร่วมด้วย"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Bilateral pedicle/lamina fractures with anterior translation of vertebral body relative to subjacent vertebra on lateral view.",
+                "th": "ภาพ X-ray ด้านข้างพบรอยหักของส่วนหลัง (Pedicle / Lamina) สองข้าง ร่วมกับการเลื่อนไปด้านหน้าของลำตัวกระดูกคอ"
+              }
+            },
+            {
+              "type": "Distractive Extension",
+              "name": {
+                "en": "Distractive Extension (DE 1-2 / Hyperextension-Distraction)",
+                "th": "5. Distractive Extension (DE 1-2 / แหงนคอดึงถ่าง - เอ็นด้านหน้าฉีกขาดและเลื่อนไปข้างหลัง)"
+              },
+              "description": {
+                "en": "Hyperextension force combined with tensile distraction\nDE1: Rupture of anterior longitudinal ligament (ALL) or anterior avulsion teardrop fracture with widened anterior disc space\nDE2: Complete anterior disruption + posterior ligamentous complex rupture with posterior vertebral displacement into canal",
+                "th": "แรงแหงนคอไปด้านหลังร่วมกับแรงดึงถ่าง (Hyperextension-Distraction)\nDE1: เส้นเอ็นด้านหน้า (ALL) ฉีกขาด หรือมีชิ้นกระดูกกะเทาะรูปหยดน้ำตาขอบหน้า ร่วมกับช่องหมอนรองกระดูกด้านหน้าอ้ากว้าง\nDE2: เอ็นด้านหน้าฉีกขาดสมบูรณ์ ร่วมกับเอ็นและกระดูกส่วนหลังพังทลาย ทำให้ตัวกระดูกเคลื่อนถอยหลังไปกดทับช่องไขสันหลัง"
+              },
+              "moi": {
+                "en": "Blunt trauma to the anterior face or chin throwing the head backward without axial compression (e.g., striking dashboard, tripping forward onto chin in elderly patients with stiff/ankylosed spine).",
+                "th": "แรงกระแทกเข้าที่คางหรือใบหน้าส่วนล่างผลักศีรษะแหงนไปด้านหลังอย่างรวดเร็วโดยไม่มีแรงกดในแนวดิ่ง (เช่น คางกระแทกคอลโซลหน้ารถ หรือผู้สูงอายุสะดุดล้มคางกระแทกพื้น)"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Distractive extension injuries commonly cause acute Central Cord Syndrome in patients with preexisting cervical spondylosis or diffuse idiopathic skeletal hyperostosis (DISH); DE1 without displacement is stable in flexion and can be treated conservatively with cervical orthosis in neutral/slight flexion; DE2 with posterior displacement represents catastrophic two-column failure requiring urgent anterior decompression and rigid plate fixation ± posterior stabilization.",
+                  "th": "การบาดเจ็บแหงนคอดึงถ่างมักก่อให้เกิดกลุ่มอาการบาดเจ็บไขสันหลังส่วนกลาง (Central Cord Syndrome) โดยเฉพาะในผู้สูงอายุที่มีกระดูกคอเสื่อมหรือโรค DISH/AS; DE1 ที่ไม่เคลื่อนตัวมีความมั่นคงในท่าก้มรักษาด้วยเฝือกคอท่าตรงหรือก้มเล็กน้อย; DE2 ที่ตัวกระดูกเลื่อนถอยหลังบ่งชี้ว่าโครงสร้างพังทลายรุนแรง ต้องผ่าตัดลดการกดทับด้านหน้าและดามแผ่นเหล็กล็อค ± ดามด้านหลังเสริม"
+                },
+                "preferred": "operative",
+                "conservative": {
+                  "indication": {
+                    "en": "• Non-displaced DE1 injuries without posterior displacement on dynamic or upright radiographs\n• Neurologically intact patients with intact posterior column",
+                    "th": "• การบาดเจ็บ DE1 ที่ไม่เลื่อนหลุดและไม่มีการเคลื่อนถอยหลังในภาพเอกซเรย์\n• ผู้ป่วยที่ระบบประสาทปกติสมบูรณ์และเสาด้านหลังยังแข็งแรงดี"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J) maintained strictly in neutral or slight flexion for 8–10 weeks (avoid any neck hyperextension)\n• Weekly radiographic evaluation during the first month",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J) โดยจัดให้อยู่ในท่าตรง (Neutral) หรือก้มเล็กน้อย ห้ามแหงนคอเด็ดขาด นาน 8–10 สัปดาห์\n• เอกซเรย์ติดตามแนวกระดูกทุกสัปดาห์ในเดือนแรก"
+                  },
+                  "rehabilitation": {
+                    "en": "• Passive and active neck motion permitted only after complete ligamentous and bony healing at 8–10 weeks",
+                    "th": "• เริ่มฝึกขยับคอได้หลังยืนยันการสมานตัวของเอ็นและกระดูกที่ 8–10 สัปดาห์"
+                  },
+                  "pitfalls": {
+                    "en": "• Allowing patient to lie flat without neck support, leading to passive neck hyperextension and secondary cord compression\n• Applying rigid collar in hyperextension",
+                    "th": "• ปล่อยให้ผู้ป่วยนอนหงายโดยไม่มีหมอนประคองคอ ทำให้คอแหงนไปด้านหลังเองและกดทับไขสันหลังซ้ำซ้อน\n• การใส่เฝือกคอในท่าแหงน"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• All DE2 injuries (Gross instability with posterior translation)\n• DE1 or DE2 associated with Central Cord Syndrome and persistent spinal stenosis\n• Extension injuries through an ankylosed spine (Ankylosing Spondylitis / DISH)",
+                    "th": "• การบาดเจ็บระดับ DE2 ทุกราย (มีความไม่มั่นคงสูงและกระดูกเลื่อนถอยหลัง)\n• ผู้ป่วยที่มีภาวะอัมพาตแขนขา Central Cord Syndrome ร่วมกับช่องไขสันหลังตีบแคบ\n• การบาดเจ็บในผู้ป่วยโรคกระดูกสันหลังเชื่อมติดแข็ง (AS / DISH)"
+                  },
+                  "method": {
+                    "en": "• Anterior Cervical Discectomy & Fusion (ACDF): Resection of torn disc, removal of retropulsed fragments, cage placement, and long anterior locking plate fixation in compression\n• Posterior instrumented fusion (spanning 2–3 levels above and below in ankylosed spine) if posterior columns are fractured or insufficient",
+                    "th": "• ผ่าตัด ACDF ทางด้านหน้า: เอาหมอนรองกระดูกที่ฉีกขาดออก ปลดปล่อยไขสันหลัง ใส่ Cage และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัดยึดตรึงด้วยสกรูด้านหลัง (ดามยาวข้ามรอยหัก 2–3 ปล้องในผู้ป่วย AS/DISH) หากโครงสร้างด้านหลังฉีกขาดหรือไม่แข็งแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 6 weeks; specialized neuro-rehabilitation for hand motor function in Central Cord Syndrome",
+                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ทำกายภาพบำบัดฟื้นฟูกล้ามเนื้อมือและแขนอย่างใกล้ชิดในกลุ่ม Central Cord Syndrome"
+                  },
+                  "pitfalls": {
+                    "en": "• Failure to recognize long lever-arm mechanics in ankylosed spine leading to hardware failure if fixation is too short\n• Overlooking acute epidural hematoma after hyperextension injury",
+                    "th": "• ดามกระดูกสั้นเกินไปในผู้ป่วยข้อต่อกระดูกสันหลังแข็งตัว (Ankylosed Spine) ทำให้เหล็กหลุดหักจากแรงคานยาว\n• มองข้ามภาวะเลือดคั่งในช่องไขสันหลัง (Epidural Hematoma)"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Widening of anterior disc space, avulsion teardrop fracture of anterior-inferior vertebral edge, and posterior displacement of superior body on lateral X-ray.",
+                "th": "ภาพ X-ray ด้านข้างพบช่องหมอนรองกระดูกด้านหน้าอ้ากว้าง, ชิ้นกระดูกกะเทาะ Tear-drop ที่ขอบหน้าล่าง และตัวกระดูกด้านบนเคลื่อนถอยหลังเข้าหาช่องไขสันหลัง"
+              }
+            },
+            {
+              "type": "Lateral Flexion",
+              "name": {
+                "en": "Lateral Flexion (LF 1-2 / Asymmetric Compression & Contralateral Distraction)",
+                "th": "6. Lateral Flexion (LF 1-2 / เอียงคอด้านข้าง - ยุบด้านเดียวและเอ็นฝั่งตรงข้ามฉีกขาด)"
+              },
+              "description": {
+                "en": "Lateral bending force applied to the cervical spine\nLF1: Asymmetric lateral compression fracture of vertebral body and ipsilateral articular process without contralateral ligament rupture\nLF2: Asymmetric body compression + contralateral ligamentous complex disruption (facet subluxation or separation)",
+                "th": "แรงเอียงคอไปด้านข้าง (Lateral Bending)\nLF1: ลำตัวกระดูกคอยุบตัวด้านข้างไม่สมมาตร ร่วมกับกระดูก Articular process ด้านเดียวกันหัก โดยเอ็นฝั่งตรงข้ามยังปกติ\nLF2: ลำตัวกระดูกยุบตัวด้านข้าง ร่วมกับเอ็นและข้อต่อด้านตรงข้ามฉีกขาดหลุดแยกออกจากกัน (Contralateral Ligamentous Disruption)"
+              },
+              "moi": {
+                "en": "Lateral impact collision forcing the head laterally toward one shoulder (e.g., T-bone side-impact motor vehicle collision or blow to the side of the head).",
+                "th": "อุบัติเหตุรถยนต์ถูกชนจากด้านข้าง (T-bone crash) หรือศีรษะถูกกระแทกเอียงพับเข้าหาหัวไหล่ด้านใดด้านหนึ่งอย่างรุนแรง"
+              },
+              "treatment": {
+                "decisionPrinciple": {
+                  "en": "Lateral flexion spectrum distinguished by contralateral ligament integrity; LF1 (isolated ipsilateral compression) has an intact contralateral tension band and is mechanically stable, managed conservatively in a rigid cervical collar; LF2 features contralateral ligamentous failure and severe coronal angulation representing gross rotational/lateral instability requiring surgical reconstruction.",
+                  "th": "การบาดเจ็บเอียงคอด้านข้างตัดสินจากความสมบูรณ์ของเอ็นด้านตรงข้าม; LF1 (กระดูกยุบตัวด้านเดียว) มีเอ็นรั้งด้านตรงข้ามสมบูรณ์และมั่นคง รักษาแบบไม่ผ่าตัดด้วยเฝือกคอชนิดแข็ง; LF2 มีเอ็นด้านตรงข้ามฉีกขาดและแนวกระดูกเอียงผิดรูปมาก มีความไม่มั่นคงสูง ต้องผ่าตัดจัดแนวกระดูกและยึดดาม"
+                },
+                "preferred": "conservative",
+                "conservative": {
+                  "indication": {
+                    "en": "• Stable LF1 injuries with < 3mm ipsilateral height loss and intact contralateral facet joint\n• No coronal plane deformity > 10° and normal neurology",
+                    "th": "• รอยหัก LF1 ชนิดมั่นคงที่ลำตัวกระดูกยุบตัว < 3 มม. และข้อต่อด้านตรงข้ามปกติ\n• แนวกระดูกคอเอียงไม่เกิน 10 องศา และไม่มีอาการทางระบบประสาท"
+                  },
+                  "method": {
+                    "en": "• Rigid cervical orthosis (Miami J / Aspen collar) for 8–10 weeks\n• Standing AP and lateral radiographs at 2, 4, and 8 weeks to monitor coronal tilt",
+                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J / Aspen) นาน 8–10 สัปดาห์\n• ติดตามเอกซเรย์ท่ายืน AP และ Lateral ที่ 2, 4 และ 8 สัปดาห์เพื่อดูมุมเอียงด้านข้าง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Active range of motion and neck isometric strengthening initiated after 8–10 weeks upon solid bony consolidation",
+                    "th": "• เริ่มฝึกบริหารขยับคอและเพิ่มความแข็งแรงหลัง 8–10 สัปดาห์เมื่อกระดูกเชื่อมติดดี"
+                  },
+                  "pitfalls": {
+                    "en": "• Missing contralateral facet gapping/subluxation on AP or Pillar views, confusing LF2 for LF1\n• Ipsilateral nerve root compression in the neural foramen",
+                    "th": "• ตรวจไม่พบช่องข้อต่อด้านตรงข้ามอ้ากว้างในภาพ AP หรือ Pillar view ทำให้สับสนระหว่าง LF2 กับ LF1\n• เสี่ยงต่อการกดทับรากประสาทด้านที่กระดูกยุบตัวเข้าหารูประสาท (Foramen)"
+                  }
+                },
+                "operative": {
+                  "indication": {
+                    "en": "• All LF2 injuries with contralateral ligamentous disruption or facet subluxation\n• Progressive coronal plane tilt > 10°–15°\n• Concomitant radiculopathy or neurological deficit due to foraminal stenosis",
+                    "th": "• รอยหัก LF2 ที่เอ็นด้านตรงข้ามฉีกขาดหรือข้อต่อ Facet หลุดเกย\n• แนวกระดูกคอเอียงผิดรูปด้านข้าง > 10–15 องศา หรือทรุดตัวเพิ่มขึ้น\n• มีอาการปวดร้าวชาจากรากประสาทถูกกดทับในรูกระดูก"
+                  },
+                  "method": {
+                    "en": "• Posterior Cervical Instrumented Fusion (Lateral Mass Screws + rods) spanning injured levels to compress the distraction side and reduce deformity\n• Combined Anterior/Posterior reconstruction if significant vertebral body height loss precludes isolated posterior fixation",
+                    "th": "• ผ่าตัดยึดตรึงกระดูกคอด้านหลังด้วยแผ่นโลหะและสกรู (Posterior Lateral Mass Screws and rods) เพื่อดึงรั้งด้านที่เอ็นขาดและจัดแนวกระดูกคอให้ตรง\n• ผ่าตัดร่วมทั้งด้านหน้าและด้านหลังหากลำตัวกระดูกยุบตัวรุนแรง"
+                  },
+                  "rehabilitation": {
+                    "en": "• Rigid collar for 6 weeks postoperatively; gradual return to normal activities after 3 months",
+                    "th": "• ใส่เฝือกคอชนิดแข็ง 6 สัปดาห์หลังผ่าตัด; ค่อยๆ ฟื้นฟูกิจวัตรประจำวันหลัง 3 เดือน"
+                  },
+                  "pitfalls": {
+                    "en": "• Inadequate foraminal decompression leading to persistent C5/C6/C7 motor radiculopathy\n• Placing lateral mass screws into comminuted pillar bone fragments",
+                    "th": "• ขยายช่องรูเส้นประสาทไม่เพียงพอ ทำให้เกิดอาการอ่อนแรงของรากประสาทค้างอยู่\n• ขันสกรูลงบนชิ้นกระดูก Lateral Mass ที่แตกป่น"
+                  }
+                }
+              },
+              "illustrationId": "",
+              "xrayDescription": {
+                "en": "Asymmetric wedge compression of lateral vertebral body and ipsilateral articular mass with contralateral facet joint widening on AP radiograph.",
+                "th": "ภาพ X-ray ท่า AP พบลำตัวกระดูกยุบตัวด้านข้างเป็นรูปลิ่มและชิ้นส่วนกระดูกด้านข้างหัก ร่วมกับช่องข้อต่อ Facet ด้านตรงข้ามอ้ากว้างขึ้น"
+              }
+            }
+          ]
+        },
+        {
           "system": "SLIC Score",
           "fullName": {
             "en": "Subaxial Cervical Spine Injury Classification (SLIC System)",
@@ -1244,514 +1701,6 @@ export const cSpineBone: BoneData = {
               "xrayDescription": {
                 "en": "Gross translational dislocation, locked facets, or complete burst fracture with canal compromise >50%.",
                 "th": "เห็นกระดูกคอเคลื่อนหลุดแปลกแนว, ข้อต่อ Facet ล็อคเกยกัน หรือ Burst fracture กดช่องไขสันหลัง >50%"
-              }
-            }
-          ]
-        },
-        {
-          "system": "AO Spine Subaxial",
-          "fullName": {
-            "en": "AO Spine Subaxial Cervical Spine Injury Classification System",
-            "th": "การจำแนกการบาดเจ็บกระดูกสันหลังคอส่วนล่างตามระบบ AO Spine"
-          },
-          "description": {
-            "en": "Comprehensive anatomical classification categorizing subaxial cervical injuries into Type A (Compression injuries), Type B (Distraction / Ligamentous injuries), and Type C (Translational / Displacement injuries), combined with Neurological Status (N0-N4) and Modifiers.",
-            "th": "ระบบจำแนก AO Spine สำหรับกระดูกคอส่วนล่าง แบ่งเป็น Type A (แรงกดอัด/ยุบตัว), Type B (แรงดึงถ่าง/เอ็นฉีกขาด), Type C (เคลื่อนหลุดแปลกแนว) ร่วมกับระดับความรุนแรงทางระบบประสาท (N0-N4) และปัจจัยเสริม (M1-M4)"
-          },
-          "concept": {
-            "title": {
-              "en": "AO Spine Subaxial Clinical Concept",
-              "th": "หลักการคิดและเกณฑ์ตัดสินใจ AO Spine Subaxial Classification"
-            },
-            "corePrinciple": {
-              "en": "Hierarchical structural classification categorizing subaxial injuries into Type A (Compression), Type B (Distraction/Tension Band failure), and Type C (Translation/Dislocation), paired with Neurological Status (N0–N4) and Modifiers.",
-              "th": "ระบบจำแนกลำดับขั้นทางโครงสร้างแบ่งการบาดเจ็บกระดูกคอ C3–C7 เป็น Type A (แรงกดอัด), Type B (แรงดึงถ่าง/เอ็นขาด) และ Type C (เคลื่อนหลุดแปลกแนว) ร่วมกับระดับระบบประสาท (N0–N4) และปัจจัยเสริม"
-            },
-            "rules": [
-              {
-                "en": "Type A (Compression): A0–A2 (Stable, intact PLC) -> Conservative (Rigid Collar). A3–A4 (Burst fracture with canal compromise/neuro deficit) -> Surgical Decompression & Fixation.",
-                "th": "Type A (แรงกดอัด): A0–A2 (มั่นคง เอ็นไม่ขาด) -> ใส่เฝือกคอแข็ง; A3–A4 (Burst fracture กดช่องไขสันหลัง/มีอาการประสาท) -> ผ่าตัดเปิดกดทับและยึดดาม"
-              },
-              {
-                "en": "Type B (Distraction): B1 (Posterior osseous failure), B2 (Posterior ligamentous/PLC failure), B3 (Anterior tension band failure) -> High instability -> Surgical Reconstruction mandated.",
-                "th": "Type B (แรงดึงถ่าง): B1 (หักผ่านกระดูก), B2 (เอ็น PLC ขาด), B3 (เอ็นด้านหน้าขาด) -> ความไม่มั่นคงสูง -> ต้องผ่าตัดยึดดามกระดูก"
-              },
-              {
-                "en": "Type C (Translation / Facet Dislocation): Complete structural disruption -> MANDATORY SURGICAL EMERGENCY (Urgent reduction and instrumented stabilization).",
-                "th": "Type C (ข้อ Facet หลุดล็อค / เคลื่อนแปลกแนว): โครงสร้างถูกทำลายสมบูรณ์ -> ข้อบ่งชี้ผ่าตัดฉุกเฉิน (ดัดจัดข้อและผ่าตัดดามเหล็ก)"
-              }
-            ],
-            "clinicalSignificance": [
-              {
-                "en": "Facet Dislocations (unilateral/bilateral) are AO Type C injuries. In neurologically intact or obtunded patients, ALWAYS obtain MRI before closed traction reduction to rule out herniated disc that could transect the cord during reduction.",
-                "th": "ข้อ Facet หลุดล็อคเป็น AO Type C ในผู้ป่วยที่ระบบประสาทปกติหรือหมดสติ ต้องส่ง MRI ก่อนดึงคอ (Closed Reduction) เพื่อตรวจหาหมอนรองกระดูกเคลื่อนกดไขสันหลัง"
-              },
-              {
-                "en": "Do not misclassify Type B3 hyperextension injuries as simple Type A anterior compression fractures.",
-                "th": "ระวังอย่าสับสนการบาดเจ็บแหงนคอดึงถ่าง B3 กับรอยหักกดอัดด้านหน้า Type A ธรรมดา"
-              }
-            ]
-          },
-          "investigations": [
-            {
-              "name": "Lateral Cervical Spine Radiograph",
-              "details": {
-                "en": "Standard cross-table lateral view. Assesses sagittal alignment, anterior/posterior disc space height, vertebral body compression, and facet dislocation.",
-                "th": "ภาพเอกซเรย์คอท่าด้านข้าง (Lateral) ประเมินแนวโค้งกระดูกคอ ความสูงลำตัวกระดูก และการหลุดล็อคของข้อ Facet"
-              }
-            },
-            {
-              "name": "Multiplanar 3D CT & MRI Cervical Spine",
-              "details": {
-                "en": "Multiplanar 3D CT scan and sagittal/axial MRI. Mandatory to assign AO Spine Type A, B, or C, assess PLC integrity, and evaluate cord compression (N0-N4).",
-                "th": "เอกซเรย์คอมพิวเตอร์ 3D และ MRI ของกระดูกคอ จำเป็นอย่างยิ่งในการแยกประเภท Type A, B, C ประเมินเอ็นยึด PLC และการอัดทับไขสันหลัง"
-              }
-            }
-          ],
-          "types": [
-            {
-              "type": "AO Type A",
-              "name": {
-                "en": "AO Spine Type A (Compression Injuries - A0 to A4)",
-                "th": "AO Spine Type A (การบาดเจ็บจากแรงกดอัด/ยุบตัว - A0 ถึง A4)"
-              },
-              "description": {
-                "en": "Compression injuries involving the anterior structures without ligamentous distraction\nA0: Minor non-structural fracture (spinous/transverse process)\nA1: Wedge compression fracture of single endplate\nA2: Split/pincer fracture through both endplates\nA3: Incomplete burst fracture (single endplate + posterior wall retropulsion)\nA4: Complete burst fracture (both endplates + posterior wall retropulsion)",
-                "th": "การบาดเจ็บจากแรงกดอัดบริเวณตัวกระดูกด้านหน้า โดยเอ็นยึดด้านหลังไม่ฉีกขาด\nA0: รอยหักเล็กน้อยที่ไม่ส่งผลต่อโครงสร้าง (หักยอด spinous/transverse process)\nA1: หักยุบเป็นรูปิ่มเฉพาะขอบบนหรือล่าง\nA2: รอยหักแยกแนวตั้งทะลุขอบบนและล่าง\nA3: Incomplete burst (หักแตกทรุดดันผนังหลังเฉพาะซีกบนหรือล่าง)\nA4: Complete burst (หักแตกป่นทรุดดันผนังหลังทั้งสองซีก)"
-              },
-              "moi": {
-                "en": "Axial compression force with variable flexion.",
-                "th": "แรงกดอัดตามแนวแกนร่วมกับการก้มคอ"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Subaxial compression injuries without ligamentous distraction; minor non-structural fractures (A0–A2) and stable incomplete burst (A3) with intact neurological status managed conservatively in a rigid collar; complete burst fractures (A4), severe canal occlusion (>50%), kyphosis >20°, or neurological deficit require surgical decompression and stabilization (ACDF or ACCF).",
-                  "th": "การบาดเจ็บกระดูกคอจากแรงกดอัดโดยไม่มีการดึงถ่างของเอ็นส่วนหลัง; รอยหักเล็กน้อย (A0–A2) และ Incomplete Burst ที่มั่นคง (A3) ที่ไม่มีอาการทางระบบประสาทรักษาด้วยเฝือกคอชนิดแข็ง; ส่วน Complete Burst (A4), กระดูกแตกกดช่องไขสันหลัง (>50%), คอค่อม >20° หรือมีอาการอัมพาต ต้องผ่าตัดคลายการกดทับและดามกระดูก (ACDF หรือ Corpectomy ACCF)"
-                },
-                "preferred": "conservative",
-                "conservative": {
-                  "indication": {
-                    "en": "• AO Type A0 (Minor spinous/transverse process fracture)\n• AO Type A1 (Wedge compression) & A2 (Split) fractures with intact PLC\n• Stable AO Type A3 (Incomplete burst) without neurological deficit and canal compromise <30%",
-                    "th": "• AO Type A0 (หักยอด spinous/transverse process)\n• AO Type A1 (หักยุบรูปิ่ม) และ A2 (หักแยกแนวตั้ง) โดยเอ็น PLC สมบูรณ์\n• AO Type A3 (Incomplete burst) ชนิดมั่นคง ไม่มีอาการทางระบบประสาทและกระดูกยื่นเข้าช่องไขสันหลัง <30%"
-                  },
-                  "method": {
-                    "en": "• Rigid cervical collar (Miami J or Aspen) worn continuously for 8–12 weeks; weekly upright lateral X-rays for first 3 weeks to ensure maintenance of sagittal alignment",
-                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J หรือ Aspen) ต่อเนื่อง 8–12 สัปดาห์; เอกซเรย์ท่ายืนสัปดาห์ละครั้งใน 3 สัปดาห์แรกเพื่อเฝ้าระวังแนวกระดูกค่อม"
-                  },
-                  "rehabilitation": {
-                    "en": "• Gradual collar weaning at 8–12 weeks upon solid bridging bony trabeculae on CT; gentle isometric neck strengthening",
-                    "th": "• ค่อยๆ ปลดเฝือกคอที่ 8–12 สัปดาห์เมื่อเอกซเรย์เห็นกระดูกติดแน่น; เริ่มบริหารกล้ามเนื้อคอเบาๆ"
-                  },
-                  "pitfalls": {
-                    "en": "• Overlooking subtle vertical split fractures (A2) that develop late nonunion or pseudoarthrosis\n• Missing associated posterior ligamentous injury converting an apparent Type A into Type B",
-                    "th": "• มองข้ามรอยหักแยกแนวตั้ง (A2) ซึ่งอาจเกิดภาวะกระดูกไม่ติดเรื้อรัง\n• พลาดการตรวจเอ็นด้านหลังที่ฉีกขาดร่วมด้วยทำให้วินิจฉัยผิดจาก Type B เป็น Type A"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• AO Type A4 (Complete burst fracture involving both endplates and posterior wall)\n• Unstable A3 fractures with kyphosis >20°, vertebral height loss >50%, or canal occlusion >50%\n• Any Type A fracture with associated radiculopathy or myelopathy (N1–N4)",
-                    "th": "• AO Type A4 (Complete burst fracture แตกทะลุทั้งขอบบน-ล่างและผนังหลัง)\n• AO Type A3 ชนิดไม่มั่นคงที่คอค่อม >20°, ความสูงลำตัวกระดูกยุบ >50% หรือกดช่องไขสันหลัง >50%\n• มีอาการปวดร้าวตามรากประสาทหรือไขสันหลังถูกกดทับ (N1–N4)"
-                  },
-                  "method": {
-                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Resection of comminuted vertebral body, decompression of spinal canal, expandable titanium mesh cage packed with autologous bone graft, and anterior locking plate spanning construct\n• Anterior Cervical Discectomy and Fusion (ACDF) for A3 incomplete burst if one endplate is intact",
-                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดกระดูกชิ้นที่แตกกดช่องไขสันหลังออก ขยายช่องไขสันหลัง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัด ACDF ข้ามระดับสำหรับ A3 incomplete burst หากขอบกระดูกอีกด้านยังสมบูรณ์"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid cervical collar for 6 weeks; early upright mobilization; structured physical therapy from week 6",
-                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ลุกเดินได้เร็ว; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• Cage subsidence into osteoporotic adjacent endplates leading to hardware loosening and loss of cervical lordosis",
-                    "th": "• ตัวหนุน Cage จมทรุดลงในเนื้อกระดูกข้างเคียงที่มีภาวะกระดูกพรุน ทำให้เหล็กดามหลวมและคอค่อม"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Wedge compression or burst fracture of vertebral body with intact posterior tension band.",
-                "th": "เห็นลำตัวกระดูกคอยุบตัวเป็นรูปิ่ม หรือแตกป่น โดยแนวเอ็นยึดด้านหลังยังสมบูรณ์"
-              }
-            },
-            {
-              "type": "AO Type B",
-              "name": {
-                "en": "AO Spine Type B (Distraction Injuries - B1 to B3)",
-                "th": "AO Spine Type B (การบาดเจ็บจากแรงดึงถ่าง/เอ็นฉีกขาด - B1 ถึง B3)"
-              },
-              "description": {
-                "en": "Distraction injuries causing disruption of tension band complexes\nB1: Posterior tension band disruption (Osseous / Bony Chance fracture)\nB2: Posterior tension band disruption (Capsular / Ligamentous disruption with facet subluxation/dislocation)\nB3: Anterior tension band disruption (Hyperextension injury through anterior longitudinal ligament)",
-                "th": "การบาดเจ็บจากแรงดึงถ่าง ทำให้เอ็นยึดรั้งฉีกขาดสมบูรณ์\nB1: เอ็นยึดด้านหลังขาดร่วมกับรอยหักผ่านกระดูก (Bony Chance fracture)\nB2: เอ็นยึดและปลอกข้อต่อ Facet ด้านหลังฉีกขาด (มีข้อต่อ Facet หลุดเกย)\nB3: เอ็นยึดด้านหน้า ALL ฉีกขาดจากแรงแหงนคอรุนแรง (Hyperextension injury)"
-              },
-              "moi": {
-                "en": "Flexion-distraction or hyperextension-distraction violence.",
-                "th": "กลไกก้มคอดึงถ่าง หรือแหงนคอดึงถ่างอย่างรุนแรง"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Tension band disruption via flexion-distraction (B1 osseous, B2 ligamentous/PLC) or hyperextension-distraction (B3 anterior tension band/ALL tear); intrinsically unstable with high nonunion and progressive deformity rate; surgical stabilization (ACDF for B2/B3, posterior fusion or dual approach for severe ligamentous tears) is the definitive treatment of choice.",
-                  "th": "การฉีกขาดของแนวรั้งความมั่นคงจากแรงดึงถ่าง (B1 หักผ่านกระดูก, B2 เอ็นส่วนหลัง PLC ขาด, B3 เอ็นด้านหน้า ALL ขาด); ขาดความมั่นคงสูง เสี่ยงต่อกระดูกไม่ติดและคอค่อมผิดรูป; การผ่าตัดยึดตรึง (ACDF สำหรับ B2/B3, หรือผ่าตัดดามด้านหลัง/หน้า-หลังสำหรับเอ็นขาดรุนแรง) เป็นการรักษาหลักที่แนะนำ"
-                },
-                "preferred": "operative",
-                "conservative": {
-                  "indication": {
-                    "en": "• Purely osseous Chance fractures (B1) in compliant non-displaced patients willing to wear a Halo-vest for 12 weeks (Extremely rare in cervical spine)",
-                    "th": "• รอยหักผ่านกระดูกล้วนๆ B1 (Bony Chance) ชนิดไม่เคลื่อนตัวในผู้ป่วยที่ยินยอมใส่ Halo-vest 12 สัปดาห์ (พบน้อยมากในกระดูกคอ)"
-                  },
-                  "method": {
-                    "en": "• Halo-vest immobilization for 12 weeks with weekly radiographic alignment monitoring",
-                    "th": "• ใส่ชุดอุปกรณ์ Halo-vest นาน 12 สัปดาห์ พร้อมเอกซเรย์ตรวจติดตามแนวกระดูกทุกสัปดาห์"
-                  },
-                  "rehabilitation": {
-                    "en": "• Strict immobilization until solid bony union confirmed on CT scan at 12 weeks",
-                    "th": "• ดามคออย่างเข้มงวดจนกว่า CT scan จะยืนยันว่ากระดูกเชื่อมติดสนิทที่ 12 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• High failure rate in ligamentous B2/B3 injuries if managed in collar/halo, leading to chronic painful kyphosis and delayed myelopathy",
-                    "th": "• อัตราล้มเหลวสูงมากหากรักษาการบาดเจ็บของเอ็น B2/B3 ด้วยเฝือก/Halo ทำให้คอค่อมเรื้อรังและไขสันหลังทำงานบกพร่อง"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• All AO Type B2 (Posterior ligamentous/facet capsule disruption) and Type B3 (Anterior tension band/hyperextension injuries)\n• Displaced B1 osseous distraction fractures or polytrauma",
-                    "th": "• การบาดเจ็บ AO Type B2 (เอ็นส่วนหลังและปลอกข้อ Facet ขาด) และ Type B3 (เอ็น ALL ด้านหน้าขาด) ทุกราย\n• รอยหักกระดูก B1 ที่เคลื่อนตัว หรือผู้ป่วยบาดเจ็บหลายระบบ"
-                  },
-                  "method": {
-                    "en": "• For Type B2: Posterior instrumented fusion (lateral mass screws + rods) OR Anterior ACDF with interbody cage and rigid locking plate (or combined 360° fusion if severe facet subluxation)\n• For Type B3 (Hyperextension): Anterior Cervical Discectomy and Fusion (ACDF) with long locking plate to restore anterior tension band constraint",
-                    "th": "• สำหรับ Type B2: ผ่าตัดดามยึดด้านหลัง (Lateral mass screws + Rods) หรือผ่าตัด ACDF ด้านหน้าพร้อมแผ่นเหล็กล็อค (หรือผ่าตัด 360 องศาหากข้อ Facet เคลื่อนมาก)\n• สำหรับ Type B3 (แหงนคอดึงถ่าง): ผ่าตัดเชื่อมหมอนรองกระดูกคอด้านหน้า (ACDF) พร้อมดามแผ่นเหล็กล็อคเพื่อสร้างแนวยึดรั้งด้านหน้าทดแทนเอ็น ALL ที่ฉีกขาด"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid cervical collar for 6 weeks; active physical therapy and shoulder mobilization from week 6",
-                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดขยับคอและไหล่หลัง 6 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• Missing posterior facet fractures associated with B2 distractive injuries\n• Placing an undersized anterior plate in B3 injuries leading to screw pullout upon neck extension",
-                    "th": "• ตรวจไม่พบกระดูกข้อ Facet ด้านหลังแตกหักร่วมกับการบาดเจ็บแบบ B2\n• ดามแผ่นเหล็กด้านหน้าสั้นหรือเล็กเกินไปใน B3 ทำให้สกรูถอนหลุดเวลากระดกคอ"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Widened interspinous gap, facet joint subluxation/perched facets, or anterior disc space gapping.",
-                "th": "เห็นช่องว่างระหว่างยอดกระดูกกว้างขึ้น, ข้อ Facet หลุดเกย หรือช่องหมอนรองด้านหน้าอ้ากว้าง"
-              }
-            },
-            {
-              "type": "AO Type C",
-              "name": {
-                "en": "AO Spine Type C (Translational / Dislocation Injuries - UNSTABLE)",
-                "th": "AO Spine Type C (การเคลื่อนหลุดแปลกแนว - Translational Dislocation)"
-              },
-              "description": {
-                "en": "Translational displacement of one vertebra relative to another in ANY spatial plane\nIncludes unilateral or bilateral locked facets, complete anterior/posterior/lateral dislocation\nTotal disruption of all anterior and posterior structural complexes\nExtremely UNSTABLE with high incidence of permanent spinal cord injury",
-                "th": "การเคลื่อนตัวหลุดแปลกแนวของกระดูกคอชิ้นหนึ่งเมื่อเทียบกับอีกชิ้นหนึ่งใน **ทุกทิศทาง**\nรวมถึงข้อต่อ Facet หลุดล็อคข้างเดียวหรือสองข้าง (Unilateral/Bilateral locked facets) และข้อหลุดสมบูรณ์\nทำลายโครงสร้างความมั่นคงทั้งด้านหน้าและด้านหลังสมบูรณ์\n**ไม่มั่นคงอย่างร้ายแรงสูงสุด** เสี่ยงสูงต่ออัมพาตถาวร"
-              },
-              "moi": {
-                "en": "Severe high-energy shear force combined with rotation/flexion.",
-                "th": "แรงเฉือนพลังงานสูงรุนแรงร่วมกับการหมุนและก้มคอ"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Translational displacement and 3-column disruption in any plane (unilateral/bilateral locked facets, frank spondyloptosis); extremely unstable with catastrophic spinal cord injury risk; non-operative care is contraindicated; emergency closed reduction under continuous neurologic monitoring (pre-reduction MRI mandatory if obtunded or herniated disc suspected) followed by urgent rigid anterior/posterior surgical reconstruction.",
-                  "th": "กระดูกเคลื่อนหลุดแปลกแนวและทำลายโครงสร้างทั้ง 3 เสา (ข้อ Facet หลุดล็อคข้างเดียว/สองข้าง หรือกระดูกคอหลุดข้ามระดับ); ไม่มั่นคงขั้นวิกฤต เสี่ยงต่อการเกิดอัมพาตถาวร; ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด; ต้องดึงจัดข้อฉุกเฉินภายใต้การตรวจติดตามระบบประสาทอย่างใกล้ชิด (ต้องส่ง MRI ก่อนดึงหากผู้ป่วยหมดสติหรือสงสัยหมอนรองกระดูกแตกทะลัก) แล้วตามด้วยการผ่าตัดดามยึดเชื่อมกระดูกคอด้านหน้า/หลังทันที"
-                },
-                "preferred": "operative",
-                "conservative": {
-                  "indication": {
-                    "en": "• Absolutely contraindicated (closed maintenance is impossible; fatal/paralyzing instability)",
-                    "th": "• ห้ามรักษาแบบไม่ผ่าตัดเด็ดขาด (ไม่สามารถจัดกระดูกให้อยู่ในแนวปกติได้ เสี่ยงต่ออัมพาตและเสียชีวิต)"
-                  },
-                  "method": {
-                    "en": "• Urgent closed traction with Gardner-Wells tongs / cranial halo under fluoroscopy as an acute reduction maneuver prior to OR",
-                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะ (Gardner-Wells Tongs) ฉุกเฉินใต้เครื่องเอกซเรย์เพื่อดัดจัดข้อเข้าที่ก่อนเข้าห้องผ่าตัด"
-                  },
-                  "rehabilitation": {
-                    "en": "• N/A",
-                    "th": "• N/A"
-                  },
-                  "pitfalls": {
-                    "en": "• Attempting closed reduction in an unmonitored or obtunded patient without prior MRI ruling out an extruded herniated disc that could compress and transect the spinal cord",
-                    "th": "• ดึงดัดข้อคอในผู้ป่วยหมดสติโดยไม่ได้ทำ MRI ตรวจหาหมอนรองกระดูกแตก ซึ่งอาจดันไปตัดไขสันหลังจนอัมพาตถาวร"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• All AO Type C subaxial translational injuries (Unilateral/bilateral locked facets, fracture-dislocations, translational shear)",
-                    "th": "• การบาดเจ็บกระดูกคอ AO Type C ทุกราย (ข้อ Facet หลุดล็อคข้างเดียว/สองข้าง, กระดูกคอหักหลุด, แรงเฉือนหลุด)"
-                  },
-                  "method": {
-                    "en": "• Protocol 1 (Closed Reduction Successful + Herniated Disc Excluded):\n  - Posterior Instrumented Fusion (C3–C7 Lateral Mass Screws + rods) OR Anterior Cervical Discectomy & Fusion (ACDF) with plate\n• Protocol 2 (Closed Reduction Failed / Irreducible Facets / Disc Extrusion):\n  - Anterior-first approach: ACDF discectomy to remove extruded disc fragment -> Open manual reduction using Caspar pins -> Anterior plate fixation ± secondary posterior stabilization (360° fusion)\n  - Posterior-first approach: Open reduction of locked facets via partial facetectomy -> Posterior lateral mass fixation -> Secondary anterior ACDF",
-                    "th": "• แผนการรักษาที่ 1 (จัดข้อปิดสำเร็จ + ไม่มีหมอนรองกระดูกแตกทะลัก):\n  - ผ่าตัดดามยึดด้านหลัง (Lateral Mass Screws + Rods) หรือผ่าตัดเชื่อมหมอนรองด้านหน้า ACDF พร้อมแผ่นเหล็ก\n• แผนการรักษาที่ 2 (ดัดข้อไม่เข้า / มีหมอนรองกระดูกแตกทะลักกดไขสันหลัง):\n  - ผ่าตัดเข้าทางด้านหน้าก่อน: คว้านตัดหมอนรองกระดูกที่แตกกดไขสันหลังออก -> ดัดงัดจัดกระดูกให้เข้าที่ -> ดามด้วยแผ่นเหล็กล็อค ± ผ่าตัดเสริมด้านหลัง (360° Fusion)\n  - หรือผ่าตัดเปิดทางด้านหลัง: เล็มกระดูกขอบ Facet จัดข้อที่ล็อคให้เข้าที่ -> ดาม Lateral mass screws -> ผ่าตัดเสริม ACDF ด้านหน้า"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid cervical collar for 6–8 weeks; aggressive early spinal cord rehabilitation and functional training",
-                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มโปรแกรมฟื้นฟูสมรรถภาพไขสันหลังและกายภาพบำบัดเข้มข้นทันที"
-                  },
-                  "pitfalls": {
-                    "en": "• Over-distraction during skull traction leading to brainstem/cord stretch injury\n• Failure of single-level anterior construct in grossly unstable bilateral facet dislocations (consider posterior supplementation)",
-                    "th": "• ถ่วงน้ำหนักดึงคอมากเกินไปจนก้านสมองและไขสันหลังถูกดึงยืดบาดเจ็บ\n• แผ่นเหล็กด้านหน้าหลุดถอนในข้อ Facet หลุดสองข้างที่มีความหลวมรุนแรง (ควรพิจารณาดามด้านหลังเสริม)"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Gross translational step-off >3.5mm, bilateral locked facets, or complete vertebral displacement.",
-                "th": "เห็นชิ้นกระดูกเคลื่อนเกยแปลกแนว >3.5มม., ข้อ Facet หลุดล็อคเกยกันสมบูรณ์"
-              }
-            }
-          ]
-        },
-        {
-          "system": "Allen-Ferguson",
-          "fullName": {
-            "en": "Allen-Ferguson Mechanistic Classification for Lower Cervical Spine Injuries",
-            "th": "การจำแนกการบาดเจ็บกระดูกคอตามกลไกการเกิดเหตุ Allen-Ferguson"
-          },
-          "description": {
-            "en": "Biomechanical classification categorizing injuries based on vector forces: Compressive Flexion (CF 1-5), Vertical Compression (VC 1-3), Distractive Flexion (DF 1-4 including locked facets), Compressive Extension (CE 1-5), Distractive Extension (DE 1-2), and Lateral Flexion (LF 1-2).",
-            "th": "ระบบจำแนกเชิงชีวกลศาสตร์แบ่งตามทิศทางของแรง: Compressive Flexion (ก้มคออัด), Vertical Compression (อัดตรง), Distractive Flexion (ก้มคอดึงถ่าง - ข้อ Facet ล็อค), Compressive Extension (แหงนคออัด), Distractive Extension (แหงนคอดึงถ่าง) และ Lateral Flexion (เอียงข้าง)"
-          },
-          "concept": {
-            "title": {
-              "en": "Allen-Ferguson Biomechanical Clinical Concept",
-              "th": "หลักการคิดและเกณฑ์ตัดสินใจ Allen-Ferguson Classification"
-            },
-            "corePrinciple": {
-              "en": "Biomechanical mechanistic system classifying lower cervical spine trauma based on vector force direction and neck position at impact across 6 categories.",
-              "th": "ระบบจำแนกเชิงชีวกลศาสตร์ที่จัดหมวดหมู่การบาดเจ็บกระดูกคอส่วนล่างตามทิศทางของแรงและท่าทางของคอขณะเกิดเหตุใน 6 กลไกหลัก"
-            },
-            "rules": [
-              {
-                "en": "Lower Spectrum (CF 1-2, VC 1, DF 1, CE 1-2): Posterior ligamentous complex intact -> STABLE -> Conservative (Rigid Collar 6–8 weeks).",
-                "th": "กลุ่มความรุนแรงต่ำ (CF 1-2, VC 1, DF 1, CE 1-2): เอ็นส่วนหลัง PLC ยังสมบูรณ์ -> มั่นคง -> ใส่ Rigid Collar 6–8 สัปดาห์"
-              },
-              {
-                "en": "DF 2-4 (Locked Facets, Distractive Flexion): Ligamentous disruption -> UNSTABLE -> Urgent Reduction & Surgical Stabilization.",
-                "th": "DF 2-4 (ข้อ Facet หลุดล็อค): เอ็นยึดฉีกขาด -> ไม่มั่นคง -> ดึงจัดข้อและผ่าตัดยึดดามกระดูก"
-              },
-              {
-                "en": "CF 3-5 (Flexion Teardrop Fracture): Complete 3-column disruption -> HIGHLY UNSTABLE -> Emergency Surgical Fusion.",
-                "th": "CF 3-5 (Flexion Teardrop Fracture): โครงสร้าง 3 เสาถูกทำลายสมบูรณ์ -> ไม่มั่นคงอย่างรุนแรง -> ผ่าตัดฉุกเฉิน"
-              },
-              {
-                "en": "VC 2-3 (Burst fracture with canal retropulsion): Canal occlusion > 50% or neurological deficit -> Decompression & Fusion.",
-                "th": "VC 2-3 (Burst fracture ชิ้นส่วนกดช่องไขสันหลัง): กดช่องไขสันหลัง > 50% หรือมีอาการทางประสาท -> ผ่าตัดเปิดกดทับและยึดดาม"
-              }
-            ],
-            "clinicalSignificance": [
-              {
-                "en": "Flexion Teardrop Fracture (CF 3-5) is the most devastating cervical injury; the anterior teardrop bone fragment is only the tip of the iceberg, representing complete posterior ligamentous disruption with high risk of quadriplegia.",
-                "th": "Flexion Teardrop Fracture (CF 3-5) เป็นการบาดเจ็บกระดูกคอที่รุนแรงที่สุด ชิ้นกระดูกสามเหลี่ยมด้านหน้าเป็นเพียงยอดภูเขาน้ำแข็ง แต่โครงสร้างเอ็นส่วนหลังขาดสมบูรณ์เสี่ยงอัมพาตสี่แผลมสูงมาก"
-              },
-              {
-                "en": "DF Stage 2 (unilateral locked facet) can present with subtle neck pain; inspect lateral radiograph carefully for 25% anterior translation.",
-                "th": "DF Stage 2 (ข้อ Facet หลุดล็อคข้างเดียว) ผู้ป่วยอาจปวดคอไม่มาก ต้องตรวจ X-ray Lateral อย่างละเอียดเพื่อดูการเคลื่อนไปข้างหน้า 25%"
-              }
-            ]
-          },
-          "investigations": [
-            {
-              "name": "Lateral Cervical Spine View",
-              "details": {
-                "en": "Lateral cervical radiograph to evaluate teardrop fragments, anterior compression height, facet subluxation/locking, and interspinous distance widening.",
-                "th": "ภาพเอกซเรย์คอท่าด้านข้าง เพื่อตรวจประเมินชิ้นกระดูก Tear-drop, ความสูงตัวกระดูกด้านหน้า, การหลุดล็อคของข้อ Facet และช่องว่างระหว่างยอดกระดูก"
-              }
-            },
-            {
-              "name": "3D CT Scan of Cervical Spine",
-              "details": {
-                "en": "Multiplanar 3D CT scan to accurately identify vector force category (CF, VC, DF, CE, DE, LF) and posterior element disruption.",
-                "th": "เอกซเรย์คอมพิวเตอร์ 3D ประเมินทิศทางแรงเวกเตอร์ CF, VC, DF, CE, DE, LF และรอยหักส่วนหลัง"
-              }
-            }
-          ],
-          "types": [
-            {
-              "type": "Compressive Flexion",
-              "name": {
-                "en": "Compressive Flexion (CF 1-5 / Tear-drop Fracture)",
-                "th": "1. Compressive Flexion (CF 1-5 / รอยหักก้มคออัด - Tear-drop)"
-              },
-              "description": {
-                "en": "Flexion force combined with axial compression\nCF1-CF2: Anterior beak fracture\nCF3-CF5: Flexion Tear-drop fracture with posterior body retropulsion into spinal canal",
-                "th": "แรงก้มคอร่วมกับแรงกดอัดตามแนวแกน CF1-2 หักเป็นจะงอยรูปิ่ม / CF4-5 รอยหัก **Flexion Tear-drop** ชิ้นกระดูกแตกเป็นหยดน้ำตาและดันไปกดไขสันหลังด้านหลัง"
-              },
-              "moi": {
-                "en": "Diving into shallow water or head-first collision.",
-                "th": "ดำน้ำกระแทกพื้นสระ หรือหัวกระแทกชนด้านหน้า"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Compressive flexion spectrum ranging from minor anterior beak (CF1–CF2) to catastrophic Flexion Teardrop fracture (CF3–CF5); CF1–CF2 with intact posterior column managed in rigid collar; CF3–CF5 represents complete 3-column disruption with retropulsed body fragment and high anterior cord syndrome risk requiring emergency anterior corpectomy (ACCF) and rigid plating ± posterior fusion.",
-                  "th": "การบาดเจ็บก้มคออัดกระแทก ตั้งแต่รอยหักจะงอยขอบหน้า (CF1–CF2) ไปจนถึง Flexion Teardrop Fracture (CF3–CF5); CF1–CF2 ที่เอ็นส่วนหลังสมบูรณ์รักษาด้วยเฝือกคอแข็ง; CF3–CF5 โครงสร้าง 3 เสาพังทลายสมบูรณ์ ชิ้นกระดูกทรุดดันกดไขสันหลังด้านหน้า เสี่ยงต่ออัมพาตสูงมาก ต้องผ่าตัด Corpectomy ด้านหน้าด่วน ร่วมกับดามแผ่นเหล็กล็อค ± ดามด้านหลังเสริม"
-                },
-                "preferred": "operative",
-                "conservative": {
-                  "indication": {
-                    "en": "• Low-grade CF1 (Blunting of anterior-superior margin) and CF2 (Anterior beak fracture without posterior involvement)",
-                    "th": "• CF1 (ขอบกระดูกด้านหน้าบนบิ่น) และ CF2 (รอยหักเป็นจะงอยด้านหน้าโดยเอ็นส่วนหลังไม่ฉีกขาด)"
-                  },
-                  "method": {
-                    "en": "• Rigid cervical orthosis (Miami J) for 8–10 weeks with serial upright radiographs",
-                    "th": "• ใส่เฝือกดามคอชนิดแข็ง (Miami J) นาน 8–10 สัปดาห์ ร่วมกับเอกซเรย์ท่ายืนติดตามอาการ"
-                  },
-                  "rehabilitation": {
-                    "en": "• Gentle active neck exercises upon confirmed union at 8–10 weeks",
-                    "th": "• เริ่มฝึกบริหารขยับคอเมื่อกระดูกติดสนิทที่ 8–10 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• Misdiagnosing a true CF3–CF5 Flexion Teardrop fracture as a benign CF1/CF2 beak fracture; always evaluate sagittal CT/MRI for posterior body retropulsion and interspinous widening",
-                    "th": "• วินิจฉัยผิดพลาดคิดว่า Flexion Teardrop เป็นแค่รอยหักจะงอยหน้าธรรมดา; ต้องตรวจ CT/MRI ดูชิ้นกระดูกที่ดันไปกดไขสันหลังและเอ็นส่วนหลังขาดเสมอ"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• All CF3, CF4, and CF5 fractures (Flexion Teardrop fractures with posterior body retropulsion, canal compromise, or acute anterior cord syndrome)",
-                    "th": "• รอยหัก CF3, CF4 และ CF5 ทุกราย (Flexion Teardrop ที่มีชิ้นกระดูกดันกดไขสันหลัง หรือมีอาการอัมพาต Anterior Cord Syndrome)"
-                  },
-                  "method": {
-                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete resection of the shattered vertebral body and retropulsed fragments, neural canal decompression, reconstruction with titanium mesh cage/strut autograft, and rigid anterior locking plate\n• Combined 360° Fusion (ACCF + Posterior lateral mass screws) if posterior tension band disruption is severe (CF4/CF5)",
-                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดกระดูกลำตัวชิ้นที่แตกป่นและชิ้นที่ดันกดไขสันหลังออกทั้งหมด ปลดปล่อยไขสันหลังให้โล่ง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้า\n• ผ่าตัดรอบทิศ 360 องศา (ACCF ร่วมกับดามสกรู Lateral Mass ด้านหลัง) หากเอ็นและกระดูกส่วนหลังพังทลายรุนแรง (CF4/CF5)"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid cervical collar for 6–8 weeks post-op; early aggressive spinal cord neuro-rehabilitation",
-                    "th": "• ใส่เฝือกคอแข็ง 6–8 สัปดาห์; เริ่มทำกายภาพบำบัดฟื้นฟูระบบประสาทและไขสันหลังเข้มข้นทันที"
-                  },
-                  "pitfalls": {
-                    "en": "• Inadequate decompression leaving residual retropulsed bone fragments compressing the anterior spinal cord\n• Attempting standalone posterior fusion without removing the anterior compressing bone",
-                    "th": "• กรอตัดชิ้นกระดูกที่กดด้านหน้าออกไม่หมด ทำให้ไขสันหลังยังคงถูกกดทับ\n• ผ่าตัดดามด้านหลังอย่างเดียวโดยไม่เอาชิ้นกระดูกที่กดทับไขสันหลังด้านหน้าออก"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Anterior inferior triangular tear-drop fragment with retropulsed body fragment.",
-                "th": "เห็นชิ้นกระดูกสามเหลี่ยมหลุดตรงขอบล่างหน้า (Tear-drop) และตัวกระดูกทรุดดันเข้าช่องไขสันหลัง"
-              }
-            },
-            {
-              "type": "Distractive Flexion",
-              "name": {
-                "en": "Distractive Flexion (DF 1-4 / Locked Facets)",
-                "th": "2. Distractive Flexion (DF 1-4 / ก้มคอดึงถ่าง - ข้อ Facet ล็อค)"
-              },
-              "description": {
-                "en": "Flexion force combined with distraction\nDF1: Interspinous widening / Facet subluxation\nDF2: Unilateral locked facet (25% translation)\nDF3: Bilateral locked facets (50% translation)\nDF4: Complete displacement (100% translation)",
-                "th": "แรงก้มคอร่วมกับแรงดึงถ่าง DF1 ข้อ Facet เผยอ / DF2 **Unilateral locked facet (ข้อหลุดล็อคข้างเดียว เกย 25%)** / DF3 **Bilateral locked facets (ข้อหลุดล็อคสองข้าง เกย 50%)** / DF4 หลุดสมบูรณ์"
-              },
-              "moi": {
-                "en": "Rapid deceleration MVA throwing head forward.",
-                "th": "อุบัติเหตุรถยนต์เบรกกระทันหันเหวี่ยงศีรษะก้มไปด้านหน้าอย่างรุนแรง"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Distractive flexion spectrum from interspinous widening (DF1) to unilateral locked facet (DF2, 25% translation), bilateral locked facets (DF3, 50% translation), and floating vertebra (DF4, 100% translation); DF1 with intact facet joints can be braced; DF2–DF4 requires urgent reduction (closed traction under monitoring or open reduction) and rigid instrumented stabilization (ACDF or posterior fusion) to prevent progressive neurologic loss.",
-                  "th": "การบาดเจ็บก้มคอดึงถ่าง ตั้งแต่เอ็นขอบหลังฉีกขาด (DF1), ข้อ Facet หลุดล็อคข้างเดียว (DF2 เกย 25%), ข้อ Facet หลุดล็อคสองข้าง (DF3 เกย 50%) ไปจนถึงข้อคอหลุดสมบูรณ์ (DF4 เกย 100%); DF1 รักษาด้วยเฝือกคอแข็งได้; DF2–DF4 ต้องดึงจัดข้อเข้าที่ด่วน (ดึงถ่วงน้ำหนักหรือเปิดผ่าตัดจัดข้อ) และผ่าตัดดามยึดกระดูก (ACDF หรือ Posterior Fusion) เพื่อป้องกันอัมพาต"
-                },
-                "preferred": "operative",
-                "conservative": {
-                  "indication": {
-                    "en": "• DF1 injuries (Interspinous widening without facet perched/locked or subluxation on dynamic flexion views)",
-                    "th": "• การบาดเจ็บระดับ DF1 (ช่องว่าง interspinous กว้างขึ้นเล็กน้อยโดยข้อ Facet ไม่หลุดเกย)"
-                  },
-                  "method": {
-                    "en": "• Rigid cervical collar for 8–10 weeks with close weekly radiographic follow-up",
-                    "th": "• ใส่เฝือกคอชนิดแข็ง 8–10 สัปดาห์ ร่วมกับตรวจเอกซเรย์ติดตามแนวกระดูกทุกสัปดาห์"
-                  },
-                  "rehabilitation": {
-                    "en": "• Flexion-extension stress radiographs at 8–10 weeks to rule out occult dynamic instability",
-                    "th": "• เอกซเรย์ท่าก้ม-เงยคอที่ 8–10 สัปดาห์เพื่อยืนยันว่าข้อต่อคอไม่หลวมขยับ"
-                  },
-                  "pitfalls": {
-                    "en": "• Missing a subtle DF2 unilateral facet lock that presents with only mild rotational asymmetry and ~25% anterior translation on lateral X-ray",
-                    "th": "• พลาดการวินิจฉัยข้อ Facet หลุดล็อคข้างเดียว (DF2) ซึ่งสังเกตเห็นการเคลื่อนไปข้างหน้าเพียง 25%"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• All DF2 (Unilateral locked facet), DF3 (Bilateral locked facets), and DF4 (Complete displacement) injuries",
-                    "th": "• ข้อต่อ Facet หลุดล็อคข้างเดียว (DF2), หลุดสองข้าง (DF3) และหลุดสมบูรณ์ (DF4) ทุกราย"
-                  },
-                  "method": {
-                    "en": "• Urgent closed reduction with cranial tongs traction (5 lbs per cervical level added incrementally under serial fluoroscopy and frequent neuro exams)\n• Definitive Surgery: Anterior Cervical Discectomy & Fusion (ACDF) with locking plate OR Posterior Cervical Instrumented Fusion (Lateral Mass Screws + rods) OR Combined 360° Fusion if locked facets are irreducible closed or gross multidirectional instability exists",
-                    "th": "• ดึงถ่วงน้ำหนักกะโหลกศีรษะฉุกเฉิน (เพิ่มน้ำหนักทีละ 5 ปอนด์ต่อระดับกระดูกคอใต้เครื่องเอกซเรย์ พร้อมตรวจระบบประสาทอย่างสม่ำเสมอ)\n• ผ่าตัดเชื่อมตรึงถาวร: ACDF พร้อมแผ่นเหล็กล็อคด้านหน้า หรือผ่าตัดดาม Lateral Mass Screws ด้านหลัง หรือผ่าตัดรอบทิศ 360 องศาหากดึงจัดข้อไม่เข้า"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid collar for 6 weeks; active progressive range of motion and strengthening at 6 weeks",
-                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; เริ่มทำกายภาพบำบัดขยับคอและเพิ่มความแข็งแรงหลัง 6 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• Performing closed traction in obtunded patients without MRI to rule out disc herniation, leading to disc fragment migration and cord transection",
-                    "th": "• ดึงคอในผู้ป่วยหมดสติโดยไม่ตรวจ MRI เพื่อคัดกรองหมอนรองกระดูกแตก ซึ่งอาจเคลื่อนไปตัดไขสันหลังได้"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Abrupt displacement >25% (unilateral) or >50% (bilateral locked facets) on lateral X-ray.",
-                "th": "เห็นกระดูกคอเคลื่อนเกย >25% (ข้างเดียว) หรือ >50% (สองข้าง) จากข้อ Facet ล็อคข้ามกัน"
-              }
-            },
-            {
-              "type": "Vertical Compression",
-              "name": {
-                "en": "Vertical Compression (VC 1-3 / Central Burst)",
-                "th": "3. Vertical Compression (VC 1-3 / อัดตรงตามแนวแกน - Central Burst)"
-              },
-              "description": {
-                "en": "Pure axial compression force\nVC1: Single endplate fracture\nVC2: Cupping burst fracture\nVC3: Comminuted central burst fracture with canal retropulsion",
-                "th": "แรงกดอัดตามแนวแกนดิ่งบริสุทธิ์ VC1-2 หักยุบขอบ / VC3 **Central Burst fracture** กระดูกแตกป่นอัดทรุดรอบทิศทางดันเข้าช่องไขสันหลัง"
-              },
-              "moi": {
-                "en": "Heavy object falling directly onto top of head.",
-                "th": "วัตถุหนักตกใส่กลางศีรษะตรงๆ"
-              },
-              "treatment": {
-                "decisionPrinciple": {
-                  "en": "Pure axial compression injury spectrum; VC1 (single endplate cupping) treated in rigid cervical collar; VC2–VC3 (central multi-fragment burst with canal retropulsion) with cord compression or severe comminution requires anterior cervical corpectomy (ACCF) with titanium cage and locking plate to decompress the spinal canal and restore anterior column load bearing.",
-                  "th": "การบาดเจ็บจากแรงกดอัดตามแนวดิ่งตรง; VC1 (หักยุบขอบบนหรือล่างแผ่นเดียว) รักษาด้วยเฝือกคอชนิดแข็ง; VC2–VC3 (กระดูกแตก Burst แตกกระจายหลายชิ้นดันช่องไขสันหลัง) ที่มีการกดทับไขสันหลังหรือแตกป่นรุนแรง ต้องผ่าตัด Corpectomy (ACCF) ใส่ Mesh cage และดามแผ่นเหล็กล็อคเพื่อคลายการกดทับและรับน้ำหนักเสาด้านหน้า"
-                },
-                "preferred": "operative",
-                "conservative": {
-                  "indication": {
-                    "en": "• VC1 fractures (Single endplate cupping deformity with intact posterior wall and normal neurologic exam)\n• Stable VC2 in medically frail patients without canal compromise",
-                    "th": "• กระดูกหัก VC1 (ขอบบนหรือล่างยุบตัวโดยผนังหลังไม่แตกและระบบประสาทปกติ)\n• VC2 ชนิดมั่นคงในผู้ป่วยที่มีความเสี่ยงผ่าตัดสูงและกระดูกไม่กดช่องไขสันหลัง"
-                  },
-                  "method": {
-                    "en": "• Rigid cervical collar (Miami J) or Halo-vest for 10–12 weeks with serial radiographs",
-                    "th": "• ใส่เฝือกคอชนิดแข็ง (Miami J) หรือ Halo-vest นาน 10–12 สัปดาห์ พร้อมเอกซเรย์ติดตามอาการ"
-                  },
-                  "rehabilitation": {
-                    "en": "• Wean collar after 10–12 weeks upon confirmed bony trabecular bridging; isometric strengthening",
-                    "th": "• ปลดเฝือกคอที่ 10–12 สัปดาห์เมื่อกระดูกเชื่อมติดสนิท; เริ่มบริหารกล้ามเนื้อคอ"
-                  },
-                  "pitfalls": {
-                    "en": "• Late collapse and progressive spinal canal stenosis in comminuted VC2/VC3 fractures managed conservatively",
-                    "th": "• ลำตัวกระดูกยุบตัวลงเรื่อยๆ และช่องไขสันหลังตีบแคบลงในรอยหัก VC2/VC3 ที่รักษาด้วยเฝือก"
-                  }
-                },
-                "operative": {
-                  "indication": {
-                    "en": "• VC2 and VC3 comminuted central burst fractures with >30%–50% spinal canal retropulsion\n• Neurological deficit (Radiculopathy or Myelopathy)\n• Severe vertebral height loss (>50%) or focal kyphosis",
-                    "th": "• กระดูกแตก Central Burst VC2 และ VC3 ที่มีชิ้นกระดูกดันเข้าช่องไขสันหลัง >30%–50%\n• มีอาการบาดเจ็บของรากประสาทหรือไขสันหลัง\n• ลำตัวกระดูกยุบตัวรุนแรง (>50%) หรือแนวกระดูกค่อมผิดรูป"
-                  },
-                  "method": {
-                    "en": "• Anterior Cervical Corpectomy and Fusion (ACCF): Complete corpectomy of fractured vertebra, decompression of the dural sac, placement of expandable titanium cage/structural autograft, and rigid anterior cervical locking plate fixation spanning adjacent healthy vertebral bodies",
-                    "th": "• ผ่าตัดตัดลำตัวกระดูกคอและเชื่อมข้อ (ACCF): ตัดลำตัวกระดูกที่แตกออกทั้งหมดเพื่อคลายการกดทับถุงไขสันหลัง ใส่ Titanium Mesh Cage ร่วมกับกระดูกปลูก และดามด้วยแผ่นเหล็กล็อคด้านหน้ายึดข้ามข้อกระดูกที่แข็งแรง"
-                  },
-                  "rehabilitation": {
-                    "en": "• Rigid cervical collar for 6 weeks; early upright mobilization; progressive physical therapy from week 6",
-                    "th": "• ใส่เฝือกคอแข็ง 6 สัปดาห์; ลุกเดินได้เร็ว; เริ่มทำกายภาพบำบัดฟื้นฟูหลัง 6 สัปดาห์"
-                  },
-                  "pitfalls": {
-                    "en": "• Inadequate corpectomy width leaving lateral uncinate bone fragments compressing exiting nerve roots\n• Failure of endplate preparation causing cage subsidence",
-                    "th": "• ตัดกระดูกแคบเกินไปจนเหลือชิ้นกระดูกด้านข้างกดทับรากประสาท\n• ขูดแต่งผิวข้อกระดูกไม่ดีพอจน Cage จมทรุดตัว"
-                  }
-                }
-              },
-              "illustrationId": "",
-              "xrayDescription": {
-                "en": "Centrally comminuted vertebral body with outward displacement of anterior and posterior walls.",
-                "th": "เห็นลำตัวกระดูกแตกป่นกลางชิ้น โดยผนังหน้าและหลังโป่งขยายออก"
               }
             }
           ]

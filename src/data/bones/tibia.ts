@@ -2394,6 +2394,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/ruedi_allgower/type1.png",
+              "xrayUrl": "/images/xrays/ruedi_allgower/type1_xray.jpg",
               "xrayDescription": {
                 "en": "Sharp intra-articular fracture line through distal tibial plafond with congruous joint line and step-off < 2 mm.",
                 "th": "เห็นรอยหักผ่านผิวข้อหน้าแข้งโดยหน้าสัมผัสข้อเท้ายังคงเรียบเสมอกันและยุบตัวน้อยกว่า 2 มม."
@@ -2457,6 +2458,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/ruedi_allgower/type2.png",
+              "xrayUrl": "/images/xrays/ruedi_allgower/type2_xray.jpg",
               "xrayDescription": {
                 "en": "Articular step-off > 2 mm with visible separation of Chaput/Volkmann fragments, preserved metaphyseal bone stock, and lack of central impaction.",
                 "th": "ผิวข้อยุบเป็นขั้น > 2 มม. เห็นการแยกตัวของชิ้นกระดูก Chaput และ Volkmann อย่างชัดเจนโดยไม่มีกระดูกยุบแหลกตรงกลาง"
@@ -2520,6 +2522,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/ruedi_allgower/type3.png",
+              "xrayUrl": "/images/xrays/ruedi_allgower/type3_xray.jpg",
               "xrayDescription": {
                 "en": "Mushroom-like explosion of the distal tibia with impacted subchondral fragments, loss of joint space, and marked metaphyseal shortening/widening.",
                 "th": "ลักษณะกระดูกแตกกระจายเหมือนดอกเห็ด (Mushroom explosion) ผิวข้อยุบอัดแน่นจมลงในโพรงกระดูก ข้อเท้าเตี้ยสั้นและกางออก"

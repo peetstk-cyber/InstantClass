@@ -1,7 +1,12 @@
 import { useState } from "react";
 import type { Language } from "../../App";
-import type { BoneData, FractureClassificationType, BoneRegion } from "../../types";
-import { X, Upload, CheckCircle, Download, RefreshCw, BookOpen, Loader2, AlertCircle, Check, Palette, Film } from "lucide-react";
+import type { BoneData, FractureClassificationType, BoneRegion, AIImageAuditRecord } from "../../types";
+import { aiImageAuditRegistry } from "../../data/aiImageAuditRegistry";
+import { 
+  X, Upload, CheckCircle, Download, RefreshCw, BookOpen, Loader2, 
+  AlertCircle, Check, Palette, Film, Sparkles, CheckCheck, XCircle, 
+  Search, Eye, ExternalLink, RotateCcw, Filter
+} from "lucide-react";
 
 interface AdminImageUploaderProps {
   darkMode: boolean;
@@ -27,7 +32,7 @@ export function AdminImageUploader({
   bones,
   onClose,
 }: AdminImageUploaderProps) {
-  const [activeTab, setActiveTab] = useState<"illustrations" | "xrays" | "concepts">("illustrations");
+  const [activeTab, setActiveTab] = useState<"illustrations" | "xrays" | "concepts" | "audit">("illustrations");
   const [selectedBoneId, setSelectedBoneId] = useState<string>(bones[0]?.id || "femur");
   const [selectedRegionId, setSelectedRegionId] = useState<string>("");
   const [selectedSystemIdx, setSelectedSystemIdx] = useState<number>(0);
@@ -35,6 +40,36 @@ export function AdminImageUploader({
   const [xrayUploads, setXrayUploads] = useState<Record<string, UploadItem>>({});
   const [conceptUploads, setConceptUploads] = useState<Record<string, UploadItem>>({});
   const [globalBanner, setGlobalBanner] = useState<{ type: "success" | "error"; message: string } | null>(null);
+
+  // ── AI Image Audit State ──
+  const [auditRecords, setAuditRecords] = useState<AIImageAuditRecord[]>(() => {
+    try {
+      const saved = localStorage.getItem("ortho_ai_image_audit_records");
+      if (saved) return JSON.parse(saved);
+    } catch {}
+    return aiImageAuditRegistry.records;
+  });
+  const [auditStatusFilter, setAuditStatusFilter] = useState<"all" | "pending_review" | "verified" | "rejected">("all");
+  const [auditSearchQuery, setAuditSearchQuery] = useState<string>("");
+  const [zoomedImage, setZoomedImage] = useState<{ url: string; title: string } | null>(null);
+  const [auditUpdatingId, setAuditUpdatingId] = useState<string | null>(null);
+
+  const pendingAuditCount = auditRecords.filter(r => r.status === "pending_review").length;
+
+  const filteredAuditRecords = auditRecords.filter(r => {
+    if (auditStatusFilter !== "all" && r.status !== auditStatusFilter) return false;
+    if (auditSearchQuery.trim()) {
+      const q = auditSearchQuery.toLowerCase();
+      const matchSystem = r.system.toLowerCase().includes(q);
+      const matchType = (r.type || "").toLowerCase().includes(q);
+      const matchBoneEn = (r.boneName?.en || "").toLowerCase().includes(q);
+      const matchBoneTh = (r.boneName?.th || "").toLowerCase().includes(q);
+      const matchNotes = (r.notes || "").toLowerCase().includes(q);
+      const matchSource = (r.source || "").toLowerCase().includes(q);
+      if (!matchSystem && !matchType && !matchBoneEn && !matchBoneTh && !matchNotes && !matchSource) return false;
+    }
+    return true;
+  });
 
   const selectedBone = bones.find(b => b.id === selectedBoneId) || bones[0];
   const regions = selectedBone?.regions || [];
@@ -93,6 +128,55 @@ export function AdminImageUploader({
       reader.onerror = () => resolve({ success: false, error: "Failed to read image file" });
       reader.readAsDataURL(file);
     });
+  };
+
+  // Handler to update review status of AI-added images
+  const handleUpdateAuditStatus = async (recordId: string, newStatus: "pending_review" | "verified" | "rejected") => {
+    setAuditUpdatingId(recordId);
+    try {
+      const res = await fetch("/api/admin/update-audit-status", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          recordId,
+          status: newStatus,
+          reviewedBy: "Orthopedic Surgeon",
+          reviewNotes: newStatus === "verified" ? "Approved by orthopedic surgeon" : newStatus === "rejected" ? "Flagged for revision" : "Reset to pending"
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setAuditRecords(prev => {
+          const updated = prev.map(r => r.id === recordId ? { ...r, ...data.record } : r);
+          try { localStorage.setItem("ortho_ai_image_audit_records", JSON.stringify(updated)); } catch {}
+          return updated;
+        });
+        setGlobalBanner({
+          type: "success",
+          message: `อัปเดตสถานะสำเร็จ: "${newStatus === 'verified' ? 'ผ่านการตรวจสอบ (Verified)' : newStatus === 'rejected' ? 'ปฏิเสธ (Rejected)' : 'รอตรวจสอบ (Pending)'}"`,
+        });
+      } else {
+        throw new Error(data.error);
+      }
+    } catch {
+      // Fallback local state update
+      setAuditRecords(prev => {
+        const updated = prev.map(r => r.id === recordId ? {
+          ...r,
+          status: newStatus,
+          reviewedBy: "Orthopedic Surgeon",
+          reviewedAt: new Date().toISOString()
+        } : r);
+        try { localStorage.setItem("ortho_ai_image_audit_records", JSON.stringify(updated)); } catch {}
+        return updated;
+      });
+      setGlobalBanner({
+        type: "success",
+        message: `อัปเดตสถานะในเครื่องเป็น "${newStatus}" เรียบร้อยแล้ว`,
+      });
+    } finally {
+      setAuditUpdatingId(null);
+    }
   };
 
   // 1. Handle Classification Diagram Illustration Drop
@@ -482,6 +566,28 @@ export function AdminImageUploader({
               </span>
             )}
           </button>
+
+          <button
+            onClick={() => setActiveTab("audit")}
+            style={{
+              background: activeTab === "audit" ? bg : "transparent",
+              color: activeTab === "audit" ? (darkMode ? "#00CED1" : "#0F766E") : muted,
+              borderColor: activeTab === "audit" ? border : "transparent",
+            }}
+            className="flex items-center gap-2 px-4 py-2 rounded-t-xl font-extrabold text-xs border-t border-l border-r -mb-[1px] transition-all cursor-pointer"
+          >
+            <Sparkles size={15} />
+            <span>AI Image Audit (ตรวจสอบภาพ AI)</span>
+            {pendingAuditCount > 0 ? (
+              <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-500 border border-amber-500/30 font-black text-[10px]">
+                {pendingAuditCount} รอตรวจ
+              </span>
+            ) : (
+              <span className="px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 font-bold text-[10px]">
+                All Verified
+              </span>
+            )}
+          </button>
         </div>
 
         {/* Filters Bar */}
@@ -489,77 +595,137 @@ export function AdminImageUploader({
           style={{ background: bg, borderColor: border }}
           className="px-6 py-3 border-b flex flex-wrap items-center gap-3 text-xs flex-shrink-0"
         >
-          {/* Bone Select */}
-          <div className="flex items-center gap-2">
-            <span className="font-bold" style={{ color: muted }}>Bone:</span>
-            <select
-              value={selectedBoneId}
-              onChange={e => {
-                setSelectedBoneId(e.target.value);
-                setSelectedRegionId("");
-                setSelectedSystemIdx(0);
-              }}
-              style={{ background: cardBg, borderColor: border, color: text }}
-              className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
-            >
-              {bones.map(b => (
-                <option key={b.id} value={b.id}>
-                  {b.name[language]} ({b.name.en})
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Region Select */}
-          {activeTab !== "concepts" && regions.length > 0 && (
-            <div className="flex items-center gap-2">
-              <span className="font-bold" style={{ color: muted }}>Region:</span>
-              <select
-                value={selectedRegionId || regions[0]?.id}
-                onChange={e => {
-                  setSelectedRegionId(e.target.value);
-                  setSelectedSystemIdx(0);
-                }}
-                style={{ background: cardBg, borderColor: border, color: text }}
-                className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
-              >
-                {regions.map(r => (
-                  <option key={r.id} value={r.id}>
-                    {r.name[language]}
-                  </option>
+          {activeTab === "audit" ? (
+            /* AI Image Audit Filters */
+            <div className="w-full flex flex-wrap items-center justify-between gap-3">
+              {/* Status Filter Buttons */}
+              <div className="flex items-center gap-1.5 flex-wrap">
+                <span className="font-bold text-slate-500 mr-1 flex items-center gap-1">
+                  <Filter size={13} /> สถานะ:
+                </span>
+                {(["all", "pending_review", "verified", "rejected"] as const).map(st => (
+                  <button
+                    key={st}
+                    onClick={() => setAuditStatusFilter(st)}
+                    className={`px-3 py-1.5 rounded-lg font-bold text-xs transition-all cursor-pointer border ${
+                      auditStatusFilter === st
+                        ? st === "pending_review"
+                          ? "bg-amber-500/20 text-amber-500 border-amber-500/40 shadow-sm"
+                          : st === "verified"
+                          ? "bg-emerald-500/20 text-emerald-500 border-emerald-500/40 shadow-sm"
+                          : st === "rejected"
+                          ? "bg-rose-500/20 text-rose-500 border-rose-500/40 shadow-sm"
+                          : "bg-teal-500/20 text-teal-600 dark:text-teal-300 border-teal-500/40 shadow-sm"
+                        : "border-transparent text-slate-400 hover:bg-slate-500/10"
+                    }`}
+                  >
+                    {st === "all" && `ทั้งหมด (${auditRecords.length})`}
+                    {st === "pending_review" && `⏳ รอการตรวจสอบ (${pendingAuditCount})`}
+                    {st === "verified" && `✅ ผ่านการตรวจ (${auditRecords.filter(r => r.status === "verified").length})`}
+                    {st === "rejected" && `❌ ปฏิเสธ (${auditRecords.filter(r => r.status === "rejected").length})`}
+                  </button>
                 ))}
-              </select>
-            </div>
-          )}
+              </div>
 
-          {/* Classification System Select */}
-          {activeTab !== "concepts" && systems.length > 0 && (
-            <div className="flex items-center gap-2">
-              <span className="font-bold" style={{ color: muted }}>Classification:</span>
-              <select
-                value={selectedSystemIdx}
-                onChange={e => setSelectedSystemIdx(Number(e.target.value))}
-                style={{ background: cardBg, borderColor: border, color: text }}
-                className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
-              >
-                {systems.map((s, idx) => (
-                  <option key={s.system} value={idx}>
-                    {s.system} — {s.fullName[language]}
-                  </option>
-                ))}
-              </select>
+              {/* Search Box */}
+              <div className="flex items-center gap-2">
+                <div
+                  style={{ background: cardBg, borderColor: border }}
+                  className="flex items-center gap-2 px-3 py-1.5 rounded-lg border text-xs"
+                >
+                  <Search size={13} style={{ color: muted }} />
+                  <input
+                    type="text"
+                    placeholder="ค้นหากระดูก, ระบบ, ประเภท..."
+                    value={auditSearchQuery}
+                    onChange={(e) => setAuditSearchQuery(e.target.value)}
+                    className="bg-transparent outline-none text-xs w-52"
+                    style={{ color: text }}
+                  />
+                  {auditSearchQuery && (
+                    <button onClick={() => setAuditSearchQuery("")} className="cursor-pointer text-slate-400 hover:text-white">
+                      <X size={12} />
+                    </button>
+                  )}
+                </div>
+              </div>
             </div>
-          )}
+          ) : (
+            /* Standard Bone/Region/System Selectors */
+            <>
+              {/* Bone Select */}
+              <div className="flex items-center gap-2">
+                <span className="font-bold" style={{ color: muted }}>Bone:</span>
+                <select
+                  value={selectedBoneId}
+                  onChange={e => {
+                    setSelectedBoneId(e.target.value);
+                    setSelectedRegionId("");
+                    setSelectedSystemIdx(0);
+                  }}
+                  style={{ background: cardBg, borderColor: border, color: text }}
+                  className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
+                >
+                  {bones.map(b => (
+                    <option key={b.id} value={b.id}>
+                      {b.name[language]} ({b.name.en})
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-          {/* Download All Button */}
-          {Object.keys(currentUploads).length > 0 && (
-            <button
-              onClick={handleDownloadAll}
-              className="ml-auto px-3.5 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
-            >
-              <Download size={14} />
-              <span>Download Batch Backup ({Object.keys(currentUploads).length})</span>
-            </button>
+              {/* Region Select */}
+              {activeTab !== "concepts" && regions.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <span className="font-bold" style={{ color: muted }}>Region:</span>
+                  <select
+                    value={selectedRegionId || regions[0]?.id}
+                    onChange={e => {
+                      setSelectedRegionId(e.target.value);
+                      setSelectedSystemIdx(0);
+                    }}
+                    style={{ background: cardBg, borderColor: border, color: text }}
+                    className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
+                  >
+                    {regions.map(r => (
+                      <option key={r.id} value={r.id}>
+                        {r.name[language]}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Classification System Select */}
+              {activeTab !== "concepts" && systems.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <span className="font-bold" style={{ color: muted }}>Classification:</span>
+                  <select
+                    value={selectedSystemIdx}
+                    onChange={e => setSelectedSystemIdx(Number(e.target.value))}
+                    style={{ background: cardBg, borderColor: border, color: text }}
+                    className="px-3 py-1.5 rounded-lg border font-semibold outline-none cursor-pointer"
+                  >
+                    {systems.map((s, idx) => (
+                      <option key={s.system} value={idx}>
+                        {s.system} — {s.fullName[language]}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+
+              {/* Download All Button */}
+              {Object.keys(currentUploads).length > 0 && (
+                <button
+                  onClick={handleDownloadAll}
+                  className="ml-auto px-3.5 py-1.5 rounded-lg bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
+                >
+                  <Download size={14} />
+                  <span>Download Batch Backup ({Object.keys(currentUploads).length})</span>
+                </button>
+              )}
+            </>
           )}
         </div>
 
@@ -861,7 +1027,7 @@ export function AdminImageUploader({
                 })}
               </div>
             </>
-          ) : (
+          ) : activeTab === "concepts" ? (
             /* ── TAB 3: Region Anatomy Concepts Grid ── */
             <>
               <div className="flex items-center justify-between">
@@ -1028,8 +1194,273 @@ export function AdminImageUploader({
                 })}
               </div>
             </>
+          ) : (
+            /* ── TAB 4: AI Image Audit & Review ── */
+            <>
+              {/* Header Banner */}
+              <div
+                className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-4 rounded-xl border"
+                style={{ background: cardBg, borderColor: border }}
+              >
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-500 flex-shrink-0">
+                    <Sparkles size={22} />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-extrabold flex items-center gap-2" style={{ color: text }}>
+                      <span>AI-Added Image Audit & Clinical Verification</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-500 font-black">
+                        ระบบตรวจสอบภาพจาก AI
+                      </span>
+                    </h3>
+                    <p className="text-xs mt-0.5 leading-relaxed" style={{ color: muted }}>
+                      รายการภาพรังสีจริงและภาพประกอบที่จัดหาและนำเข้าโดย AI ที่รอการตรวจสอบความถูกต้องทางคลินิก (Clinical Verification) โดยศัลยแพทย์กระดูกและข้อ
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quick Stats Badges */}
+                <div className="flex items-center gap-2 flex-shrink-0 flex-wrap">
+                  <div className="px-3 py-1.5 rounded-lg border text-center min-w-[65px]" style={{ background: bg, borderColor: border }}>
+                    <div className="text-[10px] uppercase font-bold" style={{ color: muted }}>ทั้งหมด</div>
+                    <div className="text-sm font-black" style={{ color: text }}>{auditRecords.length}</div>
+                  </div>
+                  <div className="px-3 py-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 text-center min-w-[65px]">
+                    <div className="text-[10px] uppercase font-bold text-amber-500">รอตรวจ</div>
+                    <div className="text-sm font-black text-amber-500">{pendingAuditCount}</div>
+                  </div>
+                  <div className="px-3 py-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 text-center min-w-[65px]">
+                    <div className="text-[10px] uppercase font-bold text-emerald-500">ผ่านการตรวจ</div>
+                    <div className="text-sm font-black text-emerald-500">{auditRecords.filter(r => r.status === "verified").length}</div>
+                  </div>
+                  <div className="px-3 py-1.5 rounded-lg border border-rose-500/30 bg-rose-500/10 text-center min-w-[65px]">
+                    <div className="text-[10px] uppercase font-bold text-rose-500">ปฏิเสธ</div>
+                    <div className="text-sm font-black text-rose-500">{auditRecords.filter(r => r.status === "rejected").length}</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Records List */}
+              {filteredAuditRecords.length === 0 ? (
+                <div
+                  className="flex flex-col items-center justify-center p-12 text-center rounded-xl border border-dashed"
+                  style={{ borderColor: border, background: cardBg }}
+                >
+                  <CheckCheck size={40} className="text-slate-400 mb-2" />
+                  <div className="font-bold text-sm" style={{ color: text }}>ไม่พบรายการรูปภาพ AI ตามเงื่อนไข</div>
+                  <div className="text-xs mt-1" style={{ color: muted }}>
+                    {auditStatusFilter !== "all" 
+                      ? `ไม่มีรูปภาพในสถานะ "${auditStatusFilter}" หรือลองเปลี่ยนคำค้นหา`
+                      : "ยังไม่มีภาพที่บันทึกไว้ใน Audit Registry"}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-3.5">
+                  {filteredAuditRecords.map((record) => {
+                    const isPending = record.status === "pending_review";
+                    const isVerified = record.status === "verified";
+                    const isRejected = record.status === "rejected";
+                    const isUpdating = auditUpdatingId === record.id;
+
+                    return (
+                      <div
+                        key={record.id}
+                        style={{ background: cardBg, borderColor: isPending ? "rgba(245, 158, 11, 0.4)" : border }}
+                        className={`p-4 rounded-xl border transition-all flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 shadow-sm ${
+                          isPending ? "ring-1 ring-amber-500/20" : ""
+                        }`}
+                      >
+                        {/* Left: Image Thumbnail Preview */}
+                        <div
+                          onClick={() => setZoomedImage({ url: record.imageUrl, title: `${record.system} — ${record.type || record.id}` })}
+                          className="w-28 h-36 sm:w-32 sm:h-40 rounded-lg overflow-hidden border border-slate-700 bg-[#0B0F17] flex-shrink-0 relative group cursor-pointer shadow"
+                        >
+                          <img
+                            src={record.imageUrl}
+                            alt={record.system}
+                            className="w-full h-full object-contain"
+                          />
+                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
+                            <span className="text-[10px] font-bold bg-black/80 px-2 py-1 rounded flex items-center gap-1 shadow">
+                              <Eye size={12} /> คลิกขยาย
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Center: Details */}
+                        <div className="flex-1 min-w-0 flex flex-col gap-2">
+                          {/* Badges row */}
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            <span className="px-2 py-0.5 rounded-md bg-teal-500/15 text-teal-400 border border-teal-500/30 text-[11px] font-black">
+                              {record.system}
+                            </span>
+                            {record.type && (
+                              <span className="px-2 py-0.5 rounded-md bg-cyan-500/15 text-cyan-300 border border-cyan-500/30 text-[11px] font-extrabold">
+                                {record.type}
+                              </span>
+                            )}
+                            <span className="px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700 text-[10px]">
+                              {record.boneName?.[language] || record.boneId} • {record.regionName?.[language] || record.regionId}
+                            </span>
+                            <span className="px-2 py-0.5 rounded-md bg-purple-500/15 text-purple-300 border border-purple-500/30 text-[10px] font-bold">
+                              {record.imageType === "xray" ? "Real X-Ray Radiograph" : "Diagram Illustration"}
+                            </span>
+                          </div>
+
+                          {/* Classification Full Title */}
+                          <div className="font-extrabold text-xs" style={{ color: text }}>
+                            {record.typeName?.[language] || record.typeName?.en || record.type || record.system}
+                          </div>
+
+                          {/* Image Path */}
+                          <div className="flex items-center gap-1.5 text-[11px] font-mono" style={{ color: muted }}>
+                            <span className="font-bold text-slate-400">Path:</span>
+                            <span className="text-slate-300 select-all">{record.imageUrl}</span>
+                          </div>
+
+                          {/* Source & Citation */}
+                          <div className="flex items-start gap-1.5 text-[11px]" style={{ color: muted }}>
+                            <BookOpen size={13} className="text-teal-400 flex-shrink-0 mt-0.5" />
+                            <span><strong className="text-slate-400">แหล่งอ้างอิง:</strong> {record.source}</span>
+                          </div>
+
+                          {/* Clinical Notes */}
+                          {record.notes && (
+                            <div className="p-2 rounded-lg bg-black/25 border border-slate-800 text-[11px] leading-relaxed" style={{ color: muted }}>
+                              <strong className="text-slate-300">หมายเหตุ AI / การตัดแต่ง:</strong> {record.notes}
+                            </div>
+                          )}
+
+                          {/* Review Info */}
+                          <div className="flex flex-wrap items-center gap-3 text-[10px] text-slate-500">
+                            <span>เพิ่มโดย: <strong className="text-slate-400">{record.addedBy}</strong> ({new Date(record.addedAt).toLocaleDateString()})</span>
+                            {record.reviewedBy && (
+                              <span>ผู้ตรวจ: <strong className="text-emerald-400">{record.reviewedBy}</strong> ({new Date(record.reviewedAt || "").toLocaleDateString()})</span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Right: Status & Action Buttons */}
+                        <div
+                          className="flex lg:flex-col items-end lg:items-end justify-between w-full lg:w-48 gap-3 border-t lg:border-t-0 pt-3 lg:pt-0 flex-shrink-0"
+                          style={{ borderColor: border }}
+                        >
+                          {/* Status Badge */}
+                          <div>
+                            {isPending && (
+                              <span className="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-500 border border-amber-500/40 text-xs font-black flex items-center gap-1 shadow-sm animate-pulse">
+                                ⏳ รอการตรวจสอบ
+                              </span>
+                            )}
+                            {isVerified && (
+                              <span className="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-xs font-black flex items-center gap-1 shadow-sm">
+                                <CheckCheck size={14} /> ผ่านการตรวจแล้ว
+                              </span>
+                            )}
+                            {isRejected && (
+                              <span className="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-400 border border-rose-500/40 text-xs font-black flex items-center gap-1 shadow-sm">
+                                <XCircle size={14} /> ปฏิเสธ / ต้องแก้ไข
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Action Buttons */}
+                          <div className="flex flex-col gap-1.5 w-full">
+                            <button
+                              disabled={isVerified || isUpdating}
+                              onClick={() => handleUpdateAuditStatus(record.id, "verified")}
+                              className={`w-full py-1.5 px-3 rounded-lg text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                                isVerified
+                                  ? "opacity-50 cursor-not-allowed bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                                  : "bg-emerald-600 hover:bg-emerald-500 text-white shadow hover:shadow-emerald-500/20"
+                              }`}
+                            >
+                              {isUpdating ? <Loader2 size={13} className="animate-spin" /> : <CheckCircle size={13} />}
+                              <span>{isVerified ? "ยืนยันแล้ว" : "ยืนยัน (Verify)"}</span>
+                            </button>
+
+                            <button
+                              disabled={isRejected || isUpdating}
+                              onClick={() => handleUpdateAuditStatus(record.id, "rejected")}
+                              className={`w-full py-1.5 px-3 rounded-lg text-xs font-extrabold flex items-center justify-center gap-1.5 transition-all cursor-pointer ${
+                                isRejected
+                                  ? "opacity-50 cursor-not-allowed bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                                  : "bg-rose-950/60 hover:bg-rose-900/80 text-rose-300 border border-rose-800/60"
+                              }`}
+                            >
+                              <XCircle size={13} />
+                              <span>{isRejected ? "ปฏิเสธแล้ว" : "ปฏิเสธ (Reject)"}</span>
+                            </button>
+
+                            {!isPending && (
+                              <button
+                                disabled={isUpdating}
+                                onClick={() => handleUpdateAuditStatus(record.id, "pending_review")}
+                                className="w-full py-1 px-2 text-[10px] text-slate-400 hover:text-slate-200 hover:underline flex items-center justify-center gap-1 cursor-pointer"
+                              >
+                                <RotateCcw size={10} />
+                                <span>รีเซ็ตเป็นรอตรวจสอบ</span>
+                              </button>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </>
           )}
         </div>
+
+        {/* Full Image Zoom Modal */}
+        {zoomedImage && (
+          <div
+            style={{
+              position: "fixed",
+              top: 0, left: 0, right: 0, bottom: 0,
+              background: "rgba(0,0,0,0.88)",
+              zIndex: 9999999,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              padding: 16
+            }}
+            onClick={() => setZoomedImage(null)}
+          >
+            <div
+              style={{ background: cardBg, borderColor: border }}
+              className="max-w-2xl max-h-[90vh] p-4 rounded-2xl border shadow-2xl flex flex-col gap-3 relative"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between border-b pb-2" style={{ borderColor: border }}>
+                <span className="font-extrabold text-sm text-teal-400">{zoomedImage.title}</span>
+                <button
+                  onClick={() => setZoomedImage(null)}
+                  className="p-1 rounded-lg hover:bg-slate-700 text-slate-300 cursor-pointer"
+                >
+                  <X size={18} />
+                </button>
+              </div>
+              <div className="flex items-center justify-center bg-black/90 rounded-xl overflow-hidden p-2 max-h-[75vh]">
+                <img
+                  src={zoomedImage.url}
+                  alt={zoomedImage.title}
+                  className="max-h-[70vh] max-w-full object-contain rounded"
+                />
+              </div>
+              <div className="flex items-center justify-between text-xs font-mono" style={{ color: muted }}>
+                <span>{zoomedImage.url}</span>
+                <a
+                  href={zoomedImage.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-teal-400 hover:underline flex items-center gap-1 font-sans font-bold"
+                >
+                  <ExternalLink size={12} /> Open in new tab
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Footer */}
         <div

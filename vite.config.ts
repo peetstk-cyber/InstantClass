@@ -133,6 +133,40 @@ function adminSaveApiPlugin(): Plugin {
           }
           return;
         }
+
+        if (req.url === '/api/admin/update-audit-status' && req.method === 'POST') {
+          try {
+            let bodyStr = '';
+            for await (const chunk of req) {
+              bodyStr += chunk;
+            }
+            const { recordId, status, reviewedBy, reviewNotes } = JSON.parse(bodyStr);
+            const registryPath = path.resolve(process.cwd(), 'src/data/aiImageAuditRegistry.json');
+            if (fs.existsSync(registryPath)) {
+              const registry = JSON.parse(fs.readFileSync(registryPath, 'utf-8'));
+              const record = registry.records.find((r: any) => r.id === recordId);
+              if (record) {
+                record.status = status;
+                record.reviewedBy = reviewedBy || 'Orthopedic Surgeon';
+                record.reviewedAt = new Date().toISOString();
+                if (reviewNotes) record.reviewNotes = reviewNotes;
+                registry.lastUpdated = new Date().toISOString();
+                fs.writeFileSync(registryPath, JSON.stringify(registry, null, 2), 'utf-8');
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ success: true, record }));
+                return;
+              }
+            }
+            res.statusCode = 404;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ success: false, error: 'Record not found' }));
+          } catch (err: any) {
+            res.statusCode = 500;
+            res.setHeader('Content-Type', 'application/json');
+            res.end(JSON.stringify({ success: false, error: err.message }));
+          }
+          return;
+        }
         next();
       });
     }

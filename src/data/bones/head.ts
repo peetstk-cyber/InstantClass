@@ -62,17 +62,6 @@ export const headBone: BoneData = {
               "en": "Standard radiographic reference arcs on OM/Waters view to detect orbital, zygomatic, and maxillary disruptions.",
               "th": "เส้นโค้งอ้างอิงบนฟิล์มท่า OM/Waters เพื่อตรวจจับรอยหักบริเวณเบ้าตา โหนกแก้ม และขากรรไกรบน"
             }
-          },
-          {
-            "url": "/images/xrays/head/lefort_1.png",
-            "title": {
-              "en": "Waters / OM View Radiograph",
-              "th": "ฟิล์มเอกซเรย์ท่า Waters (OM View)"
-            },
-            "caption": {
-              "en": "Dedicated 30-degree occipitomental projection optimal for evaluating midface and paranasal sinuses.",
-              "th": "ภาพฉายท่า Occipitomental 30 องศาเพื่อตรวจประเมินกระดูกใบหน้าส่วนกลางและโพรงอากาศพารานาซัล"
-            }
           }
         ]
       },

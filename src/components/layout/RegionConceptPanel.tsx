@@ -48,20 +48,26 @@ export function RegionConceptPanel({
   const cardBorder = darkMode ? "rgba(255,255,255,0.07)" : "#E2E8F0";
 
   // ── Normalize raw images from concept ──
+  // The concept panel is strictly for anatomical diagrams and clinical concepts, NOT real clinical X-rays
+  const isExcludedUrl = (url: string) => {
+    const lower = url.toLowerCase();
+    return lower.includes("/xrays/") || lower.includes("/investigations/") || lower.endsWith("_xray.jpg") || lower.endsWith("_xray.png");
+  };
+
   const rawImages: RegionConceptImage[] = [];
   if (concept.images && concept.images.length > 0) {
     concept.images.forEach(item => {
       if (typeof item === "string") {
-        if (item.trim()) rawImages.push({ url: item.trim() });
-      } else if (item && item.url) {
+        if (item.trim() && !isExcludedUrl(item)) rawImages.push({ url: item.trim() });
+      } else if (item && item.url && !isExcludedUrl(item.url)) {
         rawImages.push(item);
       }
     });
   } else if (concept.imageUrls && concept.imageUrls.length > 0) {
     concept.imageUrls.forEach(url => {
-      if (url && url.trim()) rawImages.push({ url: url.trim() });
+      if (url && url.trim() && !isExcludedUrl(url)) rawImages.push({ url: url.trim() });
     });
-  } else if (concept.imageUrl) {
+  } else if (concept.imageUrl && !isExcludedUrl(concept.imageUrl)) {
     rawImages.push({ url: concept.imageUrl.trim() });
   } else {
     // Default regional concept diagram fallback

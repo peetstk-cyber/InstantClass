@@ -797,6 +797,7 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_1.png",
+              "xrayUrl": "/images/xrays/clavicle/allman_group_1_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse, oblique, or comminuted fracture line in the middle third of the clavicle shaft.",
                 "th": "เห็นรอยหักขวาง เฉียง หรือแตกละเอียดบริเวณ 1/3 ส่วนกลางของลำกระดูกไหปลาร้า"
@@ -860,6 +861,7 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_2.png",
+              "xrayUrl": "/images/xrays/clavicle/allman_group_2_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line in the distal 1/3 of clavicle lateral to the coracoid process with variable CC ligament disruption.",
                 "th": "เห็นรอยหักบริเวณ 1/3 ส่วนปลายของกระดูกไหปลาร้า อยู่ถัดไปทางด้านนอกต่อกระดูก Coracoid process"
@@ -923,6 +925,7 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/allman_clavicle/allman_group_3.png",
+              "xrayUrl": "/images/xrays/clavicle/allman_group_3_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line in the proximal 1/3 medial end of clavicle near sternoclavicular articulation.",
                 "th": "เห็นรอยหักบริเวณ 1/3 ส่วนต้นด้านในใกล้กับข้อต่อ Sternoclavicular"

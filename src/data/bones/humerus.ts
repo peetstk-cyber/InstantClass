@@ -819,30 +819,6 @@ export const humerusBone: BoneData = {
             "en": "Functional bracing (Sarmiento brace) relies on hydrostat pressure of arm musculature and gravity; patient must remain upright during initial healing.",
             "th": "การรักษาด้วย Sarmiento brace อาศัยแรงดันน้ำในกล้ามเนื้อและแรงโน้มถ่วง ผู้ป่วยต้องนั่งหรือยืนตัวตรงในช่วงแรกของการรักษา"
           }
-        ],
-        "images": [
-          {
-            "url": "/images/xrays/humerus/middle_13_xray.jpg",
-            "title": {
-              "en": "Midshaft Diaphyseal Radiograph",
-              "th": "ฟิล์มเอกซเรย์ลำกระดูกต้นแขนส่วนกลาง"
-            },
-            "caption": {
-              "en": "Full-length AP view demonstrating displaced transverse-oblique fracture with varus shortening and intact joint visualization.",
-              "th": "ภาพเอกซเรย์ AP เต็มความยาวกระดูกต้นแขน แสดงรอยหักกลางก้านกระดูกร่วมกับมุมเอียง Varus และหดสั้น"
-            }
-          },
-          {
-            "url": "/images/xrays/humerus/holstein_lewis_xray.jpg",
-            "title": {
-              "en": "Holstein-Lewis Distal Spiral Pattern",
-              "th": "รอยหักเกลียว Holstein-Lewis ส่วนปลาย 1/3"
-            },
-            "caption": {
-              "en": "Spiral fracture of distal third diaphysis with radial spike into lateral intermuscular septum (up to 22% radial nerve entrapment).",
-              "th": "รอยหักบิดเกลียวส่วนปลาย 1/3 ที่มีปลายกระดูกแหลมเฉียงออกด้านข้างเสี่ยงหนีบเส้นประสาทเรเดียลสูงถึง 22%"
-            }
-          }
         ]
       },
       "classifications": [

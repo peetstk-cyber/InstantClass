@@ -131,3 +131,32 @@ export interface BoneData {
   regions: BoneRegion[];
   pediatric: boolean;
 }
+
+// ─── AI Image Audit Registry ────────────────────────────────────────────────
+
+export interface AIImageAuditRecord {
+  id: string;
+  boneId: string;
+  boneName?: Translation;
+  regionId: string;
+  regionName?: Translation;
+  system: string;
+  type?: string;
+  typeName?: Translation;
+  imageType: "xray" | "illustration" | "concept" | "investigation";
+  imageUrl: string;
+  addedBy: string;
+  addedAt: string;
+  source: string;
+  status: "pending_review" | "verified" | "rejected";
+  notes?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
+  reviewNotes?: string;
+}
+
+export interface AIImageAuditRegistry {
+  version: string;
+  lastUpdated: string;
+  records: AIImageAuditRecord[];
+}

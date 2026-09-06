@@ -1,0 +1,162 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-09-06T18:50:00Z",
+  "records": [
+    {
+      "id": "tibia_pilon_type1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Plafond",
+        "th": "ปลายกระดูกหน้าแข้งและผิวข้อเท้า"
+      },
+      "system": "Pilon Fracture",
+      "type": "Type I",
+      "typeName": {
+        "en": "Type I (Cleavage / Non-displaced Plafond)",
+        "th": "Type I (รอยหักผิวข้อไม่เคลื่อน / Cleavage Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/ruedi_allgower/type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T18:48:00Z",
+      "source": "Clinical Orthopaedics and Related Research (CORR) / PMC5449320 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "Cropped from Figure 1A, cleared letter label, non-displaced distal tibia cleavage fracture."
+    },
+    {
+      "id": "tibia_pilon_type2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Plafond",
+        "th": "ปลายกระดูกหน้าแข้งและผิวข้อเท้า"
+      },
+      "system": "Pilon Fracture",
+      "type": "Type II",
+      "typeName": {
+        "en": "Type II (Displaced without Central Impaction)",
+        "th": "Type II (รอยหักผิวข้อเคลื่อนหลุด แต่ไม่มีกระดูกยุบอัดแน่น)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/ruedi_allgower/type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T18:48:00Z",
+      "source": "Clinical Orthopaedics and Related Research (CORR) / PMC5449320 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Cropped from Figure 2A, cleared letter label, displaced intra-articular pilon fracture with distinct fragment separation."
+    },
+    {
+      "id": "tibia_pilon_type3_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Plafond",
+        "th": "ปลายกระดูกหน้าแข้งและผิวข้อเท้า"
+      },
+      "system": "Pilon Fracture",
+      "type": "Type III",
+      "typeName": {
+        "en": "Type III (Comminuted with Central Impaction)",
+        "th": "Type III (รอยหักแตกละเอียด ยุบอัดแน่น และกระดูกพรุนสลาย)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/ruedi_allgower/type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T18:48:00Z",
+      "source": "Clinical Orthopaedics and Related Research (CORR) / PMC5449320 (Fig. 3A)",
+      "status": "pending_review",
+      "notes": "Cropped from Figure 3A, cleared letter label, comminuted distal tibia pilon fracture with impacted articular surface."
+    },
+    {
+      "id": "clavicle_allman_group_1_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Allman",
+      "type": "Group I",
+      "typeName": {
+        "en": "Group I: Middle Third (Midshaft) Fracture (~80%)",
+        "th": "Group I: ส่วนกลางลำกระดูก (Midshaft Fracture - พบบ่อยที่สุด ~80%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/clavicle/allman_group_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T20:05:00Z",
+      "source": "Wikimedia Commons / Dr. med. Wolfgang Dähn (CC BY-SA 3.0)",
+      "status": "pending_review",
+      "notes": "High-resolution AP radiograph of displaced midshaft clavicle fracture with inferior displacement of distal fragment and superior displacement of proximal fragment."
+    },
+    {
+      "id": "clavicle_allman_group_2_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Allman",
+      "type": "Group II",
+      "typeName": {
+        "en": "Group II: Distal (Lateral Third) Fracture (~15%)",
+        "th": "Group II: ส่วนปลายด้านนอก (Distal / Lateral Third ~15%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/clavicle/allman_group_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T20:05:00Z",
+      "source": "Clin Orthop Surg / PMC7237254 (Fig. 3A)",
+      "status": "pending_review",
+      "notes": "Cropped from Fig. 3A, cleaned corner label. AP radiograph showing displaced unstable fracture of the distal lateral third of the clavicle with coracoclavicular disruption."
+    },
+    {
+      "id": "clavicle_allman_group_3_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Allman",
+      "type": "Group III",
+      "typeName": {
+        "en": "Group III: Proximal (Medial Third) Fracture (~5%)",
+        "th": "Group III: ส่วนต้นด้านใน (Proximal / Medial Third ~5%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/clavicle/allman_group_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T20:05:00Z",
+      "source": "Journal of Orthopaedic Case Reports / PMC5245927 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "AP chest and clavicle plain radiograph demonstrating acute medial-end third clavicle fracture near the sternoclavicular joint."
+    }
+  ]
+}
