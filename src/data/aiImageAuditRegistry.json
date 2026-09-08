@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-09-06T18:50:00Z",
+  "lastUpdated": "2026-09-08T16:50:00Z",
   "records": [
     {
       "id": "tibia_pilon_type1_xray",
@@ -157,6 +157,1878 @@
       "source": "Journal of Orthopaedic Case Reports / PMC5245927 (Fig. 1)",
       "status": "pending_review",
       "notes": "AP chest and clavicle plain radiograph demonstrating acute medial-end third clavicle fracture near the sternoclavicular joint."
+    },
+    {
+      "id": "tibia_schatzker_type1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker I",
+      "typeName": {
+        "en": "Schatzker Type I (Pure Split)",
+        "th": "Schatzker Type I (หักแยกฝั่งนอก - Pure Split)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Scientific Data / PlaTiF Dataset / PMC12905147 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP knee radiograph demonstrating vertical cleavage split fracture line through the lateral tibial plateau without central depression."
+    },
+    {
+      "id": "tibia_schatzker_type2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker II",
+      "typeName": {
+        "en": "Schatzker Type II (Split-Depression)",
+        "th": "Schatzker Type II (หักแยกร่วมกับผิวยุบฝั่งนอก)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Scientific Data / PlaTiF Dataset / PMC12905147 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP knee radiograph showing classic split-depression fracture with lateral cortical wedge separation and depressed central articular surface."
+    },
+    {
+      "id": "tibia_schatzker_type3_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker III",
+      "typeName": {
+        "en": "Schatzker Type III (Pure Depression)",
+        "th": "Schatzker Type III (ผิวยุบฝั่งนอกบริสุทธิ์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Scientific Data / PlaTiF Dataset / PMC12905147 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP knee radiograph demonstrating pure central depression of the lateral tibial plateau articular surface with intact lateral cortical rim."
+    },
+    {
+      "id": "tibia_schatzker_type4_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker IV",
+      "typeName": {
+        "en": "Schatzker Type IV (Medial Plateau)",
+        "th": "Schatzker Type IV (หักฝั่งใน - Medial Plateau)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Scientific Data / PlaTiF Dataset / PMC12905147 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP knee radiograph demonstrating medial tibial plateau fracture extending through the medial condyle into the tibial spine."
+    },
+    {
+      "id": "tibia_schatzker_type5_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker V",
+      "typeName": {
+        "en": "Schatzker Type V (Bicondylar)",
+        "th": "Schatzker Type V (หักสองฝั่ง - Bicondylar)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type5_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Scientific Data / PlaTiF Dataset / PMC12905147 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP knee radiograph showing bicondylar tibial plateau fracture with both medial and lateral condylar splits and intact metaphyseal shaft continuity."
+    },
+    {
+      "id": "tibia_schatzker_type6_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "proximal",
+      "regionName": {
+        "en": "Proximal Tibia & Knee",
+        "th": "ส่วนต้นกระดูกหน้าแข้งและข้อเข่า"
+      },
+      "system": "Schatzker",
+      "type": "Schatzker VI",
+      "typeName": {
+        "en": "Schatzker Type VI (Metaphyseal-Diaphyseal Separation)",
+        "th": "Schatzker Type VI (หักสองฝั่งร่วมกับแกนกระดูกหลุดแยก)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/schatzker/schatzker_type6_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:10:00Z",
+      "source": "Orthop Rev (Pavia) / PMC13464399 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Preoperative AP knee radiograph demonstrating high-energy Schatzker VI bicondylar fracture with complete dissociation between the articular plateau and the tibial diaphysis."
+    },
+    {
+      "id": "forearm_radial_head_mason_1_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "radial-head",
+      "regionName": {
+        "en": "Radial Head",
+        "th": "หัวกระดูกข้อศอก (Radial Head)"
+      },
+      "system": "Mason",
+      "type": "Mason I",
+      "typeName": {
+        "en": "Mason Type I (Non-displaced)",
+        "th": "Mason Type I (ไม่เคลื่อนตัว - ไม่ติดขัดการหมุน)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mason/mason_type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:26:00Z",
+      "source": "Wikimedia Commons / Dr. med. Dirk-André Clevert (CC BY-SA 3.0)",
+      "status": "pending_review",
+      "notes": "High-resolution AP elbow plain radiograph demonstrating fine vertical non-displaced fracture line (<2mm) at the lateral radial head articular margin. Cleaned arrow marker."
+    },
+    {
+      "id": "forearm_radial_head_mason_2_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "radial-head",
+      "regionName": {
+        "en": "Radial Head",
+        "th": "หัวกระดูกข้อศอก (Radial Head)"
+      },
+      "system": "Mason",
+      "type": "Mason II",
+      "typeName": {
+        "en": "Mason Type II (Displaced >2mm / Marginal Block)",
+        "th": "Mason Type II (เคลื่อนตัว >2มม. - อาจมีข้อขัด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mason/mason_type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:26:00Z",
+      "source": "Frontiers in Surgery / PMC13337401 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "Preoperative AP radiograph of 42-year-old male demonstrating displaced marginal radial head fracture (>2 mm displacement and articular step-off). Cleaned orientation marker."
+    },
+    {
+      "id": "forearm_radial_head_mason_3_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "radial-head",
+      "regionName": {
+        "en": "Radial Head",
+        "th": "หัวกระดูกข้อศอก (Radial Head)"
+      },
+      "system": "Mason",
+      "type": "Mason III",
+      "typeName": {
+        "en": "Mason Type III (Comminuted Entire Head)",
+        "th": "Mason Type III (แตกละเอียดทั้งหัวกระดูก - ข้อขัดรุนแรง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mason/mason_type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:26:00Z",
+      "source": "Wikimedia Commons / Dr. med. Gaillard, Hellerhoff (CC BY-SA 3.0)",
+      "status": "pending_review",
+      "notes": "High-resolution AP elbow plain radiograph demonstrating severely comminuted and impacted radial head and neck fracture involving the entire head articular surface."
+    },
+    {
+      "id": "forearm_radial_head_mason_4_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "radial-head",
+      "regionName": {
+        "en": "Radial Head",
+        "th": "หัวกระดูกข้อศอก (Radial Head)"
+      },
+      "system": "Mason",
+      "type": "Mason IV",
+      "typeName": {
+        "en": "Mason Type IV (Fracture + Elbow Dislocation)",
+        "th": "Mason Type IV (กระดูกหักร่วมกับข้อศอกหลุด - Unstable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mason/mason_type4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T21:26:00Z",
+      "source": "Trauma Case Reports / PMC11938039 (Fig. 3)",
+      "status": "pending_review",
+      "notes": "AP elbow plain radiograph demonstrating radial head fracture accompanied by gross posterolateral ulnohumeral and radiocapitellar joint dislocation (Mason Type IV)."
+    },
+    {
+      "id": "clavicle_rockwood_type1_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type I",
+      "typeName": {
+        "en": "Type I (AC Sprain, Normal Radiograph)",
+        "th": "Type I (เอ็น AC บาดเจ็บเล็กน้อย ภาพถ่ายรังสีปกติ)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "Archives of Orthopaedic and Trauma Surgery (AOTS) / Zanca Radiograph (Contralateral Normal)",
+      "status": "pending_review",
+      "notes": "Anteroposterior shoulder radiograph demonstrating intact and anatomical alignment of the acromioclavicular joint, normal coracoclavicular distance (<1.3 cm), and preserved joint space (Rockwood Type I)."
+    },
+    {
+      "id": "clavicle_rockwood_type2_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type II",
+      "typeName": {
+        "en": "Type II (Subluxation <25% Clavicle Elevation)",
+        "th": "Type II (เอ็น AC ขาด ไหปลาร้ายกลอยขึ้น < 25%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "Frontiers in Surgery / PMC13427042 (Fig. 3a)",
+      "status": "pending_review",
+      "notes": "Preoperative plain AP radiograph of left shoulder demonstrating subtle cranial step-off and subluxation of distal clavicle (<25% of clavicle height) relative to acromion with intact coracoclavicular interval (Rockwood Type II)."
+    },
+    {
+      "id": "clavicle_rockwood_type3_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type III",
+      "typeName": {
+        "en": "Type III (Dislocation 25%–100% Elevation)",
+        "th": "Type III (เอ็น AC และ CC ขาดทั้งหมด ไหปลาร้ายกลอยขึ้น 25%–100%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "Wikimedia Commons / Dr. med. Hellerhoff (Tossy-III right, CC BY-SA 3.0)",
+      "status": "pending_review",
+      "notes": "High-resolution AP right shoulder radiograph demonstrating complete acromioclavicular dislocation with superior elevation of distal clavicle relative to acromion (25%–100%) and widened coracoclavicular space (Rockwood Type III / Tossy III)."
+    },
+    {
+      "id": "clavicle_rockwood_type4_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type IV",
+      "typeName": {
+        "en": "Type IV (Posterior Displacement into Trapezius)",
+        "th": "Type IV (ไหปลาร้าเคลื่อนหลุดไปด้านหลังทะลุเข้ากล้ามเนื้อ Trapezius)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "BMC Musculoskeletal Disorders / PMC12506243 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Preoperative 3D computed tomographic radiographic evaluation of left shoulder demonstrating posterior displacement and buttonholing of the distal clavicle behind the acromion into the trapezius muscle (Rockwood Type IV)."
+    },
+    {
+      "id": "clavicle_rockwood_type5_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type V",
+      "typeName": {
+        "en": "Type V (Severe Superior Displacement >100%–300%)",
+        "th": "Type V (ไหปลาร้ายกลอยสูงมาก >100%–300% พังผืด Deltotrapezial ฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type5_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "JSES International / PMC13273554 (Fig. 2b)",
+      "status": "pending_review",
+      "notes": "Anteroposterior radiograph of right shoulder demonstrating gross superior migration of distal clavicle (>100% elevation) with marked widening of the coracoclavicular interval (>25 mm) and stripped deltotrapezial fascia (Rockwood Type V)."
+    },
+    {
+      "id": "clavicle_rockwood_type6_xray",
+      "boneId": "clavicle",
+      "boneName": {
+        "en": "Clavicle",
+        "th": "กระดูกไหปลาร้า"
+      },
+      "regionId": "ac-joint",
+      "regionName": {
+        "en": "Clavicle & AC Joint",
+        "th": "กระดูกไหปลาร้าและข้อต่อ AC Joint"
+      },
+      "system": "Rockwood",
+      "type": "Type VI",
+      "typeName": {
+        "en": "Type VI (Inferior Subcoracoid Dislocation)",
+        "th": "Type VI (ไหปลาร้าเคลื่อนหลุดลงล่างไปติดใต้กระดูก Coracoid)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/rockwood/type6_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T22:45:00Z",
+      "source": "Trauma Case Reports / PMC9860183 (Fig. 2)",
+      "status": "pending_review",
+      "notes": "Plain AP radiograph of left shoulder demonstrating pathognomonic inferior displacement of the distal clavicle locked underneath the coracoid process (Rockwood Type VI subcoracoid dislocation)."
+    },
+    {
+      "id": "pelvis_young_burgess_apc1_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "APC-I",
+      "typeName": {
+        "en": "APC-I (Anterior-Posterior Compression I)",
+        "th": "APC-I (แรงอัดหน้าหลัง - มั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/apc1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Turkish Journal of Trauma and Emergency Surgery / PMC13112144 (Fig. 2a)",
+      "status": "pending_review",
+      "notes": "Preoperative anteroposterior pelvic radiograph demonstrating mild symphyseal widening (<2 cm) with intact posterior sacroiliac ligaments and preserved vertical symmetry (APC-I)."
+    },
+    {
+      "id": "pelvis_young_burgess_apc2_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "APC-II",
+      "typeName": {
+        "en": "APC-II (Open Book Pelvis)",
+        "th": "APC-II (เชิงกรานเปิดอ้าแบบ Open Book - ไม่มั่นคงด้านหมุน)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/apc2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Turkish Journal of Trauma and Emergency Surgery / PMC13112144 (Fig. 3a)",
+      "status": "pending_review",
+      "notes": "Preoperative anteroposterior pelvic radiograph displaying classic 'open book' pubic symphysis diastasis (>2 cm) with anterior sacroiliac joint widening and intact posterior hinge (APC-II)."
+    },
+    {
+      "id": "pelvis_young_burgess_apc3_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "APC-III",
+      "typeName": {
+        "en": "APC-III (Complete SI Disruption)",
+        "th": "APC-III (ข้อ SI หลุดฉีกขาดสมบูรณ์ - ไม่มั่นคงรุนแรงที่สุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/apc3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Turkish Journal of Trauma and Emergency Surgery / PMC13112144 (Fig. 5a)",
+      "status": "pending_review",
+      "notes": "Preoperative anteroposterior pelvic radiograph showing complete disruption of the pubic symphysis and unilateral complete sacroiliac joint separation, characteristic of a floating hemipelvis (APC-III)."
+    },
+    {
+      "id": "pelvis_young_burgess_lc1_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "LC-I",
+      "typeName": {
+        "en": "LC-I (Lateral Compression I)",
+        "th": "LC-I (แรงบีบด้านข้าง - กระดูก Sacrum อัดแน่น)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/lc1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Trauma Case Reports / PMC12166886 (Fig. 3A)",
+      "status": "pending_review",
+      "notes": "Anteroposterior pelvic radiograph demonstrating lateral compression injury with ipsilateral impacted/buckled sacral ala compression fracture and transverse anterior pubic rami fractures (LC-I)."
+    },
+    {
+      "id": "pelvis_young_burgess_lc2_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "LC-II",
+      "typeName": {
+        "en": "LC-II (Ipsilateral Crescent Fracture)",
+        "th": "LC-II (แรงบีบด้านข้าง - ปีกกระดูก Iliac หักเสี้ยวพระจันทร์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/lc2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Cureus / PMC13380300 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "Preoperative anteroposterior pelvic radiograph demonstrating pathognomonic crescent iliac wing fracture line extending into the sacroiliac joint with internal rotational deformity of the hemipelvis (LC-II)."
+    },
+    {
+      "id": "pelvis_young_burgess_lc3_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "LC-III",
+      "typeName": {
+        "en": "LC-III (Windswept Pelvis - Contralateral Open Book)",
+        "th": "LC-III (แรงบีบด้านข้างแบบ Windswept - เชิงกรานบิดเฉียดลม)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/lc3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "Trauma Case Reports / PMC13223958 (Fig. 1a)",
+      "status": "pending_review",
+      "notes": "Anteroposterior pelvic radiograph demonstrating windswept pelvis: ipsilateral lateral compression / crescent injury with internal rotation and contralateral external-rotation open-book sacroiliac joint diastasis (LC-III)."
+    },
+    {
+      "id": "pelvis_young_burgess_vs_xray",
+      "boneId": "pelvis",
+      "boneName": {
+        "en": "Pelvis",
+        "th": "กระดูกเชิงกราน"
+      },
+      "regionId": "ring",
+      "regionName": {
+        "en": "Pelvic Ring",
+        "th": "วงกระดูกเชิงกราน"
+      },
+      "system": "Young-Burgess",
+      "type": "VS",
+      "typeName": {
+        "en": "VS (Vertical Shear)",
+        "th": "VS (แรงเฉือนแนวตั้ง - ไม่มั่นคงอย่างรุนแรง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/young_burgess/vs_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T23:20:00Z",
+      "source": "BMC Musculoskeletal Disorders / PMC12063314 (Fig. 1b)",
+      "status": "pending_review",
+      "notes": "Preoperative anteroposterior pelvic radiograph showing complete vertical shear displacement (Tile C1-3 / Young-Burgess VS) with cranial migration of the hemipelvis and vertical step-off at the anterior pubic rami and posterior sacroiliac complex."
+    },
+    {
+      "id": "humerus_ao_ota_13_type_a_xray",
+      "boneId": "humerus",
+      "boneName": {
+        "en": "Humerus",
+        "th": "กระดูกต้นแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Humerus",
+        "th": "ปลายกระดูกต้นแขน"
+      },
+      "system": "AO/OTA 13",
+      "type": "Type A",
+      "typeName": {
+        "en": "Type 13-A (Extra-articular)",
+        "th": "Type 13-A (กระดูกหักนอกข้อ / Extra-articular)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_humerus/type_a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Cureus / PMC12515018 (Fig. 2)",
+      "status": "pending_review",
+      "notes": "AP and lateral radiographs demonstrating extra-articular distal humerus supracondylar fracture with intact articular condyles (AO/OTA 13-A)."
+    },
+    {
+      "id": "humerus_ao_ota_13_type_b_xray",
+      "boneId": "humerus",
+      "boneName": {
+        "en": "Humerus",
+        "th": "กระดูกต้นแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Humerus",
+        "th": "ปลายกระดูกต้นแขน"
+      },
+      "system": "AO/OTA 13",
+      "type": "Type B",
+      "typeName": {
+        "en": "Type 13-B (Partial Articular)",
+        "th": "Type 13-B (รอยหักผ่านผิวข้อบางส่วน / Partial Articular)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_humerus/type_b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Trauma Case Reports / PMC13262163 (Fig. 8)",
+      "status": "pending_review",
+      "notes": "AP and lateral radiographs showing coronal shear partial articular capitellar fracture of the distal humerus (AO/OTA 13-B)."
+    },
+    {
+      "id": "humerus_ao_ota_13_type_c_xray",
+      "boneId": "humerus",
+      "boneName": {
+        "en": "Humerus",
+        "th": "กระดูกต้นแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Humerus",
+        "th": "ปลายกระดูกต้นแขน"
+      },
+      "system": "AO/OTA 13",
+      "type": "Type C",
+      "typeName": {
+        "en": "Type 13-C (Complete Articular)",
+        "th": "Type 13-C (รอยหักผ่านผิวข้อสมบูรณ์ / Complete Articular)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_humerus/type_c_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "World Journal of Orthopedics / PMC12754414 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "AP and lateral radiographs displaying complete articular bicondylar intercondylar T/Y fracture with metadiaphyseal dissociation (AO/OTA 13-C)."
+    },
+    {
+      "id": "femur_evans_nondisplaced_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "intertrochanteric",
+      "regionName": {
+        "en": "Intertrochanteric",
+        "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "system": "Evans Classification",
+      "type": "Non-displaced",
+      "typeName": {
+        "en": "Non-displaced Fracture (Stable)",
+        "th": "กระดูกหักชนิดไม่เคลื่อนตัว (Non-displaced - Stable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/evans/nondisplaced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Geriatric Orthopaedic Surgery & Rehabilitation / PMC6610445 (Fig. 4)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing non-displaced 2-part intertrochanteric fracture with intact posteromedial cortex and stable calcar buttress (Evans stable)."
+    },
+    {
+      "id": "femur_evans_displaced_reduced_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "intertrochanteric",
+      "regionName": {
+        "en": "Intertrochanteric",
+        "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "system": "Evans Classification",
+      "type": "Displaced reduced",
+      "typeName": {
+        "en": "Displaced Reduced Fracture (Stable)",
+        "th": "กระดูกหักชนิดเคลื่อนตัวแต่จัดเข้าที่ได้มั่นคง (Displaced Reduced - Stable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/evans/displaced_reduced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Journal of Clinical Medicine / PMC12295873 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "AP radiograph demonstrating displaced intertrochanteric fracture with minimal medial comminution, converting to stable alignment upon cortical opposition."
+    },
+    {
+      "id": "femur_evans_displaced_not_reduced_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "intertrochanteric",
+      "regionName": {
+        "en": "Intertrochanteric",
+        "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "system": "Evans Classification",
+      "type": "Displaced not reduced",
+      "typeName": {
+        "en": "Displaced Not Reduced Fracture (Unstable)",
+        "th": "กระดูกหักชนิดเคลื่อนตัวและไม่มั่นคง (Displaced Not Reduced - Unstable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/evans/displaced_not_reduced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Geriatric Orthopaedic Surgery & Rehabilitation / PMC6610445 (Fig. 5)",
+      "status": "pending_review",
+      "notes": "AP radiograph illustrating unstable 3-part intertrochanteric fracture with large displaced lesser trochanter fragment and absent medial calcar buttress."
+    },
+    {
+      "id": "femur_evans_comminuted_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "intertrochanteric",
+      "regionName": {
+        "en": "Intertrochanteric",
+        "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "system": "Evans Classification",
+      "type": "Comminuted",
+      "typeName": {
+        "en": "Comminuted Fracture (4-Part Unstable)",
+        "th": "กระดูกหักแตกละเอียดแบบไม่มั่นคง (Comminuted - 4-Part Unstable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/evans/comminuted_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Journal of Clinical Medicine / PMC11989566 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing severe 4-part comminuted intertrochanteric fracture with detached greater and lesser trochanters and compromised lateral wall."
+    },
+    {
+      "id": "femur_evans_reversed_oblique_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "intertrochanteric",
+      "regionName": {
+        "en": "Intertrochanteric",
+        "th": "ระหว่างปุ่มกระดูกต้นขา (Intertrochanteric)"
+      },
+      "system": "Evans Classification",
+      "type": "Reversed oblique",
+      "typeName": {
+        "en": "Reverse Obliquity Fracture (Unstable)",
+        "th": "แนวกระดูกหักเฉียงย้อนกลับ (Reversed Oblique - Unstable)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/evans/reversed_oblique_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Geriatric Orthopaedic Surgery & Rehabilitation / PMC6610445 (Fig. 6)",
+      "status": "pending_review",
+      "notes": "AP radiograph depicting reverse obliquity fracture line running from distal-medial to proximal-lateral, prone to medial shaft shift."
+    },
+    {
+      "id": "femur_russell_taylor_type1a_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "subtrochanteric",
+      "regionName": {
+        "en": "Subtrochanteric",
+        "th": "ใต้ปุ่มกระดูกต้นขา (Subtrochanteric)"
+      },
+      "system": "Russell-Taylor Classification",
+      "type": "Type IA",
+      "typeName": {
+        "en": "Russell-Taylor Type IA (Intact Piriformis Fossa, Intact Lesser Trochanter)",
+        "th": "Type IA (Piriformis Fossa สมบูรณ์ + Lesser Trochanter สมบูรณ์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/russell_taylor/type1a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Journal of Orthopaedic Surgery and Research / PMC9240121 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "AP radiograph of subtrochanteric femur fracture below lesser trochanter with preserved lesser trochanter medial buttress and intact piriformis fossa (Type IA)."
+    },
+    {
+      "id": "femur_russell_taylor_type1b_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "subtrochanteric",
+      "regionName": {
+        "en": "Subtrochanteric",
+        "th": "ใต้ปุ่มกระดูกต้นขา (Subtrochanteric)"
+      },
+      "system": "Russell-Taylor Classification",
+      "type": "Type IB",
+      "typeName": {
+        "en": "Russell-Taylor Type IB (Intact Piriformis Fossa, Disrupted Lesser Trochanter)",
+        "th": "Type IB (Piriformis Fossa สมบูรณ์ + Lesser Trochanter แตกชำรุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/russell_taylor/type1b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Journal of Orthopaedic Surgery and Research / PMC9240121 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing subtrochanteric femur fracture involving and displacing lesser trochanter with intact trochanteric/piriformis fossa (Type IB)."
+    },
+    {
+      "id": "femur_russell_taylor_type2a_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "subtrochanteric",
+      "regionName": {
+        "en": "Subtrochanteric",
+        "th": "ใต้ปุ่มกระดูกต้นขา (Subtrochanteric)"
+      },
+      "system": "Russell-Taylor Classification",
+      "type": "Type IIA",
+      "typeName": {
+        "en": "Russell-Taylor Type IIA (Extension into Piriformis Fossa, Intact Lesser Trochanter)",
+        "th": "Type IIA (Piriformis Fossa แตก + Lesser Trochanter สมบูรณ์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/russell_taylor/type2a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "EFORT Open Reviews / PMC8022017 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing subtrochanteric fracture propagating into the piriformis fossa while lesser trochanter and medial cortex remain intact (Type IIA)."
+    },
+    {
+      "id": "femur_russell_taylor_type2b_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "subtrochanteric",
+      "regionName": {
+        "en": "Subtrochanteric",
+        "th": "ใต้ปุ่มกระดูกต้นขา (Subtrochanteric)"
+      },
+      "system": "Russell-Taylor Classification",
+      "type": "Type IIB",
+      "typeName": {
+        "en": "Russell-Taylor Type IIB (Piriformis Fossa + Lesser Trochanter Disrupted)",
+        "th": "Type IIB (Piriformis Fossa แตก + Lesser Trochanter แตก - รุนแรงที่สุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/russell_taylor/type2b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T01:30:00Z",
+      "source": "Acta Orthopaedica et Traumatologica Turcica / PMC3861956 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing highly unstable comminuted subtrochanteric fracture disrupting both piriformis fossa entry portal and lesser trochanter medial buttress (Type IIB)."
+    },
+    {
+      "id": "patella_anatomical_nondisplaced_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Nondisplaced",
+      "typeName": {
+        "en": "Nondisplaced",
+        "th": "1. Nondisplaced (หักไม่เคลื่อนตัว - กลไกเหยียดเข่าสมบูรณ์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/nondisplaced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Wikimedia Commons / File:Patella-Querfraktur kaum disloziert.png",
+      "status": "pending_review",
+      "notes": "Lateral radiograph of knee showing non-displaced transverse hairline patellar fracture with intact extensor mechanism."
+    },
+    {
+      "id": "patella_anatomical_transverse_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Transverse",
+      "typeName": {
+        "en": "Transverse (Displaced)",
+        "th": "2. Transverse (หักแนวขวางเคลื่อนตัว - ข้อบ่งชี้คลาสสิก TBW)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/transverse_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Wikimedia Commons / File:Patellaquerfraktur seitlich.jpg",
+      "status": "pending_review",
+      "notes": "Lateral radiograph of knee demonstrating widely separated displaced transverse patella fracture (>1 cm gap) requiring Tension Band Wiring."
+    },
+    {
+      "id": "patella_anatomical_polar_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Lower or Upper Pole",
+      "typeName": {
+        "en": "Lower or Upper Pole",
+        "th": "3. Lower or Upper Pole (หักบริเวณขั้วบนหรือล่าง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/pole_avulsion_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Insights into Imaging / PMC5265199 (Fig. 4b,c)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs displaying non-articular extra-articular inferior pole avulsion fracture with intact main patellar body."
+    },
+    {
+      "id": "patella_anatomical_vertical_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Vertical",
+      "typeName": {
+        "en": "Vertical (Longitudinal)",
+        "th": "4. Vertical (หักแนวดิ่ง - เห็นชัดในท่า Skyline View)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/vertical_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Insights into Imaging / PMC5265199 (Fig. 9b,c)",
+      "status": "pending_review",
+      "notes": "AP and tangential Skyline/Merchant views demonstrating longitudinal vertical split fracture of lateral facet with preserved extensor continuity."
+    },
+    {
+      "id": "patella_anatomical_multifragmented_nondisplaced_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Multifragmented Nondisplaced",
+      "typeName": {
+        "en": "Multifragmented (Nondisplaced)",
+        "th": "5. Multifragmented Nondisplaced (แตกละเอียดไม่เคลื่อนตัว)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/multifragmented_nondisplaced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Insights into Imaging / PMC5265199 (Fig. 6b)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing non-displaced comminuted starburst fracture with intersecting hairline fissures and intact articular congruency."
+    },
+    {
+      "id": "patella_anatomical_multifragmented_displaced_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Multifragmented Displaced",
+      "typeName": {
+        "en": "Multifragmented (Displaced)",
+        "th": "6. Multifragmented Displaced (แตกละเอียดเคลื่อนตัว - Stellate Comminuted)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/multifragmented_displaced_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Journal of Orthopaedic Case Reports / PMC13248180 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs demonstrating severely comminuted displaced stellate patellar fracture with multiple displaced articular fragments."
+    },
+    {
+      "id": "patella_anatomical_osteochondral_xray",
+      "boneId": "patella",
+      "boneName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้าหัวเข่า"
+      },
+      "regionId": "patella",
+      "regionName": {
+        "en": "Patella",
+        "th": "กระดูกสะบ้า (Patella)"
+      },
+      "system": "Anatomical & Functional",
+      "type": "Osteochondral",
+      "typeName": {
+        "en": "Osteochondral",
+        "th": "7. Osteochondral (หักกะเทาะผิวข้อ - มักตามหลังข้อสะบ้าหลุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/patella/osteochondral_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Journal of Orthopaedic Case Reports / PMC12237485 (Fig. 1a,b)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing osteochondral avulsion flake fracture of medial facet following patellar dislocation episode."
+    },
+    {
+      "id": "tibia_lauge_hansen_ser1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SER I",
+      "typeName": {
+        "en": "SER Stage I (AITFL Tear)",
+        "th": "SER I (เอ็นยึดกระดูกหน้าแข้งด้านหน้า AITFL ฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/ser_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Cureus / PMC12791173 (Fig. 1A,B)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing Tillaux-Chaput avulsion fracture of the anterior inferior tibiofibular ligament at the anterolateral distal tibia (SER Stage I)."
+    },
+    {
+      "id": "tibia_lauge_hansen_ser2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SER II",
+      "typeName": {
+        "en": "SER Stage II (Distal Fibula Spiral Fracture - Classic Weber B)",
+        "th": "SER II (กระดูกตาตุ่มนอกหักแนวเฉียงเกลียว - Weber B)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/ser_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Clinical Orthopaedics and Related Research / PMC4562928 (Fig. 2A,B)",
+      "status": "pending_review",
+      "notes": "Mortise and Lateral radiographs of SER Stage II showing classic Weber B spiral oblique fracture of lateral malleolus running anteroinferior to posterosuperior with intact medial clear space."
+    },
+    {
+      "id": "tibia_lauge_hansen_ser3_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SER III",
+      "typeName": {
+        "en": "SER Stage III (Posterior Malleolus Fracture)",
+        "th": "SER III (กระดูกตาตุ่มหลังหัก - Volkmann Fragment)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/ser_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "BMC Musculoskeletal Disorders / PMC12474824 (Fig. 4A,B)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs demonstrating SER Stage III with spiral lateral malleolar fracture and posterior malleolar triangular avulsion fracture (Volkmann fragment)."
+    },
+    {
+      "id": "tibia_lauge_hansen_ser4_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SER IV",
+      "typeName": {
+        "en": "SER Stage IV (Medial Malleolus Fracture / Deltoid Tear - Unstable Bimalleolar)",
+        "th": "SER IV (ตาตุ่มในหัก หรือเอ็น Deltoid ขาด - ข้อย้วยไม่มั่นคงสองตาตุ่ม)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/ser_4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Strategies in Trauma and Limb Reconstruction / PMC3535131 (Fig. 3A,B)",
+      "status": "pending_review",
+      "notes": "AP Mortise and Lateral radiographs of SER Stage IV bimalleolar fracture showing spiral lateral malleolar fracture combined with transverse medial malleolar avulsion fracture and lateral talar subluxation."
+    },
+    {
+      "id": "tibia_lauge_hansen_sa1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SA I",
+      "typeName": {
+        "en": "SA Stage I (Distal Fibula Transverse Avulsion - Infrasyndesmotic Weber A)",
+        "th": "SA I (ตาตุ่มนอกหักขวางระดับต่ำกว่าข้อเท้า - Weber A)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/sa_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Cureus / PMC12585092 (Fig. 16B)",
+      "status": "pending_review",
+      "notes": "AP radiograph showing infrasyndesmotic transverse avulsion fracture of the distal fibula tip below the tibial plafond level (Weber A / SA Stage I)."
+    },
+    {
+      "id": "tibia_lauge_hansen_sa2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "SA II",
+      "typeName": {
+        "en": "SA Stage II (Vertical Medial Malleolus Shear Fracture)",
+        "th": "SA II (กระดูกตาตุ่มในหักแนวตั้ง - Vertical Shear)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/sa_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Clinical Orthopaedics and Related Research / PMC4562928 (Fig. 1A,B)",
+      "status": "pending_review",
+      "notes": "Mortise and Lateral radiographs of SA Stage II showing classic vertical shear fracture of medial malleolus originating from the medial corner of the tibial plafond, paired with distal fibular avulsion."
+    },
+    {
+      "id": "tibia_lauge_hansen_per1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PER I",
+      "typeName": {
+        "en": "PER Stage I (Transverse Medial Malleolus Avulsion / Deltoid Tear)",
+        "th": "PER I (ตาตุ่มในหักแนวขวาง หรือเอ็น Deltoid ฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/per_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Indian Journal of Orthopaedics / PMC3796921 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "AP radiograph focused on medial ankle demonstrating transverse tension avulsion fracture of the medial malleolus at the plafond level (PER Stage I)."
+    },
+    {
+      "id": "tibia_lauge_hansen_per2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PER II",
+      "typeName": {
+        "en": "PER Stage II (AITFL & Anterior Syndesmosis Rupture)",
+        "th": "PER II (เอ็นยึดกระดูกหน้าแข้ง AITFL และเยื่อ Syndesmosis ฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/per_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Cureus / PMC12585092 (Fig. 16B,C)",
+      "status": "pending_review",
+      "notes": "AP and Mortise radiographs displaying medial clear space widening and gross tibiofibular syndesmotic diastasis without low fibular fracture (PER Stage II)."
+    },
+    {
+      "id": "tibia_lauge_hansen_per3_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PER III",
+      "typeName": {
+        "en": "PER Stage III (High Fibular Spiral Fracture - Suprasyndesmotic Weber C)",
+        "th": "PER III (กระดูกน่องหักเกลียวระดับสูง - Weber C / Maisonneuve)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/per_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Clinical Orthopaedics and Related Research / PMC4562928 (Fig. 3A,B)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing high suprasyndesmotic spiral fracture of the fibular diaphysis (>6 cm above joint line) with complete syndesmotic diastasis (Weber C / PER Stage III)."
+    },
+    {
+      "id": "tibia_lauge_hansen_per4_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PER IV",
+      "typeName": {
+        "en": "PER Stage IV (Posterior Malleolus Fracture - Complete Ring Failure)",
+        "th": "PER IV (ตาตุ่มหลังหักหลุด - วงแหวนข้อเท้าพังทลายสมบูรณ์)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/per_4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Indian Journal of Orthopaedics / PMC3796921 (Fig. 2A,B)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing full PER Stage IV injury: transverse medial malleolus fracture, gross syndesmotic widening, high spiral fibular shaft fracture, and posterior malleolar lip avulsion."
+    },
+    {
+      "id": "tibia_lauge_hansen_pa1_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PA I",
+      "typeName": {
+        "en": "PA Stage I (Transverse Medial Malleolus Avulsion / Deltoid Tear)",
+        "th": "PA I (ตาตุ่มในหักแนวขวาง หรือเอ็น Deltoid ฉีกขาดจากแรงกางเท้า)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/pa_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Clinical Orthopaedics and Related Research / PMC4562928 (Fig. 4A)",
+      "status": "pending_review",
+      "notes": "AP radiograph close-up showing transverse tension avulsion of medial malleolus at the plafond level from talar abduction stress (PA Stage I)."
+    },
+    {
+      "id": "tibia_lauge_hansen_pa2_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PA II",
+      "typeName": {
+        "en": "PA Stage II (Syndesmotic Ligaments Rupture)",
+        "th": "PA II (เอ็นยึดกระดูกหน้าแข้ง-น่อง ทั้งหน้าและหลังฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/pa_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Cureus / PMC12585092 (Fig. 16C)",
+      "status": "pending_review",
+      "notes": "Mortise radiograph demonstrating complete syndesmotic diastasis with widened tibiofibular clear space from progressive abduction force (PA Stage II)."
+    },
+    {
+      "id": "tibia_lauge_hansen_pa3_xray",
+      "boneId": "tibia",
+      "boneName": {
+        "en": "Tibia & Fibula",
+        "th": "กระดูกหน้าแข้งและกระดูกน่อง"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Tibia & Ankle",
+        "th": "กระดูกหน้าแข้งส่วนปลายและข้อเท้า"
+      },
+      "system": "Lauge-Hansen",
+      "type": "PA III",
+      "typeName": {
+        "en": "PA Stage III (Suprasyndesmotic Fibula Fracture with Lateral Butterfly Fragment)",
+        "th": "PA III (กระดูกน่องหักขวาง/ปีกผีเสื้อเหนือข้อเท้า - Butterfly Fragment)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/lauge_hansen/pa_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-06T19:11:52Z",
+      "source": "Clinical Orthopaedics and Related Research / PMC4562928 (Fig. 4A,B)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs of PA Stage III showing transverse medial malleolar avulsion, syndesmotic rupture, and characteristic suprasyndesmotic fibular bending fracture with lateral butterfly comminution fragment."
+    },
+    {
+      "id": "hand_scaphoid_distal_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "scaphoid",
+      "regionName": {
+        "en": "Scaphoid",
+        "th": "กระดูกสะแคฟอยด์ (Scaphoid)"
+      },
+      "system": "Anatomic Classification",
+      "type": "Distal",
+      "typeName": {
+        "en": "Distal Pole / Tuberosity Fracture",
+        "th": "กระดูกสะแคฟอยด์หักส่วนปลาย (Distal Pole / Tuberosity)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/scaphoid/distal_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "European Radiology / PMC12169939 (Fig. 16C)",
+      "status": "pending_review",
+      "notes": "PA wrist radiograph demonstrating scaphoid distal pole/tuberosity fracture with intact blood supply."
+    },
+    {
+      "id": "hand_scaphoid_waist_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "scaphoid",
+      "regionName": {
+        "en": "Scaphoid",
+        "th": "กระดูกสะแคฟอยด์ (Scaphoid)"
+      },
+      "system": "Anatomic Classification",
+      "type": "Waist",
+      "typeName": {
+        "en": "Scaphoid Waist Fracture",
+        "th": "กระดูกสะแคฟอยด์หักส่วนเอว (Waist Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/scaphoid/waist_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "European Radiology / PMC12169939 (Fig. 16B)",
+      "status": "pending_review",
+      "notes": "PA wrist radiograph demonstrating acute transverse scaphoid waist fracture line."
+    },
+    {
+      "id": "hand_scaphoid_proximal_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "scaphoid",
+      "regionName": {
+        "en": "Scaphoid",
+        "th": "กระดูกสะแคฟอยด์ (Scaphoid)"
+      },
+      "system": "Anatomic Classification",
+      "type": "Proximal",
+      "typeName": {
+        "en": "Proximal Pole Fracture",
+        "th": "กระดูกสะแคฟอยด์หักส่วนต้น (Proximal Pole)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/scaphoid/proximal_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "European Radiology / PMC12169939 (Fig. 16A)",
+      "status": "pending_review",
+      "notes": "PA wrist radiograph showing proximal pole scaphoid fracture with high risk of nonunion and avascular necrosis."
+    },
+    {
+      "id": "hand_metacarpal1_bennett_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "first-metacarpal-base",
+      "regionName": {
+        "en": "First Metacarpal Base",
+        "th": "กระดูกฐานฝ่ามือนิ้วหัวแม่มือ (First Metacarpal Base)"
+      },
+      "system": "First Metacarpal Base Classification",
+      "type": "Bennett",
+      "typeName": {
+        "en": "Bennett Fracture-Subluxation",
+        "th": "กระดูกหักแบบเบนเนตต์ (Bennett Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal1/bennett_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "PMC4519440 (Fig. 7)",
+      "status": "pending_review",
+      "notes": "Diagnostic oblique radiograph of thumb CMC joint demonstrating intra-articular Bennett fracture with small volar-ulnar beak fragment and radial-proximal shaft subluxation."
+    },
+    {
+      "id": "hand_metacarpal1_rolando_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "first-metacarpal-base",
+      "regionName": {
+        "en": "First Metacarpal Base",
+        "th": "กระดูกฐานฝ่ามือนิ้วหัวแม่มือ (First Metacarpal Base)"
+      },
+      "system": "First Metacarpal Base Classification",
+      "type": "Rolando",
+      "typeName": {
+        "en": "Rolando Fracture",
+        "th": "กระดูกหักแบบ Rolando (Rolando Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal1/rolando_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "PMC4519440 (Fig. 8B)",
+      "status": "pending_review",
+      "notes": "Magnified oblique radiograph of 1st metacarpal base showing comminuted intra-articular Rolando fracture with classic Y- or T-shaped articular split into trapeziometacarpal joint."
+    },
+    {
+      "id": "hand_metacarpal1_extra_articular_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "first-metacarpal-base",
+      "regionName": {
+        "en": "First Metacarpal Base",
+        "th": "กระดูกฐานฝ่ามือนิ้วหัวแม่มือ (First Metacarpal Base)"
+      },
+      "system": "First Metacarpal Base Classification",
+      "type": "Extra-articular",
+      "typeName": {
+        "en": "Extra-articular Epibasal Fracture",
+        "th": "กระดูกฐานฝ่ามือนิ้วหัวแม่มือหักนอกข้อต่อ (Extra-articular Epibasal)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal1/extra_articular_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "Wikimedia Commons / CR Radiograph",
+      "status": "pending_review",
+      "notes": "High-resolution AP radiograph showing extra-articular transverse/oblique fracture at the metaphyseal-diaphyseal junction of the 1st metacarpal base with intact articular surface."
+    },
+    {
+      "id": "hand_other_metacarpals_head_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "other-metacarpals",
+      "regionName": {
+        "en": "Metacarpals 2-5",
+        "th": "กระดูกฝ่ามือนิ้วชี้ถึงนิ้วก้อย (Metacarpals 2-5)"
+      },
+      "system": "Metacarpal Fracture Classification (2nd-5th)",
+      "type": "Head",
+      "typeName": {
+        "en": "Metacarpal Head Fracture",
+        "th": "กระดูกส่วนหัวหัก (Metacarpal Head Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal_other/head_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "Cureus / PMC10255934 (Fig. 1)",
+      "status": "pending_review",
+      "notes": "PA hand radiograph on emergency presentation demonstrating intra-articular metacarpal head fracture."
+    },
+    {
+      "id": "hand_other_metacarpals_neck_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "other-metacarpals",
+      "regionName": {
+        "en": "Metacarpals 2-5",
+        "th": "กระดูกฝ่ามือนิ้วชี้ถึงนิ้วก้อย (Metacarpals 2-5)"
+      },
+      "system": "Metacarpal Fracture Classification (2nd-5th)",
+      "type": "Neck",
+      "typeName": {
+        "en": "Metacarpal Neck Fracture (e.g., Boxer's Fracture)",
+        "th": "กระดูกส่วนคอหัก (Metacarpal Neck / Boxer's Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal_other/neck_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "Plast Reconstr Surg Glob Open / PMC8553242 (Fig. 3A)",
+      "status": "pending_review",
+      "notes": "Oblique view of the hand demonstrating 5th metacarpal neck fracture (Boxer's fracture) with apex dorsal angulation."
+    },
+    {
+      "id": "hand_other_metacarpals_shaft_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "other-metacarpals",
+      "regionName": {
+        "en": "Metacarpals 2-5",
+        "th": "กระดูกฝ่ามือนิ้วชี้ถึงนิ้วก้อย (Metacarpals 2-5)"
+      },
+      "system": "Metacarpal Fracture Classification (2nd-5th)",
+      "type": "Shaft",
+      "typeName": {
+        "en": "Metacarpal Shaft Fracture",
+        "th": "กระดูกส่วนแกนหัก (Metacarpal Shaft Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal_other/shaft_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "Plast Reconstr Surg Glob Open / PMC8553242 (Fig. 4A)",
+      "status": "pending_review",
+      "notes": "Oblique view showing 5th metacarpal diaphyseal (shaft) fracture with apex dorsal angulation."
+    },
+    {
+      "id": "hand_other_metacarpals_base_xray",
+      "boneId": "hand",
+      "boneName": {
+        "en": "Hand & Wrist",
+        "th": "มือและข้อมือ"
+      },
+      "regionId": "other-metacarpals",
+      "regionName": {
+        "en": "Metacarpals 2-5",
+        "th": "กระดูกฝ่ามือนิ้วชี้ถึงนิ้วก้อย (Metacarpals 2-5)"
+      },
+      "system": "Metacarpal Fracture Classification (2nd-5th)",
+      "type": "Base",
+      "typeName": {
+        "en": "Metacarpal Base Fracture / Dislocation",
+        "th": "กระดูกส่วนฐานหักหรือเคลื่อน (Base Fracture / Reverse Bennett)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/metacarpal_other/base_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-07T14:55:00Z",
+      "source": "BMC Musculoskeletal Disorders / PMC10540348 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "Anteroposterior oblique radiograph showing comminuted fracture and subluxation at the base of the 4th and 5th metacarpals."
+    },
+    {
+      "id": "foot_talus_hawkins_type1_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "talus",
+      "regionName": {
+        "en": "Talus (Talar Neck)",
+        "th": "กระดูกทาเลส / คอทาเลส (Talus)"
+      },
+      "system": "Hawkins Classification of Talar Neck Fractures",
+      "type": "Hawkins I",
+      "typeName": {
+        "en": "Hawkins Type I (Non-displaced Talar Neck)",
+        "th": "Hawkins Type I (ไม่เคลื่อนตัว - AVN Risk < 10%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hawkins/type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "Acta Biomed / PMC6179081 (Fig. 9A)",
+      "status": "pending_review",
+      "notes": "Lateral ankle radiograph showing nondisplaced talar neck fracture (Hawkins type I) with intact subtalar, tibiotalar, and talonavicular joints."
+    },
+    {
+      "id": "foot_talus_hawkins_type2_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "talus",
+      "regionName": {
+        "en": "Talus (Talar Neck)",
+        "th": "กระดูกทาเลส / คอทาเลส (Talus)"
+      },
+      "system": "Hawkins Classification of Talar Neck Fractures",
+      "type": "Hawkins II",
+      "typeName": {
+        "en": "Hawkins Type II (Displaced with Subtalar Subluxation/Dislocation)",
+        "th": "Hawkins Type II (เคลื่อนตัว + ข้อ Subtalar หลุด - AVN Risk 20-50%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hawkins/type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "J Orthop Traumatol / PMC12182528 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Preoperative lateral radiograph showing displaced talar neck fracture with subtalar joint dislocation while tibiotalar joint remains congruent."
+    },
+    {
+      "id": "foot_talus_hawkins_type3_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "talus",
+      "regionName": {
+        "en": "Talus (Talar Neck)",
+        "th": "กระดูกทาเลส / คอทาเลส (Talus)"
+      },
+      "system": "Hawkins Classification of Talar Neck Fractures",
+      "type": "Hawkins III",
+      "typeName": {
+        "en": "Hawkins Type III (Displaced with Subtalar + Tibiotalar Dislocation)",
+        "th": "Hawkins Type III (เคลื่อนตัว + ข้อ Subtalar และ Tibiotalar หลุด - AVN Risk 80-100%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hawkins/type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "BMC Musculoskelet Disord / PMC6686493 (Fig. 1b)",
+      "status": "pending_review",
+      "notes": "Preoperative lateral radiograph showing Hawkins type III talar neck fracture with both subtalar and tibiotalar dislocation and talar body extruded."
+    },
+    {
+      "id": "foot_talus_hawkins_type4_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "talus",
+      "regionName": {
+        "en": "Talus (Talar Neck)",
+        "th": "กระดูกทาเลส / คอทาเลส (Talus)"
+      },
+      "system": "Hawkins Classification of Talar Neck Fractures",
+      "type": "Hawkins IV",
+      "typeName": {
+        "en": "Hawkins Type IV (Subtalar + Tibiotalar + Talonavicular Dislocation)",
+        "th": "Hawkins Type IV (หลุดสมบูรณ์ 3 ข้อ - Subtalar, Tibiotalar, Talonavicular - AVN Risk 90-100%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hawkins/type4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "BMC Musculoskelet Disord / PMC6686493 (Fig. 2b)",
+      "status": "pending_review",
+      "notes": "Preoperative lateral radiograph showing Hawkins type IV fracture with pan-talar dislocation involving subtalar, tibiotalar, and talonavicular joints."
+    },
+    {
+      "id": "foot_calcaneus_essex_lopresti_extra_articular_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "calcaneus",
+      "regionName": {
+        "en": "Calcaneus",
+        "th": "กระดูกส้นเท้า (Calcaneus)"
+      },
+      "system": "Essex-Lopresti Classification (X-Ray Based)",
+      "type": "Extra-Articular",
+      "typeName": {
+        "en": "Extra-Articular Calcaneal Fracture",
+        "th": "1. Extra-Articular (หักนอกผิวข้อ - Bohler's Angle ปกติ)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/essex_lopresti/extra_articular_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "Emerg Radiol / PMC12701032 (Fig. 5a)",
+      "status": "pending_review",
+      "notes": "Lateral radiograph of calcaneal posterior tuberosity avulsion (beak) fracture completely sparing the posterior facet with normal Bohler angle."
+    },
+    {
+      "id": "foot_calcaneus_essex_lopresti_tongue_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "calcaneus",
+      "regionName": {
+        "en": "Calcaneus",
+        "th": "กระดูกส้นเท้า (Calcaneus)"
+      },
+      "system": "Essex-Lopresti Classification (X-Ray Based)",
+      "type": "Tongue Type",
+      "typeName": {
+        "en": "Intra-Articular: Tongue Type",
+        "th": "2. Tongue Type (หักเข้าข้อ ชิ้นลิ้นแนวนอน - Horizontal Tongue Fragment)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/essex_lopresti/tongue_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "Front Surg / PMC9013838 (Fig. 1A)",
+      "status": "pending_review",
+      "notes": "Preoperative lateral radiograph of intra-articular tongue-type calcaneal fracture with horizontal secondary line exiting through posterior tuberosity wall and reduced Bohler angle."
+    },
+    {
+      "id": "foot_calcaneus_essex_lopresti_joint_depression_xray",
+      "boneId": "foot",
+      "boneName": {
+        "en": "Foot",
+        "th": "กระดูกเท้า"
+      },
+      "regionId": "calcaneus",
+      "regionName": {
+        "en": "Calcaneus",
+        "th": "กระดูกส้นเท้า (Calcaneus)"
+      },
+      "system": "Essex-Lopresti Classification (X-Ray Based)",
+      "type": "Joint-Depression",
+      "typeName": {
+        "en": "Intra-Articular: Joint-Depression Type",
+        "th": "3. Joint-Depression Type (หักเข้าข้อ ผิวข้อยุบ - Crushed Joint Fragment - พบบ่อยที่สุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/essex_lopresti/joint_depression_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T16:50:00Z",
+      "source": "Foot Ankle Orthop / PMC8564939 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Lateral radiograph of joint-depression intra-articular calcaneus fracture with crushed, impacted posterior facet and inverted Bohler angle (-8 degrees)."
     }
   ]
 }

@@ -246,6 +246,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_1.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type1_xray.jpg",
               "xrayDescription": {
                 "en": "Vertical split fracture line running through the lateral condyle without depression of the central articular surface.",
                 "th": "รอยหักแนวตั้งแยกชิ้นส่วนคอนไดล์ฝั่งนอกออกจากกัน โดยไม่มีการกดลึกลงไปของผิวข้อต่อตรงกลาง"
@@ -309,6 +310,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_2.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type2_xray.jpg",
               "xrayDescription": {
                 "en": "Lateral condyle split fragment with central articular surface depressed into the metaphyseal bone.",
                 "th": "พบชิ้นกระดูกคอนไดล์ฝั่งนอกแยกออก ร่วมกับผิวข้อต่อตรงกลางจมยุบลงไปในโพรงกระดูก"
@@ -372,6 +374,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_3.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type3_xray.jpg",
               "xrayDescription": {
                 "en": "Central articular depression of lateral plateau visible as a dense saucer-shaped radiopaque ring without cortical disruption.",
                 "th": "ผิวข้อต่อตรงกลางยุบตัวเป็นแอ่ง โดยขอบกระดูกเปลือกนอก (Cortical wall) ด้านข้างยังคงรูปทรงสมบูรณ์"
@@ -435,6 +438,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_4.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type4_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line extending through the medial condyle into the intercondylar eminence, often with varus tilt of the tibia.",
                 "th": "รอยหักพาดผ่านคอนไดล์ฝั่งในไปยังปุ่มกระดูกกลางข้อ (Intercondylar eminence) มักพบร่วมกับมุมเข่าเอียงโก่งออกด้านนอก (Varus)"
@@ -498,6 +502,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_5.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type5_xray.jpg",
               "xrayDescription": {
                 "en": "Splitting fractures of both medial and lateral condyles, with intact central diaphyseal shaft continuity.",
                 "th": "รอยหักแยกของหัวกระดูกหน้าแข้งทั้งฝั่งนอกและฝั่งใน โดยส่วนแกนกระดูกตรงกลางยังคงต่อติดกับตัวแกน"
@@ -561,6 +566,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/schatzker/schatzker_6.png",
+              "xrayUrl": "/images/xrays/schatzker/schatzker_type6_xray.jpg",
               "xrayDescription": {
                 "en": "Complete separation of the articular condylar block from the shaft with transverse or comminuted subcondylar fracture line.",
                 "th": "ชิ้นกระดูกข้อต่อถูกตัดขาดออกจากแกนกระดูกอย่างสิ้นเชิง โดยมีแนวกระดูกหักขวางหรือแตกละเอียดกั้นใต้หัวกระดูก"
@@ -1479,6 +1485,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/ser_1.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/ser_1_xray.jpg",
               "xrayDescription": {
                 "en": "Normal bone alignment; subtle widening of AITFL space on ultrasound/MRI.",
                 "th": "เอกซเรย์กระดูกเรียงตัวปกติ"
@@ -1542,6 +1549,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/ser_2.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/ser_2_xray.jpg",
               "xrayDescription": {
                 "en": "Spiral fracture of lateral malleolus at joint line level on lateral view.",
                 "th": "เห็นรอยหักเกลียวที่ตาตุ่มนอกในท่าด้านข้าง"
@@ -1605,6 +1613,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/ser_3.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/ser_3_xray.jpg",
               "xrayDescription": {
                 "en": "Posterior malleolar triangular fragment visible on lateral view.",
                 "th": "เห็นชิ้นกระดูกสามเหลี่ยมตาตุ่มหลังหักในท่าด้านข้าง"
@@ -1668,6 +1677,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/ser_4.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/ser_4_xray.jpg",
               "xrayDescription": {
                 "en": "Bimalleolar/Trimalleolar fracture with wide Medial Clear Space >4mm and lateral talar shift.",
                 "th": "รอยหักตาตุ่มคู่หรือสามตาตุ่ม ช่อง Medial Clear Space ถ่างกว้าง >4มม."
@@ -1731,6 +1741,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/sa_1.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/sa_1_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse fracture line of distal fibula below talar dome.",
                 "th": "รอยหักแนวขวางของตาตุ่มนอกต่ำกว่าระดับขอบบนกระดูก Talus"
@@ -1794,6 +1805,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/sa_2.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/sa_2_xray.jpg",
               "xrayDescription": {
                 "en": "Vertical oblique fracture line of medial malleolus running proximally from joint corner.",
                 "th": "เห็นรอยหักแนวตั้งของตาตุ่มในแทงขึ้นด้านบนจากมุมข้อเท้า"
@@ -1857,6 +1869,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/per_1.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/per_1_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse medial malleolus fracture line at joint level or widened medial clear space.",
                 "th": "เห็นรอยหักแนวขวางที่ตาตุ่มใน หรือระยะ Medial clear space ถ่างกว้าง"
@@ -1920,6 +1933,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/per_2.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/per_2_xray.jpg",
               "xrayDescription": {
                 "en": "Widened tibiofibular clear space on Mortise view without fibular fracture.",
                 "th": "ช่องว่าง Tibiofibular clear space ถ่างกว้างขึ้นในท่า Mortise view"
@@ -1983,6 +1997,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/per_3.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/per_3_xray.jpg",
               "xrayDescription": {
                 "en": "Fibular fracture line located >6cm above joint line (or proximal neck) with syndesmotic widening.",
                 "th": "เห็นรอยหักกระดูก Fibula สูงกว่าระดับข้อเท้า >6 ซม. (หรือสูงถึงคอกระดูกใต้เข่า) ร่วมกับช่อง Syndesmosis ถ่างกว้าง"
@@ -2046,6 +2061,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/per_4.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/per_4_xray.jpg",
               "xrayDescription": {
                 "en": "Trimalleolar fracture-dislocation pattern with high fibular fracture and posterior malleolus fragment.",
                 "th": "รอยหักหลุดสามตาตุ่มร่วมกับกระดูก Fibula หักสูงและตาตุ่มหลังหัก"
@@ -2109,6 +2125,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/pa_1.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/pa_1_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse medial malleolus fracture line or medial clear space widening.",
                 "th": "รอยหักแนวขวางที่ตาตุ่มใน หรือช่อง Medial clear space ถ่าง"
@@ -2172,6 +2189,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/pa_2.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/pa_2_xray.jpg",
               "xrayDescription": {
                 "en": "Widened syndesmosis and medial clear space without fibula fracture.",
                 "th": "ช่องว่าง Syndesmosis และ Medial clear space ถ่างกว้าง"
@@ -2235,6 +2253,7 @@ export const tibiaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/lauge_hansen/pa_3.png",
+              "xrayUrl": "/images/xrays/lauge_hansen/pa_3_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse/comminuted suprasyndesmotic fibula fracture with lateral butterfly fragment.",
                 "th": "เห็นรอยหักขวางกระดูก Fibula เหนือข้อเท้าพร้อมชิ้นกระดูกปีกผีเสื้อด้านนอก"

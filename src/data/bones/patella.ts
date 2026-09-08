@@ -253,6 +253,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/nondisplaced.png",
+              "xrayUrl": "/images/xrays/patella/nondisplaced_xray.jpg",
               "xrayDescription": {
                 "en": "Faint transverse or vertical line with <2mm gap and smooth articular surface on lateral view.",
                 "th": "เห็นรอยหักจางๆ ช่องอ้า <2มม. ผิวข้อเรียบสนิทในท่าด้านข้าง"
@@ -316,6 +317,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/displaced_transverse.png",
+              "xrayUrl": "/images/xrays/patella/transverse_xray.jpg",
               "xrayDescription": {
                 "en": "Wide separation gap >2-3mm between superior and inferior patellar fragments on lateral view.",
                 "th": "เห็นชิ้นกระดูกส่วนบนและล่างอ้าแยกออกจากกันกว้าง >2-3 มม. อย่างชัดเจนในท่าด้านข้าง"
@@ -379,6 +381,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/polar_avulsion.png",
+              "xrayUrl": "/images/xrays/patella/pole_avulsion_xray.jpg",
               "xrayDescription": {
                 "en": "Small avulsed inferior pole fragment with proximal displacement of the main patellar body (Patella Alta on lateral view).",
                 "th": "เห็นชิ้นกระดูกขั้วล่างหลุดกะเทาะ และลูกสะบ้าชิ้นใหญ่ยกลอยขึ้นสูง (Patella Alta) ในท่าด้านข้าง"
@@ -442,6 +445,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/vertical_sagittal.png",
+              "xrayUrl": "/images/xrays/patella/vertical_xray.jpg",
               "xrayDescription": {
                 "en": "Vertical fracture line seen clearly on Skyline/Merchant view, separating medial and lateral facets.",
                 "th": "เห็นรอยหักแนวดิ่งชัดเจนที่สุดในท่า Skyline View แยกผิวด้านในและด้านนอกออกจากกัน"
@@ -505,6 +509,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/comminuted_undisplaced.png",
+              "xrayUrl": "/images/xrays/patella/multifragmented_nondisplaced_xray.jpg",
               "xrayDescription": {
                 "en": "Multiple intersecting fracture lines with minimal displacement and preserved articular alignment.",
                 "th": "เห็นรอยหักแตกเป็นแขนงหลายเส้นแต่ชิ้นกระดูกไม่เคลื่อนแยกจากกัน"
@@ -568,6 +573,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/stellate_comminuted.png",
+              "xrayUrl": "/images/xrays/patella/multifragmented_displaced_xray.jpg",
               "xrayDescription": {
                 "en": "Starburst comminution with multiple fracture lines crossing the patellar body on AP and lateral views.",
                 "th": "เห็นรอยหักแตกละเอียดกระจายหลายชิ้นเป็นรูปดาวพาดผ่านตัวลูกสะบ้าทั้งในท่า AP และด้านข้าง"
@@ -631,6 +637,7 @@ export const patellaBone: BoneData = {
                 }
               },
               "illustrationId": "/images/patella/osteochondral.png",
+              "xrayUrl": "/images/xrays/patella/osteochondral_xray.jpg",
               "xrayDescription": {
                 "en": "Small bony or osteochondral flake fragment adjacent to medial/lateral facet or free-floating in joint on Skyline view.",
                 "th": "เห็นชิ้นกระดูกเล็กๆ หรือชิ้นกระดูกอ่อนกะเทาะอยู่ข้างผิวข้อสะบ้าหรือลอยในช่องข้อในท่า Skyline view"

@@ -231,9 +231,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type1.png",
+              "xrayUrl": "/images/xrays/rockwood/type1_xray.jpg",
               "xrayDescription": {
-                "en": "Normal radiograph",
-                "th": "ภาพถ่ายรังสีปกติ ไม่มีการเคลื่อนของข้อ"
+                "en": "Normal radiograph: Anatomical alignment of acromioclavicular joint and normal coracoclavicular distance (<1.3 cm).",
+                "th": "ภาพถ่ายรังสีปกติ: แนวข้อต่อ Acromioclavicular เรียบเสมอกัน และระยะห่าง Coracoclavicular ปกติ (<1.3 ซม.)"
               }
             },
             {
@@ -294,9 +295,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type2.png",
+              "xrayUrl": "/images/xrays/rockwood/type2_xray.jpg",
               "xrayDescription": {
-                "en": "Widened AC joint, clavicle slightly elevated but <25%",
-                "th": "ช่องข้อ AC กว้างขึ้น กระดูกไหปลาร้ายกขึ้นเล็กน้อย (<25%)"
+                "en": "Widened AC joint with subtle vertical step-off (<25% clavicular width elevation relative to acromion); CC interval maintained.",
+                "th": "ช่องว่างข้อ AC กว้างขึ้น มีการยกลอยของกระดูกไหปลาร้าเล็กน้อย (<25% ของความหนากระดูก); ระยะห่าง CC ยังปกติ"
               }
             },
             {
@@ -357,9 +359,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type3.png",
+              "xrayUrl": "/images/xrays/rockwood/type3_xray.jpg",
               "xrayDescription": {
-                "en": "Clavicle elevated 25-100% relative to acromion",
-                "th": "กระดูกไหปลาร้ายกขึ้น 25-100% เมื่อเทียบกับ Acromion"
+                "en": "Complete AC joint dislocation with 25%–100% superior displacement of distal clavicle relative to acromion; widened coracoclavicular distance.",
+                "th": "ข้อต่อ AC หลุดสมบูรณ์ กระดูกไหปลาร้ายกตัวขึ้น 25%–100% เมื่อเทียบกับ Acromion และช่องว่าง Coracoclavicular กว้างขึ้นชัดเจน"
               }
             },
             {
@@ -420,9 +423,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type4.png",
+              "xrayUrl": "/images/xrays/rockwood/type4_xray.jpg",
               "xrayDescription": {
-                "en": "Axillary lateral view shows posterior displacement of clavicle",
-                "th": "ต้องดูภาพรังสีท่า Axillary lateral จะเห็นไหปลาร้าเคลื่อนไปด้านหลัง"
+                "en": "Posterior displacement of distal clavicle behind the acromion into or through trapezius muscle belly.",
+                "th": "กระดูกไหปลาร้าส่วนปลายเคลื่อนหลุดไปทางด้านหลังของ Acromion ทะลุเข้ากล้ามเนื้อ Trapezius"
               }
             },
             {
@@ -483,9 +487,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type5.png",
+              "xrayUrl": "/images/xrays/rockwood/type5_xray.jpg",
               "xrayDescription": {
-                "en": "Clavicle elevated >100% relative to acromion",
-                "th": "กระดูกไหปลาร้ายกสูงขึ้นมากกว่า 100% หรือมีระยะห่าง CC กว้างมาก"
+                "en": "Gross superior displacement (>100% to 300% clavicle elevation) with severe widening of coracoclavicular distance (>25 mm) and deltotrapezial stripping.",
+                "th": "กระดูกไหปลาร้ายกลอยสูงขึ้นอย่างรุนแรง (>100% ถึง 300%) ระยะห่าง Coracoclavicular กว้างมาก (>25 มม.) ร่วมกับพังผืด Deltotrapezial ฉีกขาด"
               }
             },
             {
@@ -546,9 +551,10 @@ export const clavicleBone: BoneData = {
                 }
               },
               "illustrationId": "/images/rockwood_ac/type6.png",
+              "xrayUrl": "/images/xrays/rockwood/type6_xray.jpg",
               "xrayDescription": {
-                "en": "Clavicle displaced inferiorly",
-                "th": "กระดูกไหปลาร้าเคลื่อนลงล่างไปอยู่ใต้ Acromion หรือ Coracoid"
+                "en": "Inferior displacement of distal clavicle locked underneath the coracoid process (subcoracoid dislocation).",
+                "th": "กระดูกไหปลาร้าส่วนปลายเคลื่อนหลุดลงล่างไปติดล็อคอยู่ใต้กระดูก Coracoid (Subcoracoid dislocation)"
               }
             }
           ]

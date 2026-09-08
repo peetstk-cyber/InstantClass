@@ -258,6 +258,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_distal.png",
+              "xrayUrl": "/images/xrays/scaphoid/distal_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line visible across the distal pole or avulsion of the scaphoid tuberosity.",
                 "th": "พบรอยหักผ่านส่วน distal pole หรือชิ้นกระดูกกะเทาะหลุดบริเวณปุ่มกระดูกสะแคฟอยด์"
@@ -321,6 +322,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_waist.png",
+              "xrayUrl": "/images/xrays/scaphoid/waist_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse or oblique fracture line running through the narrow mid-portion (waist) of the scaphoid.",
                 "th": "รอยหักในแนวขวางหรือแนวเฉียงพาดผ่านบริเวณเอวคอดตรงกึ่งกลางของกระดูกสะแคฟอยด์"
@@ -384,6 +386,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/scaphoid/scaphoid_proximal.png",
+              "xrayUrl": "/images/xrays/scaphoid/proximal_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line passing through the proximal third of the scaphoid. Proximal fragment may show increased density over time (AVN).",
                 "th": "รอยหักพาดผ่านกระดูกส่วนต้น ชิ้นส่วนที่หักอาจมีความหนาแน่นทึบแสงขึ้นเรื่อยๆ ซึ่งแสดงถึงภาวะขาดเลือด (AVN)"
@@ -1067,6 +1070,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_bennett.png",
+              "xrayUrl": "/images/xrays/metacarpal1/bennett_xray.jpg",
               "xrayDescription": {
                 "en": "Small triangular fragment at the ulnar-volar base of the 1st metacarpal, with radial and proximal displacement/subluxation of the metacarpal shaft.",
                 "th": "ชิ้นกระดูกสามเหลี่ยมขนาดเล็กบริเวณฐานด้าน ulnar-volar ของกระดูกฝ่ามือชิ้นที่ 1 ร่วมกับแกนกระดูกฝ่ามือเลื่อนหลุดไปด้านบนและทางด้าน radial"
@@ -1130,6 +1134,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_rolando.png",
+              "xrayUrl": "/images/xrays/metacarpal1/rolando_xray.jpg",
               "xrayDescription": {
                 "en": "Comminuted fracture at the metacarpal base, showing Y- or T-shaped fracture lines with volar and dorsal fragments.",
                 "th": "รอยหักแตกละเอียดที่ฐานกระดูกฝ่ามือ เห็นแนวกระดูกหักแยกเป็นรูปตัว Y หรือ T ชิ้นส่วนแยกออกเป็นส่วนหน้า (volar) และหลัง (dorsal)"
@@ -1193,6 +1198,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal1/metacarpal1_extra.png",
+              "xrayUrl": "/images/xrays/metacarpal1/extra_articular_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line distal to the joint space, frequently presenting with apex dorsal angulation.",
                 "th": "เห็นรอยหักต่ำกว่าระดับช่องข้อต่ออย่างชัดเจน มักพบมุมโก่งไปทางด้านหลังมือ (Apex dorsal angulation)"
@@ -1470,6 +1476,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal_other/head.png",
+              "xrayUrl": "/images/xrays/metacarpal_other/head_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line passing through rounded metacarpal head cartilage. Assess step-off on PA and oblique views.",
                 "th": "รอยหักผ่านผิวข้อต่อหัวกระดูกฝ่ามือ วัดระดับความเหลื่อมของผิวข้อต่อในท่า PA และท่าเฉียง"
@@ -1533,6 +1540,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal_other/neck.png",
+              "xrayUrl": "/images/xrays/metacarpal_other/neck_xray.jpg",
               "xrayDescription": {
                 "en": "Impacted neck fracture with apex dorsal angulation and volar comminution on lateral view.",
                 "th": "รอยหักตอกอัดบริเวณคอกระดูกฝ่ามือ พร้อมมุมโก่งไปด้านหลังมือ (Apex dorsal) ในท่า Lateral"
@@ -1596,6 +1604,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal_other/shaft.png",
+              "xrayUrl": "/images/xrays/metacarpal_other/shaft_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse/oblique/spiral fracture traversing diaphysis. Assess overlap and angulation on lateral film.",
                 "th": "รอยหักแนวขวาง เฉียง หรือเกลียวพาดผ่านแกนกระดูก ประเมินการเกยกันและความโก่งในท่า Lateral"
@@ -1659,6 +1668,7 @@ export const handBone: BoneData = {
                 }
               },
               "illustrationId": "/images/metacarpal_other/base.png",
+              "xrayUrl": "/images/xrays/metacarpal_other/base_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line at metacarpal base with potential dorsal/proximal subluxation at CMC joint line on oblique/lateral views.",
                 "th": "รอยหักบริเวณฐานกระดูกฝ่ามือ ร่วมกับการเคลื่อนหลุดไปทางด้านหลังหรือขึ้นด้านบนตรงแนวข้อ CMC ในท่าเฉียงและ Lateral"

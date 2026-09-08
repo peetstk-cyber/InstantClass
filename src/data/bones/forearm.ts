@@ -226,6 +226,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/radial_head/mason_1.png",
+              "xrayUrl": "/images/xrays/mason/mason_type1_xray.jpg",
               "xrayDescription": {
                 "en": "Faint fracture line across radial head with <2mm displacement. Positive anterior sail sign often present.",
                 "th": "เห็นรอยหักจางๆ พาดผ่านหัวกระดูก Radius โดยเคลื่อนตัว < 2 มม. มักพบเงาไขมัน Sail sign ด้านหน้า"
@@ -289,6 +290,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/radial_head/mason_2.png",
+              "xrayUrl": "/images/xrays/mason/mason_type2_xray.jpg",
               "xrayDescription": {
                 "en": "Displaced marginal fragment >2mm with step-off visible on AP and Greenspan views.",
                 "th": "เห็นชิ้นกระดูกขอบหัว Radius เคลื่อนตัว > 2 มม. พร้อมรอยเหลื่อมขั้นบันไดในท่า AP และ Greenspan view"
@@ -352,6 +354,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/radial_head/mason_3.png",
+              "xrayUrl": "/images/xrays/mason/mason_type3_xray.jpg",
               "xrayDescription": {
                 "en": "Multiple comminuted fragments of the radial head with loss of normal articular contour and neck fracture.",
                 "th": "ชิ้นกระดูกแตกละเอียดกระจายหลายชิ้น บริเวณหัวและคอกระดูก Radius สูญเสียรูปทรงข้อต่อ"
@@ -415,6 +418,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/radial_head/mason_4.png",
+              "xrayUrl": "/images/xrays/mason/mason_type4_xray.jpg",
               "xrayDescription": {
                 "en": "Radial head fracture associated with gross posterior or lateral dislocation of the ulnohumeral and radiocapitellar joints.",
                 "th": "กระดูกหัว Radius หักร่วมกับข้อศอกเคลื่อนหลุดไปด้านหลังหรือด้านข้างอย่างชัดเจน"

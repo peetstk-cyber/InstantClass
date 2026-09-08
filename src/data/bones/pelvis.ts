@@ -284,6 +284,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/apc_1.png",
+              "xrayUrl": "/images/xrays/young_burgess/apc1_xray.jpg",
               "xrayDescription": {
                 "en": "Pubic symphysis diastasis <2cm without SI joint widening or vertical displacement.",
                 "th": "พบระยะแยก Pubic symphysis < 2 ซม. โดยช่องข้อ SI ปกติและไม่มีการเคลื่อนลอยในแนวตั้ง"
@@ -347,6 +348,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/apc_2.png",
+              "xrayUrl": "/images/xrays/young_burgess/apc2_xray.jpg",
               "xrayDescription": {
                 "en": "Wide pubic diastasis >2cm with anterior SI joint opening, posterior SI joint space intact.",
                 "th": "ระยะ Pubic diastasis ถ่างกว้าง > 2 ซม. ร่วมกับช่องข้อด้านหน้า SI เปิดออก แต่ด้านหลังยังชิดกัน"
@@ -410,6 +412,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/apc_3.png",
+              "xrayUrl": "/images/xrays/young_burgess/apc3_xray.jpg",
               "xrayDescription": {
                 "en": "Complete dislocation of SI joint with wide separation of pubic symphysis and posterior displacement.",
                 "th": "ข้อต่อ SI เคลื่อนหลุดแยกออกจากกันอย่างสมบูรณ์ ร่วมกับ Pubic symphysis อ้ากว้าง"
@@ -473,6 +476,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/lc_1.png",
+              "xrayUrl": "/images/xrays/young_burgess/lc1_xray.jpg",
               "xrayDescription": {
                 "en": "Buckled/impacted sacral foraminal lines on AP view with ipsilateral transverse pubic rami fractures.",
                 "th": "เห็นรอยย่นอัดแน่นของรูเส้นประสาท Sacrum ร่วมกับแนวกระดูก Pubic rami หักขวางด้านเดียวกัน"
@@ -536,6 +540,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/lc_2.png",
+              "xrayUrl": "/images/xrays/young_burgess/lc2_xray.jpg",
               "xrayDescription": {
                 "en": "Vertical fracture line running through iliac wing into SI joint (crescent fragment) with internal rotation of hemipelvis.",
                 "th": "เห็นรอยหักโค้งแนวตั้งผ่านปีกกระดูก Iliac ลามเข้าข้อ SI (ชิ้นกระดูก Crescent) ร่วมกับเชิงกรานบิดเข้าด้านใน"
@@ -599,6 +604,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/lc_3.png",
+              "xrayUrl": "/images/xrays/young_burgess/lc3_xray.jpg",
               "xrayDescription": {
                 "en": "Classic 'windswept' deformity: sacral crush/crescent fracture on impact side with wide SI joint and pubic symphysis diastasis on opposite side.",
                 "th": "เห็นเชิงกรานบิดเบี้ยวรูป 'Windswept': ฝั่งหนึ่งมี sacral crush/crescent fracture อีกฝั่งหนึ่งข้อ SI และ pubic symphysis อ้าถ่างออก"
@@ -662,6 +668,7 @@ export const pelvisBone: BoneData = {
                 }
               },
               "illustrationId": "/images/pelvis/vs.png",
+              "xrayUrl": "/images/xrays/young_burgess/vs_xray.jpg",
               "xrayDescription": {
                 "en": "Significant vertical migration of one hemipelvis relative to the sacrum on AP and Outlet views.",
                 "th": "พบเชิงกรานข้างหนึ่งยกลอยสูงขึ้นกว่าอีกข้างอย่างชัดเจนในแนวตั้งในท่า AP และ Outlet view"

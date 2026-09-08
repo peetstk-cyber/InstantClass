@@ -23,15 +23,22 @@ export const femurBone: BoneData = {
           {
             "sign": "Limb Shortening & External Rotation",
             "positive": {
-              "en": "Affected limb rests in mild shortening and external rotation (~45°); groin/hip pain on active straight leg raise or log roll.",
-              "th": "ขาข้างที่บาดเจ็บสั้นลงเล็กน้อยและหมุนออกด้านนอก (~45°); มีอาการปวดบริเวณขาหนีบ/สะโพกเมื่อพยายามยกขาหรือหมุนขา"
+              "en": "Affected limb rests in mild shortening and external rotation (~45°); groin/hip pain on active straight leg raise or rolling test.",
+              "th": "ขาข้างที่บาดเจ็บสั้นลงเล็กน้อยและหมุนออกด้านนอก (~45°); มีอาการปวดบริเวณขาหนีบ/สะโพกเมื่อพยายามยกขาหรือทำ rolling test"
             }
           },
           {
-            "sign": "Log Roll Test",
+            "sign": "Rolling Test",
             "positive": {
-              "en": "Pain elicited with gentle passive internal and external rotation of the relaxed extremity, indicating intra-capsular hip joint disruption.",
-              "th": "ปวดรุนแรงบริเวณขาหนีบเมื่อจับหมุนขาไปมาเบาๆ (Log roll) บ่งชี้การบาดเจ็บภายในเยื่อหุ้มข้อสะโพก"
+              "en": "Groin/hip pain elicited with gentle passive internal and external rotation of the relaxed extremity while supine (specifically evaluates hip joint/femoral neck, distinct from trauma spine log roll).",
+              "th": "ปวดรุนแรงบริเวณขาหนีบหรือสะโพกเมื่อจับหมุนขาเข้า-ออกเบาๆ ในท่านอนหงาย (Rolling test เป็นการตรวจเฉพาะข้อสะโพก/คอกระดูกต้นขา ไม่ใช่ Trauma log roll ที่ใช้พลิกตัวตรวจแนวกระดูกสันหลัง)"
+            }
+          },
+          {
+            "sign": "Anvil Test (Envil Test)",
+            "positive": {
+              "en": "Groin/hip pain elicited by striking the patient's heel/calcaneus with a closed fist while the lower limb is extended, transmitting axial load to the femoral neck.",
+              "th": "มีอาการปวดสะโพกหรือขาหนีบเมื่อใช้กำปั้นเคาะที่ส้นเท้าของผู้ป่วยขณะเหยียดขาตรง (ส่งแรงกระแทกตามแนวแกนกระดูกขึ้นไปยังคอกระดูกต้นขา)"
             }
           }
         ],
@@ -511,6 +518,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/evans/nondisplaced_xray.jpg",
               "illustrationId": "/images/evans/evans_nondisplaced.png",
               "xrayDescription": {
                 "en": "Linear fracture line across the intertrochanteric region without cortical displacement or loss of medial contact.",
@@ -574,6 +582,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/evans/displaced_reduced_xray.jpg",
               "illustrationId": "/images/evans/evans_displaced_reduced.png",
               "xrayDescription": {
                 "en": "Displaced fracture line that achieves stable medial cortical buttress alignment after closed/open reduction.",
@@ -637,6 +646,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/evans/displaced_not_reduced_xray.jpg",
               "illustrationId": "/images/evans/evans_displaced_not_reduced.png",
               "xrayDescription": {
                 "en": "Comminution of posteromedial cortex with displaced lesser trochanter fragment and persistent unreduced instability.",
@@ -700,6 +710,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/evans/comminuted_xray.jpg",
               "illustrationId": "/images/evans/evans_comminuted.png",
               "xrayDescription": {
                 "en": "4-part fracture pattern showing severe posteromedial comminution, floating lesser trochanter, and greater trochanter disruption.",
@@ -763,6 +774,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/evans/reversed_oblique_xray.jpg",
               "illustrationId": "/images/evans/evans_reversed_oblique.png",
               "xrayDescription": {
                 "en": "Reverse obliquity fracture line running from distal-medial cortex to proximal-lateral cortex.",
@@ -925,6 +937,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/russell_taylor/type1a_xray.jpg",
               "illustrationId": "/images/russell_taylor/russell_1a.png",
               "xrayDescription": {
                 "en": "Subtrochanteric fracture below lesser trochanter with intact piriformis fossa and intact medial cortex.",
@@ -988,6 +1001,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/russell_taylor/type1b_xray.jpg",
               "illustrationId": "/images/russell_taylor/russell_1b.png",
               "xrayDescription": {
                 "en": "Subtrochanteric fracture involving lesser trochanter fragment with intact trochanteric entry fossa.",
@@ -1051,6 +1065,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/russell_taylor/type2a_xray.jpg",
               "illustrationId": "/images/russell_taylor/russell_2a.png",
               "xrayDescription": {
                 "en": "Fracture line propagating proximally into trochanteric fossa with preserved lesser trochanter.",
@@ -1114,6 +1129,7 @@ export const femurBone: BoneData = {
                   }
                 }
               },
+              "xrayUrl": "/images/xrays/russell_taylor/type2b_xray.jpg",
               "illustrationId": "/images/russell_taylor/russell_2b.png",
               "xrayDescription": {
                 "en": "Comminuted subtrochanteric fracture extending into both trochanteric fossa and lesser trochanter with medial wall fragmentation.",

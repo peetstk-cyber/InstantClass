@@ -224,6 +224,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/hawkins/hawkins_1.png",
+              "xrayUrl": "/images/xrays/hawkins/type1_xray.jpg",
               "xrayDescription": {
                 "en": "Nondisplaced vertical fracture line across talar neck on Canale view with normal joint alignment.",
                 "th": "เห็นรอยหักแนวตั้งไม่เคลื่อนตัวพาดผ่านคอทาเลสในท่า Canale view โดยข้อต่อเรียงตัวปกติ"
@@ -251,30 +252,30 @@ export const footBone: BoneData = {
                 "preferred": "operative",
                 "conservative": {
                   "indication": {
-                    "en": "• Strictly contraindicated in surgical candidates (leads to varus malunion, loss of subtalar eversion, painful lateral column overload, and AVN)",
-                    "th": "• ห้ามรักษาแบบไม่ผ่าตัด (ทำให้กระดูกติดผิดรูปเอียงเข้าใน สูญเสียการบิดเท้า ปวดขอบเท้าด้านนอก และเสี่ยงหัวกระดูกตายสูง)"
+                    "en": "• Severely medically compromised non-ambulatory patients unable to tolerate anesthesia",
+                    "th": "• ผู้ป่วยที่มีโรคประจำตัวรุนแรงไม่สามารถรับการผ่าตัดและดมยาสลบได้"
                   },
                   "method": {
-                    "en": "• Non-weightbearing cast only if medically unfit for any anesthesia",
-                    "th": "• ใส่เฝือกสั้นงดลงน้ำหนักเฉพาะผู้ป่วยที่ไม่สามารถรับการดมยาผ่าตัดได้เลย"
+                    "en": "• Urgent closed reduction under sedation (plantarflexion and inversion to align body to neck) + short-leg non-weightbearing cast (very high failure and secondary displacement rate)",
+                    "th": "• ดึงดัดข้อเข้าที่เบื้องต้นภายใต้การให้ยาระงับปวด (งอปลายเท้าและบิดเข้าใน) + ใส่เฝือกสั้นงดลงน้ำหนัก (ความเสี่ยงเคลื่อนซ้ำสูงมาก)"
                   },
                   "rehabilitation": {
-                    "en": "• Immobilization 10–12 weeks",
-                    "th": "• ดามเฝือก 10–12 สัปดาห์"
+                    "en": "• Non-weightbearing for 10–12 weeks; strict radiographic surveillance",
+                    "th": "• งดลงน้ำหนัก 10–12 สัปดาห์; ติดตามภาพรังสีอย่างใกล้ชิด"
                   },
                   "pitfalls": {
-                    "en": "• Inevitable symptomatic varus malunion and early subtalar osteoarthritis",
-                    "th": "• เกิดกระดูกติดผิดรูปมุม Varus และข้อใต้ทาเลสเสื่อมปวดรุนแรงอย่างหลีกเลี่ยงไม่ได้"
+                    "en": "• Loss of reduction, nonunion, severe subtalar arthritis, and varus malunion",
+                    "th": "• แนวกระดูกเคลื่อนหลุดซ้ำ กระดูกไม่ติด ข้อส้นเท้าเสื่อมรุนแรง และกระดูกติดผิดรูปเอียงเข้าใน"
                   }
                 },
                 "operative": {
                   "indication": {
-                    "en": "• All displaced Hawkins Type II talar neck fractures with subtalar subluxation/dislocation",
-                    "th": "• กระดูกหัก Hawkins II ที่มีการเคลื่อนตัวหรือข้อ Subtalar หลุดกึ่งหลุดทุกราย"
+                    "en": "• All displaced Hawkins Type II fractures in operable patients (Standard of Care)",
+                    "th": "• รอยหักคอทาเลสชนิดเคลื่อนตัว Hawkins Type II ทุกราย (การรักษามาตรฐาน)"
                   },
                   "method": {
-                    "en": "• Urgent Anatomic ORIF via Dual Approach (Anteromedial and Anterolateral incisions to visualize both columns and prevent varus tilt)\n• Fixation with two to three 4.0–4.5 mm Cannulated Cancellous Screws (placed posteroanterior or anteroposterior) OR Mini-fragment locking plates for comminuted neck",
-                    "th": "• ผ่าตัดเปิดจัดกระดูกฉุกเฉินผ่าน 2 ช่องทาง (Anteromedial + Anterolateral approaches เพื่อมองเห็นทั้งสองด้านและป้องกันการเอียง Varus)\n• ยึดตรึงด้วยสกรู Cannulated Screws 4.0–4.5 มม. 2–3 ตัว (ยิงจากหลังไปหน้า หรือหน้าไปหลัง) หรือใช้แผ่นเหล็กล็อคขนาดเล็กดามกรณีคอกระดูกแตกละเอียด"
+                    "en": "• Urgent Anatomic ORIF via dual anteromedial and anterolateral approaches\n• Rigid fixation with two 4.0 mm or 4.5 mm cannulated partially threaded screws placed in lag fashion from anterior to posterior (or posterior to anterior)",
+                    "th": "• ผ่าตัดเปิดจัดกระดูกฉุกเฉินเข้าทางด้านหน้าในและหน้าด้านนอก (Dual Anteromedial and Anterolateral approaches)\n• ยึดตรึงแข็งแรงด้วยสกรูคู่ Cannulated Screws 4.0–4.5 มม. จากหน้าไปหลัง (หรือหลังไปหน้า)"
                   },
                   "rehabilitation": {
                     "en": "• Non-weightbearing for 8–12 weeks; early active ankle and subtalar motion at 2–3 weeks post-op; assess for Hawkins sign at 6–8 weeks before full weight-bearing",
@@ -287,6 +288,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/hawkins/hawkins_2.png",
+              "xrayUrl": "/images/xrays/hawkins/type2_xray.jpg",
               "xrayDescription": {
                 "en": "Displaced talar neck fracture with posterior displacement of subtalar joint on lateral view.",
                 "th": "เห็นรอยหักคอทาเลสเคลื่อนตัวพร้อมข้อ Subtalar เคลื่อนหลุดไปด้านหลังในท่าด้านข้าง"
@@ -350,6 +352,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/hawkins/hawkins_3.png",
+              "xrayUrl": "/images/xrays/hawkins/type3_xray.jpg",
               "xrayDescription": {
                 "en": "Talar neck fracture with complete dislocation of talar body from both ankle mortise and calcaneus.",
                 "th": "เห็นรอยหักคอทาเลสร่วมกับตัวกระดูก Talus หลุดออกจากเบ้าข้อเท้าและกระดูกส้นเท้าอย่างสิ้นเชิง"
@@ -413,6 +416,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/hawkins/hawkins_4.png",
+              "xrayUrl": "/images/xrays/hawkins/type4_xray.jpg",
               "xrayDescription": {
                 "en": "Gross displacement of talar head and body from all surrounding tarsal and tibial articulations.",
                 "th": "เห็นหัวและตัวกระดูก Talus หลุดออกจากเบ้าข้อโดยรอบทั้งหมด"
@@ -653,6 +657,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/essex_lopresti/extra_articular.png",
+              "xrayUrl": "/images/xrays/essex_lopresti/extra_articular_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line seen at tuberosity or sustentaculum tali with intact Bohler's angle (20-40°).",
                 "th": "เห็นรอยหักบริเวณตุ่มส้นเท้าหรือ Sustentaculum tali โดยมุม Bohler's angle ยังคงปกติ (20-40°)"
@@ -716,6 +721,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/essex_lopresti/tongue_type.png",
+              "xrayUrl": "/images/xrays/essex_lopresti/tongue_xray.jpg",
               "xrayDescription": {
                 "en": "Horizontal fracture line extending to posterior tuberosity with dorsal tilt of tongue fragment and reduced Bohler's angle (<20°).",
                 "th": "เห็นรอยหักแนวนอนพาดทะลุไปทางตุ่มหลัง ชิ้นลิ้นกระดกขึ้นด้านบน และมุม Bohler's angle ลดลง (<20°)"
@@ -779,6 +785,7 @@ export const footBone: BoneData = {
                 }
               },
               "illustrationId": "/images/essex_lopresti/joint_depression.png",
+              "xrayUrl": "/images/xrays/essex_lopresti/joint_depression_xray.jpg",
               "xrayDescription": {
                 "en": "Crushed, rotated posterior facet fragment driven into calcaneal body with severe reduction of Bohler's angle (<0°).",
                 "th": "เห็นชิ้นผิวข้อ Posterior facet แตกหมุนยุบจมลงในตัวกระดูกส้นเท้าอย่างชัดเจน มุม Bohler's angle ติดลบ (<0°)"

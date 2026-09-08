@@ -68,6 +68,26 @@ Clinical X-rays sourced from publications often come with multi-panel layouts (A
 
 ---
 
+## Token-Optimized Visual Verification Protocol (เกณฑ์การตรวจภาพแบบประหยัด Token)
+
+To prevent excessive multimodal token consumption (saving 60–70% tokens while preserving 100% clinical and anatomical accuracy):
+
+1. **Text-First Cross-Referencing**:
+   - Verify classification types, anatomical regions, and diagnoses directly from peer-reviewed figure captions, paper text, and DOI/PMC metadata *before* processing images. Text parsing consumes minimal tokens.
+2. **Headless Image Processing Pipeline**:
+   - Execute all downloading, splitting, cropping, centering, marker inpainting, and web optimization via local Python/shell scripts without loading intermediate draft images into the AI context.
+   - **DO NOT** call `view_file` on raw multi-panel figures, uncropped sheets, or incremental editing drafts.
+3. **Single-Pass Final Visual Inspection**:
+   - Call `view_file` **strictly ONCE per classification type** on the **Final Processed Image** (e.g., `mason_type1_xray.jpg`).
+   - Perform rapid morphological validation:
+     - Is the fracture pattern/displacement pathognomonic and true to the classification type?
+     - Are articular surfaces, step-offs, and adjacent joint lines intact and uncropped?
+     - Are all external artifacts and letter labels cleanly eliminated without altering bone anatomy?
+4. **Session Freshness Recommendation**:
+   - Once a bone region or classification system is completed, encourage opening a fresh session for the next bone to eliminate accumulated multimodal context tokens.
+
+---
+
 ## Data Schema Mapping (`src/data/bones/*.ts`)
 
 Add `xrayUrl` alongside `illustrationId` and `xrayDescription`:

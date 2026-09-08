@@ -1304,6 +1304,7 @@ export const humerusBone: BoneData = {
                 }
               },
               "illustrationId": "/images/humerus/ao_13_a.png",
+              "xrayUrl": "/images/xrays/distal_humerus/type_a_xray.jpg",
               "xrayDescription": {
                 "en": "Metaphyseal or epicondylar fracture line above the olecranon fossa without articular cartilage disruption.",
                 "th": "เห็นรอยหักเหนือข้อหรือที่ปุ่ม Epicondyle โดยผิวข้อ Trochlea และ Capitellum เรียบเสมอกันสมบูรณ์"
@@ -1367,6 +1368,7 @@ export const humerusBone: BoneData = {
                 }
               },
               "illustrationId": "/images/humerus/ao_13_b.png",
+              "xrayUrl": "/images/xrays/distal_humerus/type_b_xray.jpg",
               "xrayDescription": {
                 "en": "Articular fracture line extending through capitellum or trochlea with part of the condyle connected to shaft.",
                 "th": "เห็นรอยหักพาดผ่านผิวข้อ Capitellum หรือ Trochlea โดยมีเสากระดูกอีกฝั่งหนึ่งเชื่อมต่อกับแกนกระดูก"
@@ -1430,6 +1432,7 @@ export const humerusBone: BoneData = {
                 }
               },
               "illustrationId": "/images/humerus/ao_13_c.png",
+              "xrayUrl": "/images/xrays/distal_humerus/type_c_xray.jpg",
               "xrayDescription": {
                 "en": "Complete separation of trochlea/capitellum articular surface from humeral shaft with intercondylar T- or Y-split and variable comminution.",
                 "th": "เห็นชิ้นข้อต่อ Trochlea และ Capitellum หลุดแยกขาดจากแกนกระดูกต้นแขนทั้งหมด พร้อมรอยแยกรูปตัว T หรือ Y"
