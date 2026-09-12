@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import { 
@@ -17,6 +17,8 @@ import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
 import { cleanSystemName } from "../detail/DetailPanel";
 import { getBoneIcon } from "../common/BoneIcons";
+import { HIGH_YIELD_QUESTIONS } from "../Quiz/quizData";
+import { getDailyQuizSet } from "../Quiz/dailyQuizEngine";
 
 interface LearningHubPanelProps {
   darkMode: boolean;
@@ -43,6 +45,9 @@ export function LearningHubPanel({
   onSelectBone,
 }: LearningHubPanelProps) {
   const [quizSelected, setQuizSelected] = useState<number | null>(null);
+
+  const todayQuestions = useMemo(() => getDailyQuizSet(HIGH_YIELD_QUESTIONS, 10), []);
+  const dailyQ = todayQuestions[0] || HIGH_YIELD_QUESTIONS[0];
 
   const bg = darkMode ? "#161B27" : "#FFFFFF";
   const text = darkMode ? "#F1F5F9" : "#0F172A";
@@ -235,17 +240,11 @@ export function LearningHubPanel({
           style={{ background: cardBg, borderColor: cardBorder }}
         >
           <div className="font-bold text-[11.5px] leading-relaxed text-black dark:text-slate-200">
-            {language === "en" 
-              ? "Q: Which nerve/vascular structure is most vulnerable in Schatzker Type IV tibial plateau fractures?"
-              : "Q: ผู้ป่วยที่หักแบบ Schatzker Type IV (Medial Plateau) มีความเสี่ยงบาดเจ็บต่อหลอดเลือด/เส้นประสาทใดรุนแรงที่สุด?"}
+            Q: {dailyQ.scenario[language]}
           </div>
 
           <div className="space-y-1.5">
-            {[
-              { id: 0, text: { en: "A) Popliteal Artery & Tibial Nerve", th: "ก) Popliteal Artery & Tibial Nerve" }, isCorrect: true },
-              { id: 1, text: { en: "B) Isolated Lateral Meniscus Tear", th: "ข) Superficial Peroneal Nerve" }, isCorrect: false },
-              { id: 2, text: { en: "C) Femoral Artery Disruption", th: "ค) Saphenous Nerve" }, isCorrect: false },
-            ].map((option) => (
+            {dailyQ.options.map((option) => (
               <button
                 key={option.id}
                 onClick={() => setQuizSelected(option.id)}
@@ -269,20 +268,20 @@ export function LearningHubPanel({
 
           {quizSelected !== null && (
             <div className="pt-1.5 border-t border-slate-200 dark:border-slate-500/20 text-[11px] space-y-2">
-              {quizSelected === 0 ? (
+              {dailyQ.options.find((o) => o.id === quizSelected)?.isCorrect ? (
                 <div className="text-emerald-700 dark:text-emerald-400 font-bold flex items-center gap-1">
-                  ✨ {language === "en" ? "Correct! High energy medial fracture/dislocation variant." : "ถูกต้อง! Schatzker IV เป็นรอยหักพลังงานสูงเสี่ยงหลอดเลือดPoplitealขาด"}
+                  ✨ {language === "en" ? "Correct!" : "ถูกต้อง!"} {dailyQ.explanation[language]}
                 </div>
               ) : (
                 <div className="text-amber-700 dark:text-amber-400 font-bold">
-                  💡 {language === "en" ? "Tip: Schatzker IV often involves knee dislocation mechanism." : "คำตอบที่ถูกต้องคือ ก) Popliteal Artery จากแรงดึงกระชากข้อเข่าหลุด"}
+                  💡 {language === "en" ? "Tip:" : "คำอธิบาย:"} {dailyQ.explanation[language]}
                 </div>
               )}
               <button
-                onClick={() => handleLaunchTopic("tibia", "proximal")}
+                onClick={() => handleLaunchTopic(dailyQ.boneId, dailyQ.regionId)}
                 className="w-full py-1.5 rounded-lg text-[11px] font-extrabold bg-teal-600/15 dark:bg-[#00CED1]/20 text-teal-900 dark:text-[#00CED1] border border-teal-600/40 dark:border-[#00CED1]/40 hover:bg-teal-600/25 transition-all flex items-center justify-center gap-1 cursor-pointer"
               >
-                <span>{language === "en" ? "Explore Tibial Plateau Concept" : "เปิดดู Tibial Plateau Concept 🚀"}</span>
+                <span>{language === "en" ? "Explore Related Concept" : "เปิดดูหัวข้อที่เกี่ยวข้อง 🚀"}</span>
                 <ChevronRight size={13} />
               </button>
             </div>

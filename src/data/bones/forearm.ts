@@ -646,6 +646,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_1a.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_1a_xray.jpg",
               "xrayDescription": {
                 "en": "Faint non-displaced transverse fracture line on lateral view with intact ulnohumeral alignment.",
                 "th": "เห็นรอยหักแนวขวางจางๆ ในท่าด้านข้าง โดยไม่มีการเคลื่อนตัวและข้อศอกเรียงตัวปกติ"
@@ -709,6 +710,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_1b.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_1b_xray.jpg",
               "xrayDescription": {
                 "en": "Comminuted fracture lines without articular step-off or ulnohumeral subluxation.",
                 "th": "รอยหักแตกละเอียดหลายชิ้นแต่ไม่มีรอยเกยขั้นบันไดบนผิวข้อ"
@@ -772,6 +774,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_2a.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_2a_xray.jpg",
               "xrayDescription": {
                 "en": "Displaced simple transverse fracture gap >2mm with intact ulnohumeral articulation.",
                 "th": "เห็นช่องรอยหักแนวขวางอ้าแยก > 2 มม. ในท่าด้านข้าง โดยข้อ ulnohumeral ยังเข้าที่สมบูรณ์"
@@ -835,6 +838,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_2b.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_2b_xray.jpg",
               "xrayDescription": {
                 "en": "Comminuted displaced fracture of the olecranon with loss of trochlear notch continuity.",
                 "th": "ชิ้นกระดูกแตกละเอียดและเคลื่อนตัวออกจากกัน เสียแนวกระดูก Trochlear notch"
@@ -898,6 +902,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_3a.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_3a_xray.jpg",
               "xrayDescription": {
                 "en": "Olecranon fracture with gross anterior or posterior subluxation/dislocation of the forearm relative to distal humerus.",
                 "th": "รอยหักข้อศอกร่วมกับการเคลื่อนหลุดไปด้านหน้าหรือหลังของกระดูกปลายแขน"
@@ -961,6 +966,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/olecranon/mayo_3b.png",
+              "xrayUrl": "/images/xrays/mayo/mayo_3b_xray.jpg",
               "xrayDescription": {
                 "en": "Severe comminution of olecranon with total dislocation of ulnohumeral joint and associated soft tissue collapse.",
                 "th": "กระดูกข้อศอกแตกละเอียดอย่างรุนแรง ร่วมกับข้อศอกหลุดหลุดออกจากกันสมบูรณ์"
@@ -1204,6 +1210,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/eponyms/monteggia.png",
+              "xrayUrl": "/images/xrays/forearm_shaft/monteggia_xray.jpg",
               "xrayDescription": {
                 "en": "Ulna shaft fracture, radial head not aligned with capitellum",
                 "th": "กระดูก Ulna หัก และแนวของ radial head ไม่ชี้ไปที่ capitellum"
@@ -1263,6 +1270,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/eponyms/galeazzi.png",
+              "xrayUrl": "/images/xrays/forearm_shaft/galeazzi_xray.jpg",
               "xrayDescription": {
                 "en": "Distal radius fracture, widened DRUJ or ulnar head dorsally displaced",
                 "th": "กระดูก Radius หักส่วนปลาย และข้อ DRUJ กว้างขึ้นหรือกระดูก Ulna หลุด"
@@ -1326,6 +1334,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/eponyms/nightstick.png",
+              "xrayUrl": "/images/xrays/forearm_shaft/nightstick_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse or short oblique fracture of mid-ulnar shaft without radioulnar dislocation.",
                 "th": "เห็นรอยหักแนวขวาง/เฉียงสั้นบริเวณกลางแกน Ulna โดยไม่มีการเคลื่อนหลุดของข้อต่อข้อศอกและข้อมือ"
@@ -1593,6 +1602,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/der_eponyms/colles.png",
+              "xrayUrl": "/images/xrays/der_eponyms/colles_xray.jpg",
               "xrayDescription": {
                 "en": "Dinner fork deformity, dorsal angulation and impaction",
                 "th": "กระดูกหักและทำมุมไปทางด้านหลังมือคล้ายส้อม (Dinner fork deformity)"
@@ -1652,6 +1662,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/der_eponyms/smith.png",
+              "xrayUrl": "/images/xrays/der_eponyms/smith_xray.jpg",
               "xrayDescription": {
                 "en": "Garden spade deformity, volar angulation",
                 "th": "กระดูกหักและทำมุมไปทางด้านหน้าฝ่ามือ (Garden spade deformity)"
@@ -1715,6 +1726,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/der_eponyms/dorsal_barton.png",
+              "xrayUrl": "/images/xrays/der_eponyms/dorsal_barton_xray.jpg",
               "xrayDescription": {
                 "en": "Intra-articular fracture line with dorsal rim fragment displacement and carpal subluxation.",
                 "th": "รอยหักลามเข้าข้อกระดูกข้อมือ ร่วมกับชิ้นส่วนขอบหลังเคลื่อนและข้อข้อมือหลุดเคลื่อน"
@@ -1778,6 +1790,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/der_eponyms/volar_barton.png",
+              "xrayUrl": "/images/xrays/der_eponyms/volar_barton_xray.jpg",
               "xrayDescription": {
                 "en": "Intra-articular fracture line with volar rim fragment displacement and anterior carpal subluxation.",
                 "th": "รอยหักลามเข้าข้อกระดูกข้อมือ ร่วมกับชิ้นส่วนขอบหน้าเคลื่อนและข้อข้อมือหลุดเคลื่อนไปด้านหน้า"
@@ -1934,6 +1947,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/fernandez/fernan1.png",
+              "xrayUrl": "/images/xrays/fernandez/type1_bending_xray.jpg",
               "xrayDescription": {
                 "en": "Extra-articular fracture, dorsal angulation (Colles') or volar angulation (Smith's), no articular involvement.",
                 "th": "รอยหักนอกข้อ ทำมุมไปด้านหลัง (Colles') หรือด้านหน้า (Smith') โดยไม่มีรอยหักเข้าข้อ"
@@ -1997,6 +2011,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/fernandez/fernan2.png",
+              "xrayUrl": "/images/xrays/fernandez/type2_shearing_xray.jpg",
               "xrayDescription": {
                 "en": "Intra-articular fracture of the volar or dorsal rim, subluxation of carpus may accompany.",
                 "th": "รอยหักเข้าข้อบริเวณขอบ Volar หรือ Dorsal อาจพบข้อมือเคลื่อนร่วมด้วย"
@@ -2060,6 +2075,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/fernandez/fernan3.png",
+              "xrayUrl": "/images/xrays/fernandez/type3_compression_xray.jpg",
               "xrayDescription": {
                 "en": "Articular depression (die-punch pattern), radiolucent defect under the articular surface.",
                 "th": "ผิวข้อยุบลงแบบ Die-Punch บริเวณใต้ผิวกระดูกอ่อนมีช่องโหว่ที่เห็นในภาพรังสี"
@@ -2123,6 +2139,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/fernandez/fernan4.png",
+              "xrayUrl": "/images/xrays/fernandez/type4_avulsion_xray.jpg",
               "xrayDescription": {
                 "en": "Small avulsion fragment at radial or ulnar styloid; assess for carpal malalignment.",
                 "th": "ชิ้นกระดูกเล็กหลุดออกบริเวณ Radial หรือ Ulnar styloid ควรประเมินแนวของกระดูกข้อมือ"
@@ -2186,6 +2203,7 @@ export const forearmBone: BoneData = {
                 }
               },
               "illustrationId": "/images/fernandez/fernan5.png",
+              "xrayUrl": "/images/xrays/fernandez/type5_combined_xray.jpg",
               "xrayDescription": {
                 "en": "Highly comminuted fracture pattern, multiple intra-articular fragments, possible DRUJ disruption.",
                 "th": "กระดูกแตกละเอียดหลายชิ้น มีชิ้นส่วนในข้อหลายชิ้น อาจพบข้อ DRUJ แตกหรือเคลื่อนร่วมด้วย"

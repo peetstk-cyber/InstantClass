@@ -1106,18 +1106,6 @@ export const InteractiveSkeleton = ({
       </g>
 			
       <g 
-        onClick={(e) => { e.stopPropagation(); onSelectBone('patella', 'patella'); }} 
-        onMouseEnter={() => onHoverBone('patella')} 
-        onMouseLeave={() => onHoverBone(null)} 
-        className="cursor-pointer group"
-      >
-        {/* Invisible fat path to increase hit area */}
-        <path d="m82.73 594.4c2.12 3.4 4.16 8.84 2.75 13.75-0.78 2.69-4.59 6.49-6.77 6.98-1.23 0.27-2.2-0.21-3.38 0-8.63-3.73-10.2-21.4 1.48-22.64 3.02-0.31 3.82 0.96 5.92 1.91z" className="fill-transparent stroke-transparent cursor-pointer stroke-[40px]" />
-        {/* Visible path */}
-        <path d="m82.73 594.4c2.12 3.4 4.16 8.84 2.75 13.75-0.78 2.69-4.59 6.49-6.77 6.98-1.23 0.27-2.2-0.21-3.38 0-8.63-3.73-10.2-21.4 1.48-22.64 3.02-0.31 3.82 0.96 5.92 1.91z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'patella' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'patella' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
-      </g>
-			
-      <g 
         onClick={(e) => { e.stopPropagation(); onSelectBone('tibia', 'proximal'); }} 
         onMouseEnter={() => onHoverBone('tibia')} 
         onMouseLeave={() => onHoverBone(null)} 
@@ -1140,6 +1128,22 @@ export const InteractiveSkeleton = ({
         {/* Visible path */}
         <path d="m59.88 614.29c0.18-0.04 0.2 0.08 0.22 0.21 1.87 2.11 2.57 4.53 4.23 6.98 1.28 1.9 3.75 3.52 4.44 5.5 1.86 5.32 0.05 14.9 0 21.57-0.05 5.73 0.42 11.74 0.42 17.77 0 17.92 1.37 35.27 2.54 51.62 0.16 2.25 0.9 4.72 1.06 6.77 0.6 7.68 0.91 15.69 1.27 23.69 0.35 8.05 1.22 16.4 0.63 24.12-0.44 5.86-2.78 11.68-2.33 17.76-4.59-1.64-3.22-9.52-2.75-15.23 1.58-18.97-1.48-36.45-2.32-54.57-0.56-12.07-1.39-24.34-2.12-36.39-0.76-12.64-0.39-25.1-0.84-37.23-0.19-4.92-0.29-10.35-1.27-15.02-0.84-3.96-3.18-6.25-5.08-9.52-0.06-3.37-0.23-6.86 1.9-8.03z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'tibia' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'tibia' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
       </g>
+			
+      {/* Patella (Left) - Rendered AFTER Tibia with enhanced mobile touch area */}
+      <g 
+        onClick={(e) => { e.stopPropagation(); onSelectBone('patella', 'patella'); }} 
+        onMouseEnter={() => onHoverBone('patella')} 
+        onMouseLeave={() => onHoverBone(null)} 
+        className="cursor-pointer group"
+      >
+        {/* Generous invisible touch circle for mobile & touch (44px diameter in SVG space) */}
+        <circle cx="77" cy="602" r="22" fill="#000000" fillOpacity="0.001" pointerEvents="all" className="cursor-pointer" />
+        {/* Invisible fat path to increase hit area */}
+        <path d="m82.73 594.4c2.12 3.4 4.16 8.84 2.75 13.75-0.78 2.69-4.59 6.49-6.77 6.98-1.23 0.27-2.2-0.21-3.38 0-8.63-3.73-10.2-21.4 1.48-22.64 3.02-0.31 3.82 0.96 5.92 1.91z" fill="#000000" fillOpacity="0.001" pointerEvents="all" className="cursor-pointer stroke-[35px] stroke-transparent" />
+        {/* Visible path */}
+        <path d="m82.73 594.4c2.12 3.4 4.16 8.84 2.75 13.75-0.78 2.69-4.59 6.49-6.77 6.98-1.23 0.27-2.2-0.21-3.38 0-8.63-3.73-10.2-21.4 1.48-22.64 3.02-0.31 3.82 0.96 5.92 1.91z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'patella' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'patella' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
+      </g>
+
 			
       <g 
         onClick={(e) => { e.stopPropagation(); onSelectBone('foot', 'foot'); }} 
@@ -1276,18 +1280,6 @@ export const InteractiveSkeleton = ({
       </g>
 			
       <g 
-        onClick={(e) => { e.stopPropagation(); onSelectBone('patella', 'patella'); }} 
-        onMouseEnter={() => onHoverBone('patella')} 
-        onMouseLeave={() => onHoverBone(null)} 
-        className="cursor-pointer group"
-      >
-        {/* Invisible fat path to increase hit area */}
-        <path d="m158.26 594.4c-2.13 3.4-4.17 8.84-2.75 13.75 0.78 2.69 4.59 6.49 6.77 6.98 1.22 0.27 2.19-0.21 3.38 0 8.62-3.73 10.19-21.4-1.48-22.64-3.03-0.31-3.83 0.96-5.92 1.91z" className="fill-transparent stroke-transparent cursor-pointer stroke-[40px]" />
-        {/* Visible path */}
-        <path d="m158.26 594.4c-2.13 3.4-4.17 8.84-2.75 13.75 0.78 2.69 4.59 6.49 6.77 6.98 1.22 0.27 2.19-0.21 3.38 0 8.62-3.73 10.19-21.4-1.48-22.64-3.03-0.31-3.83 0.96-5.92 1.91z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'patella' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'patella' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
-      </g>
-			
-      <g 
         onClick={(e) => { e.stopPropagation(); onSelectBone('tibia', 'proximal'); }} 
         onMouseEnter={() => onHoverBone('tibia')} 
         onMouseLeave={() => onHoverBone(null)} 
@@ -1310,6 +1302,22 @@ export const InteractiveSkeleton = ({
         {/* Visible path */}
         <path d="m181.1 614.29c-0.18-0.04-0.2 0.08-0.21 0.21-1.88 2.11-2.58 4.53-4.23 6.98-1.29 1.9-3.75 3.52-4.44 5.5-1.87 5.32-0.06 14.9 0 21.57 0.04 5.73-0.43 11.74-0.43 17.77 0 17.92-1.36 35.27-2.53 51.62-0.16 2.25-0.9 4.72-1.06 6.77-0.6 7.68-0.92 15.69-1.27 23.69-0.35 8.05-1.22 16.4-0.63 24.12 0.44 5.86 2.78 11.68 2.32 17.76 4.6-1.64 3.23-9.52 2.75-15.23-1.58-18.97 1.48-36.45 2.33-54.57 0.56-12.07 1.39-24.34 2.11-36.39 0.77-12.64 0.4-25.1 0.85-37.23 0.18-4.92 0.29-10.35 1.27-15.02 0.83-3.96 3.18-6.25 5.08-9.52 0.05-3.37 0.23-6.86-1.91-8.03z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'tibia' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'tibia' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
       </g>
+			
+      {/* Patella (Right) - Rendered AFTER Tibia with enhanced mobile touch area */}
+      <g 
+        onClick={(e) => { e.stopPropagation(); onSelectBone('patella', 'patella'); }} 
+        onMouseEnter={() => onHoverBone('patella')} 
+        onMouseLeave={() => onHoverBone(null)} 
+        className="cursor-pointer group"
+      >
+        {/* Generous invisible touch circle for mobile & touch (44px diameter in SVG space) */}
+        <circle cx="168" cy="602" r="22" fill="#000000" fillOpacity="0.001" pointerEvents="all" className="cursor-pointer" />
+        {/* Invisible fat path to increase hit area */}
+        <path d="m158.26 594.4c-2.13 3.4-4.17 8.84-2.75 13.75 0.78 2.69 4.59 6.49 6.77 6.98 1.22 0.27 2.19-0.21 3.38 0 8.62-3.73 10.19-21.4-1.48-22.64-3.03-0.31-3.83 0.96-5.92 1.91z" fill="#000000" fillOpacity="0.001" pointerEvents="all" className="cursor-pointer stroke-[35px] stroke-transparent" />
+        {/* Visible path */}
+        <path d="m158.26 594.4c-2.13 3.4-4.17 8.84-2.75 13.75 0.78 2.69 4.59 6.49 6.77 6.98 1.22 0.27 2.19-0.21 3.38 0 8.62-3.73 10.19-21.4-1.48-22.64-3.03-0.31-3.83 0.96-5.92 1.91z" className={`transition-all duration-200 stroke-[1px] ${selectedBoneId === 'patella' ? 'fill-orange-400 stroke-orange-500 drop-shadow-[0_0_8px_rgba(251,146,60,0.8)] z-10' : hoveredBoneId === 'patella' ? 'fill-yellow-300 stroke-yellow-400 drop-shadow-[0_0_6px_rgba(253,224,71,0.8)] z-10' : darkMode ? 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100 dark:group-hover:fill-yellow-900' : 'fill-[#FFFFFF] stroke-slate-600 group-hover:fill-yellow-100'}`} />
+      </g>
+
 			
       <g 
         onClick={(e) => { e.stopPropagation(); onSelectBone('foot', 'foot'); }} 

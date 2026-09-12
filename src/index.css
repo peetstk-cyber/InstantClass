@@ -234,3 +234,25 @@ body.dark {
 @utility animate-slide-in-l {
   animation: slideInL 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+/* ─── Mobile Ultra-Smooth Carousel Slider ─── */
+.mobile-carousel-track {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 768px) {
+  .mobile-carousel-track {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    scroll-snap-type: none !important;
+    display: block !important;
+  }
+  .mobile-concept-page {
+    display: none !important;
+  }
+}
+

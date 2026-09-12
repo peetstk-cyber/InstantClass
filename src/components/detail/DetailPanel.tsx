@@ -1,8 +1,9 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { Language } from "../../App";
 import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
-import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp } from "lucide-react";
+import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp, Layers, Lightbulb } from "lucide-react";
+
 import { FractureIllustration } from "./FractureIllustration";
 import { SpineScoreCalculator } from "./SpineScoreCalculator";
 import { RegionConceptPanel } from "../layout/RegionConceptPanel";
@@ -1328,6 +1329,25 @@ export function DetailPanel({
   const [isClosing, setIsClosing] = useState(false);
   const [dragY, setDragY] = useState(0);
   const [mobilePage, setMobilePage] = useState<number>(0);
+  const [isMobile, setIsMobile] = useState(() => 
+    typeof window !== "undefined" ? window.innerWidth < 768 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Derive active data
+  const region = bone?.regions.find(r => r.id === selectedRegionId) ?? bone?.regions[0] ?? null;
+  const classSystem: ClassificationSystem | null = region?.classifications[selectedSystemIdx] ?? null;
+  const fracType: FractureClassificationType | null = classSystem?.types[selectedTypeIdx] ?? null;
+
+  const trackRef = useRef<HTMLDivElement>(null);
+
 
   const handleAnimatedClose = useCallback(() => {
     setIsClosing(true);
@@ -1378,88 +1398,140 @@ export function DetailPanel({
     });
   };
 
-  // ── Top Drag Handle Only (Drag Down To Close Modal) ──
-  const [handleTouchStartY, setHandleTouchStartY] = useState<number | null>(null);
+  // ── Interactive Pull-To-Dismiss / Drag-To-Dismiss with Strict Top-Guard ──
+  const dragStartY = useRef<number | null>(null);
+  const isDraggingSheet = useRef<boolean>(false);
+  const activeScrollTarget = useRef<HTMLElement | null>(null);
+  const startedAtTop = useRef<boolean>(false);
 
-  const handleHandleTouchStart = (e: React.TouchEvent) => {
-    setHandleTouchStartY(e.touches[0].clientY);
-  };
+  const handleGlobalTouchStart = (e: React.TouchEvent) => {
+    if (!isMobile) return;
+    dragStartY.current = e.touches[0].clientY;
+    isDraggingSheet.current = false;
 
-  const handleHandleTouchMove = (e: React.TouchEvent) => {
-    if (handleTouchStartY === null) return;
-    const currentY = e.touches[0].clientY;
-    const diffY = currentY - handleTouchStartY;
-    if (diffY > 0) {
-      setDragY(diffY);
-    }
-  };
-
-  const handleHandleTouchEnd = () => {
-    if (dragY > 60) {
-      handleAnimatedClose();
-    } else {
-      setDragY(0);
-    }
-    setHandleTouchStartY(null);
-  };
-
-  // ── Horizontal Swipe (Between Classification & Concept Guide - Content Only) ──
-  const [swipeStartX, setSwipeStartX] = useState<number | null>(null);
-  const [swipeStartY, setSwipeStartY] = useState<number | null>(null);
-
-  const handleSwipeTouchStart = (e: React.TouchEvent) => {
-    // Prevent page swipe if touch originated inside a horizontal scroll container (e.g. type cards carousel)
+    // Find if the touch started within a scrollable child container
     let target = e.target as HTMLElement | null;
+    let scrollEl: HTMLElement | null = null;
     while (target && target !== e.currentTarget) {
       if (
-        target.scrollWidth > target.clientWidth + 5 ||
-        target.classList.contains("overflow-x-auto") ||
-        target.getAttribute("data-no-swipe") === "true"
+        target.scrollHeight > target.clientHeight && 
+        (target.classList.contains("overflow-y-auto") || target.classList.contains("overflow-auto"))
       ) {
-        setSwipeStartX(null);
-        setSwipeStartY(null);
-        return;
+        scrollEl = target;
+        break;
       }
       target = target.parentElement;
     }
-    setSwipeStartX(e.touches[0].clientX);
-    setSwipeStartY(e.touches[0].clientY);
+    activeScrollTarget.current = scrollEl;
+
+    // STRICT GUARD: Must ALREADY be at position top (scrollTop <= 1) at the moment of touch start
+    // If the user was scrolling up from below, this gesture cannot trigger dismiss!
+    startedAtTop.current = !scrollEl || scrollEl.scrollTop <= 1;
   };
 
-  const handleSwipeTouchEnd = (e: React.TouchEvent) => {
-    if (swipeStartX !== null && swipeStartY !== null && e.changedTouches && e.changedTouches.length > 0) {
-      const endX = e.changedTouches[0].clientX;
-      const endY = e.changedTouches[0].clientY;
-      const deltaX = endX - swipeStartX;
-      const deltaY = endY - swipeStartY;
+  const handleGlobalTouchMove = (e: React.TouchEvent) => {
+    if (dragStartY.current === null || !isMobile || !startedAtTop.current) return;
 
-      // Only trigger horizontal swipe if horizontal movement is strongly dominant (> 1.5x vertical)
-      if (Math.abs(deltaX) >= 40 && Math.abs(deltaX) > Math.abs(deltaY) * 1.5) {
-        if (deltaX < -40) {
-          // Swipe Left -> Concept Guide (Page 1) or Next System
-          if (mobilePage === 0 && region?.regionConcept) {
-            setMobilePage(1);
-          } else if (region?.classifications && region.classifications.length > 1) {
-            onSelectSystem((selectedSystemIdx + 1) % region.classifications.length);
-          }
-        } else if (deltaX > 40) {
-          // Swipe Right -> Classification View (Page 0) or Previous System
-          if (mobilePage === 1) {
-            setMobilePage(0);
-          } else if (region?.classifications && region.classifications.length > 1) {
-            onSelectSystem((selectedSystemIdx - 1 + region.classifications.length) % region.classifications.length);
-          }
-        }
+    // Check current scroll position - must remain at top
+    const currentScrollTop = activeScrollTarget.current ? activeScrollTarget.current.scrollTop : 0;
+    if (currentScrollTop > 1) {
+      return;
+    }
+
+    const currentY = e.touches[0].clientY;
+    const diffY = currentY - dragStartY.current;
+
+    if (diffY > 6) {
+      // User is dragging downwards from the very top
+      isDraggingSheet.current = true;
+      if (e.cancelable) {
+        e.preventDefault();
+      }
+      // Direct real-time 1:1 finger tracking so user feels in complete physical control
+      // Slight smooth resistance only after 180px
+      const visualY = diffY <= 180 ? diffY : 180 + (diffY - 180) * 0.7;
+      setDragY(visualY);
+    } else if (isDraggingSheet.current) {
+      // User moved finger back up (cancelling gesture)
+      if (diffY <= 0) {
+        setDragY(0);
+        isDraggingSheet.current = false;
+      } else {
+        setDragY(diffY);
       }
     }
-    setSwipeStartX(null);
-    setSwipeStartY(null);
   };
-  
+
+  const handleGlobalTouchEnd = (e: React.TouchEvent) => {
+    if (!isDraggingSheet.current || dragStartY.current === null || !isMobile) {
+      dragStartY.current = null;
+      isDraggingSheet.current = false;
+      activeScrollTarget.current = null;
+      startedAtTop.current = false;
+      return;
+    }
+
+    const endY = e.changedTouches[0].clientY;
+    const totalDiffY = endY - dragStartY.current;
+
+    // Intentional Dismiss Threshold: Must pull down at least 150px
+    // If user dragged back up or pulled less than 150px, smoothly cancel and snap back to top
+    if (totalDiffY >= 150) {
+      handleAnimatedClose();
+    } else {
+      // Cancelled: Smoothly springs back to open
+      setDragY(0);
+    }
+
+    dragStartY.current = null;
+    isDraggingSheet.current = false;
+    activeScrollTarget.current = null;
+    startedAtTop.current = false;
+  };
+
+  const handleGlobalTouchCancel = () => {
+    setDragY(0);
+    dragStartY.current = null;
+    isDraggingSheet.current = false;
+    activeScrollTarget.current = null;
+    startedAtTop.current = false;
+  };
+
+  // ── Native CSS Scroll Snap Carousel (Zero touch interception, 100% reliable vertical scroll) ──
+  const isScrollingProgrammatically = useRef(false);
+
+  const handleTrackScroll = () => {
+    if (!trackRef.current || !isMobile || !region?.regionConcept || isScrollingProgrammatically.current) return;
+    const { scrollLeft, clientWidth } = trackRef.current;
+    if (clientWidth === 0) return;
+    const pageIndex = Math.round(scrollLeft / clientWidth);
+    if (pageIndex !== mobilePage && (pageIndex === 0 || pageIndex === 1)) {
+      setMobilePage(pageIndex);
+    }
+  };
+
+  const scrollToMobilePage = (pageIndex: number) => {
+    setMobilePage(pageIndex);
+    if (trackRef.current && isMobile && region?.regionConcept) {
+      isScrollingProgrammatically.current = true;
+      const targetLeft = pageIndex * trackRef.current.clientWidth;
+      trackRef.current.scrollTo({
+        left: targetLeft,
+        behavior: "smooth"
+      });
+      setTimeout(() => {
+        isScrollingProgrammatically.current = false;
+      }, 400);
+    }
+  };
+
   // Reset tabs, system, type, and mobile page when region/bone changes
   useEffect(() => {
     setActiveTab("classification");
     setMobilePage(0);
+    if (trackRef.current) {
+      trackRef.current.scrollLeft = 0;
+    }
     setShowFilmPopup(false);
     onSelectSystem(0);
     onSelectType(0);
@@ -1477,11 +1549,6 @@ export function DetailPanel({
   const border   = darkMode ? "#252F42" : "#E2E8F0";
   const mutedText = darkMode ? "#94A3B8" : "#475569";
   const textColor = darkMode ? "#E2E8F0" : "#0F172A";
-
-  // Derive active data
-  const region = bone?.regions.find(r => r.id === selectedRegionId) ?? bone?.regions[0] ?? null;
-  const classSystem: ClassificationSystem | null = region?.classifications[selectedSystemIdx] ?? null;
-  const fracType: FractureClassificationType | null = classSystem?.types[selectedTypeIdx] ?? null;
 
   const getInvestigations = (): InvestigationView[] => {
     if (classSystem?.investigations && classSystem.investigations.length > 0) {
@@ -1564,23 +1631,24 @@ export function DetailPanel({
 
   return (
     <aside
+      onTouchStart={handleGlobalTouchStart}
+      onTouchMove={handleGlobalTouchMove}
+      onTouchEnd={handleGlobalTouchEnd}
+      onTouchCancel={handleGlobalTouchCancel}
       style={{
         background: bg,
         borderColor: border,
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
-        transition: handleTouchStartY === null ? "transform 0.2s ease" : "none",
+        transition: isDraggingSheet.current ? "none" : "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
-      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl max-h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
-      } md:static md:w-[40%] md:min-w-[380px] md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
+      } md:static md:w-[40%] md:min-w-[380px] md:h-full md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
     >
-      {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE ONLY TO CLOSE MODAL) */}
+      {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE OR PULL CONTENT AT TOP TO CLOSE MODAL) */}
       <div 
-        className="md:hidden flex justify-center pt-2 pb-1 cursor-grab active:cursor-grabbing select-none touch-none" 
+        className="md:hidden flex justify-center pt-2 pb-1 cursor-grab active:cursor-grabbing select-none" 
         onClick={handleAnimatedClose}
-        onTouchStart={handleHandleTouchStart}
-        onTouchMove={handleHandleTouchMove}
-        onTouchEnd={handleHandleTouchEnd}
       >
         <div className="w-10 h-1 rounded-full bg-slate-400/50 hover:bg-slate-400/80 transition-colors" />
       </div>
@@ -1605,58 +1673,51 @@ export function DetailPanel({
           </div>
 
           <div className="flex items-center gap-2 flex-shrink-0">
-            {/* Mobile Page Segmented Switcher (Clean, subtle native style) */}
+            {/* Mobile Page Segmented Switcher (Icon-only: Clean, minimal, reduced clutter) */}
             {region?.regionConcept && (
               <div 
-                className="md:hidden flex items-center p-0.5 rounded-lg border gap-0.5"
+                className="relative md:hidden flex items-center p-0.5 rounded-lg border gap-0.5"
                 style={{
                   background: darkMode ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.04)",
                   borderColor: darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.08)",
                 }}
               >
-                <button
-                  onClick={() => setMobilePage(0)}
-                  className="px-2.5 py-0.5 rounded-md text-[10.5px] font-bold transition-all cursor-pointer flex items-center gap-1"
+                {/* Sliding active highlight capsule */}
+                <div
+                  className="absolute top-0.5 bottom-0.5 rounded-md transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] pointer-events-none"
                   style={{
-                    background: mobilePage === 0 
-                      ? (darkMode ? "#1E293B" : "#FFFFFF") 
-                      : "transparent",
-                    color: mobilePage === 0 
-                      ? (darkMode ? "#F8FAFC" : "#0F172A") 
-                      : (darkMode ? "#94A3B8" : "#64748B"),
-                    border: mobilePage === 0 
-                      ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` 
-                      : "1px solid transparent",
-                    boxShadow: mobilePage === 0 
-                      ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") 
-                      : "none",
+                    width: "calc(50% - 2px)",
+                    left: mobilePage === 0 ? "2px" : "calc(50%)",
+                    background: darkMode ? "#1E293B" : "#FFFFFF",
+                    border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}`,
+                    boxShadow: darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)",
                   }}
-                  title="Classification"
+                />
+                <button
+                  onClick={() => scrollToMobilePage(0)}
+                  className="relative z-10 w-7 h-6 rounded-md transition-colors duration-200 cursor-pointer flex items-center justify-center"
+                  style={{
+                    color: mobilePage === 0 
+                      ? (darkMode ? "#00CED1" : "#0F766E") 
+                      : (darkMode ? "#94A3B8" : "#64748B"),
+                  }}
+                  title={language === "en" ? "Classifications" : "การจัดจำแนก"}
+                  aria-label="Classifications"
                 >
-                  <span className="text-[10px] opacity-80">📋</span>
-                  <span>{language === "en" ? "Classify" : "จำแนก"}</span>
+                  <Layers size={13} strokeWidth={mobilePage === 0 ? 2.5 : 2} />
                 </button>
                 <button
-                  onClick={() => setMobilePage(1)}
-                  className="px-2.5 py-0.5 rounded-md text-[10.5px] font-bold transition-all cursor-pointer flex items-center gap-1"
+                  onClick={() => scrollToMobilePage(1)}
+                  className="relative z-10 w-7 h-6 rounded-md transition-colors duration-200 cursor-pointer flex items-center justify-center"
                   style={{
-                    background: mobilePage === 1 
-                      ? (darkMode ? "#1E293B" : "#FFFFFF") 
-                      : "transparent",
                     color: mobilePage === 1 
-                      ? (darkMode ? "#F8FAFC" : "#0F172A") 
+                      ? (darkMode ? "#F59E0B" : "#D97706") 
                       : (darkMode ? "#94A3B8" : "#64748B"),
-                    border: mobilePage === 1 
-                      ? `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)"}` 
-                      : "1px solid transparent",
-                    boxShadow: mobilePage === 1 
-                      ? (darkMode ? "0 1px 3px rgba(0,0,0,0.3)" : "0 1px 3px rgba(0,0,0,0.06)") 
-                      : "none",
                   }}
-                  title="Concept Guide"
+                  title={language === "en" ? "Clinical Concepts" : "แนวคิดทางคลินิก"}
+                  aria-label="Clinical Concepts"
                 >
-                  <span className="text-[10px] opacity-80">💡</span>
-                  <span>{language === "en" ? "Concept" : "แนวคิด"}</span>
+                  <Lightbulb size={13} strokeWidth={mobilePage === 1 ? 2.5 : 2} />
                 </button>
               </div>
             )}
@@ -1702,32 +1763,29 @@ export function DetailPanel({
         )}
       </div>
 
-      {/* ── Content ── */}
-      {mobilePage === 1 && region?.regionConcept ? (
-        <div 
-          key="mobile-concept-view" 
-          onTouchStart={handleSwipeTouchStart} 
-          onTouchEnd={handleSwipeTouchEnd} 
-          className="md:hidden flex-1 flex flex-col animate-slide-in-r overflow-y-auto"
-          style={{ paddingBottom: 0 }}
+      {/* ── Content Viewport ── */}
+      <div className="flex-1 overflow-hidden relative flex flex-col min-h-0 w-full">
+        <div
+          ref={trackRef}
+          onScroll={handleTrackScroll}
+          className="h-full w-full flex flex-row flex-nowrap overflow-x-auto overflow-y-hidden no-scrollbar mobile-carousel-track"
+          style={{
+            scrollSnapType: isMobile && region?.regionConcept ? "x mandatory" : "none",
+            WebkitOverflowScrolling: "touch",
+          }}
         >
-          <RegionConceptPanel
-            concept={region.regionConcept}
-            boneName={bone.name}
-            regionName={region.name}
-            darkMode={darkMode}
-            language={language}
-            isDesktop={false}
-          />
-        </div>
-      ) : (
-        <div 
-          key="mobile-classification-view" 
-          onTouchStart={handleSwipeTouchStart} 
-          onTouchEnd={handleSwipeTouchEnd} 
-          className="flex-1 flex flex-col animate-slide-in-l overflow-y-auto" 
-          style={{ padding: "8px 12px calc(48px + env(safe-area-inset-bottom, 20px)) 12px" }}
-        >
+          {/* Page 0: Classification & Investigation View */}
+          <div 
+            key="mobile-classification-view" 
+            className="w-full min-w-full md:min-w-0 md:w-full flex-shrink-0 h-full flex flex-col overflow-y-auto"
+            style={{ 
+              scrollSnapAlign: "start",
+              scrollSnapStop: "always",
+              padding: "8px 12px 0px 12px",
+              WebkitOverflowScrolling: "touch",
+              overscrollBehaviorY: "contain",
+            }}
+          >
           {/* Main Tabs: Classifications vs Investigations */}
           <div 
             className="flex p-0.5 mb-2.5 rounded-lg border gap-0.5" 
@@ -2201,8 +2259,33 @@ export function DetailPanel({
             ))}
           </div>
         )}
+          </div>
+
+          {/* Page 1: Clinical Concept View (Rendered on mobile when concept exists) */}
+          {region?.regionConcept && (
+            <div 
+              key="mobile-concept-view" 
+              className="md:hidden w-full min-w-full flex-shrink-0 h-full flex flex-col overflow-y-auto mobile-concept-page"
+              style={{ 
+                scrollSnapAlign: "start",
+                scrollSnapStop: "always",
+                padding: "8px 12px 0px 12px",
+                WebkitOverflowScrolling: "touch",
+                overscrollBehaviorY: "contain",
+              }}
+            >
+              <RegionConceptPanel
+                concept={region.regionConcept}
+                boneName={bone.name}
+                regionName={region.name}
+                darkMode={darkMode}
+                language={language}
+                isDesktop={false}
+              />
+            </div>
+          )}
+        </div>
       </div>
-      )}
       {/* Classification Media Viewer Modal (Switch between Diagram & Real X-Ray) */}
       {showFilmPopup && fracType && (
         <ClassificationMediaViewerModal

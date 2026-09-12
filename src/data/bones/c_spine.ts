@@ -191,7 +191,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/landells_i.png",
+              "xrayUrl": "/images/xrays/jefferson/landells_1_xray.jpg",
               "xrayDescription": {
                 "en": "Isolated fracture line through anterior or posterior arch of C1 without lateral mass displacement.",
                 "th": "เห็นรอยหักจุดเดียวที่วงโค้งหน้าหรือหลังของ C1 โดยชิ้นกระดูกข้างไม่เคลื่อนตัว"
@@ -254,7 +255,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/landells_ii.png",
+              "xrayUrl": "/images/xrays/jefferson/landells_2_xray.jpg",
               "xrayDescription": {
                 "en": "Multiple fracture lines through anterior and posterior arches with lateral displacement of C1 masses.",
                 "th": "เห็นรอยหักแตกหลายจุดที่วงโค้งหน้าและหลัง พร้อม C1 lateral mass เคลื่อนแยกออกด้านข้าง"
@@ -317,7 +319,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/landells_iii.png",
+              "xrayUrl": "/images/xrays/jefferson/landells_3_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line crossing C1 lateral mass with variable displacement on coronal CT.",
                 "th": "เห็นรอยหักพาดผ่าน C1 lateral mass ในภาพรังสีหรือ CT สแกนแนว Coronal"
@@ -463,7 +466,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/levine_i.png",
+              "xrayUrl": "/images/xrays/hangman/levine_1_xray.jpg",
               "xrayDescription": {
                 "en": "Nondisplaced fracture line through C2 pars interarticularis with normal C2-C3 alignment.",
                 "th": "เห็นรอยหักที่ C2 pars interarticularis โดยแนว C2-C3 ยังคงเรียงกันปกติ"
@@ -526,7 +530,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/levine_ii.png",
+              "xrayUrl": "/images/xrays/hangman/levine_2_xray.jpg",
               "xrayDescription": {
                 "en": "Significant translation >2mm and anterior tilt of C2 body relative to C3 with disc space widening.",
                 "th": "เห็น C2 เคลื่อนไปด้านหน้า >2มม. เอียง ก้มลง และช่องหมอนรอง C2-C3 กว้างขึ้น"
@@ -589,7 +594,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/levine_iia.png",
+              "xrayUrl": "/images/xrays/hangman/levine_2a_xray.jpg",
               "xrayDescription": {
                 "en": "Severe anterior angulation of C2 body with posterior disc space gap and minimal translation.",
                 "th": "เห็น C2 เอียงก้มลงรุนแรงโดยช่องหมอนรองด้านหลังอ้ากว้าง แต่ไม่มีการเกยไปด้านข้าง"
@@ -652,7 +658,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/levine_iii.png",
+              "xrayUrl": "/images/xrays/hangman/levine_3_xray.jpg",
               "xrayDescription": {
                 "en": "Displaced C2 pars fracture with bilateral locked or subluxated C2-C3 facet joints.",
                 "th": "เห็นรอยหัก C2 ร่วมกับข้อต่อ C2-C3 Facet joint หลุดเกยข้ามกันทั้งสองข้าง"
@@ -794,7 +801,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/anderson_i.png",
+              "xrayUrl": "/images/xrays/odontoid/anderson_1_xray.jpg",
               "xrayDescription": {
                 "en": "Small oblique avulsion fragment off the tip of the odontoid process.",
                 "th": "เห็นชิ้นกระดูกกะเทาะเล็กๆ ตรงปลายยอดเดือย C2"
@@ -857,7 +865,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/anderson_ii.png",
+              "xrayUrl": "/images/xrays/odontoid/anderson_2_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse or oblique fracture line through the narrow neck/base of the odontoid process.",
                 "th": "เห็นรอยหักแนวขวางหรือเฉียงพาดผ่านโคนเดือย C2"
@@ -920,7 +929,8 @@ export const cSpineBone: BoneData = {
                   }
                 }
               },
-              "illustrationId": "",
+              "illustrationId": "/images/c-spine/anderson_iii.png",
+              "xrayUrl": "/images/xrays/odontoid/anderson_3_xray.jpg",
               "xrayDescription": {
                 "en": "Fracture line extending beneath odontoid base deep into C2 body cancellous bone.",
                 "th": "เห็นรอยหักจากโคนเดือยล้ำลึกลงไปในเนื้อกระดูกของลำตัว C2"
@@ -1119,6 +1129,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/compressive_flexion_xray.jpg",
               "xrayDescription": {
                 "en": "Anterior inferior triangular tear-drop fragment with retropulsed body fragment.",
                 "th": "เห็นชิ้นกระดูกสามเหลี่ยมหลุดตรงขอบล่างหน้า (Tear-drop) และตัวกระดูกทรุดดันเข้าช่องไขสันหลัง"
@@ -1182,6 +1193,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/vertical_compression_xray.jpg",
               "xrayDescription": {
                 "en": "Centrally comminuted vertebral body with outward displacement of anterior and posterior walls.",
                 "th": "เห็นลำตัวกระดูกแตกป่นกลางชิ้น โดยผนังหน้าและหลังโป่งขยายออก"
@@ -1245,6 +1257,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/flexion_distraction_xray.jpg",
               "xrayDescription": {
                 "en": "Abrupt displacement >25% (unilateral) or >50% (bilateral locked facets) on lateral X-ray.",
                 "th": "เห็นกระดูกคอเคลื่อนเกย >25% (ข้างเดียว) หรือ >50% (สองข้าง) จากข้อ Facet ล็อคข้ามกัน"
@@ -1308,6 +1321,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/compressive_extension_xray.jpg",
               "xrayDescription": {
                 "en": "Bilateral pedicle/lamina fractures with anterior translation of vertebral body relative to subjacent vertebra on lateral view.",
                 "th": "ภาพ X-ray ด้านข้างพบรอยหักของส่วนหลัง (Pedicle / Lamina) สองข้าง ร่วมกับการเลื่อนไปด้านหน้าของลำตัวกระดูกคอ"
@@ -1371,6 +1385,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/distractive_extension_xray.jpg",
               "xrayDescription": {
                 "en": "Widening of anterior disc space, avulsion teardrop fracture of anterior-inferior vertebral edge, and posterior displacement of superior body on lateral X-ray.",
                 "th": "ภาพ X-ray ด้านข้างพบช่องหมอนรองกระดูกด้านหน้าอ้ากว้าง, ชิ้นกระดูกกะเทาะ Tear-drop ที่ขอบหน้าล่าง และตัวกระดูกด้านบนเคลื่อนถอยหลังเข้าหาช่องไขสันหลัง"
@@ -1434,6 +1449,7 @@ export const cSpineBone: BoneData = {
                 }
               },
               "illustrationId": "",
+              "xrayUrl": "/images/xrays/allen_ferguson/lateral_flexion_xray.jpg",
               "xrayDescription": {
                 "en": "Asymmetric wedge compression of lateral vertebral body and ipsilateral articular mass with contralateral facet joint widening on AP radiograph.",
                 "th": "ภาพ X-ray ท่า AP พบลำตัวกระดูกยุบตัวด้านข้างเป็นรูปลิ่มและชิ้นส่วนกระดูกด้านข้างหัก ร่วมกับช่องข้อต่อ Facet ด้านตรงข้ามอ้ากว้างขึ้น"

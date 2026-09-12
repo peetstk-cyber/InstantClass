@@ -1300,6 +1300,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/winquist_hansen/winquist_0.png",
+              "xrayUrl": "/images/xrays/winquist_hansen/type0_xray.jpg",
               "xrayDescription": {
                 "en": "Simple 2-part transverse or oblique fracture line without any comminution or butterfly fragments (100% cortical contact).",
                 "th": "เห็นรอยหักขวางหรือเฉียง 2 ชิ้นแบบไม่มีเศษกระดูกแตกละเอียดเลย (ผนังกระดูกแตะกัน 100%)"
@@ -1363,6 +1364,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/winquist_hansen/winquist_1.png",
+              "xrayUrl": "/images/xrays/winquist_hansen/type1_xray.jpg",
               "xrayDescription": {
                 "en": "Transverse or oblique fracture with small butterfly fragment maintaining >75% cortical contact.",
                 "th": "เห็นรอยหักขวางหรือเฉียง พร้อมชิ้นกระดูกปีกผีเสื้อขนาดเล็ก โดยผนังกระดูกหลักยังแตะกันเกิน 75%"
@@ -1426,6 +1428,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/winquist_hansen/winquist_2.png",
+              "xrayUrl": "/images/xrays/winquist_hansen/type2_xray.jpg",
               "xrayDescription": {
                 "en": "Butterfly fragment involving up to 50% of shaft width with 50-75% cortical contact remaining.",
                 "th": "เห็นชิ้นกระดูกปีกผีเสื้อขนาดปานกลางโดยผนังกระดูกหลักยังคงแตะกันอยู่ 50-75%"
@@ -1489,6 +1492,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/winquist_hansen/winquist_3.png",
+              "xrayUrl": "/images/xrays/winquist_hansen/type3_xray.jpg",
               "xrayDescription": {
                 "en": "Large butterfly fragment >50% shaft width with <50% cortical contact between major proximal and distal fragments.",
                 "th": "เห็นชิ้นกระดูกแตกปีกผีเสื้อใหญ่เกินครึ่งแกน โดยผนังกระดูกชิ้นหลักแตะกันน้อยกว่า 50%"
@@ -1552,6 +1556,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/winquist_hansen/winquist_4.png",
+              "xrayUrl": "/images/xrays/winquist_hansen/type4_xray.jpg",
               "xrayDescription": {
                 "en": "Segmental comminution with complete loss of cortical contact (0%) between main proximal and distal shaft fragments.",
                 "th": "เห็นรอยหักแตกป่นหลายชิ้นลอยแยกจากกัน โดยผนังกระดูกหลักไม่สัมผัสแตะกันเลย (0%)"
@@ -1830,6 +1835,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/distal_femur/type1_supracondylar.png",
+              "xrayUrl": "/images/xrays/distal_femur/type1_supracondylar_xray.jpg",
               "xrayDescription": {
                 "en": "Metaphyseal fracture line proximal to the adductor tubercle with apex posterior angulation and intact articular condyles.",
                 "th": "เห็นรอยหักบริเวณเหนือปุ่ม Adductor tubercle โดยมีมุมกระดกแอ่นไปด้านหลัง และผิวข้อเข่ายังคงเรียบสมบูรณ์"
@@ -1893,6 +1899,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/distal_femur/type2_unicondylar.png",
+              "xrayUrl": "/images/xrays/distal_femur/type2_unicondylar_xray.jpg",
               "xrayDescription": {
                 "en": "Articular fracture line isolating either the medial or lateral condyle. Lateral view shows coronal Hoffa fracture line behind Blumensaat's line.",
                 "th": "เห็นรอยหักแยกปุ่มข้อด้านในหรือด้านนอกอย่างชัดเจน ภาพด้านข้างเห็นแนวกระดูก Hoffa หักเฉือนด้านหลัง"
@@ -1956,6 +1963,7 @@ export const femurBone: BoneData = {
                 }
               },
               "illustrationId": "/images/distal_femur/type3_bicondylar.png",
+              "xrayUrl": "/images/xrays/distal_femur/type3_bicondylar_xray.jpg",
               "xrayDescription": {
                 "en": "Intercondylar notch split separating medial and lateral condyles (T- or Y-pattern) with complete supracondylar dissociation from the femoral shaft.",
                 "th": "เห็นรอยแยก Intercondylar split ผ่ากลางแยกปุ่มข้อด้านในและด้านนอกเป็นรูปตัว T หรือ Y หลุดออกจากแกนกระดูกต้นขา"

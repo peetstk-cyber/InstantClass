@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-09-08T16:50:00Z",
+  "lastUpdated": "2026-09-12T11:54:48.986Z",
   "records": [
     {
       "id": "tibia_pilon_type1_xray",
@@ -2029,6 +2029,1124 @@
       "source": "Foot Ankle Orthop / PMC8564939 (Fig. 2A)",
       "status": "pending_review",
       "notes": "Lateral radiograph of joint-depression intra-articular calcaneus fracture with crushed, impacted posterior facet and inverted Bohler angle (-8 degrees)."
+    },
+    {
+      "id": "femur_femoral_shaft_winquist_hansen_type0_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "femoral-shaft",
+      "regionName": {
+        "en": "Femoral Shaft",
+        "th": "แกนกลางกระดูกต้นขา (Femoral Shaft)"
+      },
+      "system": "Winquist & Hansen Classification",
+      "type": "Type 0",
+      "typeName": {
+        "en": "Winquist Type 0 (No Comminution / 100% Cortical Contact)",
+        "th": "Winquist Type 0 (ไม่มีกระดูกแตกละเอียด - ผนังกระดูกแตะกัน 100%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/winquist_hansen/type0_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Cureus / PMC7584324 (Figure 2a)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs showing a simple 2-part femoral shaft fracture with 100% cortical contact and no comminution."
+    },
+    {
+      "id": "femur_femoral_shaft_winquist_hansen_type1_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "femoral-shaft",
+      "regionName": {
+        "en": "Femoral Shaft",
+        "th": "แกนกลางกระดูกต้นขา (Femoral Shaft)"
+      },
+      "system": "Winquist & Hansen Classification",
+      "type": "Type I",
+      "typeName": {
+        "en": "Winquist Type I (Minimal Comminution / >75% Cortical Contact)",
+        "th": "Winquist Type I (แตกละเอียดน้อย - ผนังกระดูกแตะกัน > 75%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/winquist_hansen/type1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "J Orthop Surg Res / PMC9373464 (Fig. 2A)",
+      "status": "pending_review",
+      "notes": "Preoperative AP radiograph showing femoral shaft fracture with a minimal butterfly fragment maintaining >75% cortical contact."
+    },
+    {
+      "id": "femur_femoral_shaft_winquist_hansen_type2_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "femoral-shaft",
+      "regionName": {
+        "en": "Femoral Shaft",
+        "th": "แกนกลางกระดูกต้นขา (Femoral Shaft)"
+      },
+      "system": "Winquist & Hansen Classification",
+      "type": "Type II",
+      "typeName": {
+        "en": "Winquist Type II (Moderate Comminution / 50-75% Cortical Contact)",
+        "th": "Winquist Type II (แตกละเอียดปานกลาง - ผนังกระดูกแตะกัน 50-75%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/winquist_hansen/type2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Cureus / PMC10676625 (Figure 4a)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs showing femoral shaft fracture with a moderate butterfly fragment (<50% shaft width) maintaining 50-75% cortical contact."
+    },
+    {
+      "id": "femur_femoral_shaft_winquist_hansen_type3_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "femoral-shaft",
+      "regionName": {
+        "en": "Femoral Shaft",
+        "th": "แกนกลางกระดูกต้นขา (Femoral Shaft)"
+      },
+      "system": "Winquist & Hansen Classification",
+      "type": "Type III",
+      "typeName": {
+        "en": "Winquist Type III (Severe Comminution / <50% Cortical Contact)",
+        "th": "Winquist Type III (แตกละเอียดรุนแรง - ผนังกระดูกแตะกัน < 50%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/winquist_hansen/type3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Trauma Case Rep / PMC13487715 (Fig. 1A,B)",
+      "status": "pending_review",
+      "notes": "Initial AP and lateral radiographs showing severe comminuted femoral shaft fracture with large butterfly fragment (>50% width) and <50% cortical contact."
+    },
+    {
+      "id": "femur_femoral_shaft_winquist_hansen_type4_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "femoral-shaft",
+      "regionName": {
+        "en": "Femoral Shaft",
+        "th": "แกนกลางกระดูกต้นขา (Femoral Shaft)"
+      },
+      "system": "Winquist & Hansen Classification",
+      "type": "Type IV",
+      "typeName": {
+        "en": "Winquist Type IV (Segmental Comminution / 0% Cortical Contact / Flail)",
+        "th": "Winquist Type IV (แตกละเอียดสูญเสียการแตะสมบูรณ์ - ผนังกระดูกแตะกัน 0%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/winquist_hansen/type4_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Sci Rep / PMC11006881 (Figure 3a)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs of a femoral shaft fragmentary segmental fracture (AO/OTA 32C3) with 0% cortical contact and completely dissociated flail segment."
+    },
+    {
+      "id": "femur_distal_type1_supracondylar_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Femur",
+        "th": "ส่วนปลายกระดูกต้นขา (Distal Femur)"
+      },
+      "system": "Distal Femur Fracture Classification",
+      "type": "Type I",
+      "typeName": {
+        "en": "Type I (Supracondylar / Extra-articular)",
+        "th": "Type I (รอยหักเหนือข้อเข่า / Supracondylar Extra-articular)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_femur/type1_supracondylar_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Cureus / PMC12813641 (Figure 4)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs of extra-articular supracondylar distal femur fracture (AO 33-A) with apex posterior angulation and intact articular condyles."
+    },
+    {
+      "id": "femur_distal_type2_unicondylar_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Femur",
+        "th": "ส่วนปลายกระดูกต้นขา (Distal Femur)"
+      },
+      "system": "Distal Femur Fracture Classification",
+      "type": "Type II",
+      "typeName": {
+        "en": "Type II (Unicondylar / Partial Articular)",
+        "th": "Type II (รอยหักปุ่มข้อเดียว / Unicondylar)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_femur/type2_unicondylar_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "J Orthop Case Rep / PMC12636842 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs showing unicondylar coronal shear Hoffa fracture (AO 33-B) of the femoral condyle with articular disruption."
+    },
+    {
+      "id": "femur_distal_type3_bicondylar_xray",
+      "boneId": "femur",
+      "boneName": {
+        "en": "Femur",
+        "th": "กระดูกต้นขา"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal Femur",
+        "th": "ส่วนปลายกระดูกต้นขา (Distal Femur)"
+      },
+      "system": "Distal Femur Fracture Classification",
+      "type": "Type III",
+      "typeName": {
+        "en": "Type III (Bicondylar / Complete Articular)",
+        "th": "Type III (รอยหักสองปุ่มเข้าข้อสมบูรณ์ / Bicondylar)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/distal_femur/type3_bicondylar_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-08T19:15:00Z",
+      "source": "Cureus / PMC13080954 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral radiographs showing complete articular bicondylar distal femur fracture (AO 33-C) with intercondylar T/Y split and metaphyseal comminution."
+    },
+    {
+      "id": "forearm_olecranon_mayo_1a_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IA",
+      "typeName": {
+        "en": "Mayo Type IA (Non-displaced, Non-comminuted)",
+        "th": "Mayo Type IA (ไม่เคลื่อนตัว, ไม่แตกละเอียด - ข้อศอกมั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_1a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Cureus / PMC11374141 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Preoperative AP and lateral elbow radiographs showing non-displaced, non-comminuted Mayo IA olecranon fracture with stable ulnohumeral articulation."
+    },
+    {
+      "id": "forearm_olecranon_mayo_1b_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IB",
+      "typeName": {
+        "en": "Mayo Type IB (Non-displaced, Comminuted)",
+        "th": "Mayo Type IB (ไม่เคลื่อนตัว, แตกละเอียด - ข้อศอกมั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_1b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Cureus / PMC13380328 (Figure 1B)",
+      "status": "pending_review",
+      "notes": "Lateral elbow radiograph demonstrating non-displaced comminuted Mayo IB olecranon fracture with intact joint alignment."
+    },
+    {
+      "id": "forearm_olecranon_mayo_2a_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IIA",
+      "typeName": {
+        "en": "Mayo Type IIA (Displaced, Non-comminuted)",
+        "th": "Mayo Type IIA (เคลื่อนตัว >2มม., ไม่แตกละเอียด - ข้อศอกมั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_2a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Trauma Case Reports / PMC13352169 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Lateral elbow plain radiograph showing displaced simple transverse Mayo IIA olecranon fracture with preserved ulnohumeral joint congruity."
+    },
+    {
+      "id": "forearm_olecranon_mayo_2b_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IIB",
+      "typeName": {
+        "en": "Mayo Type IIB (Displaced, Comminuted)",
+        "th": "Mayo Type IIB (เคลื่อนตัว >2มม., แตกละเอียด - ข้อศอกมั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_2b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "EFORT Open Reviews / PMC6362340 (Figure 4)",
+      "status": "pending_review",
+      "notes": "Lateral elbow radiograph demonstrating displaced comminuted Mayo IIB olecranon fracture with central articular depression and intact joint stability."
+    },
+    {
+      "id": "forearm_olecranon_mayo_3a_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IIIA",
+      "typeName": {
+        "en": "Mayo Type IIIA (Displaced, Non-comminuted, Unstable)",
+        "th": "Mayo Type IIIA (เคลื่อนตัว, ไม่แตกละเอียด - ข้อศอกไม่มั่นคง/หลุด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_3a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Trauma Case Reports / PMC12703073 (Figure 3)",
+      "status": "verified",
+      "notes": "AP and lateral radiographs demonstrating displaced Mayo IIIA olecranon fracture accompanied by gross anterior fracture-subluxation/dislocation of the ulnohumeral joint.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:48:42.956Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_olecranon_mayo_3b_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "olecranon",
+      "regionName": {
+        "en": "Olecranon",
+        "th": "ข้อศอกส่วนหลัง (Olecranon)"
+      },
+      "system": "Mayo",
+      "type": "Mayo IIIB",
+      "typeName": {
+        "en": "Mayo Type IIIB (Displaced, Comminuted, Unstable)",
+        "th": "Mayo Type IIIB (เคลื่อนตัว, แตกละเอียด - ข้อศอกไม่มั่นคง/หลุดรุนแรง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/mayo/mayo_3b_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Trauma Case Reports / PMC12703073 (Figure 2)",
+      "status": "pending_review",
+      "notes": "Lateral elbow radiograph demonstrating severe comminuted Mayo IIIB trans-olecranon fracture-dislocation with complete ulnohumeral disruption."
+    },
+    {
+      "id": "forearm_shaft_eponyms_monteggia_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "shaft",
+      "regionName": {
+        "en": "Forearm Shaft",
+        "th": "แกนปลายแขน (Forearm Shaft)"
+      },
+      "system": "Eponymous Fractures",
+      "type": "Monteggia",
+      "typeName": {
+        "en": "Monteggia Fracture-Dislocation",
+        "th": "Monteggia Fracture-Dislocation"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/forearm_shaft/monteggia_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "J Orthop Case Rep / PMC12159626 (Figure 1)",
+      "status": "verified",
+      "notes": "Preoperative AP and lateral forearm radiographs showing proximal ulnar shaft fracture with anterior dislocation of the radial head (Monteggia Bado Type I).",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:44:53.939Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_shaft_eponyms_galeazzi_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "shaft",
+      "regionName": {
+        "en": "Forearm Shaft",
+        "th": "แกนปลายแขน (Forearm Shaft)"
+      },
+      "system": "Eponymous Fractures",
+      "type": "Galeazzi",
+      "typeName": {
+        "en": "Galeazzi Fracture",
+        "th": "Galeazzi Fracture"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/forearm_shaft/galeazzi_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "Trauma Case Reports / PMC12681916 (Figure 1)",
+      "status": "verified",
+      "notes": "Preoperative AP and lateral radiographs demonstrating distal third radial shaft fracture with complete distal radioulnar joint (DRUJ) dislocation.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:44:52.918Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_shaft_eponyms_nightstick_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "shaft",
+      "regionName": {
+        "en": "Forearm Shaft",
+        "th": "แกนปลายแขน (Forearm Shaft)"
+      },
+      "system": "Eponymous Fractures",
+      "type": "Nightstick",
+      "typeName": {
+        "en": "Nightstick Fracture",
+        "th": "Nightstick Fracture (กระดูก Ulna Shaft หักเดี่ยว)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/forearm_shaft/nightstick_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T02:50:00Z",
+      "source": "J Orthop Case Rep / PMC12973033 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Preoperative forearm radiograph demonstrating isolated transverse fracture of the mid-ulnar shaft (Nightstick fracture) with intact radius and intact PRUJ/DRUJ."
+    },
+    {
+      "id": "forearm_distal_eponyms_colles_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Eponyms",
+      "type": "Colles",
+      "typeName": {
+        "en": "Colles Fracture",
+        "th": "Colles Fracture"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/der_eponyms/colles_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "Wikimedia Commons / Lucien Monfils (CC BY-SA 3.0)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing extra-articular distal radius fracture with classic dorsal displacement/angulation and associated ulnar styloid fracture."
+    },
+    {
+      "id": "forearm_distal_eponyms_smith_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Eponyms",
+      "type": "Smith",
+      "typeName": {
+        "en": "Smith Fracture",
+        "th": "Smith Fracture"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/der_eponyms/smith_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "Wikimedia Commons / Dr. Hellerhoff (CC BY-SA 4.0)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs demonstrating extra-articular distal radius fracture with volar displacement and garden spade deformity."
+    },
+    {
+      "id": "forearm_distal_eponyms_dorsal_barton_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Eponyms",
+      "type": "Dorsal Barton",
+      "typeName": {
+        "en": "Dorsal Barton Fracture",
+        "th": "Dorsal Barton Fracture (หักเข้าข้อทางด้านหลัง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/der_eponyms/dorsal_barton_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "PMC7355094 (Figure 8)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs showing intra-articular distal radius fracture with displaced dorsal rim fragment and dorsal carpal subluxation."
+    },
+    {
+      "id": "forearm_distal_eponyms_volar_barton_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Eponyms",
+      "type": "Volar Barton",
+      "typeName": {
+        "en": "Volar Barton Fracture (Reverse Barton)",
+        "th": "Volar Barton Fracture (Reverse Barton - หักเข้าข้อทางด้านหน้า)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/der_eponyms/volar_barton_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "PMC10990390 (Figure 1)",
+      "status": "pending_review",
+      "notes": "AP and Lateral radiographs demonstrating intra-articular fracture of the volar rim of the distal radius with volar radiocarpal subluxation."
+    },
+    {
+      "id": "forearm_distal_fernandez_type1_bending_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Fernandez",
+      "type": "I",
+      "typeName": {
+        "en": "Bending Fracture",
+        "th": "กระดูกหักจากแรงดัด (Bending Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/fernandez/type1_bending_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "Wikimedia Commons / Lucien Monfils (CC BY-SA 3.0)",
+      "status": "verified",
+      "notes": "AP and Lateral radiographs demonstrating Fernandez Type I extra-articular bending fracture of the distal radius with dorsal comminution/displacement.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:53:38.651Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_distal_fernandez_type2_shearing_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Fernandez",
+      "type": "II",
+      "typeName": {
+        "en": "Shearing Fracture",
+        "th": "กระดูกหักจากแรงเฉือน (Shearing Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/fernandez/type2_shearing_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "PMC10990390 (Figure 1)",
+      "status": "verified",
+      "notes": "AP and Lateral radiographs demonstrating Fernandez Type II shearing fracture of the volar lip with carpal subluxation requiring buttress plating.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:53:44.821Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_distal_fernandez_type3_compression_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Fernandez",
+      "type": "III",
+      "typeName": {
+        "en": "Compression Fracture",
+        "th": "กระดูกหักจากแรงกด (Compression Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/fernandez/type3_compression_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "PMC10290794 (Figure 4)",
+      "status": "verified",
+      "notes": "Preoperative AP and Lateral radiographs demonstrating Fernandez Type III axial compression / die-punch fracture with depression of the lunate fossa.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:53:49.471Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_distal_fernandez_type4_avulsion_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Fernandez",
+      "type": "IV",
+      "typeName": {
+        "en": "Avulsion Fracture",
+        "th": "กระดูกหักแบบดึงรั้ง (Avulsion Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/fernandez/type4_avulsion_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "Wikimedia Commons / Dr. Hellerhoff (CC BY-SA 4.0)",
+      "status": "verified",
+      "notes": "AP radiograph demonstrating Fernandez Type IV ligamentous avulsion fracture of the radial styloid (Chauffeur fracture).",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:54:46.774Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "forearm_distal_fernandez_type5_combined_xray",
+      "boneId": "forearm",
+      "boneName": {
+        "en": "Radius & Ulna",
+        "th": "กระดูกปลายแขน"
+      },
+      "regionId": "distal",
+      "regionName": {
+        "en": "Distal End Radius",
+        "th": "ปลายกระดูกเรเดียส (Distal End Radius)"
+      },
+      "system": "Fernandez",
+      "type": "V",
+      "typeName": {
+        "en": "Combined / High-Energy Fracture",
+        "th": "กระดูกหักรูปแบบผสม / พลังงานสูง"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/fernandez/type5_combined_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T05:15:00Z",
+      "source": "PMC13179849 (Figure 13)",
+      "status": "verified",
+      "notes": "AP radiograph showing Fernandez Type V high-energy combined fracture of the distal radius with severe multi-fragmentary articular comminution.",
+      "reviewedBy": "Orthopedic Surgeon",
+      "reviewedAt": "2026-09-12T11:54:48.986Z",
+      "reviewNotes": "Approved by orthopedic surgeon"
+    },
+    {
+      "id": "c_spine_upper_cervical_jefferson_landells_1_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Jefferson C1",
+      "type": "Landells I",
+      "typeName": {
+        "en": "Landells Type I (Single Arch C1 Fracture - STABLE)",
+        "th": "Landells Type I (วงโค้งหน้าหรือหลังหักจุดเดียว - มั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/jefferson/landells_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC13413020 (Figure 1 Panel A right)",
+      "status": "pending_review",
+      "notes": "Lateral plain cervical radiograph displaying an isolated single-arch C1 fracture with preserved atlanto-dens interval and intact C1-C2 alignment."
+    },
+    {
+      "id": "c_spine_upper_cervical_jefferson_landells_2_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Jefferson C1",
+      "type": "Landells II",
+      "typeName": {
+        "en": "Landells Type II (Classic Jefferson 4-Part Burst Fracture)",
+        "th": "Landells Type II (Jefferson Burst Fracture - วงโค้งหน้าและหลังหักแตก)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/jefferson/landells_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC11224759 (Figure 4 Panel A)",
+      "sourceUrl": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/dda9/11224759/5ac59aff6b9a/ns-2347230-615f4.jpg",
+      "status": "pending_review",
+      "notes": "Open-mouth peg view plain radiograph demonstrating bilateral C1 lateral mass overhang relative to C2 body (Rule of Spence > 6.9 mm) in unstable burst fracture."
+    },
+    {
+      "id": "c_spine_upper_cervical_jefferson_landells_3_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Jefferson C1",
+      "type": "Landells III",
+      "typeName": {
+        "en": "Landells Type III (C1 Lateral Mass Fracture)",
+        "th": "Landells Type III (มวลกระดูกด้านข้าง C1 Lateral Mass หัก)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/jefferson/landells_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC3468803 (Figure 1 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral plain cervical radiograph demonstrating an isolated unilateral C1 lateral mass fracture with focal cortical step-off."
+    },
+    {
+      "id": "c_spine_upper_cervical_hangman_levine_1_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Hangman C2",
+      "type": "Levine I",
+      "typeName": {
+        "en": "Levine-Edwards Type I (Non-displaced C2 Pars Fracture)",
+        "th": "Levine-Edwards Type I (รอยหักไม่เคลื่อนตัว - มั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hangman/levine_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "Orthopedic Clinical Imaging Repository (public/images/xrays/c-spine/levine_i_xray.png)",
+      "status": "pending_review",
+      "notes": "Lateral plain radiograph showing hairline non-displaced vertical fracture through C2 pars interarticularis with normal C2-C3 disc space and < 3 mm translation."
+    },
+    {
+      "id": "c_spine_upper_cervical_hangman_levine_2_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Hangman C2",
+      "type": "Levine II",
+      "typeName": {
+        "en": "Levine-Edwards Type II (Displaced with Severe Angulation)",
+        "th": "Levine-Edwards Type II (หักเคลื่อนและทำมุมก้ม - ไม่มั่นคง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hangman/levine_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "Wikimedia Commons (Hangman's fracture.JPG)",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hangman%27s_fracture.JPG",
+      "status": "pending_review",
+      "notes": "Lateral plain radiograph showing displaced bilateral C2 pars fractures with anterior translation > 3 mm and secondary disruption of the C2-C3 intervertebral disc."
+    },
+    {
+      "id": "c_spine_upper_cervical_hangman_levine_2a_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Hangman C2",
+      "type": "Levine IIA",
+      "typeName": {
+        "en": "Levine-Edwards Type IIA (Severe Flexion-Distraction Angulation)",
+        "th": "Levine-Edwards Type IIA (เอียงก้มรุนแรง หมอนรองด้านหลังอ้ากว้าง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hangman/levine_2a_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC3777314 (Figure 1)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing severe kyphotic angulation of C2 on C3 with characteristic posterior disc space widening and minimal anterior translation."
+    },
+    {
+      "id": "c_spine_upper_cervical_hangman_levine_3_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Hangman C2",
+      "type": "Levine III",
+      "typeName": {
+        "en": "Levine-Edwards Type III (Displaced WITH Bilateral C2-C3 Facet Dislocation)",
+        "th": "Levine-Edwards Type III (หักหลุดร่วมกับข้อต่อ C2-C3 Facet หลุดฉีก - ไม่มั่นคงรุนแรง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/hangman/levine_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC3777314 (Figure 5)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing C2 pars fracture with bilateral perched/locked C2-C3 facet joints demonstrating gross three-column cervical instability."
+    },
+    {
+      "id": "c_spine_upper_cervical_odontoid_anderson_1_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Odontoid C2",
+      "type": "Anderson I",
+      "typeName": {
+        "en": "Anderson-D'Alonzo Type I (Oblique Avulsion of Odontoid Tip)",
+        "th": "Anderson-D'Alonzo Type I (หักกะเทาะยอดเดือย - มั่นคงสูง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/odontoid/anderson_1_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC4498315 (Figure 6 Panel B)",
+      "status": "pending_review",
+      "notes": "High-resolution coronal coned-down radiograph of C2 demonstrating acute avulsion fracture of the apex of the odontoid process (alar ligament avulsion)."
+    },
+    {
+      "id": "c_spine_upper_cervical_odontoid_anderson_2_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Odontoid C2",
+      "type": "Anderson II",
+      "typeName": {
+        "en": "Anderson-D'Alonzo Type II (Fracture at Base / Watershed Zone)",
+        "th": "Anderson-D'Alonzo Type II (หักขวางโคนเดือย C2 - เสี่ยงไม่ติดสูง)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/odontoid/anderson_2_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "Wikimedia Commons (Dens fracture base plain radiograph)",
+      "status": "pending_review",
+      "notes": "Lateral cervical plain radiograph showing transverse fracture line across the anatomical neck/base of the odontoid process above the C2 vertebral body."
+    },
+    {
+      "id": "c_spine_upper_cervical_odontoid_anderson_3_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "upper-cervical",
+      "regionName": {
+        "en": "Upper Cervical Spine (C1–C2)",
+        "th": "กระดูกสันหลังคอส่วนบน (C1–C2)"
+      },
+      "system": "Odontoid C2",
+      "type": "Anderson III",
+      "typeName": {
+        "en": "Anderson-D'Alonzo Type III (Extension into Cancellous C2 Body)",
+        "th": "Anderson-D'Alonzo Type III (หักลุกลามเข้าลำตัวกระดูก C2 - กระดูกติดสูง >90%)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/odontoid/anderson_3_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC10854225 (Figure 3)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph revealing Type III odontoid fracture extending deeply beneath the dens base into the rich cancellous body of C2 with anterior displacement."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_compressive_flexion_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Compressive Flexion",
+      "typeName": {
+        "en": "Compressive Flexion (CF 1-5 / Teardrop Spectrum)",
+        "th": "1. Compressive Flexion (CF 1-5 / ก้มและกดอัด - กลุ่มอาการ Teardrop Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/compressive_flexion_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC6347342 (Figure 2 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing severe compressive flexion injury with anteroinferior triangular teardrop avulsion fragment and posterior vertebral body translation."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_vertical_compression_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Vertical Compression",
+      "typeName": {
+        "en": "Vertical Compression (VC 1-3 / Axial Burst Fracture)",
+        "th": "2. Vertical Compression (VC 1-3 / แรงอัดตามแนวแกน - แตกกระจาย Burst Fracture)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/vertical_compression_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC6347342 (Figure 1 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing vertical axial compression burst fracture with endplate cupping, uniform anterior-posterior height loss, and fragment retropulsion."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_flexion_distraction_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Flexion Distraction",
+      "typeName": {
+        "en": "Flexion Distraction (DF 1-4 / Facet Dislocation Spectrum)",
+        "th": "3. Flexion Distraction (DF 1-4 / ก้มและดึงแยก - ข้อต่อ Facet หลุดเคลื่อน)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/flexion_distraction_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC12027930 (Figure 6 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing flexion distraction DF3 injury with bilateral locked facets, marked interspinous widening, and 50% anterior vertebral translation."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_compressive_extension_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Compressive Extension",
+      "typeName": {
+        "en": "Compressive Extension (CE 1-5 / Pillar Fracture & Shingling)",
+        "th": "4. Compressive Extension (CE 1-5 / แหงนและกดอัด - ข้อต่อ Pillar แตกและเกยกัน)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/compressive_extension_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC12027930 (Figure 8 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing compressive extension fracture with posterior articular pillar comminution, laminar shingling, and secondary anterior subluxation."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_distractive_extension_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Distractive Extension",
+      "typeName": {
+        "en": "Distractive Extension (DE 1-2 / ALL Rupture & Extension Teardrop)",
+        "th": "5. Distractive Extension (DE 1-2 / แหงนและดึงแยก - เอ็นด้านหน้าฉีกและกะเทาะกระดูก)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/distractive_extension_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC12497533 (Figure 4 Panel C)",
+      "status": "pending_review",
+      "notes": "Lateral cervical radiograph showing distractive extension injury with anterior disc space widening, small extension teardrop avulsion, and retro-displacement."
+    },
+    {
+      "id": "c_spine_lower_cervical_allen_ferguson_lateral_flexion_xray",
+      "boneId": "c_spine",
+      "boneName": {
+        "en": "Cervical Spine",
+        "th": "กระดูกสันหลังส่วนคอ"
+      },
+      "regionId": "lower-cervical",
+      "regionName": {
+        "en": "Lower Cervical Spine (C3–C7)",
+        "th": "กระดูกสันหลังคอส่วนล่าง (C3–C7)"
+      },
+      "system": "Allen-Ferguson",
+      "type": "Lateral Flexion",
+      "typeName": {
+        "en": "Lateral Flexion (LF 1-2 / Asymmetric Compression & Contralateral Distraction)",
+        "th": "6. Lateral Flexion (LF 1-2 / เอียงคอด้านข้าง - ยุบด้านเดียวและเอ็นฝั่งตรงข้ามฉีกขาด)"
+      },
+      "imageType": "xray",
+      "imageUrl": "/images/xrays/allen_ferguson/lateral_flexion_xray.jpg",
+      "addedBy": "AI (Antigravity)",
+      "addedAt": "2026-09-09T06:30:00Z",
+      "source": "PMC8861222 (Figure 3 Panel A)",
+      "status": "pending_review",
+      "notes": "Lateral plain radiograph showing asymmetric unilateral facet subluxation/fracture (LF2 pattern) with 25% anterior translation and rotational deformity."
     }
   ]
 }

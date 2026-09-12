@@ -26,6 +26,7 @@ import {
   type SpotFilmItem,
   type TwoStepSpotQuestion 
 } from "./quizData";
+import { getDailyQuizSet } from "./dailyQuizEngine";
 import { getBoneIcon } from "../common/BoneIcons";
 
 interface QuizModalProps {
@@ -101,6 +102,11 @@ export function QuizModal({
     return allSpotItems;
   }, [allSpotItems, categoryFilter]);
 
+  // Daily Quiz: deterministic random 10 questions per day
+  const dailyQuestions = useMemo(() => {
+    return getDailyQuizSet(HIGH_YIELD_QUESTIONS, 10);
+  }, []);
+
   // Generate a new choice question
   const loadNextChoiceQuestion = useCallback(() => {
     if (allSpotItems.length === 0) return;
@@ -133,7 +139,7 @@ export function QuizModal({
   const textPrimary = darkMode ? "#F8FAFC" : "#0F172A";
   const textMuted = darkMode ? "#94A3B8" : "#64748B";
 
-  const currentDailyQ: HighYieldQuestion = HIGH_YIELD_QUESTIONS[dailyQIdx % HIGH_YIELD_QUESTIONS.length];
+  const currentDailyQ: HighYieldQuestion | undefined = dailyQuestions[dailyQIdx % Math.max(1, dailyQuestions.length)];
   const currentFlashItem: SpotFilmItem | undefined = filteredSpotItems[flashIndex % Math.max(1, filteredSpotItems.length)];
 
   // Handle Step 1 Choice Selection (Choose Classification System)
@@ -1063,6 +1069,8 @@ export function QuizModal({
           {/* ========================================================================= */}
           {activeTab === "daily_challenge" && (
             <div className="space-y-3 sm:space-y-4 animate-fadeIn w-full min-w-0">
+              {currentDailyQ ? (
+              <>
               {/* Question Header */}
               <div 
                 className="p-3 sm:p-3.5 rounded-xl border space-y-1.5 min-w-0"
@@ -1070,7 +1078,7 @@ export function QuizModal({
               >
                 <div className="flex items-center justify-between text-[9.5px] sm:text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">
                   <span className="truncate">{currentDailyQ.tag[language]}</span>
-                  <span className="flex-shrink-0">{dailyQIdx + 1} / {HIGH_YIELD_QUESTIONS.length}</span>
+                  <span className="flex-shrink-0">{(dailyQIdx % Math.max(1, dailyQuestions.length)) + 1} / {dailyQuestions.length}</span>
                 </div>
                 <p className="text-xs sm:text-sm font-bold leading-relaxed text-black dark:text-slate-100">
                   {currentDailyQ.scenario[language]}
@@ -1159,7 +1167,7 @@ export function QuizModal({
                     <button
                       onClick={() => {
                         setDailyAnswer(null);
-                        setDailyQIdx(prev => prev + 1);
+                        setDailyQIdx(prev => (prev + 1) % Math.max(1, dailyQuestions.length));
                       }}
                       className="px-3 py-1.5 rounded-xl font-extrabold text-xs flex items-center gap-1 shadow-sm transition-all cursor-pointer active:scale-95 flex-shrink-0"
                       style={{
@@ -1171,6 +1179,12 @@ export function QuizModal({
                       <ChevronRight size={13} />
                     </button>
                   </div>
+                </div>
+              )}
+              </>
+              ) : (
+                <div className="py-8 text-center text-xs" style={{ color: textMuted }}>
+                  {language === "en" ? "No quiz questions available." : "ไม่มีคำถามในขณะนี้"}
                 </div>
               )}
             </div>
