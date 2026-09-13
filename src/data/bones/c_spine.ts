@@ -56,8 +56,8 @@ export const cSpineBone: BoneData = {
         {
           "system": "Jefferson C1",
           "fullName": {
-            "en": "Jefferson Fracture Classification for C1 Atlas (Landells System)",
-            "th": "การจำแนกกระดูกคอ C1 Atlas หักแตก (Jefferson Fracture / Landells Classification)"
+            "en": "Jefferson Classification",
+            "th": "การจำแนกกระดูกคอ C1 แบบ Jefferson"
           },
           "description": {
             "en": "Classification of C1 atlas fractures (Type I Single arch, Type II Classic Jefferson burst fracture, Type III Lateral mass). Evaluated using the Rule of Spence to determine Transverse Atlanto-Axial Ligament (TAL) integrity.",
@@ -331,8 +331,8 @@ export const cSpineBone: BoneData = {
         {
           "system": "Hangman C2",
           "fullName": {
-            "en": "Levine-Edwards Classification for Hangman's Fracture (C2 Traumatic Spondylolisthesis)",
-            "th": "การจำแนกกระดูกคอ C2 หักหลุดแบบ Levine-Edwards (Hangman's Fracture)"
+            "en": "Levine-Edwards Classification",
+            "th": "การจำแนกกระดูกคอ C2 แบบ Levine-Edwards"
           },
           "description": {
             "en": "Classification of C2 axis traumatic spondylolisthesis (pars interarticularis fracture) into Types I, II, IIA, and III based on translation, angulation, C2-C3 disc disruption, and facet dislocation.",
@@ -670,8 +670,8 @@ export const cSpineBone: BoneData = {
         {
           "system": "Odontoid C2",
           "fullName": {
-            "en": "Anderson-D'Alonzo Classification for Odontoid (Dens) Fractures",
-            "th": "การจำแนกกระดูกยอดเดือย C2 (Odontoid process) หักแบบ Anderson-D'Alonzo"
+            "en": "Anderson-D'Alonzo Classification",
+            "th": "การจำแนกกระดูกยอดเดือย C2 แบบ Anderson-D'Alonzo"
           },
           "description": {
             "en": "Classification of C2 axis odontoid process fractures into Type I (Tip avulsion), Type II (Base fracture - High nonunion risk ~30-40%), and Type III (Body extension - High union rate >90%). Dictates surgical versus conservative management.",
@@ -997,8 +997,8 @@ export const cSpineBone: BoneData = {
         {
           "system": "Allen-Ferguson",
           "fullName": {
-            "en": "Allen-Ferguson Mechanistic Classification for Lower Cervical Spine Injuries",
-            "th": "การจำแนกการบาดเจ็บกระดูกคอตามกลไกการเกิดเหตุ Allen-Ferguson"
+            "en": "Allen-Ferguson Classification",
+            "th": "การจำแนกกระดูกคอตามกลไกแบบ Allen-Ferguson"
           },
           "description": {
             "en": "Biomechanical classification categorizing injuries based on vector forces: Compressive Flexion (CF 1-5), Vertical Compression (VC 1-3), Distractive Flexion (DF 1-4 including locked facets), Compressive Extension (CE 1-5), Distractive Extension (DE 1-2), and Lateral Flexion (LF 1-2).",
@@ -1460,8 +1460,8 @@ export const cSpineBone: BoneData = {
         {
           "system": "SLIC Score",
           "fullName": {
-            "en": "Subaxial Cervical Spine Injury Classification (SLIC System)",
-            "th": "ระบบการจำแนกการบาดเจ็บกระดูกสันหลังคอส่วนล่าง SLIC System (Vaccaro)"
+            "en": "SLIC Classification",
+            "th": "ระบบการจำแนกกระดูกคอแบบ SLIC"
           },
           "description": {
             "en": "Point-based scoring system for subaxial cervical spine injuries (C3-C7) evaluating Fracture Morphology, Disruption of Ligamentous Complex (DLC) integrity, and Neurological Status. SLIC score <4 = Conservative, SLIC score =4 = Equivocal, SLIC score >4 = Operative.",

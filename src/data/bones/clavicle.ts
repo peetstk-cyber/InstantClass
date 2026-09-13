@@ -675,8 +675,8 @@ export const clavicleBone: BoneData = {
         {
           "system": "Allman",
           "fullName": {
-            "en": "Allman Classification for Clavicle Fractures",
-            "th": "การจำแนกกระดูกไหปลาร้าหัก Allman Classification"
+            "en": "Allman Classification",
+            "th": "การจำแนกกระดูกไหปลาร้าหักแบบ Allman"
           },
           "description": {
             "en": "Anatomical location classification system for all clavicle fractures, categorizing injuries into Group I (Middle Third / Midshaft ~80%), Group II (Distal / Lateral Third ~15%), and Group III (Proximal / Medial Third ~5%).",
@@ -1003,8 +1003,8 @@ export const clavicleBone: BoneData = {
         {
           "system": "Neer (Distal Clavicle)",
           "fullName": {
-            "en": "Neer Classification for Distal Clavicle Fractures",
-            "th": "การจำแนกกระดูกไหปลาร้าส่วนปลายหักแบบ Neer"
+            "en": "Neer Classification (Distal Clavicle)",
+            "th": "การจำแนกกระดูกไหปลาร้าส่วนปลายแบบ Neer"
           },
           "description": {
             "en": "Classification of distal (lateral) third clavicle fractures based on the relationship to the coracoclavicular (CC) ligaments (conoideum and trapezoideum) and articular surface, dictating nonunion risk and surgical management.",

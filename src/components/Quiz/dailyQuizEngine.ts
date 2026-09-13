@@ -17,22 +17,26 @@ function mulberry32(seed: number): () => number {
   };
 }
 
-/** Generate a numeric seed from today's YYYY-MM-DD string */
-function getDailyDateSeed(): number {
-  const now = new Date();
-  const dateStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+function hashString(str: string): number {
   let hash = 0;
-  for (let i = 0; i < dateStr.length; i++) {
-    const ch = dateStr.charCodeAt(i);
+  for (let i = 0; i < str.length; i++) {
+    const ch = str.charCodeAt(i);
     hash = ((hash << 5) - hash + ch) | 0;
   }
   return Math.abs(hash);
+}
+
+/** Generate a numeric seed from today's YYYY-MM-DD string */
+function getDailyDateString(): string {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
 }
 
 /** Fisher-Yates shuffle using seeded PRNG */
 function seededShuffle<T>(array: T[], seed: number): T[] {
   const result = [...array];
   const rng = mulberry32(seed);
+  rng(); // warm up
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
     [result[i], result[j]] = [result[j], result[i]];
@@ -50,7 +54,17 @@ export function getDailyQuizSet(
   count: number = 10
 ): HighYieldQuestion[] {
   if (allQuestions.length === 0) return [];
-  const seed = getDailyDateSeed();
+  const dateStr = getDailyDateString();
+  const seed = hashString(dateStr);
   const shuffled = seededShuffle(allQuestions, seed);
-  return shuffled.slice(0, Math.min(count, shuffled.length));
+  const selected = shuffled.slice(0, Math.min(count, shuffled.length));
+
+  // Deterministically shuffle options for each question so the correct answer is not always in the first position
+  return selected.map((q, idx) => {
+    const optSeed = hashString(`${dateStr}:${q.id}:${idx}`);
+    return {
+      ...q,
+      options: seededShuffle(q.options, optSeed),
+    };
+  });
 }

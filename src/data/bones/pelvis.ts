@@ -785,7 +785,7 @@ export const pelvisBone: BoneData = {
         {
           "system": "Judet-Letournel",
           "fullName": {
-            "en": "Judet-Letournel Acetabular Fracture Classification",
+            "en": "Judet-Letournel Classification",
             "th": "การจำแนกกระดูกเบ้าสะโพกหักแบบ Judet-Letournel"
           },
           "description": {

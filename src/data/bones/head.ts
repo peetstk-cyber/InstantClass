@@ -69,8 +69,8 @@ export const headBone: BoneData = {
         {
           "system": "Le Fort",
           "fullName": {
-            "en": "Le Fort Classification for Midface Maxillofacial Fractures",
-            "th": "การจำแนกกระดูกใบหน้าส่วนกลางหักแบบ Le Fort (Le Fort Fractures)"
+            "en": "Le Fort Classification",
+            "th": "การจำแนกกระดูกใบหน้าหักแบบ Le Fort"
           },
           "description": {
             "en": "Classic classification of midfacial fractures caused by direct anterior impact, categorized into Type I (Floating palate / Horizontal maxilla), Type II (Pyramidal / Nasomaxillary), and Type III (Craniofacial disjunction / Complete facial dissociation).",
@@ -321,8 +321,8 @@ export const headBone: BoneData = {
         {
           "system": "Skull Base Fracture",
           "fullName": {
-            "en": "Anatomical Classification of Skull Base Fractures",
-            "th": "การจำแนกกระดูกฐานกะโหลกศีรษะหักตามกายวิภาค (Skull Base Fractures)"
+            "en": "Skull Base Fracture Classification",
+            "th": "การจำแนกกระดูกฐานกะโหลกศีรษะหัก"
           },
           "description": {
             "en": "Anatomical classification dividing skull base fractures by fossa involvement: Anterior Fossa (Cribriform plate / Frontal sinus), Middle Fossa (Temporal bone / Petrous ridge / Sphenoid), and Posterior Fossa (Occipital bone / Foramen magnum).",

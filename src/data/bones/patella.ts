@@ -117,8 +117,8 @@ export const patellaBone: BoneData = {
         {
           "system": "Anatomical & Functional",
           "fullName": {
-            "en": "Anatomical & Functional Patella Fracture Classification",
-            "th": "การจำแนกกระดูกสะบ้าหักตามกายวิภาคและหน้าที่กล้ามเนื้อเหยียดเข่า"
+            "en": "Patella Fracture Classification",
+            "th": "การจำแนกกระดูกสะบ้าหัก"
           },
           "description": {
             "en": "Practical classification of patellar fractures based on fracture morphology, displacement, articular step-off, and extensor mechanism (Straight Leg Raise) integrity, dictating non-operative vs surgical management (Tension Band Wiring, Plating, Pole Anchor).",

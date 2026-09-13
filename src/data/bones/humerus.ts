@@ -825,8 +825,8 @@ export const humerusBone: BoneData = {
         {
           "system": "Holstein-Lewis",
           "fullName": {
-            "en": "Holstein-Lewis & Humeral Shaft Fracture Classification Guide",
-            "th": "การจำแนกกระดูกแกนต้นแขนหักและคู่มือ Holstein-Lewis"
+            "en": "Holstein-Lewis Classification",
+            "th": "การจำแนกกระดูกแกนต้นแขนหักแบบ Holstein-Lewis"
           },
           "description": {
             "en": "Classification of humeral shaft fractures by anatomical location (Proximal 1/3, Middle 1/3, Distal 1/3), highlighting the Holstein-Lewis spiral fracture of the distal third associated with high risk of Radial Nerve Palsy (entrapment) and acceptable conservative alignment parameters.",
@@ -1175,8 +1175,8 @@ export const humerusBone: BoneData = {
         {
           "system": "AO/OTA 13",
           "fullName": {
-            "en": "AO/OTA Distal Humerus Fracture Classification (Type A, B, C)",
-            "th": "การจำแนกกระดูกต้นแขนส่วนปลายหัก AO/OTA (Type A, B, C)"
+            "en": "AO/OTA Distal Humerus Classification",
+            "th": "การจำแนกกระดูกต้นแขนส่วนปลายแบบ AO/OTA"
           },
           "description": {
             "en": "Classification of distal humerus fractures based on joint surface involvement:\n• Type A: Extra-articular (Spares the joint surface completely)\n• Type B: Partial articular (Part of joint remains attached to shaft)\n• Type C: Complete articular (Joint block completely disconnected from shaft)",

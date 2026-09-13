@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import { ChevronRight, BookOpen, Hand, Footprints } from "lucide-react";
@@ -60,9 +61,14 @@ export function LeftSidebar({
 
   const boneMap = Object.fromEntries(bones.map(b => [b.id, b]));
 
+  const [isConceptExpanded, setIsConceptExpanded] = useState(false);
+
   // Find active region & concept
   const currentRegion = selectedBone?.regions.find(r => r.id === selectedRegionId) || selectedBone?.regions[0];
-  const hasRegionConcept = selectedBone && currentRegion && currentRegion.regionConcept;
+  const hasRegionConcept = Boolean(selectedBone && currentRegion && currentRegion.regionConcept);
+
+  // When Region Concept is shown and user expanded it, width expands to 540px; otherwise standard 340px
+  const sidebarWidth = hasRegionConcept && isConceptExpanded ? 540 : 340;
 
   // Filter by searchQuery
   const isFiltering = searchQuery.trim().length > 0;
@@ -84,24 +90,28 @@ export function LeftSidebar({
   return (
     <aside
       style={{
-        width: 340,
-        minWidth: 340,
+        width: sidebarWidth,
+        minWidth: sidebarWidth,
+        maxWidth: sidebarWidth,
         background: bg,
         borderRight: `1px solid ${border}`,
         overflowY: "auto",
+        transition: "width 0.3s cubic-bezier(0.16, 1, 0.3, 1), min-width 0.3s cubic-bezier(0.16, 1, 0.3, 1), max-width 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
       className="hidden md:flex flex-col h-full flex-shrink-0 z-20"
     >
-      {hasRegionConcept ? (
+      {selectedBone && currentRegion && currentRegion.regionConcept ? (
         /* Display Region Concept Panel when a bone with region concept is selected */
         <RegionConceptPanel
-          concept={currentRegion.regionConcept!}
+          concept={currentRegion.regionConcept}
           boneName={selectedBone.name}
           regionName={currentRegion.name}
           darkMode={darkMode}
           language={language}
           onBackToList={onBackToList}
           isDesktop={true}
+          isExpanded={isConceptExpanded}
+          onToggleExpand={() => setIsConceptExpanded(prev => !prev)}
         />
       ) : (
         /* Display default Bone List */

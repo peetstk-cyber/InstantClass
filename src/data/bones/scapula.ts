@@ -115,8 +115,8 @@ export const scapulaBone: BoneData = {
         {
           "system": "Anatomical Location",
           "fullName": {
-            "en": "Anatomical Classification of Scapular Body Fractures",
-            "th": "การจำแนกกระดูกสะบักส่วนลำตัวหักตามตำแหน่งทางกายวิภาค"
+            "en": "Scapular Body Classification",
+            "th": "การจำแนกกระดูกสะบักส่วนลำตัวหัก"
           },
           "description": {
             "en": "Classification of scapular body fractures based on anatomical location (Infraspinous Fossa, Scapular Spine, Medial/Lateral Border). Most body fractures (~90%) are non-displaced due to surrounding muscle splinting.",
@@ -480,8 +480,8 @@ export const scapulaBone: BoneData = {
         {
           "system": "Neck & Floating Shoulder",
           "fullName": {
-            "en": "Scapular Neck Classification & Floating Shoulder Assessment",
-            "th": "การจำแนกกระดูกคอสะบักหักและภาวะไหล่หลุดลอย Floating Shoulder"
+            "en": "Scapular Neck Classification",
+            "th": "การจำแนกกระดูกคอสะบักหัก"
           },
           "description": {
             "en": "Classification of scapular neck fractures (Anatomic vs Surgical neck) and mandatory assessment for associated ipsilateral clavicle fractures or AC joint separation, creating a 'Floating Shoulder' (double SSSC disruption).",
@@ -842,8 +842,8 @@ export const scapulaBone: BoneData = {
         {
           "system": "Ideberg (Goss Modification)",
           "fullName": {
-            "en": "Ideberg Glenoid Fracture Classification (with Goss Modification)",
-            "th": "การจำแนกเบ้าข้อไหล่หักแบบ Ideberg (Goss Modification)"
+            "en": "Ideberg Classification (Glenoid)",
+            "th": "การจำแนกเบ้าข้อไหล่หักแบบ Ideberg"
           },
           "description": {
             "en": "Classic anatomical classification for intra-articular glenoid fractures (Types I-VI). Note: Literature reports low inter- and intra-observer reliability and questionable correlation with clinical management.",
@@ -1399,7 +1399,7 @@ export const scapulaBone: BoneData = {
         {
           "system": "Kuhn",
           "fullName": {
-            "en": "Kuhn Classification for Acromial Fractures",
+            "en": "Kuhn Classification",
             "th": "การจำแนกยอดกระดูกสะบักหักแบบ Kuhn"
           },
           "description": {
@@ -1718,7 +1718,7 @@ export const scapulaBone: BoneData = {
         {
           "system": "Ogawa",
           "fullName": {
-            "en": "Ogawa Classification for Coracoid Fractures",
+            "en": "Ogawa Classification",
             "th": "การจำแนกจะงอยกระดูกสะบักหักแบบ Ogawa"
           },
           "description": {
@@ -1883,7 +1883,7 @@ export const scapulaBone: BoneData = {
         {
           "system": "Eyres",
           "fullName": {
-            "en": "Eyres Classification for Coracoid Fractures",
+            "en": "Eyres Classification",
             "th": "การจำแนกจะงอยกระดูกสะบักหักแบบ Eyres"
           },
           "description": {
@@ -2246,8 +2246,8 @@ export const scapulaBone: BoneData = {
         {
           "system": "Zelle / Damschen",
           "fullName": {
-            "en": "Scapulothoracic Dissociation Classification (Zelle/Damschen)",
-            "th": "การจำแนกภาวะสะบักกับผนังอกหลุดฉีก (Scapulothoracic Dissociation)"
+            "en": "Zelle-Damschen Classification",
+            "th": "การจำแนกภาวะสะบักหลุดฉีก (Zelle/Damschen)"
           },
           "description": {
             "en": "Classification of traumatic internal amputation of the shoulder girdle from violent traction/crush injury, categorized by neurovascular disruption severity (Type I Musculoskeletal only, Type II Neurological injury, Type III Vascular transection).",

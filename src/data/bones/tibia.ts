@@ -101,7 +101,7 @@ export const tibiaBone: BoneData = {
         {
           "system": "Schatzker",
           "fullName": {
-            "en": "Schatzker Tibial Plateau Fracture Classification",
+            "en": "Schatzker Classification",
             "th": "การจำแนกกระดูกหัวหน้าแข้งหักแบบ Schatzker"
           },
           "description": {
@@ -689,8 +689,8 @@ export const tibiaBone: BoneData = {
         {
           "system": "AO/OTA & Alignment Concept",
           "fullName": {
-            "en": "Tibial Shaft Fracture Principles & Alignment Criteria",
-            "th": "หลักการประเมินและเกณฑ์มุมเอียง Tibial Shaft Fracture"
+            "en": "Tibial Shaft Classification",
+            "th": "การจำแนกกระดูกแกนหน้าแข้งหัก"
           },
           "description": {
             "en": "Comprehensive clinical concept for Tibial Shaft Fractures (AO/OTA 42), covering acceptable alignment thresholds (Sarmiento criteria), compartment syndrome warnings, non-operative cast brace vs Intramedullary Nailing (IMN) indications.",
@@ -1060,7 +1060,7 @@ export const tibiaBone: BoneData = {
         {
           "system": "Danis-Weber",
           "fullName": {
-            "en": "Danis-Weber Ankle Fracture Classification",
+            "en": "Danis-Weber Classification",
             "th": "การจำแนกกระดูกข้อเท้าหักแบบ Danis-Weber"
           },
           "description": {
@@ -1338,7 +1338,7 @@ export const tibiaBone: BoneData = {
         {
           "system": "Lauge-Hansen",
           "fullName": {
-            "en": "Lauge-Hansen Ankle Fracture Classification",
+            "en": "Lauge-Hansen Classification",
             "th": "การจำแนกกระดูกข้อเท้าหักตามกลไกการบาดเจ็บ Lauge-Hansen"
           },
           "description": {
@@ -2264,8 +2264,8 @@ export const tibiaBone: BoneData = {
         {
           "system": "Pilon Fracture",
           "fullName": {
-            "en": "Pilon Fracture (Rüedi-Allgöwer Classification)",
-            "th": "การจำแนกกระดูกข้อเท้าและผิวข้อหน้าแข้งหัก Pilon Fracture (Rüedi-Allgöwer)"
+            "en": "Rüedi-Allgöwer Classification (Pilon)",
+            "th": "การจำแนกกระดูกข้อเท้าและผิวข้อหน้าแข้งหักแบบ Rüedi-Allgöwer (Pilon)"
           },
           "description": {
             "en": "Classic classification of intra-articular tibial plafond (pilon) fractures based on joint surface displacement, comminution, and central impaction resulting from high-energy axial loading.",

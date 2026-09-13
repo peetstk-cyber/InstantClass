@@ -26,6 +26,7 @@ import { getBoneIcon } from "./components/common/BoneIcons";
 import { QuizModal } from "./components/Quiz/QuizModal";
 import { PediatricPage } from "./components/pediatric/PediatricPage";
 import { AOOTAPage } from "./components/aoota/AOOTAPage";
+import { AddToHomeScreenPrompt } from "./components/common/AddToHomeScreenPrompt";
 
 export type Language = "en" | "th";
 
@@ -184,7 +185,13 @@ function App() {
       for (const b of bonesData) {
         for (const r of b.regions) {
           for (const c of r.classifications) {
-            if (c.fullName.en === name || c.system === name || c.fullName.th === name) {
+            if (
+              c.fullName.en === name ||
+              c.system === name ||
+              c.fullName.th === name ||
+              (name && c.system && name.toLowerCase().includes(c.system.toLowerCase())) ||
+              (name && c.fullName.en && name.toLowerCase().includes(c.fullName.en.toLowerCase()))
+            ) {
               return {
                 boneId: b.id,
                 regionId: r.id,
@@ -888,6 +895,9 @@ function App() {
         currentBoneName={selectedBone?.name[language]}
         currentRegionName={selectedBone?.regions.find(r => r.id === selectedRegionId)?.name[language]}
       />
+
+      {/* ── Add To Home Screen PWA Install Prompt for New Mobile Users ── */}
+      <AddToHomeScreenPrompt darkMode={darkMode} language={language} />
     </div>
   );
 }

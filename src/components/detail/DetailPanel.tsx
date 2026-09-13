@@ -694,17 +694,17 @@ function ClassificationTitleWithInfo({
               title={language === "en" ? "System Info & Concept" : "ข้อมูลและแนวคิดระบบ"}
               className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
               style={{
-                width: 26,
-                height: 26,
+                width: 21,
+                height: 21,
                 borderRadius: "50%",
                 background: darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)",
                 color: darkMode ? "#94A3B8" : "#64748B",
-                border: `1.5px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
+                border: `1.2px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
                 boxShadow: "none",
                 padding: 0,
               }}
             >
-              <Info size={13} />
+              <Info size={11} />
             </button>
           </div>
         </div>
@@ -716,19 +716,19 @@ function ClassificationTitleWithInfo({
           title={isBookmarked ? (language === "en" ? "Bookmarked (Click to remove)" : "บันทึกแล้ว (คลิกเพื่อถอนการบันทึก)") : (language === "en" ? "Bookmark System" : "บันทึกเป็นรายการโปรด")}
           className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95 mt-0.5"
           style={{
-            width: 26,
-            height: 26,
+            width: 21,
+            height: 21,
             borderRadius: "50%",
             background: isBookmarked
               ? (darkMode ? "rgba(0, 206, 209, 0.22)" : "rgba(15, 118, 110, 0.15)")
               : (darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)"),
             color: isBookmarked ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#94A3B8" : "#64748B"),
-            border: `1.5px solid ${isBookmarked ? (darkMode ? "rgba(0, 206, 209, 0.5)" : "rgba(15, 118, 110, 0.5)") : (darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1")}`,
+            border: `1.2px solid ${isBookmarked ? (darkMode ? "rgba(0, 206, 209, 0.5)" : "rgba(15, 118, 110, 0.5)") : (darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1")}`,
             boxShadow: isBookmarked ? (darkMode ? "0 0 10px rgba(0, 206, 209, 0.25)" : "0 0 10px rgba(15, 118, 110, 0.25)") : "none",
             padding: 0,
           }}
         >
-          <Bookmark size={13} className={isBookmarked ? (darkMode ? "fill-[#00CED1]" : "fill-[#0F766E]") : ""} />
+          <Bookmark size={11} className={isBookmarked ? (darkMode ? "fill-[#00CED1]" : "fill-[#0F766E]") : ""} />
         </button>
       </div>
 
@@ -1895,7 +1895,7 @@ export function DetailPanel({
                   onSelectType={onSelectType}
                 />
               )}              {/* Interactive Visual Guide */}
-              <div style={{ marginBottom: 16 }}>
+              <div style={{ marginBottom: 0 }}>
                 {(() => {
                   const isJudetLetournel = classSystem.system.toLowerCase().includes("judet") ||
                     (classSystem.types.length === 10 && classSystem.types.some(t => t.name.en.includes("Elementary") || t.name.th.includes("Elementary")));
@@ -1906,7 +1906,7 @@ export function DetailPanel({
                     return (
                       <div 
                         key={t.type} 
-                        className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[48%] sm:w-[38%] md:w-[calc(33.333%-6px)] min-w-[130px] md:min-w-[120px]" 
+                        className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[42%] sm:w-[32%] md:w-[calc(33.333%-6px)] min-w-[115px] sm:min-w-[125px] md:min-w-[120px]" 
                         style={{ scrollSnapAlign: "start" }}
                       >
                         <div 
@@ -1972,6 +1972,23 @@ export function DetailPanel({
                     );
                   };
 
+                  const renderCarouselRow = (items: { t: typeof classSystem.types[0]; idx: number }[], pb = "pb-3") => (
+                    <div 
+                      className={`flex gap-2 overflow-x-auto -mr-3 pr-3 ${pb} no-scrollbar`} 
+                      style={{ 
+                        scrollbarWidth: "none", 
+                        scrollSnapType: "x mandatory",
+                        ...(isMobile && items.length > 2 ? {
+                          WebkitMaskImage: "linear-gradient(to right, black calc(100% - 36px), transparent 100%)",
+                          maskImage: "linear-gradient(to right, black calc(100% - 36px), transparent 100%)",
+                        } : {}),
+                      }}
+                    >
+                      {items.map(({ t, idx }) => renderTypeCard(t, idx))}
+                      <div className="w-6 flex-shrink-0" />
+                    </div>
+                  );
+
                   if (isJudetLetournel) {
                     const elementaryList = classSystem.types.slice(0, 5);
                     const associatedList = classSystem.types.slice(5, 10);
@@ -1983,9 +2000,7 @@ export function DetailPanel({
                           <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "Elementary Types (5)" : "รูปแบบพื้นฐาน (Elementary Types)"}
                           </div>
-                          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                            {elementaryList.map((t, idx) => renderTypeCard(t, idx))}
-                          </div>
+                          {renderCarouselRow(elementaryList.map((t, idx) => ({ t, idx })), "pb-2")}
                         </div>
 
                         {/* Row 2: Associated Types */}
@@ -1993,9 +2008,7 @@ export function DetailPanel({
                           <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "Associated Types (5)" : "รูปแบบซับซ้อน (Associated Types)"}
                           </div>
-                          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                            {associatedList.map((t, idx) => renderTypeCard(t, idx + 5))}
-                          </div>
+                          {renderCarouselRow(associatedList.map((t, idx) => ({ t, idx: idx + 5 })), "pb-2")}
                         </div>
                       </div>
                     );
@@ -2016,9 +2029,7 @@ export function DetailPanel({
                           <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "APC - Anterior-Posterior Compression" : "APC - แรงอัดหน้าหลัง (Anterior-Posterior Compression)"}
                           </div>
-                          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                            {apcItems.map(item => renderTypeCard(item.t, item.idx))}
-                          </div>
+                          {renderCarouselRow(apcItems, "pb-2")}
                         </div>
 
                         {/* Row 2: LC Types */}
@@ -2026,9 +2037,7 @@ export function DetailPanel({
                           <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "LC - Lateral Compression" : "LC - แรงบีบด้านข้าง (Lateral Compression)"}
                           </div>
-                          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                            {lcItems.map(item => renderTypeCard(item.t, item.idx))}
-                          </div>
+                          {renderCarouselRow(lcItems, "pb-2")}
                         </div>
 
                         {/* Row 3: VS Types */}
@@ -2036,9 +2045,7 @@ export function DetailPanel({
                           <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                             {language === "en" ? "VS - Vertical Shear" : "VS - แรงเฉือนแนวตั้ง (Vertical Shear)"}
                           </div>
-                          <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                            {vsItems.map(item => renderTypeCard(item.t, item.idx))}
-                          </div>
+                          {renderCarouselRow(vsItems, "pb-2")}
                         </div>
                       </div>
                     );
@@ -2061,9 +2068,7 @@ export function DetailPanel({
                             <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "SER - Supination-External Rotation" : "SER - หงายเท้าหมุนออกนอก (Supination-External Rotation)"}
                             </div>
-                            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                              {serItems.map(item => renderTypeCard(item.t, item.idx))}
-                            </div>
+                            {renderCarouselRow(serItems, "pb-2")}
                           </div>
                         )}
 
@@ -2073,9 +2078,7 @@ export function DetailPanel({
                             <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "SA - Supination-Adduction" : "SA - หงายเท้าหุบเข้าใน (Supination-Adduction)"}
                             </div>
-                            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                              {saItems.map(item => renderTypeCard(item.t, item.idx))}
-                            </div>
+                            {renderCarouselRow(saItems, "pb-2")}
                           </div>
                         )}
 
@@ -2085,9 +2088,7 @@ export function DetailPanel({
                             <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "PER - Pronation-External Rotation" : "PER - คว่ำเท้าหมุนออกนอก (Pronation-External Rotation)"}
                             </div>
-                            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                              {perItems.map(item => renderTypeCard(item.t, item.idx))}
-                            </div>
+                            {renderCarouselRow(perItems, "pb-2")}
                           </div>
                         )}
 
@@ -2097,9 +2098,7 @@ export function DetailPanel({
                             <div style={{ color: darkMode ? "#00CED1" : "#0F766E", fontSize: 11, fontWeight: 800, marginBottom: 8, letterSpacing: "0.04em", textTransform: "uppercase" }}>
                               {language === "en" ? "PA - Pronation-Abduction" : "PA - คว่ำเท้ากางออกนอก (Pronation-Abduction)"}
                             </div>
-                            <div className="flex gap-2 overflow-x-auto pb-2" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                              {paItems.map(item => renderTypeCard(item.t, item.idx))}
-                            </div>
+                            {renderCarouselRow(paItems, "pb-2")}
                           </div>
                         )}
                       </div>
@@ -2110,7 +2109,16 @@ export function DetailPanel({
 
                   if (hasNoImages) {
                     return (
-                      <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar items-center py-1">
+                      <div 
+                        className="flex gap-2 overflow-x-auto -mr-3 pr-3 pb-2 no-scrollbar items-center py-1"
+                        style={{
+                          scrollbarWidth: "none",
+                          ...(isMobile && classSystem.types.length > 3 ? {
+                            WebkitMaskImage: "linear-gradient(to right, black calc(100% - 24px), transparent 100%)",
+                            maskImage: "linear-gradient(to right, black calc(100% - 24px), transparent 100%)",
+                          } : {}),
+                        }}
+                      >
                         {classSystem.types.map((t, i) => (
                           <button
                             key={t.type}
@@ -2130,15 +2138,12 @@ export function DetailPanel({
                             {t.type}
                           </button>
                         ))}
+                        <div className="w-4 flex-shrink-0" />
                       </div>
                     );
                   }
 
-                  return (
-                    <div className="flex gap-2 overflow-x-auto pb-3" style={{ scrollbarWidth: "none", scrollSnapType: "x mandatory" }}>
-                      {classSystem.types.map((t, i) => renderTypeCard(t, i))}
-                    </div>
-                  );
+                  return renderCarouselRow(classSystem.types.map((t, i) => ({ t, idx: i })), "pb-3");
                 })()}
               </div>
 

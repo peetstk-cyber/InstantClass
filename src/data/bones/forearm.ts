@@ -92,7 +92,7 @@ export const forearmBone: BoneData = {
         {
           "system": "Mason",
           "fullName": {
-            "en": "Mason Classification for Radial Head Fractures",
+            "en": "Mason Classification",
             "th": "การจำแนกกระดูกหัวข้อศอกหักแบบ Mason"
           },
           "description": {
@@ -508,7 +508,7 @@ export const forearmBone: BoneData = {
         {
           "system": "Mayo",
           "fullName": {
-            "en": "Mayo Classification for Olecranon Fractures",
+            "en": "Mayo Classification",
             "th": "การจำแนกกระดูกข้อศอกหักแบบ Mayo"
           },
           "description": {
@@ -2214,7 +2214,7 @@ export const forearmBone: BoneData = {
         {
           "system": "Frykman",
           "fullName": {
-            "en": "Frykman Classification for Distal Radius Fractures",
+            "en": "Frykman Classification",
             "th": "การจำแนกกระดูกปลายแขนหักแบบ Frykman"
           },
           "description": {

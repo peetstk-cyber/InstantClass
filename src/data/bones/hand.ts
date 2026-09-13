@@ -493,8 +493,8 @@ export const handBone: BoneData = {
         {
           "system": "Mayfield",
           "fullName": {
-            "en": "Mayfield Classification of Progressive Perilunate Instability",
-            "th": "การจำแนกภาวะข้อมือไม่มั่นคงแบบค่อยเป็นค่อยไป Mayfield"
+            "en": "Mayfield Classification",
+            "th": "การจำแนกภาวะข้อมือไม่มั่นคงแบบ Mayfield"
           },
           "description": {
             "en": "Classification describing the 4 sequential stages of progressive perilunate ligamentous disruption around the lunate bone, from scapholunate dissociation to complete anterior lunate dislocation into the carpal tunnel.",
@@ -1338,8 +1338,8 @@ export const handBone: BoneData = {
         {
           "system": "Anatomical Location",
           "fullName": {
-            "en": "2nd-5th Metacarpal Fractures (Anatomical & Alignment)",
-            "th": "การจำแนกและเกณฑ์การรักษากระดูกฝ่ามือนิ้วชี้ถึงก้อย"
+            "en": "2nd-5th Metacarpal Classification",
+            "th": "การจำแนกกระดูกฝ่ามือนิ้วชี้ถึงก้อยหัก"
           },
           "description": {
             "en": "Anatomical classification of 2nd-5th metacarpal fractures focusing on practical management and acceptable alignment thresholds.",

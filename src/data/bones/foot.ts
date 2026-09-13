@@ -88,7 +88,7 @@ export const footBone: BoneData = {
         {
           "system": "Hawkins",
           "fullName": {
-            "en": "Hawkins Classification for Talar Neck Fractures",
+            "en": "Hawkins Classification",
             "th": "การจำแนกกระดูกคอทาเลสหักแบบ Hawkins"
           },
           "description": {
@@ -525,8 +525,8 @@ export const footBone: BoneData = {
         {
           "system": "Essex-Lopresti",
           "fullName": {
-            "en": "Essex-Lopresti Calcaneal Fracture Classification (X-Ray Based)",
-            "th": "การจำแนกกระดูกส้นเท้าหักตามภาพถ่ายรังสี Essex-Lopresti"
+            "en": "Essex-Lopresti Classification",
+            "th": "การจำแนกกระดูกส้นเท้าหักแบบ Essex-Lopresti"
           },
           "description": {
             "en": "Classic radiograph-based classification for intra-articular calcaneal fractures based on the exit trajectory of the secondary fracture line, categorizing injuries into Tongue-type and Joint-Depression-type.",
@@ -796,8 +796,8 @@ export const footBone: BoneData = {
         {
           "system": "Sanders",
           "fullName": {
-            "en": "Sanders Calcaneal Fracture Classification (CT-Based)",
-            "th": "การจำแนกกระดูกส้นเท้าหักตามภาพถ่ายคอมพิวเตอร์ Sanders"
+            "en": "Sanders Classification",
+            "th": "การจำแนกกระดูกส้นเท้าหักแบบ Sanders"
           },
           "description": {
             "en": "Gold standard CT-scan-based classification for intra-articular calcaneal fractures based on the number and location of primary articular fracture lines across the posterior facet (coronal CT view).",
@@ -1185,7 +1185,7 @@ export const footBone: BoneData = {
         {
           "system": "Myerson",
           "fullName": {
-            "en": "Myerson Classification of Lisfranc (Tarsometatarsal) Joint Injuries",
+            "en": "Myerson Classification (Lisfranc)",
             "th": "การจำแนกการบาดเจ็บข้อกลางเท้า Lisfranc แบบ Myerson"
           },
           "description": {
@@ -1501,8 +1501,8 @@ export const footBone: BoneData = {
         {
           "system": "Lawrence-Botte",
           "fullName": {
-            "en": "Lawrence & Botte Classification for 5th Metatarsal Base Fractures",
-            "th": "การจำแนกกระดูกฐานฝ่าเท้านิ้วที่ 5 หัก Lawrence & Botte"
+            "en": "Lawrence-Botte Classification",
+            "th": "การจำแนกกระดูกฐานฝ่าเท้านิ้วที่ 5 หักแบบ Lawrence-Botte"
           },
           "description": {
             "en": "Anatomical zone classification for proximal 5th metatarsal fractures (Zone 1 Tuberosity, Zone 2 Jones, Zone 3 Diaphyseal Stress), dictating vascular supply, nonunion risk, and surgical vs cast management.",

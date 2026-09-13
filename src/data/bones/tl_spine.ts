@@ -76,8 +76,8 @@ export const tlSpineBone: BoneData = {
         {
           "system": "Denis 3-Column Concept",
           "fullName": {
-            "en": "Denis Three-Column Concept & Mechanical Stability Assessment",
-            "th": "หลักการ 3 เสาหลัก Denis และการประเมินความมั่นคง (Denis Three-Column Concept & Stability)"
+            "en": "Denis Three-Column Concept",
+            "th": "หลักการ 3 เสาหลักแบบ Denis"
           },
           "description": {
             "en": "Biomechanical framework dividing the thoracolumbar spine into 3 structural columns: Anterior, Middle (Critical for stability), and Posterior. Mechanical stability is defined by the number of compromised columns and the status of the Middle Column.",
@@ -402,8 +402,8 @@ export const tlSpineBone: BoneData = {
         {
           "system": "Denis Classification",
           "fullName": {
-            "en": "Denis Classification for Thoracolumbar Spine Fractures",
-            "th": "การจำแนกการบาดเจ็บกระดูกสันหลังส่วนอกและเอวแบบ Denis (Denis Fracture Types)"
+            "en": "Denis Classification",
+            "th": "การจำแนกกระดูกสันหลังอกและเอวแบบ Denis"
           },
           "description": {
             "en": "Classification categorizing thoracolumbar fractures into 4 major types: Compression Fracture (Type 1), Burst Fracture (Type 2), Seat-Belt / Chance Injury (Type 3), and Fracture-Dislocation (Type 4).",
@@ -735,8 +735,8 @@ export const tlSpineBone: BoneData = {
         {
           "system": "TLICS Score",
           "fullName": {
-            "en": "Thoracolumbar Injury Classification and Severity Score (TLICS System)",
-            "th": "ระบบประเมินให้คะแนนการบาดเจ็บกระดูกสันหลังอกและเอว TLICS System (Vaccaro)"
+            "en": "TLICS Classification",
+            "th": "ระบบการจำแนกกระดูกสันหลังแบบ TLICS"
           },
           "description": {
             "en": "Point-based scoring system for thoracolumbar spine injuries (T1-L5) evaluating Fracture Morphology, Posterior Ligamentous Complex (PLC) integrity, and Neurological Status. TLICS score <4 = Conservative, TLICS score =4 = Equivocal, TLICS score >4 = Operative.",

@@ -48,8 +48,8 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 0,
         text: {
-          en: "Popliteal Artery & Tibial Nerve (due to knee dislocation mechanism)",
-          th: "Popliteal Artery & Tibial Nerve (จากกลไกข้อเข่าหลุดร่วม)",
+          en: "Popliteal Artery & Tibial Nerve",
+          th: "Popliteal Artery & Tibial Nerve",
         },
         isCorrect: true,
       },
@@ -64,16 +64,16 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 2,
         text: {
-          en: "Femoral Artery & Saphenous Nerve at adductor canal",
-          th: "Femoral Artery & Saphenous Nerve บริเวณ Adductor Canal",
+          en: "Femoral Artery & Saphenous Nerve",
+          th: "Femoral Artery & Saphenous Nerve",
         },
         isCorrect: false,
       },
       {
         id: 3,
         text: {
-          en: "Deep Peroneal Nerve with isolated foot drop",
-          th: "Deep Peroneal Nerve ทำให้เกิด Foot Drop เดี่ยวๆ",
+          en: "Deep Peroneal Nerve",
+          th: "Deep Peroneal Nerve",
         },
         isCorrect: false,
       },
@@ -101,8 +101,8 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 0,
         text: {
-          en: "Extremely high risk of avascular necrosis (AVN) & nonunion from retinacular vessel disruption",
-          th: "เสี่ยงสูงมากต่อภาวะหัวกระดูกตาย (AVN) และกระดูกไม่ติด จากเส้นเลือด Retinacular ฉีกขาด",
+          en: "High risk of avascular necrosis (AVN) and nonunion",
+          th: "เสี่ยงสูงมากต่อภาวะหัวกระดูกตาย (AVN) และกระดูกไม่ติด",
         },
         isCorrect: true,
       },
@@ -117,16 +117,16 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 2,
         text: {
-          en: "Garden III fractures are extracapsular with extensive bleeding",
-          th: "Garden III เป็นกระดูกหักนอกข้อที่มีเลือดออกในปริมาณมาก",
+          en: "Severe extracapsular bleeding leading to hematoma",
+          th: "เลือดออกปริมาณมากจากรอยหักนอกแคปซูลข้อ",
         },
         isCorrect: false,
       },
       {
         id: 3,
         text: {
-          en: "Fixation is contraindicated in patients aged above 50",
-          th: "ห้ามทำ Internal Fixation ในผู้ป่วยที่มีอายุมากกว่า 50 ปี ทุกราย",
+          en: "Internal fixation is contraindicated in patients aged above 50",
+          th: "ห้ามทำ Internal Fixation ในผู้ป่วยที่มีอายุมากกว่า 50 ปี",
         },
         isCorrect: false,
       },
@@ -170,16 +170,16 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 2,
         text: {
-          en: "Any visible cortical break on AP radiograph regardless of distance",
-          th: "มีรอยแตกของ Cortical ที่มองเห็นได้บนฟิล์ม AP โดยไม่จำกัดระยะ",
+          en: "Any visible cortical fracture line on radiograph",
+          th: "มีรอยแตกของ Cortical ที่มองเห็นได้บนฟิล์มเอกซเรย์",
         },
         isCorrect: false,
       },
       {
         id: 3,
         text: {
-          en: "Greater tuberosity displacement > 10 mm only",
-          th: "ปุ่ม Greater Tuberosity เลื่อนมากกว่า 10 มม. เท่านั้น",
+          en: "Displacement > 0.5 cm OR Angulation > 15 degrees",
+          th: "ระยะเคลื่อนที่มากกว่า 0.5 ซม. หรือ มุมเอียงมากกว่า 15 องศา",
         },
         isCorrect: false,
       },
@@ -227,8 +227,8 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 3,
         text: {
-          en: "Barton Fracture",
-          th: "Barton Fracture",
+          en: "Barton Fracture-Dislocation",
+          th: "Barton Fracture-Dislocation",
         },
         isCorrect: false,
       },
@@ -252,32 +252,32 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 0,
         text: {
-          en: "Salter-Harris Type IV (Through-and-through Epiphysis + Physis + Metaphysis)",
-          th: "Salter-Harris Type IV (ทะลุผ่านทั้ง Epiphysis + Physis + Metaphysis)",
+          en: "Salter-Harris Type IV",
+          th: "Salter-Harris Type IV",
         },
         isCorrect: true,
       },
       {
         id: 1,
         text: {
-          en: "Salter-Harris Type II (Metaphysis + Physis only)",
-          th: "Salter-Harris Type II (เฉพาะ Metaphysis + Physis)",
+          en: "Salter-Harris Type II",
+          th: "Salter-Harris Type II",
         },
         isCorrect: false,
       },
       {
         id: 2,
         text: {
-          en: "Salter-Harris Type III (Epiphysis + Physis only)",
-          th: "Salter-Harris Type III (เฉพาะ Epiphysis + Physis)",
+          en: "Salter-Harris Type III",
+          th: "Salter-Harris Type III",
         },
         isCorrect: false,
       },
       {
         id: 3,
         text: {
-          en: "Salter-Harris Type V (Crush injury of the growth plate)",
-          th: "Salter-Harris Type V (แรงอัดบดขยี้แผ่น Physis)",
+          en: "Salter-Harris Type V",
+          th: "Salter-Harris Type V",
         },
         isCorrect: false,
       },
@@ -317,16 +317,16 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       {
         id: 2,
         text: {
-          en: "APC-I (Symphysis diastasis < 2.5 cm without SI ligament disruption)",
-          th: "APC-I (Symphysis แยก < 2.5 ซม. และไม่มี SI ligament ฉีกขาด)",
+          en: "APC-I (Anterior-Posterior Compression Type I)",
+          th: "APC-I (Anterior-Posterior Compression Type I)",
         },
         isCorrect: false,
       },
       {
         id: 3,
         text: {
-          en: "Vertical Shear (Complete hemipelvis displacement)",
-          th: "Vertical Shear (กระดูกเชิงกรานเลื่อนขึ้นแนวดิ่งสมบูรณ์)",
+          en: "Vertical Shear",
+          th: "Vertical Shear",
         },
         isCorrect: false,
       },
@@ -374,10 +374,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "นักฟุตบอลชายอายุ 30 ปี บิดข้อเท้า ฟิล์มเอกซเรย์แสดงกระดูก Fibula หักระดับ Syndesmosis ร่วมกับ Medial Clear Space กว้างเกิน 4 มม. จัดอยู่ใน Weber Classification ประเภทใด?",
     },
     options: [
-      { id: 0, text: { en: "Weber B (Trans-Syndesmotic Fibula Fracture)", th: "Weber B (กระดูก Fibula หักระดับ Syndesmosis)" }, isCorrect: true },
-      { id: 1, text: { en: "Weber A (Infra-Syndesmotic Fibula Fracture)", th: "Weber A (กระดูก Fibula หักต่ำกว่า Syndesmosis)" }, isCorrect: false },
-      { id: 2, text: { en: "Weber C (Supra-Syndesmotic Fibula Fracture)", th: "Weber C (กระดูก Fibula หักสูงกว่า Syndesmosis)" }, isCorrect: false },
-      { id: 3, text: { en: "Maisonneuve Fracture (Proximal Fibula)", th: "Maisonneuve Fracture (Fibula หักส่วนต้น)" }, isCorrect: false },
+      { id: 0, text: { en: "Weber B", th: "Weber B" }, isCorrect: true },
+      { id: 1, text: { en: "Weber A", th: "Weber A" }, isCorrect: false },
+      { id: 2, text: { en: "Weber C", th: "Weber C" }, isCorrect: false },
+      { id: 3, text: { en: "Maisonneuve Fracture", th: "Maisonneuve Fracture" }, isCorrect: false },
     ],
     explanation: {
       en: "Weber B fractures occur at the level of the syndesmosis. The syndesmosis may or may not be disrupted. Medial clear space > 4 mm on mortise view suggests deltoid ligament injury and ankle instability requiring surgical fixation.",
@@ -396,9 +396,9 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "เด็กชายอายุ 6 ปี ตกจากบาร์ลิง ข้อศอกบวม ตรวจพบ Posterior Fat Pad Sign บวก CT ยืนยัน Gartland Type III (Extension type) กระดูก Supracondylar หักเคลื่อนที่มาก โครงสร้างเส้นประสาทใดเสี่ยงบาดเจ็บมากที่สุด?",
     },
     options: [
-      { id: 0, text: { en: "Anterior Interosseous Nerve (AIN — branch of Median Nerve)", th: "Anterior Interosseous Nerve (AIN — แขนงของ Median Nerve)" }, isCorrect: true },
-      { id: 1, text: { en: "Ulnar Nerve at the cubital tunnel", th: "Ulnar Nerve บริเวณ Cubital Tunnel" }, isCorrect: false },
-      { id: 2, text: { en: "Radial Nerve at the radial groove", th: "Radial Nerve บริเวณ Radial Groove" }, isCorrect: false },
+      { id: 0, text: { en: "Anterior Interosseous Nerve (AIN)", th: "Anterior Interosseous Nerve (AIN)" }, isCorrect: true },
+      { id: 1, text: { en: "Ulnar Nerve", th: "Ulnar Nerve" }, isCorrect: false },
+      { id: 2, text: { en: "Radial Nerve", th: "Radial Nerve" }, isCorrect: false },
       { id: 3, text: { en: "Musculocutaneous Nerve", th: "Musculocutaneous Nerve" }, isCorrect: false },
     ],
     explanation: {
@@ -422,10 +422,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ผู้ป่วยขับรถจักรยานยนต์ชนกระดูกหน้าแข้งหักร่วมกับแผลเปิดขนาด 12 ซม. กล้ามเนื้อตายเป็นวงกว้าง กระดูกขาดหาย (Segmental bone loss) และหลอดเลือดฉีกขาดต้องซ่อม จัดอยู่ใน Gustilo-Anderson ระดับใด?",
     },
     options: [
-      { id: 0, text: { en: "Gustilo IIIC (Open fracture with vascular injury requiring repair)", th: "Gustilo IIIC (กระดูกหักเปิดร่วมกับหลอดเลือดฉีกต้องผ่าตัดซ่อม)" }, isCorrect: true },
-      { id: 1, text: { en: "Gustilo IIIA (Adequate soft tissue coverage despite high-energy)", th: "Gustilo IIIA (เนื้อเยื่ออ่อนปิดคลุมเพียงพอแม้แรงกระแทกสูง)" }, isCorrect: false },
-      { id: 2, text: { en: "Gustilo IIIB (Requires flap coverage, no vascular injury)", th: "Gustilo IIIB (ต้องปิดแผลด้วย Flap แต่หลอดเลือดไม่เสียหาย)" }, isCorrect: false },
-      { id: 3, text: { en: "Gustilo II (Wound 1-10 cm, moderate soft tissue damage)", th: "Gustilo II (แผล 1-10 ซม. เนื้อเยื่ออ่อนเสียหายปานกลาง)" }, isCorrect: false },
+      { id: 0, text: { en: "Gustilo-Anderson Type IIIC", th: "Gustilo-Anderson Type IIIC" }, isCorrect: true },
+      { id: 1, text: { en: "Gustilo-Anderson Type IIIA", th: "Gustilo-Anderson Type IIIA" }, isCorrect: false },
+      { id: 2, text: { en: "Gustilo-Anderson Type IIIB", th: "Gustilo-Anderson Type IIIB" }, isCorrect: false },
+      { id: 3, text: { en: "Gustilo-Anderson Type II", th: "Gustilo-Anderson Type II" }, isCorrect: false },
     ],
     explanation: {
       en: "Gustilo IIIC is any open fracture with a vascular injury requiring surgical repair, regardless of wound size. IIIA has adequate soft tissue, IIIB requires flap, IIIC has vascular injury. All Gustilo III require emergent irrigation, debridement, and IV antibiotics.",
@@ -446,8 +446,8 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
     options: [
       { id: 0, text: { en: "Emergency 4-compartment fasciotomy of the leg", th: "ผ่าตัดเปิดพังผืด 4 ช่องของขา (Fasciotomy) ฉุกเฉินทันที" }, isCorrect: true },
       { id: 1, text: { en: "Elevate limb and observe for 6 hours", th: "ยกขาสูงและสังเกตอาการ 6 ชั่วโมง" }, isCorrect: false },
-      { id: 2, text: { en: "Apply ice and give IV morphine for pain", th: "ประคบเย็นและให้ Morphine IV ลดปวด" }, isCorrect: false },
-      { id: 3, text: { en: "Repeat pressure measurement in 2 hours", th: "วัดความดันในช่องกล้ามเนื้อซ้ำใน 2 ชั่วโมง" }, isCorrect: false },
+      { id: 2, text: { en: "Apply ice compress and give IV analgesics", th: "ประคบเย็นและให้ยาแก้ปวดทางหลอดเลือดดำ" }, isCorrect: false },
+      { id: 3, text: { en: "Repeat compartment pressure measurement in 2 hours", th: "วัดความดันในช่องกล้ามเนื้อซ้ำใน 2 ชั่วโมง" }, isCorrect: false },
     ],
     explanation: {
       en: "ΔP (Diastolic BP − Compartment Pressure) = 75 − 35 = 40 mmHg. When ΔP ≤ 30 mmHg OR clinical signs are present (5 P's), emergency fasciotomy is indicated. Delay > 6 hours risks irreversible Volkmann contracture and limb loss.",
@@ -470,10 +470,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ชายอายุ 40 ปี ล้มกระแทกข้อศอก ฟิล์มแสดง Olecranon หักแบบขวาง (Transverse) เคลื่อนที่ ผู้ป่วยเหยียดข้อศอกไม่ได้ เหตุผลที่เหยียดข้อศอกไม่ได้คืออะไร?",
     },
     options: [
-      { id: 0, text: { en: "Triceps tendon inserts on the olecranon — fracture disrupts the extensor mechanism", th: "เอ็น Triceps ยึดที่ Olecranon — กระดูกหักทำให้กลไกเหยียดข้อศอกขาด" }, isCorrect: true },
-      { id: 1, text: { en: "Radial nerve injury at the spiral groove", th: "เส้นประสาท Radial เสียหายบริเวณ Spiral Groove" }, isCorrect: false },
-      { id: 2, text: { en: "Coronoid process impaction preventing extension", th: "Coronoid process ถูกกดจนเหยียดไม่ได้" }, isCorrect: false },
-      { id: 3, text: { en: "Elbow joint effusion alone causes mechanical block", th: "น้ำในข้อศอกอย่างเดียวกั้นไม่ให้เหยียด" }, isCorrect: false },
+      { id: 0, text: { en: "Disruption of triceps tendon insertion", th: "จุดเกาะปลายของเอ็น Triceps หลุดขาด" }, isCorrect: true },
+      { id: 1, text: { en: "Radial nerve injury in spiral groove", th: "เส้นประสาท Radial เสียหายบริเวณ Spiral Groove" }, isCorrect: false },
+      { id: 2, text: { en: "Coronoid process mechanical impingement", th: "Coronoid Process เกิดการขัดล็อกเชิงกล" }, isCorrect: false },
+      { id: 3, text: { en: "Biceps tendon avulsion", th: "เอ็น Biceps ฉีกขาดหลุด" }, isCorrect: false },
     ],
     explanation: {
       en: "The olecranon is the insertion point of the triceps tendon — the sole active elbow extensor. A displaced olecranon fracture functionally ruptures the extensor mechanism, similar to a patellar fracture disrupting knee extension.",
@@ -492,10 +492,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "คนงานก่อสร้างตกจากที่สูง 3 เมตร กระดูกส้นเท้าหักทั้งสองข้าง วัดมุม Böhler's angle ได้ 10° (ปกติ 20-40°) มุม Böhler's ที่ลดลงบ่งบอกอะไร?",
     },
     options: [
-      { id: 0, text: { en: "Depression of the posterior facet with loss of calcaneal height — indicates intra-articular fracture", th: "ผิวข้อด้านหลัง (Posterior facet) ยุบลง กระดูกส้นเท้าเตี้ยลง — บ่งชี้กระดูกหักผ่านเข้าข้อ" }, isCorrect: true },
+      { id: 0, text: { en: "Depression of the posterior facet with loss of height", th: "ผิวข้อด้านหลัง (Posterior facet) ยุบตัวและความสูงกระดูกลดลง" }, isCorrect: true },
       { id: 1, text: { en: "Achilles tendon avulsion from the tuberosity", th: "เอ็นร้อยหวายดึงกระดูกส้นเท้าหลุด (Avulsion)" }, isCorrect: false },
-      { id: 2, text: { en: "Subtalar joint dislocation without fracture", th: "ข้อ Subtalar หลุดโดยไม่มีกระดูกหัก" }, isCorrect: false },
-      { id: 3, text: { en: "Lateral wall blowout only without articular involvement", th: "ผนังด้านข้างกระดูกแตกระเบิดออกโดยไม่กระทบผิวข้อ" }, isCorrect: false },
+      { id: 2, text: { en: "Subtalar joint dislocation without fracture", th: "ข้อ Subtalar หลุดเคลื่อนโดยไม่มีกระดูกหัก" }, isCorrect: false },
+      { id: 3, text: { en: "Isolated lateral wall blowout without joint involvement", th: "ผนังกระดูกด้านข้างแตกระเบิดโดยไม่กระทบผิวข้อ" }, isCorrect: false },
     ],
     explanation: {
       en: "Böhler's angle < 20° indicates posterior facet depression from an intra-articular calcaneal fracture. Always check for associated lumbar spine fractures (10% incidence with axial loading falls).",
@@ -518,10 +518,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ผู้ป่วยกระดูกสันหลัง L1 หักแบบ Burst ร่วมกับชิ้นกระดูกดันเข้าช่องไขสันหลัง เอ็นยึดด้านหลัง (PLC) ฉีกขาด และมีอาการทางระบบประสาทไม่สมบูรณ์ ตาม TLICS score ควรรักษาอย่างไร?",
     },
     options: [
-      { id: 0, text: { en: "Surgical stabilization — TLICS ≥ 5 (Burst 2 + PLC disrupted 3 + Incomplete neuro 3 = 8)", th: "ผ่าตัดยึดตรึง — TLICS ≥ 5 (Burst 2 + PLC ฉีก 3 + ระบบประสาทเสียไม่สมบูรณ์ 3 = 8)" }, isCorrect: true },
-      { id: 1, text: { en: "Conservative treatment with TLSO brace — TLICS < 4", th: "รักษาแบบอนุรักษ์ด้วย TLSO brace — TLICS < 4" }, isCorrect: false },
-      { id: 2, text: { en: "Bed rest and analgesics only — stable compression fracture", th: "นอนพักและกินยาแก้ปวดเท่านั้น — กระดูกหักแบบ Stable" }, isCorrect: false },
-      { id: 3, text: { en: "Vertebroplasty / Kyphoplasty — osteoporotic compression", th: "ฉีดซีเมนต์เสริมกระดูก (Vertebroplasty) — กระดูกพรุนหัก" }, isCorrect: false },
+      { id: 0, text: { en: "Surgical stabilization (TLICS ≥ 5)", th: "ผ่าตัดยึดตรึงกระดูกสันหลัง (TLICS ≥ 5)" }, isCorrect: true },
+      { id: 1, text: { en: "Conservative treatment with TLSO brace (TLICS < 4)", th: "รักษาแบบอนุรักษ์ใส่เสื้อเกราะ TLSO (TLICS < 4)" }, isCorrect: false },
+      { id: 2, text: { en: "Bed rest and analgesics only", th: "นอนพักและให้ยาแก้ปวดเท่านั้น" }, isCorrect: false },
+      { id: 3, text: { en: "Vertebroplasty or Kyphoplasty", th: "ฉีดซีเมนต์เสริมกระดูกสันหลัง (Vertebroplasty/Kyphoplasty)" }, isCorrect: false },
     ],
     explanation: {
       en: "TLICS: Burst fracture = 2, PLC disrupted = 3, Incomplete neurological deficit = 3. Total = 8. TLICS ≥ 5 = surgical indication. TLICS ≤ 3 = conservative. TLICS = 4 = surgeon's choice.",
@@ -540,10 +540,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "นักมวยอายุ 22 ปี ล้มเอามือยัน กดเจ็บบริเวณ Anatomical Snuffbox ฟิล์มเอกซเรย์เบื้องต้นปกติ ควรทำอะไรต่อ?",
     },
     options: [
-      { id: 0, text: { en: "Apply thumb spica cast and repeat X-ray in 10-14 days, or obtain MRI", th: "ดามเฝือก Thumb Spica และถ่ายฟิล์มซ้ำใน 10-14 วัน หรือส่งตรวจ MRI" }, isCorrect: true },
-      { id: 1, text: { en: "Discharge with NSAIDs and follow up only if symptoms persist after 6 weeks", th: "ให้ยาแก้ปวดกลับบ้าน นัดมาตรวจเฉพาะเมื่ออาการไม่ดีขึ้นใน 6 สัปดาห์" }, isCorrect: false },
-      { id: 2, text: { en: "Immediate CT scan of the wrist", th: "ส่งตรวจ CT ข้อมือทันที" }, isCorrect: false },
-      { id: 3, text: { en: "Buddy strapping and early mobilization", th: "พันยึดนิ้วคู่และเริ่มขยับข้อมือเร็ว" }, isCorrect: false },
+      { id: 0, text: { en: "Thumb spica cast with repeat X-ray in 10-14 days or MRI", th: "ดามเฝือก Thumb Spica และถ่ายฟิล์มซ้ำใน 10-14 วัน หรือตรวจ MRI" }, isCorrect: true },
+      { id: 1, text: { en: "Symptomatic treatment with NSAIDs and discharge", th: "ให้ยาแก้ปวดกลุ่ม NSAIDs และจำหน่ายกลับบ้าน" }, isCorrect: false },
+      { id: 2, text: { en: "Immediate emergent CT angiogram of the wrist", th: "ส่งตรวจ CT Angiogram ของข้อมือทันที" }, isCorrect: false },
+      { id: 3, text: { en: "Buddy taping with immediate vigorous mobilization", th: "พันยึดนิ้วคู่และเริ่มบริหารขยับข้อมือเต็มที่ทันที" }, isCorrect: false },
     ],
     explanation: {
       en: "Scaphoid fractures may be occult on initial X-rays (up to 20% false negatives). The standard approach is to treat as a fracture (thumb spica immobilization) and repeat imaging in 10-14 days when resorption at fracture site makes it visible, or obtain MRI for early diagnosis.",
@@ -566,10 +566,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "นักปั่นจักรยานอายุ 28 ปี ล้ม กระดูกไหปลาร้าหักตรงกลาง (Midshaft) มีกระดูกสั้นลง > 2 ซม. เลื่อนหลุด 100% และแตกหลายชิ้น ตามหลักฐานปัจจุบันควรรักษาอย่างไร?",
     },
     options: [
-      { id: 0, text: { en: "Consider primary ORIF — significantly displaced midshaft fractures have higher nonunion/malunion rates with conservative Rx", th: "พิจารณาผ่าตัดยึด (ORIF) — กระดูกหักตรงกลางที่เคลื่อนมากมีอัตรากระดูกไม่ติดสูงหากรักษาแบบอนุรักษ์" }, isCorrect: true },
-      { id: 1, text: { en: "Figure-of-8 brace for all clavicle fractures regardless of displacement", th: "ใส่ Figure-of-8 brace ทุกรายไม่ว่ากระดูกจะเคลื่อนแค่ไหน" }, isCorrect: false },
-      { id: 2, text: { en: "Immediate intramedullary nail fixation is the gold standard", th: "ใส่แกนเหล็กในโพรงกระดูก (IM Nail) ทันที เป็นมาตรฐานทอง" }, isCorrect: false },
-      { id: 3, text: { en: "Arm sling for comfort only — all clavicle fractures heal conservatively", th: "คล้องแขนเพื่อความสบาย — กระดูกไหปลาร้าหักทุกกรณีหายได้เอง" }, isCorrect: false },
+      { id: 0, text: { en: "Primary open reduction and internal fixation (ORIF)", th: "ผ่าตัดเปิดจัดกระดูกและดามแผ่นโลหะ (ORIF)" }, isCorrect: true },
+      { id: 1, text: { en: "Figure-of-8 brace immobilization for 6 weeks", th: "ดามด้วยสายรัดรูปเลขแปด (Figure-of-8) 6 สัปดาห์" }, isCorrect: false },
+      { id: 2, text: { en: "Immediate closed reduction under fluoroscopy without fixation", th: "ดึงจัดกระดูกให้เข้าที่แบบปิดโดยไม่ต้องดามเหล็ก" }, isCorrect: false },
+      { id: 3, text: { en: "Simple arm sling for comfort for 1-2 weeks only", th: "คล้องแขนด้วย Arm Sling เพื่อความสบาย 1-2 สัปดาห์เท่านั้น" }, isCorrect: false },
     ],
     explanation: {
       en: "Recent meta-analyses show that completely displaced midshaft clavicle fractures with shortening > 2 cm have 15-20% nonunion rates with conservative treatment vs < 3% with ORIF. Primary plate fixation is now recommended for significantly displaced fractures in active patients.",
@@ -588,10 +588,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ชายอายุ 50 ปี กระดูกสะบ้าหักแนวขวาง (Transverse) มีขอบผิวข้อเลื่อนเกิน 3 มม. และเหยียดเข่ายกขาตรง (SLR) ไม่ได้ ควรรักษาอย่างไร?",
     },
     options: [
-      { id: 0, text: { en: "ORIF with Tension Band Wiring (TBW) to restore extensor mechanism", th: "ผ่าตัดยึดด้วย Tension Band Wiring (TBW) เพื่อคืนกลไกเหยียดเข่า" }, isCorrect: true },
+      { id: 0, text: { en: "ORIF with Tension Band Wiring (TBW)", th: "ผ่าตัดยึดด้วย Tension Band Wiring (TBW)" }, isCorrect: true },
       { id: 1, text: { en: "Cylinder cast in full extension for 6 weeks", th: "ดามเฝือกยาวเหยียดเข่าตรง 6 สัปดาห์" }, isCorrect: false },
-      { id: 2, text: { en: "Total patellectomy as first-line treatment", th: "ผ่าตัดเอาสะบ้าออกทั้งชิ้นเป็นการรักษาลำดับแรก" }, isCorrect: false },
-      { id: 3, text: { en: "Hinged knee brace and early weight bearing", th: "ใส่ Brace ข้อเข่าบานพับและลงน้ำหนักเร็ว" }, isCorrect: false },
+      { id: 2, text: { en: "Total patellectomy as initial procedure", th: "ผ่าตัดตัดกระดูกสะบ้าออกทั้งหมด" }, isCorrect: false },
+      { id: 3, text: { en: "Hinged knee brace with unrestricted weight bearing", th: "ใส่ Brace ข้อเข่าแบบบานพับและลงน้ำหนักทันที" }, isCorrect: false },
     ],
     explanation: {
       en: "Displaced patellar fractures (step-off > 2-3 mm or gap > 3 mm) with loss of active knee extension require ORIF. Tension Band Wiring converts tensile forces to compressive forces at the articular surface, promoting healing.",
@@ -610,10 +610,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "นักรักบี้ล้มกระแทกปลายไหล่ ฟิล์มแสดง AC joint แยก กระดูกไหปลาร้าเลื่อนขึ้นเท่าตัว 100% เหนือ Acromion เอ็น AC และ CC ligaments ฉีกขาดทั้งคู่ จัดอยู่ใน Rockwood Type ใด?",
     },
     options: [
-      { id: 0, text: { en: "Rockwood Type III (Complete AC + CC ligament disruption, 100% superior displacement)", th: "Rockwood Type III (เอ็น AC + CC ฉีกขาดหมด กระดูกเลื่อนขึ้น 100%)" }, isCorrect: true },
-      { id: 1, text: { en: "Rockwood Type I (AC ligament sprain only)", th: "Rockwood Type I (เอ็น AC ยืดเท่านั้น)" }, isCorrect: false },
-      { id: 2, text: { en: "Rockwood Type II (AC ligament torn, CC ligament sprained)", th: "Rockwood Type II (เอ็น AC ฉีก, CC ยืด)" }, isCorrect: false },
-      { id: 3, text: { en: "Rockwood Type V (200-300% superior displacement of clavicle)", th: "Rockwood Type V (กระดูกเลื่อนขึ้น 200-300%)" }, isCorrect: false },
+      { id: 0, text: { en: "Rockwood Type III", th: "Rockwood Type III" }, isCorrect: true },
+      { id: 1, text: { en: "Rockwood Type I", th: "Rockwood Type I" }, isCorrect: false },
+      { id: 2, text: { en: "Rockwood Type II", th: "Rockwood Type II" }, isCorrect: false },
+      { id: 3, text: { en: "Rockwood Type V", th: "Rockwood Type V" }, isCorrect: false },
     ],
     explanation: {
       en: "Rockwood Type III shows complete disruption of both AC and CC ligaments with 25-100% superior displacement. Type V is > 200% displacement. Types I-III are commonly treated conservatively, while IV-VI require surgical reconstruction.",
@@ -632,10 +632,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "หญิงอายุ 35 ปี ล้มเอามือยัน ฟิล์มข้อศอกด้านข้าง (Lateral view) พบ Posterior Fat Pad Sign (sail sign) ชัดเจน แต่ไม่เห็นรอยหักกระดูก การวินิจฉัยที่เป็นไปได้มากที่สุดคืออะไร?",
     },
     options: [
-      { id: 0, text: { en: "Occult radial head fracture (Mason Type I) — most common cause of positive fat pad sign", th: "กระดูก Radial Head หักซ่อนเร้น (Mason Type I) — สาเหตุที่พบบ่อยที่สุดของ Fat Pad Sign บวก" }, isCorrect: true },
+      { id: 0, text: { en: "Occult radial head fracture (Mason Type I)", th: "กระดูก Radial Head หักซ่อนเร้น (Mason Type I)" }, isCorrect: true },
       { id: 1, text: { en: "Lateral epicondylitis (Tennis Elbow)", th: "เอ็นข้อศอกอักเสบ (Tennis Elbow)" }, isCorrect: false },
       { id: 2, text: { en: "Olecranon bursitis", th: "ถุงน้ำ Olecranon อักเสบ" }, isCorrect: false },
-      { id: 3, text: { en: "Normal variant — posterior fat pad can be visible normally", th: "ภาพปกติ — Posterior fat pad สามารถเห็นได้ตามปกติ" }, isCorrect: false },
+      { id: 3, text: { en: "Normal anatomical variant", th: "ความแปรผันทางกายวิภาคปกติ" }, isCorrect: false },
     ],
     explanation: {
       en: "A visible posterior fat pad (sail sign) is ALWAYS pathological and indicates an intra-articular elbow effusion, most commonly from an occult radial head fracture. The anterior fat pad can be normally visible, but elevation (anterior sail sign) is also abnormal.",
@@ -658,7 +658,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ผู้ป่วยถูกแผงหน้ารถกระแทกเข่า (Dashboard injury) ขาอยู่ในท่างอสะโพก หุบขาเข้า และหมุนเข้าด้าน ฟิล์มยืนยันสะโพกหลุดด้านหลัง (Posterior dislocation) เส้นประสาทใดเสี่ยงบาดเจ็บมากที่สุด?",
     },
     options: [
-      { id: 0, text: { en: "Sciatic Nerve (particularly the peroneal division)", th: "Sciatic Nerve (โดยเฉพาะแขนง Peroneal division)" }, isCorrect: true },
+      { id: 0, text: { en: "Sciatic Nerve (Peroneal division)", th: "Sciatic Nerve (แขนง Peroneal division)" }, isCorrect: true },
       { id: 1, text: { en: "Femoral Nerve", th: "Femoral Nerve" }, isCorrect: false },
       { id: 2, text: { en: "Obturator Nerve", th: "Obturator Nerve" }, isCorrect: false },
       { id: 3, text: { en: "Superior Gluteal Nerve", th: "Superior Gluteal Nerve" }, isCorrect: false },
@@ -684,10 +684,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ชายสูงอายุ 82 ปี ล้ม กระดูกสะโพกหักแบบ Intertrochanteric ต่างจาก Femoral Neck fracture ทำไม Intertrochanteric fracture จึงไม่ค่อยเกิดภาวะหัวกระดูกตาย (AVN)?",
     },
     options: [
-      { id: 0, text: { en: "Intertrochanteric region is extracapsular with excellent blood supply from periosteal vessels", th: "บริเวณ Intertrochanteric อยู่นอกแคปซูลข้อ มีเส้นเลือดจาก Periosteum เลี้ยงอย่างดี" }, isCorrect: true },
-      { id: 1, text: { en: "The fracture never disrupts the medial femoral circumflex artery", th: "กระดูกหักไม่เคยตัดเส้นเลือด Medial Femoral Circumflex Artery" }, isCorrect: false },
-      { id: 2, text: { en: "Intertrochanteric bone is composed of pure cortical bone", th: "กระดูก Intertrochanteric เป็นกระดูกแข็ง (Cortical) ล้วน" }, isCorrect: false },
-      { id: 3, text: { en: "Internal fixation is always performed within 2 hours", th: "ผ่าตัดยึดภายใน 2 ชม. เสมอจึงไม่เกิด AVN" }, isCorrect: false },
+      { id: 0, text: { en: "Extracapsular location with rich periosteal blood supply", th: "อยู่นอกแคปซูลข้อและมีเส้นเลือดจากเยื่อหุ้มกระดูกเลี้ยงดี" }, isCorrect: true },
+      { id: 1, text: { en: "Medial femoral circumflex artery is never disrupted", th: "เส้นเลือด Medial Femoral Circumflex Artery ไม่เคยถูกกระทบ" }, isCorrect: false },
+      { id: 2, text: { en: "Composed entirely of dense avascular cortical bone", th: "ประกอบด้วยกระดูก Cortical แข็งล้วนที่ไม่มีเส้นเลือด" }, isCorrect: false },
+      { id: 3, text: { en: "Complete lack of cancellous trabeculae in this region", th: "ไม่มีกระดูกโครงสร้าง Cancellous ในบริเวณนี้" }, isCorrect: false },
     ],
     explanation: {
       en: "Intertrochanteric fractures are extracapsular — they occur outside the hip joint capsule where blood supply from periosteal and surrounding muscular vessels is abundant. Unlike intracapsular femoral neck fractures, the retinacular vessels to the femoral head are not disrupted.",
@@ -706,10 +706,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "เด็กอายุ 5 ปี กระดูก Lateral Condyle ของปลายกระดูกต้นแขนหักเคลื่อนเกิน 2 มม. ทำไมกระดูกหักชนิดนี้จึงอันตรายอย่างยิ่งหากพลาดการวินิจฉัยหรือรักษาไม่เพียงพอ?",
     },
     options: [
-      { id: 0, text: { en: "It is intra-articular, has high nonunion risk, and can cause progressive cubitus valgus with tardy ulnar nerve palsy", th: "หักผ่านเข้าข้อ เสี่ยงกระดูกไม่ติดสูง และอาจทำให้ข้อศอกเอียง (Cubitus Valgus) กดทับ Ulnar Nerve ในภายหลัง" }, isCorrect: true },
-      { id: 1, text: { en: "It always requires total elbow replacement in children", th: "ต้องผ่าตัดเปลี่ยนข้อศอกเทียมในเด็กเสมอ" }, isCorrect: false },
-      { id: 2, text: { en: "The fracture heals too quickly causing premature growth arrest", th: "กระดูกติดเร็วเกินไปทำให้แผ่นเจริญเติบโตปิดก่อนเวลา" }, isCorrect: false },
-      { id: 3, text: { en: "Brachial artery is always injured", th: "หลอดเลือด Brachial Artery บาดเจ็บเสมอ" }, isCorrect: false },
+      { id: 0, text: { en: "Intra-articular fracture risking nonunion and tardy ulnar nerve palsy", th: "หักผ่านเข้าข้อ เสี่ยงกระดูกไม่ติดและข้อศอกผิดรูปกดทับเส้นประสาท" }, isCorrect: true },
+      { id: 1, text: { en: "Mandates emergent total elbow replacement in children", th: "จำเป็นต้องผ่าตัดเปลี่ยนข้อศอกเทียมในเด็กเร่งด่วน" }, isCorrect: false },
+      { id: 2, text: { en: "Heals excessively rapidly causing premature synostosis", th: "กระดูกเชื่อมติดเร็วเกินไปจนกระดูกเชื่อมติดผิดปกติ" }, isCorrect: false },
+      { id: 3, text: { en: "Universal association with complete brachial artery laceration", th: "สัมพันธ์กับการฉีกขาดของหลอดเลือด Brachial Artery เสมอ" }, isCorrect: false },
     ],
     explanation: {
       en: "Lateral condyle fractures are the second most common pediatric elbow fracture. They are intra-articular (Milch classification) and have poor healing potential if displaced because synovial fluid washes away the fracture hematoma. Nonunion leads to lateral growth arrest → progressive cubitus valgus → tardy ulnar nerve palsy years later.",
@@ -728,10 +728,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "หญิงอายุ 38 ปี ล้มเอามือยัน ข้อศอกอยู่ในท่าเหยียด-กาง ฟิล์มแสดงข้อศอกหลุดร่วมกับกระดูก Radial Head หัก และ Coronoid Process หัก ภาวะนี้เรียกว่าอะไร?",
     },
     options: [
-      { id: 0, text: { en: "Terrible Triad of the Elbow (Elbow dislocation + Radial Head fx + Coronoid fx)", th: "Terrible Triad of the Elbow (ข้อศอกหลุด + Radial Head หัก + Coronoid หัก)" }, isCorrect: true },
+      { id: 0, text: { en: "Terrible Triad of the Elbow", th: "Terrible Triad of the Elbow" }, isCorrect: true },
       { id: 1, text: { en: "Essex-Lopresti Injury", th: "Essex-Lopresti Injury" }, isCorrect: false },
       { id: 2, text: { en: "Monteggia Fracture-Dislocation", th: "Monteggia Fracture-Dislocation" }, isCorrect: false },
-      { id: 3, text: { en: "Nursemaid's Elbow (Radial Head Subluxation)", th: "Nursemaid's Elbow (Radial Head เลื่อนหลุดในเด็ก)" }, isCorrect: false },
+      { id: 3, text: { en: "Nursemaid's Elbow (Radial Head Subluxation)", th: "Nursemaid's Elbow (Radial Head หลุดในเด็ก)" }, isCorrect: false },
     ],
     explanation: {
       en: "The 'Terrible Triad' consists of: (1) posterior elbow dislocation, (2) radial head fracture, and (3) coronoid process fracture. It has a high rate of recurrent instability and requires systematic surgical repair: coronoid fixation → radial head fixation/replacement → lateral ligament repair.",
@@ -750,10 +750,10 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "หญิงสูงอายุ 80 ปี ล้ม กระดูก Odontoid (Dens) ของ C2 หักบริเวณฐาน (Base) ตาม Anderson-D'Alonzo Classification กระดูก Odontoid หัก Type ใดมีอัตรากระดูกไม่ติดสูงที่สุด?",
     },
     options: [
-      { id: 0, text: { en: "Type II (Fracture at the base of the dens — watershed zone with poor blood supply)", th: "Type II (หักที่ฐาน Dens — บริเวณเส้นเลือดเลี้ยงน้อย)" }, isCorrect: true },
-      { id: 1, text: { en: "Type I (Avulsion of the tip of the dens)", th: "Type I (ปลายยอด Dens หักดึงรั้ง)" }, isCorrect: false },
-      { id: 2, text: { en: "Type III (Fracture extends into the C2 vertebral body)", th: "Type III (รอยหักทะลุเข้าตัวกระดูก C2)" }, isCorrect: false },
-      { id: 3, text: { en: "All types have equal nonunion rates", th: "ทุก Type มีอัตรากระดูกไม่ติดเท่ากัน" }, isCorrect: false },
+      { id: 0, text: { en: "Anderson-D'Alonzo Type II", th: "Anderson-D'Alonzo Type II" }, isCorrect: true },
+      { id: 1, text: { en: "Anderson-D'Alonzo Type I", th: "Anderson-D'Alonzo Type I" }, isCorrect: false },
+      { id: 2, text: { en: "Anderson-D'Alonzo Type III", th: "Anderson-D'Alonzo Type III" }, isCorrect: false },
+      { id: 3, text: { en: "Anderson-D'Alonzo Type IV", th: "Anderson-D'Alonzo Type IV" }, isCorrect: false },
     ],
     explanation: {
       en: "Anderson-D'Alonzo Type II odontoid fractures occur at the base of the dens — a watershed zone between ascending and descending blood supplies. Nonunion rates are 25-40% in elderly patients. Type III fractures extend into the cancellous C2 body and heal well with Halo or collar.",

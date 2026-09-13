@@ -18,7 +18,9 @@ import {
   ChevronRight,
   ChevronDown,
   Layers,
-  RotateCcw
+  RotateCcw,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 import { getRegionReferences } from "../../data/references";
 
@@ -30,6 +32,8 @@ interface RegionConceptPanelProps {
   language: Language;
   onBackToList?: () => void;
   isDesktop?: boolean;
+  isExpanded?: boolean;
+  onToggleExpand?: () => void;
 }
 
 export function RegionConceptPanel({
@@ -40,6 +44,8 @@ export function RegionConceptPanel({
   language,
   onBackToList,
   isDesktop = true,
+  isExpanded = false,
+  onToggleExpand,
 }: RegionConceptPanelProps) {
   const bg = darkMode ? "#161B27" : "#FFFFFF";
   const border = darkMode ? "#252F42" : "#E2E8F0";
@@ -185,9 +191,25 @@ export function RegionConceptPanel({
               {regionName[language]} Concept
             </h2>
           </div>
-          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
-            Clinical Guide
-          </span>
+          {isDesktop && onToggleExpand ? (
+            <button
+              type="button"
+              onClick={onToggleExpand}
+              title={
+                isExpanded
+                  ? (language === "en" ? "Collapse to standard width (340px)" : "ย่อกลับขนาดปกติ (340px)")
+                  : (language === "en" ? "Extend sidebar width (540px)" : "ขยายความกว้างแท็บซ้าย (540px)")
+              }
+              className="flex items-center gap-1.5 text-[10.5px] font-bold px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer shadow-xs active:scale-95 bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 hover:bg-teal-600/25 dark:hover:bg-[#00CED1]/25"
+            >
+              <span>{isExpanded ? (language === "en" ? "Collapse" : "ย่อ") : (language === "en" ? "Extend" : "ขยาย")}</span>
+              {isExpanded ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
+            </button>
+          ) : (
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
+              Clinical Guide
+            </span>
+          )}
         </div>
       </div>
 

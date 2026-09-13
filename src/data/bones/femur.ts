@@ -1697,8 +1697,8 @@ export const femurBone: BoneData = {
         {
           "system": "Distal Femur",
           "fullName": {
-            "en": "Distal Femur Fracture Classification (Supracondylar, Unicondylar, Bicondylar)",
-            "th": "การจำแนกกระดูกต้นขาส่วนปลายหัก (Supracondylar, Unicondylar, Bicondylar)"
+            "en": "Distal Femur Fracture Classification",
+            "th": "การจำแนกกระดูกต้นขาส่วนปลายหัก"
           },
           "description": {
             "en": "Classification of distal femur fractures based on articular and condylar involvement:\n• Type I: Supracondylar (Extra-articular fracture above condyles)\n• Type II: Unicondylar (Partial articular fracture involving a single condyle)\n• Type III: Bicondylar (Complete articular fracture with intercondylar split)",
