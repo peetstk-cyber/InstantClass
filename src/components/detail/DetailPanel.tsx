@@ -2274,7 +2274,7 @@ export function DetailPanel({
               style={{ 
                 scrollSnapAlign: "start",
                 scrollSnapStop: "always",
-                padding: "8px 12px 0px 12px",
+                padding: "2px 12px 0px 12px",
                 WebkitOverflowScrolling: "touch",
                 overscrollBehaviorY: "contain",
               }}

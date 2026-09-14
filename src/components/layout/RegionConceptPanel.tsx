@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import type { Language } from "../../App";
 import type { RegionConcept, RegionConceptImage, Translation } from "../../types";
@@ -87,13 +87,30 @@ export function RegionConceptPanel({
   const [viewMode, setViewMode] = useState<"grid" | "carousel">("grid");
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const panStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const hasMovedRef = useRef<boolean>(false);
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const initialPinchDistRef = useRef<number | null>(null);
+  const initialPinchZoomRef = useRef<number>(1);
   const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const updateZoom = (newZoom: number) => {
+    const clamped = Math.min(Math.max(newZoom, 1), 3.5);
+    setZoomLevel(clamped);
+    if (clamped <= 1) {
+      setPan({ x: 0, y: 0 });
+    }
+  };
 
   useEffect(() => {
     setFailedUrls(new Set());
     setCarouselIdx(0);
     setActiveLightboxIdx(null);
     setZoomLevel(1);
+    setPan({ x: 0, y: 0 });
   }, [concept, regionName.en]);
 
   const handleImageError = (url: string) => {
@@ -106,9 +123,11 @@ export function RegionConceptPanel({
 
   const activeImages = rawImages.filter(img => !failedUrls.has(img.url));
 
-  // Reset zoom when active lightbox image changes
+  // Reset zoom & pan when active lightbox image changes
   useEffect(() => {
     setZoomLevel(1);
+    setPan({ x: 0, y: 0 });
+    setIsDragging(false);
   }, [activeLightboxIdx]);
 
   // Keyboard navigation for Lightbox
@@ -122,34 +141,146 @@ export function RegionConceptPanel({
       } else if (e.key === "ArrowRight") {
         setActiveLightboxIdx(prev => (prev === null || prev === activeImages.length - 1 ? 0 : prev + 1));
       } else if (e.key === "+" || e.key === "=") {
-        setZoomLevel(z => Math.min(z + 0.5, 3));
+        updateZoom(zoomLevel + 0.5);
       } else if (e.key === "-") {
-        setZoomLevel(z => Math.max(z - 0.5, 1));
+        updateZoom(zoomLevel - 0.5);
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeLightboxIdx, activeImages.length]);
+  }, [activeLightboxIdx, activeImages.length, zoomLevel]);
 
-  // Touch handlers for mobile swipe in lightbox
+  const getPanLimits = () => {
+    if (!stageRef.current) return { maxX: 150, maxY: 150 };
+    const rect = stageRef.current.getBoundingClientRect();
+    const maxX = Math.max(20, ((zoomLevel - 1) * rect.width) / 2 + 40);
+    const maxY = Math.max(20, ((zoomLevel - 1) * rect.height) / 2 + 40);
+    return { maxX, maxY };
+  };
+
+  // Touch handlers for mobile pan, pinch-zoom, and swipe
   const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStartX(e.touches[0].clientX);
+    if (e.touches.length === 2) {
+      // Pinch gesture
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      initialPinchDistRef.current = dist;
+      initialPinchZoomRef.current = zoomLevel;
+      setIsDragging(false);
+      return;
+    }
+
+    if (e.touches.length === 1) {
+      if (zoomLevel > 1) {
+        dragStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        panStartRef.current = { ...pan };
+        hasMovedRef.current = false;
+        setIsDragging(true);
+      } else {
+        setTouchStartX(e.touches[0].clientX);
+      }
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length === 2 && initialPinchDistRef.current !== null) {
+      const currentDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const scaleFactor = currentDist / initialPinchDistRef.current;
+      const targetZoom = Math.min(Math.max(initialPinchZoomRef.current * scaleFactor, 1), 3.5);
+      setZoomLevel(targetZoom);
+      if (targetZoom <= 1) {
+        setPan({ x: 0, y: 0 });
+      }
+      return;
+    }
+
+    if (e.touches.length === 1 && zoomLevel > 1 && isDragging) {
+      const deltaX = e.touches[0].clientX - dragStartRef.current.x;
+      const deltaY = e.touches[0].clientY - dragStartRef.current.y;
+      if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+        hasMovedRef.current = true;
+      }
+      const { maxX, maxY } = getPanLimits();
+      const newX = Math.max(-maxX, Math.min(maxX, panStartRef.current.x + deltaX));
+      const newY = Math.max(-maxY, Math.min(maxY, panStartRef.current.y + deltaY));
+      setPan({ x: newX, y: newY });
+    }
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartX - touchEndX;
-    if (Math.abs(diff) > 45) {
-      if (diff > 0) {
-        // swipe left -> next
-        setActiveLightboxIdx(prev => (prev === null || prev === activeImages.length - 1 ? 0 : prev + 1));
-      } else {
-        // swipe right -> previous
-        setActiveLightboxIdx(prev => (prev === null || prev === 0 ? activeImages.length - 1 : prev - 1));
+    if (initialPinchDistRef.current !== null) {
+      initialPinchDistRef.current = null;
+      if (zoomLevel < 1.08) {
+        setZoomLevel(1);
+        setPan({ x: 0, y: 0 });
       }
+      return;
     }
-    setTouchStartX(null);
+
+    if (isDragging) {
+      setIsDragging(false);
+      return;
+    }
+
+    if (zoomLevel <= 1 && touchStartX !== null) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) {
+          // swipe left -> next
+          setActiveLightboxIdx(prev => (prev === null || prev === activeImages.length - 1 ? 0 : prev + 1));
+        } else {
+          // swipe right -> previous
+          setActiveLightboxIdx(prev => (prev === null || prev === 0 ? activeImages.length - 1 : prev - 1));
+        }
+      }
+      setTouchStartX(null);
+    }
+  };
+
+  // Mouse handlers for desktop pan
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (zoomLevel > 1) {
+      e.preventDefault();
+      dragStartRef.current = { x: e.clientX, y: e.clientY };
+      panStartRef.current = { ...pan };
+      hasMovedRef.current = false;
+      setIsDragging(true);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoomLevel > 1) {
+      const deltaX = e.clientX - dragStartRef.current.x;
+      const deltaY = e.clientY - dragStartRef.current.y;
+      if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+        hasMovedRef.current = true;
+      }
+      const { maxX, maxY } = getPanLimits();
+      const newX = Math.max(-maxX, Math.min(maxX, panStartRef.current.x + deltaX));
+      const newY = Math.max(-maxY, Math.min(maxY, panStartRef.current.y + deltaY));
+      setPan({ x: newX, y: newY });
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleImageClick = () => {
+    if (hasMovedRef.current) return;
+    if (zoomLevel === 1) {
+      updateZoom(2);
+    } else {
+      updateZoom(1);
+    }
   };
 
   const currentLightboxImg = activeLightboxIdx !== null && activeLightboxIdx < activeImages.length 
@@ -168,26 +299,26 @@ export function RegionConceptPanel({
   return (
     <div
       style={{ background: bg, color: text }}
-      className={`flex flex-col h-full w-full overflow-y-auto ${isDesktop ? "p-3.5 space-y-4" : "p-4 space-y-4"}`}
+      className={`flex flex-col h-full w-full overflow-y-auto ${isDesktop ? "p-3.5 space-y-4" : "px-0 pt-0 pb-2 space-y-2"}`}
     >
       {/* ── Header / Title Bar ── */}
       <div>
         {onBackToList && (
           <button
             onClick={onBackToList}
-            className="flex items-center gap-1.5 text-xs font-semibold mb-2.5 text-teal-800 dark:text-[#00CED1] hover:underline cursor-pointer group transition-all"
+            className="flex items-center gap-1.5 text-xs font-semibold mb-2 text-teal-800 dark:text-[#00CED1] hover:underline cursor-pointer group transition-all"
           >
             <ArrowLeft size={14} className="group-hover:-translate-x-0.5 transition-transform" />
             <span>{language === "en" ? "All Bones" : "กระดูกทั้งหมด"}</span>
           </button>
         )}
 
-        <div className="flex items-baseline justify-between gap-2 border-b pb-2.5" style={{ borderColor: border }}>
+        <div className={`flex items-center justify-between gap-2 border-b ${isDesktop ? "pb-2.5" : "pb-1.5"}`} style={{ borderColor: border }}>
           <div>
-            <div className="text-[11px] font-bold uppercase tracking-wider text-teal-800 dark:text-[#00CED1]">
+            <div className="text-[10.5px] font-bold uppercase tracking-wider text-teal-800 dark:text-[#00CED1] leading-none mb-0.5">
               {boneName[language]}
             </div>
-            <h2 className="text-sm md:text-base font-extrabold tracking-tight" style={{ color: text }}>
+            <h2 className="text-sm md:text-base font-extrabold tracking-tight leading-tight" style={{ color: text, margin: 0 }}>
               {regionName[language]} Concept
             </h2>
           </div>
@@ -206,7 +337,7 @@ export function RegionConceptPanel({
               {isExpanded ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
             </button>
           ) : (
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
+            <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
               Clinical Guide
             </span>
           )}
@@ -215,7 +346,7 @@ export function RegionConceptPanel({
 
       {/* ── Anatomy Concept Gallery View (Adapts dynamically to image count) ── */}
       {activeImages.length > 0 && (
-        <div className="flex flex-col gap-2 w-full flex-shrink-0">
+        <div className="flex flex-col gap-1.5 w-full flex-shrink-0">
           {/* Gallery View Header (Show counter and view mode toggle if 2+ images) */}
           {activeImages.length > 1 && (
             <div className="flex items-center justify-between px-0.5 text-xs">
@@ -554,13 +685,13 @@ export function RegionConceptPanel({
           style={{
             position: "fixed", 
             inset: 0,
-            background: "rgba(0,0,0,0.9)",
-            backdropFilter: "blur(6px)",
+            background: "rgba(0,0,0,0.92)",
+            backdropFilter: "blur(8px)",
             zIndex: 999999,
             display: "flex", 
             alignItems: "center", 
             justifyContent: "center",
-            padding: 12,
+            padding: "8px 6px",
             animation: "fadeIn 0.2s ease"
           }}
           onClick={() => setActiveLightboxIdx(null)}
@@ -568,53 +699,53 @@ export function RegionConceptPanel({
           <div 
             style={{
               background: darkMode ? "#111622" : "#FFFFFF",
-              borderRadius: 20,
-              padding: "14px 16px",
-              width: "calc(100vw - 24px)",
-              maxWidth: 860,
-              maxHeight: "94vh",
+              borderRadius: 16,
+              padding: "10px 10px 12px 10px",
+              width: "100%",
+              maxWidth: 880,
+              maxHeight: "96vh",
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              boxShadow: "0 30px 80px rgba(0,0,0,0.9)",
+              boxShadow: "0 25px 70px rgba(0,0,0,0.85)",
               position: "relative",
-              border: `1.5px solid ${darkMode ? "rgba(255,255,255,0.15)" : "#CBD5E1"}`,
+              border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}`,
               animation: "scaleIn 0.22s cubic-bezier(0.16,1,0.3,1)",
-              overflowY: "auto"
+              overflowY: "auto",
+              overscrollBehavior: "contain"
             }}
             onClick={e => e.stopPropagation()}
           >
             {/* Modal Header Bar */}
-            <div className="w-full flex items-center justify-between mb-2.5 pb-2 border-b" style={{ borderColor: border }}>
-              <div className="flex items-center gap-2 overflow-hidden pr-2">
-                <span className="font-extrabold text-sm md:text-base truncate" style={{ color: text }}>
+            <div className="w-full flex items-center justify-between mb-2 pb-1.5 border-b" style={{ borderColor: border }}>
+              <div className="flex items-center gap-1.5 overflow-hidden pr-1 min-w-0">
+                <span className="font-extrabold text-xs sm:text-sm truncate" style={{ color: text }}>
                   {regionName[language]} — {currentLightboxImg.title ? currentLightboxImg.title[language] : (language === "en" ? `Diagram ${activeLightboxIdx + 1}` : `ภาพประกอบที่ ${activeLightboxIdx + 1}`)}
                 </span>
                 {activeImages.length > 1 && (
-                  <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
+                  <span className="text-[10px] sm:text-[11px] font-bold px-1.5 py-0.2 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
                     {activeLightboxIdx + 1} / {activeImages.length}
                   </span>
                 )}
               </div>
 
               {/* Action Controls */}
-              <div className="flex items-center gap-1.5 flex-shrink-0">
+              <div className="flex items-center gap-1 flex-shrink-0">
                 <button 
                   type="button"
-                  onClick={() => setZoomLevel(z => Math.max(z - 0.5, 1))}
+                  onClick={() => updateZoom(zoomLevel - 0.5)}
                   title={language === "en" ? "Zoom Out (-)" : "ย่อขนาด (-)"}
                   disabled={zoomLevel <= 1}
-                  className="p-1.5 rounded-lg border bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 cursor-pointer transition-colors"
+                  className="p-1 sm:p-1.5 rounded-lg border bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-30 cursor-pointer transition-colors"
                   style={{ borderColor: border }}
                 >
                   <ZoomOut size={14} style={{ color: text }} />
                 </button>
                 <button 
                   type="button"
-                  onClick={() => setZoomLevel(z => Math.min(z + 0.5, 3))}
+                  onClick={() => updateZoom(zoomLevel + 0.5)}
                   title={language === "en" ? "Zoom In (+)" : "ขยายขนาด (+)"}
-                  disabled={zoomLevel >= 3}
-                  className="p-1.5 rounded-lg border bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-40 cursor-pointer transition-colors"
+                  disabled={zoomLevel >= 3.5}
+                  className="p-1 sm:p-1.5 rounded-lg border bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 disabled:opacity-30 cursor-pointer transition-colors"
                   style={{ borderColor: border }}
                 >
                   <ZoomIn size={14} style={{ color: text }} />
@@ -622,18 +753,17 @@ export function RegionConceptPanel({
                 {zoomLevel > 1 && (
                   <button 
                     type="button"
-                    onClick={() => setZoomLevel(1)}
+                    onClick={() => updateZoom(1)}
                     title={language === "en" ? "Reset Zoom" : "รีเซ็ตขนาด"}
-                    className="p-1.5 rounded-lg border bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 cursor-pointer transition-colors"
-                    style={{ borderColor: border }}
+                    className="p-1 sm:p-1.5 rounded-lg border bg-teal-50 dark:bg-teal-900/30 border-teal-500/40 text-teal-700 dark:text-[#00CED1] cursor-pointer transition-colors"
                   >
-                    <RotateCcw size={14} style={{ color: text }} />
+                    <RotateCcw size={14} />
                   </button>
                 )}
                 <button 
                   type="button"
                   onClick={() => setActiveLightboxIdx(null)}
-                  className="text-slate-700 bg-slate-200 hover:bg-slate-300 dark:text-slate-300 dark:hover:text-white text-xs font-bold px-2.5 py-1.5 rounded-lg dark:bg-slate-800 dark:hover:bg-slate-700 cursor-pointer transition-colors shadow-xs ml-1"
+                  className="text-slate-700 bg-slate-200 hover:bg-slate-300 dark:text-slate-300 dark:hover:text-white text-xs font-bold px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-lg dark:bg-slate-800 dark:hover:bg-slate-700 cursor-pointer transition-colors shadow-xs ml-0.5"
                 >
                   ✕ <span>{language === "en" ? "Close" : "ปิด"}</span>
                 </button>
@@ -642,31 +772,53 @@ export function RegionConceptPanel({
 
             {/* Main Image Stage */}
             <div 
-              className="w-full relative flex items-center justify-center p-2 rounded-xl bg-slate-950/20 dark:bg-black/40 overflow-hidden border"
-              style={{ minHeight: 280, maxHeight: "65vh", borderColor: cardBorder }}
+              ref={stageRef}
+              className="w-full relative flex items-center justify-center rounded-xl bg-slate-950/25 dark:bg-black/60 overflow-hidden select-none"
+              style={{ 
+                height: "56vh", 
+                minHeight: 300, 
+                maxHeight: "68vh",
+                touchAction: zoomLevel > 1 ? "none" : "pan-y"
+              }}
               onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseUp}
             >
               <div 
-                className="w-full h-full flex items-center justify-center overflow-auto cursor-zoom-in"
-                onClick={() => setZoomLevel(z => (z === 1 ? 2 : 1))}
+                className="w-full h-full flex items-center justify-center overflow-hidden"
+                onClick={handleImageClick}
               >
                 <img 
                   src={currentLightboxImg.url} 
                   alt={currentLightboxImg.title?.[language] || regionName.en} 
+                  draggable={false}
                   style={{
                     maxWidth: "100%",
-                    maxHeight: "62vh",
+                    maxHeight: "100%",
                     width: "auto",
                     height: "auto",
                     objectFit: "contain",
-                    transform: `scale(${zoomLevel})`,
+                    transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,
                     transformOrigin: "center center",
-                    transition: "transform 0.2s cubic-bezier(0.16,1,0.3,1)"
+                    transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16,1,0.3,1)",
+                    cursor: zoomLevel > 1 ? (isDragging ? "grabbing" : "grab") : "zoom-in",
                   }}
-                  className="rounded-lg select-none"
+                  className="select-none pointer-events-auto"
                 />
               </div>
+
+              {/* Floating Zoom & Pan indicator when zoomed */}
+              {zoomLevel > 1 && (
+                <div className="absolute top-2 left-2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-semibold shadow-lg border border-white/10 pointer-events-none">
+                  <span className="text-teal-400 font-bold">{Math.round(zoomLevel * 10) / 10}x</span>
+                  <span>•</span>
+                  <span>{language === "en" ? "Drag to pan" : "เลื่อนดูได้อิสระ"}</span>
+                </div>
+              )}
 
               {/* Navigation arrows (prev/next) */}
               {activeImages.length > 1 && (
@@ -679,7 +831,7 @@ export function RegionConceptPanel({
                     }}
                     title={language === "en" ? "Previous Image (←)" : "ภาพก่อนหน้า (←)"}
                     aria-label="Previous image"
-                    className="absolute left-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/85 text-white transition-all cursor-pointer shadow-md backdrop-blur-xs"
+                    className="absolute left-2 sm:left-3 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/60 hover:bg-black/85 text-white transition-all cursor-pointer shadow-md backdrop-blur-xs z-10"
                   >
                     <ChevronLeft size={18} />
                   </button>
@@ -691,7 +843,7 @@ export function RegionConceptPanel({
                     }}
                     title={language === "en" ? "Next Image (→)" : "ภาพถัดไป (→)"}
                     aria-label="Next image"
-                    className="absolute right-3 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/85 text-white transition-all cursor-pointer shadow-md backdrop-blur-xs"
+                    className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 p-1.5 sm:p-2 rounded-full bg-black/60 hover:bg-black/85 text-white transition-all cursor-pointer shadow-md backdrop-blur-xs z-10"
                   >
                     <ChevronRight size={18} />
                   </button>
@@ -702,34 +854,37 @@ export function RegionConceptPanel({
             {/* Caption bar if provided */}
             {currentLightboxImg.caption && (
               <div 
-                className="w-full mt-2.5 px-3.5 py-2 rounded-lg text-xs leading-relaxed border"
+                className="w-full mt-2 px-3 py-1.5 rounded-lg text-xs leading-relaxed border"
                 style={{ 
                   background: darkMode ? "rgba(0,206,209,0.06)" : "rgba(15,118,110,0.06)",
                   borderColor: darkMode ? "rgba(0,206,209,0.2)" : "rgba(15,118,110,0.2)",
                   color: text
                 }}
               >
-                <div className="font-bold text-teal-800 dark:text-[#00CED1] mb-0.5">
+                <div className="font-bold text-teal-800 dark:text-[#00CED1] mb-0.5 text-[11px] sm:text-xs">
                   {currentLightboxImg.title ? currentLightboxImg.title[language] : (language === "en" ? "Clinical Note" : "คำอธิบายภาพ")}
                 </div>
-                <div>{currentLightboxImg.caption[language]}</div>
+                <div className="text-[10.5px] sm:text-xs leading-snug">{currentLightboxImg.caption[language]}</div>
               </div>
             )}
 
             {/* Thumbnail Navigation Strip */}
             {activeImages.length > 1 && (
               <div 
-                className="w-full flex items-center justify-center gap-2 mt-3 pt-2 border-t overflow-x-auto" 
+                className="w-full flex items-center justify-center gap-1.5 mt-2 pt-1.5 border-t overflow-x-auto no-scrollbar" 
                 style={{ borderColor: border }}
               >
                 {activeImages.map((img, thumbIdx) => (
                   <button
                     key={img.url}
                     type="button"
-                    onClick={() => setActiveLightboxIdx(thumbIdx)}
+                    onClick={() => {
+                      setActiveLightboxIdx(thumbIdx);
+                      updateZoom(1);
+                    }}
                     style={{
-                      width: 50,
-                      height: 50,
+                      width: 44,
+                      height: 44,
                       borderColor: thumbIdx === activeLightboxIdx ? (darkMode ? "#00CED1" : "#0F766E") : border,
                       borderWidth: thumbIdx === activeLightboxIdx ? 2 : 1
                     }}
