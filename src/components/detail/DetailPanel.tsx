@@ -100,11 +100,166 @@ function ClassificationMediaViewerModal({
   const [activeMediaTab, setActiveMediaTab] = useState<"diagram" | "xray">("diagram");
   const [xrayError, setXrayError] = useState(false);
   const [diagramError, setDiagramError] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState<number>(1);
+  const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [imgAspect, setImgAspect] = useState<number | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const panStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const tapCoordRef = useRef<{ x: number; y: number } | null>(null);
+  const hasMovedRef = useRef<boolean>(false);
+  const stageRef = useRef<HTMLDivElement | null>(null);
+  const initialPinchDistRef = useRef<number | null>(null);
+  const initialPinchZoomRef = useRef<number>(1);
+
+  const updateZoom = (newZoom: number) => {
+    const clamped = Math.min(Math.max(newZoom, 1), 3.5);
+    setZoomLevel(clamped);
+    if (clamped <= 1) {
+      setPan({ x: 0, y: 0 });
+    }
+  };
 
   useEffect(() => {
     setXrayError(false);
     setDiagramError(false);
-  }, [fracType]);
+    setZoomLevel(1);
+    setPan({ x: 0, y: 0 });
+    setIsDragging(false);
+    setImgAspect(null);
+    tapCoordRef.current = null;
+  }, [fracType, activeMediaTab]);
+
+  const getPanLimitsForZoom = (zoom: number) => {
+    if (!stageRef.current) return { maxX: 150, maxY: 150 };
+    const rect = stageRef.current.getBoundingClientRect();
+    const maxX = Math.max(10, ((zoom - 1) * rect.width) / 2);
+    const maxY = Math.max(10, ((zoom - 1) * rect.height) / 2);
+    return { maxX, maxY };
+  };
+
+  const getPanLimits = () => getPanLimitsForZoom(zoomLevel);
+
+  // Touch handlers for mobile pan, pinch-zoom
+  const handleTouchStart = (e: React.TouchEvent) => {
+    if (e.touches.length === 2) {
+      const dist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      initialPinchDistRef.current = dist;
+      initialPinchZoomRef.current = zoomLevel;
+      setIsDragging(false);
+      return;
+    }
+
+    if (e.touches.length === 1) {
+      tapCoordRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      if (zoomLevel > 1) {
+        dragStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        panStartRef.current = { ...pan };
+        hasMovedRef.current = false;
+        setIsDragging(true);
+      }
+    }
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length === 2 && initialPinchDistRef.current !== null) {
+      const currentDist = Math.hypot(
+        e.touches[0].clientX - e.touches[1].clientX,
+        e.touches[0].clientY - e.touches[1].clientY
+      );
+      const scaleFactor = currentDist / initialPinchDistRef.current;
+      const targetZoom = Math.min(Math.max(initialPinchZoomRef.current * scaleFactor, 1), 3.5);
+      setZoomLevel(targetZoom);
+      if (targetZoom <= 1) {
+        setPan({ x: 0, y: 0 });
+      }
+      return;
+    }
+
+    if (e.touches.length === 1 && zoomLevel > 1 && isDragging) {
+      const deltaX = e.touches[0].clientX - dragStartRef.current.x;
+      const deltaY = e.touches[0].clientY - dragStartRef.current.y;
+      if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+        hasMovedRef.current = true;
+      }
+      const { maxX, maxY } = getPanLimits();
+      const newX = Math.max(-maxX, Math.min(maxX, panStartRef.current.x + deltaX));
+      const newY = Math.max(-maxY, Math.min(maxY, panStartRef.current.y + deltaY));
+      setPan({ x: newX, y: newY });
+    }
+  };
+
+  const handleTouchEnd = () => {
+    if (initialPinchDistRef.current !== null) {
+      initialPinchDistRef.current = null;
+      if (zoomLevel < 1.08) {
+        setZoomLevel(1);
+        setPan({ x: 0, y: 0 });
+      }
+      return;
+    }
+
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
+  // Mouse handlers for desktop pan
+  const handleMouseDown = (e: React.MouseEvent) => {
+    tapCoordRef.current = { x: e.clientX, y: e.clientY };
+    if (zoomLevel > 1) {
+      e.preventDefault();
+      dragStartRef.current = { x: e.clientX, y: e.clientY };
+      panStartRef.current = { ...pan };
+      hasMovedRef.current = false;
+      setIsDragging(true);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging && zoomLevel > 1) {
+      const deltaX = e.clientX - dragStartRef.current.x;
+      const deltaY = e.clientY - dragStartRef.current.y;
+      if (Math.abs(deltaX) > 3 || Math.abs(deltaY) > 3) {
+        hasMovedRef.current = true;
+      }
+      const { maxX, maxY } = getPanLimits();
+      const newX = Math.max(-maxX, Math.min(maxX, panStartRef.current.x + deltaX));
+      const newY = Math.max(-maxY, Math.min(maxY, panStartRef.current.y + deltaY));
+      setPan({ x: newX, y: newY });
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (isDragging) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (hasMovedRef.current) return;
+    if (zoomLevel === 1) {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clientX = tapCoordRef.current ? tapCoordRef.current.x : e.clientX;
+      const clientY = tapCoordRef.current ? tapCoordRef.current.y : e.clientY;
+      const offsetX = clientX - (rect.left + rect.width / 2);
+      const offsetY = clientY - (rect.top + rect.height / 2);
+      const newZoom = 2.2;
+      const targetPanX = -offsetX * (newZoom - 1);
+      const targetPanY = -offsetY * (newZoom - 1);
+      const { maxX, maxY } = getPanLimitsForZoom(newZoom);
+      setPan({
+        x: Math.max(-maxX, Math.min(maxX, targetPanX)),
+        y: Math.max(-maxY, Math.min(maxY, targetPanY)),
+      });
+      setZoomLevel(newZoom);
+    } else {
+      updateZoom(1);
+    }
+  };
 
   const xrayCandidateUrl =
     fracType.xrayUrl ||
@@ -116,10 +271,11 @@ function ClassificationMediaViewerModal({
     <div 
       style={{
         position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
-        background: "rgba(0,0,0,0.88)",
+        background: "rgba(0,0,0,0.92)",
+        backdropFilter: "blur(8px)",
         zIndex: 999999,
         display: "flex", alignItems: "center", justifyContent: "center",
-        padding: 12,
+        padding: "8px 6px",
         animation: "fadeIn 0.2s ease"
       }}
       onClick={onClose}
@@ -127,24 +283,25 @@ function ClassificationMediaViewerModal({
       <div 
         style={{
           background: darkMode ? "#161B27" : "#FFFFFF",
-          borderRadius: 20,
-          padding: "16px",
-          width: "calc(100vw - 24px)",
-          maxWidth: 540,
-          maxHeight: "92vh",
+          borderRadius: 16,
+          padding: "10px 10px 12px 10px",
+          width: "100%",
+          maxWidth: 560,
+          maxHeight: "96vh",
           display: "flex",
           flexDirection: "column",
-          border: `1.5px solid ${darkMode ? "rgba(255,255,255,0.15)" : "#CBD5E1"}`,
-          boxShadow: "0 25px 60px rgba(0,0,0,0.75)",
-          animation: "scaleIn 0.25s cubic-bezier(0.16,1,0.3,1)",
+          border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}`,
+          boxShadow: "0 25px 60px rgba(0,0,0,0.85)",
+          animation: "scaleIn 0.22s cubic-bezier(0.16,1,0.3,1)",
           overflowY: "auto",
+          overscrollBehavior: "contain",
         }}
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b" style={{ borderColor: border }}>
+        <div className="flex items-center justify-between gap-2 mb-2 pb-1.5 border-b" style={{ borderColor: border }}>
           <div className="min-w-0 flex-1">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1.5">
               <span className="px-2 py-0.5 rounded-md bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 font-extrabold text-xs">
                 {fracType.type}
               </span>
@@ -155,16 +312,16 @@ function ClassificationMediaViewerModal({
           </div>
           <button 
             onClick={onClose} 
-            className="flex-shrink-0 cursor-pointer p-1.5 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
+            className="flex-shrink-0 cursor-pointer p-1 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors"
             style={{ background: "transparent", border: "none", color: mutedText }}
           >
-            <X size={20} />
+            <X size={18} />
           </button>
         </div>
 
         {/* Dual Tab Switcher: Diagram vs Real X-Ray */}
         <div 
-          className="flex p-1 mb-3 rounded-xl border"
+          className="flex p-0.5 mb-2 rounded-lg border gap-0.5"
           style={{
             background: darkMode ? "#0E1117" : "#F1F5F9",
             borderColor: border,
@@ -172,50 +329,84 @@ function ClassificationMediaViewerModal({
         >
           <button
             onClick={() => setActiveMediaTab("diagram")}
-            className="flex-1 py-2 px-3 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+            className="flex-1 py-1.5 px-2.5 rounded-md font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             style={{
               background: activeMediaTab === "diagram" ? (darkMode ? "#00CED1" : "#0F766E") : "transparent",
               color: activeMediaTab === "diagram" ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#CBD5E1" : "#475569"),
-              boxShadow: activeMediaTab === "diagram" ? (darkMode ? "0 2px 8px rgba(0,206,209,0.35)" : "0 2px 8px rgba(15,118,110,0.35)") : "none",
+              boxShadow: activeMediaTab === "diagram" ? (darkMode ? "0 1px 4px rgba(0,206,209,0.3)" : "0 1px 4px rgba(15,118,110,0.3)") : "none",
             }}
           >
-            <ImageIcon size={14} />
+            <ImageIcon size={13} />
             <span>{language === "en" ? "Medical Diagram" : "ภาพวาดไดอะแกรม"}</span>
           </button>
 
           <button
             onClick={() => setActiveMediaTab("xray")}
-            className="flex-1 py-2 px-3 rounded-lg font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+            className="flex-1 py-1.5 px-2.5 rounded-md font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             style={{
               background: activeMediaTab === "xray" ? "#2ECC71" : "transparent",
               color: activeMediaTab === "xray" ? "#0F172A" : (darkMode ? "#CBD5E1" : "#475569"),
-              boxShadow: activeMediaTab === "xray" ? "0 2px 8px rgba(46,204,113,0.35)" : "none",
+              boxShadow: activeMediaTab === "xray" ? "0 1px 4px rgba(46,204,113,0.3)" : "none",
             }}
           >
-            <Film size={14} />
+            <Film size={13} />
             <span>{language === "en" ? "Real X-Ray Film" : "ภาพฟิล์มเอกซเรย์"}</span>
           </button>
         </div>
 
-        {/* Media Frame (Aspect ratio 4:3 / tall portrait frame with zoom) */}
+        {/* Media Frame (Aspect ratio matches image proportion, fills frame) */}
         <div 
-          className="w-full rounded-xl overflow-hidden border flex items-center justify-center relative p-3 transition-all"
+          ref={stageRef}
+          className="w-full rounded-xl overflow-hidden border flex items-center justify-center relative select-none"
           style={{
-            minHeight: 260,
-            maxHeight: "55vh",
-            background: activeMediaTab === "xray" ? "#000000" : "#FFFFFF",
+            aspectRatio: imgAspect ? `${imgAspect}` : undefined,
+            minHeight: imgAspect ? undefined : 240,
+            maxHeight: "58vh",
+            width: "100%",
+            background: activeMediaTab === "xray" ? "#000000" : (darkMode ? "#0B0F17" : "#FFFFFF"),
             borderColor: activeMediaTab === "diagram" ? (darkMode ? "#00CED1" : "#0F766E") : "#2ECC71",
+            touchAction: zoomLevel > 1 ? "none" : "pan-y",
           }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
         >
           {activeMediaTab === "diagram" ? (
             /* ── DIAGRAM VIEW ── */
             (fracType.illustrationId?.startsWith("/") || fracType.illustrationId?.includes(".")) && !diagramError ? (
-              <img
-                src={fracType.illustrationId}
-                alt={fracType.name.en}
-                onError={() => setDiagramError(true)}
-                className="max-h-[50vh] max-w-full object-contain rounded transition-transform duration-200"
-              />
+              <div 
+                className="w-full h-full flex items-center justify-center overflow-hidden"
+                onClick={handleImageClick}
+              >
+                <img
+                  src={fracType.illustrationId}
+                  alt={fracType.name.en}
+                  draggable={false}
+                  onLoad={(e) => {
+                    const { naturalWidth, naturalHeight } = e.currentTarget;
+                    if (naturalWidth && naturalHeight) {
+                      setImgAspect(naturalWidth / naturalHeight);
+                    }
+                  }}
+                  onError={() => setDiagramError(true)}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,
+                    transformOrigin: "center center",
+                    transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16,1,0.3,1)",
+                    cursor: zoomLevel > 1 ? (isDragging ? "grabbing" : "grab") : "zoom-in",
+                  }}
+                  className="select-none pointer-events-auto"
+                />
+              </div>
             ) : (
               <div className="w-full h-full flex flex-col items-center justify-center p-6 gap-2 text-center">
                 <FractureIllustration illustrationId={fracType.illustrationId || ""} darkMode={false} />
@@ -225,12 +416,35 @@ function ClassificationMediaViewerModal({
           ) : (
             /* ── REAL X-RAY VIEW ── */
             xrayCandidateUrl && !xrayError ? (
-              <img
-                src={xrayCandidateUrl}
-                alt={`${fracType.name.en} X-Ray`}
-                onError={() => setXrayError(true)}
-                className="max-h-[50vh] max-w-full object-contain rounded"
-              />
+              <div 
+                className="w-full h-full flex items-center justify-center overflow-hidden"
+                onClick={handleImageClick}
+              >
+                <img
+                  src={xrayCandidateUrl}
+                  alt={`${fracType.name.en} X-Ray`}
+                  draggable={false}
+                  onLoad={(e) => {
+                    const { naturalWidth, naturalHeight } = e.currentTarget;
+                    if (naturalWidth && naturalHeight) {
+                      setImgAspect(naturalWidth / naturalHeight);
+                    }
+                  }}
+                  onError={() => setXrayError(true)}
+                  style={{
+                    maxWidth: "100%",
+                    maxHeight: "100%",
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                    transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,
+                    transformOrigin: "center center",
+                    transition: isDragging ? "none" : "transform 0.2s cubic-bezier(0.16,1,0.3,1)",
+                    cursor: zoomLevel > 1 ? (isDragging ? "grabbing" : "grab") : "zoom-in",
+                  }}
+                  className="select-none pointer-events-auto"
+                />
+              </div>
             ) : (
               <div className="flex flex-col items-center justify-center p-8 text-center gap-3">
                 <div className="w-14 h-14 rounded-2xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-700 dark:text-teal-400 text-2xl">
@@ -258,24 +472,24 @@ function ClassificationMediaViewerModal({
         </div>
 
         {/* Bottom Context Info */}
-        <div className="mt-3 p-3 rounded-xl border text-xs" style={{ background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC", borderColor: border }}>
+        <div className="mt-2 p-2.5 rounded-lg border text-xs" style={{ background: darkMode ? "rgba(255,255,255,0.03)" : "#F8FAFC", borderColor: border }}>
           {activeMediaTab === "xray" && fracType.xrayDescription ? (
             <div>
-              <div className="font-extrabold text-emerald-700 dark:text-emerald-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                <Film size={13} />
+              <div className="font-extrabold text-emerald-700 dark:text-emerald-400 mb-0.5 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                <Film size={12} />
                 <span>{language === "en" ? "Key Radiographic Signs" : "จุดสังเกตในภาพเอกซเรย์"}</span>
               </div>
-              <div className="leading-relaxed" style={{ color: textColor }}>
+              <div className="leading-relaxed text-[11.5px]" style={{ color: textColor }}>
                 {fracType.xrayDescription[language]}
               </div>
             </div>
           ) : (
             <div>
-              <div className="font-extrabold text-teal-800 dark:text-teal-400 mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                <Info size={13} />
+              <div className="font-extrabold text-teal-800 dark:text-teal-400 mb-0.5 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                <Info size={12} />
                 <span>{language === "en" ? "Fracture Pattern Summary" : "สรุปลักษณะและกลไกการหัก"}</span>
               </div>
-              <div className="leading-relaxed" style={{ color: textColor }}>
+              <div className="leading-relaxed text-[11.5px]" style={{ color: textColor }}>
                 {fracType.description[language]}
               </div>
             </div>
