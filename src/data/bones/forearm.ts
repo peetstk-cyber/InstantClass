@@ -1107,6 +1107,10 @@ export const forearmBone: BoneData = {
                 "th": "Galeazzi Fracture-Dislocation: กระดูก Radius ส่วนปลายหัก + ข้อ DRUJ ที่ข้อมือหลุด"
               },
               {
+                "en": "Nightstick Fracture: Isolated fracture of the ulnar shaft caused by a direct defensive blow without PRUJ or DRUJ dislocation.",
+                "th": "Nightstick Fracture: รอยหักเดี่ยวของแกนกระดูก Ulna จากแรงกระแทกโดยตรงขณะยกแขนป้องกันตัว โดยไม่มีข้อศอกหรือข้อมือหลุด"
+              },
+              {
                 "en": "Both-bone Forearm Fracture: Fractures involving both radial and ulnar shafts.",
                 "th": "Both-bone Forearm Fracture: กระดูกหักทั้ง Radius และ Ulna"
               },
@@ -1123,6 +1127,10 @@ export const forearmBone: BoneData = {
               {
                 "en": "Galeazzi ('Fracture of Necessity'): 100% failure rate with casting in adults. Mandatory ORIF of Radius to restore Radial Bow; evaluate DRUJ stability.",
                 "th": "Galeazzi ('Fracture of Necessity'): ใส่เฝือกล้มเหลว 100% ในผู้ใหญ่ ต้องผ่าตัด ORIF กระดูก Radius คืนความยาวและส่วนโค้ง Radial Bow แล้วทดสอบความมั่นคงข้อ DRUJ"
+              },
+              {
+                "en": "Nightstick: Functional bracing for stable, minimally displaced fractures (<50% displacement, <10° angulation); 3.5mm plate ORIF for displaced fractures.",
+                "th": "Nightstick: ใส่เฝือกสั้นหรือ Sarmiento Brace หากหักเคลื่อนน้อย (<50% ความกว้างกระดูก, เอียง <10°); ผ่าตัดดามแผ่นเหล็ก 3.5 มม. หากเคลื่อนเกินเกณฑ์"
               },
               {
                 "en": "Both-bone: Operative ORIF of BOTH radius and ulna using 3.5mm LCP plates to restore Radial Bow.",
@@ -1387,7 +1395,7 @@ export const forearmBone: BoneData = {
               "en": "Radial Height (Length)",
               "th": "ความยาวกระดูกเรเดียส (Radial Height)"
             },
-            "threshold": "> 10 mm (or < 2mm shortening vs normal side)",
+            "threshold": "> 10 mm (or < 3 mm shortening vs normal side)",
             "note": {
               "en": "Shortening > 3 mm causes ulnar impaction syndrome and wrist pain",
               "th": "กระดูกหดสั้น > 3 มม. ทำให้เกิดภาวะ Ulnar impaction syndrome"

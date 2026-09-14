@@ -35,7 +35,7 @@ export const femurBone: BoneData = {
             }
           },
           {
-            "sign": "Anvil Test (Envil Test)",
+            "sign": "Anvil Test (Heel-tap test)",
             "positive": {
               "en": "Groin/hip pain elicited by striking the patient's heel/calcaneus with a closed fist while the lower limb is extended, transmitting axial load to the femoral neck.",
               "th": "มีอาการปวดสะโพกหรือขาหนีบเมื่อใช้กำปั้นเคาะที่ส้นเท้าของผู้ป่วยขณะเหยียดขาตรง (ส่งแรงกระแทกตามแนวแกนกระดูกขึ้นไปยังคอกระดูกต้นขา)"
@@ -48,9 +48,9 @@ export const femurBone: BoneData = {
               "en": "Garden Alignment Index (AP View)",
               "th": "ดัชนีการจัดมุม Garden (ภาพ AP)"
             },
-            "threshold": "160° - 180°",
+            "threshold": "155°–165° (target 160°)",
             "note": {
-              "en": "Angle between medial trabeculae of femoral head and medial cortex of femoral shaft should be 160°.",
+              "en": "Angle between medial trabeculae of femoral head and medial cortex of femoral shaft should be 160° (acceptable 155°–170°).",
               "th": "มุมระหว่างแนว Trabeculae ด้านในกับขอบกระดูกแกนต้นขาด้านในควรอยู่ที่ประมาณ 160 องศา"
             }
           },
@@ -171,7 +171,7 @@ export const femurBone: BoneData = {
               },
               "illustrationId": "/images/garden/garden_1.png",
               "xrayDescription": {
-                "en": "Fracture line visible on one cortex only, medial trabeculae show valgus angulation (angle > 180° between femoral shaft and head trabeculae).",
+                "en": "Fracture line visible on one cortex only, medial trabeculae show valgus angulation (angle > 160°, typically 170°–175° in valgus impaction, between femoral shaft and head trabeculae).",
                 "th": "เห็นรอยหักบางส่วนเพียงด้านเดียว เส้นใยกระดูกฝั่ง Medial มีทิศทางเอียงออกนอกมากกว่าปกติ (ทำมุม > 180 องศา)"
               }
             },

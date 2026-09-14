@@ -55,9 +55,9 @@ export const pelvisBone: BoneData = {
               "en": "Pubic Symphysis Diastasis",
               "th": "ระยะถ่างของข้อต่อ Pubic Symphysis"
             },
-            "threshold": "< 2 cm",
+            "threshold": "< 2.5 cm",
             "note": {
-              "en": "Diastasis >2cm indicates torn anterior SI and sacrospinous ligaments (APC-II Open Book).",
+              "en": "Diastasis >2.5 cm indicates torn anterior SI and sacrospinous ligaments (APC-II Open Book).",
               "th": "ระยะถ่าง >2 ซม. แสดงว่าเอ็นด้านหน้า SI และ Sacrospinous ขาด (APC-II Open Book)"
             }
           },
@@ -233,7 +233,7 @@ export const pelvisBone: BoneData = {
                 "th": "APC-I (แรงอัดหน้าหลัง - มั่นคง)"
               },
               "description": {
-                "en": "Slight widening of pubic symphysis (< 2 cm)\nIntact anterior SI, sacrospinous, and sacrotuberous ligaments\nPelvic ring is STABLE\nMinimal blood loss risk",
+                "en": "Slight widening of pubic symphysis (< 2.5 cm)\nIntact anterior SI, sacrospinous, and sacrotuberous ligaments\nPelvic ring is STABLE\nMinimal blood loss risk",
                 "th": "ข้อต่อ Pubic symphysis ถ่างแยกออกเล็กน้อย (< 2 ซม.)\nเส้นเอ็นด้านหน้า SI, Sacrospinous และ Sacrotuberous ยังคงสมบูรณ์ดี\nวงกระดูกเชิงกรานมีความมั่นคงสูง\nความเสี่ยงต่อการเสียเลือดต่ำมาก"
               },
               "moi": {
@@ -248,7 +248,7 @@ export const pelvisBone: BoneData = {
                 "preferred": "conservative",
                 "conservative": {
                   "indication": {
-                    "en": "• Pubic symphysis diastasis < 2 cm\n• Intact posterior sacroiliac ligaments\n• Mechanically stable pelvic ring on stress examination\n• Low risk of internal hemorrhage",
+                    "en": "• Pubic symphysis diastasis < 2.5 cm\n• Intact posterior sacroiliac ligaments\n• Mechanically stable pelvic ring on stress examination\n• Low risk of internal hemorrhage",
                     "th": "• รอยแยก Pubic symphysis < 2 ซม.\n• เส้นเอ็น Posterior SI และ Sacrotuberous ยังสมบูรณ์ดี\n• วงเชิงกรานมีความมั่นคงสูง\n• ไม่มีความเสี่ยงต่อภาวะตกเลือดในเชิงกราน"
                   },
                   "method": {
@@ -286,7 +286,7 @@ export const pelvisBone: BoneData = {
               "illustrationId": "/images/pelvis/apc_1.png",
               "xrayUrl": "/images/xrays/young_burgess/apc1_xray.jpg",
               "xrayDescription": {
-                "en": "Pubic symphysis diastasis <2cm without SI joint widening or vertical displacement.",
+                "en": "Pubic symphysis diastasis <2.5 cm without SI joint widening or vertical displacement.",
                 "th": "พบระยะแยก Pubic symphysis < 2 ซม. โดยช่องข้อ SI ปกติและไม่มีการเคลื่อนลอยในแนวตั้ง"
               }
             },
@@ -297,7 +297,7 @@ export const pelvisBone: BoneData = {
                 "th": "APC-II (เชิงกรานเปิดอ้าแบบ Open Book - ไม่มั่นคงด้านหมุน)"
               },
               "description": {
-                "en": "Pubic symphysis diastasis > 2 cm ('Open Book' pelvis)\nTorn anterior SI, sacrospinous, and sacrotuberous ligaments\nIntact POSTERIOR SI ligaments (acts as a posterior hinge)\nRotationally UNSTABLE, Vertically STABLE\nSignificant pelvic volume expansion and internal hemorrhage risk",
+                "en": "Pubic symphysis diastasis > 2.5 cm ('Open Book' pelvis)\nTorn anterior SI, sacrospinous, and sacrotuberous ligaments\nIntact POSTERIOR SI ligaments (acts as a posterior hinge)\nRotationally UNSTABLE, Vertically STABLE\nSignificant pelvic volume expansion and internal hemorrhage risk",
                 "th": "ข้อต่อ Pubic symphysis ถ่างอ้ากว้าง > 2 ซม. (ลักษณะเหมือนหนังสือเปิด 'Open Book')\nเส้นเอ็นด้านหน้า SI, Sacrospinous และ Sacrotuberous ฉีกขาดทั้งหมด\nเส้นเอ็นด้านหลัง (Posterior SI) ยังสมบูรณ์ดี ทำหน้าที่เป็นบานพับด้านหลัง\nไม่มั่นคงในแนวหมุน (Rotationally unstable) แต่มั่นคงในแนวตั้ง\nช่องเชิงกรานขยายตัวกว้างขึ้นมาก เสี่ยงต่อภาวะเลือดออกในช่องท้องและเชิงกรานรุนแรง"
               },
               "moi": {
@@ -330,7 +330,7 @@ export const pelvisBone: BoneData = {
                 },
                 "operative": {
                   "indication": {
-                    "en": "• Pubic symphysis diastasis > 2 cm ('Open-Book' deformity)\n• Torn anterior SI, sacrospinous, and sacrotuberous ligaments\n• Rotationally unstable pelvis with expanded pelvic volume\n• Active hemorrhage risk in emergency trauma resuscitation",
+                    "en": "• Pubic symphysis diastasis > 2.5 cm ('Open-Book' deformity)\n• Torn anterior SI, sacrospinous, and sacrotuberous ligaments\n• Rotationally unstable pelvis with expanded pelvic volume\n• Active hemorrhage risk in emergency trauma resuscitation",
                     "th": "• Pubic symphysis ถ่างแยก > 2 ซม. (Open Book)\n• เส้นเอ็น Anterior SI และ Sacrospinous/Sacrotuberous ฉีกขาด\n• เชิงกรานไม่มั่นคงในแนวหมุนและช่องเชิงกรานขยายตัว\n• ความเสี่ยงสูงต่อภาวะตกเลือดในช่องเชิงกราน"
                   },
                   "method": {
@@ -350,7 +350,7 @@ export const pelvisBone: BoneData = {
               "illustrationId": "/images/pelvis/apc_2.png",
               "xrayUrl": "/images/xrays/young_burgess/apc2_xray.jpg",
               "xrayDescription": {
-                "en": "Wide pubic diastasis >2cm with anterior SI joint opening, posterior SI joint space intact.",
+                "en": "Wide pubic diastasis >2.5 cm with anterior SI joint opening, posterior SI joint space intact.",
                 "th": "ระยะ Pubic diastasis ถ่างกว้าง > 2 ซม. ร่วมกับช่องข้อด้านหน้า SI เปิดออก แต่ด้านหลังยังชิดกัน"
               }
             },
@@ -807,7 +807,7 @@ export const pelvisBone: BoneData = {
                 "th": "5 รูปแบบพื้นฐาน (Elementary): ผนังหลัง (Posterior Wall), เสาหลัง (Posterior Column), ผนังหน้า (Anterior Wall), เสาหน้า (Anterior Column), หักขวาง (Transverse)"
               },
               {
-                "en": "5 Associated Patterns: T-Shaped, Posterior Column + Posterior Wall, Transverse + Posterior Wall, Anterior Column/Wall + Posterior Semi-Transverse, Both-Column.",
+                "en": "5 Associated Patterns: T-Shaped, Posterior Column + Posterior Wall, Transverse + Posterior Wall, Anterior Column/Wall + Posterior Hemitransverse, Both-Column.",
                 "th": "5 รูปแบบซับซ้อน (Associated): รูปตัว T, เสาหลัง+ผนังหลัง, หักขวาง+ผนังหลัง, เสาหน้า/ผนังหน้า+เฉียงหลัง, สองเสาสมบูรณ์ (Both-Column)"
               },
               {
@@ -1144,7 +1144,7 @@ export const pelvisBone: BoneData = {
                 "preferred": "operative",
                 "conservative": {
                   "indication": {
-                    "en": "• Truly non-displaced (<2mm displacement)\n• Infratectal or transtectal fracture with intact roof arc angle (>45° on all 3 Judet views)\n• Congruent joint in traction or weight-bearing simulation",
+                    "en": "• Truly non-displaced (<2mm displacement)\n• Infratectal (or low juxtatectal) fracture with intact roof arc angle (>45° on all 3 Judet views)\n• Congruent joint in traction or weight-bearing simulation",
                     "th": "• รอยหักไม่เคลื่อนตัว (<2 มม.)\n• มุมหลังคาเบ้าสะโพกสมบูรณ์ดี (Roof arc >45° ครบทั้ง 3 ท่า Judet views)\n• ผิวข้อต่อเรียบสนิท"
                   },
                   "method": {

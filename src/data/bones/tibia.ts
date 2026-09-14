@@ -1434,7 +1434,7 @@ export const tibiaBone: BoneData = {
                 "th": "SER I (เอ็นยึดกระดูกหน้าแข้งด้านหน้า AITFL ฉีกขาด)"
               },
               "description": {
-                "en": "Rupture of the Anterior Inferior Tibiofibular Ligament (AITFL) or avulsion of its insertion\nFoot is in Supination with External Rotation force\nNo bone fracture visible yet\nElbow/Ankle remains stable",
+                "en": "Rupture of the Anterior Inferior Tibiofibular Ligament (AITFL) or avulsion of its insertion\nFoot is in Supination with External Rotation force\nNo bone fracture visible yet\nAnkle remains stable",
                 "th": "เอ็นยึดกระดูกหน้าแข้งและตาตุ่มนอกด้านหน้า (AITFL) ฉีกขาด\nเกิดขณะเท้าหงายและถูกบิดหมุนออกด้านนอก\nยังไม่พบรอยกระดูกหักชัดเจนในเอกซเรย์\nข้อเท่ายังมีความมั่นคงดี"
               },
               "moi": {

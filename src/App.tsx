@@ -265,22 +265,8 @@ function App() {
     setSelectedRegionId(null);
   }, []);
 
-  // Fix iOS Safari / PWA standalone initial viewport height bug
-  useEffect(() => {
-    const triggerViewportSync = () => {
-      window.dispatchEvent(new Event("resize"));
-    };
-    triggerViewportSync();
-    const t1 = setTimeout(triggerViewportSync, 50);
-    const t2 = setTimeout(triggerViewportSync, 200);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
-  }, []);
-
   return (
-    <div className={`flex flex-col h-full w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}

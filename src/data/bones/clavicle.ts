@@ -417,8 +417,8 @@ export const clavicleBone: BoneData = {
                     "th": "• ใส่ Sling 6 สัปดาห์ เริ่มฝึกแกว่งแขนเบาๆ และเริ่มยกแขนเองที่ 6 สัปดาห์"
                   },
                   "pitfalls": {
-                    "en": "• Missing diagnosis on standard AP X-ray — MUST obtain Axillary Lateral or Stryker Notch view",
-                    "th": "• วินิจฉัยพลาดในภาพเอกซเรย์ท่า AP ทั่วไป ต้องถ่ายท่า Axillary Lateral เสมอ"
+                    "en": "• Missing diagnosis on standard AP X-ray — MUST obtain Axillary Lateral or Alexander view",
+                    "th": "• วินิจฉัยพลาดในภาพเอกซเรย์ท่า AP ทั่วไป ต้องถ่ายท่า Axillary Lateral หรือ Alexander view เสมอ"
                   }
                 }
               },

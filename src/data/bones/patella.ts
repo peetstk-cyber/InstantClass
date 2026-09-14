@@ -104,7 +104,7 @@ export const patellaBone: BoneData = {
             "th": "วิธี Tension Band Wiring (TBW) เป็นมาตรฐานหลักคลาสสิกในการผ่าตัดยึดกระดูกสะบ้าหักแนวขวางที่เคลื่อนตัว"
           },
           {
-            "en": "Biromechanically, TBW converts tensile forces on the anterior patellar surface during knee flexion into dynamic compressive forces across the posterior articular surface.",
+            "en": "Biomechanically, TBW converts tensile forces on the anterior patellar surface during knee flexion into dynamic compressive forces across the posterior articular surface.",
             "th": "ทางชีวกลศาสตร์ TBW จะเปลี่ยนแรงดึงด้านหน้าสะบ้าขณะงอเข่า ให้กลายเป็นแรงอัดแน่น (Dynamic compression) ตรงผิวข้อด้านหลัง"
           },
           {

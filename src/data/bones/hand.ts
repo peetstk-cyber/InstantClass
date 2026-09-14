@@ -79,8 +79,8 @@ export const handBone: BoneData = {
             "th": "ภาวะหัวกระดูกส่วนต้นขาดเลือด (AVN of proximal pole) เนื่องจากเส้นเลือดหล่อเลี้ยงวิ่งย้อนศรจากปลายขึ้นมาต้นจึงถูกแนวกระดูกหักตัดขาด"
           },
           {
-            "en": "Scapholunate Advanced Collapse (SLAC wrist) secondary to chronic scaphoid nonunion (SNAC).",
-            "th": "ภาวะข้อข้อมือทรุดเสื่อมรุนแรง (SLAC wrist) จากภาวะกระดูกสะแคฟอยด์ไม่ติดเรื้อรัง (SNAC)"
+            "en": "Scaphoid Nonunion Advanced Collapse (SNAC wrist) secondary to chronic scaphoid nonunion.",
+            "th": "ภาวะข้อข้อมือทรุดเสื่อมรุนแรง (SNAC wrist) จากภาวะกระดูกสะแคฟอยด์ไม่ติดเรื้อรัง"
           }
         ],
         "associatedInjuries": [
@@ -476,8 +476,8 @@ export const handBone: BoneData = {
         ],
         "clinicalPearls": [
           {
-            "en": "Mayfield progression occurs in 4 sequential stages in a clockwise direction around the lunate starting from SLIL disruption.",
-            "th": "ลำดับการฉีกขาดของ Mayfield เกิดขึ้น 4 ระยะต่อเนื่องกันในทิศทางตามเข็มนาฬิการอบกระดูก Lunate เริ่มจากเอ็น SLIL ขาด"
+            "en": "Mayfield progression occurs in 4 sequential stages along a progressive radial-to-ulnar arc around the lunate (clockwise on right wrist dorsal view) starting from SLIL disruption.",
+            "th": "ลำดับการฉีกขาดของ Mayfield เกิดขึ้น 4 ระยะต่อเนื่องกันตามแนวส่วนโค้งจากด้าน Radial ไป Ulnar รอบกระดูก Lunate (ตามเข็มนาฬิกาเมื่อมองหลังมือขวา) เริ่มจากเอ็น SLIL ขาด"
           },
           {
             "en": "Stage IV shows classic 'Spilled Teacup' sign on lateral view (lunate tilted 90° volarly) and 'Pie sign' on PA view.",
@@ -506,8 +506,8 @@ export const handBone: BoneData = {
               "th": "หลักการคิดและเกณฑ์ตัดสินใจ Mayfield Classification"
             },
             "corePrinciple": {
-              "en": "Perilunate dislocations result from progressive pericarpal ligamentous failure around the lunate in a sequential clockwise direction (Stages I-IV), culminating in Stage IV lunate dislocation into the carpal tunnel.",
-              "th": "ภาวะข้อ Perilunate หลุดเกิดจากการฉีกขาดของเอ็นรอบกระดูก Lunate อย่างต่อเนื่องตามเข็มนาฬิกา (Stages I-IV) จนกระทั่งใน Stage IV กระดูก Lunate จะหมุนหลุดทะลักเข้าช่องข้อมือ Carpal tunnel"
+              "en": "Perilunate dislocations result from progressive pericarpal ligamentous failure around the lunate in a sequential radial-to-ulnar arc (Stages I-IV), culminating in Stage IV lunate dislocation into the carpal tunnel.",
+              "th": "ภาวะข้อ Perilunate หลุดเกิดจากการฉีกขาดของเอ็นรอบกระดูก Lunate อย่างต่อเนื่องจากด้าน Radial ไป Ulnar (Stages I-IV) จนกระทั่งใน Stage IV กระดูก Lunate จะหมุนหลุดทะลักเข้าช่องข้อมือ Carpal tunnel"
             },
             "rules": [
               {
@@ -1266,10 +1266,10 @@ export const handBone: BoneData = {
               "en": "5th Metacarpal Neck Angulation (Boxer's Fracture)",
               "th": "มุมโก่งคอกระดูกฝ่ามือนิ้วก้อย (5th MC Neck)"
             },
-            "threshold": "< 40° - 50° (up to 70°)",
+            "threshold": "< 40° - 50°",
             "note": {
-              "en": "Angulation up to 40-70° acceptable if no rotational scissoring or extensor lag present.",
-              "th": "ยอมรับมุมโก่งได้ถึง 40-70 องศาหากไม่มีนิ้วบิดเกยกันและไม่มีภาวะเหยียดนิ้วไม่สุด"
+              "en": "Angulation up to 40-50° acceptable if no rotational scissoring or extensor lag present.",
+              "th": "ยอมรับมุมโก่งได้ถึง 40-50 องศาหากไม่มีนิ้วบิดเกยกันและไม่มีภาวะเหยียดนิ้วไม่สุด"
             }
           },
           {

@@ -353,8 +353,8 @@ export const FRACTURE_EPONYMS: EponymEntry[] = [
       th: "รอยหักแตกกระจายของวงแหวนกระดูกคอชิ้นแรก (C1 Atlas) ทั้งส่วนหน้าและหลัง เกิดจากแรงกดลงบนกระหม่อมศีรษะในแนวดิ่ง"
     },
     clinicalTip: {
-      en: "Check Spence Rule on Open-Mouth odontoid view: Overhang of C1 lateral masses on C2 > 7 mm indicates Transverse Atlantal Ligament (TAL) rupture (unstable).",
-      th: "ดู Spence Rule จากฟิล์ม Open-Mouth: หากระยะล้นออกด้านข้างของ C1 รวมกันเกิน 7 มม. บ่งชี้ว่าเอ็น TAL ขาด (ไม่มั่นคง)"
+      en: "Check Spence Rule on Open-Mouth odontoid view: Overhang of C1 lateral masses on C2 ≥ 6.9 mm (or ≥ 7 mm) indicates Transverse Atlantal Ligament (TAL) rupture (unstable).",
+      th: "ดู Spence Rule จากฟิล์ม Open-Mouth: หากระยะล้นออกด้านข้างของ C1 รวมกัน ≥ 6.9 มม. (หรือ ≥ 7 มม.) บ่งชี้ว่าเอ็น TAL ขาด (ไม่มั่นคง)"
     }
   },
   {

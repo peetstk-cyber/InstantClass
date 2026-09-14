@@ -30,8 +30,8 @@ export const cSpineBone: BoneData = {
           {
             "sign": "C1-C2 Open Mouth View Assessment",
             "positive": {
-              "en": "Combined lateral overhang of C1 masses > 7mm = Transverse Ligament Rupture (Spence's Rule)",
-              "th": "ระยะยื่นขอบข้างของ C1 mass รวม > 7มม. = เส้นเอ็น Transverse Ligament ฉีกขาด (Spence Rule)"
+              "en": "Combined lateral overhang of C1 masses ≥ 6.9 mm (conventionally ≥ 7 mm) = Transverse Ligament Rupture (Spence's Rule)",
+              "th": "ระยะยื่นขอบข้างของ C1 mass รวม ≥ 6.9 มม. (หรือ ≥ 7 มม.) = เส้นเอ็น Transverse Ligament ฉีกขาด (Spence Rule)"
             }
           }
         ],
@@ -413,11 +413,11 @@ export const cSpineBone: BoneData = {
               "type": "Levine I",
               "name": {
                 "en": "Levine-Edwards Type I (Minimally Displaced - STABLE)",
-                "th": "Levine-Edwards Type I (ไม่เคลื่อนตัว/เคลื่อนน้อย <2มม. - มั่นคง)"
+                "th": "Levine-Edwards Type I (ไม่เคลื่อนตัว/เคลื่อนน้อย <3มม. - มั่นคง)"
               },
               "description": {
-                "en": "Non-displaced or minimally displaced fracture of C2 pars interarticularis (<2 mm translation, 0° angulation)\nIntact C2-C3 intervertebral disc and ALL/PLL ligaments\nStable injury pattern caused by hyperextension and axial loading",
-                "th": "รอยหักกระดูกคอ C2 บริเวณ Pars interarticularis ไม่เคลื่อนตัวหรือเคลื่อนตัวน้อยมาก (< 2 มม., ไม่มีความเอียงบิด)\nหมอนรองกระดูก C2-C3 และเอ็น ALL/PLL ยังคง **สมบูรณ์ดี**\nมีความมั่นคงสูง เกิดจากกลไกแหงนคอร่วมกับแรงอัด"
+                "en": "Non-displaced or minimally displaced fracture of C2 pars interarticularis (<3 mm translation, 0° angulation)\nIntact C2-C3 intervertebral disc and ALL/PLL ligaments\nStable injury pattern caused by hyperextension and axial loading",
+                "th": "รอยหักกระดูกคอ C2 บริเวณ Pars interarticularis ไม่เคลื่อนตัวหรือเคลื่อนตัวน้อยมาก (< 3 มม., ไม่มีความเอียงบิด)\nหมอนรองกระดูก C2-C3 และเอ็น ALL/PLL ยังคง **สมบูรณ์ดี**\nมีความมั่นคงสูง เกิดจากกลไกแหงนคอร่วมกับแรงอัด"
               },
               "moi": {
                 "en": "Hyperextension with axial load (e.g. forehead striking windshield in MVA).",
@@ -477,11 +477,11 @@ export const cSpineBone: BoneData = {
               "type": "Levine II",
               "name": {
                 "en": "Levine-Edwards Type II (Displaced with C2-C3 Disc Disruption - UNSTABLE)",
-                "th": "Levine-Edwards Type II (เคลื่อนตัว >2มม. หมอนรอง C2-C3 ฉีกขาด - ไม่มั่นคง)"
+                "th": "Levine-Edwards Type II (เคลื่อนตัว >3มม. หมอนรอง C2-C3 ฉีกขาด - ไม่มั่นคง)"
               },
               "description": {
-                "en": "Displaced fracture of C2 pars interarticularis (>2 mm translation, significant angulation)\nDisruption of C2-C3 intervertebral disc and Posterior Longitudinal Ligament (PLL)\nUnstable injury pattern caused by hyperextension followed by rebound flexion-distraction",
-                "th": "รอยหัก C2 pars interarticularis เคลื่อนตัว (> 2 มม. มีการเอียงบิดของกระดูก)\nหมอนรองกระดูก C2-C3 และเอ็น Posterior Longitudinal Ligament (PLL) ฉีกขาด\n**ไม่มั่นคง** เกิดจากกลไกแหงนคอแล้วเด้งกลับมาก้มคอสะบัดดึง"
+                "en": "Displaced fracture of C2 pars interarticularis (>3 mm translation, significant angulation)\nDisruption of C2-C3 intervertebral disc and Posterior Longitudinal Ligament (PLL)\nUnstable injury pattern caused by hyperextension followed by rebound flexion-distraction",
+                "th": "รอยหัก C2 pars interarticularis เคลื่อนตัว (> 3 มม. มีการเอียงบิดของกระดูก)\nหมอนรองกระดูก C2-C3 และเอ็น Posterior Longitudinal Ligament (PLL) ฉีกขาด\n**ไม่มั่นคง** เกิดจากกลไกแหงนคอแล้วเด้งกลับมาก้มคอสะบัดดึง"
               },
               "moi": {
                 "en": "Hyperextension followed by severe rebound flexion-distraction.",
@@ -533,8 +533,8 @@ export const cSpineBone: BoneData = {
               "illustrationId": "/images/c-spine/levine_ii.png",
               "xrayUrl": "/images/xrays/hangman/levine_2_xray.jpg",
               "xrayDescription": {
-                "en": "Significant translation >2mm and anterior tilt of C2 body relative to C3 with disc space widening.",
-                "th": "เห็น C2 เคลื่อนไปด้านหน้า >2มม. เอียง ก้มลง และช่องหมอนรอง C2-C3 กว้างขึ้น"
+                "en": "Significant translation >3mm and anterior tilt of C2 body relative to C3 with disc space widening.",
+                "th": "เห็น C2 เคลื่อนไปด้านหน้า >3มม. เอียง ก้มลง และช่องหมอนรอง C2-C3 กว้างขึ้น"
               }
             },
             {
@@ -1538,7 +1538,7 @@ export const cSpineBone: BoneData = {
               },
               "description": {
                 "en": "Total SLIC score is LESS THAN 4 points\nIndicates mechanically STABLE injury pattern with intact or minimally injured Disruption of Ligamentous Complex (DLC) and no progressive neurological deficit\nExamples: Simple compression fracture (1 pt) + intact DLC (0 pt) + neurologically intact (0 pt) = 1 point",
-                "th": "ผลรวมคะแนน TLICS Score **น้อยกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **มั่นคงเชิงกลศาสตร์** หมอนรองและเอ็นยึด (PLC) ยังสมบูรณ์ และไม่มีอาการทางระบบประสาทแย่ลง\nตัวอย่าง: รอยหักยุบธรรมดา (1 คะแนน) + DLC ปกติ (0 คะแนน) + ระบบประสาทปกติ (0 คะแนน) = 1 คะแนน"
+                "th": "ผลรวมคะแนน SLIC Score **น้อยกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **มั่นคงเชิงกลศาสตร์** หมอนรองและเอ็นยึด (DLC) ยังสมบูรณ์ และไม่มีอาการทางระบบประสาทแย่ลง\nตัวอย่าง: รอยหักยุบธรรมดา (1 คะแนน) + DLC ปกติ (0 คะแนน) + ระบบประสาทปกติ (0 คะแนน) = 1 คะแนน"
               },
               "moi": {
                 "en": "Low-to-moderate energy compression or axial load.",
@@ -1601,7 +1601,7 @@ export const cSpineBone: BoneData = {
               },
               "description": {
                 "en": "Total SLIC score is EXACTLY 4 points\nEQUIVOCAL injury pattern where treatment choice depends on patient age, baseline comorbidities, pain level, and surgeon experience\nExample A: Burst fracture (2 pt) + disrupted DLC (2 pt) + intact neuro (0 pt) = 4 points\nExample B: Compression fracture (1 pt) + intact DLC (0 pt) + incomplete cord injury (3 pt) = 4 points",
-                "th": "ผลรวมคะแนน TLICS Score **เท่ากับ 4 คะแนนพอดี**\nเป็นรอยหักชนิดกึ่งก้ำกึ่ง (Equivocal) การตัดสินใจรักษาขึ้นอยู่กับอายุ โรคประจำตัว ระดับความปวด และดุลยพินิจของแพทย์ผู้รักษา\nตัวอย่าง: Burst fracture (2 คะแนน) + เอ็น DLC ขาด (2 คะแนน) + ประสาทปกติ (0 คะแนน) = 4 คะแนน"
+                "th": "ผลรวมคะแนน SLIC Score **เท่ากับ 4 คะแนนพอดี**\nเป็นรอยหักชนิดกึ่งก้ำกึ่ง (Equivocal) การตัดสินใจรักษาขึ้นอยู่กับอายุ โรคประจำตัว ระดับความปวด และดุลยพินิจของแพทย์ผู้รักษา\nตัวอย่าง: Burst fracture (2 คะแนน) + เอ็น DLC ขาด (2 คะแนน) + ประสาทปกติ (0 คะแนน) = 4 คะแนน"
               },
               "moi": {
                 "en": "Moderate energy flexion-compression or burst impact.",
@@ -1664,7 +1664,7 @@ export const cSpineBone: BoneData = {
               },
               "description": {
                 "en": "Total SLIC score is GREATER THAN 4 points\nIndicates mechanically UNSTABLE injury, complete Disruption of Ligamentous Complex (DLC) disruption, or severe neurological deficit\nExample A: Translation/Dislocation (4 pt) + disrupted DLC (2 pt) + incomplete cord injury (3 pt) = 9 points\nExample B: Burst fracture (2 pt) + disrupted DLC (2 pt) + root injury (1 pt) = 5 points",
-                "th": "ผลรวมคะแนน TLICS Score **มากกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **ไม่มั่นคงอย่างรุนแรง**, เอ็นยึด DLC ฉีกขาดสมบูรณ์ หรือมีภาวะบาดเจ็บระบบประสาท\nตัวอย่าง: เคลื่อนหลุด Translation (4 คะแนน) + DLC ขาด (2 คะแนน) + ไขสันหลังบาดเจ็บบางส่วน (3 คะแนน) = 9 คะแนน"
+                "th": "ผลรวมคะแนน SLIC Score **มากกว่า 4 คะแนน**\nบ่งบอกถึงรอยหักที่มีความ **ไม่มั่นคงอย่างรุนแรง**, เอ็นยึด DLC ฉีกขาดสมบูรณ์ หรือมีภาวะบาดเจ็บระบบประสาท\nตัวอย่าง: เคลื่อนหลุด Translation (4 คะแนน) + DLC ขาด (2 คะแนน) + ไขสันหลังบาดเจ็บบางส่วน (3 คะแนน) = 9 คะแนน"
               },
               "moi": {
                 "en": "High-energy violent trauma (motor vehicle crash, fall from height, diving accident).",

@@ -146,7 +146,7 @@ export const footBone: BoneData = {
             {
               "name": "Canale View (Talar Neck View)",
               "details": {
-                "en": "Special 15° internal rotation view of the foot with max equinus and 15° cephalic tube angle. Essential to evaluate talar neck displacement, varus malalignment, and step-off without superimposition.",
+                "en": "Special 15° pronation (eversion) view of the foot with max equinus and 15° cephalic tube angle. Essential to evaluate talar neck displacement, varus malalignment, and step-off without superimposition.",
                 "th": "ภาพเอกซเรย์คอทาเลสเฉพาะ (Canale View) ถ่ายหมุนเท้าเข้าด้านใน 15 องศา เอียงหลอดรังสี 15 องศาขึ้นทางหัว เพื่อดูแนวกระดูกคอทาเลสโดยไม่มีกระดูกอื่นทับซ้อน"
               }
             },
@@ -515,7 +515,7 @@ export const footBone: BoneData = {
               "th": "มุม Böhler และ Gissane บนภาพเอกซเรย์ส้นเท้า"
             },
             "caption": {
-              "en": "Normal Böhler angle (20°–40°): Loss of angle (<20° or negative) indicates posterior facet depression and loss of calcaneal height. Critical angle of Gissane (105°–135°): Formed by anterior process slope and posterior facet strut; disruption indicates articular collapse.",
+              "en": "Normal Böhler angle (20°–40°): Loss of angle (<20° or negative) indicates posterior facet depression and loss of calcaneal height. Critical angle of Gissane (120°–145°): Formed by anterior process slope and posterior facet strut; disruption indicates articular collapse.",
               "th": "มุม Böhler angle ปกติ (20°–40°): มุมที่ลดลง (<20° หรือติดลบ) บ่งชี้ว่าผิวข้อ Posterior facet ยุบตัวลงและสูญเสียความสูง ส่วนมุม Gissane angle (105°–135°) อยู่ใต้จุดค้ำของกระดูกทาเลส หากกางออกผิดรูปแสดงถึงการแตกลงข้อรุนแรง"
             }
           }
@@ -1246,7 +1246,7 @@ export const footBone: BoneData = {
             {
               "name": "AP Foot View",
               "details": {
-                "en": "Evaluates alignment of 1st metacarpal-medial cuneiform and 2nd metatarsal-middle cuneiform lines (medial border of 2nd metatarsal must align with medial border of middle cuneiform).",
+                "en": "Evaluates alignment of 1st metatarsal-medial cuneiform and 2nd metatarsal-middle cuneiform lines (medial border of 2nd metatarsal must align with medial border of middle cuneiform).",
                 "th": "ประเมินแนวเรียงตัวของกระดูกนิ้วเท้า 1 และ 2 โดยขอบด้านในของกระดูก Metatarsal ชิ้นที่ 2 ต้องชี้ตรงกับขอบด้านในของ Middle cuneiform เสมอ"
               }
             },
@@ -1399,7 +1399,7 @@ export const footBone: BoneData = {
                 "th": "Divergent Dislocation (หลุดแยกสองทาง)"
               },
               "description": {
-                "en": "Divergent displacement pattern\n1st metatarsal displaces medially and 2nd-5th metatarsals displace laterally\nTotal or partial destruction of transverse carpal arch and Lisfranc ligament complex\nHigh risk of Compartment Syndrome of foot",
+                "en": "Divergent displacement pattern\n1st metatarsal displaces medially and 2nd-5th metatarsals displace laterally\nTotal or partial destruction of transverse tarsal arch and Lisfranc ligament complex\nHigh risk of Compartment Syndrome of foot",
                 "th": "การหลุดแยกสองทาง (Divergent)\nกระดูกนิ้ว 1 เบี่ยงเข้าด้านใน และกระดูกนิ้ว 2 ถึง 5 เบี่ยงออกด้านนอก\nส่วนโค้งเท้า (Transverse arch) และชุดเอ็น Lisfranc พังทลาย\nเสี่ยงสูงต่อภาวะความดันในช่องกล้ามเนื้อเท้าสูงฉุกเฉิน (**Compartment Syndrome**)"
               },
               "moi": {

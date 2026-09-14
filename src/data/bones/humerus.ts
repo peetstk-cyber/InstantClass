@@ -892,8 +892,8 @@ export const humerusBone: BoneData = {
                 "th": "1. Proximal 1/3 Shaft (กระดูกแกนต้นแขนส่วนต้นหัก)"
               },
               "description": {
-                "en": "Fracture located in the upper third of the humeral shaft below surgical neck\nProximal fragment pulled by Pectoralis Major (adduction and internal rotation)\nDistal fragment pulled by Deltoid (abduction and proximal displacement)\nAcceptable alignment: AP angulation <20°, Varus/Valgus <15°, Rotation <30°, Shortening <3cm",
-                "th": "รอยหักบริเวณ 1/3 ส่วนบนของแกนต้นแขน ใต้ต่อ Surgical neck\nชิ้นกระดูกส่วนต้นถูกกล้ามเนื้อ Pectoralis Major ดึงหุบและหมุนเข้าด้านใน\nชิ้นกระดูกส่วนปลายถูกกล้ามเนื้อ Deltoid ดึงกางออกและยกลอยขึ้น\nเกณฑ์มุมกระดูกที่ยอมรับได้: เอียงหน้า-หลัง <20°, Varus/Valgus <15°, บิดหมุน <30°, หดสั้น <3 ซม."
+                "en": "Fracture located in the upper third of the humeral shaft below surgical neck\nProximal fragment pulled by Pectoralis Major (adduction and internal rotation)\nDistal fragment pulled by Deltoid (abduction and proximal displacement)\nAcceptable alignment: AP angulation <20°, Varus/Valgus <15°, Rotation <30°, Shortening <2 cm",
+                "th": "รอยหักบริเวณ 1/3 ส่วนบนของแกนต้นแขน ใต้ต่อ Surgical neck\nชิ้นกระดูกส่วนต้นถูกกล้ามเนื้อ Pectoralis Major ดึงหุบและหมุนเข้าด้านใน\nชิ้นกระดูกส่วนปลายถูกกล้ามเนื้อ Deltoid ดึงกางออกและยกลอยขึ้น\nเกณฑ์มุมกระดูกที่ยอมรับได้: เอียงหน้า-หลัง <20°, Varus/Valgus <15°, บิดหมุน <30°, หดสั้น <2 ซม."
               },
               "moi": {
                 "en": "Direct blow to upper arm or fall on outstretched hand (FOOSH).",
@@ -907,8 +907,8 @@ export const humerusBone: BoneData = {
                 "preferred": "conservative",
                 "conservative": {
                   "indication": {
-                    "en": "• Closed proximal 1/3 humeral shaft fracture meeting acceptable alignment criteria (<20° AP angulation, <15° varus/valgus, <2–3 cm shortening, <30° rotation)\n• Intact soft tissue envelope in upright/compliant patient",
-                    "th": "• กระดูกหักแบบปิดบริเวณ 1/3 ส่วนต้นที่มุมเอียงอยู่ในเกณฑ์ (<20° หน้าหลัง, <15° ซ้ายขวา, สั้น <2–3 ซม., บิดหมุน <30°)\n• เนื้อเยื่อรอบกระดูกปกติและผู้ป่วยสามารถนั่ง/เดินตัวตรงได้"
+                    "en": "• Closed proximal 1/3 humeral shaft fracture meeting acceptable alignment criteria (<20° AP angulation, <15° varus/valgus, <2 cm shortening, <30° rotation)\n• Intact soft tissue envelope in upright/compliant patient",
+                    "th": "• กระดูกหักแบบปิดบริเวณ 1/3 ส่วนต้นที่มุมเอียงอยู่ในเกณฑ์ (<20° หน้าหลัง, <15° ซ้ายขวา, สั้น <2 ซม., บิดหมุน <30°)\n• เนื้อเยื่อรอบกระดูกปกติและผู้ป่วยสามารถนั่ง/เดินตัวตรงได้"
                   },
                   "method": {
                     "en": "• Coaptation splint or U-slab for 1–2 weeks; transition to Sarmiento functional brace once acute swelling subsides",
@@ -956,8 +956,8 @@ export const humerusBone: BoneData = {
                 "th": "2. Middle 1/3 Shaft (กระดูกแกนต้นแขนส่วนกลางหัก - พบบ่อยที่สุด)"
               },
               "description": {
-                "en": "Most common location of humeral shaft fractures (~60% of cases)\nProximal fragment abducted by Deltoid muscle\nDistal fragment displaced proximally by Biceps and Triceps pull\nAcceptable alignment parameters: AP angulation <20°, Varus/Valgus <15°, Rotation <30°, Shortening <3cm",
-                "th": "ตำแหน่งหักที่พบบ่อยที่สุดของแกนกระดูกต้นแขน (~60% ของเคสทั้งหมด)\nชิ้นกระดูกส่วนต้นถูกกล้ามเนื้อ Deltoid ดึงกางออก\nชิ้นกระดูกส่วนปลายถูกกล้ามเนื้อ Biceps และ Triceps ดึงรั้งหดสั้นขึ้นด้านบน\nเกณฑ์มุมกระดูกที่ยอมรับได้: เอียงหน้า-หลัง <20°, Varus/Valgus <15°, บิดหมุน <30°, หดสั้น <3 ซม."
+                "en": "Most common location of humeral shaft fractures (~60% of cases)\nProximal fragment abducted by Deltoid muscle\nDistal fragment displaced proximally by Biceps and Triceps pull\nAcceptable alignment parameters: AP angulation <20°, Varus/Valgus <15°, Rotation <30°, Shortening <2 cm",
+                "th": "ตำแหน่งหักที่พบบ่อยที่สุดของแกนกระดูกต้นแขน (~60% ของเคสทั้งหมด)\nชิ้นกระดูกส่วนต้นถูกกล้ามเนื้อ Deltoid ดึงกางออก\nชิ้นกระดูกส่วนปลายถูกกล้ามเนื้อ Biceps และ Triceps ดึงรั้งหดสั้นขึ้นด้านบน\nเกณฑ์มุมกระดูกที่ยอมรับได้: เอียงหน้า-หลัง <20°, Varus/Valgus <15°, บิดหมุน <30°, หดสั้น <2 ซม."
               },
               "moi": {
                 "en": "Direct impact to mid-arm (motor vehicle crash) or indirect torsional force (arm wrestling).",

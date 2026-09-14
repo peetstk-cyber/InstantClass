@@ -258,6 +258,24 @@ const SYSTEM_SPECIFIC_MAP: Record<string, {
     millerChapter: "Chapter 4: Odontoid Fractures (Anderson-D'Alonzo Type I-III)",
     classicCitation: "Anderson LD, D'Alonzo RT. Fractures of the odontoid process of the axis. JBJS Am. 1974;56(8):1663-1674."
   },
+  "Allen-Ferguson": {
+    rockwoodChapter: "Chapter 36: Subaxial Cervical Spine Trauma",
+    campbellChapter: "Chapter 38: Fractures and Dislocations of Cervical Spine (Allen & Ferguson Classification)",
+    millerChapter: "Chapter 4: Cervical Spine Injuries (Mechanistic Classification)",
+    classicCitation: "Allen BL Jr, Ferguson RL, Lehmann TR, O'Brien RP. A mechanistic classification of closed, indirect fractures and dislocations of the lower cervical spine. Spine. 1982;7(1):1-27."
+  },
+  "SLIC Score": {
+    rockwoodChapter: "Chapter 36: Subaxial Cervical Spine Injury Classification (SLIC)",
+    campbellChapter: "Chapter 38: Subaxial Cervical Trauma & SLIC System",
+    millerChapter: "Chapter 4: Subaxial Cervical Spine Injury Classification System",
+    classicCitation: "Vaccaro AR, Hulbert RJ, Patel AA, et al. The subaxial cervical spine injury classification system: a novel approach to recognize the importance of morphology, neurology, and integrity of the disco-ligamentous complex. Spine. 2007;32(21):2365-2374."
+  },
+  "Denis Classification": {
+    rockwoodChapter: "Chapter 37: Thoracolumbar Spine Fractures",
+    campbellChapter: "Chapter 38: Thoracolumbar Fractures (Denis Classification)",
+    millerChapter: "Chapter 4: Thoracolumbar Spine Trauma (Denis Types 1-4)",
+    classicCitation: "Denis F. The three column spine and its significance in the classification of acute thoracolumbar spinal injuries. Spine. 1983;8(8):817-831."
+  },
   "Denis 3-Column Concept": {
     rockwoodChapter: "Chapter 37: Thoracolumbar Spine Fractures",
     campbellChapter: "Chapter 38: Thoracolumbar Fractures (Three-Column Spine)",
@@ -269,6 +287,20 @@ const SYSTEM_SPECIFIC_MAP: Record<string, {
     campbellChapter: "Chapter 38: Subaxial and Thoracolumbar Injury Classifications",
     millerChapter: "Chapter 4: TLICS Algorithm and Surgical Decision Making",
     classicCitation: "Vaccaro AR, Lehman RA Jr, Hurlbert RJ, et al. A new classification of thoracolumbar injuries. Spine. 2005;30(20):2325-2333."
+  },
+
+  // Skull & Maxillofacial
+  "Le Fort": {
+    rockwoodChapter: "Chapter 10: Principles of Maxillofacial Trauma",
+    campbellChapter: "Chapter 53: Maxillofacial and Skull Fractures",
+    millerChapter: "Chapter 5: Maxillofacial Trauma & Le Fort Fractures",
+    classicCitation: "Le Fort R. Étude expérimentale sur les fractures de la mâchoire supérieure. Rev Chir Paris. 1901;23:208-227."
+  },
+  "Skull Base Fracture": {
+    rockwoodChapter: "Chapter 10: Craniofacial and Skull Base Trauma",
+    campbellChapter: "Chapter 53: Skull and Cranial Base Injuries",
+    millerChapter: "Chapter 4: Traumatic Brain Injury and Basilar Skull Fractures",
+    classicCitation: "Dagi TF, Meyer FB, Poletti CA. The incidence and prevention of bacteremia of the central nervous system associated with skull base fractures. J Neurosurg. 1983;59(5):806-812."
   },
 
   // Scapula

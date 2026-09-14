@@ -42,6 +42,43 @@ export function cleanSystemName(name: string): string {
   return cleaned.trim();
 }
 
+/** Get concise label for system selector tabs so they fit on mobile without horizontal scrolling */
+export function getSystemTabLabel(system: string, language: Language): string {
+  if (!system) return "";
+  switch (system) {
+    case "Denis 3-Column Concept":
+      return language === "en" ? "Denis 3-Column" : "Denis 3 เสาหลัก";
+    case "Denis Classification":
+      return language === "en" ? "Denis Types" : "รอยหัก Denis";
+    case "TLICS Score":
+      return "TLICS Score";
+    case "Jefferson C1":
+      return "Jefferson (C1)";
+    case "Hangman C2":
+      return "Hangman (C2)";
+    case "Odontoid C2":
+      return "Odontoid (C2)";
+    case "Allen-Ferguson":
+      return "Allen-Ferguson";
+    case "SLIC Score":
+      return "SLIC Score";
+    case "Ideberg (Goss Modification)":
+      return "Ideberg / Goss";
+    case "Neck & Floating Shoulder":
+      return "Neck / Floating";
+    case "Anatomical Location":
+      return language === "en" ? "Anatomical" : "ตามกายวิภาค";
+    case "Anatomical & Functional":
+      return language === "en" ? "Anatomy" : "กายวิภาค";
+    case "AO/OTA & Alignment Concept":
+      return "AO/OTA";
+    case "Pilon Fracture":
+      return "Pilon";
+    default:
+      return system;
+  }
+}
+
 /** Smart interactive Media Viewer Modal (Switch between Diagram Illustration & Real X-Ray Film) */
 function ClassificationMediaViewerModal({
   fracType,
@@ -1656,7 +1693,7 @@ export function DetailPanel({
       {/* ── Compact Header ── */}
       <div
         style={{
-          padding: "6px 12px 6px 12px",
+          padding: "5px 12px 5px 12px",
           borderBottom: `1px solid ${border}`,
           position: "sticky",
           top: 0,
@@ -1835,38 +1872,42 @@ export function DetailPanel({
               {/* Classification System Selector Row inside content view for multiple systems */}
               {region && region.classifications && region.classifications.length > 1 && (
                 <div 
-                  className="flex items-center gap-1 mb-2.5 p-0.5 rounded-lg border overflow-x-auto no-scrollbar"
+                  className="w-full flex items-center gap-1 mb-2.5 p-0.5 rounded-lg border overflow-hidden"
                   style={{
                     background: darkMode ? "rgba(46, 204, 113, 0.06)" : "rgba(46, 204, 113, 0.04)",
                     borderColor: darkMode ? "rgba(46, 204, 113, 0.2)" : "rgba(46, 204, 113, 0.25)",
                     minHeight: 28,
                   }}
                 >
-                  <span className="text-[9.5px] font-extrabold uppercase px-1.5 tracking-wider flex-shrink-0" style={{ color: "#2ECC71" }}>
+                  <span className="text-[9px] font-extrabold uppercase px-1.5 tracking-wider flex-shrink-0" style={{ color: "#2ECC71" }}>
                     {language === "en" ? "System:" : "ระบบ:"}
                   </span>
-                  {region.classifications.map((cls, i) => {
-                    const isSelected = selectedSystemIdx === i;
-                    return (
-                      <button
-                        key={cls.system}
-                        onClick={() => {
-                          onSelectSystem(i);
-                          onSelectType(0);
-                          setMobilePage(0);
-                          setActiveTab("classification");
-                        }}
-                        className="flex-1 py-1 px-2.5 rounded-md font-bold text-[10.5px] whitespace-nowrap transition-all flex items-center justify-center gap-1 cursor-pointer active:scale-95"
-                        style={{
-                          background: isSelected ? "#2ECC71" : "transparent",
-                          color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#000000"),
-                          boxShadow: isSelected ? "0 1px 4px rgba(46,204,113,0.3)" : "none",
-                        }}
-                      >
-                        {cls.system}
-                      </button>
-                    );
-                  })}
+                  <div className="flex-1 min-w-0 flex items-stretch gap-1">
+                    {region.classifications.map((cls, i) => {
+                      const isSelected = selectedSystemIdx === i;
+                      const tabLabel = getSystemTabLabel(cls.system, language);
+                      return (
+                        <button
+                          key={cls.system}
+                          onClick={() => {
+                            onSelectSystem(i);
+                            onSelectType(0);
+                            setMobilePage(0);
+                            setActiveTab("classification");
+                          }}
+                          className="flex-1 min-w-0 py-1 px-1 rounded-md font-bold text-[10px] sm:text-[10.5px] transition-all flex items-center justify-center text-center cursor-pointer active:scale-95 leading-tight"
+                          style={{
+                            background: isSelected ? "#2ECC71" : "transparent",
+                            color: isSelected ? "#0F172A" : (darkMode ? "#E2E8F0" : "#000000"),
+                            boxShadow: isSelected ? "0 1px 4px rgba(46,204,113,0.3)" : "none",
+                          }}
+                          title={cls.fullName?.[language] || cls.system}
+                        >
+                          <span className="truncate">{tabLabel}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
 
@@ -2274,7 +2315,7 @@ export function DetailPanel({
               style={{ 
                 scrollSnapAlign: "start",
                 scrollSnapStop: "always",
-                padding: "2px 12px 0px 12px",
+                padding: "6px 12px 0px 12px",
                 WebkitOverflowScrolling: "touch",
                 overscrollBehaviorY: "contain",
               }}

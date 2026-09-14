@@ -88,9 +88,11 @@ export function RegionConceptPanel({
   const [carouselIdx, setCarouselIdx] = useState(0);
   const [zoomLevel, setZoomLevel] = useState<number>(1);
   const [pan, setPan] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const [imgAspect, setImgAspect] = useState<number | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const dragStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
   const panStartRef = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
+  const tapCoordRef = useRef<{ x: number; y: number } | null>(null);
   const hasMovedRef = useRef<boolean>(false);
   const stageRef = useRef<HTMLDivElement | null>(null);
   const initialPinchDistRef = useRef<number | null>(null);
@@ -111,6 +113,8 @@ export function RegionConceptPanel({
     setActiveLightboxIdx(null);
     setZoomLevel(1);
     setPan({ x: 0, y: 0 });
+    setImgAspect(null);
+    tapCoordRef.current = null;
   }, [concept, regionName.en]);
 
   const handleImageError = (url: string) => {
@@ -128,6 +132,8 @@ export function RegionConceptPanel({
     setZoomLevel(1);
     setPan({ x: 0, y: 0 });
     setIsDragging(false);
+    setImgAspect(null);
+    tapCoordRef.current = null;
   }, [activeLightboxIdx]);
 
   // Keyboard navigation for Lightbox
@@ -150,13 +156,15 @@ export function RegionConceptPanel({
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [activeLightboxIdx, activeImages.length, zoomLevel]);
 
-  const getPanLimits = () => {
+  const getPanLimitsForZoom = (zoom: number) => {
     if (!stageRef.current) return { maxX: 150, maxY: 150 };
     const rect = stageRef.current.getBoundingClientRect();
-    const maxX = Math.max(20, ((zoomLevel - 1) * rect.width) / 2 + 40);
-    const maxY = Math.max(20, ((zoomLevel - 1) * rect.height) / 2 + 40);
+    const maxX = Math.max(10, ((zoom - 1) * rect.width) / 2);
+    const maxY = Math.max(10, ((zoom - 1) * rect.height) / 2);
     return { maxX, maxY };
   };
+
+  const getPanLimits = () => getPanLimitsForZoom(zoomLevel);
 
   // Touch handlers for mobile pan, pinch-zoom, and swipe
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -173,6 +181,7 @@ export function RegionConceptPanel({
     }
 
     if (e.touches.length === 1) {
+      tapCoordRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
       if (zoomLevel > 1) {
         dragStartRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
         panStartRef.current = { ...pan };
@@ -245,6 +254,7 @@ export function RegionConceptPanel({
 
   // Mouse handlers for desktop pan
   const handleMouseDown = (e: React.MouseEvent) => {
+    tapCoordRef.current = { x: e.clientX, y: e.clientY };
     if (zoomLevel > 1) {
       e.preventDefault();
       dragStartRef.current = { x: e.clientX, y: e.clientY };
@@ -274,10 +284,23 @@ export function RegionConceptPanel({
     }
   };
 
-  const handleImageClick = () => {
+  const handleImageClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (hasMovedRef.current) return;
     if (zoomLevel === 1) {
-      updateZoom(2);
+      const rect = e.currentTarget.getBoundingClientRect();
+      const clientX = tapCoordRef.current ? tapCoordRef.current.x : e.clientX;
+      const clientY = tapCoordRef.current ? tapCoordRef.current.y : e.clientY;
+      const offsetX = clientX - (rect.left + rect.width / 2);
+      const offsetY = clientY - (rect.top + rect.height / 2);
+      const newZoom = 2.2;
+      const targetPanX = -offsetX * (newZoom - 1);
+      const targetPanY = -offsetY * (newZoom - 1);
+      const { maxX, maxY } = getPanLimitsForZoom(newZoom);
+      setPan({
+        x: Math.max(-maxX, Math.min(maxX, targetPanX)),
+        y: Math.max(-maxY, Math.min(maxY, targetPanY)),
+      });
+      setZoomLevel(newZoom);
     } else {
       updateZoom(1);
     }
@@ -299,7 +322,7 @@ export function RegionConceptPanel({
   return (
     <div
       style={{ background: bg, color: text }}
-      className={`flex flex-col h-full w-full overflow-y-auto ${isDesktop ? "p-3.5 space-y-4" : "px-0 pt-0 pb-2 space-y-2"}`}
+      className={`flex flex-col h-full w-full overflow-y-auto ${isDesktop ? "p-3.5 space-y-4" : "px-0 pt-0.5 pb-2 space-y-2.5"}`}
     >
       {/* ── Header / Title Bar ── */}
       <div>
@@ -313,40 +336,42 @@ export function RegionConceptPanel({
           </button>
         )}
 
-        <div className={`flex items-center justify-between gap-2 border-b ${isDesktop ? "pb-2.5" : "pb-1.5"}`} style={{ borderColor: border }}>
+        <div className="flex items-baseline justify-between gap-2 border-b pb-1.5 sm:pb-2.5" style={{ borderColor: border }}>
           <div>
-            <div className="text-[10.5px] font-bold uppercase tracking-wider text-teal-800 dark:text-[#00CED1] leading-none mb-0.5">
+            <div className="text-[10.5px] font-bold uppercase tracking-wider text-teal-800 dark:text-[#00CED1]">
               {boneName[language]}
             </div>
-            <h2 className="text-sm md:text-base font-extrabold tracking-tight leading-tight" style={{ color: text, margin: 0 }}>
+            <h2 className="text-sm md:text-base font-extrabold tracking-tight" style={{ color: text }}>
               {regionName[language]} Concept
             </h2>
           </div>
-          {isDesktop && onToggleExpand ? (
-            <button
-              type="button"
-              onClick={onToggleExpand}
-              title={
-                isExpanded
-                  ? (language === "en" ? "Collapse to standard width (340px)" : "ย่อกลับขนาดปกติ (340px)")
-                  : (language === "en" ? "Extend sidebar width (540px)" : "ขยายความกว้างแท็บซ้าย (540px)")
-              }
-              className="flex items-center gap-1.5 text-[10.5px] font-bold px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer shadow-xs active:scale-95 bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 hover:bg-teal-600/25 dark:hover:bg-[#00CED1]/25"
-            >
-              <span>{isExpanded ? (language === "en" ? "Collapse" : "ย่อ") : (language === "en" ? "Extend" : "ขยาย")}</span>
-              {isExpanded ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
-            </button>
-          ) : (
-            <span className="text-[9.5px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
-              Clinical Guide
-            </span>
+          {isDesktop && (
+            onToggleExpand ? (
+              <button
+                type="button"
+                onClick={onToggleExpand}
+                title={
+                  isExpanded
+                    ? (language === "en" ? "Collapse to standard width (340px)" : "ย่อกลับขนาดปกติ (340px)")
+                    : (language === "en" ? "Extend sidebar width (540px)" : "ขยายความกว้างแท็บซ้าย (540px)")
+                }
+                className="flex items-center gap-1.5 text-[10.5px] font-bold px-2.5 py-1 rounded-full transition-all duration-200 cursor-pointer shadow-xs active:scale-95 bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 hover:bg-teal-600/25 dark:hover:bg-[#00CED1]/25"
+              >
+                <span>{isExpanded ? (language === "en" ? "Collapse" : "ย่อ") : (language === "en" ? "Extend" : "ขยาย")}</span>
+                {isExpanded ? <Minimize2 size={12} /> : <Maximize2 size={12} />}
+              </button>
+            ) : (
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-900 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30">
+                Clinical Guide
+              </span>
+            )
           )}
         </div>
       </div>
 
       {/* ── Anatomy Concept Gallery View (Adapts dynamically to image count) ── */}
       {activeImages.length > 0 && (
-        <div className="flex flex-col gap-1.5 w-full flex-shrink-0">
+        <div className="flex flex-col gap-2 w-full flex-shrink-0">
           {/* Gallery View Header (Show counter and view mode toggle if 2+ images) */}
           {activeImages.length > 1 && (
             <div className="flex items-center justify-between px-0.5 text-xs">
@@ -770,14 +795,14 @@ export function RegionConceptPanel({
               </div>
             </div>
 
-            {/* Main Image Stage */}
+            {/* Main Image Stage (Seamlessly adapts to image aspect ratio) */}
             <div 
               ref={stageRef}
-              className="w-full relative flex items-center justify-center rounded-xl bg-slate-950/25 dark:bg-black/60 overflow-hidden select-none"
+              className="w-full relative flex items-center justify-center rounded-xl bg-slate-950/20 dark:bg-black/40 overflow-hidden select-none"
               style={{ 
-                height: "56vh", 
-                minHeight: 300, 
-                maxHeight: "68vh",
+                aspectRatio: imgAspect ? `${imgAspect}` : undefined,
+                maxHeight: "65vh",
+                width: "100%",
                 touchAction: zoomLevel > 1 ? "none" : "pan-y"
               }}
               onTouchStart={handleTouchStart}
@@ -796,11 +821,17 @@ export function RegionConceptPanel({
                   src={currentLightboxImg.url} 
                   alt={currentLightboxImg.title?.[language] || regionName.en} 
                   draggable={false}
+                  onLoad={(e) => {
+                    const { naturalWidth, naturalHeight } = e.currentTarget;
+                    if (naturalWidth && naturalHeight) {
+                      setImgAspect(naturalWidth / naturalHeight);
+                    }
+                  }}
                   style={{
                     maxWidth: "100%",
                     maxHeight: "100%",
-                    width: "auto",
-                    height: "auto",
+                    width: "100%",
+                    height: "100%",
                     objectFit: "contain",
                     transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})`,
                     transformOrigin: "center center",
@@ -810,15 +841,6 @@ export function RegionConceptPanel({
                   className="select-none pointer-events-auto"
                 />
               </div>
-
-              {/* Floating Zoom & Pan indicator when zoomed */}
-              {zoomLevel > 1 && (
-                <div className="absolute top-2 left-2 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-white text-[11px] font-semibold shadow-lg border border-white/10 pointer-events-none">
-                  <span className="text-teal-400 font-bold">{Math.round(zoomLevel * 10) / 10}x</span>
-                  <span>•</span>
-                  <span>{language === "en" ? "Drag to pan" : "เลื่อนดูได้อิสระ"}</span>
-                </div>
-              )}
 
               {/* Navigation arrows (prev/next) */}
               {activeImages.length > 1 && (
