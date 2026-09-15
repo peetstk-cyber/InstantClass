@@ -8,6 +8,7 @@ import { FractureIllustration } from "./FractureIllustration";
 import { SpineScoreCalculator } from "./SpineScoreCalculator";
 import { RegionConceptPanel } from "../layout/RegionConceptPanel";
 import { LearningHubPanel } from "../layout/LearningHubPanel";
+import { HorizontalScrollCardRow } from "../common/HorizontalScrollCardRow";
 
 import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
@@ -1991,14 +1992,18 @@ export function DetailPanel({
 
         {/* Region tabs (Horizontal scrollable compact pills) */}
         {bone.regions.length > 1 && (
-          <div className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar items-center flex-nowrap scroll-smooth py-0.5">
+          <HorizontalScrollCardRow
+            className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar items-center flex-nowrap scroll-smooth py-0.5"
+            darkMode={darkMode}
+            arrowTopOffset="top-1/2"
+          >
             {bone.regions.map(r => {
               const isSelected = region?.id === r.id;
               return (
                 <button
                   key={r.id}
                   onClick={() => onSelectRegion(r.id)}
-                  className="transition-all whitespace-nowrap flex-shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95"
+                  className="transition-all whitespace-nowrap flex-shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95 select-none"
                   style={{
                     background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9"),
                     border: isSelected ? (darkMode ? "1px solid #00CED1" : "1px solid #0F766E") : `1px solid ${border}`,
@@ -2010,7 +2015,7 @@ export function DetailPanel({
                 </button>
               );
             })}
-          </div>
+          </HorizontalScrollCardRow>
         )}
       </div>
 
@@ -2161,7 +2166,7 @@ export function DetailPanel({
                     return (
                       <div 
                         key={t.type} 
-                        className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[42%] sm:w-[32%] md:w-[calc(33.333%-6px)] min-w-[115px] sm:min-w-[125px] md:min-w-[120px]" 
+                        className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[42%] sm:w-[32%] md:w-[calc(33.333%-6px)] min-w-[115px] sm:min-w-[125px] md:min-w-[120px] select-none" 
                         style={{ scrollSnapAlign: "start" }}
                       >
                         <div 
@@ -2172,7 +2177,7 @@ export function DetailPanel({
                               onSelectType(i);
                             }
                           }}
-                          className="transition-all cursor-pointer flex flex-col items-center justify-center overflow-hidden w-full p-2 md:p-2.5 rounded-2xl border relative group bg-white shadow-xs hover:shadow-md active:scale-98"
+                          className="transition-all cursor-pointer flex flex-col items-center justify-center overflow-hidden w-full p-2 md:p-2.5 rounded-2xl border relative group bg-white shadow-xs hover:shadow-md active:scale-98 select-none"
                           style={{
                             aspectRatio: "1/1",
                             width: "100%",
@@ -2186,7 +2191,8 @@ export function DetailPanel({
                             <img 
                               src={t.illustrationId} 
                               alt={t.name.en} 
-                              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 6, display: "block" }}
+                              draggable={false}
+                              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 6, display: "block", userSelect: "none", pointerEvents: "none" }}
                               onError={(e) => {
                                 (e.target as HTMLElement).style.display = "none";
                                 const parent = (e.target as HTMLElement).parentElement;
@@ -2199,7 +2205,7 @@ export function DetailPanel({
                               }}
                             />
                           ) : (
-                            <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                            <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", userSelect: "none", pointerEvents: "none" }}>
                               <FractureIllustration illustrationId={t.illustrationId || ""} darkMode={false} />
                             </div>
                           )}
@@ -2213,7 +2219,7 @@ export function DetailPanel({
                               onSelectType(i);
                             }
                           }}
-                          className="transition-all w-full text-center py-1.5 px-1 rounded-lg text-xs font-extrabold cursor-pointer active:scale-95 tracking-wide"
+                          className="transition-all w-full text-center py-1.5 px-1 rounded-lg text-xs font-extrabold cursor-pointer active:scale-95 tracking-wide select-none"
                           style={{
                             background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#1A2530" : "#FFFFFF"),
                             border: isSelected ? (darkMode ? "1.5px solid #00CED1" : "1.5px solid #0F766E") : `1.5px solid ${border}`,
@@ -2228,7 +2234,7 @@ export function DetailPanel({
                   };
 
                   const renderCarouselRow = (items: { t: typeof classSystem.types[0]; idx: number }[], pb = "pb-3") => (
-                    <div 
+                    <HorizontalScrollCardRow 
                       className={`flex gap-2 overflow-x-auto -mr-3 pr-3 ${pb} no-scrollbar`} 
                       style={{ 
                         scrollbarWidth: "none", 
@@ -2238,10 +2244,12 @@ export function DetailPanel({
                           maskImage: "linear-gradient(to right, black calc(100% - 36px), transparent 100%)",
                         } : {}),
                       }}
+                      darkMode={darkMode}
+                      isMobile={isMobile}
                     >
                       {items.map(({ t, idx }) => renderTypeCard(t, idx))}
                       <div className="w-6 flex-shrink-0" />
-                    </div>
+                    </HorizontalScrollCardRow>
                   );
 
                   if (isJudetLetournel) {
@@ -2364,7 +2372,7 @@ export function DetailPanel({
 
                   if (hasNoImages) {
                     return (
-                      <div 
+                      <HorizontalScrollCardRow 
                         className="flex gap-2 overflow-x-auto -mr-3 pr-3 pb-2 no-scrollbar items-center py-1"
                         style={{
                           scrollbarWidth: "none",
@@ -2373,12 +2381,15 @@ export function DetailPanel({
                             maskImage: "linear-gradient(to right, black calc(100% - 24px), transparent 100%)",
                           } : {}),
                         }}
+                        darkMode={darkMode}
+                        isMobile={isMobile}
+                        arrowTopOffset="top-1/2"
                       >
                         {classSystem.types.map((t, i) => (
                           <button
                             key={t.type}
                             onClick={() => onSelectType(i)}
-                            className="transition-all whitespace-nowrap flex-shrink-0"
+                            className="transition-all whitespace-nowrap flex-shrink-0 select-none"
                             style={{
                               padding: "8px 14px",
                               borderRadius: 8,
@@ -2394,7 +2405,7 @@ export function DetailPanel({
                           </button>
                         ))}
                         <div className="w-4 flex-shrink-0" />
-                      </div>
+                      </HorizontalScrollCardRow>
                     );
                   }
 
