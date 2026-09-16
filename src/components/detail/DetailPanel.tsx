@@ -1,8 +1,12 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useState, useEffect, useCallback, useRef, Suspense, lazy } from "react";
 import { createPortal } from "react-dom";
 import type { Language } from "../../App";
 import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
-import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp, Layers, Lightbulb } from "lucide-react";
+import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp, Layers, Lightbulb, Box } from "lucide-react";
+
+const Bone3DViewerModal = lazy(() =>
+  import("../anatomy3d/Bone3DViewerModal").then((m) => ({ default: m.Bone3DViewerModal }))
+);
 
 import { FractureIllustration } from "./FractureIllustration";
 import { SpineScoreCalculator } from "./SpineScoreCalculator";
@@ -1578,6 +1582,7 @@ export function DetailPanel({
 }: DetailPanelProps) {
   const [activeTab, setActiveTab] = useState<"classification" | "investigation">("classification");
   const [showFilmPopup, setShowFilmPopup] = useState(false);
+  const [show3DModal, setShow3DModal] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
   const [dragY, setDragY] = useState(0);
   const [mobilePage, setMobilePage] = useState<number>(0);
@@ -1893,10 +1898,30 @@ export function DetailPanel({
         transform: dragY > 0 ? `translateY(${dragY}px)` : undefined,
         transition: isDraggingSheet.current ? "none" : "transform 0.28s cubic-bezier(0.16, 1, 0.3, 1)",
       }}
-      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden ${
+      className={`fixed inset-x-0 bottom-0 z-50 rounded-t-3xl h-[85dvh] max-h-[calc(100dvh-56px)] border-t shadow-[0_-10px_35px_rgba(0,0,0,0.5)] flex flex-col overflow-visible md:overflow-hidden ${
         isClosing ? "animate-slide-down-m" : "animate-slide-up-m"
       } md:static md:w-[40%] md:min-w-[380px] md:h-full md:max-h-none md:rounded-none md:border-t-0 md:border-l md:shadow-none md:animate-slide-in-r md:z-20`}
     >
+      {/* Mobile Protruding 3D Anatomy Badge (Option 1: Sticking out above top edge, consumes 0px inside) */}
+      {bone?.model3dUrl && (
+        <button
+          onClick={() => setShow3DModal(true)}
+          className="md:hidden absolute -top-3.5 left-5 z-30 h-7 px-2.5 rounded-full flex items-center gap-1.5 shadow-md border backdrop-blur-md active:scale-95 transition-all cursor-pointer"
+          style={{
+            background: darkMode ? "rgba(15,23,42,0.92)" : "rgba(255,255,255,0.95)",
+            borderColor: darkMode ? "rgba(45,212,191,0.5)" : "rgba(13,148,136,0.4)",
+            boxShadow: darkMode ? "0 4px 12px rgba(45,212,191,0.25)" : "0 4px 12px rgba(13,148,136,0.2)",
+            color: darkMode ? "#2DD4BF" : "#0F766E",
+          }}
+          title={language === "en" ? "View 3D Anatomy" : "ดูอนาโตมี่ 3 มิติ"}
+          aria-label="View 3D Anatomy"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
+          <Box size={13} className="stroke-[2.5]" />
+          <span className="text-[10px] font-black tracking-wider">3D</span>
+        </button>
+      )}
+
       {/* Mobile Top Drag Handle Bar (DRAG DOWN HERE OR PULL CONTENT AT TOP TO CLOSE MODAL) */}
       <div 
         className="md:hidden flex justify-center pt-2 pb-1 cursor-grab active:cursor-grabbing select-none" 
@@ -1974,6 +1999,23 @@ export function DetailPanel({
               </div>
             )}
 
+            {/* Desktop 3D Model Button */}
+            {bone?.model3dUrl && (
+              <button
+                onClick={() => setShow3DModal(true)}
+                className="hidden md:flex items-center gap-1.5 h-6 px-2 rounded-lg text-xs font-bold transition-all border cursor-pointer active:scale-95"
+                style={{
+                  background: darkMode ? "rgba(20,184,166,0.12)" : "rgba(13,148,136,0.08)",
+                  borderColor: darkMode ? "rgba(20,184,166,0.3)" : "rgba(13,148,136,0.2)",
+                  color: darkMode ? "#2DD4BF" : "#0F766E",
+                }}
+                title={language === "en" ? "View 3D Anatomy" : "ดูอนาโตมี่ 3 มิติ"}
+              >
+                <Box size={12} />
+                <span>3D</span>
+              </button>
+            )}
+
             {/* Close Button */}
             <button
               onClick={handleAnimatedClose}
@@ -1992,30 +2034,33 @@ export function DetailPanel({
 
         {/* Region tabs (Horizontal scrollable compact pills) */}
         {bone.regions.length > 1 && (
-          <HorizontalScrollCardRow
-            className="flex gap-1.5 mt-1.5 overflow-x-auto no-scrollbar items-center flex-nowrap scroll-smooth py-0.5"
-            darkMode={darkMode}
-            arrowTopOffset="top-1/2"
-          >
-            {bone.regions.map(r => {
-              const isSelected = region?.id === r.id;
-              return (
-                <button
-                  key={r.id}
-                  onClick={() => onSelectRegion(r.id)}
-                  className="transition-all whitespace-nowrap flex-shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95 select-none"
-                  style={{
-                    background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9"),
-                    border: isSelected ? (darkMode ? "1px solid #00CED1" : "1px solid #0F766E") : `1px solid ${border}`,
-                    color: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#CBD5E1" : "#475569"),
-                    boxShadow: isSelected ? (darkMode ? "0 1px 6px rgba(0,206,209,0.25)" : "0 1px 6px rgba(15,118,110,0.3)") : "none",
-                  }}
-                >
-                  {r.name[language]}
-                </button>
-              );
-            })}
-          </HorizontalScrollCardRow>
+          <div className="mt-1.5 w-full">
+            <HorizontalScrollCardRow
+              className="flex gap-1.5 overflow-x-auto no-scrollbar items-center flex-nowrap scroll-smooth py-0.5"
+              darkMode={darkMode}
+              arrowVariant="slim-rect"
+              scrollStep={140}
+            >
+              {bone.regions.map(r => {
+                const isSelected = region?.id === r.id;
+                return (
+                  <button
+                    key={r.id}
+                    onClick={() => onSelectRegion(r.id)}
+                    className="transition-all whitespace-nowrap flex-shrink-0 px-2.5 py-1 rounded-lg text-[11px] font-bold cursor-pointer active:scale-95 select-none"
+                    style={{
+                      background: isSelected ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(255,255,255,0.04)" : "#F1F5F9"),
+                      border: isSelected ? (darkMode ? "1px solid #00CED1" : "1px solid #0F766E") : `1px solid ${border}`,
+                      color: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#CBD5E1" : "#475569"),
+                      boxShadow: isSelected ? (darkMode ? "0 1px 6px rgba(0,206,209,0.25)" : "0 1px 6px rgba(15,118,110,0.3)") : "none",
+                    }}
+                  >
+                    {r.name[language]}
+                  </button>
+                );
+              })}
+            </HorizontalScrollCardRow>
+          </div>
         )}
       </div>
 
@@ -2235,7 +2280,7 @@ export function DetailPanel({
 
                   const renderCarouselRow = (items: { t: typeof classSystem.types[0]; idx: number }[], pb = "pb-3") => (
                     <HorizontalScrollCardRow 
-                      className={`flex gap-2 overflow-x-auto -mr-3 pr-3 ${pb} no-scrollbar`} 
+                      className={`flex gap-2 overflow-x-auto ${pb} no-scrollbar`} 
                       style={{ 
                         scrollbarWidth: "none", 
                         scrollSnapType: "x mandatory",
@@ -2248,7 +2293,6 @@ export function DetailPanel({
                       isMobile={isMobile}
                     >
                       {items.map(({ t, idx }) => renderTypeCard(t, idx))}
-                      <div className="w-6 flex-shrink-0" />
                     </HorizontalScrollCardRow>
                   );
 
@@ -2373,7 +2417,7 @@ export function DetailPanel({
                   if (hasNoImages) {
                     return (
                       <HorizontalScrollCardRow 
-                        className="flex gap-2 overflow-x-auto -mr-3 pr-3 pb-2 no-scrollbar items-center py-1"
+                        className="flex gap-2 overflow-x-auto pb-2 no-scrollbar items-center py-1"
                         style={{
                           scrollbarWidth: "none",
                           ...(isMobile && classSystem.types.length > 3 ? {
@@ -2383,7 +2427,8 @@ export function DetailPanel({
                         }}
                         darkMode={darkMode}
                         isMobile={isMobile}
-                        arrowTopOffset="top-1/2"
+                        arrowVariant="slim-rect"
+                        scrollStep={140}
                       >
                         {classSystem.types.map((t, i) => (
                           <button
@@ -2404,7 +2449,6 @@ export function DetailPanel({
                             {t.type}
                           </button>
                         ))}
-                        <div className="w-4 flex-shrink-0" />
                       </HorizontalScrollCardRow>
                     );
                   }
@@ -2568,6 +2612,20 @@ export function DetailPanel({
           border={border}
           onClose={() => setShowFilmPopup(false)}
         />
+      )}
+
+      {/* Decoupled 3D Anatomy Modal (Full Screen Portal escaping bottom sheet) */}
+      {show3DModal && bone?.model3dUrl && typeof document !== "undefined" && createPortal(
+        <Suspense fallback={null}>
+          <Bone3DViewerModal
+            modelUrl={bone.model3dUrl}
+            boneName={bone.name[language]}
+            initialRegionId={region?.id || "femoral-neck"}
+            darkMode={darkMode}
+            onClose={() => setShow3DModal(false)}
+          />
+        </Suspense>,
+        document.body
       )}
     </aside>
   );

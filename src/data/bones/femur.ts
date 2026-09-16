@@ -2,6 +2,7 @@ import type { BoneData } from "../../types";
 
 export const femurBone: BoneData = {
   "id": "femur",
+  "model3dUrl": "/models/bones/femur/femur.obj",
   "name": {
     "en": "Femur & Hip",
     "th": "กระดูกต้นขาและสะโพก"
@@ -724,8 +725,8 @@ export const femurBone: BoneData = {
                 "th": "แนวกระดูกหักเฉียงย้อนกลับ (Reversed Oblique - Unstable)"
               },
               "description": {
-                "en": "Fracture line runs from distal-medial to proximal-lateral\nHighly unstable pattern due to medial displacement of femoral shaft by adductor muscle pull\nSliding Hip Screw (DHS) is strictly contraindicated",
-                "th": "แนวกระดูกหักเฉียงย้อนกลับ (เฉียงล่าง-ใน ขึ้นบน-นอก)\nไม่มั่นคงอย่างยิ่ง กล้ามเนื้อ Adductors จะดึงแกนกระดูกต้นขาเลื่อนเข้าด้านใน\nห้ามใช้ Dynamic Hip Screw (DHS) โดยเด็ดขาดเนื่องจากมีอัตราล้มเหลวสูง"
+                "en": "Fracture line runs from proximal-medial to distal-lateral (exiting the lateral cortex at or below the greater trochanter)\nHighly unstable pattern due to medial displacement of femoral shaft by adductor muscle pull\nSliding Hip Screw (DHS) is strictly contraindicated",
+                "th": "แนวกระดูกหักเฉียงย้อนกลับ (เฉียงจากบน-ใน ลงล่าง-นอก ทะลุผนังกระดูกด้านข้างใต้ต่อ Greater Trochanter)\nไม่มั่นคงอย่างยิ่ง กล้ามเนื้อ Adductors จะดึงแกนกระดูกต้นขาเลื่อนไถลเข้าด้านใน\nห้ามใช้ Dynamic Hip Screw (DHS) โดยเด็ดขาดเนื่องจากมีอัตราล้มเหลวสูง"
               },
               "moi": {
                 "en": "High-energy direct trauma such as motor vehicle collision or fall from height.",
@@ -733,8 +734,8 @@ export const femurBone: BoneData = {
               },
               "treatment": {
                 "decisionPrinciple": {
-                  "en": "Fracture line runs distal-medial to proximal-lateral causing medial shaft displacement by adductor pull; Sliding Hip Screw (DHS) is strictly contraindicated due to disastrous cutout; Cephalomedullary Nail is mandatory.",
-                  "th": "แนวกระดูกหักเฉียงย้อนกลับทำให้แกนกระดูกต้นขาถูกกล้ามเนื้อดึงเลื่อนเข้าด้านใน ห้ามใช้ DHS เด็ดขาดเพราะจะรูดหลุดล้มเหลว 100% ต้องใช้ Cephalomedullary Nail เป็นมาตรฐานหลัก"
+                  "en": "Fracture line runs proximal-medial to distal-lateral causing medial shaft displacement by adductor pull; Sliding Hip Screw (DHS) is strictly contraindicated due to disastrous cutout; Cephalomedullary Nail is mandatory.",
+                  "th": "แนวกระดูกหักเฉียงย้อนกลับ (เฉียงบน-ในลงล่าง-นอก) ทำให้แกนกระดูกต้นขาถูกกล้ามเนื้อดึงเลื่อนเข้าด้านใน ห้ามใช้ DHS เด็ดขาดเพราะจะรูดหลุดล้มเหลว 100% ต้องใช้ Cephalomedullary Nail เป็นมาตรฐานหลัก"
                 },
                 "preferred": "operative",
                 "conservative": {

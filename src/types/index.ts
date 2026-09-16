@@ -130,6 +130,7 @@ export interface BoneData {
   description: Translation;
   regions: BoneRegion[];
   pediatric: boolean;
+  model3dUrl?: string;
 }
 
 // ─── AI Image Audit Registry ────────────────────────────────────────────────
