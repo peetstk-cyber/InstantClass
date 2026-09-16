@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { X, Loader2, RotateCcw, Maximize2, Minimize2 } from "lucide-react";
+import { X, Loader2, RotateCcw, Maximize2, Minimize2, Activity, ChevronDown, ChevronUp } from "lucide-react";
 
 export interface ClassificationPreset {
   id: string;
@@ -12,7 +12,7 @@ export interface ClassificationPreset {
   clinicalPearl: string;
   cutCenter?: [number, number, number];
   cutNormal?: [number, number, number];
-  partitionMode?: "bipartite" | "intertroch_comminuted" | "subtroch_bipartite" | "subtroch_lt" | "subtroch_fossa" | "subtroch_comminuted" | "shaft_bipartite" | "shaft_butterfly_small" | "shaft_butterfly_med" | "shaft_butterfly_large" | "shaft_segmental" | "distal_supracondylar" | "distal_unicondylar_lat" | "distal_hoffa" | "distal_bicondylar";
+  partitionMode?: "bipartite" | "intertroch_comminuted" | "subtroch_bipartite" | "subtroch_lt" | "subtroch_fossa" | "subtroch_comminuted" | "shaft_bipartite" | "shaft_butterfly_small" | "shaft_butterfly_med" | "shaft_butterfly_large" | "shaft_segmental" | "distal_supracondylar" | "distal_unicondylar_lat" | "distal_hoffa" | "distal_bicondylar" | "neer_4part" | "neer_2part_gt" | "neer_2part_sn" | "neer_3part_gt" | "neer_3part_lt" | "humerus_shaft_bipartite" | "humerus_distal_supracondylar" | "humerus_distal_unicondylar_lat" | "humerus_distal_coronal_shear" | "humerus_distal_bicondylar" | "ac_joint_rockwood" | "clavicle_shaft_bipartite" | "clavicle_shaft_butterfly" | "clavicle_shaft_segmental" | "clavicle_distal_neer_v";
   proximalRot: [number, number, number];
   proximalPosOffset: [number, number, number];
   distalRot: [number, number, number];
@@ -347,9 +347,9 @@ const FEMUR_SUBREGIONS: SubregionConfig[] = [
     badge: "Distal Femur / AO 33",
     cutCenter: [10, -170, 0],
     cutNormal: [0, 1, 0],
-    cameraTarget: [0.05, -1.35, -0.05],
-    cameraDistance: 3.0,
-    viewOffsetRatio: 0.18,
+    cameraTarget: [0.05, -1.18, -0.05],
+    cameraDistance: 3.1,
+    viewOffsetRatio: 0.04,
     presets: [
       {
         id: "distal_type1",
@@ -423,6 +423,691 @@ const FEMUR_SUBREGIONS: SubregionConfig[] = [
   },
 ];
 
+const HUMERUS_SUBREGIONS: SubregionConfig[] = [
+  {
+    id: "proximal",
+    name: "Proximal Humerus",
+    badge: "Neer Classification",
+    cutCenter: [15.0, 95.0, 3.0],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [0.24, 1.22, 0.05],
+    cameraDistance: 2.8,
+    viewOffsetRatio: 0.18,
+    presets: [
+      {
+        id: "neer_1part",
+        name: "1-Part",
+        badge: "1-Part (<1cm / <45°)",
+        clinicalTitle: "Neer 1-Part: Minimally Displaced Fracture (Stable)",
+        clinicalPearl: "รอยหักอาจมีได้หลายเส้น (Surgical neck, Tuberosities) แต่ไม่มีชิ้นใดเคลื่อน >1 ซม. หรือเอียง >45° (GT <5 มม.); รอยหักมั่นคง รักษาแบบไม่ผ่าตัดด้วย Arm Sling 1-2 สัปดาห์ และทำกายภาพ Passive ROM ฟื้นตัวได้ผลดี >90%",
+        partitionMode: "neer_4part",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0.3, 0.4, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0.3, 0],
+        ltRot: [0, 0, 0],
+        ltPosOffset: [0, 0, 0.2],
+      },
+      {
+        id: "neer_2part_gt",
+        name: "2-Part (GT)",
+        badge: "2-Part Greater Tuberosity",
+        clinicalTitle: "Neer 2-Part: Displaced Greater Tuberosity Fracture",
+        clinicalPearl: "ชิ้น Greater Tuberosity เคลื่อนตัว >5 มม. ถูกแรงดึงของกล้ามเนื้อ Supraspinatus/Infraspinatus ดึงรั้งขึ้นบนและไปด้านหลัง (Posterosuperior); เสี่ยงขัดชนใต้เบ้า Acromion และกางแขนไม่ได้; มีข้อบ่งชี้ผ่าตัด ORIF หรือ Suture Anchors",
+        partitionMode: "neer_2part_gt",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [-0.18, 0.22, 0.26],
+        gtPosOffset: [-6.0, 9.0, -5.5],
+      },
+      {
+        id: "neer_2part_sn",
+        name: "2-Part (SN)",
+        badge: "2-Part Surgical Neck",
+        clinicalTitle: "Neer 2-Part: Displaced Surgical Neck Fracture",
+        clinicalPearl: "คอกระดูก (Surgical neck) หักเคลื่อน >1 ซม. หรือเอียง >45°; หัวกระดูกและ Tuberosities ยังอยู่ด้วยกันในแนว Neutral; ก้านกระดูก (Shaft) ถูก Pectoralis Major ดึงหลุดเข้าด้านใน (Medial displacement); ผ่าตัดดาม PHILOS Plate หรือ IM Nail",
+        partitionMode: "neer_2part_sn",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0.08, 0.15, -0.22],
+        distalPosOffset: [6.5, 4.0, 3.5],
+      },
+      {
+        id: "neer_3part_gt",
+        name: "3-Part (GT)",
+        badge: "3-Part GT + Surg Neck",
+        clinicalTitle: "Neer 3-Part: Displaced GT & Surgical Neck Fracture",
+        clinicalPearl: "กระดูกหักเคลื่อน 2 จุด: Surgical neck + Greater Tuberosity; หัวกระดูกยังติดกับ Lesser Tuberosity ทำให้ถูก Subscapularis ดึงบิดหมุนเข้าด้านใน (Internal Rotation); เสี่ยง AVN 15-30%; ผ่าตัด ORIF ดาม PHILOS Plate พร้อมเย็บ Cerclage",
+        partitionMode: "neer_3part_gt",
+        proximalRot: [0.10, -0.36, 0.05],
+        proximalPosOffset: [1.5, -2.0, 0],
+        distalRot: [0.06, 0.12, -0.18],
+        distalPosOffset: [5.5, 4.5, 3.0],
+        gtRot: [-0.20, 0.24, 0.32],
+        gtPosOffset: [-7.5, 10.0, -6.5],
+      },
+      {
+        id: "neer_3part_lt",
+        name: "3-Part (LT)",
+        badge: "3-Part LT + Surg Neck (Rare)",
+        clinicalTitle: "Neer 3-Part: Displaced LT & Surgical Neck Fracture (Rare)",
+        clinicalPearl: "กระดูกหักเคลื่อน 2 จุด: Surgical neck + Lesser Tuberosity (พบน้อย สัมพันธ์กับข้อไหล่หลุดไปด้านหลัง); หัวกระดูกยังติดกับ Greater Tuberosity ถูก Infraspinatus ดึงหมุนบิดออกด้านนอก (External Rotation); ผ่าตัด ORIF PHILOS Plate + ซ่อม Subscapularis",
+        partitionMode: "neer_3part_lt",
+        proximalRot: [-0.08, 0.40, -0.05],
+        proximalPosOffset: [-1.0, -1.5, -2.0],
+        distalRot: [0.05, 0.10, -0.15],
+        distalPosOffset: [5.0, 4.0, 2.5],
+        ltRot: [0.16, -0.26, 0.22],
+        ltPosOffset: [4.8, 2.2, 8.5],
+      },
+      {
+        id: "neer_4part_classic",
+        name: "4-Part Classic",
+        badge: "4-Part Classic (Floating Head)",
+        clinicalTitle: "Neer 4-Part Classic: Floating Head (Extreme AVN Risk)",
+        clinicalPearl: "ชิ้นส่วนทั้ง 4 ชิ้น (Head, GT, LT, Shaft) หลุดแยกขาดจากกันทั้งหมด; หัวกระดูกลอยอิสระ (Floating Head) ขาดเส้นเลือดเลี้ยงอย่างสิ้นเชิง เสี่ยง AVN สูงมาก (>80-90%); ในผู้สูงอายุ (>65 ปี) แนะนำผ่าตัดเปลี่ยนข้อไหล่เทียมแบบ Reverse Shoulder Arthroplasty (RSA)",
+        partitionMode: "neer_4part",
+        proximalRot: [0.26, -0.22, -0.32],
+        proximalPosOffset: [6.5, -7.5, -4.5],
+        distalRot: [0.08, 0.18, -0.22],
+        distalPosOffset: [6.0, 5.5, 4.0],
+        gtRot: [-0.25, 0.28, 0.35],
+        gtPosOffset: [-8.5, 11.5, -7.0],
+        ltRot: [0.22, -0.30, 0.28],
+        ltPosOffset: [7.0, 3.5, 9.5],
+      },
+      {
+        id: "neer_4part_valgus",
+        name: "4-Part Valgus",
+        badge: "4-Part Valgus Impacted",
+        clinicalTitle: "Neer 4-Part Valgus Impacted: Driven into Shaft (Lower AVN Risk)",
+        clinicalPearl: "หัวกระดูกถูกกดอัดยุบจมลงบนแกนกระดูกต้นแขนในแนว Valgus (เอียงออก); ชิ้น GT และ LT อ้าแบะออกด้านข้าง แต่เยื่อหุ้มกระดูกและเส้นเลือด Posteromedial periosteal hinge ยังคงสมบูรณ์; เสี่ยง AVN ต่ำกว่า (~10-20%); ผ่าตัด ORIF งัดยกหัวกระดูก ปลูก Bone graft และดาม PHILOS Plate",
+        partitionMode: "neer_4part",
+        proximalRot: [-0.10, 0, 0.35],
+        proximalPosOffset: [-1.5, -8.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [-0.12, 0.15, 0.22],
+        gtPosOffset: [-5.5, 2.5, -3.0],
+        ltRot: [0.10, -0.15, 0.18],
+        ltPosOffset: [4.0, 1.0, 4.5],
+      },
+      {
+        id: "neer_4part_lt_variant",
+        name: "4-Part LT Variant",
+        badge: "4-Part LT Variant (Posterior Subluxation)",
+        clinicalTitle: "Neer 4-Part Lesser Tuberosity Variant (Posterior Subluxation)",
+        clinicalPearl: "ชนิดพิเศษที่พบได้น้อย: ชิ้น Lesser Tuberosity หลุดแยกขาด พร้อมหัวกระดูกเลื่อนหลุดไปด้านหลัง (Posterior subluxation) หรือแตกเป็นรอยเว้า Impression fracture จากการชนกับขอบเบ้าหลัง Glenoid rim; ต้องตรวจ 3D CT scan เสมอ",
+        partitionMode: "neer_4part",
+        proximalRot: [-0.15, 0.35, -0.10],
+        proximalPosOffset: [-3.0, -3.0, -9.0],
+        distalRot: [0.05, 0.10, -0.12],
+        distalPosOffset: [4.5, 3.5, 2.5],
+        gtRot: [-0.10, 0.15, 0.15],
+        gtPosOffset: [-4.0, 4.0, -3.0],
+        ltRot: [0.25, -0.32, 0.25],
+        ltPosOffset: [6.5, 3.0, 9.0],
+      },
+    ],
+  },
+  {
+    id: "shaft",
+    name: "Humeral Shaft",
+    badge: "Holstein-Lewis / AO 12",
+    cutCenter: [-6.9, 0, -4.7],
+    cutNormal: [0.1, 0.98, 0.1],
+    cameraTarget: [-0.07, 0.0, -0.05],
+    cameraDistance: 3.2,
+    viewOffsetRatio: 0.10,
+    presets: [
+      {
+        id: "shaft_proximal_13",
+        name: "Proximal 1/3",
+        badge: "Proximal 1/3 (Pectoralis vs Deltoid)",
+        clinicalTitle: "Proximal 1/3 Shaft Fracture (Pectoralis Major Pull)",
+        clinicalPearl: "รอยหักบริเวณ 1/3 ส่วนบนของแกนต้นแขน ใต้ต่อ Surgical neck; ชิ้นส่วนต้นถูก Pectoralis Major ดึงหุบและหมุนเข้าด้านใน (Adduction & Internal Rotation); ชิ้นส่วนปลายถูก Deltoid ดึงกางออกและดึงสั้นขึ้น; เกณฑ์ Sarmiento: เอียง AP <20°, Varus/Valgus <15°, สั้น <2 ซม., หมุน <30°",
+        cutCenter: [3.8, 56.3, 4.0],
+        cutNormal: [0.15, 0.98, 0.05],
+        partitionMode: "humerus_shaft_bipartite",
+        proximalRot: [0.08, -0.22, 0.15],
+        proximalPosOffset: [2.5, 0, 1.5],
+        distalRot: [-0.05, 0.10, -0.20],
+        distalPosOffset: [-4.0, 5.5, -2.0],
+      },
+      {
+        id: "shaft_middle_13",
+        name: "Middle 1/3",
+        badge: "Middle 1/3 (~60% Common)",
+        clinicalTitle: "Middle 1/3 Shaft Fracture (~60% Most Common)",
+        clinicalPearl: "ตำแหน่งหักที่พบบ่อยที่สุดของแกนต้นแขน (~60%); ชิ้นส่วนต้นถูก Deltoid ดึงกางออก (Abduction); ชิ้นส่วนปลายถูก Biceps และ Triceps ดึงรั้งหดสั้นขึ้นด้านบน; รักษาด้วย Sarmiento Functional Brace ได้ผลเชื่อมติดดีเยี่ยม >95% หากมุมอยู่ในเกณฑ์",
+        cutCenter: [-6.9, 0, -4.7],
+        cutNormal: [0.1, 0.98, 0.1],
+        partitionMode: "humerus_shaft_bipartite",
+        proximalRot: [0.05, 0, -0.25],
+        proximalPosOffset: [-3.5, 0, 1.0],
+        distalRot: [0.10, 0.05, 0.15],
+        distalPosOffset: [2.0, 7.0, 3.5],
+      },
+      {
+        id: "shaft_holstein_lewis",
+        name: "Holstein-Lewis",
+        badge: "Distal 1/3 Spiral (Radial Nerve Risk)",
+        clinicalTitle: "Holstein-Lewis Distal 1/3 Spiral (High Radial Nerve Risk)",
+        clinicalPearl: "รอยหักบิดเกลียวเฉพาะบริเวณ 1/3 ส่วนปลายของแกนต้นแขน เฉียงขึ้นทางฝั่ง Radial; เสี่ยงสูงสุดต่อเส้นประสาท Radial ถูกหนีบที่ Lateral intermuscular septum (~22%); มีอาการ Wrist Drop และชาหลังมือง่ามนิ้วโป้ง; Closed palsy 90% หายเองใน 3-4 เดือน หากเกิด Secondary palsy หลังดึงจัดกระดูก ต้องผ่าตัดเปิดสำรวจเส้นประสาททันที",
+        cutCenter: [-16.2, -65.0, -15.1],
+        cutNormal: [-0.45, 0.88, 0.15],
+        partitionMode: "humerus_shaft_bipartite",
+        proximalRot: [-0.08, -0.05, 0.12],
+        proximalPosOffset: [1.5, -2.0, 2.0],
+        distalRot: [0.22, 0.12, -0.18],
+        distalPosOffset: [-3.5, 6.0, -4.5],
+      },
+    ],
+  },
+  {
+    id: "distal",
+    name: "Distal Humerus",
+    badge: "AO/OTA 13",
+    cutCenter: [-23.3, -120.0, -11.8],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [-0.20, -1.05, -0.07],
+    cameraDistance: 2.85,
+    viewOffsetRatio: 0.02,
+    presets: [
+      {
+        id: "distal_humerus_typeA",
+        name: "Type A",
+        badge: "Extra-articular (AO 13-A)",
+        clinicalTitle: "Type A: Extra-articular Supracondylar (AO 13-A)",
+        clinicalPearl: "รอยหักอยู่นอกข้อต่อทั้งหมด ผิวข้อสมบูรณ์; รอยหักชนิด Extension type ก้านกระดูกส่วนต้นทิ่มแทงไปด้านหน้า (Anterior spike) เสี่ยงตัดขาดหรือกดทับหลอดเลือด Brachial Artery และเส้นประสาท Median Nerve; ชิ้น Condyles ถูกกล้ามเนื้อ Triceps ดึงเอียงไปด้านหลัง; ผ่าตัดดามแผ่นเหล็กล็อคคู่ (Dual Locking Plates: Parallel หรือ 90-90 Orthogonal)",
+        cutCenter: [-23.3, -120.0, -11.8],
+        cutNormal: [0, 1, 0],
+        partitionMode: "humerus_distal_supracondylar",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 3.5],
+        distalRot: [-0.30, 0, 0],
+        distalPosOffset: [0, 3.5, -6.0],
+      },
+      {
+        id: "distal_humerus_typeB_lateral",
+        name: "Type B1",
+        badge: "Unicondylar Lateral (AO 13-B1)",
+        clinicalTitle: "Type B1: Partial Articular Sagittal Lateral Split (AO 13-B1)",
+        clinicalPearl: "รอยหักเข้าข้อต่อบางส่วนแนว Sagittal ปุ่มนอก (Lateral Condyle / Capitellum) หลุดแยก ในขณะที่เสากระดูกด้านในยังติดกับแกนกระดูก; ผิวข้อสะดุด > 1 มม. ต้องทำ Anatomical Reduction + Lag Screws และ Condylar Buttress Plate เพื่อป้องกันข้อศอกขัดล็อก",
+        cutCenter: [-23.3, -120.0, -11.8],
+        cutNormal: [0, 1, 0],
+        partitionMode: "humerus_distal_unicondylar_lat",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.15, -0.10, -0.22],
+        shardPosOffset: [-5.5, 4.0, 2.0],
+      },
+      {
+        id: "distal_humerus_typeB_coronal",
+        name: "Type B3",
+        badge: "Coronal Shear (AO 13-B3)",
+        clinicalTitle: "Type B3: Coronal Shear Capitellar Fracture (Hahn-Steinthal)",
+        clinicalPearl: "รอยหักเฉือนแนว Coronal ด้านหน้าของ Capitellum/Trochlea จากแรงกระแทกส่งผ่านหัวกระดูกเรเดียส; ชิ้นกระดูกผิวข้อเลื่อนขึ้นด้านบนและด้านหน้า ขัดขวางการงอศอก (Flexion block); ต้องใช้ Headless Compression Screws (Herbert screws) ขันจากหน้าไปหลังฝังจมใต้ผิวข้อ",
+        cutCenter: [-23.3, -120.0, -11.8],
+        cutNormal: [0, 1, 0],
+        partitionMode: "humerus_distal_coronal_shear",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.30, 0, 0],
+        shardPosOffset: [0, 5.0, 5.0],
+      },
+      {
+        id: "distal_humerus_typeC_simple",
+        name: "Type C1",
+        badge: "Bicondylar T/Y (AO 13-C1)",
+        clinicalTitle: "Type C1: Complete Articular Bicondylar T/Y Split (AO 13-C1)",
+        clinicalPearl: "หักเข้าข้อสมบูรณ์สองปุ่มแยกจากกันรูปตัว T หรือ Y และหลุดจากแกนกระดูกต้นแขน; ทางเข้าผ่าตัดมาตรฐาน: Chevron Trans-Olecranon Osteotomy เพื่อเปิดผิวข้อ 360°; จัดเรียง Trochlea/Capitellum ยึดด้วย Lag Screws แปลง C เป็น A แล้วดามเชื่อมกับแกนกระดูกด้วย Dual Parallel Locking Plates",
+        cutCenter: [-23.3, -120.0, -11.8],
+        cutNormal: [0, 1, 0],
+        partitionMode: "humerus_distal_bicondylar",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, -3.5, 4.0],
+        distalRot: [-0.15, 0, 0.20],
+        distalPosOffset: [4.0, 3.0, -2.5],
+        shardRot: [-0.18, 0, -0.22],
+        shardPosOffset: [-5.0, 3.5, -3.0],
+      },
+      {
+        id: "distal_humerus_typeC_comminuted",
+        name: "Type C3",
+        badge: "Shattered Articular (AO 13-C3)",
+        clinicalTitle: "Type C3: Severely Comminuted Articular & Metaphyseal (AO 13-C3)",
+        clinicalPearl: "แตกละเอียดรุนแรงทั้งในผิวข้อและส่วน Metaphysis สูญเสียความมั่นคงอย่างสิ้นเชิง เสี่ยงข้อศอกติดแข็งและ Ulnar neuropathy (ต้องทำ Anterior Transposition); ในผู้สูงอายุ (>65 ปี) กระดูกพรุนที่ต่อไม่ได้ แนะนำผ่าตัดใส่ข้อศอกเทียม Total Elbow Arthroplasty (TEA)",
+        cutCenter: [-23.3, -120.0, -11.8],
+        cutNormal: [0, 1, 0],
+        partitionMode: "humerus_distal_bicondylar",
+        proximalRot: [0.08, 0, -0.05],
+        proximalPosOffset: [0, -5.5, 5.0],
+        distalRot: [-0.22, 0, 0.28],
+        distalPosOffset: [5.5, 4.5, -4.0],
+        shardRot: [-0.25, 0, -0.30],
+        shardPosOffset: [-7.0, 5.0, -4.5],
+      },
+    ],
+  },
+];
+
+const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
+  {
+    id: "ac-joint",
+    name: "AC Joint",
+    badge: "Rockwood Types I–VI",
+    cutCenter: [65.0, 45.0, 65.0],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [-0.85, 1.10, 0.10],
+    cameraDistance: 2.30,
+    viewOffsetRatio: 0.10,
+    presets: [
+      {
+        id: "rockwood_type1",
+        name: "Type I",
+        badge: "AC Sprain / Normal (Type I)",
+        clinicalTitle: "Rockwood Type I: AC Ligament Sprain (Intact CC Ligaments)",
+        clinicalPearl: "เอ็น AC บาดเจ็บเล็กน้อย (Sprain) เอ็น CC ปกติ; ภาพเอกซเรย์ท่า Zanca ปกติ (ระยะห่าง CC < 1.3 ซม. แนวข้อต่อเรียบเสมอกัน); รักษาแบบไม่ผ่าตัดด้วย Arm sling 7-10 วันเพื่อพักแขน แล้วเริ่มฝึกขยับข้อไหล่ได้เร็ว ห้ามใส่ Sling นานเกินไปเสี่ยงข้อไหล่ติด",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "rockwood_type2",
+        name: "Type II",
+        badge: "AC Torn / Subluxation <25% (Type II)",
+        clinicalTitle: "Rockwood Type II: AC Torn + CC Sprained (<25% Elevation)",
+        clinicalPearl: "เอ็น AC ฉีกขาดสมบูรณ์ เอ็น CC เคล็ด/ยืดเล็กน้อย; กระดูกไหปลาร้าส่วนปลายยกลอยขึ้นเล็กน้อย < 25% ของความหนากระดูก; แนวระนาบหน้า-หลังยังมั่นคงดี; รักษาแบบไม่ผ่าตัดด้วย Arm sling 1-2 สัปดาห์ และทำกายภาพกล้ามเนื้อสะบักและ Rotator cuff",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [0, 0, -0.05],
+        proximalPosOffset: [0, 3.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "rockwood_type3",
+        name: "Type III",
+        badge: "Complete Dislocation 25-100% (Type III)",
+        clinicalTitle: "Rockwood Type III: AC & CC Torn (25%–100% Elevation)",
+        clinicalPearl: "เอ็น AC และ CC ขาดสมบูรณ์ทั้งคู่; ไหปลาร้ายกลอยขึ้น 25%–100% ระยะห่าง Coracoclavicular กว้างขึ้นชัดเจน คลำพบ Piano Key Sign; รักษาเบื้องต้นแบบไม่ผ่าตัดใส่ Sling 2-3 สัปดาห์ได้ผลดีในผู้ป่วยทั่วไป; พิจารณาผ่าตัดสร้างเอ็น CC ใหม่ (TightRope / Twinloop) เฉพาะนักกีฬาขว้างหรือผู้ใช้แรงงานหนัก",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [0, 0, -0.15],
+        proximalPosOffset: [0, 11.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "rockwood_type4",
+        name: "Type IV",
+        badge: "Posterior into Trapezius (Type IV)",
+        clinicalTitle: "Rockwood Type IV: Posterior Displacement into Trapezius",
+        clinicalPearl: "กระดูกไหปลาร้าส่วนปลายเคลื่อนหลุดไปด้านหลังทะลุเข้ากล้ามเนื้อ Trapezius ติดล็อคแน่นอยู่หลัง Acromion; มองไม่เห็นในฟิล์ม AP ทั่วไป ต้องตรวจด้วยท่า Axillary Lateral หรือ Alexander view; ห้ามรักษาแบบดามแขนเด็ดขาด (กระดูกติดล็อคไม่เข้าที่เอง); ข้อบ่งชี้ผ่าตัดเปิดจัดกระดูกและสร้างเอ็น CC ใหม่ทุกราย",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [-0.18, 0.28, -0.08],
+        proximalPosOffset: [0, 2.0, -22.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "rockwood_type5",
+        name: "Type V",
+        badge: "Severe Superior >100-300% (Type V)",
+        clinicalTitle: "Rockwood Type V: Gross Superior Elevation (>100%–300%)",
+        clinicalPearl: "ไหปลาร้ายกลอยสูงขึ้นอย่างรุนแรง > 100% ถึง 300% (ระยะห่าง CC > 25 มม.) ร่วมกับพังผืด Deltotrapezial ฉีกขาดหลุดลอก; ชิ้นกระดูกทิ่มดันผิวหนังตึงแน่น (Severe skin tenting) เสี่ยงผิวหนังขาดเลือดเน่าทะลุ; ข้อบ่งชี้ผ่าตัดฉุกเฉิน/กึ่งฉุกเฉิน ดึงกระดูกลงสร้างเอ็น CC คู่ และเย็บซ่อมพังผืด Deltotrapezial คลุมแน่นหนา",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [0, 0, -0.30],
+        proximalPosOffset: [0, 26.0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "rockwood_type6",
+        name: "Type VI",
+        badge: "Inferior Subcoracoid (Type VI)",
+        clinicalTitle: "Rockwood Type VI: Inferior Subcoracoid/Subacromial Dislocation",
+        clinicalPearl: "การบาดเจ็บพลังงานสูงที่พบได้ยากยิ่ง ไหปลาร้าส่วนปลายเคลื่อนหลุดลงล่างไปขัดติดแน่นอยู่ใต้กระดูก Coracoid process; มีความเสี่ยงสูงสุดต่อการดึงรั้งและฉีกขาดของเส้นประสาท Brachial Plexus และหลอดเลือดรักแร้ Axillary Artery; ต้องผ่าตัดเปิดฉุกเฉินงัดปลดกระดูกขึ้น ตรวจเช็คเส้นประสาทหลอดเลือด และสร้างเอ็น CC ใหม่",
+        partitionMode: "ac_joint_rockwood",
+        proximalRot: [-0.07, 0.03, 0.21],
+        proximalPosOffset: [13.0, -16.0, 19.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+    ],
+  },
+  {
+    id: "shaft",
+    name: "Clavicle Shaft",
+    badge: "Robinson / Allman / AO 15.2",
+    cutCenter: [10.0, 65.0, 37.0],
+    cutNormal: [1, 0, 0],
+    cameraTarget: [0.15, 1.12, 0.55],
+    cameraDistance: 2.70,
+    viewOffsetRatio: 0.10,
+    presets: [
+      {
+        id: "shaft_robinson_2a_undisplaced",
+        name: "2A: Non-displaced",
+        badge: "Robinson 2A: Undisplaced (<2cm)",
+        clinicalTitle: "Robinson Type 2A: Minimally Displaced Midshaft Fracture",
+        clinicalPearl: "กระดูกไหปลาร้าส่วนกลางหักชนิดไม่เคลื่อนตัว หรือหดสั้น < 2 ซม. (เกย < 100%); ขอบกระดูกยังมี Cortical contact แตะกันดี; ตรวจร่างกายไม่พบผิวดันดันหนัง; รักษาแบบไม่ผ่าตัดด้วย Arm sling 3-4 สัปดาห์ อัตรากระดูกติดสูง >95% เริ่มทำกายภาพ Pendulum exercise ได้ที่ 1-2 สัปดาห์",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [10.0, 65.0, 37.0],
+        proximalRot: [0, 0, -0.02],
+        proximalPosOffset: [0, 1.0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [1.0, -0.8, 0],
+      },
+      {
+        id: "shaft_robinson_2b1_displaced",
+        name: "2B1: Displaced Simple",
+        badge: "Robinson 2B1: Displaced (>2cm Shortening)",
+        clinicalTitle: "Robinson Type 2B1: Displaced 2-Part Oblique/Transverse Midshaft",
+        clinicalPearl: "กระดูกไหปลาร้าส่วนกลางหักเคลื่อนหลุด 100% (Bayonet apposition) และหดสั้น > 2 ซม.; ชิ้นส่วนต้นถูกกล้ามเนื้อ SCM ดึงยกขึ้นบน; ชิ้นส่วนปลายถูกน้ำหนักแขนและ Pectoralis major ดึงลงล่างและหดสั้นเข้าด้านใน; มีอัตรา Nonunion สูง ~15-20% และเสี่ยง Scapular dyskinesis; ข้อบ่งชี้ผ่าตัด ORIF ดามแผ่นเหล็กล็อค 3.5 mm Pre-contoured Superior/Anteroinferior Plate",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [10.0, 65.0, 37.0],
+        proximalRot: [0.06, 0, -0.18],
+        proximalPosOffset: [0, 7.5, -2.0],
+        distalRot: [-0.04, 0.06, 0.05],
+        distalPosOffset: [12.0, -8.5, 4.0],
+      },
+      {
+        id: "shaft_robinson_2b2_butterfly",
+        name: "2B2: Butterfly Wedge",
+        badge: "Robinson 2B2: Comminuted Wedge (~20%)",
+        clinicalTitle: "Robinson Type 2B2: Displaced Comminuted with Butterfly Fragment",
+        clinicalPearl: "กระดูกหักแตกมีชิ้นกระดูกสามเหลี่ยมรูปปีกผีเสื้อ (Inferior Butterfly Wedge) หลุดแยกออกมา; เกิดจากแรงดัดโค้งบิดงอ (Bending force); การรักษาผ่าตัด ORIF นิยมจัดยึดชิ้นปีกผีเสื้อด้วย Interfragmentary Lag Screw ดึงเข้ากับชิ้นหลัก แล้วดามทับด้วย Neutralization Locking Plate หรือใช้วิธี Bridge Plating เพื่อรักษาเส้นเลือดเลี้ยงเยื่อหุ้มกระดูก",
+        partitionMode: "clavicle_shaft_butterfly",
+        cutCenter: [10.0, 65.0, 37.0],
+        proximalRot: [0.06, 0, -0.16],
+        proximalPosOffset: [0, 6.5, -2.0],
+        distalRot: [-0.04, 0.05, 0.05],
+        distalPosOffset: [10.5, -7.5, 3.5],
+        shardRot: [0.18, 0.15, -0.32],
+        shardPosOffset: [-2.5, -6.5, 3.0],
+      },
+      {
+        id: "shaft_vertical_z_fragment",
+        name: "Z-Fragment (Tenting)",
+        badge: "Vertical Z-Fragment: Impending Skin Perforation",
+        clinicalTitle: "Vertical Z-Fragment: Severe Skin Tenting (Emergency Threat)",
+        clinicalPearl: "ชิ้นกระดูกแตกชิ้นกลางหมุนตั้งฉาก 90 องศา (Vertical Z-fragment) ปลายแหลมทิ่มดันผิวหนังตึงเปรี๊ยะจนซีดขาว (Skin tenting/blanching); มีความเสี่ยงสูงสุดที่จะแทงทะลุผิวหนังกลายเป็น Open fracture ภายในไม่กี่ชั่วโมง หรือทิ่มทับหลอดเลือด Subclavian / เส้นประสาท Brachial plexus ด้านล่าง; ถือเป็นภาวะเร่งด่วนทางออร์โธปิดิกส์ ต้องผ่าตัดเปิดจัดกระดูกฉุกเฉิน ห้ามพยายามดัดดึงปิด (Closed reduction)",
+        partitionMode: "clavicle_shaft_butterfly",
+        cutCenter: [10.0, 65.0, 37.0],
+        proximalRot: [0.08, 0, -0.22],
+        proximalPosOffset: [0, 8.0, -2.0],
+        distalRot: [-0.04, 0.06, 0.05],
+        distalPosOffset: [12.0, -8.0, 4.0],
+        shardRot: [0.10, 0.20, 1.45],
+        shardPosOffset: [0, 11.5, -1.0],
+      },
+      {
+        id: "shaft_segmental_double",
+        name: "Segmental (AO 15.2C)",
+        badge: "AO 15.2C: Segmental Diaphyseal Cylinder",
+        clinicalTitle: "AO 15.2C: Segmental Clavicle Fracture (Two Distinct Levels)",
+        clinicalPearl: "กระดูกไหปลาร้าหัก 2 ระดับแยกจากกัน เกิดท่อนกระดูกทรงกระบอกตรงกลางหลุดลอยอิสระ (Free Segmental Cylinder); เกิดจากอุบัติเหตุพลังงานสูงมาก สูญเสียความแข็งแรงของวงไหล่ (Shoulder girdle); มีความเสี่ยงต่อ Nonunion สูงมากหากรักษาแบบอนุรักษ์นิยม; ข้อบ่งชี้ผ่าตัด ORIF ด้วย Long Pre-contoured Anatomical Locking Plate แบบ Bridge Plating spanning ข้ามชิ้นส่วนกลาง",
+        partitionMode: "clavicle_shaft_segmental",
+        cutCenter: [10.0, 65.0, 37.0],
+        proximalRot: [0.05, 0, -0.15],
+        proximalPosOffset: [0, 6.0, -1.5],
+        distalRot: [-0.04, 0.05, 0.04],
+        distalPosOffset: [11.0, -7.0, 3.5],
+        shardRot: [-0.08, 0.15, 0.20],
+        shardPosOffset: [3.0, -4.5, 6.0],
+      },
+      {
+        id: "shaft_allman_group3_medial",
+        name: "Allman III: Medial 1/3",
+        badge: "Allman Group III: Proximal 1/3 (~5%)",
+        clinicalTitle: "Allman Group III: Medial Third Clavicle Fracture (~5%)",
+        clinicalPearl: "รอยหักบริเวณ 1/3 ส่วนต้นด้านในใกล้ข้อต่อ SC มักเกิดจากอุบัติเหตุรุนแรง; ส่วนใหญ่ไม่เคลื่อนตัวรักษาแบบไม่ผ่าตัดใส่ Sling ได้ผลดี; หากเคลื่อนไปด้านหลัง (Posterior) ต้องทำ 3D CT scan ฉุกเฉินเพื่อตรวจหลอดเลือดใหญ่ SVC, Subclavian vessels และท่อลม",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [33.0, 60.0, 62.0],
+        proximalRot: [0, 0, 0.08],
+        proximalPosOffset: [0, -3.0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+    ],
+  },
+  {
+    id: "distal",
+    name: "Distal Clavicle",
+    badge: "Neer Classification (Types I–V)",
+    cutCenter: [-28.0, 72.0, -10.0],
+    cutNormal: [1, 0, 0],
+    cameraTarget: [-0.60, 1.15, 0.15],
+    cameraDistance: 2.45,
+    viewOffsetRatio: 0.10,
+    presets: [
+      {
+        id: "neer_type1_distal",
+        name: "Neer I",
+        badge: "Neer I: Minimally Displaced (Stable)",
+        clinicalTitle: "Neer Type I: Distal Clavicle Fracture (CC Ligaments Intact)",
+        clinicalPearl: "รอยหักอยู่ระหว่างหรือถัดจากเอ็น CC โดยเส้นเอ็น CC ทั้งสองเส้นยังคงยึดติดอยู่กับชิ้นกระดูกส่วนต้น; กระดูกไม่เคลื่อนตัว มีความมั่นคงสูง; รักษาแบบไม่ผ่าตัดใส่ Arm sling 3-4 สัปดาห์ กระดูกติดได้ดีเยี่ยม (>95%)",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [-45.0, 74.0, -10.0],
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "neer_type2a_distal",
+        name: "Neer IIA",
+        badge: "Neer IIA: Medial to CC (Unstable)",
+        clinicalTitle: "Neer Type IIA: Fracture Medial to Conoid & Trapezoid",
+        clinicalPearl: "รอยหักอยู่ด้านในต่อเอ็น CC ทั้งหมด ทำให้เอ็น Conoid และ Trapezoid หลุดติดอยู่กับชิ้นส่วนปลาย; ชิ้นส่วนต้นถูกกล้ามเนื้อ Trapezius ดึงยกขึ้นบน; เสี่ยงกระดูกไม่ติดสูง ~30-40%; ข้อบ่งชี้ผ่าตัด ORIF ด้วย Distal Clavicle Locking Plate ร่วมกับการเสริมเอ็น CC",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [-28.0, 72.0, -10.0],
+        proximalRot: [0.02, 0, -0.075],
+        proximalPosOffset: [0, 2.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "neer_type2b_distal",
+        name: "Neer IIB",
+        badge: "Neer IIB: Between CC (Conoid Torn)",
+        clinicalTitle: "Neer Type IIB: Fracture Between Conoid & Trapezoid (Conoid Torn)",
+        clinicalPearl: "รอยหักอยู่ระหว่างเอ็น CC โดยเอ็น Conoid ฉีกขาด ส่วน Trapezoid ยังติดอยู่กับชิ้นส่วนปลาย; ชิ้นส่วนต้นยกลอยขึ้น; ชนิดไม่มั่นคง มีอัตรา Nonunion สูงมาก; ข้อบ่งชี้ผ่าตัด ORIF ดามแผ่นเหล็กล็อคส่วนปลายร่วมกับสร้างเสริมเอ็น Conoid/CC",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [-40.0, 74.0, -10.0],
+        proximalRot: [0.02, 0, -0.085],
+        proximalPosOffset: [0, 3.0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "neer_type3_distal",
+        name: "Neer III",
+        badge: "Neer III: Intra-articular AC Joint",
+        clinicalTitle: "Neer Type III: Intra-articular AC Joint Fracture",
+        clinicalPearl: "รอยหักขยายลามเข้าผิวข้อต่อ AC Joint โดยเอ็น CC ยังคงสมบูรณ์ดี; ไม่มีการยกลอยในแนวดิ่ง มั่นคงสูง; รักษาแบบไม่ผ่าตัดใส่ Sling ได้ผลดี หากเกิดข้อเสื่อมในอนาคต พิจารณาทำ Distal Clavicle Resection (Mumford procedure)",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [-52.0, 76.0, -5.0],
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [-0.8, 0, 0.3],
+      },
+      {
+        id: "neer_type4_distal",
+        name: "Neer IV",
+        badge: "Neer IV: Pediatric Sleeve",
+        clinicalTitle: "Neer Type IV: Pediatric Periosteal Sleeve Disruption",
+        clinicalPearl: "พบในเด็กและวัยรุ่น (<18 ปี) ชิ้นกระดูกส่วนต้นดันทะลุเยื่อหุ้มกระดูก (Periosteal sleeve) ยกลอยขึ้น แต่เอ็น CC และส่วนปลายยังยึดติดกับเยื่อหุ้มกระดูกด้านล่าง; มีศักยภาพในการปรับรูปทรง (Remodeling) สูงมาก; รักษาแบบไม่ผ่าตัดใส่ Sling 3–4 สัปดาห์",
+        partitionMode: "clavicle_shaft_bipartite",
+        cutCenter: [-30.0, 72.0, -10.0],
+        proximalRot: [0.015, 0, -0.05],
+        proximalPosOffset: [0, 1.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "neer_type5_distal",
+        name: "Neer V",
+        badge: "Neer V: Comminuted / CC Avulsion",
+        clinicalTitle: "Neer Type V: Comminuted Distal Clavicle with CC Avulsion Shard",
+        clinicalPearl: "กระดูกส่วนปลายแตกละเอียด มีชิ้นกระดูกด้านล่าง (Inferior shard) ที่ยึดกับเอ็น CC หลุดลอยแยกออกมา; ชิ้นส่วนต้นยกลอยขึ้น; ไม่มั่นคงอย่างยิ่ง อัตรากระดูกไม่ติดสูงมาก; ข้อบ่งชี้ผ่าตัด ORIF จัดกระดูกและดามแผ่นเหล็กพร้อมยึดเสริมเอ็น CC",
+        partitionMode: "clavicle_distal_neer_v",
+        cutCenter: [-28.0, 72.0, -10.0],
+        proximalRot: [0.02, 0, -0.075],
+        proximalPosOffset: [0, 2.5, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardPosOffset: [0, -3.5, 1.0],
+        shardRot: [0.06, 0, -0.08],
+      },
+    ],
+  },
+];
+
+interface LigamentBundle {
+  group: THREE.Group;
+  cylGeom: THREE.CylinderGeometry;
+  coneGeom: THREE.ConeGeometry;
+  ligamentMat: THREE.MeshStandardMaterial;
+  rupturedTipMat: THREE.MeshStandardMaterial;
+  conoidIntact: THREE.Mesh;
+  conoidStumpA: THREE.Mesh;
+  conoidTipA: THREE.Mesh;
+  conoidStumpB: THREE.Mesh;
+  conoidTipB: THREE.Mesh;
+  trapIntact: THREE.Mesh;
+  trapStumpA: THREE.Mesh;
+  trapTipA: THREE.Mesh;
+  trapStumpB: THREE.Mesh;
+  trapTipB: THREE.Mesh;
+  acIntact: THREE.Mesh;
+  acStumpA: THREE.Mesh;
+  acTipA: THREE.Mesh;
+  acStumpB: THREE.Mesh;
+  acTipB: THREE.Mesh;
+  caIntact: THREE.Mesh;
+}
+
+// Zero-GC scratch vectors for anatomical ligament kinematics
+const _scratchDir = new THREE.Vector3();
+const _scratchUp = new THREE.Vector3(0, 1, 0);
+const _scratchMid = new THREE.Vector3();
+const _scratchStart = new THREE.Vector3();
+const _scratchEnd = new THREE.Vector3();
+
+// Exact clinical coordinates on Scapula (distalGroup stationary origin)
+const _conoidScapula = new THREE.Vector3(-38.32, 54.44, 15.46);
+const _trapScapula = new THREE.Vector3(-47.06, 59.64, 27.65);
+const _acScapula = new THREE.Vector3(-56.05, 75.92, -5.08);
+const _caCoracoid = new THREE.Vector3(-44.69, 53.22, 31.92);
+const _caAcromion = new THREE.Vector3(-65.93, 76.69, 7.51);
+
+// Exact clinical coordinates on Clavicle (untransformed base positions)
+const _conoidClavicleRaw = new THREE.Vector3(-35.38, 76.52, -16.13);
+const _trapClavicleRaw = new THREE.Vector3(-45.41, 75.94, -15.63);
+const _acClavicleRaw = new THREE.Vector3(-54.91, 76.63, -5.44);
+
+// Dynamic transformed Clavicle endpoints
+const _conoidClavicle = new THREE.Vector3();
+const _trapClavicle = new THREE.Vector3();
+const _acClavicle = new THREE.Vector3();
+const _cutCenterVec = new THREE.Vector3();
+
+// Transformed endpoints for shaft & mobile distal fragments
+const _curConoidScapula = new THREE.Vector3();
+const _curTrapScapula = new THREE.Vector3();
+const _curAcScapula = new THREE.Vector3();
+const _curCaCoracoid = new THREE.Vector3();
+const _curCaAcromion = new THREE.Vector3();
+const _curConoidClavicle = new THREE.Vector3();
+const _curTrapClavicle = new THREE.Vector3();
+const _curAcClavicle = new THREE.Vector3();
+const _scratchQuat = new THREE.Quaternion();
+const _scratchZero = new THREE.Vector3(0, 0, 0);
+const _neerVShardCentroid = new THREE.Vector3(-42.1, 73.8, -13.5);
+const _scPivotCenter = new THREE.Vector3(70.0, 50.0, 60.0);
+
+function updateLigamentSegment(
+  mesh: THREE.Mesh,
+  start: THREE.Vector3,
+  end: THREE.Vector3,
+  rx: number,
+  rz: number
+) {
+  _scratchDir.subVectors(end, start);
+  const len = _scratchDir.length();
+  if (len < 0.001) {
+    mesh.visible = false;
+    return;
+  }
+  mesh.visible = true;
+  _scratchMid.copy(start).addScaledVector(_scratchDir, 0.5);
+  mesh.position.copy(_scratchMid);
+  _scratchDir.normalize();
+  mesh.quaternion.setFromUnitVectors(_scratchUp, _scratchDir);
+  mesh.scale.set(rx, len, rz);
+}
+
+function updateTornLigament(
+  stumpA: THREE.Mesh,
+  tipA: THREE.Mesh,
+  stumpB: THREE.Mesh,
+  tipB: THREE.Mesh,
+  origin: THREE.Vector3,
+  target: THREE.Vector3,
+  rx: number,
+  rz: number,
+  nominalStumpLen: number,
+  tipLen: number
+) {
+  _scratchDir.subVectors(target, origin);
+  const totalLen = _scratchDir.length();
+  if (totalLen < 0.001) {
+    stumpA.visible = false;
+    tipA.visible = false;
+    stumpB.visible = false;
+    tipB.visible = false;
+    return;
+  }
+  _scratchDir.normalize();
+
+  // Stump length is proportionally constrained to prevent collision and guarantee gap
+  const maxStump = totalLen * 0.36;
+  const stumpLen = Math.max(tipLen * 1.1, Math.min(nominalStumpLen, maxStump));
+  const shaftLen = Math.max(0.1, stumpLen - tipLen);
+
+  // --- Stump A (Origin / Scapula side) ---
+  _scratchStart.copy(origin);
+  _scratchEnd.copy(origin).addScaledVector(_scratchDir, shaftLen);
+  updateLigamentSegment(stumpA, _scratchStart, _scratchEnd, rx, rz);
+
+  // Tip A (frayed red cone pointing toward gap)
+  _scratchStart.copy(_scratchEnd);
+  _scratchEnd.copy(origin).addScaledVector(_scratchDir, stumpLen);
+  updateLigamentSegment(tipA, _scratchStart, _scratchEnd, rx * 0.95, rz * 0.95);
+
+  // --- Stump B (Target / Clavicle side) ---
+  _scratchStart.copy(target);
+  _scratchEnd.copy(target).addScaledVector(_scratchDir, -shaftLen);
+  updateLigamentSegment(stumpB, _scratchStart, _scratchEnd, rx, rz);
+
+  // Tip B (frayed red cone pointing toward gap)
+  _scratchStart.copy(_scratchEnd);
+  _scratchEnd.copy(target).addScaledVector(_scratchDir, -stumpLen);
+  updateLigamentSegment(tipB, _scratchStart, _scratchEnd, rx * 0.95, rz * 0.95);
+}
+
 interface Bone3DViewerModalProps {
   modelUrl: string;
   boneName: string;
@@ -441,23 +1126,55 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  // Subregion selection state (defaults to initialRegionId or femoral-neck)
+  const isHumerus = modelUrl.toLowerCase().includes("humerus") || boneName.toLowerCase().includes("humerus");
+  const isClavicle = modelUrl.toLowerCase().includes("clavicle") || boneName.toLowerCase().includes("clavicle");
+  const availableSubregions = isClavicle ? CLAVICLE_SUBREGIONS : (isHumerus ? HUMERUS_SUBREGIONS : FEMUR_SUBREGIONS);
+
+  // Anatomical Ligaments visibility toggle state
+  const [showLigaments, setShowLigaments] = useState(true);
+  const showLigamentsRef = useRef(showLigaments);
+  showLigamentsRef.current = showLigaments;
+
+  // Collapsible clinical explanation pearl card state (starts compact / collapsed)
+  const [isPearlExpanded, setIsPearlExpanded] = useState(false);
+
+  // Subregion selection state (defaults to initialRegionId or first subregion)
   const [selectedSubregionId, setSelectedSubregionId] = useState<string>(() => {
     if (initialRegionId) {
-      const match = FEMUR_SUBREGIONS.find((s) => s.id === initialRegionId || (s.id === "distal" && initialRegionId === "distal-femur"));
+      const match = availableSubregions.find(
+        (s) =>
+          s.id === initialRegionId ||
+          (s.id === "ac-joint" && (initialRegionId === "ac-joint" || initialRegionId === "ac_joint")) ||
+          (s.id === "distal" && (initialRegionId === "distal" || initialRegionId === "distal-femur" || initialRegionId === "distal-humerus" || initialRegionId === "distal-clavicle")) ||
+          (s.id === "proximal" && (initialRegionId === "proximal" || initialRegionId === "proximal-humerus")) ||
+          (s.id === "shaft" && (initialRegionId === "shaft" || initialRegionId === "humeral-shaft" || initialRegionId === "femoral-shaft" || initialRegionId === "clavicle-shaft"))
+      );
       if (match) return match.id;
     }
-    return "femoral-neck";
+    return availableSubregions[0].id;
   });
 
-  const activeSubregion = FEMUR_SUBREGIONS.find((s) => s.id === selectedSubregionId) ?? FEMUR_SUBREGIONS[0];
+  const activeSubregion = availableSubregions.find((s) => s.id === selectedSubregionId) ?? availableSubregions[0];
 
   // Classification Type selection state within active subregion ("intact" or preset.id)
   const [selectedPresetId, setSelectedPresetId] = useState<string>(() => {
     return activeSubregion.presets[0]?.id ?? "intact";
   });
 
+  const selectedPresetIdRef = useRef(selectedPresetId);
+  selectedPresetIdRef.current = selectedPresetId;
+
   const activePreset = activeSubregion.presets.find((p) => p.id === selectedPresetId);
+
+  // Dynamic Clinical Ligament Disruption Status (Rockwood Classification)
+  const isPresetIntact = selectedPresetId === "intact";
+  const isPresetType1 = selectedPresetId === "rockwood_type1";
+  const isPresetType2 = selectedPresetId === "rockwood_type2";
+  const isACTorn = !isPresetIntact && !isPresetType1;
+  const isCCTorn = !isPresetIntact && !isPresetType1 && !isPresetType2;
+
+  // Reference for 3D ligament group and pre-allocated meshes
+  const ligamentBundleRef = useRef<LigamentBundle | null>(null);
 
   // Smooth Entry & Exit transition states
   const [isEntering, setIsEntering] = useState(true);
@@ -482,6 +1199,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   // Stored original vertex data for instant partition recalculation on subregion change
   const rawVerticesRef = useRef<THREE.Vector3[]>([]);
   const rawNormalsRef = useRef<THREE.Vector3[]>([]);
+  const clavicleVertexCountRef = useRef<number>(0);
 
   // Centroid base positions for multi-fragment comminution
   const gtBasePosRef = useRef(new THREE.Vector3(0, 0, 0));
@@ -588,7 +1306,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     const currentDist = offset.length();
     const dir = currentDist > 0.001 ? offset.normalize() : new THREE.Vector3(0, 0, 1);
 
-    const targetDist = 5.3;
+    const targetDist = isClavicle ? 4.2 : (isHumerus ? 4.6 : 5.3);
     const targetCamPos = targetVec.clone().addScaledVector(dir, targetDist);
 
     const h = container.clientHeight || window.innerHeight;
@@ -606,7 +1324,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       startTime: performance.now(),
       duration: duration,
     };
-  }, []);
+  }, [isHumerus, isClavicle]);
 
   // Handle clicking a subregion button: switch subregion and center/magnify it
   const handleSelectSubregion = useCallback((subregion: SubregionConfig) => {
@@ -693,11 +1411,19 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
 
     const centerArr = preset?.cutCenter ?? subregion.cutCenter;
     const normalArr = preset?.cutNormal ?? subregion.cutNormal;
-    const isDistalSubregion = subregion.id === "distal" || subregion.id === "distal-femur";
+    const isDistalFemurOrHumerus = !isClavicle && (
+      subregion.id === "distal" || subregion.id === "distal-femur" || subregion.id === "distal-humerus"
+    );
     const effectiveMode = preset?.partitionMode ?? (
-      subregion.id === "intertrochanteric" && preset?.id !== "evans_reversed_oblique"
+      isClavicle
+        ? (subregion.id === "shaft" || subregion.id === "distal" ? "clavicle_shaft_bipartite" : "ac_joint_rockwood")
+        : isHumerus && isDistalFemurOrHumerus
+        ? "humerus_distal_supracondylar"
+        : isHumerus && subregion.id === "proximal"
+        ? "neer_4part"
+        : subregion.id === "intertrochanteric" && preset?.id !== "evans_reversed_oblique"
         ? "intertroch_comminuted"
-        : isDistalSubregion
+        : isDistalFemurOrHumerus
         ? "distal_supracondylar"
         : "bipartite"
     );
@@ -756,7 +1482,66 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       const centroid = new THREE.Vector3().add(vA).add(vB).add(vC).divideScalar(3);
       const isAbove = plane.distanceToPoint(centroid) > 0;
 
-      if (effectiveMode === "intertroch_comminuted") {
+      if (isHumerus) {
+        const isProx = centroid.y >= 95;
+        const isLT = isProx && centroid.z > 6 && centroid.x < 34 && centroid.y <= 134;
+        const isGT = isProx && !isLT && (centroid.x <= 24 || (centroid.y > 135 && centroid.x <= 26));
+
+        if (effectiveMode === "neer_2part_gt") {
+          if (isGT) pushTri(gtPos, gtNorm, i);
+          else if (isProx) pushTri(hnPos, hnNorm, i);
+          else pushTri(distPos, distNorm, i);
+        } else if (effectiveMode === "neer_2part_sn") {
+          if (isProx) pushTri(hnPos, hnNorm, i);
+          else pushTri(distPos, distNorm, i);
+        } else if (effectiveMode === "neer_3part_gt") {
+          if (!isProx) pushTri(distPos, distNorm, i);
+          else if (isGT) pushTri(gtPos, gtNorm, i);
+          else pushTri(hnPos, hnNorm, i);
+        } else if (effectiveMode === "neer_3part_lt") {
+          if (!isProx) pushTri(distPos, distNorm, i);
+          else if (isLT) pushTri(ltPos, ltNorm, i);
+          else pushTri(hnPos, hnNorm, i);
+        } else if (effectiveMode === "neer_4part") {
+          if (!isProx) pushTri(distPos, distNorm, i);
+          else if (isLT) pushTri(ltPos, ltNorm, i);
+          else if (isGT) pushTri(gtPos, gtNorm, i);
+          else pushTri(hnPos, hnNorm, i);
+        } else if (effectiveMode === "humerus_distal_supracondylar") {
+          if (centroid.y > -120) {
+            pushTri(hnPos, hnNorm, i);
+          } else {
+            pushTri(distPos, distNorm, i);
+          }
+        } else if (effectiveMode === "humerus_distal_unicondylar_lat") {
+          if (centroid.y <= -120 && centroid.x <= -18) {
+            pushTri(shardPos, shardNorm, i);
+          } else {
+            pushTri(distPos, distNorm, i);
+          }
+        } else if (effectiveMode === "humerus_distal_coronal_shear") {
+          if (centroid.y <= -120 && centroid.x <= -18 && centroid.z > -6) {
+            pushTri(shardPos, shardNorm, i);
+          } else {
+            pushTri(distPos, distNorm, i);
+          }
+        } else if (effectiveMode === "humerus_distal_bicondylar") {
+          if (centroid.y > -120) {
+            pushTri(hnPos, hnNorm, i);
+          } else if (centroid.x > -18) {
+            pushTri(distPos, distNorm, i);
+          } else {
+            pushTri(shardPos, shardNorm, i);
+          }
+        } else {
+          // humerus_shaft_bipartite or default bipartite cut
+          if (isAbove) {
+            pushTri(hnPos, hnNorm, i);
+          } else {
+            pushTri(distPos, distNorm, i);
+          }
+        }
+      } else if (effectiveMode === "intertroch_comminuted") {
         // Evans 5-fragment intertrochanteric comminution
         if (isAbove) {
           if (centroid.x <= -32) {
@@ -878,6 +1663,61 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         } else {
           pushTri(shardPos, shardNorm, i);
         }
+      } else if (effectiveMode === "ac_joint_rockwood") {
+        // Rockwood AC Joint injury: Clavicle (hnPos) vs Scapula (distPos)
+        const clCount = clavicleVertexCountRef.current || 3438;
+        if (i < clCount) {
+          pushTri(hnPos, hnNorm, i);
+        } else {
+          pushTri(distPos, distNorm, i);
+        }
+      } else if (effectiveMode === "clavicle_shaft_butterfly") {
+        // Clavicle Midshaft with Inferior Butterfly Wedge (Robinson 2B2) or Vertical Z-fragment
+        const clCount = clavicleVertexCountRef.current || 3438;
+        if (i >= clCount) {
+          pushTri(distPos, distNorm, i);
+        } else if (centroid.x >= 3.0 && centroid.x <= 17.0 && centroid.y <= 66.0) {
+          pushTri(shardPos, shardNorm, i);
+        } else if (centroid.x > 10.0) {
+          pushTri(hnPos, hnNorm, i);
+        } else {
+          pushTri(distPos, distNorm, i);
+        }
+      } else if (effectiveMode === "clavicle_shaft_segmental") {
+        // Clavicle Midshaft Segmental Diaphyseal Double Fracture (AO 15.2C)
+        const clCount = clavicleVertexCountRef.current || 3438;
+        if (i >= clCount) {
+          pushTri(distPos, distNorm, i);
+        } else if (centroid.x >= -2.0 && centroid.x <= 22.0) {
+          pushTri(shardPos, shardNorm, i);
+        } else if (centroid.x > 22.0) {
+          pushTri(hnPos, hnNorm, i);
+        } else {
+          pushTri(distPos, distNorm, i);
+        }
+      } else if (effectiveMode === "clavicle_shaft_bipartite") {
+        // Clavicle Shaft 2-Part Fracture (Midshaft Robinson 2A/2B1 or Medial Third Allman III)
+        const clCount = clavicleVertexCountRef.current || 3438;
+        const cutX = centerArr[0];
+        if (i >= clCount) {
+          pushTri(distPos, distNorm, i);
+        } else if (centroid.x > cutX) {
+          pushTri(hnPos, hnNorm, i);
+        } else {
+          pushTri(distPos, distNorm, i);
+        }
+      } else if (effectiveMode === "clavicle_distal_neer_v") {
+        // Neer Type V: Comminuted 3-fragment with inferior CC avulsion shard
+        const clCount = clavicleVertexCountRef.current || 3438;
+        if (i >= clCount) {
+          pushTri(distPos, distNorm, i);
+        } else if (centroid.x >= -48.0 && centroid.x <= -33.0 && centroid.y <= 75.0) {
+          pushTri(shardPos, shardNorm, i);
+        } else if (centroid.x > -28.0) {
+          pushTri(hnPos, hnNorm, i);
+        } else {
+          pushTri(distPos, distNorm, i);
+        }
       } else {
         // Bipartite mode (Femoral neck, Evans V, Type IA, AFF, Shaft Type 0)
         if (isAbove) {
@@ -889,30 +1729,59 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     }
 
     // 1. Proximal Fragment (Head & Neck or unified proximal block)
-    proximalPivotGroup.position.copy(cutCenter);
-    updateGroupMesh(proximalPivotGroup, proximalMeshRef, hnPos, hnNorm, boneMat, cutCenter.clone().negate());
+    const isClavicleSCFulcrum = isClavicle && (
+      effectiveMode.startsWith("clavicle_shaft") ||
+      effectiveMode.startsWith("clavicle_distal") ||
+      subregion.id === "shaft" ||
+      subregion.id === "distal"
+    );
+    const proxPivotCenter = isClavicleSCFulcrum
+      ? new THREE.Vector3(70.0, 50.0, 60.0)
+      : cutCenter;
+    proximalPivotGroup.position.copy(proxPivotCenter);
+    updateGroupMesh(proximalPivotGroup, proximalMeshRef, hnPos, hnNorm, boneMat, proxPivotCenter.clone().negate());
 
     // 2. Greater Trochanter / Fossa Fragment
-    const gtCentroid = new THREE.Vector3(-43.3, 194.6, -7.4);
+    const gtCentroid = isHumerus
+      ? new THREE.Vector3(11.16, 136.28, -1.11)
+      : new THREE.Vector3(-43.3, 194.6, -7.4);
     gtBasePosRef.current.copy(gtCentroid.clone().sub(cutCenter));
     gtPivotGroup.position.copy(gtBasePosRef.current);
     updateGroupMesh(gtPivotGroup, gtMeshRef, gtPos, gtNorm, boneMat, gtCentroid.clone().negate());
 
     // 3. Main Shaft / Condyle Block
-    const distBase = isDistalSubregion ? new THREE.Vector3(10, -170, 0) : new THREE.Vector3(0, 0, 0);
+    const distBase = isDistalFemurOrHumerus
+      ? (isHumerus ? new THREE.Vector3(-23.3, -120.0, -11.8) : new THREE.Vector3(10, -170, 0))
+      : new THREE.Vector3(0, 0, 0);
     distalGroup.position.copy(distBase);
     updateGroupMesh(distalGroup, distalMeshRef, distPos, distNorm, boneMat, distBase.clone().negate());
 
-    // 4. Lesser Trochanter Fragment
-    const ltCentroid = new THREE.Vector3(-7.4, 138.9, -16.1);
-    ltBasePosRef.current.copy(ltCentroid);
+    // 4. Lesser Trochanter / Tuberosity Fragment
+    const ltCentroid = isHumerus
+      ? new THREE.Vector3(20.09, 124.84, 17.14)
+      : new THREE.Vector3(-7.4, 138.9, -16.1);
+    if (isHumerus) {
+      ltBasePosRef.current.copy(ltCentroid.clone().sub(cutCenter));
+    } else {
+      ltBasePosRef.current.copy(ltCentroid);
+    }
     ltPivotGroup.position.copy(ltBasePosRef.current);
     updateGroupMesh(ltPivotGroup, ltMeshRef, ltPos, ltNorm, boneMat, ltCentroid.clone().negate());
 
     // 5. Lateral Wall Butterfly Shard / Segmental Cylinder / Lateral Condyle / Hoffa Shard
     let shardCentroid: THREE.Vector3;
-    if (effectiveMode === "distal_hoffa") {
+    if (effectiveMode === "clavicle_distal_neer_v") {
+      shardCentroid = new THREE.Vector3(-42.1, 73.8, -13.5);
+    } else if (effectiveMode === "clavicle_shaft_segmental") {
+      shardCentroid = new THREE.Vector3(8.07, 65.78, 36.58);
+    } else if (effectiveMode === "clavicle_shaft_butterfly") {
+      shardCentroid = new THREE.Vector3(9.42, 62.19, 42.41);
+    } else if (effectiveMode === "distal_hoffa") {
       shardCentroid = new THREE.Vector3(-7.3, -208.3, -14.9);
+    } else if (effectiveMode === "humerus_distal_coronal_shear") {
+      shardCentroid = new THREE.Vector3(-33.74, -134.73, -1.82);
+    } else if (effectiveMode === "humerus_distal_unicondylar_lat" || effectiveMode === "humerus_distal_bicondylar") {
+      shardCentroid = new THREE.Vector3(-34.15, -133.71, -8.18);
     } else if (effectiveMode === "distal_unicondylar_lat" || effectiveMode === "distal_bicondylar") {
       shardCentroid = new THREE.Vector3(-7.0, -209.1, -5.1);
     } else if (effectiveMode === "shaft_segmental") {
@@ -927,12 +1796,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     shardBasePosRef.current.copy(shardCentroid.clone().sub(distBase));
     shardPivotGroup.position.copy(shardBasePosRef.current);
     updateGroupMesh(shardPivotGroup, shardMeshRef, shardPos, shardNorm, boneMat, shardCentroid.clone().negate());
-  }, [updateGroupMesh]);
+  }, [updateGroupMesh, isHumerus, isClavicle]);
 
   // When subregion changes, re-partition bone, reset preset, and glide camera to focused subregion (+40% zoom)
   useEffect(() => {
     const firstPreset = activeSubregion.presets[0];
     setSelectedPresetId(firstPreset?.id ?? "intact");
+    setIsPearlExpanded(false);
     partitionBoneMesh(activeSubregion, firstPreset);
     triggerCameraFocus(activeSubregion);
   }, [selectedSubregionId, activeSubregion, partitionBoneMesh, triggerCameraFocus]);
@@ -1067,12 +1937,71 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     gtPivotGroupRef.current = gtPivotGroup;
 
     const ltPivotGroup = new THREE.Group();
-    distalGroup.add(ltPivotGroup);
+    if (isHumerus) {
+      proximalPivotGroup.add(ltPivotGroup);
+    } else {
+      distalGroup.add(ltPivotGroup);
+    }
     ltPivotGroupRef.current = ltPivotGroup;
 
     const shardPivotGroup = new THREE.Group();
     distalGroup.add(shardPivotGroup);
     shardPivotGroupRef.current = shardPivotGroup;
+
+    // Anatomical Ligament Bundle Setup (Acromioclavicular & Coracoclavicular System)
+    const cylGeom = new THREE.CylinderGeometry(1, 1, 1, 16);
+    const coneGeom = new THREE.ConeGeometry(1, 1, 16);
+
+    const ligamentMat = new THREE.MeshStandardMaterial({
+      color: 0xF1F5F9,
+      roughness: 0.38,
+      metalness: 0.06,
+      side: THREE.DoubleSide,
+    });
+
+    const rupturedTipMat = new THREE.MeshStandardMaterial({
+      color: 0xDC2626,
+      roughness: 0.45,
+      metalness: 0.08,
+      emissive: 0x991B1B,
+      emissiveIntensity: 0.35,
+      side: THREE.DoubleSide,
+    });
+
+    const ligamentGroup = new THREE.Group();
+    ligamentGroup.name = "ligamentGroup";
+    modelWrapper.add(ligamentGroup);
+
+    const createLigMesh = (geom: THREE.BufferGeometry, mat: THREE.Material) => {
+      const m = new THREE.Mesh(geom, mat);
+      m.visible = false;
+      ligamentGroup.add(m);
+      return m;
+    };
+
+    ligamentBundleRef.current = {
+      group: ligamentGroup,
+      cylGeom,
+      coneGeom,
+      ligamentMat,
+      rupturedTipMat,
+      conoidIntact: createLigMesh(cylGeom, ligamentMat),
+      conoidStumpA: createLigMesh(cylGeom, ligamentMat),
+      conoidTipA: createLigMesh(coneGeom, rupturedTipMat),
+      conoidStumpB: createLigMesh(cylGeom, ligamentMat),
+      conoidTipB: createLigMesh(coneGeom, rupturedTipMat),
+      trapIntact: createLigMesh(cylGeom, ligamentMat),
+      trapStumpA: createLigMesh(cylGeom, ligamentMat),
+      trapTipA: createLigMesh(coneGeom, rupturedTipMat),
+      trapStumpB: createLigMesh(cylGeom, ligamentMat),
+      trapTipB: createLigMesh(coneGeom, rupturedTipMat),
+      acIntact: createLigMesh(cylGeom, ligamentMat),
+      acStumpA: createLigMesh(cylGeom, ligamentMat),
+      acTipA: createLigMesh(coneGeom, rupturedTipMat),
+      acStumpB: createLigMesh(cylGeom, ligamentMat),
+      acTipB: createLigMesh(coneGeom, rupturedTipMat),
+      caIntact: createLigMesh(cylGeom, ligamentMat),
+    };
 
     // Entrance animation variables
     let finalTargetScale = 1.0;
@@ -1105,31 +2034,38 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         }
 
         // Step C: Extract transformed raw vertices for on-demand partition
-        let originalMesh: THREE.Mesh | null = null;
+        const rawVerts: THREE.Vector3[] = [];
+        const rawNorms: THREE.Vector3[] = [];
+        let clavicleVertCount = 0;
+
         object.traverse((child) => {
-          if ((child as THREE.Mesh).isMesh && !originalMesh) {
-            originalMesh = child as THREE.Mesh;
+          if ((child as THREE.Mesh).isMesh) {
+            const m = child as THREE.Mesh;
+            const geom = m.geometry;
+            const posAttr = geom.attributes.position;
+            const normAttr = geom.attributes.normal;
+            const normalMatrix = new THREE.Matrix3().getNormalMatrix(m.matrixWorld);
+
+            const isClavicleChild = m.name.toLowerCase().includes("clavicle");
+
+            for (let i = 0; i < posAttr.count; i++) {
+              const v = new THREE.Vector3().fromBufferAttribute(posAttr, i).applyMatrix4(m.matrixWorld);
+              rawVerts.push(v);
+              if (normAttr) {
+                const n = new THREE.Vector3().fromBufferAttribute(normAttr, i).applyMatrix3(normalMatrix).normalize();
+                rawNorms.push(n);
+              }
+            }
+
+            if (isClavicleChild) {
+              clavicleVertCount = posAttr.count;
+            }
           }
         });
 
-        if (!originalMesh) return;
+        if (rawVerts.length === 0) return;
 
-        const geom = (originalMesh as THREE.Mesh).geometry;
-        const posAttr = geom.attributes.position;
-        const normAttr = geom.attributes.normal;
-
-        const rawVerts: THREE.Vector3[] = [];
-        const rawNorms: THREE.Vector3[] = [];
-
-        for (let i = 0; i < posAttr.count; i++) {
-          const v = new THREE.Vector3().fromBufferAttribute(posAttr, i).applyMatrix4((originalMesh as THREE.Mesh).matrixWorld);
-          rawVerts.push(v);
-          if (normAttr) {
-            const n = new THREE.Vector3().fromBufferAttribute(normAttr, i);
-            rawNorms.push(n);
-          }
-        }
-
+        clavicleVertexCountRef.current = clavicleVertCount;
         rawVerticesRef.current = rawVerts;
         rawNormalsRef.current = rawNorms;
 
@@ -1224,10 +2160,18 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         proxPivot.rotation.z = THREE.MathUtils.lerp(proxPivot.rotation.z, currentProximalRot.current.z, 0.12);
 
         // Smooth translation (cutCenter + offset)
-        const cutCenter = activePresetRef.current?.cutCenter ?? activeSubregionRef.current.cutCenter;
-        const targetX = cutCenter[0] + currentProximalPos.current.x;
-        const targetY = cutCenter[1] + currentProximalPos.current.y;
-        const targetZ = cutCenter[2] + currentProximalPos.current.z;
+        const isClavicleSCFulcrum = isClavicle && (
+          activePresetRef.current?.partitionMode?.startsWith("clavicle_shaft") ||
+          activePresetRef.current?.partitionMode?.startsWith("clavicle_distal") ||
+          activeSubregionRef.current.id === "shaft" ||
+          activeSubregionRef.current.id === "distal"
+        );
+        const basePivot = isClavicleSCFulcrum
+          ? [70.0, 50.0, 60.0]
+          : (activePresetRef.current?.cutCenter ?? activeSubregionRef.current.cutCenter);
+        const targetX = basePivot[0] + currentProximalPos.current.x;
+        const targetY = basePivot[1] + currentProximalPos.current.y;
+        const targetZ = basePivot[2] + currentProximalPos.current.z;
 
         proxPivot.position.x = THREE.MathUtils.lerp(proxPivot.position.x, targetX, 0.12);
         proxPivot.position.y = THREE.MathUtils.lerp(proxPivot.position.y, targetY, 0.12);
@@ -1235,8 +2179,14 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       }
 
       if (distGroup) {
-        const isDistal = activeSubregionRef.current.id === "distal" || activeSubregionRef.current.id === "distal-femur";
-        const distBase = isDistal ? new THREE.Vector3(10, -170, 0) : new THREE.Vector3(0, 0, 0);
+        const isDistalFemurOrHumerus = !isClavicle && (
+          activeSubregionRef.current.id === "distal" ||
+          activeSubregionRef.current.id === "distal-femur" ||
+          activeSubregionRef.current.id === "distal-humerus"
+        );
+        const distBase = isDistalFemurOrHumerus
+          ? (isHumerus ? new THREE.Vector3(-23.3, -120.0, -11.8) : new THREE.Vector3(10, -170, 0))
+          : new THREE.Vector3(0, 0, 0);
 
         distGroup.rotation.x = THREE.MathUtils.lerp(distGroup.rotation.x, currentDistalRot.current.x, 0.12);
         distGroup.rotation.y = THREE.MathUtils.lerp(distGroup.rotation.y, currentDistalRot.current.y, 0.12);
@@ -1295,6 +2245,200 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         shardPivot.position.z = THREE.MathUtils.lerp(shardPivot.position.z, targetZ, 0.12);
       }
 
+      // Smooth dynamic ligament transformation (Clavicle Shoulder Girdle)
+      if (isClavicle && ligamentBundleRef.current) {
+        const bundle = ligamentBundleRef.current;
+        const shouldShow = showLigamentsRef.current;
+        bundle.group.visible = shouldShow;
+
+        if (shouldShow && proxPivot) {
+          const subId = activeSubregionRef.current?.id;
+          const isShaft = subId === "shaft";
+          const isDistal = subId === "distal";
+
+          if (isShaft) {
+            // In shaft fractures, lateral clavicle and scapula both belong to distalGroup
+            const qDist = distGroup ? distGroup.quaternion : _scratchQuat.identity();
+            const pDist = distGroup ? distGroup.position : _scratchZero;
+
+            _curConoidScapula.copy(_conoidScapula).applyQuaternion(qDist).add(pDist);
+            _curTrapScapula.copy(_trapScapula).applyQuaternion(qDist).add(pDist);
+            _curAcScapula.copy(_acScapula).applyQuaternion(qDist).add(pDist);
+            _curCaCoracoid.copy(_caCoracoid).applyQuaternion(qDist).add(pDist);
+            _curCaAcromion.copy(_caAcromion).applyQuaternion(qDist).add(pDist);
+
+            _curConoidClavicle.copy(_conoidClavicleRaw).applyQuaternion(qDist).add(pDist);
+            _curTrapClavicle.copy(_trapClavicleRaw).applyQuaternion(qDist).add(pDist);
+            _curAcClavicle.copy(_acClavicleRaw).applyQuaternion(qDist).add(pDist);
+
+            // All ligaments intact in midshaft fractures
+            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 2.8, 1.6);
+            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 2.8, 1.8);
+            updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
+            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 3.5, 1.8);
+
+            bundle.acStumpA.visible = false;
+            bundle.acTipA.visible = false;
+            bundle.acStumpB.visible = false;
+            bundle.acTipB.visible = false;
+            bundle.conoidStumpA.visible = false;
+            bundle.conoidTipA.visible = false;
+            bundle.conoidStumpB.visible = false;
+            bundle.conoidTipB.visible = false;
+            bundle.trapStumpA.visible = false;
+            bundle.trapTipA.visible = false;
+            bundle.trapStumpB.visible = false;
+            bundle.trapTipB.visible = false;
+          } else if (isDistal) {
+            // Neer Distal Clavicle Fractures
+            const pId = selectedPresetIdRef.current;
+            const isNeer2B = pId === "neer_type2b_distal";
+            const isNeer5 = pId === "neer_type5_distal";
+
+            const qDist = distGroup ? distGroup.quaternion : _scratchQuat.identity();
+            const pDist = distGroup ? distGroup.position : _scratchZero;
+
+            // Scapula origins in distalGroup space
+            _curConoidScapula.copy(_conoidScapula).applyQuaternion(qDist).add(pDist);
+            _curTrapScapula.copy(_trapScapula).applyQuaternion(qDist).add(pDist);
+            _curAcScapula.copy(_acScapula).applyQuaternion(qDist).add(pDist);
+            _curCaCoracoid.copy(_caCoracoid).applyQuaternion(qDist).add(pDist);
+            _curCaAcromion.copy(_caAcromion).applyQuaternion(qDist).add(pDist);
+
+            // 1. CA Ligament is always intact
+            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 2.8, 1.6);
+
+            // 2. AC Ligament: intact across distal fragment and acromion
+            _curAcClavicle.copy(_acClavicleRaw).applyQuaternion(qDist).add(pDist);
+            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 2.8, 1.8);
+            bundle.acStumpA.visible = false;
+            bundle.acTipA.visible = false;
+            bundle.acStumpB.visible = false;
+            bundle.acTipB.visible = false;
+
+            // 3. Trapezoid Ligament:
+            if (isNeer5 && shardPivotGroupRef.current) {
+              const qShard = shardPivotGroupRef.current.quaternion;
+              const pShard = shardPivotGroupRef.current.position;
+              _curTrapClavicle.copy(_trapClavicleRaw).sub(_neerVShardCentroid).applyQuaternion(qShard).add(pShard);
+            } else {
+              _curTrapClavicle.copy(_trapClavicleRaw).applyQuaternion(qDist).add(pDist);
+            }
+            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 3.5, 1.8);
+            bundle.trapStumpA.visible = false;
+            bundle.trapTipA.visible = false;
+            bundle.trapStumpB.visible = false;
+            bundle.trapTipB.visible = false;
+
+            // 4. Conoid Ligament:
+            if (isNeer2B) {
+              // Neer IIB: Conoid is torn! Clavicular stump moves with elevated proximal fragment
+              const qProx = proxPivot.quaternion;
+              const pProx = proxPivot.position;
+              _curConoidClavicle.copy(_conoidClavicleRaw).sub(_scPivotCenter).applyQuaternion(qProx).add(pProx);
+
+              bundle.conoidIntact.visible = false;
+              updateTornLigament(
+                bundle.conoidStumpA, bundle.conoidTipA,
+                bundle.conoidStumpB, bundle.conoidTipB,
+                _curConoidScapula, _curConoidClavicle,
+                3.2, 2.4, 12.0, 2.2
+              );
+            } else if (isNeer5 && shardPivotGroupRef.current) {
+              // Neer V: Conoid attached to inferior avulsion shard
+              const qShard = shardPivotGroupRef.current.quaternion;
+              const pShard = shardPivotGroupRef.current.position;
+              _curConoidClavicle.copy(_conoidClavicleRaw).sub(_neerVShardCentroid).applyQuaternion(qShard).add(pShard);
+
+              bundle.conoidStumpA.visible = false;
+              bundle.conoidTipA.visible = false;
+              bundle.conoidStumpB.visible = false;
+              bundle.conoidTipB.visible = false;
+              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
+            } else {
+              // Neer I, IIA, III, IV: Conoid is intact
+              _curConoidClavicle.copy(_conoidClavicleRaw).applyQuaternion(qDist).add(pDist);
+
+              bundle.conoidStumpA.visible = false;
+              bundle.conoidTipA.visible = false;
+              bundle.conoidStumpB.visible = false;
+              bundle.conoidTipB.visible = false;
+              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
+            }
+          } else {
+            // AC Joint (Rockwood) / Distal Clavicle mode:
+            const pId = selectedPresetIdRef.current;
+            const isActTorn = pId !== "intact" && pId !== "rockwood_type1";
+            const isCcTorn = pId !== "intact" && pId !== "rockwood_type1" && pId !== "rockwood_type2";
+
+            const cutCenterArr = activePresetRef.current?.cutCenter ?? activeSubregionRef.current.cutCenter;
+            _cutCenterVec.set(cutCenterArr[0], cutCenterArr[1], cutCenterArr[2]);
+
+            const q = proxPivot.quaternion;
+            const p = proxPivot.position;
+
+            // Compute world coordinates of Clavicle insertions in modelWrapper space
+            _conoidClavicle.copy(_conoidClavicleRaw).sub(_cutCenterVec).applyQuaternion(q).add(p);
+            _trapClavicle.copy(_trapClavicleRaw).sub(_cutCenterVec).applyQuaternion(q).add(p);
+            _acClavicle.copy(_acClavicleRaw).sub(_cutCenterVec).applyQuaternion(q).add(p);
+
+            // 1. Coracoacromial (CA) Ligament: always intact arch
+            updateLigamentSegment(bundle.caIntact, _caCoracoid, _caAcromion, 2.8, 1.6);
+
+            // 2. Acromioclavicular (AC) Ligament
+            if (!isActTorn) {
+              updateLigamentSegment(bundle.acIntact, _acScapula, _acClavicle, 2.8, 1.8);
+              bundle.acStumpA.visible = false;
+              bundle.acTipA.visible = false;
+              bundle.acStumpB.visible = false;
+              bundle.acTipB.visible = false;
+            } else {
+              bundle.acIntact.visible = false;
+              updateTornLigament(
+                bundle.acStumpA, bundle.acTipA,
+                bundle.acStumpB, bundle.acTipB,
+                _acScapula, _acClavicle,
+                2.8, 1.8, 2.8, 1.0
+              );
+            }
+
+            // 3. Conoid Ligament
+            if (!isCcTorn) {
+              updateLigamentSegment(bundle.conoidIntact, _conoidScapula, _conoidClavicle, 3.2, 2.4);
+              bundle.conoidStumpA.visible = false;
+              bundle.conoidTipA.visible = false;
+              bundle.conoidStumpB.visible = false;
+              bundle.conoidTipB.visible = false;
+            } else {
+              bundle.conoidIntact.visible = false;
+              updateTornLigament(
+                bundle.conoidStumpA, bundle.conoidTipA,
+                bundle.conoidStumpB, bundle.conoidTipB,
+                _conoidScapula, _conoidClavicle,
+                3.2, 2.4, 12.0, 2.2
+              );
+            }
+
+            // 4. Trapezoid Ligament
+            if (!isCcTorn) {
+              updateLigamentSegment(bundle.trapIntact, _trapScapula, _trapClavicle, 3.5, 1.8);
+              bundle.trapStumpA.visible = false;
+              bundle.trapTipA.visible = false;
+              bundle.trapStumpB.visible = false;
+              bundle.trapTipB.visible = false;
+            } else {
+              bundle.trapIntact.visible = false;
+              updateTornLigament(
+                bundle.trapStumpA, bundle.trapTipA,
+                bundle.trapStumpB, bundle.trapTipB,
+                _trapScapula, _trapClavicle,
+                3.5, 1.8, 14.0, 2.2
+              );
+            }
+          }
+        }
+      }
+
       controls.update();
       renderer.render(scene, camera);
     };
@@ -1333,6 +2477,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
+      if (ligamentBundleRef.current) {
+        ligamentBundleRef.current.cylGeom.dispose();
+        ligamentBundleRef.current.coneGeom.dispose();
+        ligamentBundleRef.current.ligamentMat.dispose();
+        ligamentBundleRef.current.rupturedTipMat.dispose();
+        ligamentBundleRef.current = null;
+      }
       scene.clear();
       cameraRef.current = null;
       controlsRef.current = null;
@@ -1349,6 +2500,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       shardMeshRef.current = null;
       rawVerticesRef.current = [];
       rawNormalsRef.current = [];
+      clavicleVertexCountRef.current = 0;
     };
   }, [modelUrl, partitionBoneMesh, triggerCameraFocus]);
 
@@ -1377,19 +2529,30 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             : "translate-y-0 opacity-100"
         }`}
       >
-        {/* Bone Title Pill */}
+        {/* Bone Title */}
         <div className="flex items-center gap-2.5 pointer-events-auto">
-          <span className="text-[11px] font-black tracking-wider uppercase px-2.5 py-1 rounded-full border flex items-center gap-1.5 backdrop-blur-md bg-teal-950/40 border-teal-500/30 text-teal-300 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-pulse" />
-            3D Anatomy
-          </span>
           <h1 className="text-base font-black tracking-tight text-slate-100 drop-shadow-md">
             {boneName}
           </h1>
         </div>
 
-        {/* Actions: Whole Bone View Toggle + Minimal Close Button */}
+        {/* Actions: Ligaments Toggle (Clavicle) + Whole Bone View Toggle + Minimal Close Button */}
         <div className="flex items-center gap-2 pointer-events-auto">
+          {isClavicle && (
+            <button
+              onClick={() => setShowLigaments(!showLigaments)}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
+                showLigaments
+                  ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                  : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+              }`}
+              title={showLigaments ? "Hide Ligaments" : "Show Anatomical Ligaments"}
+            >
+              <Activity size={12} className={showLigaments ? "text-teal-300" : "text-slate-400"} />
+              <span>Ligaments</span>
+            </button>
+          )}
+
           <button
             onClick={() => {
               if (isWholeBoneView) {
@@ -1403,7 +2566,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
                 : "bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80"
             }`}
-            title={isWholeBoneView ? "Zoom back in to active subregion" : "View entire femur bone"}
+            title={isWholeBoneView ? "Zoom back in to active subregion" : "View entire bone"}
           >
             {isWholeBoneView ? (
               <Minimize2 size={12} className="text-teal-300" />
@@ -1477,14 +2640,89 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               {selectedPresetId === "intact" ? "Intact Bone" : activePreset?.badge}
             </span>
           </div>
-          <h3 className="text-xs font-black text-slate-100 mb-0.5">
+          <h3 className="text-xs font-black text-slate-100 leading-tight">
             {selectedPresetId === "intact" ? `Normal ${activeSubregion.name} Alignment` : activePreset?.clinicalTitle}
           </h3>
-          <p className="text-[11px] font-medium text-slate-300 leading-snug">
-            {selectedPresetId === "intact"
-              ? "กระดูกปกติ ประกบสนิท ไม่มีรอยแตกหรือการเคลื่อนตัว"
-              : activePreset?.clinicalPearl}
-          </p>
+          {/* Collapsible Clinical Explanation (Full text when expanded) */}
+          {isPearlExpanded && (
+            <p className="text-[11px] font-medium text-slate-200 leading-relaxed text-left sm:text-center mt-1 px-1">
+              {selectedPresetId === "intact"
+                ? "กระดูกปกติ ประกบสนิท ไม่มีรอยแตกหรือการเคลื่อนตัว"
+                : activePreset?.clinicalPearl}
+            </p>
+          )}
+
+          {/* Wide Clickable Strip (พื้นที่กดเป็นแถบกว้าง ไร้กรอบรอบลูกศร) */}
+          <button
+            type="button"
+            onClick={() => setIsPearlExpanded((prev) => !prev)}
+            className="w-full flex items-center justify-center py-0.5 mt-0.5 rounded-lg group cursor-pointer hover:bg-white/5 active:bg-white/10 transition-all focus:outline-hidden"
+            title={isPearlExpanded ? "คลิกเพื่อย่อคำอธิบาย" : "คลิกเพื่อดูคำอธิบายฉบับเต็ม"}
+          >
+            {isPearlExpanded ? (
+              <ChevronUp size={14} className="text-teal-400 group-hover:text-teal-300 transition-transform group-hover:-translate-y-0.5" />
+            ) : (
+              <ChevronDown size={14} className="text-slate-400 group-hover:text-teal-300 transition-transform group-hover:translate-y-0.5" />
+            )}
+          </button>
+
+          {/* Dynamic Ligament Integrity Indicator */}
+          {isClavicle && showLigaments && (
+            <div className="mt-1 pt-1 border-t border-white/10 flex items-center justify-center gap-1.5 text-[10px] flex-wrap">
+              <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wider">Ligaments:</span>
+              {activeSubregion.id === "ac-joint" ? (
+                <>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-emerald-500/20 shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-slate-300 font-semibold">CA:</span>
+                    <span className="text-emerald-300 font-medium">Intact</span>
+                  </div>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-white/10 shadow-xs">
+                    <span className={`w-1.5 h-1.5 rounded-full ${isACTorn ? "bg-rose-500 animate-pulse" : "bg-emerald-400"}`} />
+                    <span className="text-slate-300 font-semibold">AC:</span>
+                    <span className={isACTorn ? "text-rose-300 font-bold" : "text-emerald-300 font-medium"}>
+                      {isACTorn ? "Torn" : "Intact"}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-white/10 shadow-xs">
+                    <span className={`w-1.5 h-1.5 rounded-full ${isCCTorn ? "bg-rose-500 animate-pulse" : (isPresetType2 ? "bg-amber-400" : "bg-emerald-400")}`} />
+                    <span className="text-slate-300 font-semibold">CC (Conoid+Trap):</span>
+                    <span className={isCCTorn ? "text-rose-300 font-bold" : (isPresetType2 ? "text-amber-300 font-medium" : "text-emerald-300 font-medium")}>
+                      {isCCTorn ? "Torn" : (isPresetType2 ? "Sprained" : "Intact")}
+                    </span>
+                  </div>
+                </>
+              ) : activeSubregion.id === "distal" ? (
+                <>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-emerald-500/20 shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span className="text-slate-300 font-semibold">CA & AC:</span>
+                    <span className="text-emerald-300 font-medium">Intact</span>
+                  </div>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-white/10 shadow-xs">
+                    <span className={`w-1.5 h-1.5 rounded-full ${selectedPresetId === "neer_type2b_distal" ? "bg-rose-500 animate-pulse" : (selectedPresetId === "neer_type5_distal" ? "bg-amber-400" : "bg-emerald-400")}`} />
+                    <span className="text-slate-300 font-semibold">Conoid:</span>
+                    <span className={selectedPresetId === "neer_type2b_distal" ? "text-rose-300 font-bold" : (selectedPresetId === "neer_type5_distal" ? "text-amber-300 font-medium" : "text-emerald-300 font-medium")}>
+                      {selectedPresetId === "neer_type2b_distal" ? "Torn" : (selectedPresetId === "neer_type5_distal" ? "Avulsed (Shard)" : "Intact")}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-white/10 shadow-xs">
+                    <span className={`w-1.5 h-1.5 rounded-full ${selectedPresetId === "neer_type5_distal" ? "bg-amber-400" : "bg-emerald-400"}`} />
+                    <span className="text-slate-300 font-semibold">Trapezoid:</span>
+                    <span className={selectedPresetId === "neer_type5_distal" ? "text-amber-300 font-medium" : "text-emerald-300 font-medium"}>
+                      {selectedPresetId === "neer_type5_distal" ? "Avulsed (Shard)" : "Intact"}
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <div className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-800/80 border border-emerald-500/20 shadow-xs">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span className="text-slate-300 font-semibold">AC & CC:</span>
+                  <span className="text-emerald-300 font-medium">100% Intact (Anchoring Distal Fragment)</span>
+                </div>
+              )}
+            </div>
+          )}
         </div>
 
         {/* Tier 2: Classification Types within Selected Subregion (Includes ↺ Intact button) */}
@@ -1541,7 +2779,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             borderColor: "rgba(255, 255, 255, 0.15)",
           }}
         >
-          {FEMUR_SUBREGIONS.map((subregion) => {
+          {availableSubregions.map((subregion) => {
             const isSelected = selectedSubregionId === subregion.id;
             return (
               <button

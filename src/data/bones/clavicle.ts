@@ -2,6 +2,7 @@ import type { BoneData } from "../../types";
 
 export const clavicleBone: BoneData = {
   "id": "clavicle",
+  "model3dUrl": "/models/bones/clavicle/clavicle_shoulder.obj",
   "name": {
     "en": "Clavicle",
     "th": "กระดูกไหปลาร้า"

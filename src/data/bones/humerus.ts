@@ -2,6 +2,7 @@ import type { BoneData } from "../../types";
 
 export const humerusBone: BoneData = {
   "id": "humerus",
+  "model3dUrl": "/models/bones/humerus/humerus.obj",
   "name": {
     "en": "Humerus",
     "th": "กระดูกต้นแขน (Humerus)"

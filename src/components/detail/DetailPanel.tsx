@@ -84,6 +84,53 @@ export function getSystemTabLabel(system: string, language: Language): string {
   }
 }
 
+/** Resilient card thumbnail for classification types with automatic error recovery */
+function ClassificationCardThumbnail({
+  illustrationId,
+  type,
+  altText,
+}: {
+  illustrationId?: string;
+  type: string;
+  altText: string;
+}) {
+  const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [illustrationId]);
+
+  const hasPath = illustrationId && (illustrationId.startsWith("/") || illustrationId.includes("."));
+
+  if (!hasPath || imgError) {
+    if (illustrationId && !hasPath) {
+      return (
+        <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", userSelect: "none", pointerEvents: "none" }}>
+          <FractureIllustration illustrationId={illustrationId} darkMode={false} />
+        </div>
+      );
+    }
+    return (
+      <div className="w-full h-full flex items-center justify-center text-xs font-bold text-slate-800 dark:text-slate-400">
+        {type}
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      key={illustrationId}
+      src={illustrationId} 
+      alt={altText} 
+      loading="eager"
+      decoding="async"
+      draggable={false}
+      style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 6, display: "block", userSelect: "none", pointerEvents: "none" }}
+      onError={() => setImgError(true)}
+    />
+  );
+}
+
 /** Smart interactive Media Viewer Modal (Switch between Diagram Illustration & Real X-Ray Film) */
 function ClassificationMediaViewerModal({
   fracType,
@@ -2210,7 +2257,7 @@ export function DetailPanel({
 
                     return (
                       <div 
-                        key={t.type} 
+                        key={`${classSystem.system}_${t.type}_${i}`} 
                         className="flex flex-col items-center gap-1.5 flex-shrink-0 w-[42%] sm:w-[32%] md:w-[calc(33.333%-6px)] min-w-[115px] sm:min-w-[125px] md:min-w-[120px] select-none" 
                         style={{ scrollSnapAlign: "start" }}
                       >
@@ -2231,29 +2278,11 @@ export function DetailPanel({
                             boxShadow: isSelected ? (darkMode ? "0 0 14px rgba(0,206,209,0.4)" : "0 0 14px rgba(15,118,110,0.35)") : "none",
                           }}
                         >
-
-                          {t.illustrationId?.startsWith("/") || t.illustrationId?.includes(".") ? (
-                            <img 
-                              src={t.illustrationId} 
-                              alt={t.name.en} 
-                              draggable={false}
-                              style={{ width: "100%", height: "100%", objectFit: "contain", borderRadius: 6, display: "block", userSelect: "none", pointerEvents: "none" }}
-                              onError={(e) => {
-                                (e.target as HTMLElement).style.display = "none";
-                                const parent = (e.target as HTMLElement).parentElement;
-                                if (parent) {
-                                  const fallbackDiv = document.createElement("div");
-                                  fallbackDiv.className = "w-full h-full flex items-center justify-center text-xs font-bold text-slate-800 dark:text-slate-400";
-                                  fallbackDiv.innerText = t.type;
-                                  parent.appendChild(fallbackDiv);
-                                }
-                              }}
-                            />
-                          ) : (
-                            <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", userSelect: "none", pointerEvents: "none" }}>
-                              <FractureIllustration illustrationId={t.illustrationId || ""} darkMode={false} />
-                            </div>
-                          )}
+                          <ClassificationCardThumbnail
+                            illustrationId={t.illustrationId}
+                            type={t.type}
+                            altText={t.name.en}
+                          />
                         </div>
 
                         <button
