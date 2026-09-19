@@ -11,6 +11,7 @@ export const patellaBone: BoneData = {
     "th": "ลูกสะบ้าหัวเข่า"
   },
   "pediatric": false,
+  "model3dUrl": "/models/bones/patella/patella_knee.glb",
   "regions": [
     {
       "id": "patella",

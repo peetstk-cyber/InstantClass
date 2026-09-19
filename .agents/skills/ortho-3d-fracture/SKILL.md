@@ -397,6 +397,38 @@ Distal (lateral third) clavicle fractures account for ~15% of all clavicle fract
 
 ---
 
+## 4.10 Complete Schatzker Classification (Tibial Plateau Types I–VI) 3D Presets
+
+Tibial plateau fractures occur across the proximal articular surface of the tibia, classified under Schatzker's paradigm based on fracture pattern, degree of articular depression, and kinetic energy (low-energy Types I–III vs high-energy Types IV–VI).
+
+### Mathematical Boundary Coordinates & Anatomical Landmarks:
+- **Medical Mesh Coordinate Space**:
+  - **$+X$ (Medial)**: Medial tibial plateau (`[+18.77, 188.93, -2.31]`) and medial malleolus.
+  - **$-X$ (Lateral)**: Lateral tibial plateau (`[-18.07, 188.30, -4.81]`) and Fibula (`[-24.00, -7.33, -18.36]`).
+  - **$+Y$ (Superior / Proximal)**: Intercondylar eminence apex ($Y \approx +199.54$), plateau subchondral surface ($Y \approx 188.0$).
+  - **$-Y$ (Inferior / Distal)**: Tibial diaphysis and distal plafond ($Y \approx -199.54$).
+  - **$+Z$ (Anterior)**: Tibial tuberosity (`[-10.09, 166.06, 33.16]`) and anterior shin crest.
+  - **$-Z$ (Posterior)**: Posterior intercondylar area, popliteal notch, and soleal line.
+- **Metaphyseal Dissociation Boundary**: $Y = 155.0$ (separates proximal articular block from diaphysis in Type VI).
+- **Articular Split/Depression Boundaries**:
+  - Lateral Split Wedge: $X \le -10.0, Y \ge 165.0$.
+  - Depressed Central Articular Facet: $-18.0 \le X \le -2.5, Y \ge 170.0$ (Schatzker II) / $-23.0 \le X \le -2.5, Y \ge 172.0$ (Schatzker III).
+  - Intact Outer Lateral Rim (Schatzker III): $X < -23.0, Y \ge 170.0$.
+  - Medial Plateau Condyle: $X \ge 2.0, Y \ge 162.0$.
+- **Camera Focal Center**: `[0.02, 1.40, 0.0]`, Distance: `3.20`, View Offset: `0.16`.
+- **Radiographic Views**: AP (`[0, 0, 1]`) and True Lateral (`[-1, 0, 0]`).
+
+| Preset ID | Display Name | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `schatzker_1` | Type I | Pure Lateral Split | `schatzker_1` | **Pure Cleavage / Split Wedge (Low Energy)**: Vertical split of lateral plateau without central depression (`shardPos: [-6.0, -1.0, 0]`, `shardRot: [0, 0, -0.10]`). Seen in young patients with dense cancellous bone. ORIF with two 6.5/7.3mm cannulated cancellous lag screws; inspect lateral meniscus (frequently trapped in fracture gap). |
+| `schatzker_2` | Type II | Split-Depression | `schatzker_2` | **Split-Depression (Most Common ~25-30%)**: Lateral wedge split (`shardPos: [-7.0, -2.0, 0]`, `shardRot: [0, 0, -0.10]`) combined with impacted central articular facet sinking $8\text{ mm}$ down into subchondral bone (`hnPos: [-1.0, -8.0, 0]`, `hnRot: [0.04, 0, -0.08]`, $\approx 10.4\text{ mm}$ AP articular step-off). Common in older/osteopenic bone; requires cortical window elevation, bone void grafting, and lateral buttress plate. |
+| `schatzker_3` | Type III | Pure Depression | `schatzker_3` | **Pure Central Articular Depression**: Central articular saucer depression sinking $8\text{ mm}$ down (`hnPos: [0, -8.0, 0]`, `hnRot: [0.04, 0, -0.08]`) inside an **intact peripheral lateral cortical rim** ($X < -23.0$, crater depth $\approx 7.6\text{ mm}$). Low-energy axial load in osteoporotic bone. Elevate depressed articular block via anterolateral cortical metaphyseal window and support with bone graft + subchondral raft screws. |
+| `schatzker_4` | Type IV | Medial Plateau / Dislocation | `schatzker_4` | **Medial Plateau Fracture-Dislocation (High Energy)**: Split or split-depression of medial plateau (`hnPos: [8.5, -4.5, -2.0]`, `hnRot: [0.08, 0, 0.16]`). High kinetic energy; severe varus collapse. **Extreme risk of Popliteal Artery transection and Peroneal nerve traction injury** (mandatory ABI & CTA if asymmetric pulses); rigid medial buttress/anti-glide plating. |
+| `schatzker_5` | Type V | Bicondylar Plateau | `schatzker_5` | **Bicondylar Plateau Split (Intact Shaft Bridge)**: Both medial (`hnPos: [6.5, -3.5, 0]`) and lateral (`shardPos: [-6.5, -3.5, 0]`) plateaus fractured and splayed outward, but metaphyseal-diaphyseal continuous spine intact. High-energy axial compression; dual locked plating (medial + lateral) or hybrid fixator. |
+| `schatzker_6` | Type VI | Metaphyseal Dissociation | `schatzker_6` | **Articular Plateau with Metaphyseal-Diaphyseal Dissociation**: Complete transverse/oblique separation of articular block from tibial diaphysis ($Y = 155.0$); shaft telescopes and angulates (`distPos: [2.0, -8.5, -3.5]`, `distRot: [0.12, 0, 0.08]`). Extreme kinetic trauma, severe soft tissue degloving, and high **COMPARTMENT SYNDROME** risk. Mandatory staged protocol: temporary spanning knee Ex-Fix until soft tissue wrinkles, then definitive dual plating. |
+
+---
+
 ## 5. Camera & Optical Framing System
 
 To prevent floating bone fragments from dipping behind bottom control decks or clipping the upper viewport header, dynamic optical offsets are applied via Three.js `camera.setViewOffset()`:
@@ -423,6 +455,16 @@ camera.setViewOffset(width, height, 0, yOffset, width, height);
 - The **`[ ⤢ Whole Bone ]` / `[ 🔍 Focus View ]`** button MUST reside exclusively in the top floating header next to the close button (`[ X ]`).
 - Do NOT place whole bone toggles inside Tier 2/3 classification decks or clutter clinical badge headers.
 
+### Radiographic Quick-Snap Views Protocol (ปุ่มลัดสแนปมุมมองมาตรฐานทางรังสีวิทยา):
+- **UI Placement**: Positioned at `absolute top-16 left-4 sm:left-5 z-20` (floating glass deck beneath the bone title), avoiding occlusion of top-right header action buttons and bottom classification decks.
+- **Micro Badge & Snap Buttons**: Features `🩻 Views` followed by bone-specific radiographic views:
+  - **Femur**: `[ AP ]` (`[0, 0, 1]`), `[ Lat ]` (`[-1, 0, 0]`, Cross-table Lateral).
+  - **Proximal Humerus**: `[ AP ]` (`[0, 0, 1]`, True AP / Grashey View).
+  - **AC Joint / Clavicle**: `[ AP ]` (`[0, 0, 1]`), `[ Axillary ]` (`[0, 0.88, 0.47]`, Superior-Inferior Axial to diagnose Rockwood IV posterior displacement), `[ Lat ]` (`[-1, 0, 0]`).
+  - **Patella**: `[ AP ]` (`[0, 0, 1]`), `[ Lat ]` (`[-1, 0, 0]`), `[ Skyline ]` (`[0, -0.86, 0.51]`, Tangential Merchant axial view scooped from below).
+- **Spherical Slerp Camera Animation**: Uses quaternion great-circle slerp over 480ms with cubic ease-out so the camera rotates seamlessly around the orbital sphere without plunging into or cutting through the bone mesh.
+- **Interactive Yielding**: OrbitControls `start` event listener immediately stops camera transition and resets the active snap view highlight when user begins manual finger rotation.
+
 ---
 
 ## 6. Performance & Re-slicing Optimization
@@ -431,4 +473,324 @@ camera.setViewOffset(width, height, 0, yOffset, width, height);
    Cache key `"${center.join(',')}_${normal.join(',')}_${mode}"`. Only re-partition the mesh BufferGeometry when the plane or comminution mode actually changes.
 2. **Smooth Morphing Lerp**:
    Animate fragment translations and rotations using continuous lerp ($\alpha \approx 0.12$) so fragments smoothly explode apart into comminution or fuse back together into intact bone at 60fps without hitching.
+
+---
+
+## 7. Procedural 3D Musculoskeletal Deforming Force Vectors Protocol
+
+To visually educate clinicians on the musculoskeletal deforming forces that produce fracture displacement (without cluttered UI sliders or distracting animations):
+
+### 1. Architectural Principles & Default State
+1. **Hidden by Default (`showForces = false`)**:
+   - When entering any 3D bone view or selecting fracture presets, force vectors MUST remain hidden by default to keep the visual field uncluttered for anatomical fracture inspection.
+   - The user activates them strictly on-demand via the top header toggle button: `[ ⚡ Forces ]`.
+   - On intact bone (`presetId === "intact"`), force vectors are automatically disabled (no deforming displacement forces present).
+2. **Strictly Static Geometry — ZERO Stretching / Shrinking Animation**:
+   - **MANDATORY RULE**: Do NOT add `Math.sin(...)` length pulses or dynamic scaling (`mag * (1 + 0.05 * sin(...))`).
+   - Stretching/shrinking vectors distract clinicians, cause visual fatigue, and obscure the exact displacement vector.
+   - Length MUST remain fixed and stable: $L_{\text{shaft}} = \max(1.0, L_{\text{magnitude}} - L_{\text{head}})$, $L_{\text{head}} = \min(8.0, L_{\text{magnitude}} \cdot 0.26)$.
+   - Opacity (`0.68`) and emissive intensity (`0.25`) MUST remain constant and stable across frames.
+3. **Outward Cortical Normal Offset (+2.0 mm Rule)**:
+   - To prevent anchor spheres or vector shafts from sinking into or clipping inside the bone cortex mesh, ALWAYS apply an outward offset along the pull unit vector:
+     ```typescript
+     _scratchAnchor.set(cfg.originOffset[0], cfg.originOffset[1], cfg.originOffset[2]);
+     if (targetMesh && modelWrapperRef.current) {
+       targetMesh.localToWorld(_scratchAnchor);
+       modelWrapperRef.current.worldToLocal(_scratchAnchor);
+     }
+     _scratchDir.set(cfg.direction[0], cfg.direction[1], cfg.direction[2]).normalize();
+
+     // Offset anchor +2.0 mm along direction so it sits proud on the outer bone cortex
+     _scratchAnchor.addScaledVector(_scratchDir, 2.0);
+     ```
+4. **Anatomical Outward Line-of-Pull Protocol**:
+   - The force arrow MUST originate on the true outer cortical insertion site and point **OUTWARD into free space** along the anatomical line of action toward the muscle origin.
+   - Vectors must NEVER point inward into the bone marrow, across the cortical shaft, or into the fracture void.
+
+---
+
+### 2. Geometry Assembly & Visual Styling
+- **Anchor**: `SphereGeometry(1, 16, 16)` scaled to radius $2.0\text{ mm}$ (`scale.set(2, 2, 2)`).
+- **Shaft**: `CylinderGeometry(1, 1, 1, 16)` scaled to radius $1.2\text{ mm}$ and height $L_{\text{shaft}}$.
+- **Cone Head**: `ConeGeometry(1, 1, 16)` scaled to base radius $2.8\text{ mm}$ and height $L_{\text{head}}$.
+- **Material**: Translucent frosted cool slate:
+  ```typescript
+  const material = new THREE.MeshStandardMaterial({
+    color: 0x94A3B8,
+    roughness: 0.35,
+    metalness: 0.15,
+    transparent: true,
+    opacity: 0.68,
+    depthWrite: false,
+    emissive: 0x475569,
+    emissiveIntensity: 0.25,
+  });
+  ```
+- **Billboard Label Sprite**: $512 \times 140$ Canvas sprite with translucent slate badge, muscle short name, and clinical action. Rendered with `depthTest: false` and `renderOrder: 999` to float legibly above all bone geometry at offset $\vec{P}_{\text{anchor}} + \hat{D} \cdot (L_{\text{magnitude}} + 5.5)$.
+- **OrbitControls & Event Safety**:
+  - The render loop vector update MUST be wrapped in `try { ... } catch { }` so vector math can never halt `controls.update()` or `renderer.render()`.
+  - Modal container `div` elements MUST NEVER use `e.stopPropagation()` handlers that intercept `pointermove` or `pointerup` on `document`, as this blocks React 19 / OrbitControls rotation.
+
+---
+
+### 3. Master Audited Coordinates & Direction Vectors Database
+
+All coordinates below are validated against raw Three.js centered model space ($+Y$ proximal, $+Z$ anterior):
+
+#### A. Proximal Humerus & Humeral Shaft
+*Coordinate space: $+X$ is Medial (Humeral Head), $-X$ is Lateral (GT & Deltoid Tuberosity), $+Z$ is Anterior (Bicipital groove & LT), $-Z$ is Posterior (Infraspinatus & Triceps).*
+
+| Vector ID | Muscle / Force | Subregion | Parent Target | Anchor `originOffset` $[X, Y, Z]$ | Unit `direction` $[D_x, D_y, D_z]$ | Magnitude | Clinical Mechanism |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `hprox_supraspinatus` | Rotator Cuff (GT) | `proximal` | `"gt"` | `[16.0, 148.0, 0.0]` | `[0.35, 0.90, -0.25]` | 32.0 | Posterosuperior pull on GT toward supraspinous fossa of scapula. |
+| `hprox_subscapularis` | Subscapularis (LT) | `proximal` | `"lt"` | `[24.0, 130.0, 24.5]` | `[0.65, 0.20, 0.73]` | 30.0 | Anteromedial pull on LT toward subscapular fossa. |
+| `hprox_pect` | Pectoralis Major | `proximal` | `"distal"` | `[6.0, 70.0, 10.5]` | `[0.85, 0.25, 0.45]` | 34.0 | Medial adduction & anterior pull on shaft fragment toward sternum. |
+| `hshaft_deltoid` | Deltoid | `shaft` | `"proximal"` | `[-13.0, 30.0, -4.0]` | `[-0.85, 0.50, 0.15]` | 32.0 | Abduction pull on proximal fragment toward acromion. |
+| `hshaft_pect` | Pectoralis Major | `shaft` | `"proximal"` | `[6.0, 65.0, 10.5]` | `[0.88, 0.25, 0.40]` | 32.0 | Adduction & internal rotation pull on proximal fragment. |
+| `hshaft_arm` | Biceps & Triceps | `shaft` | `"distal"` | `[-10.0, -40.0, 2.0]` | `[0.0, 0.95, 0.30]` | 32.0 | Proximal shortening & bayonet overlap. |
+| `hdist_triceps` | Triceps Brachii | `distal` | `"distal"` | `[-34.0, -120.0, -24.5]` | `[0.0, 0.65, -0.76]` | 32.0 | Posterior & superior displacement on distal condylar block. |
+| `hdist_brachialis` | Brachialis / Biceps | `distal` | `"proximal"` | `[-10.0, -95.0, 4.0]` | `[0.0, 0.85, 0.52]` | 32.0 | Anterior shaft shortening & flexion moment. |
+
+#### B. Femur (Proximal, Intertrochanteric, Subtrochanteric, Shaft, Distal)
+*Coordinate space: $+X$ is Medial (Femoral Head & calcar), $-X$ is Lateral (Greater Trochanter), $+Z$ is Anterior, $-Z$ is Posterior (Lesser Trochanter & Linea Aspera).*
+
+| Vector ID | Muscle / Force | Subregion | Parent Target | Anchor `originOffset` $[X, Y, Z]$ | Unit `direction` $[D_x, D_y, D_z]$ | Magnitude | Clinical Mechanism |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `fn_shortening` | Abductors / Hamstrings | `femoral-neck` | `"distal"` | `[-50.0, 202.0, -8.0]` | `[-0.15, 0.97, 0.18]` | 34.0 | Proximal telescoping & vertical shear displacement. |
+| `fn_extrot` | External Rotators | `femoral-neck` | `"distal"` | `[-8.0, 142.0, -22.0]` | `[0.55, 0.45, -0.70]` | 30.0 | External rotation roll of distal fragment. |
+| `it_abductors` | Glut Med / Abductors | `intertrochanteric` | `isGt ? "gt" : "proximal"` | `[-50.0, 202.0, -8.0]` | `[-0.90, 0.44, 0.0]` | 34.0 | Superolateral pull (abduction) on GT fragment toward iliac wing. |
+| `it_iliopsoas` | Iliopsoas | `intertrochanteric` | `isLt ? "lt" : "proximal"` | `[-8.0, 142.0, -22.0]` | `[0.35, 0.70, 0.62]` | 32.0 | Anteromedial & superior pull on avulsed LT toward lumbar spine. |
+| `it_adductors` | Adductor Group | `intertrochanteric` | `"distal"` | `[-4.0, 75.0, 4.0]` | `[0.72, 0.69, 0.0]` | 34.0 | Medial pull & varus shortening on femoral shaft. |
+| `subtroch_iliopsoas` | Iliopsoas | `subtrochanteric` | `isLt ? "lt" : "proximal"` | `[-8.0, 142.0, -22.0]` | `[0.35, 0.70, 0.62]` | 34.0 | Intense flexion, external rotation, and anteromedial displacement of proximal fragment. |
+| `subtroch_abductors` | Gluteus Medius | `subtrochanteric` | `"proximal"` | `[-50.0, 202.0, -8.0]` | `[-0.90, 0.44, 0.0]` | 34.0 | Lateral abduction tilt on proximal fragment. |
+| `subtroch_adductors` | Adductor Group | `subtrochanteric` | `"distal"` | `[-4.0, 70.0, 4.0]` | `[0.72, 0.69, 0.0]` | 34.0 | Medial adduction & proximal shortening of distal shaft. |
+| `fs_proximal` | Abductors & Flexors | `shaft` | `"proximal"` | `[-30.0, 110.0, 0.0]` | `[-0.70, 0.55, 0.45]` | 34.0 | Flexion & abduction tilt on upper shaft segment. |
+| `fs_distal` | Adductors & Hamstrings | `shaft` | `"distal"` | `[-4.0, -20.0, 2.0]` | `[0.65, 0.75, 0.12]` | 34.0 | Proximal shortening & adduction overlap. |
+| `df_gastrocnemius` | Gastrocnemius | `distal` | `"distal"` | `[15.0, -195.0, -28.0]` | `[0.0, -0.65, -0.76]` | 34.0 | Apex-posterior recurvatum hyperextension endangering popliteal vessels. |
+| `df_quadriceps` | Quadriceps | `distal` | `"proximal"` | `[-6.0, -120.0, 24.0]` | `[0.0, 0.95, 0.31]` | 34.0 | Anterior proximal shaft shortening. |
+
+#### C. Clavicle & Shoulder Girdle
+*Coordinate space: $+X$ is Medial (Sternoclavicular joint), $-X$ is Lateral (Acromioclavicular joint), $+Y$ is Superior, $-Y$ is Inferior.*
+
+| Vector ID | Muscle / Force | Subregion | Parent Target | Anchor `originOffset` $[X, Y, Z]$ | Unit `direction` $[D_x, D_y, D_z]$ | Magnitude | Clinical Mechanism |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `clav_scm` | SCM | `shaft` | `"proximal"` | `[38.0, 62.0, 50.0]` | `[0.0, 0.92, -0.38]` | 34.0 | Posterosuperior elevation of medial fragment toward mastoid process. |
+| `clav_pect_arm` | Pect Major / Arm | `shaft` | `"distal"` | `[-18.0, 66.0, 18.0]` | `[0.42, -0.88, 0.22]` | 36.0 | Inferior sag (arm weight) and anteromedial displacement (pectoralis). |
+| `clav_dist_trap` | Trapezius / SCM | `distal` | `"proximal"` | `[15.0, 64.0, 30.0]` | `[0.0, 0.92, -0.38]` | 34.0 | Superior pull on stripped proximal fragment in Neer II. |
+| `clav_dist_gravity` | Arm Weight | `distal` | `"distal"` | `[-72.0, 68.0, -10.0]` | `[-0.20, -0.98, 0.0]` | 34.0 | Inferior depression of distal fragment and lateral shoulder girdle (lateral acromion line). |
+| `ac_trap` | Trapezius | `ac-joint` | `"proximal"` | `[-38.0, 72.0, -8.0]` | `[0.0, 0.95, -0.31]` | 34.0 | Superior clavicular elevation in Rockwood III-V. |
+| `ac_arm` | Arm Weight | `ac-joint` | `"distal"` | `[-72.0, 68.0, -10.0]` | `[-0.20, -0.98, 0.0]` | 34.0 | Downward displacement of scapula/acromion creating step-off. |
+
+#### D. Patella & Knee Extensor Mechanism (30° Flexed Knee Position)
+*Coordinate space: $+X$ is Medial, $-X$ is Lateral, $+Y$ is Superior (quadriceps/proximal femur), $-Y$ is Inferior (tibia tuberosity), $+Z$ is Anterior, $-Z$ is Posterior (flexed femoral trochlear groove).*
+*Anatomical orientation: Distal femur is flexed 30° matching the standard clinical lateral radiograph ("True Lateral Knee 30° Flexion"). The patella sits tilted in the trochlear groove with ~5.0 mm radiolucent cartilage clearance, connected to the tibial tuberosity via the patellar tendon.*
+
+| Vector ID | Muscle / Force | Subregion | Parent Target | Anchor `originOffset` $[X, Y, Z]$ | Unit `direction` $[D_x, D_y, D_z]$ | Magnitude | Raycast Hits | Clinical Mechanism |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `patella_quadriceps` | Quadriceps Femoris | `patella` | `"proximal"` | `[-10.5, 29.0, 26.0]` | `[0.0, 0.86, -0.50]` | 38.0 | 0 | Strong proximal-posterior retraction of superior patellar fragment along flexed femur shaft in transverse/pole fractures; converts to dynamic compression across posterior articular facet under Tension Band Wiring (TBW). |
+| `patella_tendon` | Patellar Tendon | `patella` | `"distal"` | `[-1.79, -8.5, 41.5]` | `[-0.35, -0.90, -0.25]` | 36.0 | 0 | Distal anchoring tension connecting inferior patellar apex down to tibial tuberosity (`[-16.01, -40.41, 31.19]`); preserves distal fragment position or causes distal pole avulsion. |
+
+#### E. Proximal Tibia & Knee Ligamentous / Muscular Vectors
+*Coordinate space: $+X$ is Medial, $-X$ is Lateral (Fibula), $+Y$ is Superior / Proximal (Knee joint line), $-Y$ is Inferior / Distal (Ankle plafond), $+Z$ is Anterior (Tibial tuberosity), $-Z$ is Posterior (Popliteal fossa).*
+
+| Vector ID | Muscle / Force | Subregion | Parent Target | Anchor `originOffset` $[X, Y, Z]$ | Unit `direction` $[D_x, D_y, D_z]$ | Magnitude | Raycast Hits | Clinical Mechanism |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `tibia_patellar_tendon` | Patellar Tendon (Extensor Mechanism) | `proximal` | `"distal"` | `[-10.0, 168.0, 33.5]` | `[0.0, 0.94, 0.34]` | 40.0 | 0 | Forceful anteroproximal quadriceps pull anchored to tibial tuberosity; can avulse the tuberosity or tilt shaft into extension. |
+| `tibia_semimembranosus` | Semimembranosus (Hamstrings) | `proximal` | `"proximal"` | `[22.0, 178.0, -18.0]` | `[0.20, -0.92, -0.32]` | 35.0 | 0 | Strong posteromedial flexion vector pulling on medial condyle; deforms and displaces medial plateau in Schatzker IV, V, and VI. |
+| `tibia_biceps_femoris` | Biceps Femoris & LCL | `proximal` | `"shard"` | `[-30.0, 180.0, -10.0]` | `[-0.45, 0.85, -0.28]` | 34.0 | 0 | Posterolateral tension from biceps tendon and lateral collateral ligament on fibular head and lateral tibial margin; splays lateral wedge in Schatzker I, II, V. |
+| `tibia_popliteus` | Popliteus Muscle | `proximal` | `"distal"` | `[-12.0, 160.0, -22.0]` | `[-0.60, 0.72, -0.35]` | 30.0 | 0 | Superolateral internal rotatory and dynamic stabilizer pull originating from posterior proximal tibia below lateral condyle. |
+
+---
+
+## 9. Translucent X-Ray Radiographic Mode & Shader Protocol
+
+### A. Radiographic Attenuation & Physical Optical Model
+Physical plain radiography records X-ray photon attenuation through anatomical tissues according to the Beer-Lambert transmission law:
+$$I(\vec{r}) = I_0 \exp\left( -\int \mu(s) \, ds \right)$$
+1. **Cortical Bone Edge Enhancement (Fresnel Silhouette)**:
+   X-rays directed tangent to the bone cortex traverse maximum bone thickness ($ds_{\text{tangent}} \gg ds_{\text{perpendicular}}$), producing a dense, radiopaque white cortical margin.
+2. **Medullary / Cancellous Translucency**:
+   X-rays passing through the center only traverse thin anterior and posterior cortical shells and porous trabecular marrow, leaving the interior translucent and see-through.
+3. **Radiographic Summation (Additive Overlap)**:
+   When two bone fragments overlap in the beam path (such as in displaced fractures, comminuted shards, or intersecting anatomical structures like the fibula behind the tibia), their photon absorptions summate additively, yielding increased radiopacity.
+
+### B. Custom Three.js X-Ray Shader Specification
+Implemented via a dedicated `THREE.ShaderMaterial` with view-dependent Fresnel equations:
+
+```glsl
+// Vertex Shader
+varying vec3 vNormal;
+varying vec3 vViewPosition;
+
+void main() {
+  vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
+  vViewPosition = -mvPosition.xyz;
+  vNormal = normalize(normalMatrix * normal);
+  gl_Position = projectionMatrix * mvPosition;
+}
+
+// Fragment Shader
+uniform vec3 uColor;         // Clinical cyan-slate core (0x38BDF8)
+uniform vec3 uRimColor;      // Pure radiopaque cortical white (0xFFFFFF)
+uniform float uBaseDensity;  // Cancellous baseline density (0.16)
+uniform float uRimPower;     // Cortical edge sharpness exponent (2.2)
+uniform float uOpacity;      // User-adjustable radiodensity multiplier (0.25 - 0.95)
+
+varying vec3 vNormal;
+varying vec3 vViewPosition;
+
+void main() {
+  vec3 normal = normalize(vNormal);
+  vec3 viewDir = normalize(vViewPosition);
+
+  // Absolute dot product guarantees identical evaluation for front and back faces
+  float dotNV = abs(dot(normal, viewDir));
+
+  // Tangential ray attenuation (Fresnel cortical margin)
+  float rim = pow(clamp(1.0 - dotNV, 0.0, 1.0), uRimPower);
+
+  // Radiodensity: baseline cancellous density + cortical rim peak
+  float density = clamp(uBaseDensity + rim * (1.0 - uBaseDensity), 0.0, 1.0);
+
+  // Color gradient from cool medullary slate to glowing white cortical rim
+  vec3 col = mix(uColor, uRimColor, pow(rim, 0.75));
+
+  gl_FragColor = vec4(col, density * uOpacity);
+}
+```
+
+### C. Blending & WebGL Buffer Configuration
+To guarantee commutative, order-independent transparency without depth-sorting artifacts across thousands of bone polygons:
+- `side: THREE.DoubleSide` — Renders both anterior and posterior cortices.
+- `depthWrite: false` — Eliminates polygon occlusions; allows internal fracture fragments and posterior cortices to be visible through the anterior wall.
+- `transparent: true`
+- `blending: THREE.CustomBlending` with:
+  - `blendSrc: THREE.SrcAlphaFactor`
+  - `blendDst: THREE.OneFactor` (Additive RGB summation for realistic radiodensity accumulation)
+  - `blendSrcAlpha: THREE.OneFactor`
+  - `blendDstAlpha: THREE.OneMinusSrcAlphaFactor` (Preserves HTML canvas compositing stability)
+
+### D. Zero-Lag Runtime Hot-Swapping
+To ensure 60fps responsiveness without recalculating bone partition cuts:
+1. `solidBoneMatRef` and `xRayMatRef` are pre-allocated during scene initialization.
+2. Toggling `isXRayMode` executes an instantaneous GPU material assignment across `[proximalMesh, distalMesh, gtMesh, ltMesh, shardMesh]`.
+3. Dragging the `Density` slider updates `xRayMat.uniforms.uOpacity.value` on the GPU with 0ms latency.
+4. When `isXRayMode` is active, the modal backdrop transitions to a medical illuminator lightbox gradient:
+   `radial-gradient(ellipse at 50% 50%, #0c1e34 0%, #06101d 50%, #020617 100%)`.
+
+---
+
+## 10. Ankle & Hindfoot Multi-Bone Assembly & Ligamentous Complex Protocol
+
+### A. 6-Bone Anatomical Architecture
+The ankle joint and hindfoot/midfoot complex is assembled from 6 congruently scanned bones:
+1. **Tibia** (Distal plafond, medial malleolus, incisura tibialis)
+2. **Fibula** (Lateral malleolus, digital fossa, lateral shaft)
+3. **Talus** (Trochlea, neck, medial & lateral processes)
+4. **Calcaneus** (Sustentaculum tali, anterior process, lateral wall)
+5. **Navicular** (Medial midfoot, navicular tuberosity)
+6. **Cuboid** (Lateral midfoot, calcaneocuboid articulation)
+
+All 6 bones share identical DICOM coordinate systems and assemble with 0.00 mm gap in `public/models/bones/tibia/tibia.glb`.
+
+### B. Centered Three.js Space Coordinates
+With model normalized (`rotation.x = -Math.PI / 2`, centered):
+- **$+Y$ (Superior / Cranial)**: Tibial diaphysis and plateau
+- **$-Y$ (Inferior / Caudal)**: Tibial plafond ($Y \approx -152.7$), Talus dome ($Y \approx -166.7$), Calcaneus ($Y \approx -195.7$)
+- **$+X$ (Medial)**: Medial malleolus ($X \approx +24.6$), Sustentaculum tali ($X \approx +27.9$)
+- **$-X$ (Lateral)**: Distal fibula ($X \approx -19.3$), Calcaneal tubercle ($X \approx -20.9$)
+- **$+Z$ (Anterior)**: Navicular ($Z \approx +37.2$), Anterior syndesmosis / Chaput ($Z \approx +8.5$)
+- **$-Z$ (Posterior)**: Volkmann's triangle ($Z \approx -18.1$), Posterior calcaneal heel ($Z \approx -13.5$)
+
+### C. Procedural Curved Ribbon Sheet Geometry
+To prevent joint surface occlusion caused by rigid cylinders, ligaments are generated as procedural **curved ribbon sheets** using Catmull-Rom splines and Frenet frames:
+```typescript
+function createRibbonGeometry(
+  points: THREE.Vector3[],
+  width: number,
+  thickness: number,
+  outwardNormal?: THREE.Vector3,
+  twistAngle: number = 0
+): THREE.BufferGeometry;
+
+function createFanSheetGeometry(
+  apexPoints: THREE.Vector3[],
+  basePoints: THREE.Vector3[],
+  thickness: number,
+  outwardNormal: THREE.Vector3
+): THREE.BufferGeometry;
+```
+- **Outward Surface Facing**: The flat face of each ribbon/sheet uses an explicit outward normal ($\vec{n}_{\text{out}}$) or radial outward vector from the central ankle axis $(p.x, 0, p.z)$. The width vector ($\vec{b}$) is calculated via $\vec{t} \times \vec{n}_{\text{out}}$ and the true face normal via $\vec{b} \times \vec{t}$, ensuring the broad surface directly faces the clinician viewing from any angle rather than rendering edge-on.
+- **Translucency**: `MeshStandardMaterial` (`color: 0xE2E8F0`, `opacity: 0.65`, `roughness: 0.38`, `transparent: true`, `depthWrite: false`, `side: THREE.DoubleSide`).
+- **Radiolucency (X-Ray Mode)**: Attenuates to faint ghost (`opacity: 0.15`) to simulate radiolucent soft tissue without obstructing the bony mortise.
+
+### D. 6 Essential Classification-Critical Ligament Complexes
+
+| Ligament Complex | Anatomy & Clinical Role | Origin Landmark | Insertion Landmark | Morphology & Orientation |
+| :--- | :--- | :--- | :--- | :--- |
+| **ATFL** *(Anterior Talofibular)* | Primary lateral stabilizer in plantarflexion; torn in SER-II / Weber B | Anterior margin lateral malleolus `[-19.54, -161.43, -0.29]` | Lateral talar neck `[-6.72, -160.82, 11.64]` | Flat ribbon, width: 8.5mm, thick: 2.2mm, surface facing anterolateral `[-0.7, 0.05, 0.7]` |
+| **CFL** *(Calcaneofibular)* | Lateral stabilizer in dorsiflexion; torn in SER-III / Weber C | Lateral malleolus distal tip `[-19.33, -175.27, -15.66]` | Lateral calcaneal tubercle `[-20.89, -188.68, 7.92]` | Cord-like, width: 6.5mm, thick: 3.2mm, surface facing lateral `[-1, 0, 0]` |
+| **AITFL** *(Anterior Inferior Tibiofibular)* | Anterior syndesmotic stabilizer; torn in SER-I (Tillaux-Chaput / Wagstaffe) | Chaput tubercle of anterior distal tibia `[-16.29, -146.26, 8.52]` | Wagstaffe-Le Fort tubercle of fibula `[-19.51, -152.93, -1.13]` | Trapezoidal band, width: 12mm, thick: 2.2mm, surface facing anterior `[-0.3, 0, 0.95]` |
+| **PITFL** *(Posterior Inferior Tibiofibular)* | Posterior syndesmotic stabilizer; torn/avulsed in SER-III (Volkmann's triangle) | Volkmann tubercle of posterior distal tibia `[-4.12, -145.56, -18.07]` | Fibular digital fossa `[-11.83, -157.81, -20.24]` | Thick triangular bundle, width: 14mm, thick: 3.5mm, surface facing posterior `[-0.3, 0, -0.95]` |
+| **Deltoid Complex (Superficial)** | Broad continuous anatomical fan sheet preventing eversion & valgus | Medial malleolus anterior & inferior border `[24.2–25.3, -152 to -155.5, 11.5 to -2]` | Spanning curve: Navicular `[17.42, -174.95, 37.19]` $\to$ Spring lig `[21.5, -179, 22]` $\to$ Sustentaculum `[27.87, -188, -13]` $\to$ Post talus `[26.14, -171, -8]` | Broad 3D triangular fan sheet, thickness: 2.2mm, surface facing medial `[1, 0, 0]` |
+| **Deltoid Complex (Deep)** | Primary restraint to lateral talar shift & external rotation; torn in SER-IV | Medial malleolus intercollicular groove `[24.64, -154.44, 8.25]` | Medial talar body fossa `[24.26, -155.41, 0.41]` | Thick oval horizontal mass, width: 12mm, thick: 4.5mm, surface facing medial `[1, 0, 0]` |
+| **Syndesmosis (IOL)** | Continuous interosseous syndesmotic membrane sheet | Incisura tibialis `[-16.73, -137.19, 0.67]` | Opposing medial distal fibula `[-8.65, -138.31, -14.95]` | Thin coronal bridging sheet, width: 14mm, thick: 1.0mm, surface facing anterior `[0, 0, 1]` |
+
+### E. Radiographic Views & Mortise Evaluation
+For the `distal` subregion:
+- **AP View** (`direction: [0, 0, 1]`): Overviews distal tibia, fibula, and talar dome.
+- **Mortise View** (`direction: [0.26, 0, 0.97]`): ~15° internal rotation view eliminating fibular overlap to profile the lateral clear space.
+- **Lateral View** (`direction: [-1, 0, 0]`): True lateral projection verifying talar dome congruity and posterior malleolar integrity.
+
+---
+
+## 11. Complete Lauge-Hansen Classification (SER, SA, PER, PA) 3D Presets
+
+Lauge-Hansen classification categorizes rotational ankle fractures based on foot position at the moment of trauma (Supinated vs. Pronated) and the direction of deforming force (External Rotation, Adduction, Abduction).
+
+### Mathematical Partitioning Boundaries & Slicing Planes:
+- **Tibia Plafond**: $Y \approx -152.7$
+- **Distal Fibula Apex**: $Y \approx -178.0$
+- **Infrasyndesmotic Transverse Avulsion (SA I)**: `centroid.y <= -156.0` (Weber A)
+- **Transsyndesmotic Spiral (SER II-IV)**: `centroid.y + 0.55 * centroid.z <= -152.5` (Weber B)
+- **Suprasyndesmotic High Spiral (PER III-IV)**: `centroid.y + 0.45 * centroid.z <= -124.0` (Weber C / Maisonneuve)
+- **Suprasyndesmotic High Bending / Transverse (PA III)**: `centroid.y <= -108.0` (~5–7 cm above plafond, Weber C)
+- **Comminuted Lateral Butterfly Wedge Shard (PA III)**: `centroid.y >= -122.0 && centroid.y <= -96.0 && centroid.x <= -17.5` (routed to `gtPivotGroup`)
+- **Medial Malleolus Transverse Avulsion (SER IV, PER I-IV, PA I-III)**: `centroid.x >= 16.0 && centroid.y <= -149.0`
+- **Medial Malleolus Vertical Shear (SA II)**: `centroid.x >= 14.5 && centroid.y <= -136.0 && centroid.y <= -158.7 + (centroid.x - 14.5) * 15`
+- **Volkmann Posterior Malleolus (SER III-IV, PER IV)**: `centroid.x <= 14.0 && centroid.y <= -130.0 && centroid.y + 1.5 * centroid.z <= -154.0`
+
+### Complete 3D Classification Presets Database:
+
+| Preset ID | Mechanism & Stage | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `ankle_intact` | Normal | Intact Bone | `ankle_intact` | Anatomically aligned distal tibia, fibula, and hindfoot with congruent mortise and intact syndesmosis. |
+| `lh_ser_1` | SER Stage I | SER I (AITFL Rupture) | `lh_ser_1` | Isolated rupture of the Anterior Inferior Tibiofibular Ligament (AITFL) or Tillaux-Chaput/Wagstaffe avulsion; bones intact. |
+| `lh_ser_2` | SER Stage II | SER II (Spiral Fibula) | `lh_ser_2` | Classic spiral/oblique fracture of the lateral malleolus starting at the joint line (Weber B) and extending anteroinferior to posterosuperior (`shardPos: [-3.8, 1.2, -4.2]`). |
+| `lh_ser_3` | SER Stage III | SER III (Posterior Malleolus) | `lh_ser_3` | SER II + Posterior malleolar avulsion fracture (Volkmann's triangle) via PITFL traction (`gtPos: [-1.2, 4.5, -6.5]`). |
+| `lh_ser_4` | SER Stage IV | SER IV (Trimalleolar / Diastasis) | `lh_ser_4` | SER III + Medial malleolar transverse avulsion (`ltPos: [4.2, -1.8, 0.5]`) OR deltoid rupture, resulting in talar lateral shift >4mm (`proxPos: [3.8, 0.5, -0.8]`). |
+| `lh_sa_1` | SA Stage I | SA I (Infrasyndesmotic Fibula) | `lh_sa_1` | Transverse tension avulsion fracture of the lateral malleolus at or below the tibial plafond (Weber A, `shardPos: [-2.5, -1.2, 0]`); syndesmosis intact. |
+| `lh_sa_2` | SA Stage II | SA II (Vertical Shear MedMal) | `lh_sa_2` | SA I + Vertical/steeply oblique shear fracture of the medial malleolus with medial plafond impaction (`ltPos: [3.8, 4.0, 0]`, `shardPos: [-3.0, -1.5, 0]`). |
+| `lh_per_1` | PER Stage I | PER I (Medial Disruption) | `lh_per_1` | Transverse tension avulsion fracture of the medial malleolus (`ltPos: [2.5, -1.0, 0.5]`) OR deltoid ligament rupture; lateral side completely intact. |
+| `lh_per_2` | PER Stage II | PER II (AITFL Rupture) | `lh_per_2` | PER I + Complete rupture of the AITFL with widening of the anterior syndesmotic clear space; fibula shaft intact. |
+| `lh_per_3` | PER Stage III | PER III (High Spiral Fibula) | `lh_per_3` | PER II + High spiral suprasyndesmotic fracture of the fibular diaphysis (Weber C / Maisonneuve, `shardPos: [-4.0, 1.8, -4.5]`); IOL torn up to fracture level. |
+| `lh_per_4` | PER Stage IV | PER IV (Posterior Malleolus / Diastasis) | `lh_per_4` | Circumferential disruption: Medial avulsion + High spiral fibula + Large Volkmann posterior malleolus (`gtPos: [-1.5, 5.0, -7.2]`) + Gross talar shift (`proxPos: [4.5, 0.6, -1.2]`). |
+| `lh_pa_1` | PA Stage I | PA I (Medial Avulsion) | `lh_pa_1` | Transverse tension avulsion fracture of the medial malleolus (`ltPos: [2.5, -1.0, 0]`) OR deltoid ligament rupture from forceful foot abduction. |
+| `lh_pa_2` | PA Stage II | PA II (Syndesmotic Rupture) | `lh_pa_2` | PA I + Simultaneous rupture of both anterior (AITFL) and posterior (PITFL) syndesmotic ligaments; incisura diastasis without fibular fracture. |
+| `lh_pa_3` | PA Stage III | PA III (High Bending / Butterfly Comminution) | `lh_pa_3` | PA II + High suprasyndesmotic bending fracture of the fibula (~5–7 cm above joint line, Weber C, `shardPos: [-5.2, -2.5, 0]`) with separate lateral cortical butterfly wedge shard (`gtPos: [-6.8, 1.2, 2.5]`) + Talar valgus tilt (`proxPos: [4.2, 0.5, 0]`). |
+
+### UI Presentation Rules:
+- **Two-Level Hierarchical Mechanism Picker**:
+  - **Level 1**: Normal (`teal`), SER (`rose`), SA (`amber`), PER (`purple`), PA (`cyan`).
+  - **Level 2**: Mechanism-specific stage progression with `→` arrows (e.g. Stage I → Stage II → Stage III → Stage IV).
+- **Solid Indicator Dots**: Zero blinking/pulsing animations; strictly solid indicator dots matching the mechanism group color.
+- **Pure Descriptions**: No management, physical exam signs, or surgical fixation details in `clinicalPearl` or `details`.
+- **Left-Aligned Bullets**: `text-left` and `list-disc list-outside pl-4` for all multi-line clinical descriptions.
+- **Universal Grayish-Flesh Cancellous Cut-Face Caps**:
+  - Automatically caps every open boundary loop formed by fracture cutting planes with organic grayish-flesh cancellous bone (`#8C7A73`, roughness `0.88`, double-sided).
+  - Contrasts against the smooth ivory white cortical bone (`#F7F4EC`) in solid 3D mode.
+  - Automatically hidden (`visible: false`) when X-Ray film mode is enabled to preserve realistic, clutter-free radiographic translucency.
+
+
+
 

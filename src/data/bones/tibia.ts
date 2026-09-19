@@ -2,6 +2,7 @@ import type { BoneData } from "../../types";
 
 export const tibiaBone: BoneData = {
   "id": "tibia",
+  "model3dUrl": "/models/bones/tibia/tibia.glb",
   "name": {
     "en": "Tibia & Fibula",
     "th": "กระดูกหน้าแข้งและข้อเท้า"

@@ -321,6 +321,13 @@ function ClassificationMediaViewerModal({
 
   return createPortal(
     <div 
+      onTouchStart={(e) => e.stopPropagation()}
+      onTouchMove={(e) => e.stopPropagation()}
+      onTouchEnd={(e) => e.stopPropagation()}
+      onTouchCancel={(e) => e.stopPropagation()}
+      onPointerDown={(e) => e.stopPropagation()}
+      onPointerMove={(e) => e.stopPropagation()}
+      onPointerUp={(e) => e.stopPropagation()}
       style={{
         position: "fixed", top: 0, left: 0, right: 0, bottom: 0,
         background: "rgba(0,0,0,0.92)",
@@ -1709,7 +1716,7 @@ export function DetailPanel({
   const startedAtTop = useRef<boolean>(false);
 
   const handleGlobalTouchStart = (e: React.TouchEvent) => {
-    if (!isMobile) return;
+    if (!isMobile || show3DModal || showFilmPopup) return;
     dragStartY.current = e.touches[0].clientY;
     isDraggingSheet.current = false;
 
@@ -1734,7 +1741,7 @@ export function DetailPanel({
   };
 
   const handleGlobalTouchMove = (e: React.TouchEvent) => {
-    if (dragStartY.current === null || !isMobile || !startedAtTop.current) return;
+    if (dragStartY.current === null || !isMobile || !startedAtTop.current || show3DModal || showFilmPopup) return;
 
     // Check current scroll position - must remain at top
     const currentScrollTop = activeScrollTarget.current ? activeScrollTarget.current.scrollTop : 0;
@@ -1767,6 +1774,14 @@ export function DetailPanel({
   };
 
   const handleGlobalTouchEnd = (e: React.TouchEvent) => {
+    if (show3DModal || showFilmPopup) {
+      dragStartY.current = null;
+      isDraggingSheet.current = false;
+      activeScrollTarget.current = null;
+      startedAtTop.current = false;
+      return;
+    }
+
     if (!isDraggingSheet.current || dragStartY.current === null || !isMobile) {
       dragStartY.current = null;
       isDraggingSheet.current = false;

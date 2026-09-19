@@ -2,7 +2,7 @@ import type { BoneData } from "../../types";
 
 export const femurBone: BoneData = {
   "id": "femur",
-  "model3dUrl": "/models/bones/femur/femur.obj",
+  "model3dUrl": "/models/bones/femur/femur.glb",
   "name": {
     "en": "Femur & Hip",
     "th": "กระดูกต้นขาและสะโพก"
