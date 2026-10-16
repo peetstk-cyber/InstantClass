@@ -379,8 +379,8 @@ export function RegionConceptPanel({
         </div>
       </div>
 
-      {/* ── Minimalist Glassmorphic 3D Mini Preview (Desktop only, for all bones with 3D models) ── */}
-      {isDesktop && model3dUrl && (
+      {/* ── Minimalist Glassmorphic 3D Mini Preview (for all bones with 3D models) ── */}
+      {model3dUrl && (
         <ErrorBoundary fallback={null}>
           <Bone3DMiniPreview
             modelUrl={model3dUrl}
@@ -388,6 +388,7 @@ export function RegionConceptPanel({
             onOpenFull={() => onOpen3D?.()}
             boneId={boneId}
             regionId={regionId}
+            className="w-full h-44 mb-2"
           />
         </ErrorBoundary>
       )}
