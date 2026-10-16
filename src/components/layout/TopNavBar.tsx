@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import type { Language } from "../../App";
 import type { BoneData } from "../../types";
 import type { UserProfile } from "../../types/auth";
-import { Search, Moon, Sun, Globe, MessageSquarePlus } from "lucide-react";
+import { Search, Moon, Sun, Globe, MessageSquarePlus, Maximize, Minimize } from "lucide-react";
 import { searchEponyms } from "../../data/eponyms";
 import { getBoneIcon } from "../common/BoneIcons";
 
@@ -44,6 +44,85 @@ export function TopNavBar({
 }: TopNavBarProps) {
   const clickCountRef = useRef<number>(0);
   const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Fullscreen state & event listener
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(() => {
+    if (typeof document !== "undefined") {
+      const doc = document as any;
+      return !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement);
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      const doc = document as any;
+      setIsFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement));
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      document.removeEventListener("webkitfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
+      document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
+    };
+  }, []);
+
+  const [showIosTip, setShowIosTip] = useState<boolean>(false);
+
+  const toggleFullscreen = async () => {
+    try {
+      const doc = document as any;
+      const elem = document.documentElement as any;
+      const isCurrentlyFullscreen = !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement);
+
+      const hasFullscreenSupport = !!(
+        elem.requestFullscreen ||
+        elem.webkitRequestFullscreen ||
+        elem.mozRequestFullScreen ||
+        elem.msRequestFullscreen
+      );
+
+      // On iPhone Safari, Apple restricts element fullscreen; guide users to Add to Home Screen (PWA)
+      if (!hasFullscreenSupport) {
+        setShowIosTip(true);
+        setTimeout(() => setShowIosTip(false), 6000);
+        return;
+      }
+
+      if (!isCurrentlyFullscreen) {
+        if (elem.requestFullscreen) {
+          await elem.requestFullscreen();
+        } else if (elem.webkitRequestFullscreen) {
+          await elem.webkitRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          await elem.mozRequestFullScreen();
+        } else if (elem.msRequestFullscreen) {
+          await elem.msRequestFullscreen();
+        }
+      } else {
+        if (doc.exitFullscreen) {
+          await doc.exitFullscreen();
+        } else if (doc.webkitExitFullscreen) {
+          await doc.webkitExitFullscreen();
+        } else if (doc.mozCancelFullScreen) {
+          await doc.mozCancelFullScreen();
+        } else if (doc.msExitFullscreen) {
+          await doc.msExitFullscreen();
+        }
+      }
+    } catch (err) {
+      console.warn("Fullscreen toggle failed or permission denied:", err);
+      // Fallback for iOS devices that reject requestFullscreen with an error
+      setShowIosTip(true);
+      setTimeout(() => setShowIosTip(false), 6000);
+    }
+  };
 
   const handleLogoClick = () => {
     clickCountRef.current += 1;
@@ -264,12 +343,71 @@ export function TopNavBar({
         </button>
         <button
           onClick={onToggleDark}
+          title={darkMode ? (language === "en" ? "Switch to Light Mode" : "สลับเป็นโหมดสว่าง") : (language === "en" ? "Switch to Dark Mode" : "สลับเป็นโหมดมืด")}
+          aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
           style={{ border: `1px solid ${borderColor}`, color: darkMode ? "#94A3B8" : "#000000", background: "transparent" }}
           className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-teal-700 dark:hover:text-[#00CED1] hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer"
         >
           {darkMode ? <Sun size={14} /> : <Moon size={14} />}
         </button>
+
+        {/* Native Fullscreen Toggle Button */}
+        <button
+          onClick={toggleFullscreen}
+          title={
+            isFullscreen
+              ? (language === "en" ? "Exit Fullscreen" : "ออกจากโหมดเต็มหน้าจอ")
+              : (language === "en" ? "Enter Fullscreen (App Mode)" : "โหมดเต็มหน้าจอ (แอปเต็มรูปแบบ)")
+          }
+          aria-label={isFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
+          style={{ 
+            border: `1px solid ${isFullscreen ? (darkMode ? "#00CED1" : "#0F766E") : borderColor}`, 
+            color: isFullscreen ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#94A3B8" : "#000000"), 
+            background: isFullscreen ? (darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)") : "transparent" 
+          }}
+          className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center hover:text-teal-700 dark:hover:text-[#00CED1] hover:border-teal-600 dark:hover:border-[#00CED1] transition-all cursor-pointer"
+        >
+          {isFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
+        </button>
       </div>
+
+      {/* iOS Safari Fullscreen Guidance Toast */}
+      {showIosTip && (
+        <div
+          style={{
+            position: "fixed",
+            top: "calc(52px + env(safe-area-inset-top, 0px) + 8px)",
+            right: "12px",
+            maxWidth: "320px",
+            background: darkMode ? "#161B27" : "#FFFFFF",
+            color: darkMode ? "#F8FAFC" : "#0F172A",
+            border: `1.5px solid ${darkMode ? "#00CED1" : "#0F766E"}`,
+            boxShadow: "0 10px 25px rgba(0,0,0,0.3)",
+            borderRadius: 12,
+            padding: "10px 14px",
+            zIndex: 9999,
+            fontSize: 12,
+            lineHeight: 1.45,
+          }}
+          className="animate-fade-up shadow-xl"
+        >
+          <div className="font-extrabold flex items-center justify-between gap-2 mb-1 text-teal-700 dark:text-[#00CED1]">
+            <span>📱 {language === "en" ? "Fullscreen on iPhone" : "วิธีเปิดเต็มหน้าจอบน iPhone"}</span>
+            <button
+              type="button"
+              onClick={() => setShowIosTip(false)}
+              className="text-slate-400 hover:text-slate-200 cursor-pointer text-xs"
+            >
+              ✕
+            </button>
+          </div>
+          <div className="text-[11.5px] font-medium text-slate-600 dark:text-slate-300">
+            {language === "en"
+              ? "Apple Safari requires adding to Home Screen: Tap the Share button at the bottom of Safari, then select 'Add to Home Screen' to launch as a standalone fullscreen app."
+              : "Safari บน iPhone ไม่อนุญาตให้ซ่อน URL โดยตรง: แตะปุ่มแชร์ (Share ⎋) ที่แถบล่าง Safari แล้วเลือก 'เพิ่มไปยังหน้าจอโฮม' เพื่อเปิดใช้งานเต็มหน้าจอ 100% ไร้แถบ URL"}
+          </div>
+        </div>
+      )}
     </header>
   );
 }

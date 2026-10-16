@@ -20,6 +20,7 @@ interface LeftSidebarProps {
   onSelectBone: (bone: BoneData, regionId?: string) => void;
   onBackToList?: () => void;
   searchQuery: string;
+  onOpen3D?: () => void;
 }
 
 const CATEGORY_GROUPS = [
@@ -51,7 +52,7 @@ const CATEGORY_GROUPS = [
 
 export function LeftSidebar({
   darkMode, language, bones, selectedBone, selectedRegionId,
-  onSelectBone, onBackToList, searchQuery,
+  onSelectBone, onBackToList, searchQuery, onOpen3D,
 }: LeftSidebarProps) {
   const bg          = darkMode ? "#161B27" : "#FFFFFF";
   const border      = darkMode ? "#252F42" : "#E2E8F0";
@@ -112,6 +113,9 @@ export function LeftSidebar({
           isDesktop={true}
           isExpanded={isConceptExpanded}
           onToggleExpand={() => setIsConceptExpanded(prev => !prev)}
+          boneId={selectedBone.id}
+          model3dUrl={selectedBone.model3dUrl}
+          onOpen3D={onOpen3D}
         />
       ) : (
         /* Display default Bone List */

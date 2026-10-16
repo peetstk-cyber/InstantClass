@@ -54,6 +54,12 @@ For each view, specify:
 - `details`: Dual-language description (`{ en: "...", th: "..." }`) of patient positioning, tube angle, and diagnostic rationale.
 - `imageId`: Optional image path. If omitted, the UI renders the standard placeholder `[Image Space: Ready for {View Name} X-Ray]`.
 
+### 7. Strict Existing Data Sourcing & Description Fidelity
+When configuring or linking classifications to 3D presets or detailed views:
+- **Use Existing Data Exclusively**: Descriptions, clinical pearls, and criteria MUST be taken directly from existing entries in `src/data/bones/*.ts`.
+- **Do Not Invent or Add Extra Text**: Never fabricate or add custom classification systems or descriptions not already validated and present in the codebase.
+- Preserve exact wording and bullet separation (`\n`) to maintain complete clinical consistency between 2D detail views and 3D viewers.
+
 ---
 
 ## Standard Code Template (`src/data/bones.ts` / `src/data/bones/*.ts`)

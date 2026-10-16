@@ -852,8 +852,8 @@ export const humerusBone: BoneData = {
                 "th": "ภาวะ Radial nerve palsy จากแผลปิดแต่แรก: ~90% หายได้เองใน 3-4 เดือน ให้รักษาแบบไม่ผ่าตัดและติดตามด้วย EMG"
               },
               {
-                "en": "Secondary Radial Nerve Palsy (developing AFTER closed reduction): Indicative of nerve entrapment in fracture site; SURGICAL EXPLORATION MANDATORY.",
-                "th": "ภาวะ Radial nerve palsy ที่เกิดขึ้นใหม่หลังการดึงจัดกระดูก (Secondary palsy): บ่งชี้ว่าเส้นประสาทถูกหนีบในรอยหัก ต้องผ่าตัดเปิดสำรวจทันที (Exploration)"
+                "en": "Secondary Radial Nerve Palsy (developing AFTER closed reduction): Historically favored urgent surgical exploration (Schatzker); modern literature supports close observation as most recover spontaneously, reserving exploration for irreducible entrapment or failed recovery.",
+                "th": "ภาวะ Radial nerve palsy ที่เกิดขึ้นใหม่หลังการดึงจัดกระดูก (Secondary palsy): ในอดีตแนะนำให้ผ่าตัดสำรวจทันที (Schatzker) แต่งานวิจัยยุคปัจจุบันพบว่าส่วนใหญ่ฟื้นตัวได้เอง จึงสามารถติดตามอาการอย่างใกล้ชิดและผ่าตัดเมื่อไม่ฟื้นตัวหรือจัดกระดูกไม่เข้า"
               }
             ],
             "clinicalSignificance": [
@@ -1202,8 +1202,8 @@ export const humerusBone: BoneData = {
                 "th": "Type B (Partial Articular): รอยหักเข้าข้อบางส่วน โดยมีเสากระดูกข้างหนึ่งเชื่อมต่อกับแกนกระดูก (B1 ปุ่มนอก, B2 ปุ่มใน, B3 รอยหักเฉือน Coronal) -> ยึดด้วย Lag screws หรือ Headless screws"
               },
               {
-                "en": "Type C (Complete Articular): Articular block is completely detached and dissociated from humeral shaft -> Mandatory trans-olecranon osteotomy + dual parallel locking plates",
-                "th": "Type C (Complete Articular): ชิ้นผิวข้อทั้งหมดหลุดแยกขาดจากแกนกระดูกต้นแขน -> ผ่าตัดเปิดผ่าน Olecranon osteotomy + ดามแผ่นเหล็กล็อคคู่ขนาน (Parallel Plating)"
+                "en": "Type C (Complete Articular): Articular block is completely detached from shaft -> Olecranon osteotomy preferred for comminuted C3 patterns (triceps-sparing suitable for C1-C2) + dual plating (parallel or orthogonal 90-90° architecture)",
+                "th": "Type C (Complete Articular): ชิ้นผิวข้อทั้งหมดหลุดแยกขาดจากแกนกระดูกต้นแขน -> นิยมเปิดผ่าน Olecranon osteotomy ในชนิดแตกละเอียด C3 (หรือ Triceps-sparing ใน C1-C2) + ดามแผ่นเหล็กล็อคคู่ (แบบขนาน Parallel หรือตั้งฉาก 90-90°)"
               }
             ],
             "clinicalSignificance": [

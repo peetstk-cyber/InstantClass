@@ -421,6 +421,9 @@ function App() {
             onSelectBone={handleSelectBone}
             onBackToList={handleClose}
             searchQuery={searchQuery}
+            onOpen3D={() => {
+              window.dispatchEvent(new CustomEvent("open-3d-modal"));
+            }}
           />
 
           {/* Center full-screen canvas */}

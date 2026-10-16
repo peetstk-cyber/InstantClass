@@ -140,7 +140,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "หากเป็นผู้ป่วยอายุน้อย (<60 ปี) เป้าหมายคือการผ่าตัดดึงจัดกระดูกให้เข้าที่อย่างเร่งด่วนและยึดสกรูเพื่อรักษาหัวกระดูกธรรมชาติไว้",
     },
     boneId: "femur",
-    regionId: "proximal",
+    regionId: "femoral-neck",
   },
   {
     id: "hy-humerus-neer",
@@ -336,7 +336,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "APC-II เกิดจากแรงอัดหน้า-หลัง ทำให้ Symphysis แยกเกิน 2.5 ซม. และเอ็นยึดด้านหน้า SI joint ฉีกขาด เชิงกรานอ้าเปิดเหมือนหนังสือ (Open book) เสี่ยงตกเลือดในอุ้งเชิงกราน ต้องใส่ Pelvic Sheet/Binder ทันที",
     },
     boneId: "pelvis",
-    regionId: "ring",
+    regionId: "pelvic-ring",
   },
   // ── Distal Radius ──
   {
@@ -383,8 +383,8 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       en: "Weber B fractures occur at the level of the syndesmosis. The syndesmosis may or may not be disrupted. Medial clear space > 4 mm on mortise view suggests deltoid ligament injury and ankle instability requiring surgical fixation.",
       th: "Weber B หักที่ระดับ Syndesmosis เอ็น Syndesmosis อาจฉีกหรือไม่ก็ได้ Medial Clear Space > 4 มม. บ่งชี้ว่า Deltoid ligament ฉีก ข้อเท้าไม่มั่นคง ต้องผ่าตัด",
     },
-    boneId: "foot",
-    regionId: "ankle",
+    boneId: "tibia",
+    regionId: "distal",
   },
   // ── Supracondylar Humerus (Pedi) ──
   {
@@ -480,7 +480,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "Olecranon คือจุดยึดปลายของเอ็น Triceps — กล้ามเนื้อหลักที่เหยียดข้อศอก กระดูกหักเคลื่อนที่เท่ากับเอ็น Triceps ขาด ผู้ป่วยจึงเหยียดศอกไม่ได้ เหมือนกับสะบ้าหักทำให้เข่าเหยียดไม่ได้",
     },
     boneId: "forearm",
-    regionId: "proximal",
+    regionId: "olecranon",
   },
   // ── Calcaneus Sanders ──
   {
@@ -506,7 +506,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "10% ของกระดูกส้นเท้าหักจะมีกระดูกสันหลังเอวหักร่วม ต้องตรวจกระดูกสันหลังทุกรายที่ตกจากที่สูง",
     },
     boneId: "foot",
-    regionId: "hindfoot",
+    regionId: "calcaneus",
   },
   // ── Thoracolumbar Spine TLICS ──
   {
@@ -598,7 +598,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "สะบ้าหักที่ผิวข้อเลื่อนเกิน 2-3 มม. หรือแยกเกิน 3 มม. และเหยียดเข่าไม่ได้ ต้องผ่าตัด Tension Band Wiring เปลี่ยนแรงดึงเป็นแรงกด ช่วยให้กระดูกติด",
     },
     boneId: "patella",
-    regionId: "body",
+    regionId: "patella",
   },
   // ── AC Joint Rockwood ──
   {
@@ -620,7 +620,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "Rockwood III = เอ็น AC + CC ฉีกหมด กระดูกเลื่อนขึ้น 25-100% Type V = เลื่อนขึ้น > 200% โดยทั่วไป Type I-III รักษาแบบอนุรักษ์ Type IV-VI ต้องผ่าตัด",
     },
     boneId: "clavicle",
-    regionId: "distal",
+    regionId: "ac-joint",
   },
   // ── Fat Pad Sign ──
   {
@@ -646,7 +646,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "หาก Fat Pad Sign บวกแต่ไม่เห็นรอยหัก ให้รักษาเสมือนกระดูก Radial Head หัก ดามเฝือกครึ่งท่อนเหนือข้อศอก นัดถ่ายฟิล์มซ้ำใน 10-14 วัน",
     },
     boneId: "forearm",
-    regionId: "proximal",
+    regionId: "radial-head",
   },
   // ── Hip Dislocation ──
   {
@@ -672,7 +672,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "ท่าคลาสสิก: สะโพกงอ หุบ หมุนเข้า (FAIR position) ต้องส่ง CT หลังดึงเข้าที่เสมอเพื่อตรวจกระดูกเบ้าสะโพกหัก (Posterior wall fracture)",
     },
     boneId: "femur",
-    regionId: "proximal",
+    regionId: "femoral-neck",
   },
   // ── Intertrochanteric Fracture ──
   {
@@ -694,7 +694,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "Intertrochanteric fracture เกิดนอกแคปซูลข้อสะโพก (Extracapsular) มีเส้นเลือดจากเยื่อหุ้มกระดูกและกล้ามเนื้อรอบๆ เลี้ยงมากมาย ต่างจาก Femoral Neck fracture ที่อยู่ในแคปซูล ทำให้เส้นเลือด Retinacular ที่ไปเลี้ยงหัวกระดูกถูกตัดขาด",
     },
     boneId: "femur",
-    regionId: "proximal",
+    regionId: "intertrochanteric",
   },
   // ── Lateral Condyle (Pedi) ──
   {
@@ -738,7 +738,7 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "Terrible Triad ประกอบด้วย: (1) ข้อศอกหลุดด้านหลัง (2) Radial Head หัก (3) Coronoid Process หัก มีอัตราข้อไม่มั่นคงสูงมาก ต้องผ่าตัดซ่อมอย่างเป็นระบบ: ซ่อม Coronoid → ยึด/เปลี่ยน Radial Head → เย็บเอ็นด้านข้าง",
     },
     boneId: "forearm",
-    regionId: "proximal",
+    regionId: "radial-head",
   },
   // ── Spine — Odontoid Fracture ──
   {
@@ -760,7 +760,1195 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
       th: "Type II หักที่ฐาน Dens ซึ่งเป็นบริเวณรอยต่อของเส้นเลือด (Watershed zone) อัตราไม่ติดสูงถึง 25-40% ในผู้สูงอายุ Type III หักเข้าตัวกระดูก C2 ซึ่งเป็นกระดูก Cancellous เลือดเลี้ยงดี ติดง่ายด้วยการดามคอ/Halo",
     },
     boneId: "c-spine",
-    regionId: "c2-odontoid",
+    regionId: "upper-cervical",
+  },
+  // ── Forearm / Radius — Henry Approach & PIN Protection ──
+  {
+    id: "hy-radius-henry-approach",
+    category: "upper",
+    tag: { en: "SURGICAL APPROACH • RADIUS", th: "กายวิภาคผ่าตัด • กระดูกปลายแขน" },
+    scenario: {
+      en: "A 27-year-old male sustains a displaced fracture of the proximal third of the radial shaft following a motorcycle collision. The orthopedic team performs an anterior volar approach (Henry approach) for open reduction and internal fixation. To mobilize and reflect the supinator muscle off its radial insertion without causing traction or transection injury to the posterior interosseous nerve (PIN), in which position must the forearm be maintained?",
+      th: "ผู้ป่วยชายอายุ 27 ปี ประสบอุบัติเหตุรถจักรยานยนต์ เกิดกระดูกเรเดียสส่วนต้น (Proximal third radial shaft) หักแบบเลื่อนตำแหน่ง ศัลยแพทย์ออร์โธปิดิกส์ลงแผลผ่าตัดด้านหน้า (Henry approach) เพื่อทำ ORIF ในขั้นตอนการเลาะเปิดกล้ามเนื้อ Supinator ออกจากจุดเกาะที่กระดูกเพื่อป้องกันการบาดเจ็บต่อเส้นประสาท Posterior Interosseous Nerve (PIN) แขนท่อนล่างต้องถูกจัดให้อยู่ในท่าใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Full supination to shift the posterior interosseous nerve laterally away from the field",
+          th: "Supination เต็มที่ เพื่อเลื่อนแนวเส้นประสาท Posterior interosseous ออกไปทางด้านข้างและห่างจากลานผ่าตัด",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Full pronation to relax the supinator muscle belly and protect the radial recurrent arcade",
+          th: "Pronation เต็มที่ เพื่อหย่อนมัดกล้ามเนื้อ Supinator และป้องกันอันตรายต่อแขนงหลอดเลือด Radial recurrent",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Neutral rotation to balance tension between the supinator and adjacent pronator teres bellies",
+          th: "Neutral rotation เพื่อลดแรงตึงผิวระหว่างกล้ามเนื้อ Supinator และขอบของกล้ามเนื้อ Pronator teres",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Moderate pronation with wrist flexion to displace the superficial sensory radial nerve medially",
+          th: "Pronation เล็กน้อย ร่วมกับงอข้อมือ เพื่อเลื่อนเส้นประสาท Superficial sensory radial nerve เข้าด้านใน",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In the anterior approach to the proximal radius (Henry approach), the supinator muscle must be elevated subperiosteally from medial to lateral. Maintaining the forearm in full supination rotates the radial tuberosity anteriorly and shifts the insertion of the supinator laterally, displacing the posterior interosseous nerve (PIN)—which courses within the substance of the supinator—laterally and posteriorly away from the dissection. In contrast, pronation brings the PIN medially and anteriorly directly into the surgical field, drastically increasing the risk of iatrogenic nerve transection or traction injury.",
+      th: "ในการผ่าตัดเปิดกระดูกเรเดียสส่วนต้นทางด้านหน้า (Henry approach) จะต้องเลาะกล้ามเนื้อ Supinator ออกจากกระดูกจาก medial ไป lateral โดยแขนท่อนล่างต้องถูกจัดให้อยู่ในท่า Supination เต็มที่เสมอ เนื่องจากการหงายมือจะหมุน Radial tuberosity มาด้านหน้าและผลักจุดเกาะของ Supinator พร้อมเส้นประสาท PIN (ที่ทอดผ่านกล้ามเนื้อนี้) ให้ถอยร่นออกไปทางด้านข้างและด้านหลัง (laterally and posteriorly) พ้นจากลานผ่าตัด หากคว่ำแขน (Pronation) เส้นประสาท PIN จะถูกดึงหมุนเข้ามาด้านหน้าและอยู่ใกล้แนวผ่าตัดอย่างอันตราย เสี่ยงต่อการบาดเจ็บรุนแรง",
+    },
+    pearls: {
+      en: "Surgical mnemonic: 'Supinate to Save the PIN' during proximal Henry approach. Always dissect subperiosteally from the medial border of the radius toward the lateral aspect.",
+      th: "หลักการจำ: 'Supinate to Save the PIN' เมื่อเปิด Henry approach ส่วนต้น ต้องเลาะแบบ Subperiosteal จากขอบด้านใน (Medial) ไปขอบด้านนอก (Lateral) ในท่าหงายมือสุดเสมอ",
+    },
+    boneId: "forearm",
+    regionId: "shaft",
+  },
+  // ── Talus — Hawkins Classification & Hawkins Sign ──
+  {
+    id: "hy-talus-hawkins-sign",
+    category: "lower",
+    tag: { en: "CLASSIFICATION & COMPLICATION • TALUS", th: "การจำแนกและการฟื้นตัว • กระดูกทาลัส" },
+    scenario: {
+      en: "A 34-year-old roofer falls from height and sustains a closed, displaced talar neck fracture with subtalar dislocation (Hawkins Type II). He undergoes urgent anatomic open reduction and rigid internal fixation with dual cannulated compression screws. At his 8-week postoperative visit, a mortise radiograph demonstrates a linear, patchy radiolucency directly beneath the subchondral bone plate of the talar dome. What does this radiographic finding signify regarding the biological status of the talus?",
+      th: "ช่างมุงหลังคาเพศชายอายุ 34 ปี พลัดตกจากที่สูง ได้รับบาดเจ็บกระดูกคอทาเลสหักแบบเคลื่อนตำแหน่งร่วมกับข้อใต้ทาเลสหลุด (Hawkins Type II) ได้รับการผ่าตัดจัดกระดูกเข้าที่และยึดตรึงด้วยสกรูอัดสองตัวอย่างเร่งด่วน ในการตรวจติดตามอาการสัปดาห์ที่ 8 ภาพรังสีข้อเท้าท่า Mortise view พบแถบเงาดำโปร่งรังสี (patchy radiolucency) ใต้แนว Subchondral bone plate บริเวณ Talar dome อย่างชัดเจน ภาพรังสีนี้ (Hawkins sign) บ่งบอกถึงสภาวะทางชีววิทยาใดของกระดูกทาเลส?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Subchondral osteopenia signifying active revascularization and viability of the talar body",
+          th: "ภาวะเนื้อกระดูกบางจากการขาดการลงน้ำหนัก บ่งบอกว่ามีเส้นเลือดกลับมาเลี้ยงและกระดูกยังไม่ตาย",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Subchondral osteolysis signifying structural collapse and established osteonecrosis of the talus",
+          th: "การละลายของเนื้อกระดูกใต้ผิวข้อ บ่งชี้การยุบตัวของโครงสร้างและเกิดภาวะหัวกระดูกตายถาวร",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Implant loosening signifying loss of rigid internal fixation requiring urgent revision surgery",
+          th: "การคลายตัวของสกรูยึด บ่งบอกถึงการสูญเสียความมั่นคงในการตรึงกระดูกและต้องผ่าตัดแก้ไขด่วน",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Post-traumatic chondrolysis signifying acute end-stage arthritis of the tibiotalar articulation",
+          th: "การสลายตัวของกระดูกอ่อนข้อต่อ บ่งชี้การเกิดภาวะข้อเท้าเสื่อมรุนแรงระยะสุดท้ายหลังการบาดเจ็บ",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Hawkins sign refers to a patchy, subchondral radiolucency beneath the articular surface of the talar dome visible on mortise or AP ankle radiographs at 6 to 8 weeks post-injury. It represents disuse osteopenia and bone resorption, which physiologically can only occur if the talar body possesses intact vascular perfusion. Therefore, the presence of a positive Hawkins sign is a highly reliable indicator of talar viability, effectively ruling out avascular necrosis (AVN). Conversely, absence of subchondral radiolucency (a sclerotic talar dome relative to surrounding osteopenic tibia and fibula) indicates ischemia and high probability of osteonecrosis.",
+      th: "Hawkins sign คือการพบรอยโปร่งรังสี (radiolucency) บริเวณใต้กระดูกอ่อนผิวข้อของ Talar dome ในภาพถ่ายเอกซเรย์สัปดาห์ที่ 6-8 หลังการบาดเจ็บ รอยโปร่งรังสีนี้เกิดจากภาวะ Disuse osteopenia (การสลายเนื้อกระดูกจากการไม่ได้ลงน้ำหนัก) ซึ่งจะเกิดขึ้นได้ก็ต่อเมื่อมี 'กระแสเลือดมาเลี้ยงอย่างสมบูรณ์' เท่านั้น ดังนั้น การมี Hawkins sign จึงเป็นข้อบ่งชี้สำคัญที่ยืนยันว่ากระดูกยังมีชีวิต (Viable) และแทบตัดโอกาสการเกิด AVN ออกไปได้ ตรงกันข้าม หากไม่พบรอยโปร่งรังสี (กระดูกทาเลสยังคงขาวทึบ Sclerotic เมื่อเทียบกับกระดูก Tibia/Fibula รอบข้างที่บางลง) แสดงว่าขาดเลือดไปเลี้ยงและมีความเสี่ยงสูงที่จะเกิด AVN",
+    },
+    pearls: {
+      en: "A positive Hawkins sign indicates bone viability and rules out osteonecrosis; absence of subchondral atrophy indicates ischemia and impending talar dome AVN.",
+      th: "Hawkins sign ให้ผลบวก (เห็นรอยดำโปร่งรังสี) = กระดูกมีเลือดเลี้ยงและรอดชีวิต หากให้ผลลบ (กระดูกยังขาวทึบไม่บางลง) = หัวกระดูกขาดเลือดและเสี่ยงต่อการเกิด AVN สูงมาก",
+    },
+    boneId: "foot",
+    regionId: "talus",
+  },
+  // ── Pelvis & Acetabulum — Modified Stoppa Approach & Corona Mortis ──
+  {
+    id: "hy-pelvis-corona-mortis",
+    category: "lower",
+    tag: { en: "SURGICAL ANATOMY • PELVIC TRAUMA", th: "กายวิภาคศาสตร์การผ่าตัด • กระดูกเชิงกราน" },
+    scenario: {
+      en: "A 36-year-old male sustains an anterior column and quadrilateral plate acetabular fracture following a motor vehicle collision. The surgical team performs open reduction via an anterior intrapelvic (modified Stoppa) approach. While subperiosteally dissecting along the superior pubic ramus over the pectineal line (Cooper's ligament) approximately 4 to 5 cm lateral to the pubic symphysis, brisk arterial bleeding is suddenly encountered. Which vascular connection represents this hazardous anatomical variant (corona mortis)?",
+      th: "ผู้ป่วยชายอายุ 36 ปี ประสบอุบัติเหตุทางรถยนต์ ได้รับบาดเจ็บกระดูกเบ้าสะโพกส่วนหน้าและ Quadrilateral plate หัก ทีมศัลยแพทย์วางแผนผ่าตัดผ่านทาง Anterior intrapelvic (Modified Stoppa) approach ขณะกำลังเลาะเยื่อหุ้มกระดูกบริเวณ Superior pubic ramus เหนือแนว Pectineal line (Cooper's ligament) ห่างจาก Pubic symphysis ออกไปทางด้านข้าง 4-5 เซนติเมตร เกิดเลือดออกปริมาณมากจากหลอดเลือดแดงอย่างกะทันหัน หลอดเลือดที่มีความเสี่ยงสูงนี้ (Corona mortis) เกิดจากการเชื่อมต่อ (Anastomosis) ระหว่างหลอดเลือดคู่ใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Anastomosis between the inferior epigastric or external iliac artery and obturator artery",
+          th: "หลอดเลือดเชื่อมต่อระหว่าง Inferior epigastric หรือ External iliac artery กับ Obturator artery",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Anastomosis between the superior gluteal artery and the medial femoral circumflex artery",
+          th: "หลอดเลือดเชื่อมต่อระหว่าง Superior gluteal artery กับ Medial femoral circumflex artery",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Anastomosis between the internal pudendal artery and the deep inferior rectal artery",
+          th: "หลอดเลือดเชื่อมต่อระหว่าง Internal pudendal artery กับ Inferior rectal artery",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Anastomosis between the lateral circumflex femoral artery and the ascending iliolumbar artery",
+          th: "หลอดเลือดเชื่อมต่อระหว่าง Lateral circumflex femoral artery กับ Iliolumbar artery",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The corona mortis ('crown of death') is an anatomical vascular anastomosis between the external iliac or inferior epigastric arterial system and the obturator system of the internal iliac artery. It traverses directly over the superior pubic ramus along the pectineal line (Cooper's ligament), approximately 3 to 5 cm lateral to the pubic symphysis. During anterior approaches to the acetabulum and pelvis—such as the anterior intrapelvic (modified Stoppa) approach or the middle window of the ilioinguinal approach—vigorous retraction or unrecognised dissection can avulse or transect this vessel. Retraction into the obturator canal can cause torrential, life-threatening retroperitoneal hemorrhage. The superior gluteal to medial circumflex anastomosis contributes to the cruciate anastomosis of the posterior hip. The internal pudendal to inferior rectal branches run through Alcock's canal in the perineum. The lateral circumflex and iliolumbar arteries do not cross Cooper's ligament.",
+      th: "Corona mortis ('มงกุฎแห่งความตาย') คือหลอดเลือดเชื่อมต่อ (Anastomosis) ผิดปกติระหว่างระบบหลอดเลือด External iliac (ผ่าน Inferior epigastric artery) กับระบบ Internal iliac (ผ่าน Obturator artery) ซึ่งทอดข้ามเหนือขอบ Superior pubic ramus บริเวณ Pectineal line (Cooper's ligament) ห่างจากแนวข้อต่อหัวเหน่า (Pubic symphysis) ประมาณ 3-5 เซนติเมตร ในการผ่าตัดกระดูกเบ้าสะโพกและเชิงกรานทางด้านหน้า เช่น Anterior intrapelvic (Modified Stoppa) approach หรือช่องที่ 2 (Middle window) ของ Ilioinguinal approach หากเลาะเปิดเนื้อเยื่อโดยไม่ระมัดระวังหรือดึงรั้งมากเกินไป หลอดเลือดนี้อาจฉีกขาดและปลายหลอดเลือดหดร่นเข้าไปใน Obturator foramen ทำให้เกิดภาวะเลือดออกรุนแรงในช่องเชิงกรานจนเป็นอันตรายถึงชีวิตได้ ส่วนหลอดเลือดคู่อื่นๆ เช่น Superior gluteal กับ Medial femoral circumflex เป็นส่วนหนึ่งของ Cruciate anastomosis ด้านหลังข้อสะโพก, Internal pudendal ทอดตัวอยู่ในฝีเย็บ (Pudendal/Alcock's canal) และ Lateral circumflex กับ Iliolumbar ไม่ได้ทอดผ่านแนว Cooper's ligament",
+    },
+    pearls: {
+      en: "Always systematically identify, isolate, and prophylactically clip or bipolar coagulate the corona mortis over Cooper's ligament before dissecting the quadrilateral plate in a modified Stoppa approach.",
+      th: "ในการผ่าตัด Modified Stoppa approach ต้องมองหา แยก และหนีบคลิป (Ligate/Clip) หรือจี้ไฟฟ้าหลอดเลือด Corona mortis เหนือแนว Cooper's ligament (ห่างจากข้อต่อหัวเหน่า 3-5 ซม.) เสมอก่อนลงมือเลาะแผ่น Quadrilateral plate",
+    },
+    boneId: "pelvis",
+    regionId: "acetabulum",
+  },
+  // ── Humerus Shaft — Holstein-Lewis Fracture & Radial Nerve Management ──
+  {
+    id: "hy-humerus-holstein-lewis",
+    category: "upper",
+    tag: { en: "EMERGENCY MANAGEMENT • HUMERUS SHAFT", th: "การจัดการภาวะฉุกเฉิน • กระดูกต้นแขน" },
+    scenario: {
+      en: "A 32-year-old male sustains a closed, spiral fracture of the distal third of the humeral shaft (Holstein-Lewis pattern) following a motor vehicle collision. On clinical examination, he presents with complete wrist drop, inability to extend the metacarpophalangeal joints, and numbness over the dorsal first web space. The extremity is closed with intact distal pulses and no signs of compartment syndrome. Post-splinting radiographs confirm acceptable fracture alignment (< 15 degrees angulation and < 2 cm shortening). What is the most appropriate initial management for this patient's radial nerve palsy?",
+      th: "ผู้ป่วยชายอายุ 32 ปี ประสบอุบัติเหตุทางรถยนต์ ได้รับบาดเจ็บกระดูกต้นแขนส่วนปลายหักแบบเกลียว (Spiral distal third humeral shaft fracture หรือ Holstein-Lewis fracture) ชนิดแผลปิด ตรวจร่างกายพบภาวะข้อมือตก (Wrist drop) ไม่สามารถกระดกข้อนิ้วมือ (MCP joints) ได้ และสูญเสียการรับรู้ความรู้สึกบริเวณง่ามนิ้วโป้งด้านหลังมือ (Dorsal first web space) ชีพจรส่วนปลายเต้นปกติ ไม่มีภาวะ Compartment syndrome ภาพเอกซเรย์หลังดามเฝือกชั่วคราวพบแนวกระดูกอยู่ในเกณฑ์ที่ยอมรับได้ แนวทางการดูแลรักษาเบื้องต้นที่ถูกต้องและเหมาะสมที่สุดสำหรับภาวะเส้นประสาทเรเดียลบาดเจ็บในผู้ป่วยรายนี้คือข้อใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Observation with functional bracing and serial electrodiagnostic and clinical monitoring",
+          th: "การเฝ้าสังเกตอาการทางคลินิกร่วมกับการใส่เฝือกพยุงและตรวจประเมินระบบประสาทต่อเนื่อง",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Urgent open exploration and neurolysis through an anterolateral or posterior approach",
+          th: "การผ่าตัดเปิดสำรวจเส้นประสาทอย่างเร่งด่วนผ่านทาง Anterolateral หรือ Posterior approach",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Immediate closed reduction under general anesthesia and percutaneous retrograde intramedullary nailing",
+          th: "การดึงจัดแนวกระดูกเข้าที่ในห้องผ่าตัดและใส่แท่งเหล็กดามกระดูกแบบ Intramedullary nailing",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Emergent surgical exploration with primary epineural repair and anterior nerve transposition",
+          th: "การผ่าตัดเย็บซ่อมเส้นประสาทแบบ Epineural repair และย้ายตำแหน่งเส้นประสาททันที",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In closed humeral shaft fractures presenting with primary radial nerve palsy—including distal third spiral fractures (Holstein-Lewis variant)—approximately 85% to 90% of nerve injuries represent neurapraxia or axonotmesis that resolve spontaneously within 3 to 6 months. When the fracture is closed, neurovascular distal perfusion is preserved, and acceptable reduction is maintained, initial nonoperative management with a coaptation splint transitioning to a functional Sarmiento brace alongside serial clinical and electrodiagnostic (EMG/NCS) evaluations at 3 to 4 months is the standard of care. Absolute indications for early operative exploration include: (1) open humeral fractures with nerve palsy, (2) concomitant vascular injury requiring surgical revascularization, (3) secondary radial nerve palsy that develops de novo following closed reduction or manipulation (concerning for entrapment between bone spikes), and (4) absence of clinical or electromyographic recovery after 3 to 4 months of observation.",
+      th: "ในผู้ป่วยกระดูกต้นแขนหักชนิดแผลปิดที่มีภาวะเส้นประสาทเรเดียลบาดเจ็บร่วมด้วยตั้งแต่แรก (Primary radial nerve palsy) รวมถึงกระดูกหักบริเวณรอยต่อส่วนปลายแบบเกลียว (Holstein-Lewis fracture) พบว่าร้อยละ 85-90 ของการบาดเจ็บเป็นแบบ Neurapraxia หรือ Axonotmesis ซึ่งสามารถฟื้นตัวกลับมาได้เองภายในระยะเวลา 3 ถึง 6 เดือน หากเป็นแผลปิด ระบบไหลเวียนเลือดส่วนปลายปกติ และแนวกระดูกอยู่ในเกณฑ์ที่ยอมรับได้ การรักษาเบื้องต้นที่ได้มาตรฐานคือการให้การรักษาแบบประคับประคอง โดยดามเฝือกชั่วคราวแล้วเปลี่ยนเป็น Functional Sarmiento brace ร่วมกับการตรวจติดตามอาการทางคลินิกและการตรวจคลื่นไฟฟ้ากล้ามเนื้อ (EMG/NCV) เมื่อครบ 3-4 เดือน ข้อบ่งชี้ในการผ่าตัดเปิดสำรวจเส้นประสาทตั้งแต่แรก ได้แก่ (1) กระดูกหักแบบเปิด (Open fracture), (2) มีการบาดเจ็บของหลอดเลือดร่วมด้วย, (3) ภาวะเส้นประสาทเป็นอัมพาตที่เกิดขึ้น 'หลัง' การดึงจัดกระดูก (Secondary palsy ซึ่งบ่งชี้ว่าเส้นประสาทอาจถูกหนีบติดในรอยหัก), หรือ (4) ตรวจไม่พบการฟื้นตัวหลังเฝ้าสังเกตอาการไปแล้ว 3-4 เดือน",
+    },
+    pearls: {
+      en: "Primary radial nerve palsy in closed humeral shaft fractures should be managed nonoperatively with functional bracing; urgent exploration is reserved for secondary palsy developing after closed manipulation or open fractures.",
+      th: "Primary radial nerve palsy ในกระดูกต้นแขนหักชนิดแผลปิดให้รักษาแบบไม่ผ่าตัดด้วย Functional brace ก่อนเสมอ จะผ่าตัดสำรวจด่วนเฉพาะในกรณี Secondary palsy ที่เกิดตามหลังการดึงกระดูก หรือเป็น Open fracture เท่านั้น",
+    },
+    boneId: "humerus",
+    regionId: "shaft",
+  },
+  // ── Subtrochanteric Femur — Deforming Muscle Forces & Reduction Biomechanics ──
+  {
+    id: "hy-femur-subtroch-deforming-forces",
+    category: "lower",
+    tag: { en: "BIOMECHANICS & OPERATIVE PEARL • SUBTROCHANTERIC FEMUR", th: "ชีวกลศาสตร์และเทคนิคผ่าตัด • กระดูกต้นขาส่วนซับโทรแคนเทอริก" },
+    scenario: {
+      en: "A 34-year-old male is brought to the emergency department following a high-speed motorcycle crash sustaining an isolated, closed, displaced subtrochanteric femur fracture (AO/OTA 32-A1). In the operating suite, during traction on a fracture table prior to cephalomedullary nailing, fluoroscopy demonstrates persistent flexion, abduction, and external rotation of the proximal fragment. Which muscle group combination produces this characteristic proximal fragment deformity, and which vector must the surgeon counteract to achieve anatomical sagittal alignment?",
+      th: "ผู้ป่วยชายอายุ 34 ปี ประสบอุบัติเหตุรถจักรยานยนต์ความเร็วสูง ได้รับบาดเจ็บกระดูกต้นขาส่วนใต้ปุ่มกระดูกหักชนิดเคลื่อนที่และเป็นแผลปิด (Subtrochanteric femur fracture, AO/OTA 32-A1) ในห้องผ่าตัดขณะดึงกระดูกบนเตียงผ่าตัดเพื่อเตรียมใส่ Cephalomedullary nail ภาพเอกซเรย์ Fluoroscopy พบชิ้นกระดูกส่วนต้นยังคงค้างอยู่ในท่า Flexion, Abduction และ External rotation กลุ่มกล้ามเนื้อใดเป็นแรงหลักที่ดึงรั้งให้เกิดการผิดรูปดังกล่าว และศัลยแพทย์ต้องออกแรงดัดทิศทางใดเพื่อแก้ไขการผิดรูปในแนวดิ่ง (Sagittal plane)?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Proximal fragment deformed by iliopsoas, abductors, and short rotators; counteracted by extending the proximal segment",
+          th: "ชิ้นกระดูกส่วนต้นถูกดึงรั้งโดย Iliopsoas, Abductors และ Short rotators; แก้ไขด้วยการดัดจัดกระดูกให้อยู่ในท่า Extension",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Proximal fragment deformed by rectus femoris, adductors, and obturator internus; counteracted by flexing the proximal segment",
+          th: "ชิ้นกระดูกส่วนต้นถูกดึงรั้งโดย Rectus femoris, Adductors และ Obturator internus; แก้ไขด้วยการดัดจัดกระดูกให้อยู่ในท่า Flexion",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Proximal fragment deformed by gluteus maximus, pectineus, and piriformis; counteracted by internally rotating the distal segment",
+          th: "ชิ้นกระดูกส่วนต้นถูกดึงรั้งโดย Gluteus maximus, Pectineus และ Piriformis; แก้ไขด้วยการหมุนบิดกระดูกส่วนปลายเข้าด้านใน",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Proximal fragment deformed by tensor fasciae latae, gracilis, and gemelli; counteracted by externally rotating the distal segment",
+          th: "ชิ้นกระดูกส่วนต้นถูกดึงรั้งโดย Tensor fasciae latae, Gracilis และ Gemelli; แก้ไขด้วยการหมุนบิดกระดูกส่วนปลายออกด้านนอก",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In subtrochanteric femur fractures, the short proximal fragment is subject to powerful, unapposed multi-planar muscular deforming vectors: (1) Flexion driven by the iliopsoas tendon inserting onto the lesser trochanter, (2) Abduction driven by the gluteus medius and gluteus minimus inserting onto the greater trochanter, and (3) External rotation driven by the short external rotators (piriformis, obturators, gemelli, and quadratus femoris). Concurrently, the distal shaft fragment is adducted by the adductor magnus and shortened by the rectus femoris and hamstrings. This results in the classic apex-anterior and apex-lateral (varus) deformity. In the sagittal plane, axial traction on a fracture table cannot overcome the flexion moment because the distal fragment is extended while the proximal fragment remains flexed; therefore, the surgeon must actively counteract the apex-anterior deformity by extending the proximal fragment (using a percutaneous Schanz pin joystick or ball-spike pusher) or flexing the distal fragment to match the proximal fragment prior to nail passage. The distractors misattribute the muscle attachments (rectus femoris does not attach to the proximal femur; gluteus maximus is an extensor; pectineus is an adductor) and promote incorrect reduction vectors.",
+      th: "ในกระดูกต้นขาส่วน Subtrochanteric หัก ชิ้นกระดูกส่วนต้น (Proximal fragment) จะถูกแรงดึงจากกลุ่มกล้ามเนื้อรอบข้อสะโพกกระทำหลายทิศทางจนเกิดการผิดรูปจำเพาะ ได้แก่: (1) ท่าก้มงอ (Flexion) จากกล้ามเนื้อ Iliopsoas ที่เกาะบริเวณ Lesser trochanter, (2) ท่ากางออก (Abduction) จากกล้ามเนื้อ Gluteus medius และ Gluteus minimus ที่เกาะบริเวณ Greater trochanter, และ (3) ท่าหมุนออกด้านนอก (External rotation) จากกลุ่มกล้ามเนื้อ Short external rotators ขณะเดียวกันชิ้นกระดูกส่วนปลาย (Distal fragment) จะถูกดึงเข้าด้านใน (Adduction) โดย Adductor magnus และหดสั้นขึ้นด้านบน ทำให้เกิดมุมหงายด้านหน้า (Apex anterior) และมุมโก่งออกด้านข้าง (Apex lateral หรือ Varus) การดึงกระดูกบนเตียงผ่าตัดเพียงอย่างเดียวไม่สามารถแก้การงอด้านหน้าได้ ศัลยแพทย์จึงต้องออกแรงกดหรือดัดชิ้นกระดูกส่วนต้นให้อยู่ในท่าเหยียด (Extension) เช่น การใช้ Schanz pin ทำหน้าที่เป็น Joystick หรือใช้ Ball-spike pusher ดันลง หรือยกชิ้นกระดูกส่วนปลายให้งอขึ้นตามแนวชิ้นส่วนต้นก่อนสอดแท่ง Nail ข้อเลือกอื่นๆ มีการระบุกล้ามเนื้อผิด (เช่น Rectus femoris ไม่ได้เกาะที่ Proximal femur, Gluteus maximus เป็น Extensor, Pectineus เป็น Adductor) และแนะนำทิศทางการจัดกระดูกที่ไม่ถูกต้อง",
+    },
+    pearls: {
+      en: "In subtrochanteric fractures, the proximal fragment is flexed (iliopsoas), abducted (gluteus medius/minimus), and externally rotated (short rotators); a percutaneous Schanz pin joystick or ball-spike pusher is commonly needed to overcome apex-anterior flexion during intramedullary nailing.",
+      th: "ใน Subtrochanteric fracture ชิ้นกระดูกส่วนต้นจะถูกดึงเข้าสู่ท่า Flexion (Iliopsoas), Abduction (Gluteus medius/minimus) และ External rotation (Short rotators) ศัลยแพทย์มักต้องใช้ Schanz pin ทำหน้าที่เป็น Joystick หรือใช้ Ball-spike pusher กดลดมุมหงาย (Apex anterior) เพื่อจัดแนวกระดูกให้ตรงก่อนสอดแท่ง Nail",
+    },
+    boneId: "femur",
+    regionId: "subtrochanteric",
+  },
+  // ── Foot & Midfoot — Lisfranc Joint Complex Radiographic Criteria ──
+  {
+    id: "hy-foot-lisfranc-alignment",
+    category: "lower",
+    tag: { en: "RADIOGRAPHIC EVALUATION • LISFRANC INJURY", th: "การแปลผลภาพรังสี • ภาวะบาดเจ็บลิสฟรองค์" },
+    scenario: {
+      en: "A 24-year-old collegiate soccer player is tackled with their foot planted in equinus and forced into extreme pronation and abduction. In the emergency department, the patient is unable to bear weight and has profound midfoot swelling with plantar ecchymosis. Initial non-weightbearing radiographs are reported as normal. Bilateral weightbearing radiographs of the foot are subsequently obtained. Which anatomical relationship represents the essential radiographic landmark evaluated on the standard anteroposterior (AP) view to confirm tarsometatarsal alignment?",
+      th: "นักฟุตบอลหญิงอายุ 24 ปี ถูกปะทะขณะเท้าข้างขวาเหยียบพื้นอยู่ในท่าปลายเท้าจิกลง (Equinus) ร่วมกับมีแรงบิดแบบ Pronation และ Abduction รุนแรง ที่ห้องฉุกเฉินผู้ป่วยไม่สามารถลงน้ำหนักได้ มีอาการบวมมากบริเวณกลางเท้าและพบรอยฟกช้ำใต้ฝ่าเท้า (Plantar ecchymosis) ชัดเจน ภาพเอกซเรย์เบื้องต้นแบบไม่ลงน้ำหนักถูกอ่านว่าปกติ แพทย์จึงสั่งตรวจภาพเอกซเรย์แบบลงน้ำหนักเปรียบเทียบสองข้าง (Bilateral weightbearing foot radiographs) ความสัมพันธ์ทางกายวิภาคใดคือจุดสังเกตสำคัญที่สุดบนฟิล์มท่าหน้าตรง (AP view) ในการประเมินความมั่นคงของข้อต่อทาร์โซเมทาทาร์ซัล (Lisfranc joint)?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Collinear alignment of the medial border of the second metatarsal shaft with the medial border of the middle cuneiform",
+          th: "ขอบด้านในของกระดูก Metatarsal ชิ้นที่สองต้องเรียงเป็นเส้นตรงระนาบเดียวกับขอบด้านในของกระดูก Middle cuneiform",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Collinear alignment of the lateral border of the first metatarsal shaft with the lateral border of the medial cuneiform",
+          th: "ขอบด้านนอกของกระดูก Metatarsal ชิ้นที่หนึ่งต้องเรียงเป็นเส้นตรงระนาบเดียวกับขอบด้านนอกของกระดูก Medial cuneiform",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Collinear alignment of the medial border of the fourth metatarsal shaft with the medial border of the cuboid bone",
+          th: "ขอบด้านในของกระดูก Metatarsal ชิ้นที่สี่ต้องเรียงเป็นเส้นตรงระนาบเดียวกับขอบด้านในของกระดูก Cuboid bone",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Collinear alignment of the lateral border of the third metatarsal shaft with the lateral border of the lateral cuneiform",
+          th: "ขอบด้านนอกของกระดูก Metatarsal ชิ้นที่สามต้องเรียงเป็นเส้นตรงระนาบเดียวกับขอบด้านนอกของกระดูก Lateral cuneiform",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Evaluating subtle Lisfranc (tarsometatarsal) instability requires systematic inspection of standard radiographic views under physiologic weightbearing: (1) On the standard AP view, the medial border of the second metatarsal base and shaft MUST be strictly collinear with the medial border of the middle (intermediate) cuneiform. Any step-off or diastasis > 2 mm between the first and second metatarsal bases indicates Lisfranc ligament disruption. (2) On the 30-degree internal oblique view, the medial border of the third metatarsal aligns with the medial border of the lateral (lateral) cuneiform, and the medial border of the fourth metatarsal aligns with the medial border of the cuboid. Distractor 1 is false because the lateral border of the first metatarsal has an irregular recess without a continuous landmark; the medial border of the first metatarsal aligns with the medial cuneiform. Distractors 2 and 3 evaluate relationships on the 30-degree internal oblique projection, not the AP view, and distractor 3 incorrectly references the lateral border instead of the medial border.",
+      th: "การประเมินการบาดเจ็บของข้อต่อ Lisfranc (Tarsometatarsal joint) ที่มีความคลาดเคลื่อนเพียงเล็กน้อย จำเป็นต้องอาศัยการตรวจดูความสัมพันธ์ทางกายวิภาคบนภาพเอกซเรย์ขณะลงน้ำหนัก (Weightbearing view) อย่างเป็นระบบ: (1) บนฟิล์มท่าหน้าตรง (AP view) ขอบด้านใน (Medial border) ของก้านและฐานกระดูก Metatarsal ชิ้นที่ 2 จะต้องเรียงตรงเป็นแนวระนาบเดียวกันอย่างไร้รอยต่อกับขอบด้านในของกระดูก Middle (Intermediate) cuneiform หากพบมี Step-off หรือมีช่องว่างแยกระหว่างฐานกระดูก Metatarsal ที่ 1 และ 2 มากกว่า 2 มม. แสดงว่ามีเส้นเอ็น Lisfranc ฉีกขาดแน่นอน (2) บนฟิล์มท่าเฉียง 30 องศา (30° Internal oblique view) ขอบด้านในของกระดูก Metatarsal ชิ้นที่ 3 จะต้องตรงกับขอบด้านในของ Lateral cuneiform และขอบด้านในของกระดูก Metatarsal ชิ้นที่ 4 จะต้องตรงกับขอบด้านในของ Cuboid ข้อเลือกที่ 1 ผิดเนื่องจากขอบด้านนอกของ Metatarsal ชิ้นที่ 1 ไม่ใช่จุดอ้างอิงที่เรียบตรง (มี Lisfranc recess) ส่วนข้อเลือกที่ 2 และ 3 เป็นความสัมพันธ์ที่ต้องตรวจบนฟิล์มท่า Oblique ไม่ใช่ท่า AP และข้อเลือกที่ 3 ระบุขอบด้านนอกซึ่งไม่ถูกต้องตามหลักกายวิภาค",
+    },
+    pearls: {
+      en: "On AP foot radiographs, collinearity of the medial border of the second metatarsal with the medial border of the middle cuneiform is the primary indicator of midfoot integrity; plantar ecchymosis is pathognomonic for Lisfranc ligament complex disruption.",
+      th: "บนฟิล์มเอกซเรย์ท่า AP ขอบด้านในของ Base of 2nd metatarsal ต้องเรียงตรงเป็นเส้นเดียวกับขอบด้านในของ Middle cuneiform เสมอ หากมี Step-off หรือรอยแยก > 2 มม. บ่งชี้ว่ามี Lisfranc injury และรอยช้ำใต้ฝ่าเท้า (Plantar ecchymosis) ถือเป็นลักษณะจำเพาะ (Pathognomonic sign) ของการบาดเจ็บนี้",
+    },
+    boneId: "foot",
+    regionId: "lisfranc",
+  },
+  // ── Ankle — Lauge-Hansen SER & Medial Clear Space Stress Radiography ──
+  {
+    id: "hy-ankle-lauge-hansen-ser",
+    category: "lower",
+    tag: { en: "IMAGING & STABILITY • ANKLE FRACTURE", th: "การประเมินความมั่นคง • ข้อเท้า" },
+    scenario: {
+      en: "A 28-year-old female recreational runner sustains an external rotation twisting injury to her right ankle. Initial non-weightbearing radiographs demonstrate an isolated, non-displaced oblique fracture of the lateral malleolus at the level of the syndesmosis (Danis-Weber B / Lauge-Hansen SER). The medial malleolus is radiographically intact, and the initial mortise view reveals a symmetrical medial clear space of 3 mm. However, physical examination elicits focal tenderness and significant ecchymosis over the medial ankle along the deltoid ligament. Which diagnostic evaluation and threshold confirms an unstable 'bimalleolar-equivalent' injury requiring operative open reduction and internal fixation?",
+      th: "ผู้ป่วยหญิงอายุ 28 ปี นักวิ่งสมัครเล่น ประสบอุบัติเหตุข้อเท้าขวาบิดหมุนออกด้านนอก (External rotation) ภาพถ่ายเอกซเรย์เบื้องต้นแบบไม่ลงน้ำหนักพบกระดูก Lateral malleolus หักเฉียงแบบไม่เคลื่อนตำแหน่งที่ระดับแนวกระดูก Syndesmosis (Danis-Weber B / Lauge-Hansen SER) โดยกระดูก Medial malleolus ปกติ และภาพท่า Mortise view พบช่องว่าง Medial clear space กว้าง 3 มม. เท่ากันทุกด้าน อย่างไรก็ตาม การตรวจร่างกายพบอาการกดเจ็บจำเพาะและรอยเขียวช้ำชัดเจนบริเวณด้านในข้อเท้าตามแนวเส้นเอ็น Deltoid ligament การตรวจทางรังสีและการวัดค่าใดที่ช่วยยืนยันภาวะ 'Bimalleolar-equivalent fracture' ที่ขาดความมั่นคงและจำเป็นต้องรักษาด้วยการผ่าตัด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "External rotation stress radiography demonstrating medial clear space widening of 5 millimeters or greater",
+          th: "ภาพเอกซเรย์ท่าบิดหมุนออกด้านนอก (External rotation stress) พบช่องว่างด้านในข้อเท้ากว้างตั้งแต่ 5 มิลลิเมตรขึ้นไป",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Anterior drawer stress radiography demonstrating anterior talofibular translation of 8 millimeters or greater",
+          th: "ภาพเอกซเรย์ท่าดึงข้อเท้าไปด้านหน้า (Anterior drawer stress) พบการเลื่อนของกระดูกทาลัสตั้งแต่ 8 มิลลิเมตรขึ้นไป",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Bilateral weightbearing radiography demonstrating medial clear space widening of 2 millimeters or greater",
+          th: "ภาพเอกซเรย์ขณะลงน้ำหนักเปรียบเทียบสองข้าง (Weightbearing view) พบช่องว่างด้านในข้อเท้ากว้างตั้งแต่ 2 มิลลิเมตรขึ้นไป",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Axial computed tomography imaging demonstrating syndesmotic diastasis of 3 millimeters or greater",
+          th: "การตรวจเอกซเรย์คอมพิวเตอร์ในแนวระนาบ (Axial CT scan) พบระยะห่างของข้อต่อซินเดสโมซิสกว้างตั้งแต่ 3 มิลลิเมตรขึ้นไป",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In isolated fibular fractures at the syndesmotic level (Danis-Weber B / Lauge-Hansen Supination-External Rotation), stability depends critically on the integrity of the deep deltoid ligament. When the medial malleolus is intact but medial ecchymosis and tenderness are present, static non-weightbearing radiographs often underestimate instability. An external rotation stress radiograph (manual stress or gravity stress view) or a standing weightbearing radiograph must be obtained. A medial clear space (MCS) widening >= 4 to 5 mm (or greater than the superior clear space between the talar dome and tibial plafond) indicates complete disruption of the deep deltoid ligament. This converts the injury from a stable SER Stage II (treated non-operatively in a boot/cast) to an unstable SER Stage IV 'bimalleolar-equivalent' fracture requiring operative open reduction and internal fixation to restore mortise congruity. Anterior drawer stress evaluates chronic anterior talofibular ligament laxity. A 2 mm medial clear space is physiologically normal. Axial CT without dynamic stress does not establish competence of the deep deltoid ligament.",
+      th: "ในกระดูกตาตุ่มนอก (Fibula) หักระดับแนวข้อต่อ (Danis-Weber B หรือ Lauge-Hansen SER) ความมั่นคงของข้อเท้าขึ้นอยู่กับความสมบูรณ์ของเส้นเอ็น Deep deltoid ligament เป็นสำคัญ หากไม่มีกระดูกตาตุ่มในหักแต่ตรวจพบรอยฟกช้ำและกดเจ็บบริเวณด้านใน ฟิล์มเอกซเรย์ธรรมดาที่ไม่ได้ลงน้ำหนักมักจะประเมินความรุนแรงต่ำกว่าความเป็นจริง จึงจำเป็นต้องทำ External rotation stress radiograph (Manual หรือ Gravity stress) หรือถ่ายฟิล์มเอกซเรย์ขณะยืนลงน้ำหนัก หากพบช่องว่าง Medial clear space กว้างตั้งแต่ 4-5 มม. ขึ้นไป (หรือกว้างกว่าช่องว่างด้านบน Superior clear space) แสดงว่าเส้นเอ็น Deep deltoid ฉีกขาดอย่างสมบูรณ์ ทำให้เปลี่ยนการวินิจฉัยจาก SER Stage II (กระดูกมั่นคง รักษาแบบไม่ผ่าตัด) กลายเป็น SER Stage IV หรือ 'Bimalleolar-equivalent fracture' ที่ข้อเท้าไม่มั่นคงและจำเป็นต้องผ่าตัดยึดตรึงกระดูก (ORIF) เพื่อป้องกันข้อเท้าเสื่อมในระยะยาว ส่วน Anterior drawer stress ใช้ตรวจเอ็น ATFL เรื้อรัง, ค่า 2 มม. ถือเป็นระยะปกติทางสรีรวิทยา และ CT scan ธรรมดาไม่สามารถบอกความมั่นคงของเอ็น Deltoid ภายใต้แรงบิดหมุนได้",
+    },
+    pearls: {
+      en: "In Weber B fibula fractures with medial tenderness, always perform gravity or manual external rotation stress views; a medial clear space >= 5 mm defines an unstable bimalleolar-equivalent (SER IV) requiring ORIF.",
+      th: "ในกระดูกตาตุ่มนอกหักแบบ Weber B ที่มีอาการกดเจ็บด้านใน ต้องถ่ายภาพรังสีท่า External rotation stress เสมอ หาก Medial clear space กว้าง >= 5 มม. ถือเป็น Bimalleolar-equivalent (SER IV) ซึ่งจำเป็นต้องผ่าตัด ORIF",
+    },
+    boneId: "tibia",
+    regionId: "distal",
+  },
+  // ── Shoulder & Proximal Humerus — Deltopectoral Approach & Musculocutaneous Nerve ──
+  {
+    id: "hy-shoulder-deltopectoral-nerve",
+    category: "upper",
+    tag: { en: "SURGICAL APPROACH • SHOULDER", th: "ทางเข้าผ่าตัด • ข้อไหล่" },
+    scenario: {
+      en: "A 58-year-old male sustains a displaced three-part proximal humerus fracture after a fall. The orthopedic trauma team performs open reduction and internal fixation with a locked plating construct via a standard deltopectoral approach. Following cephalic vein identification and mobilization laterally, the clavipectoral fascia is incised. To improve visualization of the medial calcar and subscapularis tendon, a retractor is placed beneath the conjoined tendon. Excessive, vigorous retraction directed medially placing traction on the conjoined tendon distal to the coracoid process poses the highest risk of iatrogenic palsy to which neural structure?",
+      th: "ผู้ป่วยชายอายุ 58 ปี ได้รับบาดเจ็บกระดูกต้นแขนส่วนต้นหักแบบเคลื่อนตำแหน่ง 3 ชิ้น (Displaced 3-part proximal humerus fracture) จากการหกล้ม ทีมศัลยแพทย์กระดูกและข้อทำการผ่าตัดเปิดจัดกระดูกและดามด้วยแผ่นโลหะแบบมีหัวเกลียวล็อก (Locked plate) ผ่านทาง Deltopectoral approach มาตรฐาน หลังผ่าแยกหลอดเลือด Cephalic vein ไปทางด้านนอกและเปิด Clavipectoral fascia เพื่อเพิ่มทัศนวิสัยบริเวณ Calcar ด้านในและเอ็นกล้ามเนื้อ Subscapularis จึงใส่เครื่องมือเกี่ยวรั้งใต้ Conjoined tendon การดึงรั้ง Conjoined tendon ไปทางด้านในอย่างรุนแรงเกินไปที่ระดับต่ำกว่า Coracoid process เสี่ยงสูงสุดที่จะทำให้เส้นประสาทใดเกิดการบาดเจ็บจากการถูกดึงยืด (Traction injury)?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Musculocutaneous nerve entering the coracobrachialis muscle",
+          th: "เส้นประสาท Musculocutaneous nerve ที่ทอดเข้าสู่กล้ามเนื้อ Coracobrachialis",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Suprascapular nerve traversing the suprascapular notch",
+          th: "เส้นประสาท Suprascapular nerve ที่ทอดข้ามผ่านร่องกระดูก Suprascapular notch",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Axillary nerve coursing through the quadrangular space",
+          th: "เส้นประสาท Axillary nerve ที่ทอดผ่านช่องกล้ามเนื้อ Quadrangular space",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Radial nerve winding through the triangular interval",
+          th: "เส้นประสาท Radial nerve ที่ทอดผ่านช่องกล้ามเนื้อ Triangular interval",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "During the anterior deltopectoral approach to the shoulder, the conjoined tendon (composed of the short head of the biceps brachii and the coracobrachialis) arises from the coracoid process and is retracted medially to access the anterior shoulder joint and subscapularis. The musculocutaneous nerve branches from the lateral cord of the brachial plexus and penetrates the deep, medial belly of the coracobrachialis approximately 5 to 8 cm (classically 5 cm) distal to the tip of the coracoid process. Forceful or excessive medial retraction of the conjoined tendon causes a neuropraxia or axonotmesis of the musculocutaneous nerve, leading to paralysis of the biceps brachii and brachialis (impaired elbow flexion and supination) and sensory numbness over the lateral forearm (lateral antebrachial cutaneous nerve distribution). The axillary nerve courses along the inferior border of the subscapularis and exits through the quadrangular space beneath the glenohumeral capsule; it is injured by aggressive inferior capsular release, not conjoined tendon traction. The suprascapular nerve traverses the suprascapular notch far posteriorly. The radial nerve courses through the triangular interval posteriorly.",
+      th: "ในการผ่าตัด Deltopectoral approach ทางด้านหน้าของข้อไหล่ Conjoined tendon (ประกอบด้วย Short head ของ Biceps brachii และ Coracobrachialis) จะเกาะอยู่ที่ปลาย Coracoid process และมักถูกดึงรั้งไปทาง Medial เพื่อเปิดทางเข้าสู่ข้อไหล่ด้านหน้าและเอ็น Subscapularis โดยเส้นประสาท Musculocutaneous nerve ที่แตกแขนงมาจาก Lateral cord ของ Brachial plexus จะทอดเข้าสู่เนื้อกล้ามเนื้อ Coracobrachialis ที่ระยะประมาณ 5 ถึง 8 เซนติเมตร (ระยะปลอดภัยมาตรฐานทางคลินิกคือ 5 ซม.) ใต้ต่อปลาย Coracoid process หากดึงรั้ง Conjoined tendon เข้าด้านในอย่างรุนแรงเกินไป จะทำให้เส้นประสาทนี้ถูกยืดกระชาก (Traction neuropraxia) ส่งผลให้กล้ามเนื้อ Biceps และ Brachialis อ่อนแรง (งอข้อศอกและหงายมือไม่ได้) ร่วมกับชาผิวหนังบริเวณขอบนอกของแขนท่อนล่าง (Lateral antebrachial cutaneous nerve) ส่วนเส้นประสาท Axillary nerve ทอดอยู่ใต้ขอบล่างของ Subscapularis เข้าสู่ Quadrangular space ซึ่งจะเสี่ยงต่อการบาดเจ็บเมื่อเลาะแคปซูลข้อด้านล่าง ไม่ใช่จากการดึง Conjoined tendon, เส้นประสาท Suprascapular ทอดผ่าน Suprascapular notch ด้านหลัง และเส้นประสาท Radial ทอดผ่าน Triangular interval ด้านหลังแขน",
+    },
+    pearls: {
+      en: "Maintain the '5-cm safe zone' distal to the coracoid process during conjoined tendon mobilization; never place fixed, unyielding retractors deep to coracobrachialis beyond 5 cm.",
+      th: "ยึดถือกฎ 'ระยะปลอดภัย 5 เซนติเมตร' ใต้ปลาย Coracoid process เสมอเมื่อต้องขยับ Conjoined tendon และห้ามใส่เครื่องมือถ่างแผลที่กดทับลึกเกินกว่า 5 ซม. เพื่อป้องกัน Musculocutaneous nerve palsy",
+    },
+    boneId: "humerus",
+    regionId: "proximal",
+  },
+  // ── Direct Lateral (Hardinge) Approach — Superior Gluteal Nerve Safe Zone ──
+  {
+    id: "hy-hip-hardinge-superior-gluteal-nerve",
+    category: "lower",
+    tag: { en: "SURGICAL APPROACH • HIP", th: "ทางเข้าผ่าตัด • ข้อสะโพก" },
+    scenario: {
+      en: "A 68-year-old female undergoes total hip arthroplasty via a direct lateral (modified Hardinge) approach for end-stage osteoarthritis. To enhance visualization of the superior acetabular rim, the surgeon extends the longitudinal split of the gluteus medius proximally. At her 6-week postoperative follow-up, she ambulates with a pronounced abductor lurch, demonstrating an uncompensated Trendelenburg sign (pelvic drop toward the contralateral swing limb during single-leg stance on the operated extremity). Iatrogenic injury to which nerve and violation of what anatomical safe distance proximal to the greater trochanter tip is responsible for this deficit?",
+      th: "ผู้ป่วยหญิงอายุ 68 ปี ได้รับการผ่าตัดเปลี่ยนข้อสะโพกเทียมผ่านทาง Direct Lateral (Modified Hardinge) approach สำหรับภาวะข้อสะโพกเสื่อมระยะสุดท้าย เพื่อเพิ่มทัศนวิสัยบริเวณขอบเบ้าสะโพกด้านบน ศัลยแพทย์ได้ผ่าขยายแนวแยกระหว่างเส้นใยกล้ามเนื้อ Gluteus medius ขึ้นไปทางด้านบน (Proximally) ในการติดตามอาการสัปดาห์ที่ 6 ผู้ป่วยเดินกะเผลกแบบ Abductor lurch ตรวจพบ Trendelenburg sign ชัดเจน (เชิงกรานฝั่งตรงข้ามเอียงตกลงขณะยืนลงน้ำหนักข้างที่ผ่าตัด) การบาดเจ็บต่อเส้นประสาทใดและล้ำเกินระยะปลอดภัยทางกายวิภาคเท่าใดเหนือยอด Greater trochanter ที่เป็นสาเหตุของความผิดปกตินี้?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Superior gluteal nerve by extending dissection greater than three to five centimeters proximal to the trochanteric tip",
+          th: "เส้นประสาท Superior gluteal nerve จากการเลาะผ่าเนื้อเยื่อเกิน 3 ถึง 5 เซนติเมตร เหนือยอดกระดูกโทรแคนเตอร์",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Inferior gluteal nerve by extending dissection greater than three to five centimeters proximal to the trochanteric tip",
+          th: "เส้นประสาท Inferior gluteal nerve จากการเลาะผ่าเนื้อเยื่อเกิน 3 ถึง 5 เซนติเมตร เหนือยอดกระดูกโทรแคนเตอร์",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Femoral nerve motor branches by extending dissection greater than three to five centimeters proximal to the trochanteric tip",
+          th: "เส้นประสาท Femoral nerve แขนงสั่งการ จากการเลาะผ่าเนื้อเยื่อเกิน 3 ถึง 5 เซนติเมตร เหนือยอดกระดูกโทรแคนเตอร์",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Sciatic nerve abductor branch by extending dissection greater than three to five centimeters proximal to the trochanteric tip",
+          th: "เส้นประสาท Sciatic nerve แขนงกล้ามเนื้อ จากการเลาะผ่าเนื้อเยื่อเกิน 3 ถึง 5 เซนติเมตร เหนือยอดกระดูกโทรแคนเตอร์",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In the direct lateral (modified Hardinge) approach to the hip, the interval involves splitting the anterior portion of the gluteus medius and vastus lateralis as a continuous sleeve, leaving the posterior half of the abductor tendon attached to the greater trochanter. The superior gluteal nerve (L4, L5, S1) exits the greater sciatic notch above the piriformis and travels anteriorly in the intermuscular plane between the gluteus medius and gluteus minimus, accompanied by the deep branch of the superior gluteal artery. It enters the gluteus medius and terminates in the tensor fasciae latae. Anatomical studies demonstrate that the inferior branches of the nerve cross as close as 3 cm, and universally within 5 cm, proximal to the superior tip of the greater trochanter. Extending the longitudinal split of the gluteus medius beyond this 3 to 5 cm safe zone results in partial or complete denervation of the anterior gluteus medius, gluteus minimus, and tensor fasciae latae, producing persistent abductor insufficiency and a positive Trendelenburg gait. The inferior gluteal nerve exits inferior to the piriformis and supplies the gluteus maximus, which is retracted or split posteriorly. The femoral nerve lies anterior to the hip joint within the femoral triangle. The sciatic nerve courses posterior to the external rotators.",
+      th: "ในการผ่าตัดเข้าข้อสะโพกทางด้านข้าง Direct lateral (Modified Hardinge) approach จะมีการผ่าแยกเส้นใยกล้ามเนื้อ Gluteus medius ส่วนหน้าและ Vastus lateralis ต่อเนื่องกัน โดยเหลือเอ็นกล้ามเนื้อส่วนหลังติดกับ Greater trochanter ไว้ เส้นประสาท Superior gluteal nerve (L4, L5, S1) ลอดออกจาก Greater sciatic notch เหนือต่อกล้ามเนื้อ Piriformis แล้วทอดขนานมาทางด้านหน้าในช่องว่างระหว่างกล้ามเนื้อ Gluteus medius และ Gluteus minimus ไปเลี้ยงกล้ามเนื้อกลุ่มกางสะโพกทั้งหมดและจบลงที่ Tensor fasciae latae จากการศึกษาทางกายวิภาค แขนงล่างสุดของเส้นประสาทนี้จะทอดผ่านในระยะเพียง 3 ถึง 5 เซนติเมตร เหนือยอดของ Greater trochanter หากศัลยแพทย์ผ่าแยกเส้นใยกล้ามเนื้อ Gluteus medius สูงเกินกว่าระยะปลอดภัย 3 ถึง 5 ซม. นี้ จะตัดขาดแขนงเส้นประสาท ทำให้กล้ามเนื้อกางสะโพกเป็นอัมพาต ส่งผลให้เกิดภาวะ Abductor weakness เดินเซแบบ Trendelenburg gait อย่างถาวร สำหรับ Inferior gluteal nerve จะลอดใต้ต่อ Piriformis ไปเลี้ยงกล้ามเนื้อ Gluteus maximus ทางด้านหลัง, Femoral nerve ทอดอยู่ด้านหน้าข้อสะโพกใน Femoral triangle และ Sciatic nerve ทอดอยู่ด้านหลังต่อกลุ่ม External rotators",
+    },
+    pearls: {
+      en: "The established anatomical safe zone for splitting the gluteus medius in a Hardinge approach is strictly less than 3 to 5 cm proximal to the tip of the greater trochanter; place an apical stay suture to arrest propagation.",
+      th: "ระยะปลอดภัยทางกายวิภาคในการผ่าแยกกล้ามเนื้อ Gluteus medius ในท่า Hardinge คือห้ามเกิน 3 ถึง 5 ซม. เหนือยอด Greater trochanter และควรเย็บ Stay suture กำกับไว้ที่ปลายรอยแยกเสมอเพื่อป้องกันการฉีกขาดลามขึ้นไป",
+    },
+    boneId: "femur",
+    regionId: "femoral-neck",
+  },
+  // ── Acetabular Imaging — Judet Obturator Oblique View ──
+  {
+    id: "hy-pelvis-judet-obturator-view",
+    category: "lower",
+    tag: { en: "IMAGING NUANCE • ACETABULUM", th: "ภาพถ่ายรังสีวินิจฉัย • เบ้าสะโพก" },
+    scenario: {
+      en: "A 36-year-old male is transported to the emergency trauma bay after a high-speed collision resulting in a posterior hip fracture-dislocation. Following successful emergent closed reduction under sedation, post-reduction pelvic Judet 45-degree oblique radiographs are obtained to evaluate columns and walls for operative planning. When interpreting the 45-degree Obturator Oblique view, which specific combination of acetabular structures is visualized tangential to the X-ray beam?",
+      th: "ผู้ป่วยชายอายุ 36 ปี ถูกนำส่งห้องฉุกเฉินหลังประสบอุบัติเหตุจราจรความเร็วสูง พบข้อสะโพกหลุดไปทางด้านหลังร่วมกับเบ้าสะโพกหัก หลังดึงจัดข้อสะโพกเข้าที่แบบปิดสำเร็จ ได้ส่งตรวจเอกซเรย์ท่า Judet 45-degree oblique view เพื่อประเมินโครงสร้างกระดูกและวางแผนผ่าตัด ในการแปลผลภาพถ่ายรังสีท่า 45-degree Obturator Oblique view โครงสร้างกระดูกเบ้าสะโพกคู่ใดที่วางตัวสัมผัสตั้งฉากกับแนวรังสี (tangential profile) และมองเห็นได้อย่างชัดเจนที่สุด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Anterior column (iliopectineal line) and the profile of the posterior acetabular wall",
+          th: "แนวกระดูก Anterior column (เส้น Iliopectineal) และขอบเบ้าสะโพกด้านหลัง (Posterior wall)",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Posterior column (ilioischial line) and the profile of the anterior acetabular wall",
+          th: "แนวกระดูก Posterior column (เส้น Ilioischial) และขอบเบ้าสะโพกด้านหน้า (Anterior wall)",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Posterior column (ilioischial line) and the profile of the posterior acetabular wall",
+          th: "แนวกระดูก Posterior column (เส้น Ilioischial) และขอบเบ้าสะโพกด้านหลัง (Posterior wall)",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Anterior column (iliopectineal line) and the profile of the anterior acetabular wall",
+          th: "แนวกระดูก Anterior column (เส้น Iliopectineal) และขอบเบ้าสะโพกด้านหน้า (Anterior wall)",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Judet radiographic examination of the acetabulum comprises two orthogonal 45-degree oblique views: the Obturator Oblique and the Iliac Oblique. In the 45-degree Obturator Oblique view (the patient is rotated 45 degrees towards the affected side, projecting the obturator ring open into profile), the X-ray beam profiles two primary structures tangential to the cassette: the Anterior Column (demonstrated by the unbroken sweep of the iliopectineal line extending from the anterior superior/inferior iliac spine along the pelvic brim to the pubic tubercle) and the Posterior Wall (the posterior rim of the articular acetabulum). Conversely, in the 45-degree Iliac Oblique view (the patient is rotated 45 degrees away from the affected side, flattening the ipsilateral iliac wing), the X-ray beam tangentially profiles the Posterior Column (demonstrated by the ilioischial line descending across the greater sciatic notch to the ischial spine and tuberosity) and the Anterior Wall (the anterior rim of the articular acetabulum). Recognizing these reciprocal pairings is foundational for classifying acetabular fractures under the Letournel-Judet system.",
+      th: "การตรวจภาพรังสีเบ้าสะโพกตามระบบ Judet ประกอบด้วยภาพเฉียง 45 องศา 2 ท่า ได้แก่ ท่า Obturator Oblique และ Iliac Oblique ในท่า 45-degree Obturator Oblique (ผู้ป่วยเอียงตัว 45 องศาลงทางข้างที่บาดเจ็บ ทำให้รู Obturator foramen เปิดกว้างเต็มที่) ลำแสงเอกซเรย์จะส่องขนานในแนวสัมผัส (tangent) ทำให้เห็นโครงสร้างสำคัญ 2 ส่วนอย่างชัดเจน ได้แก่ 1) Anterior column (แสดงโดยแนวเส้นต่อเนื่อง Iliopectineal line จากปีกเชิงกรานลงไปยัง Pelvic brim จนถึง Pubic tubercle) และ 2) Posterior wall (ขอบเบ้าสะโพกด้านหลัง) ในทางตรงกันข้าม ท่า 45-degree Iliac Oblique (ผู้ป่วยเอียงตัว 45 องศาหนีจากข้างที่บาดเจ็บ เพื่อแผ่ปีกกระดูก Iliac wing ให้กว้างเต็มที่) จะแสดง 1) Posterior column (แสดงโดยเส้น Ilioischial line ที่ทอดผ่าน Greater sciatic notch ลงมายัง Ischial tuberosity) และ 2) Anterior wall (ขอบเบ้าสะโพกด้านหน้า) การจดจำคู่โครงสร้างตรงข้ามนี้มีความสำคัญอย่างยิ่งยวดต่อการจัดกลุ่มกระดูกเบ้าสะโพกหักตามระบบ Judet-Letournel",
+    },
+    pearls: {
+      en: "Judet Oblique mnemonic: Opposite pairs — Obturator Oblique profiles the Anterior column + Posterior wall; Iliac Oblique profiles the Posterior column + Anterior wall.",
+      th: "สูตรจำภาพรังสี Judet Views: จับคู่โครงสร้างตรงข้ามเสมอ — ท่า Obturator Oblique แสดง Anterior column + Posterior wall; ส่วนท่า Iliac Oblique แสดง Posterior column + Anterior wall",
+    },
+    boneId: "pelvis",
+    regionId: "acetabulum",
+  },
+  // ── Surgical Approaches — Lateral Elbow Kocher Approach & LUCL ──
+  {
+    id: "hy-elbow-kocher-approach",
+    category: "upper",
+    tag: { en: "SURGICAL APPROACH • ELBOW", th: "ทางเข้าผ่าตัด • ข้อศอก" },
+    scenario: {
+      en: "A 34-year-old carpenter falls from a ladder onto an outstretched pronated hand, sustaining a displaced, comminuted Mason Type III radial head fracture with mechanical block to forearm rotation. The orthopedic trauma surgeon proceeds with open reduction and internal fixation versus radial head arthroplasty via the posterolateral Kocher approach. Which internervous plane is developed to expose the radiocapitellar joint, and which critical ligamentous stabilizer must be preserved to prevent posterolateral rotatory instability?",
+      th: "ช่างไม้วัย 34 ปี ตกจากบันไดเอามือยันพื้นในท่าคว่ำมือ ได้รับบาดเจ็บกระดูกหัวเรเดียสหักหลายชิ้นและเคลื่อนที่ (Mason Type III) ร่วมกับมีข้อขัดติดการหมุนปลายแขน ศัลยแพทย์ออร์โธปิดิกส์วางแผนผ่าตัดจัดกระดูกดามโลหะหรือใส่ข้อเทียมหัวเรเดียสผ่านทางเข้าผ่าตัดด้านข้างข้อศอกแบบ Kocher (Posterolateral approach) รอยต่อระหว่างเส้นประสาท (Internervous plane) ในการเข้าผ่าตัดนี้อยู่ระหว่างกล้ามเนื้อคู่ใด และโครงสร้างเอ็นข้อศอกสำคัญใดที่ต้องระมัดระวังอนุรักษ์ไว้อย่างเข้มงวดเพื่อป้องกันข้อศอกหลวมหมุนไปทางด้านหลัง?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Between Anconeus and Extensor Carpi Ulnaris; preserving Lateral Ulnar Collateral Ligament",
+          th: "ระหว่างกล้ามเนื้อ Anconeus และ Extensor Carpi Ulnaris โดยอนุรักษ์เอ็น Lateral Ulnar Collateral",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Between Extensor Carpi Radialis Brevis and Extensor Digitorum; preserving Annular Ligament complex",
+          th: "ระหว่างกล้ามเนื้อ Extensor Carpi Radialis Brevis และ Extensor Digitorum โดยอนุรักษ์เอ็น Annular",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Between Brachioradialis and Pronator Teres; preserving Anterior bundle of Medial Collateral Ligament",
+          th: "ระหว่างกล้ามเนื้อ Brachioradialis และ Pronator Teres โดยอนุรักษ์เอ็น Anterior Medial Collateral",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Between Triceps Brachii and Brachialis; preserving Posterior Oblique bundle of Collateral Ligament",
+          th: "ระหว่างกล้ามเนื้อ Triceps Brachii และ Brachialis โดยอนุรักษ์เอ็น Posterior Oblique Collateral",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The posterolateral Kocher approach to the radial head and radiocapitellar joint utilizes the internervous interval between the Anconeus (innervated by the radial nerve proper via a fascicle arising in the spiral groove within the triceps) and the Extensor Carpi Ulnaris (ECU, innervated by the posterior interosseous nerve [PIN] in the forearm). Because the innervation to the anconeus originates proximally, this represents a true internervous plane. During arthrotomy, the capsule must be incised along the anterior half or equator of the radial head. If the dissection is carried too far posteriorly onto the crista supinatoris of the ulna, the Lateral Ulnar Collateral Ligament (LUCL)—the primary dynamic restraint against posterolateral rotatory instability (PLRI)—will be detached or compromised, leading to devastating elbow instability. In contrast, the Kaplan approach exploits the interval between the Extensor Carpi Radialis Brevis (ECRB, radial nerve) and Extensor Digitorum Communis (EDC, PIN), which carries a higher risk to the PIN distally. The anterior Henry approach is developed between the Brachioradialis (radial nerve) and Pronator Teres (median nerve).",
+      th: "ทางเข้าผ่าตัดด้านข้างข้อศอกแบบ Kocher (Posterolateral approach) เพื่อเปิดเข้าสู่หัวกระดูกเรเดียสและข้อ Radiocapitellar อาศัยรอยต่อระหว่างเส้นประสาท (Internervous plane) ระหว่างกล้ามเนื้อ Anconeus (เลี้ยงโดยแขนงของเส้นประสาท Radial nerve ที่แยกตัวออกมาตั้งแต่บริเวณ Radial groove เหนือข้อศอก) และกล้ามเนื้อ Extensor Carpi Ulnaris (ECU, เลี้ยงโดย Posterior Interosseous Nerve [PIN] บริเวณปลายแขน) จึงถือเป็น True internervous plane อย่างแท้จริง ในระหว่างเปิดเยื่อหุ้มข้อ (Capsulotomy) จะต้องกรีดในแนวครึ่งหน้า (Anterior half) ของหัวกระดูกเรเดียส หากผ่าเปิดลึกไปทางด้านหลังหรือตัดชิดแนวขอบกระดูก Crista supinatoris ของกระดูกอัลนา จะทำให้เกิดการฉีกขาดของเอ็น Lateral Ulnar Collateral Ligament (LUCL) ซึ่งเป็นเอ็นหลักที่ทำหน้าที่ป้องกันภาวะข้อศอกหลวมหมุนไปทางด้านหลัง (Posterolateral Rotatory Instability: PLRI) สำหรับทางเข้า Kaplan จะอยู่ระหว่าง ECRB และ EDC ซึ่งมีความเสี่ยงต่อเส้นประสาท PIN สูงกว่าทางส่วนปลาย ส่วนทางเข้าแบบ Henry อยู่ทางด้านหน้าระหว่าง Brachioradialis และ Pronator Teres",
+    },
+    pearls: {
+      en: "During the Kocher approach, perform the capsular incision anterior to the radial head equator to safeguard the Lateral Ulnar Collateral Ligament (LUCL) and prevent posterolateral rotatory instability.",
+      th: "ในการผ่าตัดเข้าข้อศอกทางด้านข้างแบบ Kocher ให้กรีดเยื่อหุ้มข้อด้านหน้าต่อกึ่งกลางหัวเรเดียสเสมอ เพื่อปกป้องเอ็น LUCL และป้องกันข้อศอกหลวมหมุนทางด้านหลัง (PLRI)",
+    },
+    boneId: "forearm",
+    regionId: "radial-head",
+  },
+  // ── Operative Pearls & Biomechanics — Tibia Semi-Extended Suprapatellar Nailing ──
+  {
+    id: "hy-tibia-suprapatellar-nailing",
+    category: "lower",
+    tag: { en: "OPERATIVE PEARL • TIBIA", th: "เทคนิคผ่าตัด • กระดูกหน้าแข้ง" },
+    scenario: {
+      en: "A 29-year-old male sustains an isolated, high-energy proximal third tibial shaft fracture (AO/OTA 42-A2). The orthopedic trauma team elects to perform intramedullary nailing utilizing a semi-extended suprapatellar approach rather than a traditional hyperflexed infrapatellar technique. What is the primary biomechanical rationale for positioning the knee in 15 to 20 degrees of flexion during nail insertion?",
+      th: "ผู้ป่วยชายอายุ 29 ปี ได้รับบาดเจ็บกระดูกหน้าแข้งส่วนต้นหักจากอุบัติเหตุรุนแรง (Proximal third tibial shaft fracture, AO/OTA 42-A2) ทีมศัลยแพทย์ออร์โธปิดิกส์เลือกใช้วิธีดามกระดูกด้วยแกนโลหะในโพรงกระดูกผ่านทางเหนือลูกสะบ้าในท่ากึ่งเหยียด (Semi-extended suprapatellar nailing) แทนวิธีผ่าตัดดั้งเดิมที่ต้องงอเข่ามากผ่านทางใต้ลูกสะบ้า (Hyperflexed infrapatellar approach) เหตุผลทางชีวกลศาสตร์ที่สำคัญที่สุดในการจัดท่าข้อเข่าให้อยู่ในท่างอเพียง 15 ถึง 20 องศาขณะใส่แกนโลหะคืออะไร?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Relaxes quadriceps extensor mechanism tension, neutralizing the apex-anterior (recurvatum) deforming vector",
+          th: "ผ่อนคลายแรงดึงของกลุ่มกล้ามเนื้อเหยียด Quadriceps กำจัดแรงดึงงอยอดไปข้างหน้า (Apex-anterior recurvatum)",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Relaxes gastrocnemius muscle complex tension, neutralizing the apex-posterior (procurvatum) deforming vector",
+          th: "ผ่อนคลายแรงดึงของกลุ่มกล้ามเนื้อน่อง Gastrocnemius กำจัดแรงดึงงอยอดไปข้างหลัง (Apex-posterior procurvatum)",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Relaxes tibialis anterior muscle tendon tension, neutralizing the coronal plane valgus deforming vector",
+          th: "ผ่อนคลายแรงดึงของเอ็นกล้ามเนื้อ Tibialis anterior กำจัดแรงดึงกระดูกบิดเบี้ยวออกด้านข้าง (Coronal valgus)",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Relaxes pes anserinus tendon insertions tension, neutralizing the coronal plane varus deforming vector",
+          th: "ผ่อนคลายแรงดึงของกลุ่มเอ็นกล้ามเนื้อ Pes anserinus กำจัดแรงดึงกระดูกบิดเบี้ยวเข้าด้านใน (Coronal varus)",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In proximal-third tibia fractures, the extensor mechanism exerts a powerful deforming force. During traditional infrapatellar intramedullary nailing, hyperflexion of the knee (90 to 100 degrees) places maximal tension across the quadriceps tendon and patellar tendon inserting into the tibial tubercle on the proximal segment. This extensor tension forcefully pulls the proximal fragment into extension, creating a severe apex-anterior (recurvatum) deformity. Compounding this problem, the Herzog bend of the nail and the steep anterior starting trajectory push the nail tip posteriorly against the posterior cortex, exacerbating extension malalignment. The semi-extended (suprapatellar) nailing technique maintains the knee in 15 to 20 degrees of slight flexion, completely neutralizing quadriceps tension, eliminating the recurvatum pull of the patellar tendon, and permitting an inline entry trajectory down the anatomic medullary canal. Tension from the gastrocnemius (which originates on the femoral condyles and crosses the knee) does not cause procurvatum in this setting, nor do the tibialis anterior or pes anserinus tendons represent the primary drivers of proximal segment sagittal malalignment.",
+      th: "ในกระดูกหน้าแข้งส่วนต้นหัก (Proximal third tibia fractures) กล้ามเนื้อกลุ่มเหยียดข้อเข่ามีบทบาทสำคัญในการดึงรั้งชิ้นกระดูกให้ผิดรูปอย่างรุนแรง ในการผ่าตัดดามแกนโลหะผ่านใต้สะบ้าแบบดั้งเดิม (Infrapatellar approach) ศัลยแพทย์จำเป็นต้องงอเข่า 90 ถึง 100 องศาขึ้นไปเพื่อให้เห็นจุดเจาะกระดูก ซึ่งการงอเข่ามากนี้จะทำให้เอ็น Quadriceps และ Patellar tendon ที่เกาะกับ Tibial tubercle บนชิ้นกระดูกส่วนต้นตึงตัวสูงสุด ดึงรั้งชิ้นกระดูกส่วนต้นให้กระดกเหยียดไปข้างหน้า เกิดความผิดรูปโก่งงอแบบยอดชี้ไปข้างหน้า (Apex-anterior recurvatum deformity) อย่างรุนแรง ยิ่งไปกว่านั้น มุมดัดโค้งด้านบนของแกนเหล็ก (Herzog bend) ร่วมกับมุมเจาะกระดูกที่ชันจากด้านหน้าจะยิ่งดันให้ปลายแกนเหล็กชนผนังคอร์เทกซ์ด้านหลังจนกระดูกโก่งมากขึ้น การใช้เทคนิคเหนือสะบ้าในท่ากึ่งเหยียด (Semi-extended suprapatellar nailing) โดยงอเข่าเพียง 15 ถึง 20 องศา จะช่วยผ่อนคลายแรงตึงของ Quadriceps mechanism ได้อย่างสมบูรณ์ กำจัดแรงดึงงอของ Patellar tendon และเปิดแนวเจาะใส่แกนโลหะให้ตรงเป็นแนวเดียวกับโพรงกระดูก สำหรับกล้ามเนื้อ Gastrocnemius, Tibialis anterior หรือกลุ่ม Pes anserinus ไม่ได้เป็นต้นเหตุหลักของแรงดึงผิดรูปในแนว Sagittal plane ในลักษณะนี้",
+    },
+    pearls: {
+      en: "Semi-extended (suprapatellar) tibial nailing relaxes patellar tendon tension to prevent apex-anterior (recurvatum) malunion in proximal-third fractures while ensuring a collinear starting trajectory.",
+      th: "การตอกแกนดามกระดูกหน้าแข้งผ่านทางเหนือสะบ้าในท่ากึ่งเหยียดช่วยผ่อนแรงตึงของ Patellar tendon ป้องกันการติดผิดรูปโก่งงอยอดไปข้างหน้า (Recurvatum) ในกระดูกส่วนต้นหัก และช่วยให้แนวการใส่แกนโลหะตรงแกนโพรงกระดูก",
+    },
+    boneId: "tibia",
+    regionId: "shaft",
+  },
+  // ── Femur Neck — Pauwels Type III Vertical Shear Biomechanics ──
+  {
+    id: "hy-femur-pauwels-type3",
+    category: "lower",
+    tag: { en: "BIOMECHANICS • FEMUR NECK", th: "ชีวกลศาสตร์ • คอกระดูกต้นขา" },
+    scenario: {
+      en: "A 28-year-old male laborer falls from a two-story scaffold and sustains an isolated, closed left hip fracture. Plain radiographs demonstrate a vertically oriented femoral neck fracture with an inclination angle of 65 degrees relative to the horizontal interischial line (Pauwels Type III). The patient has no prior medical comorbidities and was fully active prior to injury. The orthopedic trauma team plans urgent anatomical reduction and internal fixation to preserve the native femoral head. From a biomechanical perspective, why is a fixed-angle sliding hip screw construct or medial buttress plate mechanically superior to multiple parallel cannulated cancellous screws for this specific fracture pattern?",
+      th: "ผู้ป่วยชายอายุ 28 ปี อาชีพคนงานก่อสร้าง ตกจากนั่งร้านสูงสองชั้น ได้รับบาดเจ็บกระดูกสะโพกซ้ายหักแบบปิด ภาพเอกซเรย์พบกระดูกคอกระดูกต้นขาหักในแนวเกือบตั้งฉาก ทำมุมเอียง 65 องศากับแนวระนาบแนวนอน (Pauwels Type III) ผู้ป่วยไม่มีโรคประจำตัวและใช้งานข้อสะโพกได้เต็มที่มาก่อน ทีมศัลยแพทย์วางแผนผ่าตัดจัดกระดูกและยึดตรึงภายในอย่างเร่งด่วนเพื่ออนุรักษ์หัวกระดูกเดิม ในแง่ชีวกลศาสตร์การดามกระดูก เหตุใดการเลือกใช้อุปกรณ์ยึดตรึงมุมคงที่แบบสไลด์ (Sliding hip screw) หรือแผ่นดามค้ำยันด้านใน (Medial buttress plate) จึงมีความเหนือกว่าการใส่สกรูเจาะกลวงขนานรูปสามเหลี่ยมคว่ำ (Parallel cannulated screws) แบบมาตรฐานอย่างมีนัยสำคัญ?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Resists vertical shear displacement and transforms physiological axial loading vectors into beneficial fracture compression",
+          th: "ต้านทานแรงเลื่อนไถลจากแรงเฉือนในแนวดิ่งและเปลี่ยนแรงกดตามแนวน้ำหนักตัวให้เป็นแรงอัดที่ช่วยกระตุ้นการติดของกระดูก",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Preserves femoral head vascularity by avoiding mechanical compression across the lateral retinacular branches of circumflex vessels",
+          th: "ปกป้องระบบไหลเวียนเลือดของหัวกระดูกต้นขาโดยลดแรงกดเบียดต่อแขนงหลอดเลือด Lateral retinacular ของหลอดเลือดเซอร์คัมเฟลกซ์",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Provides superior rotational resistance by maximizing threaded purchase depth within the subchondral bone of the femoral head",
+          th: "เพิ่มความมั่นคงในการต้านทานแรงหมุนบิดโดยเพิ่มระยะความลึกของเกลียวยึดเกาะเนื้อกระดูกใต้ผิวข้อของหัวกระดูกต้นขา",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Prevents lateral cortical stress concentration and eliminates excessive secondary varus collapse through high dynamic elasticity",
+          th: "ป้องกันการรวมตัวของแรงเค้นที่เปลือกกระดูกด้านนอกและกำจัดการทรุดตัวเอียงเข้าด้านในโดยอาศัยความยืดหยุ่นเชิงโครงสร้าง",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Pauwels classification categorizes femoral neck fractures based on the orientation angle of the fracture line relative to the horizontal plane: Type I (< 30 degrees), Type II (30 to 50 degrees), and Type III (> 50 degrees). In Type I and II patterns, normal axial weight-bearing vectors produce predominantly compressive forces that stabilize the fracture interface and facilitate union with standard parallel inverted-triangle cannulated screws. In contrast, Pauwels Type III fractures (> 50 degrees, commonly 60 to 70 degrees) are oriented vertically, meaning that physiologic axial ground reaction forces generate massive vertical shear vectors that drive the femoral head into varus displacement, shorten the neck, and promote mechanical cut-out and nonunion (rates ranging from 15% to 30%). Parallel cannulated screws lack fixed-angle cantilever stiffness and cannot resist these vertical shear forces. A fixed-angle device (such as a sliding hip screw with a derotation screw or a femoral neck system) or a medial buttress plate provides rigid angular stability and dynamic axial sliding along the implant barrel perpendicular to the fracture plane, converting destructive vertical shear forces into osteogenic compressive forces. Retinacular blood vessels are damaged primarily by initial fracture displacement rather than implant design, and multiple cannulated screws actually offer greater dispersed rotational purchase than a single large lag screw.",
+      th: "การจำแนกกระดูกคอกระดูกต้นขาหักตามระบบ Pauwels อาศัยมุมเอียงของแนวรอยหักเทียบกับระนาบแนวนอน: Type I (< 30 องศา), Type II (30 ถึง 50 องศา), และ Type III (> 50 องศา) ใน Type I และ II แนวหักค่อนข้างนอน แรงกดจากการลงน้ำหนักตัวตามธรรมชาติจะช่วยบีบอัดรอยหักให้ติดกัน (Compression) จึงรักษาได้ดีด้วยการใส่สกรูเจาะกลวงขนานรูปสามเหลี่ยมคว่ำ แต่ใน Pauwels Type III (> 50 องศา ซึ่งมักชันถึง 60-70 องศา) รอยหักวางตัวในแนวดิ่งเกือบตั้งฉาก ทำให้แรงกดตามแนวน้ำหนักตัวกลายเป็นแรงเฉือนในแนวดิ่ง (Vertical shear force) มหาศาลที่ดันให้หัวกระดูกต้นขาไถลทรุดตัวลงเข้าด้านใน (Varus collapse) คอกระดูกสั้นลง และเกิดกระดูกไม่ติด (Nonunion) สูงถึง 15-30% การใช้สกรูขนานทั่วไปไม่มีคุณสมบัติเป็นอุปกรณ์มุมคงที่ (Fixed-angle) จึงไม่สามารถต้านทานแรงเฉือนนี้ได้ การใช้อุปกรณ์มุมคงที่แบบสไลด์ เช่น Sliding Hip Screw (DHS) ร่วมกับสกรูป้องกันการหมุน (Derotation screw) หรือ Femoral Neck System (FNS) หรือแผ่นดาม Medial buttress plate จะช่วยค้ำยันต้านทานแรงเฉือนในแนวดิ่ง และบังคับให้แรงกดสไลด์ตามแนวแกนสกรูเพื่อเปลี่ยนแรงเฉือนทำลายให้กลายเป็นแรงอัดแน่นกระตุ้นการติดของกระดูก",
+    },
+    pearls: {
+      en: "In vertical Pauwels Type III femoral neck fractures (> 50 degrees), axial load produces shear rather than compression; a fixed-angle sliding hip screw or medial buttress plate is required to neutralize shear and prevent varus collapse.",
+      th: "ในกระดูกคอกระดูกต้นขาหักแนวตั้ง Pauwels Type III (> 50 องศา) แรงกดร่างกายจะกลายเป็นแรงเฉือน การใช้อุปกรณ์มุมคงที่ (DHS/FNS) หรือ Medial buttress plate มีความจำเป็นอย่างยิ่งเพื่อต้านแรงเฉือนและป้องกันกระดูกทรุดเอียงเข้าด้านใน (Varus)",
+    },
+    boneId: "femur",
+    regionId: "femoral-neck",
+  },
+  // ── Sternoclavicular Joint — Acute Posterior Dislocation & Mediastinal Jeopardy ──
+  {
+    id: "hy-clavicle-posterior-sc-dislocation",
+    category: "upper",
+    tag: { en: "EMERGENCY MANAGEMENT • STERNOCLAVICULAR", th: "การจัดการภาวะฉุกเฉิน • ข้อต่อสเตอร์โนคลาวิคูลาร์" },
+    scenario: {
+      en: "A 19-year-old collegiate rugby player is driven forcefully onto the posterolateral aspect of his right shoulder during a scrum. He presents to the emergency department in acute distress with severe retrosternal pain, dyspnea, choking sensation, hoarseness, and progressive venous engorgement of his right upper extremity. On examination, there is palpable depression at the right medial clavicle and fullness in the suprasternal notch. Contrast-enhanced computed tomography of the chest confirms an acute posterior sternoclavicular joint dislocation with compression of the right brachiocephalic vein and abutment against the trachea. What is the mandatory operating room protocol when performing closed reduction of this injury?",
+      th: "นักกีฬารักบี้ระดับมหาวิทยาลัยอายุ 19 ปี ถูกกระแทกเข้าที่บริเวณด้านหลังค่อนไปทางด้านนอกของหัวไหล่ขวาอย่างรุนแรง นำส่งห้องฉุกเฉินด้วยอาการเจ็บแน่นหลังกระดูกหน้าอกอย่างรุนแรง หายใจลำบาก รู้สึกสำลัก แน่นคอ เสียงแหบ และพบหลอดเลือดดำที่แขนขวาโป่งพองชัดเจน ตรวจร่างกายพบรอยบุ๋มลึกผิดรูปบริเวณปลายกระดูกไหปลาร้าด้านในข้างขวาและคลำได้ก้อนนูนในแอ่งเหนือกระดูกอก ภาพเอกซเรย์คอมพิวเตอร์ (CT scan) ฉีดสีทรวงอกยืนยันภาวะข้อต่อ Sternoclavicular หลุดไปทางด้านหลังอย่างเฉียบพลัน ร่วมกับมีการกดทับหลอดเลือดดำ Brachiocephalic และเบียดชิดหลอดลม ข้อใดคือข้อกำหนดสำคัญสูงสุดในห้องผ่าตัดในการทำหัตถการดึงจัดข้อเข้าที่ (Closed reduction) สำหรับการบาดเจ็บนี้?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Perform under general anesthesia with cardiothoracic surgery on standby prepared for immediate median sternotomy",
+          th: "ทำภายใต้การดมยาสลบโดยมีทีมศัลยแพทย์ทรวงอกและหัวใจเตรียมพร้อมสำหรับการผ่าตัดเปิดกึ่งกลางกระดูกอกฉุกเฉิน",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Perform under conscious sedation with interventional radiology on standby prepared for immediate transcatheter embolization",
+          th: "ทำภายใต้การให้ยาระงับความรู้สึกโดยมีทีมรังสีร่วมรักษาเตรียมพร้อมสำหรับการฉีดสารอุดหลอดเลือดฉุกเฉิน",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Perform under regional supraclavicular block with otolaryngology on standby prepared for immediate surgical tracheostomy",
+          th: "ทำภายใต้การฉีดยาชาเฉพาะส่วนโดยมีทีมศัลยแพทย์หูคอจมูกเตรียมพร้อมสำหรับการผ่าตัดเปิดเจาะท่อลมคอฉุกเฉิน",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Perform under local hematoma anesthesia with vascular surgery on standby prepared for immediate transfemoral angiography",
+          th: "ทำภายใต้การฉีดยาชาเฉพาะที่โดยมีทีมศัลยแพทย์หลอดเลือดเตรียมพร้อมสำหรับการตรวจฉีดสีหลอดเลือดฉุกเฉิน",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Posterior sternoclavicular (SC) joint dislocation is a true life-threatening orthopedic emergency. Because the superior mediastinum lies directly posterior to the medial clavicle, posterior displacement endangers vital structures including the brachiocephalic (innominate) artery, brachiocephalic vein, superior vena cava, aortic arch, trachea, esophagus, and thoracic duct. Patients present with dyspnea, choking sensation, venous congestion of the upper extremity, dysphagia, or hoarseness (recurrent laryngeal nerve injury). Contrast-enhanced CT scanning is the gold standard imaging modality. Closed reduction should be attempted promptly (ideally within 48 hours) using an interscapular towel roll, gentle lateral arm traction in extension, and sterile percutaneous towel-clip manipulation of the medial clavicle. Crucially, the displaced clavicle head may have caused a partial laceration or is currently tamponading a ruptured great vessel (most commonly the innominate vein or artery). Upon reduction, release of tamponade can produce catastrophic, fatal mediastinal hemorrhage. Therefore, standard trauma guidelines mandate that closed reduction must only be performed in the operating room under general endotracheal anesthesia, with a cardiothoracic surgery team scrubbed or on immediate standby and a median sternotomy tray open in the room. Conscious sedation or local anesthesia is inadequate because full muscle relaxation is required, and interventional radiology or tracheostomy does not provide definitive surgical exposure for great vessel exsanguination.",
+      th: "ภาวะข้อต่อ Sternoclavicular (SC joint) หลุดไปด้านหลัง เป็นภาวะฉุกเฉินทางออร์โธปิดิกส์ที่อันตรายถึงชีวิต เนื่องจากบริเวณเมดิแอสตินัมส่วนบน (Superior mediastinum) ที่อยู่ด้านหลังต่อกระดูกไหปลาร้าส่วนในโดยตรง เป็นที่อยู่ของโครงสร้างหลอดเลือดและอวัยวะสำคัญยิ่งยวด ได้แก่ หลอดเลือดดำและแดง Brachiocephalic, Superior vena cava, ส่วนโค้งเอออร์ตา, หลอดลม, หลอดอาหาร และท่อน้ำเหลืองทรวงอก ผู้ป่วยมักแสดงอาการหายใจลำบาก แน่นคอ หลอดเลือดดำที่คอหรือแขนโป่งพอง กลืนลำบาก หรือเสียงแหบ การตรวจยืนยันต้องใช้ CT scan ทรวงอกเสมอ แม้ว่าการดึงจัดข้อเข้าที่แบบปิด (Closed reduction) จะได้ผลดีหากทำภายใน 48 ชั่วโมง (จัดท่านอนหงายหนุนผ้าระหว่างสะบัก กางและดึงแขน ร่วมกับใช้คีม Towel clip คีบดึงกระดูกไหปลาร้าขึ้นมาตรงๆ) แต่เศษกระดูกอาจทิ่มทะลุหรือกำลังกดห้ามเลือด (Tamponade) เส้นเลือดใหญ่อยู่ หากดึงกระดูกออกอาจทำให้เกิดการตกเลือดรุนแรงในช่องอกจนเสียชีวิตได้ทันที ดังนั้น ข้อกำหนดมาตรฐานจึงบังคับให้ต้องทำหัตถการในห้องผ่าตัดภายใต้การดมยาสลบ โดยมีทีมศัลยแพทย์ทรวงอกและหัวใจ (Cardiothoracic surgeon) พร้อมเปิดผ่าตัดกึ่งกลางกระดูกอก (Median sternotomy) ทันที",
+    },
+    pearls: {
+      en: "Posterior sternoclavicular dislocation requires emergent closed reduction in the operating room under general anesthesia with cardiothoracic surgery on standby for immediate sternotomy due to catastrophic great vessel laceration risk.",
+      th: "ข้อต่อ Sternoclavicular หลุดไปด้านหลัง ต้องทำ Closed reduction ในห้องผ่าตัดภายใต้การดมยาสลบ โดยมีทีมศัลยแพทย์ทรวงอกพร้อมผ่าตัด Median sternotomy ทันทีเสมอ เนื่องจากมีความเสี่ยงสูงต่อการฉีกขาดของเส้นเลือดใหญ่ในช่องอก",
+    },
+    boneId: "clavicle",
+    regionId: "ac-joint",
+  },
+  // ── Slipped Capital Femoral Epiphysis (SCFE) — Fixation Mechanics & AVN Prevention ──
+  {
+    id: "hy-pedi-scfe-fixation",
+    category: "pedi",
+    tag: { en: "PEDIATRIC ORTHOPEDICS • HIP", th: "ออร์โธปิดิกส์เด็ก • ข้อสะโพก" },
+    scenario: {
+      en: "A 13-year-old obese male presents with a 6-week history of progressive left groin pain radiating to the anteromedial knee and an antalgic limp without prior acute trauma. On physical examination, left hip internal rotation and abduction are markedly restricted; passive flexion of the hip from full extension results in obligatory external rotation and abduction (positive Drehmann sign). Bilateral pelvis and frog-leg lateral radiographs demonstrate widening and irregularity of the proximal femoral physis, Klein's line fails to intersect the lateral epiphysis (Trethowan sign), and lateral projection reveals posterior epiphyseal displacement with a Southwick slip angle of 28 degrees. What is the mandatory surgical management principle to stabilize the slip while minimizing the risk of iatrogenic avascular necrosis and chondrolysis?",
+      th: "เด็กชายอายุ 13 ปี รูปร่างอ้วน มาพบแพทย์ด้วยอาการปวดขาหนีบข้างซ้ายร้าวลงมายังบริเวณด้านหน้าและด้านในของข้อเข่าเรื้อรังมา 6 สัปดาห์ ร่วมกับเดินกะเผลกโดยไม่มีประวัติอุบัติเหตุรุนแรง ตรวจร่างกายพบการหมุนข้อสะโพกเข้าด้านใน (Internal rotation) และการกางขาถูกจำกัดชัดเจน เมื่อทำการงอข้อสะโพกจากท่าเหยียดตรง ขาจะหมุนออกด้านนอกและกางออกโดยอัตโนมัติ (Drehmann sign เป็นบวก) ภาพเอกซเรย์อุ้งเชิงกรานและท่า Frog-leg lateral พบแผ่นการเจริญเติบโต (Physis) กว้างและขรุขระผิดปกติ เส้น Klein ไม่ตัดผ่านขอบนอกของหัวกระดูก (Trethowan sign) และภาพด้านข้างพบหัวกระดูกเลื่อนไปทางด้านหลังโดยมีมุม Southwick slip angle 28 องศา ข้อใดคือหลักการผ่าตัดรักษามาตรฐานเพื่อยึดตรึงรอยเลื่อนและลดความเสี่ยงต่อภาวะหัวกระดูกขาดเลือดตาย (AVN) และกระดูกอ่อนข้อเสื่อม (Chondrolysis)?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "In situ stabilization using a single central cannulated screw without forceful closed reduction maneuvers",
+          th: "การยึดตรึงกระดูกตำแหน่งเดิมด้วยสกรูเดี่ยวตรงกลางโดยไม่ทำการดึงจัดกระดูกให้เข้าที่เดิม",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Closed anatomical reduction under continuous traction followed by dual diverging cannulated screw fixation",
+          th: "การดึงจัดกระดูกเข้าที่เดิมด้วยแรงดึงต่อเนื่องร่วมกับการยึดตรึงด้วยสกรูคู่แบบแยกทิศทาง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Open proximal femoral corrective realigning subcapital osteotomy secured with rigid blade plate fixation",
+          th: "การผ่าตัดเปิดปรับแนวกระดูกคอตันขาส่วนต้นให้ตรงตำแหน่งเดิมร่วมกับการดามแผ่นเหล็กชนิดแข็ง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Prolonged nonoperative immobilisation in a bilateral hip spica cast until physeal closure occurs",
+          th: "การรักษาแบบประคับประคองโดยการใส่เฝือกสะโพกทั้งสองข้างต่อเนื่องจนกว่าแนวกระดูกเจริญจะปิดตัว",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Slipped Capital Femoral Epiphysis (SCFE) is characterized by posterior and medial displacement of the capital femoral epiphysis relative to the femoral neck through the hypertrophic zone of the physis. The superior retinacular vessels (branches of the medial femoral circumflex artery) run along the posterosuperior femoral neck to supply the epiphysis. Forceful closed reduction maneuvers (especially internal rotation and traction) stretch, kink, or tear these tethered vessels, causing catastrophic osteonecrosis (avascular necrosis / AVN) in up to 30-50% of aggressively manipulated hips. Therefore, international pediatric orthopedic consensus mandates in situ fixation without reduction. A single cannulated screw placed centrally into the center of the femoral head perpendicular to the physis (engaging 4-5 threads past the physis and stopping 5 mm short of subchondral bone) is the gold standard. Using two screws does not significantly increase stability but markedly elevates the risk of joint penetration (leading to chondrolysis) and retinacular vascular compromise. Immediate corrective subcapital osteotomy carries high osteonecrosis risk and is reserved for severe chronic deformities performed in specialized tertiary centers. Cast immobilization is ineffective against physeal shear stress and causes severe stiffness and chondrolysis.",
+      th: "ภาวะหัวกระดูกต้นขาเลื่อนในเด็ก (SCFE) เกิดจากการที่หัวกระดูกเลื่อนไปทางด้านหลังและด้านในเมื่อเทียบกับคอกระดูกต้นขา ผ่านทางชั้น Hypertrophic zone ของแผ่นการเจริญเติบโต หลอดเลือดที่ไปเลี้ยงหัวกระดูกคือ Superior retinacular artery (แขนงของ Medial femoral circumflex artery) ซึ่งทอดตัวอยู่ทางด้านหลังบนของคอกระดูก การพยายามดึงจัดกระดูกให้เข้าที่เดิม (Closed reduction) โดยเฉพาะการหมุนขาเข้าด้านใน จะทำให้เส้นเลือดนี้ถูกดึงยืด พับงอ หรือฉีกขาด ส่งผลให้เกิดภาวะหัวกระดูกขาดเลือดตาย (AVN) สูงถึง 30-50% แนวทางมาตรฐานจึงกำหนดให้ยึดตรึงกระดูก ณ ตำแหน่งที่เลื่อนอยู่นั้นทันที (In situ fixation) โดยไม่ดึงจัดกระดูก การใช้สกรูแบบ Cannulated screw เพียงตัวเดียววางตรงกลางหัวกระดูกตั้งฉากกับแผ่นเจริญเติบโต (เกลียวข้าม Physis 4-5 เกลียวและอยู่ห่างจากขอบกระดูกข้อ 5 มม.) ถือเป็นมาตรฐานหลัก การใส่สกรูสองตัวเพิ่มความเสี่ยงต่อการที่สกรูทะลุเข้าข้อจนเกิดกระดูกอ่อนละลาย (Chondrolysis) และเสี่ยงโดนเส้นเลือด การผ่าตัดเปิดตัดกระดูกจัดมุมใหม่ใต้หัวกระดูกทันทีมีความเสี่ยง AVN สูงมาก และการใส่เฝือกสะโพกไม่สามารถต้านทานแรงเฉือนได้จึงไม่ได้ผลในการรักษา",
+    },
+    pearls: {
+      en: "SCFE must be stabilized with urgent in situ single central cannulated screw fixation without reduction to protect posterior retinacular vessels from ischemia and catastrophic AVN.",
+      th: "ภาวะ SCFE ต้องรักษาด้วยการยึดตรึงด้วยสกรูเดี่ยวตรงกลางในตำแหน่งเดิม (In situ) โดยห้ามดึงจัดกระดูกเด็ดขาด เพื่อป้องกันการฉีกขาดของเส้นเลือด Retinacular artery และภาวะหัวกระดูกตาย (AVN)",
+    },
+    boneId: "femur",
+    regionId: "femoral-neck",
+  },
+  // ── Acute Cauda Equina Syndrome (CES) — Diagnostic Hallmarks & Emergent Decompression ──
+  {
+    id: "hy-spine-cauda-equina-timing",
+    category: "spine",
+    tag: { en: "EMERGENCY MANAGEMENT • SPINE", th: "การจัดการภาวะฉุกเฉิน • กระดูกสันหลัง" },
+    scenario: {
+      en: "A 44-year-old male presents to the emergency department with a 24-hour history of severe lower back pain radiating down both legs and progressive bilateral foot weakness after heavy lifting. Physical examination reveals bilateral grade 3/5 ankle dorsiflexion and grade 2/5 extensor hallucis longus weakness, marked hypesthesia over the buttocks and perineum (saddle anesthesia), absent bilateral Achilles reflexes, and lax anal sphincter tone. The patient reports having painless involuntary urinary dribbling for 6 hours, and bedside post-void catheterization reveals a residual volume of 750 mL. What is the most appropriate next step in management to optimize long-term bladder and motor recovery?",
+      th: "ผู้ป่วยชายอายุ 44 ปี มาโรงพยาบาลด้วยอาการปวดหลังส่วนล่างรุนแรงร้าวลงขาทั้งสองข้างร่วมกับเท้าอ่อนแรงลงเรื่อยๆ เป็นเวลา 24 ชั่วโมงหลังยกของหนัก ตรวจร่างกายพบข้อเท้ากระดกขึ้นอ่อนแรงระดับ 3/5 และนิ้วหัวแม่เท้ากระดกขึ้นอ่อนแรงระดับ 2/5 ทั้งสองข้าง ชาบริเวณก้นและฝีเย็บอย่างชัดเจน (Saddle anesthesia) รีเฟล็กซ์เอ็นร้อยหวายหายไปทั้งสองข้าง และหูรูดทวารหนักหย่อนตัว ผู้ป่วยให้ประวัติว่ามีปัสสาวะเล็ดราดโดยไม่รู้สึกปวดมา 6 ชั่วโมง วัดปริมาณปัสสาวะค้างในกระเพาะหลังปัสสาวะได้ 750 mL ข้อใดคือขั้นตอนการจัดการที่ถูกต้องและเร่งด่วนที่สุดเพื่อฟื้นฟูการทำงานของระบบขับถ่ายและกล้ามเนื้อในระยะยาว?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Emergent lumbar MRI followed by surgical decompressive laminectomy within 24 to 48 hours",
+          th: "การตรวจ MRI กระดูกสันหลังส่วนเอวด่วนที่สุดร่วมกับการผ่าตัดคลายการกดทับเส้นประสาทภายใน 24 ถึง 48 ชั่วโมง",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Urgent intravenous high-dose methylprednisolone infusion followed by elective outpatient discectomy within two weeks",
+          th: "การให้ยา Methylprednisolone ทางหลอดเลือดดำขนาดสูงร่วมกับการนัดผ่าตัดหมอนรองกระดูกแบบไม่เร่งด่วนภายในสองสัปดาห์",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Immediate fluoroscopy-guided epidural corticosteroid injection followed by inpatient rehabilitation without surgical intervention",
+          th: "การฉีดยาสเตียรอยด์เข้าช่องเหนือเยื่อหุ้มไขสันหลังทันทีร่วมกับการฟื้นฟูกายภาพบำบัดในโรงพยาบาลโดยไม่ต้องผ่าตัด",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Emergent indwelling Foley catheterization followed by noncontrast computed tomography after 72 hours",
+          th: "การใส่สายสวนปัสสาวะคาไว้ในห้องฉุกเฉินร่วมกับการตรวจเอกซเรย์คอมพิวเตอร์แบบไม่ฉีดสีหลังจากนั้น 72 ชั่วโมง",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "This patient presents with classic Acute Cauda Equina Syndrome with Retention (CESR), characterized by bilateral lower extremity neurological deficits, saddle anesthesia (S2-S5 distribution), lax anal sphincter tone, and overflow incontinence from autonomic parasympathetic denervation (pelvic splanchnic nerves S2-S4) resulting in an elevated post-void residual volume (>200 mL). Cauda equina syndrome is an absolute surgical emergency most commonly precipitated by a massive central lumbar disc herniation. Urgent whole-lumbar spine MRI is the definitive imaging modality of choice to delineate the exact level and extent of neural canal compromise. Meta-analyses and AO Spine guidelines demonstrate that surgical decompressive laminectomy performed within 24 to 48 hours offers the highest probability of restoring bladder, bowel, and motor function. High-dose steroid infusion (NASCIS protocol) is outdated and has no proven clinical role in compressive radiculopathies, serving only to delay emergency surgery. Epidural steroid injections are contraindicated because adding fluid volume into a critically compromised canal exacerbates compression. While catheterization relieves acute bladder distention, delaying surgical decompression beyond 48 to 72 hours leads to permanent bladder atony and irreversible fecal and sexual dysfunction.",
+      th: "ผู้ป่วยรายนี้มีอาการตรงตามภาวะ Cauda Equina Syndrome with Retention (CESR) อย่างชัดเจน ซึ่งประกอบด้วยความผิดปกติของเส้นประสาทขาทั้งสองข้าง ชาบริเวณ Saddle anesthesia (S2-S5) หูรูดทวารหนักหย่อนตัว และมีปัสสาวะเล็ดล้น (Overflow incontinence) จากการสูญเสียระบบประสาทพาราซิมพาเทติกที่ไปเลี้ยงกล้ามเนื้อกระเพาะปัสสาวะ (S2-S4) ส่งผลให้ปัสสาวะค้างในกระเพาะปริมาณมาก (>200 mL) ภาวะนี้ถือเป็นภาวะฉุกเฉินสูงสุดทางกระดูกสันหลัง มักเกิดจากหมอนรองกระดูกชิ้นใหญ่หลุดกดทับเส้นประสาทบริเวณกึ่งกลาง การตรวจ MRI กระดูกสันหลังส่วนเอวด่วนที่สุดถือเป็นการตรวจมาตรฐานหลัก และข้อมูลหลักฐานทางการแพทย์ยืนยันว่าการผ่าตัด Decompressive laminectomy ภายใน 24 ถึง 48 ชั่วโมงช่วยเพิ่มโอกาสในการฟื้นตัวของระบบขับถ่ายปัสสาวะและอุจจาระได้ดีที่สุด การให้สเตียรอยด์ขนาดสูงไม่ได้ประโยชน์และทำให้การผ่าตัดล่าช้า การฉีดยาเข้าช่องไขสันหลังเป็นข้อห้ามเพราะเพิ่มแรงดันในช่องที่ตีบแคบอยู่แล้ว และการใส่สายสวนปัสสาวะรอเกิน 48-72 ชั่วโมงจะทำให้กล้ามเนื้อกระเพาะปัสสาวะเป็นอัมพาตอย่างถาวร",
+    },
+    pearls: {
+      en: "Post-void residual volume (>200 mL) is the most sensitive objective marker of bladder denervation in cauda equina syndrome, mandating emergent MRI and surgical decompression within 24 to 48 hours.",
+      th: "การตรวจวัดปริมาณปัสสาวะค้างในกระเพาะ (PVR > 200 mL) เป็นตัวบ่งชี้การสูญเสียระบบประสาทอัตโนมัติที่แม่นยำที่สุดใน Cauda Equina Syndrome ซึ่งต้องส่งทำ MRI และผ่าตัดคลายการกดทับด่วนที่สุดภายใน 24 ถึง 48 ชั่วโมง",
+    },
+    boneId: "tl-spine",
+    regionId: "thoracolumbar",
+  },
+  // ── Polytrauma Resuscitation & Femoral Shaft Fracture — Damage Control Orthopedics (DCO) vs ETC ──
+  {
+    id: "hy-femur-polytrauma-dco",
+    category: "general",
+    tag: { en: "EMERGENCY MANAGEMENT • POLYTRAUMA", th: "การจัดการภาวะฉุกเฉิน • ผู้ป่วยบาดเจ็บหลายระบบ" },
+    scenario: {
+      en: "A 32-year-old male driver presents to the trauma center following a high-speed vehicular rollover. He sustained a closed, comminuted midshaft femur fracture (AO/OTA 32-B2), bilateral severe pulmonary contusions with flail chest, and a closed head injury (GCS 13). After receiving 4 units of packed red blood cells and 3 liters of balanced crystalloids, his vital signs demonstrate a pulse of 128 bpm and blood pressure of 86/54 mmHg. Bedside laboratory testing demonstrates a core body temperature of 34.6°C, arterial blood gas pH of 7.21 with base deficit of -9.0 mEq/L, serum lactate of 5.2 mmol/L, platelet count of 65,000/μL, and a PaO2/FiO2 ratio of 170. What is the most appropriate initial surgical management strategy for stabilizing this patient's femoral fracture?",
+      th: "ผู้ป่วยชายอายุ 32 ปี ประสบอุบัติเหตุรถยนต์พลิกคว่ำด้วยความเร็วสูง ได้รับบาดเจ็บกระดูกต้นขาหักเป็นหลายชิ้นแบบปิด (AO/OTA 32-B2) ร่วมกับปอดช้ำรุนแรงทั้งสองข้าง อกเลวน (Flail chest) และบาดเจ็บทางสมองแบบปิด (GCS 13) ภายหลังได้รับเลือด 4 ยูนิตและสารน้ำ 3 ลิตร สัญญาณชีพระบุชีพจร 128 ครั้งต่อนาที ความดันโลหิต 86/54 มิลลิเมตรปรอท ผลตรวจทางห้องปฏิบัติการพบอุณหภูมิกาย 34.6 องศาเซลเซียส เลือดเป็นกรดรุนแรง pH 7.21 (Base deficit -9.0 mEq/L) กรดแลกติก 5.2 mmol/L เกล็ดเลือด 65,000 ต่อไมโครลิตร และอัตราส่วน PaO2/FiO2 เท่ากับ 170 ข้อใดคือแนวทางการผ่าตัดเบื้องต้นที่ถูกต้องที่สุดสำหรับการยึดตรึงกระดูกต้นขาหักในผู้ป่วยรายนี้?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Provisional external skeletal fixation followed by planned delayed intramedullary nailing after complete physiological resuscitation",
+          th: "การใส่โครงเหล็กยึดตรึงภายนอกชั่วคราวและวางแผนผ่าตัดดามแกนโลหะเมื่อสภาวะร่างกายได้รับการฟื้นกู้สมบูรณ์",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Immediate reamed antegrade intramedullary nailing performed concurrently with emergency surgical exploratory laparotomy under anesthesia",
+          th: "การผ่าตัดดามแกนโลหะในโพรงกระดูกแบบคว้านทันทีร่วมกับการผ่าตัดสำรวจช่องท้องฉุกเฉินภายใต้การดมยาสลบ",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Immediate unreamed retrograde intramedullary nailing under general anesthesia to achieve definitive rigid osseous stability",
+          th: "การผ่าตัดดามแกนโลหะในโพรงกระดูกแบบไม่คว้านทันทีภายใต้การดมยาสลบเพื่อให้ได้ความมั่นคงของกระดูกอย่างถาวร",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Emergent open anatomical reduction and submuscular locked bridge plate fixation with early functional rehabilitation",
+          th: "การผ่าตัดเปิดจัดกระดูกและดามแผ่นโลหะบริดจ์เพลตใต้กล้ามเนื้อทันทีร่วมกับการเริ่มฟื้นฟูสมรรถภาพอย่างรวดเร็ว",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "This polytrauma patient presents in a 'borderline/unstable' physiological state characterized by the classic 'Lethal Triad' of trauma: severe hypothermia (temperature 34.6°C < 35°C), metabolic acidosis (pH 7.21 < 7.24, base deficit -9.0 mEq/L, lactate 5.2 mmol/L > 2.5 mmol/L), and coagulopathy (platelet count 65,000/μL < 90,000/μL). In addition, the patient has severe thoracic trauma (bilateral pulmonary contusions, flail chest, and PaO2/FiO2 ratio 170 indicating moderate-to-severe ARDS). According to the definitive principles of Damage Control Orthopedics (DCO) established by Pape and Giannoudis, performing definitive early total care (ETC)—such as reamed or unreamed intramedullary nailing or extensive open plate fixation—acts as a massive immunological 'second hit'. Intramedullary instrumentation releases bone marrow fat emboli, endotoxins, and pro-inflammatory cytokines (IL-6, TNF-alpha) directly into the pulmonary capillary bed, dramatically increasing the risk of fulminant ARDS, multiple organ dysfunction syndrome (MODS), and mortality. The mandatory initial strategy is rapid provisional knee-spanning external fixation (operative time < 30 minutes) to restore length and alignment and minimize ongoing hemorrhage, followed by transfer to the intensive care unit (ICU) for aggressive resuscitation. Conversion to definitive intramedullary nailing is safely scheduled during the 'second window of opportunity' (typically post-injury days 5 to 8) once the patient is hemodynamically stable, hypothermia and coagulopathy are corrected, and serum lactate normalizes below 2.0 mmol/L.",
+      th: "ผู้ป่วยบาดเจ็บหลายระบบรายนี้อยู่ในสภาวะร่างกายแบบวิกฤต/ไม่คงที่ (Borderline/Unstable state) ซึ่งเข้าเกณฑ์ภาวะอันตรายถึงชีวิต 'Lethal Triad' อย่างชัดเจน ได้แก่ อุณหภูมิกายต่ำรุนแรง (34.6°C ซึ่งน้อยกว่า 35°C), เลือดเป็นกรดจากการเผาผลาญ (pH 7.21, Base deficit -9.0 mEq/L, Lactate 5.2 mmol/L ซึ่งสูงกว่า 2.5 mmol/L), และภาวะการแข็งตัวของเลือดบกพร่อง (เกล็ดเลือด 65,000/μL ซึ่งน้อยกว่า 90,000/μL) ร่วมกับมีการบาดเจ็บรุนแรงในช่องอก (ปอดช้ำสองข้าง อกเลวน และค่า PaO2/FiO2 เท่ากับ 170 ซึ่งบ่งชี้ภาวะ ARDS) ตามหลักการของ Damage Control Orthopedics (DCO) การทำผ่าตัดยึดกระดูกถาวรทันที (Early Total Care: ETC) เช่น การดามแกนโลหะในโพรงกระดูกแบบคว้านหรือไม่คว้าน หรือการผ่าตัดเปิดดามแผ่นโลหะ จะกระตุ้นให้เกิดปรากฏการณ์ 'Second Hit' การคว้านโพรงกระดูกทำให้เกิด Fat emboli และการหลั่งสารอักเสบ (IL-6, TNF-alpha) เข้าสู่หลอดเลือดปอดที่บอบช้ำอยู่แล้วอย่างรุนแรง นำไปสู่อวัยวะล้มเหลวหลายระบบ (MODS) และเสียชีวิต การรักษาเบื้องต้นที่ถูกต้องคือการใส่เหล็กยึดตรึงภายนอกข้ามข้อเข่าแบบชั่วคราว (ใช้เวลาผ่าตัดสั้น < 30 นาที) เพื่อควบคุมความยาว แนวกระดูก และลดการเสียเลือด แล้วย้ายผู้ป่วยไปดูแลต่อในหออภิบาลผู้ป่วยวิกฤต (ICU) เพื่อฟื้นกู้สภาวะร่างกาย จากนั้นจึงเปลี่ยนเป็นการผ่าตัดดามแกนโลหะถาวรในช่วงวันที่ 5 ถึง 8 หลังการบาดเจ็บเมื่อร่างกายพ้นภาวะวิกฤตและค่าแลกติกกลับมาเป็นปกติ",
+    },
+    pearls: {
+      en: "In borderline or unstable polytrauma patients exhibiting the lethal triad (hypothermia <35°C, acidosis pH <7.24, coagulopathy platelets <90k) or severe pulmonary contusion (PaO2/FiO2 <200), Damage Control Orthopedics with rapid external fixation avoids the systemic 'second hit' that precipitates fatal ARDS and multi-organ failure.",
+      th: "ในผู้ป่วยบาดเจ็บหลายระบบที่มีภาวะเสี่ยงวิกฤต (Lethal Triad: อุณหภูมิ <35°C, เลือดเป็นกรด pH <7.24, เกล็ดเลือด <90,000/μL) หรือมีปอดช้ำรุนแรง (PaO2/FiO2 <200) ต้องใช้หลักการ Damage Control Orthopedics โดยใส่ External Fixator ชั่วคราวเพื่อเลี่ยงภาวะ 'Second Hit' ที่ทำให้เกิด ARDS และอวัยวะล้มเหลวเฉียบพลัน",
+    },
+    boneId: "femur",
+    regionId: "femoral-shaft",
+  },
+  // ── High-Energy Tibial Pilon Fracture (AO/OTA 43-C3) — Staged Protocol & Wrinkle Sign ──
+  {
+    id: "hy-tibia-pilon-staged-fixation",
+    category: "lower",
+    tag: { en: "OPERATIVE PEARL • PILON", th: "เทคนิคผ่าตัด • กระดูกปลายหน้าแข้ง" },
+    scenario: {
+      en: "A 42-year-old construction worker falls 4 meters from a scaffold, sustaining a closed, highly comminuted intra-articular distal tibia pilon fracture (AO/OTA 43-C3) with severe metaphyseal impaction and an associated distal fibula fracture. In the emergency department 4 hours post-injury, physical examination reveals massive soft tissue swelling with tense, non-pitting edema and early hemorrhagic fracture blisters over the anteromedial distal leg. The foot is well-perfused with palpable distal pulses, sensation is intact, and the muscular compartments of the leg remain soft. Radiographs reveal marked joint surface incongruity and shortening. What is the standard evidence-based surgical sequence to reconstruct the articular surface while minimizing deep wound sepsis and soft-tissue necrosis?",
+      th: "คนงานก่อสร้างชายอายุ 42 ปี ตกจากนั่งร้านสูง 4 เมตร ได้รับบาดเจ็บกระดูกปลายหน้าแข้งแตกเข้าข้ออย่างรุนแรงและยุบตัวเป็นหลายชิ้นแบบปิด (AO/OTA 43-C3, Pilon fracture) ร่วมกับกระดูกฟิบูลาหัก ที่ห้องฉุกเฉิน 4 ชั่วโมงหลังเกิดเหตุ ตรวจร่างกายพบบริเวณข้อเท้าและหน้าแข้งส่วนล่างบวมตึงรุนแรง กดไม่บุ๋ม และเริ่มมีตุ่มน้ำเลือด (Hemorrhagic fracture blisters) บริเวณผิวด้านหน้าและด้านใน เท้ายังมีเลือดไปเลี้ยงดี ชีพจรส่วนปลายชัดเจน การรับความรู้สึกปกติ และช่องกล้ามเนื้อขานุ่มดี ภาพเอกซเรย์พบผิวข้อยุบตัวและกระดูกหดสั้น ข้อใดคือลำดับขั้นตอนการผ่าตัดรักษาตามหลักฐานเชิงประจักษ์เพื่อจัดผิวข้อให้เรียบโดยลดความเสี่ยงต่อการติดเชื้อรุนแรงและการตายของเนื้อเยื่อผิวหนัง?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Temporary joint-spanning external skeletal fixation followed by delayed definitive open plating after skin wrinkling reappears",
+          th: "การใส่โครงเหล็กยึดตรึงภายนอกชั่วคราวและรอผ่าตัดเปิดดามแผ่นโลหะถาวรเมื่อผิวหนังยุบบวมจนมีรอยย่นชัดเจน",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Immediate emergent open anatomical reduction and dual plating before the progression of hemorrhagic cutaneous blistering",
+          th: "การผ่าตัดเปิดจัดกระดูกและดามแผ่นโลหะคู่ทันทีก่อนที่ตุ่มน้ำเลือดบนผิวหนังจะแตกและลุกลามขยายวงกว้าง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Continuous circumferential long-leg cast immobilization maintained throughout hospital admission until radiographic union of articular fragments",
+          th: "การใส่เฝือกขายาวแบบกลมต่อเนื่องตลอดการนอนโรงพยาบาลจนกระทั่งกระดูกผิวข้อติดสนิทตามผลเอกซเรย์",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Immediate percutaneous screw fixation across the articular mortise combined with acute unreamed tibial intramedullary insertion",
+          th: "การยึดตรึงผิวข้อด้วยสกรูผ่านผิวหนังทันทีร่วมกับการดามแกนโลหะในโพรงกระดูกแบบไม่คว้านอย่างเร่งด่วน",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "High-energy tibial pilon fractures (AO/OTA 43-C) result from severe axial load and rotational impact, inflicting tremendous traumatic injury not only to the distal tibia articular surface and subchondral bone but crucially to the vulnerable anteromedial soft tissue envelope. The historical standard of immediate open reduction and internal fixation (ORIF) through acutely traumatized, edematous, and blistered soft tissues resulted in catastrophic wound dehiscence, skin sloughing, and deep infection rates exceeding 30% to 50%, often necessitating free flap coverage or below-knee amputation. To eliminate these disastrous complications, the landmark staged protocol pioneered by Sirkin, Patterson, and Cole was established and remains the worldwide standard of care. The protocol consists of: (1) Urgent provisional joint-spanning ankle external fixator (delta or quadrilateral frame) application to restore length, correct axial alignment, and relieve soft-tissue tension via ligamentotaxis, often combined with open reduction of the fibula if the lateral soft tissues permit; (2) Performance of a fine-cut (1 mm) CT scan once length is restored to meticulously map articular fracture fragments; and (3) Planned delayed definitive open reduction and stable plate fixation only after soft tissue swelling resolves, typically between 10 to 21 days post-injury. The primary clinical benchmark signifying safe timing for definitive surgery is the 'wrinkle sign'—the return of cutaneous skin wrinkles upon active or passive ankle dorsiflexion and eversion, accompanied by epithelialization of clear and hemorrhagic fracture blisters. Cast immobilization in displaced articular fractures produces intractable post-traumatic arthritis and malunion. Immediate percutaneous screw fixation with intramedullary nailing is contraindicated in severely comminuted 43-C3 fractures due to inability to achieve articular anatomic reduction and high risk of propagating articular displacement.",
+      th: "กระดูกหน้าแข้งส่วนปลายแตกเข้าข้อแบบพลังงานสูง (Pilon fracture, AO/OTA 43-C) เกิดจากแรงกระแทกในแนวแกนร่วมกับแรงหมุน ซึ่งนอกจากจะทำลายผิวข้อและกระดูกส่วน Metaphysis อย่างรุนแรงแล้ว ยังทำลายเนื้อเยื่ออ่อนและผิวหนังด้านหน้าและด้านในของข้อเท้าอย่างมหาศาล ในอดีตการผ่าตัดเปิดจัดกระดูกและดามแผ่นโลหะ (ORIF) ทันทีในขณะที่เนื้อเยื่ออ่อนกำลังบวมตึงและมีตุ่มน้ำ (Fracture blisters) ก่อให้เกิดแผลแยก เนื้อเยื่อเน่าตาย และติดเชื้อรุนแรงในกระดูกสูงถึง 30-50% จนหลายรายต้องตัดขา ปัจจุบันจึงใช้หลักการผ่าตัดแบบแบ่งระยะ (Staged Management Protocol) ซึ่งเป็นมาตรฐานระดับโลก ประกอบด้วย: (1) การผ่าตัดเร่งด่วนเพื่อใส่โครงเหล็กยึดตรึงภายนอกข้ามข้อเท้า (Spanning External Fixator) เพื่อดึงความยาว แนวกระดูกให้ตรง และลดแรงตึงของเนื้อเยื่ออ่อนผ่านทาง Ligamentotaxis, (2) ทำ CT scan เพื่อวิเคราะห์ชิ้นกระดูกผิวข้ออย่างละเอียดหลังดึงความยาวเข้าที่แล้ว, และ (3) รอผ่าตัดเปิดดามแผ่นโลหะจัดผิวข้ออย่างถาวรเมื่อเนื้อเยื่ออ่อนยุบบวมเต็มที่ (มักใช้เวลา 10 ถึง 21 วัน) โดยสัญญาณทางคลินิกที่สำคัญที่สุดที่บ่งบอกว่าปลอดภัยต่อการผ่าตัดคือ 'Wrinkle Sign' หรือการเกิดรอยย่นของผิวหนังกลับคืนมาเมื่อกระดกข้อเท้า และตุ่มน้ำแห้งตกสะเก็ด การใส่เฝือกขายาวทำให้เกิดข้อติดและข้อเสื่อมรุนแรงจากผิวข้อที่ไม่เรียบ ส่วนการยึดสกรูร่วมกับดามแกนโลหะในโพรงกระดูกไม่สามารถจัดผิวข้อที่แตกละเอียดระดับ 43-C3 ให้เรียบได้และเสี่ยงต่อการหลุดของผิวข้อ",
+    },
+    pearls: {
+      en: "Definitive open plate fixation of high-energy tibial pilon fractures must be delayed until the 'wrinkle sign' reappears (typically 10-21 days post-spanning ex-fix), reducing wound necrosis and deep sepsis rates from >30% down to under 5%.",
+      th: "การผ่าตัดเปิดดามเหล็กถาวรใน Pilon Fracture ต้องรอจนกว่าจะตรวจพบ 'Wrinkle Sign' (ผิวหนังเริ่มมีรอยย่น ซึ่งมักใช้เวลา 10-21 วันหลังใส่ External Fixator) เพื่อลดอัตราการเกิดแผลเน่าและการติดเชื้อรุนแรงจากเดิมกว่า 30% ให้เหลือต่ำกว่า 5%",
+    },
+    boneId: "tibia",
+    regionId: "distal",
+  },
+  // ── Pipkin Type II Femoral Head Fracture-Dislocation — Ganz Trochanteric Flip & MFCA Preservation ──
+  {
+    id: "hy-femur-pipkin-head-vascularity",
+    category: "lower",
+    tag: { en: "OPERATIVE PEARL • PIPKIN FRACTURE", th: "เทคนิคผ่าตัด • ข้อสะโพกหลุดร่วมกับหัวกระดูกต้นขาหัก" },
+    scenario: {
+      en: "A 31-year-old male unrestrained driver sustains a high-energy dashboard knee impact during a head-on motor vehicle collision, resulting in a posterior hip dislocation. Following emergent closed reduction under conscious sedation in the trauma bay, post-reduction CT imaging confirms a concentric hip joint with a 1.8 cm single articular shear fragment originating from the weight-bearing dome of the femoral head cephalad to the fovea capitis, demonstrating 3 mm of residual step-off without neck fracture or acetabular wall involvement (Pipkin Type II). When planning operative reconstruction to restore articular congruity while minimizing the risk of iatrogenic femoral head avascular necrosis, which surgical approach and fixation strategy is most strongly recommended?",
+      th: "ผู้ป่วยชายอายุ 31 ปี ไม่ได้คาดเข็มขัดนิรภัย ประสบอุบัติเหตุรถยนต์ชนประสานงาโดยเข่ากระแทกแผงคอนโซลหน้ารถอย่างรุนแรง เกิดภาวะข้อสะโพกหลุดไปด้านหลัง หลังได้รับการดึงข้อสะโพกเข้าที่อย่างเร่งด่วนในห้องฉุกเฉิน ผลตรวจเอกซเรย์คอมพิวเตอร์ (CT scan) พบข้อสะโพกเข้าที่สนิทดี แต่พบชิ้นกระดูกผิวข้อของหัวกระดูกต้นขาขนาด 1.8 ซม. หลุดเคลื่อน 3 มม. อยู่บริเวณเหนือต่อ Fovea capitis ซึ่งเป็นส่วนรับน้ำหนักหลัก โดยไม่พบคอกระดูกต้นขาหักหรือผนังเบ้าสะโพกแตก (Pipkin Type II) ในการวางแผนผ่าตัดจัดผิวกระดูกข้อให้เรียบโดยลดความเสี่ยงต่อภาวะหัวกระดูกต้นขาตายจากการขาดเลือด ข้อใดคือแนวทางการเลือกทางเข้าผ่าตัดและอุปกรณ์ยึดตรึงที่เหมาะสมที่สุด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Ganz surgical hip dislocation with trochanteric flip osteotomy and countersunk headless variable-pitch screw fixation",
+          th: "Ganz surgical hip dislocation ร่วมกับการทำ Trochanteric flip osteotomy และยึดตรึงด้วยสกรูชนิดจมมิดใต้กระดูกอ่อน",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Posterior Kocher-Langenbeck approach with posterior capsulotomy and anterior-to-posterior cortical lag screw fixation",
+          th: "Posterior Kocher-Langenbeck approach ร่วมกับการเปิดเยื่อหุ้มข้อด้านหลังและยึดตรึงด้วยสกรู Cortical lag screw",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Anterolateral Watson-Jones approach with transverse gluteal tenotomy and unthreaded Kirschner wire transfixation",
+          th: "Anterolateral Watson-Jones approach ร่วมกับการตัดเปิดเอ็นกล้ามเนื้อสะโพกและยึดตรึงด้วยลวด Kirschner wire",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Extended iliofemoral approach with rectus femoris release and multi-hole bioabsorbable buttress plate application",
+          th: "Extended iliofemoral approach ร่วมกับการตัดคลายกล้ามเนื้อหน้าขาและยึดตรึงด้วยแผ่นโลหะดามกระดูกชนิดสลายตัวได้",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Pipkin Type II femoral head fractures involve the superior weight-bearing articular surface cephalad to the fovea capitis. Displaced fractures (>1-2 mm step-off) require anatomical open reduction and rigid internal fixation to prevent rapid post-traumatic osteoarthritis. The surgical hip dislocation described by Ganz utilizing a digastric trochanteric flip osteotomy with an anterior Z-shaped capsulotomy provides 360-degree visualization of the femoral head and acetabulum while preserving the deep branch of the medial femoral circumflex artery (MFCA), which courses posterior to the obturator externus. Fixation is performed using countersunk headless compression screws (e.g., Herbert or Acutrak) driven below the articular cartilage surface to avoid damaging the acetabular labrum and cartilage. In contrast, the posterior Kocher-Langenbeck approach requires a posterior capsulotomy that directly threatens the deep branch of the MFCA and posterolateral retinacular vessels—frequently the sole surviving blood supply to the femoral head after posterior hip dislocation—dramatically increasing the rate of avascular necrosis (AVN). The Watson-Jones approach provides poor visualization of the superior weight-bearing dome and unthreaded Kirschner wires lack compressive stability while carrying risks of chondrolysis and intra-pelvic migration. The extended iliofemoral approach is excessively invasive and associated with high rates of heterotopic ossification, and bioabsorbable buttress plates are unsuitable for the intra-articular femoral head dome.",
+      th: "กระดูกหัวสะโพกหักแบบ Pipkin Type II เกิดขึ้นบริเวณส่วนบนเหนือต่อ Fovea capitis ซึ่งเป็นพื้นที่รับน้ำหนักหลักของข้อสะโพก (Weight-bearing dome) หากมีการเคลื่อนที่มากกว่า 1-2 มม. จำเป็นต้องได้รับการผ่าตัดจัดกระดูกให้เข้าที่สนิทและยึดตรึงภายในเพื่อป้องกันข้อเสื่อมรุนแรง เทคนิค Ganz Surgical Hip Dislocation โดยทำ Trochanteric Flip Osteotomy และเปิดเยื่อหุ้มข้อด้านหน้าเป็นรูปตัว Z เป็นวิธีมาตรฐานที่ช่วยให้มองเห็นผิวข้อได้ 360 องศา โดยไม่ทำลายเส้นเลือด Medial Femoral Circumflex Artery (MFCA) แขนงลึกซึ่งทอดตัวอยู่ด้านหลังกล้ามเนื้อ Obturator externus และอุปกรณ์ที่ใช้ต้องเป็นสกรูชนิดไม่มีหัว (Headless compression screws) ที่ฝังจมมิดอยู่ใต้ผิวของกระดูกอ่อนข้อต่อ ในทางตรงกันข้าม การเข้าทางด้านหลัง (Kocher-Langenbeck) ต้องตัดเปิดเยื่อหุ้มข้อด้านหลังซึ่งเสี่ยงต่อการตัดโดนแขนงหลอดเลือด Retinacular ด้านหลังที่เหลือรอดอยู่เพียงแหล่งเดียวหลังข้อสะโพกหลุด ทำให้เกิดภาวะหัวกระดูกขาดเลือดตาย (AVN) สูงขึ้นอย่างมาก ส่วน Watson-Jones approach มองเห็นผิวข้อยากและลวด K-wire ไม่มีแรงอัดกระดูก อีกทั้งเสี่ยงต่อการเลื่อนหลุด และ Extended iliofemoral approach ก่อให้เกิดการบาดเจ็บต่อเนื้อเยื่อมากเกินไปและเกิดกระดูกงอกผิดที่ (Heterotopic ossification) สูง",
+    },
+    pearls: {
+      en: "Ganz surgical hip dislocation via trochanteric flip osteotomy preserves the deep branch of the medial femoral circumflex artery (MFCA) protected by the obturator externus, making it the approach of choice for Pipkin II femoral head fractures.",
+      th: "การทำ Ganz Surgical Hip Dislocation ด้วย Trochanteric Flip Osteotomy ช่วยปกป้องเส้นเลือด Medial Femoral Circumflex Artery (MFCA) แขนงลึกที่ได้รับการปกป้องโดยกล้ามเนื้อ Obturator Externus จึงเป็นทางเข้าผ่าตัดที่ปลอดภัยที่สุดสำหรับ Pipkin Type II",
+    },
+    boneId: "femur",
+    regionId: "femoral-neck",
+  },
+  // ── Distal Radius Volar Plating — Watershed Line & Late Flexor Pollicis Longus (FPL) Rupture ──
+  {
+    id: "hy-radius-volar-plate-watershed",
+    category: "upper",
+    tag: { en: "OPERATIVE COMPLICATION • DISTAL RADIUS", th: "ภาวะแทรกซ้อนจากการผ่าตัด • กระดูกปลายแขนส่วนปลาย" },
+    scenario: {
+      en: "A 62-year-old right-hand-dominant woman presents 8 months following uneventful volar locking plate fixation for an AO/OTA 23-C2 intra-articular distal radius fracture. She reports feeling an audible pop while attempting to twist open a glass jar, followed immediately by complete inability to actively flex the interphalangeal (IP) joint of the right thumb. On physical examination, active metacarpophalangeal (MCP) flexion of the thumb, wrist motion, and digital flexion of the other four fingers remain intact without median nerve paresthesia. Follow-up radiographs demonstrate solid osseous union of the fracture, but the distal margin of the volar plate is positioned distal and prominent relative to the transverse anatomical ridge of the distal radius (Soong Grade 2 prominence). Which specific tendon sustained late attrition rupture, and which critical surgical landmark was violated during plate placement?",
+      th: "หญิงอายุ 62 ปี มือขวาข้างถนัด มาพบแพทย์ 8 เดือนหลังได้รับการผ่าตัดดามแผ่นโลหะด้านหน้า (Volar locking plate) สำหรับกระดูกปลายแขนเรเดียสส่วนปลายแตกเข้าข้อ (AO/OTA 23-C2) ผู้ป่วยเล่าว่าได้ยินเสียงดีดดังในข้อมือขณะออกแรงบิดเปิดฝาขวดแก้ว จากนั้นไม่สามารถงอข้อนิ้วโป้งส่วนปลาย (Interphalangeal joint) ได้ทันที ตรวจร่างกายพบการงอข้อโคนนิ้วโป้ง (MCP joint) การขยับข้อมือ และการงอนิ้วมือทั้งสี่นิ้วที่เหลือยังทำงานได้ตามปกติ ไม่มีอาการชาตามแนวประสาทมีเดียน ภาพเอกซเรย์ติดตามอาการพบว่ากระดูกติดสนิทดี แต่ขอบล่างของแผ่นโลหะยื่นเลยสันนูนทางกายวิภาคของกระดูกเรเดียส (Soong Grade 2 prominence) เอ็นกล้ามเนื้อเส้นใดเกิดการฉีกขาดจากแรงเสียดสี และแพทย์ผ่าตัดละเมิดจุดสังเกตทางกายวิภาคใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Flexor pollicis longus tendon due to hardware placement distal and prominent to the volar watershed line",
+          th: "เส้นเอ็น Flexor pollicis longus จากการวางแผ่นโลหะยื่นล้ำเกินแนวนูน Watershed line ทางด้านหน้า",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Extensor pollicis longus tendon due to excessive length of bicortical screws penetrating the dorsal cortex",
+          th: "เส้นเอ็น Extensor pollicis longus จากการใส่สกรูยาวเกินจนปลายโผล่ทะลุเปลือกกระดูกทางด้านหลัง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Flexor digitorum profundus tendon due to aggressive detachment and devitalization of the pronator quadratus",
+          th: "เส้นเอ็น Flexor digitorum profundus จากการเลาะแยกกล้ามเนื้อ Pronator quadratus กว้างเกินไป",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Abductor pollicis longus tendon due to excessive distal subperiosteal dissection of the first dorsal compartment",
+          th: "เส้นเอ็น Abductor pollicis longus จากการเลาะเปิดเยื่อหุ้มกระดูกช่องแรกด้านหลังมากเกินไป",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "This patient demonstrates a classic delayed attrition rupture of the flexor pollicis longus (FPL) tendon following volar locking plate fixation of the distal radius. The FPL is the sole motor unit responsible for active flexion of the thumb interphalangeal (IP) joint; the flexor pollicis brevis (FPB) preserves metacarpophalangeal (MCP) flexion. The critical surgical landmark on the volar distal radius is the 'watershed line'—a transverse anatomical ridge located approximately 2 mm proximal to the joint line along the radial styloid and 10 to 15 mm proximal along the ulnar corner (drifting closer to the articular margin at the lunate facet). Placing a volar plate distal to or projecting directly over this ridge corresponds to Soong Grade 2 prominence. In this position, the plate lies in direct abrasive contact with the deep gliding flexor tendons (most commonly FPL, followed by FDP of the index finger), leading to chronic tenosynovitis, fraying, and eventual complete attrition rupture during forceful pinch or grasp. Extensor pollicis longus (EPL) rupture is caused by protruding bicortical screw tips penetrating the dorsal cortex at Lister's tubercle, which results in inability to extend (not flex) the thumb IP joint. Aggressive release of the pronator quadratus affects pronation torque and tissue cushioning but does not cause isolated loss of thumb IP flexion. Abductor pollicis longus (APL) tendons course in the first dorsal compartment and are involved in thumb abduction, not IP flexion.",
+      th: "ผู้ป่วยรายนี้เกิดภาวะเส้นเอ็น Flexor Pollicis Longus (FPL) ขาดจากการเสียดสีเรื้อรัง (Delayed attrition rupture) ซึ่งเป็นภาวะแทรกซ้อนสำคัญของการดามกระดูกปลายแขนด้านหน้า โดยเอ็น FPL เป็นกล้ามเนื้อเพียงมัดเดียวที่ทำหน้าที่งอข้อนิ้วโป้งส่วนปลาย (IP joint) ในขณะที่การงอข้อโคนนิ้วโป้ง (MCP joint) ทำงานโดยกล้ามเนื้อ Flexor pollicis brevis จุดสังเกตทางกายวิภาคที่สำคัญที่สุดด้านหน้ากระดูกเรเดียสคือ 'Watershed line' ซึ่งเป็นสันกระดูกขวางนูนต่ำ ห่างจากผิวข้อประมาณ 2 มม. ทางด้านเรเดียล และ 10-15 มม. ทางด้านอัลนา การวางแผ่นโลหะยื่นล้ำไปทางส่วนปลายหรือนูนล้ำหน้าแนวกระดูกนี้ตรงกับ Soong Grade 2 prominence ทำให้ขอบโลหะเสียดสีโดยตรงกับเส้นเอ็น FPL (และ FDP ของนิ้วชี้) จนเอ็นเปื่อยและขาดในที่สุด สำหรับเอ็น Extensor Pollicis Longus (EPL) มักขาดจากปลายสกรูที่ยาวทะลุคอร์เทกซ์ด้านหลังใกล้ Lister's tubercle ทำให้ 'เหยียด' นิ้วโป้งไม่ได้ ไม่ใช่การงอ ส่วนการเลาะกล้ามเนื้อ Pronator quadratus อาจทำให้แรงคว่ำมือลดลงแต่ไม่ทำให้เสียนิ้วโป้งงอ และเอ็น Abductor Pollicis Longus (APL) ทำหน้าที่กางนิ้วโป้งในช่องเอ็นด้านหลังช่องแรก",
+    },
+    pearls: {
+      en: "Placing a volar locking plate distal to the watershed line (Soong Grade 2) dramatically increases the risk of delayed flexor pollicis longus (FPL) tendon attrition rupture; plates must remain strictly proximal to this boundary.",
+      th: "การวางแผ่นโลหะ Volar Plate ยื่นล้ำเลยแนว Watershed Line (Soong Grade 2) จะเพิ่มความเสี่ยงต่อการขาดของเส้นเอ็น Flexor Pollicis Longus (FPL) อย่างมหาศาล จึงต้องวางแผ่นเหล็กให้อยู่เหนือกว่าแนวนี้เสมอ",
+    },
+    boneId: "radius",
+    regionId: "distal",
+  },
+  // ── Acetabular Posterior Wall / Column — Kocher-Langenbeck Approach & Sciatic Nerve Traction Protection ──
+  {
+    id: "hy-pelvis-kocher-langenbeck-sciatic",
+    category: "lower",
+    tag: { en: "SURGICAL APPROACH • ACETABULUM", th: "ทางเข้าผ่าตัด • เบ้าสะโพก" },
+    scenario: {
+      en: "A 34-year-old male unrestrained driver sustains a posterior hip fracture-dislocation with an incarcerated osteochondral fragment and a displaced posterior wall acetabular fracture (Letournel posterior wall type) following a high-energy motor vehicle collision. Following closed reduction of the hip joint in the emergency department, open reduction and internal fixation is planned via a Kocher-Langenbeck approach in the prone position. During exposure and deep retractor placement around the greater and lesser sciatic notches, which specific intraoperative limb position must be maintained to minimize traction injury to the peroneal division of the sciatic nerve?",
+      th: "ผู้ป่วยชายอายุ 34 ปี ไม่ได้คาดเข็มขัดนิรภัย ประสบอุบัติเหตุรถยนต์ชน เกิดภาวะข้อสะโพกหลุดไปด้านหลังร่วมกับกระดูกเบ้าสะโพกส่วนหลังแตกหักแบบเคลื่อนที่ (Letournel posterior wall fracture) และมีชิ้นส่วนกระดูกอ่อนติดค้างในข้อ หลังจากการดึงข้อสะโพกเข้าที่ในห้องฉุกเฉิน ผู้ป่วยมีข้อบ่งชี้ในการผ่าตัดจัดแนวกระดูกและยึดตรึงภายในผ่านทางเข้าผ่าตัด Kocher-Langenbeck ในท่านอนคว่ำ ระหว่างการเปิดเลาะเนื้อเยื่อและการวางเครื่องมือดึงรั้งบริเวณ Greater และ Lesser sciatic notches ศัลยแพทย์และผู้ช่วยต้องจัดท่าของรยางค์ล่างให้อยู่ในลักษณะใดเพื่อป้องกันการบาดเจ็บจากการดึงรั้งต่อแขนง Peroneal ของเส้นประสาทไซอาติก (Sciatic nerve)?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Maintaining the hip in full extension and the knee in 90 degrees of flexion",
+          th: "จัดข้อสะโพกให้อยู่ในท่าเหยียดตรงและงอข้อเข่าทำมุม 90 องศา",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Maintaining the hip in 90 degrees of flexion and the knee in full extension",
+          th: "จัดข้อสะโพกให้อยู่ในท่างอ 90 องศาและเหยียดข้อเข่าตรงอย่างเต็มที่",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Maintaining the hip in 45 degrees of flexion and the knee in full extension",
+          th: "จัดข้อสะโพกให้อยู่ในท่างอ 45 องศาและเหยียดข้อเข่าตรงอย่างเต็มที่",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Maintaining the hip in full extension and the knee in complete zero extension",
+          th: "จัดข้อสะโพกให้อยู่ในท่าเหยียดตรงและเหยียดข้อเข่าตรงศูนย์องศาอย่างเต็มที่",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Kocher-Langenbeck approach is the workhorse posterior approach to the acetabulum, providing direct access to the posterior wall, posterior column, and retroacetabular surface. During exposure, the sciatic nerve is at substantial risk of iatrogenic traction injury from retractors placed in the greater sciatic notch or over the ischial spine. The nerve courses posterior to the hip and behind the knee joint before bifurcation. Hip extension relaxes the sciatic nerve across the posterior pelvis, while knee flexion to 90 degrees relieves tension along the distal sciatic trunk and hamstring origins. Conversely, extending the knee and/or flexing the hip places significant longitudinal traction across the nerve (equivalent to a straight-leg raise test). The common peroneal division of the sciatic nerve is particularly vulnerable to traction neuropraxia because it is laterally situated against the retractors, is tethered distally at the fibular head, and possesses fewer and larger fascicles with less protective epineurium compared to the medial tibial division.",
+      th: "ทางเข้าผ่าตัด Kocher-Langenbeck เป็นทางเข้าผ่าตัดมาตรฐานทางด้านหลังสำหรับกระดูกเบ้าสะโพก ช่วยให้มองเห็น Posterior wall, Posterior column และ Retroacetabular surface ได้อย่างชัดเจน ระหว่างการผ่าตัด เส้นประสาทไซอาติก (Sciatic nerve) มีความเสี่ยงสูงมากที่จะเกิดการบาดเจ็บจากการดึงรั้ง (Traction neuropraxia) จากเครื่องมือถ่างขยายแผลที่วางบริเวณ Greater sciatic notch หรือ Ischial spine เนื่องจากเส้นประสาททอดผ่านด้านหลังของทั้งข้อสะโพกและข้อเข่า การจัดข้อสะโพกให้อยู่ในท่าเหยียด (Extension) จะช่วยลดความตึงของเส้นประสาทบริเวณด้านหลังของเบ้าสะโพก และการงอข้อเข่า 90 องศา (Flexion) จะช่วยคลายความตึงของเส้นประสาทส่วนปลายและกล้ามเนื้อกลุ่ม Hamstrings ในทางกลับกัน การเหยียดเข่าตรงหรือการงอสะโพกจะเพิ่มแรงดึงรั้งตามแนวยาวต่อเส้นประสาทอย่างมาก (คล้ายกับการทำท่า Straight Leg Raise) โดยแขนง Peroneal division มีความเสี่ยงต่อการบาดเจ็บสูงที่สุดเนื่องจากอยู่ชิดด้านข้างมากกว่า ถูกยึดตรึงไว้ที่หัวกระดูกฟิบูลาส่วนปลาย และมีเยื่อหุ้มเส้นประสาท (Epineurium) ป้องกันน้อยกว่าแขนง Tibial",
+    },
+    pearls: {
+      en: "During the Kocher-Langenbeck approach, the assistant must keep the hip fully extended and knee flexed to 90 degrees to relax the sciatic nerve; the peroneal division is most vulnerable due to its lateral position and distal tethering at the fibular neck.",
+      th: "ระหว่างการผ่าตัดผ่านทางเข้า Kocher-Langenbeck ต้องจัดสะโพกเหยียดตรงและงอเข่า 90 องศาเสมอเพื่อคลายความตึงของ Sciatic nerve โดยแขนง Peroneal division จะเสี่ยงต่อการบาดเจ็บสูงสุดจากตำแหน่งที่อยู่ด้านข้างและการถูกตรึงที่คอกระดูกฟิบูลา",
+    },
+    boneId: "pelvis",
+    regionId: "acetabulum",
+  },
+  // ── Intertrochanteric Femur Fracture — Baumgaertner's Tip-Apex Distance (TAD) & Cut-Out Prevention ──
+  {
+    id: "hy-femur-intertroch-tad-cutout",
+    category: "lower",
+    tag: { en: "BIOMECHANICS • PROXIMAL FEMUR", th: "ชีวกลศาสตร์ • กระดูกต้นขาส่วนต้น" },
+    scenario: {
+      en: "An 82-year-old female with severe osteopenia sustains a closed, unstable 3-part intertrochanteric femur fracture (AO/OTA 31-A2) following a ground-level fall. She undergoes successful closed reduction and cephalomedullary nailing using a helical blade / lag screw construct. When evaluating immediate postoperative fluoroscopic radiographs to assess the mechanical stability of the fixation and minimize the risk of superior screw cut-out, which combination of implant position and quantitative metric represents the gold-standard recommendation established by Baumgaertner?",
+      th: "หญิงอายุ 82 ปี มีภาวะกระดูกพรุนรุนแรง ประสบอุบัติเหตุหกล้ม เกิดกระดูกสะโพกหักแบบไม่มั่นคง 3 ชิ้นส่วน (AO/OTA 31-A2) ได้รับการผ่าตัดจัดแนวกระดูกแบบปิดและดามด้วย Cephalomedullary nail ชนิดมี Lag screw/Helical blade เมื่อศัลยแพทย์ประเมินภาพเอกซเรย์ Fluoroscopy หลังผ่าตัดทันทีเพื่อตรวจสอบความมั่นคงทางชีวกลศาสตร์และลดความเสี่ยงต่อภาวะสกรูทะลุหลุดออกจากหัวกระดูก (Cut-out) ข้อใดคือตำแหน่งของสกรูและค่าทางปริมาณตามหลักการมาตรฐานของ Baumgaertner?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Center-center or inferior-center lag screw placement with a cumulative tip-apex distance measuring less than 25 mm",
+          th: "การวางตำแหน่งสกรูตรงกลางหรือค่อนไปทางด้านล่าง โดยมีค่ารวมระยะ Tip-Apex Distance น้อยกว่า 25 มิลลิเมตร",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Superior-center or anterior-center lag screw placement with a cumulative tip-apex distance measuring less than 25 mm",
+          th: "การวางตำแหน่งสกรูค่อนไปทางด้านบนหรือด้านหน้า โดยมีค่ารวมระยะ Tip-Apex Distance น้อยกว่า 25 มิลลิเมตร",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Center-center or inferior-center lag screw placement with a cumulative tip-apex distance measuring greater than 35 mm",
+          th: "การวางตำแหน่งสกรูตรงกลางหรือค่อนไปทางด้านล่าง โดยมีค่ารวมระยะ Tip-Apex Distance มากกว่า 35 มิลลิเมตร",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Superior-posterior or calcar-distant lag screw placement with a cumulative tip-apex distance measuring greater than 35 mm",
+          th: "การวางตำแหน่งสกรูค่อนไปทางด้านบนหลังหรือห่างแคลคาร์ โดยมีค่ารวมระยะ Tip-Apex Distance มากกว่า 35 มิลลิเมตร",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Tip-Apex Distance (TAD), described by Baumgaertner et al. (JBJS 1995), is the single most reliable radiographic predictor of lag screw cut-out in peritrochanteric hip fractures. It is defined as the sum of the distance (in millimeters) from the tip of the lag screw to the apex of the femoral head on the anteroposterior (AP) view and lateral view, corrected for radiographic magnification (TAD = X_AP + X_Lat). A TAD of less than 25 mm correlates with a cut-out rate approaching 0%, whereas a TAD greater than 25 mm (and especially > 35 mm) shows an exponential increase in cut-out rates (up to 20-30%). In addition to TAD, spatial quadrant position is critical: on the AP view, center-center or inferior-center placement engages the dense, strong trabecular bone of the inferior calcar femorale, providing superior resistance against varus collapse. Conversely, superior screw placement places the implant into weak, osteoporotic cancellous bone with high tensile shear stress, significantly increasing cut-out risk regardless of nail type. Anterior screw placement on the lateral view similarly increases cut-out rates.",
+      th: "Tip-Apex Distance (TAD) ซึ่งอธิบายโดย Baumgaertner และคณะ (JBJS 1995) เป็นตัวชี้วัดทางรังสีวิทยาที่เชื่อถือได้มากที่สุดในการทำนายความเสี่ยงต่อภาวะสกรูทะลุหลุด (Cut-out) ในกระดูกสะโพกหักส่วน Intertrochanteric โดยคำนวณจากผลรวมของระยะทาง (มิลลิเมตร) จากปลายของ Lag screw ไปยังยอดโค้ง (Apex) ของหัวกระดูกต้นขาในภาพถ่ายรังสีท่า AP และท่า Lateral ปรับแก้ตามอัตราส่วนการขยายของภาพ (TAD = X_AP + X_Lat) ค่า TAD ที่น้อยกว่า 25 มม. สัมพันธ์กับอัตราการเกิด Cut-out ต่ำมากใกล้เคียง 0% ในขณะที่ค่า TAD ที่มากกว่า 25 มม. (โดยเฉพาะ > 35 มม.) จะมีอัตรา Cut-out พุ่งสูงขึ้นอย่างก้าวกระโดด (สูงถึง 20-30%) นอกจากนี้ ตำแหน่ง Quadrant ของสกรูก็มีความสำคัญยิ่ง โดยในท่า AP สกรูควรอยู่ในตำแหน่งตรงกลาง (Center-center) หรือค่อนไปทางด้านล่าง (Inferior-center) เพื่อให้เกาะกับแนวกระดูก Calcar femorale ที่มีความหนาแน่นแข็งแรง ช่วยต้านทานแรงยุบตัวในแนว Varus ส่วนการวางสกรูในตำแหน่งด้านบน (Superior) หรือด้านหน้า (Anterior) จะทำให้สกรูอยู่ในเนื้อกระดูกพรุนที่รับแรงดึงเฉือนสูง นำไปสู่ความล้มเหลวของการยึดตรึงกระดูก",
+    },
+    pearls: {
+      en: "To prevent cephalomedullary lag screw cut-out in intertrochanteric fractures, maintain a Tip-Apex Distance (TAD) < 25 mm and position the screw center-center or inferior-center to engage the dense bone of the calcar femorale.",
+      th: "เพื่อป้องกันภาวะสกรูหลุดทะลุ (Cut-out) ในกระดูก Intertrochanteric ต้องรักษาระยะ Tip-Apex Distance (TAD) ให้น้อยกว่า 25 มม. และวางตำแหน่งสกรูตรงกลางหรือชิดด้านล่างเพื่อเกาะกับกระดูกส่วน Calcar ที่แข็งแรง",
+    },
+    boneId: "femur",
+    regionId: "intertrochanteric",
   },
 ];
 
@@ -775,7 +1963,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "femur",
     boneName: { en: "Femur", th: "กระดูกต้นขา" },
-    regionId: "proximal",
+    regionId: "femoral-neck",
     regionName: { en: "Femoral Neck", th: "คอกระดูกต้นขา" },
     systemName: "Garden Classification",
     systemFullName: { en: "Garden Classification of Femoral Neck Fractures", th: "การจำแนกกระดูกคอตันขาหักตามระบบการ์เดน" },
@@ -796,7 +1984,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "femur",
     boneName: { en: "Femur", th: "กระดูกต้นขา" },
-    regionId: "proximal",
+    regionId: "femoral-neck",
     regionName: { en: "Femoral Neck", th: "คอกระดูกต้นขา" },
     systemName: "Garden Classification",
     systemFullName: { en: "Garden Classification of Femoral Neck Fractures", th: "การจำแนกกระดูกคอตันขาหักตามระบบการ์เดน" },
@@ -817,7 +2005,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "femur",
     boneName: { en: "Femur", th: "กระดูกต้นขา" },
-    regionId: "proximal",
+    regionId: "femoral-neck",
     regionName: { en: "Femoral Neck", th: "คอกระดูกต้นขา" },
     systemName: "Garden Classification",
     systemFullName: { en: "Garden Classification of Femoral Neck Fractures", th: "การจำแนกกระดูกคอตันขาหักตามระบบการ์เดน" },
@@ -838,7 +2026,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "femur",
     boneName: { en: "Femur", th: "กระดูกต้นขา" },
-    regionId: "proximal",
+    regionId: "femoral-neck",
     regionName: { en: "Femoral Neck", th: "คอกระดูกต้นขา" },
     systemName: "Garden Classification",
     systemFullName: { en: "Garden Classification of Femoral Neck Fractures", th: "การจำแนกกระดูกคอตันขาหักตามระบบการ์เดน" },
@@ -958,7 +2146,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "c-spine",
     boneName: { en: "Cervical Spine", th: "กระดูกสันหลังส่วนคอ" },
-    regionId: "c2-hangman",
+    regionId: "upper-cervical",
     regionName: { en: "Axis (C2 Hangman)", th: "กระดูกสันหลังข้อที่ 2 (C2)" },
     systemName: "Levine-Edwards Classification",
     systemFullName: { en: "Levine-Edwards Classification of Hangman's Fracture (Traumatic Spondylolisthesis of Axis)", th: "การจำแนกกระดูก C2 หัก (Hangman's Fracture)" },
@@ -978,7 +2166,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "c-spine",
     boneName: { en: "Cervical Spine", th: "กระดูกสันหลังส่วนคอ" },
-    regionId: "c2-hangman",
+    regionId: "upper-cervical",
     regionName: { en: "Axis (C2 Hangman)", th: "กระดูกสันหลังข้อที่ 2 (C2)" },
     systemName: "Levine-Edwards Classification",
     systemFullName: { en: "Levine-Edwards Classification of Hangman's Fracture (Traumatic Spondylolisthesis of Axis)", th: "การจำแนกกระดูก C2 หัก (Hangman's Fracture)" },
@@ -997,7 +2185,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "c-spine",
     boneName: { en: "Cervical Spine", th: "กระดูกสันหลังส่วนคอ" },
-    regionId: "c2-hangman",
+    regionId: "upper-cervical",
     regionName: { en: "Axis (C2 Hangman)", th: "กระดูกสันหลังข้อที่ 2 (C2)" },
     systemName: "Levine-Edwards Classification",
     systemFullName: { en: "Levine-Edwards Classification of Hangman's Fracture (Traumatic Spondylolisthesis of Axis)", th: "การจำแนกกระดูก C2 หัก (Hangman's Fracture)" },
@@ -1016,7 +2204,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "c-spine",
     boneName: { en: "Cervical Spine", th: "กระดูกสันหลังส่วนคอ" },
-    regionId: "c2-hangman",
+    regionId: "upper-cervical",
     regionName: { en: "Axis (C2 Hangman)", th: "กระดูกสันหลังข้อที่ 2 (C2)" },
     systemName: "Levine-Edwards Classification",
     systemFullName: { en: "Levine-Edwards Classification of Hangman's Fracture (Traumatic Spondylolisthesis of Axis)", th: "การจำแนกกระดูก C2 หัก (Hangman's Fracture)" },
@@ -1037,7 +2225,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "foot",
     boneName: { en: "Foot & Ankle", th: "กระดูกเท้าและข้อเท้า" },
-    regionId: "metatarsal",
+    regionId: "fifth-metatarsal-base",
     regionName: { en: "5th Metatarsal Base", th: "โคนกระดูกฝ่าเท้านิ้วที่ 5" },
     systemName: "Lawrence & Botte Classification",
     systemFullName: { en: "Lawrence & Botte Classification of 5th Metatarsal Base Fractures", th: "การจำแนกกระดูกโคนนิ้วก้อยเท้าหัก" },
@@ -1056,7 +2244,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "foot",
     boneName: { en: "Foot & Ankle", th: "กระดูกเท้าและข้อเท้า" },
-    regionId: "metatarsal",
+    regionId: "fifth-metatarsal-base",
     regionName: { en: "5th Metatarsal Base", th: "โคนกระดูกฝ่าเท้านิ้วที่ 5" },
     systemName: "Lawrence & Botte Classification",
     systemFullName: { en: "Lawrence & Botte Classification of 5th Metatarsal Base Fractures", th: "การจำแนกกระดูกโคนนิ้วก้อยเท้าหัก" },
@@ -1076,7 +2264,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "classification",
     boneId: "foot",
     boneName: { en: "Foot & Ankle", th: "กระดูกเท้าและข้อเท้า" },
-    regionId: "metatarsal",
+    regionId: "fifth-metatarsal-base",
     regionName: { en: "5th Metatarsal Base", th: "โคนกระดูกฝ่าเท้านิ้วที่ 5" },
     systemName: "Lawrence & Botte Classification",
     systemFullName: { en: "Lawrence & Botte Classification of 5th Metatarsal Base Fractures", th: "การจำแนกกระดูกโคนนิ้วก้อยเท้าหัก" },
@@ -1097,7 +2285,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "forearm",
     boneName: { en: "Forearm & Elbow", th: "กระดูกปลายแขนและข้อศอก" },
-    regionId: "proximal",
+    regionId: "radial-head",
     regionName: { en: "Radial Head & Elbow", th: "หัวกระดูกเรเดียสและข้อศอก" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Greenspan Radio-Capitellar Special Trauma Radiograph", th: "ภาพถ่ายรังสีท่าพิเศษ Greenspan View สำหรับข้อศอก" },
@@ -1154,7 +2342,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "clavicle",
     boneName: { en: "Clavicle & AC Joint", th: "กระดูกไหปลาร้าและข้อไหล่" },
-    regionId: "distal",
+    regionId: "ac-joint",
     regionName: { en: "Acromioclavicular Joint", th: "ข้อต่อ Acromioclavicular" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Zanca 15° Cephalic Tilt Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษ Zanca View" },
@@ -1172,7 +2360,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "hand",
     boneName: { en: "Hand & Wrist", th: "กระดูกมือและข้อมือ" },
-    regionId: "metacarpal",
+    regionId: "first-metacarpal-base",
     regionName: { en: "1st CMC Joint", th: "ข้อโคนนิ้วโป้ง (1st CMC Joint)" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Robert's True AP Thumb Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษ Robert's View" },
@@ -1190,7 +2378,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "c-spine",
     boneName: { en: "Cervical Spine", th: "กระดูกสันหลังส่วนคอ" },
-    regionId: "c2-odontoid",
+    regionId: "upper-cervical",
     regionName: { en: "Upper Cervical (C1-C2)", th: "กระดูกสันหลังส่วนคอข้อที่ 1-2" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Open-Mouth Peg (Odontoid) Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษอ้าปาก (Open-Mouth Odontoid View)" },
@@ -1242,9 +2430,9 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
   {
     id: "view-axillary-shoulder",
     kind: "investigation_view",
-    boneId: "shoulder",
+    boneId: "scapula",
     boneName: { en: "Shoulder", th: "ข้อไหล่" },
-    regionId: "glenohumeral",
+    regionId: "glenoid",
     regionName: { en: "Glenohumeral Joint", th: "ข้อต่อหัวไหล่" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Axillary Lateral Shoulder Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษ Axillary View หัวไหล่" },
@@ -1262,7 +2450,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "clavicle",
     boneName: { en: "Clavicle & AC Joint", th: "กระดูกไหปลาร้าและข้อไหล่" },
-    regionId: "distal",
+    regionId: "ac-joint",
     regionName: { en: "Acromioclavicular Joint", th: "ข้อต่อ Acromioclavicular" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Weighted Stress AC Joint Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษถ่วงน้ำหนักข้อต่อ AC Joint (Stress View)" },
@@ -1280,7 +2468,7 @@ export const VERIFIED_REAL_TRAUMA_XRAYS: SpotFilmItem[] = [
     kind: "investigation_view",
     boneId: "clavicle",
     boneName: { en: "Clavicle & AC Joint", th: "กระดูกไหปลาร้าและข้อไหล่" },
-    regionId: "distal",
+    regionId: "ac-joint",
     regionName: { en: "Acromioclavicular Joint", th: "ข้อต่อ Acromioclavicular" },
     systemName: "Special Radiographic View Quiz",
     systemFullName: { en: "Axillary Distal Clavicle Special Radiograph", th: "ภาพเอกซเรย์ท่าพิเศษ Axillary ไหปลาร้า" },

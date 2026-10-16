@@ -23,6 +23,8 @@ import {
   Minimize2,
 } from "lucide-react";
 import { getRegionReferences } from "../../data/references";
+import { Bone3DMiniPreview } from "../anatomy3d/Bone3DMiniPreview";
+import { ErrorBoundary } from "../common/ErrorBoundary";
 
 interface RegionConceptPanelProps {
   concept: RegionConcept;
@@ -34,6 +36,9 @@ interface RegionConceptPanelProps {
   isDesktop?: boolean;
   isExpanded?: boolean;
   onToggleExpand?: () => void;
+  boneId?: string;
+  model3dUrl?: string;
+  onOpen3D?: () => void;
 }
 
 export function RegionConceptPanel({
@@ -46,6 +51,9 @@ export function RegionConceptPanel({
   isDesktop = true,
   isExpanded = false,
   onToggleExpand,
+  boneId,
+  model3dUrl,
+  onOpen3D,
 }: RegionConceptPanelProps) {
   const bg = darkMode ? "#161B27" : "#FFFFFF";
   const border = darkMode ? "#252F42" : "#E2E8F0";
@@ -368,6 +376,17 @@ export function RegionConceptPanel({
           )}
         </div>
       </div>
+
+      {/* ── Minimalist Glassmorphic 3D Mini Preview (Desktop only, for clavicle) ── */}
+      {isDesktop && boneId === "clavicle" && model3dUrl && (
+        <ErrorBoundary fallback={null}>
+          <Bone3DMiniPreview
+            modelUrl={model3dUrl}
+            darkMode={darkMode}
+            onOpenFull={() => onOpen3D?.()}
+          />
+        </ErrorBoundary>
+      )}
 
       {/* ── Anatomy Concept Gallery View (Adapts dynamically to image count) ── */}
       {activeImages.length > 0 && (

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Textbook references (copyrighted, large)
+references/
+.venv-pdf/

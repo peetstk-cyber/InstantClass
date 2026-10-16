@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef, Suspense, lazy } from "react";
 import { createPortal } from "react-dom";
 import type { Language } from "../../App";
-import type { BoneData, ClassificationSystem, ClassificationConcept, FractureClassificationType, InvestigationView } from "../../types";
+import type { BoneData, ClassificationSystem, FractureClassificationType, InvestigationView } from "../../types";
 import { X, Zap, Info, Bookmark, Image as ImageIcon, Film, ChevronDown, ChevronUp, Layers, Lightbulb, Box } from "lucide-react";
 
 const Bone3DViewerModal = lazy(() =>
@@ -16,7 +16,6 @@ import { HorizontalScrollCardRow } from "../common/HorizontalScrollCardRow";
 
 import type { UserProfile } from "../../types/auth";
 import { updateBookmarksInFirestore } from "../../lib/firebase";
-import { getSystemReferences } from "../../data/references";
 
 interface DetailPanelProps {
   darkMode: boolean;
@@ -560,396 +559,9 @@ function ClassificationMediaViewerModal({
   );
 }
 
-/** Summary Table for Acceptable Alignment thresholds in Metacarpal Fractures */
-function MetacarpalAlignmentTable({
-  language,
-  darkMode,
-  textColor,
-  border,
-}: {
-  language: "en" | "th";
-  darkMode: boolean;
-  textColor: string;
-  border: string;
-}) {
-  const rows = [
-    { mc: language === "en" ? "2nd MC (Index)" : "2nd MC (นิ้วชี้)", neck: "10°", shaft: "10°", rotation: "0°" },
-    { mc: language === "en" ? "3rd MC (Middle)" : "3rd MC (นิ้วกลาง)", neck: "15°", shaft: "10°", rotation: "0°" },
-    { mc: language === "en" ? "4th MC (Ring)" : "4th MC (นิ้วนาง)", neck: "30°", shaft: "30°", rotation: "0°" },
-    { mc: language === "en" ? "5th MC (Little)" : "5th MC (นิ้วก้อย)", neck: "40°", shaft: "40°", rotation: "0°" },
-  ];
-
-  return (
-    <div 
-      className="mb-4 rounded-xl overflow-hidden border"
-      style={{ 
-        background: darkMode ? "#1E293B" : "#FFFFFF",
-        borderColor: border,
-        boxShadow: darkMode ? "0 4px 14px rgba(0,0,0,0.3)" : "0 2px 8px rgba(0,0,0,0.06)"
-      }}
-    >
-      <div 
-        className="px-3.5 py-2.5 flex items-center justify-between"
-        style={{ 
-          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)",
-          borderBottom: `1px solid ${border}` 
-        }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-sm">📊</span>
-          <span style={{ fontSize: 12, fontWeight: 800, color: darkMode ? "#00CED1" : "#0F766E" }}>
-            {language === "en" ? "Summary Table: Acceptable Alignment in Metacarpal Fractures" : "ตารางสรุป Acceptable Alignment ใน Metacarpal Fractures"}
-          </span>
-        </div>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead>
-            <tr style={{ background: darkMode ? "rgba(255,255,255,0.04)" : "#F8FAFC", borderBottom: `1px solid ${border}` }}>
-              <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
-                {language === "en" ? "Degree of Acceptable" : "ตำแหน่งกระดูก MC"}
-              </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>
-                {language === "en" ? "Metacarpal Neck (°)" : "Metacarpal Neck (°)"}
-              </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: "#2ECC71" }}>
-                {language === "en" ? "Metacarpal Shaft (°)" : "Metacarpal Shaft (°)"}
-              </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: "#EF4444" }}>
-                {language === "en" ? "Malrotation (°)" : "Malrotation (°)"}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, idx) => (
-              <tr 
-                key={row.mc} 
-                style={{ 
-                  borderBottom: idx === rows.length - 1 ? "none" : `1px solid ${darkMode ? "rgba(255,255,255,0.06)" : "#F1F5F9"}`,
-                  background: idx % 2 === 1 ? (darkMode ? "rgba(255,255,255,0.02)" : "rgba(248,250,252,0.6)") : "transparent" 
-                }}
-              >
-                <td className="py-2.5 px-3 font-semibold" style={{ color: textColor }}>{row.mc}</td>
-                <td className="py-2.5 px-3 text-center font-bold" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>{row.neck}</td>
-                <td className="py-2.5 px-3 text-center font-bold" style={{ color: "#2ECC71" }}>{row.shaft}</td>
-                <td className="py-2.5 px-3 text-center font-bold" style={{ color: "#EF4444" }}>{row.rotation}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div 
-        className="p-3 text-[11px] leading-relaxed flex flex-col gap-1"
-        style={{ 
-          background: darkMode ? "rgba(239, 68, 68, 0.08)" : "rgba(254, 242, 242, 0.8)",
-          borderTop: `1px solid ${border}`,
-          color: darkMode ? "#FCA5A5" : "#991B1B"
-        }}
-      >
-        <div className="font-bold flex items-center gap-1.5">
-          <span>⚠️</span>
-          <span>{language === "en" ? "Clinical Rule: Malrotation = 0° (Zero Tolerance)" : "ข้อควรระวังสำคัญ: Malrotation = 0° (ห้ามบิดหมุนเด็ดขาด)"}</span>
-        </div>
-        <div>
-          {language === "en" 
-            ? "1° of rotation causes ~5° of finger crossover/scissoring during flexed grip. 4th & 5th MCs tolerate higher dorsal angulation due to mobile CMC joints." 
-            : "การบิดหมุนเพียง 1° ทำให้นิ้วเกยซ้อนกัน (Scissoring) ถึง 5° ขณะพับกำมือ นิ้วนางและก้อยทนมุมเอียงได้มากกว่าเนื่องจากข้อ CMC ยืดหยุ่นขยับได้"}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** Summary Table & Decision Matrix for Patella Fracture Concept */
-function PatellaConceptTable({
-  language,
-  darkMode,
-  textColor,
-  border,
-}: {
-  language: "en" | "th";
-  darkMode: boolean;
-  textColor: string;
-  border: string;
-}) {
-  const rows = [
-    {
-      category: language === "en" ? "Intact SLR (SLR Active)" : "เหยียดขาตรงได้ (Intact SLR)",
-      pattern: language === "en" ? "Nondisplaced / Vertical / Undisplaced Comminuted" : "Nondisplaced / Vertical / Undisplaced Comminuted",
-      treatment: language === "en" ? "Non-operative (Cylinder Cast / Locked Brace 4-6 wks)" : "ไม่ผ่าตัด (เฝือก Cylinder Cast / Knee Brace ดามขาตรง 4-6 สัปดาห์)",
-      statusColor: "#2ECC71",
-    },
-    {
-      category: language === "en" ? "Disrupted SLR (Extensor failure)" : "เหยียดขาตรงไม่ได้ (Disrupted SLR)",
-      pattern: language === "en" ? "Displaced Transverse / Displaced Comminuted" : "Displaced Transverse / Displaced Comminuted",
-      treatment: language === "en" ? "ORIF: Tension Band Wiring (TBW) / Locking Plate" : "ผ่าตัด ORIF: Tension Band Wiring (TBW) หรือ Patella Locking Plate",
-      statusColor: "#EF4444",
-    },
-    {
-      category: language === "en" ? "Polar Avulsion (Tendon Disruption)" : "หักขั้วกระดูก (Polar Avulsion)",
-      pattern: language === "en" ? "Lower Pole (Patellar Tendon) / Upper Pole" : "Lower Pole (Patellar Tendon) / Upper Pole",
-      treatment: language === "en" ? "ORIF / Transosseous Suture Repair + Suture Anchors" : "ผ่าตัดเย็บซ่อมเอ็นยึดกระดูก (Transosseous Repair / Anchor)",
-      statusColor: "#F59E0B",
-    },
-    {
-      category: language === "en" ? "Articular Flake / Loose Body" : "ชิ้นกระดูกกะเทาะผิวข้อ (Loose Body)",
-      pattern: language === "en" ? "Osteochondral / Marginal Fragment" : "Osteochondral / Marginal Fragment",
-      treatment: language === "en" ? "Arthroscopic / Open Removal vs Refixation (>1cm)" : "ส่องกล้อง/เปิดข้อเข่าหยิบออก หรือยึดตรึงหากชิ้นใหญ่ >1ซม.",
-      statusColor: darkMode ? "#00CED1" : "#0F766E",
-    },
-  ];
-
-  return (
-    <div 
-      className="mb-4 rounded-xl overflow-hidden border"
-      style={{ 
-        background: darkMode ? "#1E293B" : "#FFFFFF",
-        borderColor: border,
-        boxShadow: darkMode ? "0 4px 14px rgba(0,0,0,0.3)" : "0 2px 8px rgba(0,0,0,0.06)"
-      }}
-    >
-      <div 
-        className="px-3.5 py-2.5 flex items-center justify-between"
-        style={{ 
-          background: darkMode ? "rgba(245, 158, 11, 0.12)" : "rgba(245, 158, 11, 0.08)",
-          borderBottom: `1px solid ${border}` 
-        }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-sm">⚡</span>
-          <span style={{ fontSize: 12, fontWeight: 800, color: "#F59E0B" }}>
-            {language === "en" ? "Surgical Decision Matrix: Patella Fractures" : "ตารางสรุปเกณฑ์การตัดสินใจรักษา Patella Fractures"}
-          </span>
-        </div>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead>
-            <tr style={{ background: darkMode ? "rgba(255,255,255,0.04)" : "#F8FAFC", borderBottom: `1px solid ${border}` }}>
-              <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
-                {language === "en" ? "Clinical Status (SLR)" : "สถานะทางคลินิก (SLR)"}
-              </th>
-              <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
-                {language === "en" ? "Fracture Pattern" : "รูปแบบรอยหัก"}
-              </th>
-              <th className="py-2.5 px-3 font-bold" style={{ color: "#F59E0B" }}>
-                {language === "en" ? "Management Strategy" : "แนวทางการรักษา"}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, idx) => (
-              <tr 
-                key={idx} 
-                style={{ 
-                  borderBottom: idx === rows.length - 1 ? "none" : `1px solid ${darkMode ? "rgba(255,255,255,0.06)" : "#F1F5F9"}`,
-                  background: idx % 2 === 1 ? (darkMode ? "rgba(255,255,255,0.02)" : "rgba(248,250,252,0.6)") : "transparent" 
-                }}
-              >
-                <td className="py-2.5 px-3 font-bold" style={{ color: row.statusColor }}>{row.category}</td>
-                <td className="py-2.5 px-3 font-medium" style={{ color: textColor }}>{row.pattern}</td>
-                <td className="py-2.5 px-3 font-bold" style={{ color: textColor }}>{row.treatment}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div 
-        className="p-3 text-[11px] leading-relaxed flex flex-col gap-1"
-        style={{ 
-          background: darkMode ? "rgba(0, 206, 209, 0.08)" : "rgba(240, 253, 250, 0.9)",
-          borderTop: `1px solid ${border}`,
-          color: darkMode ? "#99F6E4" : "#0F766E"
-        }}
-      >
-        <div className="font-bold flex items-center gap-1.5">
-          <span>⚙️</span>
-          <span>{language === "en" ? "Tension Band Wiring (TBW) Principle:" : "หลักการสำคัญของ Tension Band Wiring (TBW):"}</span>
-        </div>
-        <div>
-          {language === "en" 
-            ? "Converts anterior tensile forces (Quadriceps pull during knee flexion) into dynamic articular compression across the posterior cortex, securing rigid fixation." 
-            : "เปลี่ยนแรงดึงด้านหน้า (Anterior tensile force จาก Quadriceps ขณะงอเข่า) ให้กลายเป็นแรงอัดแน่น (Articular compression) บริเวณผิวข้อด้านหลัง ช่วยให้กระดูกติดแน่น"}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** Summary Table for Acceptable Alignment Criteria in Tibial Shaft Fractures */
-function TibialShaftAlignmentTable({
-  language,
-  darkMode,
-  textColor,
-  border,
-}: {
-  language: "en" | "th";
-  darkMode: boolean;
-  textColor: string;
-  border: string;
-}) {
-  const rows = [
-    {
-      param: language === "en" ? "Varus / Valgus Angulation" : "มุมเอียง Varus / Valgus",
-      threshold: "< 5°",
-      clinicalNote: language === "en" ? "Varus deformity is poorly tolerated (leads to medial compartment OA)" : "เอียง Varus ทนได้น้อยที่สุด (เสี่ยงข้อเข่าเสื่อมฝั่งใน)",
-      color: "#2ECC71",
-    },
-    {
-      param: language === "en" ? "Anteroposterior (AP) Angulation" : "มุมเอียงหน้า-หลัง (AP Angulation)",
-      threshold: "< 10°",
-      clinicalNote: language === "en" ? "Anterior / Posterior apex angulation tolerance" : "ยอมรับมุมเอียงมุมยอดหน้า-หลังได้ไม่เกิน 10°",
-      color: darkMode ? "#00CED1" : "#0F766E",
-    },
-    {
-      param: language === "en" ? "Leg Shortening / Overlap" : "ความสั้นของขา (Shortening)",
-      threshold: "< 10 mm (1 cm)",
-      clinicalNote: language === "en" ? "<1 cm length discrepancy compensated by pelvic tilt" : "สั้นไม่เกิน 1 ซม. ร่างกายเอียงเชิงอ่างชดเชยได้",
-      color: "#F59E0B",
-    },
-    {
-      param: language === "en" ? "Rotational Deformity" : "การบิดหมุน (Rotation)",
-      threshold: "< 10°",
-      clinicalNote: language === "en" ? "Internal rotation is less tolerated than external rotation" : "การบิดเข้าด้านในทนได้น้อยกว่าการบิดออกด้านนอก",
-      color: "#F59E0B",
-    },
-    {
-      param: language === "en" ? "Cortical Surface Contact" : "การแตะกันของขอบกระดูก (Cortical Contact)",
-      threshold: "> 50%",
-      clinicalNote: language === "en" ? "Minimum 50% cortical overlap required for stable union" : "ต้องมีขอบกระดูกแตะกันอย่างน้อย 50% เพื่อให้กระดูกติดสมาน",
-      color: "#3B82F6",
-    },
-  ];
-
-  return (
-    <div 
-      className="mb-4 rounded-xl overflow-hidden border"
-      style={{ 
-        background: darkMode ? "#1E293B" : "#FFFFFF",
-        borderColor: border,
-        boxShadow: darkMode ? "0 4px 14px rgba(0,0,0,0.3)" : "0 2px 8px rgba(0,0,0,0.06)"
-      }}
-    >
-      <div 
-        className="px-3.5 py-2.5 flex items-center justify-between"
-        style={{ 
-          background: darkMode ? "rgba(0, 206, 209, 0.12)" : "rgba(15, 118, 110, 0.08)",
-          borderBottom: `1px solid ${border}` 
-        }}
-      >
-        <div className="flex items-center gap-2">
-          <span className="text-sm">📏</span>
-          <span style={{ fontSize: 12, fontWeight: 800, color: darkMode ? "#00CED1" : "#0F766E" }}>
-            {language === "en" ? "Acceptable Alignment Thresholds (Sarmiento Rules)" : "เกณฑ์มุมเอียงที่ยอมรับได้ (Sarmiento Alignment Criteria)"}
-          </span>
-        </div>
-      </div>
-
-      <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs border-collapse">
-          <thead>
-            <tr style={{ background: darkMode ? "rgba(255,255,255,0.04)" : "#F8FAFC", borderBottom: `1px solid ${border}` }}>
-              <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
-                {language === "en" ? "Alignment Parameter" : "พารามิเตอร์การจัดเรียงตัว"}
-              </th>
-              <th className="py-2.5 px-3 font-bold text-center" style={{ color: darkMode ? "#00CED1" : "#0F766E" }}>
-                {language === "en" ? "Max Threshold" : "เกณฑ์สูงสุดที่ยอมรับได้"}
-              </th>
-              <th className="py-2.5 px-3 font-bold" style={{ color: textColor }}>
-                {language === "en" ? "Clinical Rationale" : "เหตุผลทางคลินิก"}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row, idx) => (
-              <tr 
-                key={idx} 
-                style={{ 
-                  borderBottom: idx === rows.length - 1 ? "none" : `1px solid ${darkMode ? "rgba(255,255,255,0.06)" : "#F1F5F9"}`,
-                  background: idx % 2 === 1 ? (darkMode ? "rgba(255,255,255,0.02)" : "rgba(248,250,252,0.6)") : "transparent" 
-                }}
-              >
-                <td className="py-2.5 px-3 font-bold" style={{ color: textColor }}>{row.param}</td>
-                <td className="py-2.5 px-3 text-center font-extrabold text-sm" style={{ color: row.color }}>{row.threshold}</td>
-                <td className="py-2.5 px-3 font-medium text-[11px]" style={{ color: darkMode ? "#94A3B8" : "#475569" }}>{row.clinicalNote}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <div 
-        className="p-3 text-[11px] leading-relaxed flex flex-col gap-1"
-        style={{ 
-          background: darkMode ? "rgba(239, 68, 68, 0.08)" : "rgba(254, 242, 242, 0.8)",
-          borderTop: `1px solid ${border}`,
-          color: darkMode ? "#FCA5A5" : "#991B1B"
-        }}
-      >
-        <div className="font-bold flex items-center gap-1.5">
-          <span>🚨</span>
-          <span>{language === "en" ? "High-Risk Alert: Compartment Syndrome #1 Site" : "คำเตือนความเสี่ยงสูง: ตำแหน่งเกิด Compartment Syndrome อันดับ 1"}</span>
-        </div>
-        <div>
-          {language === "en" 
-            ? "Tibial shaft is the most common site for Compartment Syndrome in trauma. Monitor 5 Ps closely. Emergency Fasciotomy if Delta Pressure (DBP - IMTP) < 30 mmHg." 
-            : "แกนกระดูกหน้าเเข้งเป็นตำแหน่งที่เกิด Compartment Syndrome พบบ่อยที่สุด เฝ้าระวัง 5 Ps อย่างใกล้ชิด ผ่าตัด Fasciotomy ด่วนหาก Delta Pressure < 30 mmHg"}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** Wrapper that provides a stable `onScoreCalculated` callback via useCallback,
- *  so SpineScoreCalculator's useEffect doesn't fire on every parent render. */
-function SpineScoreCalculatorWrapper({
-  classSystem,
-  language,
-  darkMode,
-  selectedTypeIdx,
-  onSelectType,
-}: {
-  classSystem: ClassificationSystem;
-  language: "en" | "th";
-  darkMode: boolean;
-  selectedTypeIdx: number;
-  onSelectType: (i: number) => void;
-}) {
-  const stableCallback = useCallback(
-    (_totalScore: number, recommendedType: string) => {
-      const idx = classSystem.types.findIndex(
-        (t) => t.type.includes(recommendedType) || recommendedType.includes(t.type)
-      );
-      if (idx !== -1 && idx !== selectedTypeIdx) {
-        onSelectType(idx);
-      }
-    },
-    // classSystem.system and types are stable references from bones.ts data
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [classSystem.system, selectedTypeIdx, onSelectType]
-  );
-
-  return (
-    <SpineScoreCalculator
-      key={classSystem.system}
-      system={classSystem.system}
-      language={language}
-      darkMode={darkMode}
-      onScoreCalculated={stableCallback}
-    />
-  );
-}
-
 function ClassificationTitleWithInfo({
   fullName,
   description,
-  concept,
-  system,
-  references,
   textColor,
   darkMode,
   language = "en",
@@ -958,9 +570,6 @@ function ClassificationTitleWithInfo({
 }: {
   fullName: string;
   description: string;
-  concept?: ClassificationConcept;
-  system?: string;
-  references?: import("../../types").TextbookReference[];
   textColor: string;
   mutedText?: string;
   darkMode: boolean;
@@ -968,15 +577,48 @@ function ClassificationTitleWithInfo({
   isBookmarked?: boolean;
   onToggleBookmark?: () => void;
 }) {
-  const [showInfoModal, setShowInfoModal] = useState(false);
-  const [activeTab, setActiveTab] = useState<"overview" | "concept" | "references">("overview");
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const effectiveRefs = references && references.length > 0 
-    ? references 
-    : getSystemReferences(system || fullName);
+  const handleMouseEnter = () => {
+    if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
+    setShowTooltip(true);
+  };
+
+  const handleMouseLeave = () => {
+    tooltipTimeoutRef.current = setTimeout(() => {
+      setShowTooltip(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (tooltipTimeoutRef.current) clearTimeout(tooltipTimeoutRef.current);
+    };
+  }, []);
+
+  // Close on outside touch/click for mobile
+  useEffect(() => {
+    if (!showTooltip) return;
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setShowTooltip(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [showTooltip]);
 
   return (
-    <div style={{ position: "relative", marginBottom: 12 }}>
+    <div 
+      ref={containerRef}
+      style={{ position: "relative", marginBottom: 12 }}
+    >
       <div className="flex items-start justify-between gap-2">
         {/* Title + Info Button inline + Verified Badge */}
         <div className="flex-1 min-w-0">
@@ -994,28 +636,38 @@ function ClassificationTitleWithInfo({
               {cleanSystemName(fullName)}
             </h3>
 
-            {/* Info Button (Inline right after class title) */}
-            <button
-              onClick={() => {
-                setActiveTab("overview");
-                setShowInfoModal(true);
-              }}
-              aria-label="System Info & Concept"
-              title={language === "en" ? "System Info & Concept" : "ข้อมูลและแนวคิดระบบ"}
-              className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
-              style={{
-                width: 21,
-                height: 21,
-                borderRadius: "50%",
-                background: darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)",
-                color: darkMode ? "#94A3B8" : "#64748B",
-                border: `1.2px solid ${darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1"}`,
-                boxShadow: "none",
-                padding: 0,
-              }}
+            {/* Info Button with Hover Tooltip */}
+            <div
+              className="relative inline-flex items-center"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              <Info size={11} />
-            </button>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowTooltip((prev) => !prev);
+                }}
+                aria-label={language === "en" ? "System Description" : "คำอธิบายระบบการจำแนก"}
+                className="flex items-center justify-center transition-all flex-shrink-0 cursor-pointer hover:scale-110 active:scale-95"
+                style={{
+                  width: 21,
+                  height: 21,
+                  borderRadius: "50%",
+                  background: showTooltip
+                    ? (darkMode ? "rgba(0, 206, 209, 0.25)" : "rgba(15, 118, 110, 0.18)")
+                    : (darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.05)"),
+                  color: showTooltip
+                    ? (darkMode ? "#00CED1" : "#0F766E")
+                    : (darkMode ? "#94A3B8" : "#64748B"),
+                  border: `1.2px solid ${showTooltip ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "rgba(255, 255, 255, 0.15)" : "#CBD5E1")}`,
+                  boxShadow: showTooltip ? (darkMode ? "0 0 8px rgba(0, 206, 209, 0.3)" : "0 0 8px rgba(15, 118, 110, 0.2)") : "none",
+                  padding: 0,
+                }}
+              >
+                <Info size={11} />
+              </button>
+            </div>
           </div>
         </div>
 
@@ -1042,252 +694,30 @@ function ClassificationTitleWithInfo({
         </button>
       </div>
 
-      {/* Unified Info & Concept Modal */}
-      {showInfoModal && typeof document !== "undefined" && createPortal(
-        <div 
-          onClick={() => setShowInfoModal(false)}
+      {/* Floating Hover Tooltip / Popover showing Description */}
+      {showTooltip && (
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="absolute left-0 right-0 top-full mt-2 z-40 p-3.5 rounded-xl border text-xs leading-relaxed transition-all animate-fadeIn"
           style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 999999,
-            background: "rgba(0, 0, 0, 0.75)",
-            backdropFilter: "blur(6px)",
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            padding: "60px 16px 32px 16px",
-            overflowY: "auto",
-            animation: "fadeIn 0.2s ease both",
+            background: darkMode ? "#161B27" : "#FFFFFF",
+            borderColor: darkMode ? "rgba(0, 206, 209, 0.35)" : "rgba(15, 118, 110, 0.25)",
+            color: textColor,
+            boxShadow: darkMode
+              ? "0 12px 30px -4px rgba(0, 0, 0, 0.7), 0 4px 12px -2px rgba(0, 0, 0, 0.5)"
+              : "0 12px 30px -4px rgba(0, 0, 0, 0.14), 0 4px 12px -2px rgba(0, 0, 0, 0.06)",
+            backdropFilter: "blur(8px)",
           }}
         >
-          <div 
-            onClick={e => e.stopPropagation()}
-            style={{
-              background: darkMode ? "#161B27" : "#FFFFFF",
-              color: textColor,
-              borderRadius: 18,
-              border: `1px solid ${darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}`,
-              maxWidth: 580,
-              width: "100%",
-              padding: 24,
-              boxShadow: "0 25px 60px rgba(0,0,0,0.6)",
-              position: "relative",
-              animation: "scaleIn 0.25s ease both",
-              margin: "0 auto",
-            }}
-          >
-            {/* Modal Header */}
-            <div className="flex items-center justify-between gap-2 mb-3 pb-3" style={{ borderBottom: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "#E2E8F0"}` }}>
-              <div>
-                <div className="text-[10.5px] font-bold text-teal-800 dark:text-[#00CED1] uppercase tracking-wider">
-                  Classification Guide & Evidence
-                </div>
-                <h4 style={{ margin: 0, fontSize: 15, fontWeight: 800, color: textColor }}>
-                  {fullName}
-                </h4>
-              </div>
-              <button
-                onClick={() => setShowInfoModal(false)}
-                className="w-7 h-7 rounded-full flex items-center justify-center transition-all cursor-pointer hover:bg-white/10"
-                style={{
-                  background: darkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.05)",
-                  color: textColor,
-                  border: "none",
-                }}
-              >
-                ✕
-              </button>
-            </div>
-
-            {/* Modal Tabs: Overview vs Clinical Concept vs References */}
-            <div className="flex p-1 mb-4 rounded-xl gap-1" style={{ background: darkMode ? "rgba(255,255,255,0.05)" : "#E2E8F0" }}>
-              <button
-                onClick={() => setActiveTab("overview")}
-                className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                  activeTab === "overview"
-                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
-                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
-                }`}
-              >
-                📘 {language === "en" ? "Overview" : "ภาพรวม"}
-              </button>
-              <button
-                onClick={() => setActiveTab("concept")}
-                className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                  activeTab === "concept"
-                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
-                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
-                }`}
-              >
-                💡 {language === "en" ? "Concept" : "แนวคิดหลัก"}
-              </button>
-              <button
-                onClick={() => setActiveTab("references")}
-                className={`flex-1 py-1.5 rounded-lg text-xs font-bold transition-all cursor-pointer ${
-                  activeTab === "references"
-                    ? "bg-teal-700 text-white dark:bg-[#00CED1] dark:text-slate-900 shadow-sm"
-                    : "text-slate-900 dark:text-slate-400 hover:text-black dark:hover:text-slate-200"
-                }`}
-              >
-                📚 {language === "en" ? "Textbooks" : "ตำราอ้างอิง"}
-              </button>
-            </div>
-
-            {/* Tab 1: Overview */}
-            {activeTab === "overview" && (
-              <div className="space-y-3 text-xs leading-relaxed">
-                <div className="p-3 rounded-xl bg-slate-500/10 border border-slate-500/20">
-                  <div className="font-extrabold text-teal-800 dark:text-[#00CED1] mb-1 uppercase text-[10.5px] tracking-wider">
-                    {language === "en" ? "System Description & Indication" : "คำอธิบายภาพรวมและข้อบ่งชี้"}
-                  </div>
-                  <p className="m-0 text-black dark:text-slate-300 font-medium">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Tab 2: Clinical Concept */}
-            {activeTab === "concept" && (
-              <div className="space-y-3.5 text-xs leading-relaxed">
-                {/* 1. Core Principle (TL;DR) */}
-                {concept?.corePrinciple ? (
-                  <div className="p-3.5 rounded-xl bg-teal-600/10 border border-teal-600/30 dark:bg-[#00CED1]/10 dark:border-[#00CED1]/30 space-y-1.5">
-                    <div className="font-extrabold text-teal-800 dark:text-[#00CED1] flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                      <span>💡</span>
-                      <span>{language === "en" ? "TL;DR / The Core Principle" : "หัวใจหลักในการจำแนก (Core Principle)"}</span>
-                    </div>
-                    <p className="m-0 text-black dark:text-slate-100 font-medium text-[12px] leading-relaxed">
-                      {concept.corePrinciple[language]}
-                    </p>
-                  </div>
-                ) : null}
-
-                {/* 2. The "Rules" (Decision Cut-offs) */}
-                {concept?.rules && concept.rules.length > 0 ? (
-                  <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2">
-                    <div className="font-extrabold text-amber-600 dark:text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                      <span>⚖️</span>
-                      <span>{language === "en" ? "The Rules (Key Thresholds)" : "เกณฑ์การตัดสินใจ (The Rules)"}</span>
-                    </div>
-                    <ul className="m-0 pl-4 space-y-1 text-black dark:text-slate-200 text-[11.5px] list-disc font-medium">
-                      {concept.rules.map((rule, rIdx) => (
-                        <li key={rIdx}>{rule[language]}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-
-                {/* 3. Clinical Significance */}
-                {concept?.clinicalSignificance && concept.clinicalSignificance.length > 0 ? (
-                  <div className="p-3.5 rounded-xl bg-blue-500/10 border border-blue-500/25 space-y-2">
-                    <div className="font-extrabold text-blue-600 dark:text-blue-400 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                      <span>🏥</span>
-                      <span>{language === "en" ? "Clinical Significance & Impact" : "การนำไปใช้ทางคลินิก (Clinical Significance)"}</span>
-                    </div>
-                    <ul className="m-0 pl-4 space-y-1.5 text-black dark:text-slate-200 text-[11.5px] list-disc font-medium">
-                      {concept.clinicalSignificance.map((sig, sIdx) => (
-                        <li key={sIdx}>{sig[language]}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-
-                {/* Fallback Legacy Description if new structured fields missing */}
-                {!concept?.corePrinciple && concept?.description ? (
-                  <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/25 space-y-2">
-                    <div className="font-bold text-amber-600 dark:text-amber-500 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
-                      <span>💡</span>
-                      <span>{concept.title ? concept.title[language] : (language === "en" ? "Core Concept" : "หลักการคิดและจุดตัดสินใจ")}</span>
-                    </div>
-                    <div className="whitespace-pre-line text-black dark:text-slate-200 text-[11.5px] font-medium leading-relaxed">
-                      {concept.description[language]}
-                    </div>
-                  </div>
-                ) : !concept?.corePrinciple && !concept?.rules && !concept?.description ? (
-                  <div className="p-3 rounded-xl bg-slate-500/10 border border-slate-500/20 text-slate-800 dark:text-slate-400 font-medium text-center py-6">
-                    {language === "en" ? "System description applies standard clinical guidelines." : "ระบบการจำแนกนี้ใช้หลักเกณฑ์มาตรฐานทางออร์โธปิดิกส์"}
-                  </div>
-                ) : null}
-
-                {/* Custom Alignment Tables */}
-                {fullName.toLowerCase().includes("patella") ? (
-                  <div className="mt-3">
-                    <PatellaConceptTable
-                      language={language}
-                      darkMode={darkMode}
-                      textColor={textColor}
-                      border={darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}
-                    />
-                  </div>
-                ) : fullName.toLowerCase().includes("tibial shaft") ? (
-                  <div className="mt-3">
-                    <TibialShaftAlignmentTable
-                      language={language}
-                      darkMode={darkMode}
-                      textColor={textColor}
-                      border={darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}
-                    />
-                  </div>
-                ) : (concept?.showTable || fullName.toLowerCase().includes("metacarpal")) ? (
-                  <div className="mt-3">
-                    <MetacarpalAlignmentTable
-                      language={language}
-                      darkMode={darkMode}
-                      textColor={textColor}
-                      border={darkMode ? "rgba(255,255,255,0.12)" : "#CBD5E1"}
-                    />
-                  </div>
-                ) : null}
-              </div>
-            )}
-
-            {/* Tab 3: Textbook References */}
-            {activeTab === "references" && (
-              <div className="space-y-2.5 text-xs leading-relaxed">
-                <div className="text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1">
-                  {language === "en" ? "Referenced Textbooks & Literature" : "ตำราและเอกสารอ้างอิง"}
-                </div>
-
-                <div className="space-y-2">
-                  {effectiveRefs.map((ref, idx) => (
-                    <div
-                      key={idx}
-                      className="p-2.5 rounded-xl border transition-all"
-                      style={{
-                        background: darkMode ? "rgba(255, 255, 255, 0.03)" : "#F8FAFC",
-                        borderColor: darkMode ? "rgba(255, 255, 255, 0.08)" : "#E2E8F0",
-                      }}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wide bg-teal-600/15 dark:bg-[#00CED1]/15 text-teal-800 dark:text-[#00CED1] border border-teal-600/30 dark:border-[#00CED1]/30 flex-shrink-0">
-                          {ref.textbook}
-                        </span>
-                        <div className="font-extrabold text-[12px] truncate" style={{ color: textColor }}>
-                          {ref.title}
-                        </div>
-                      </div>
-
-                      {ref.chapter && (
-                        <div className="text-[11px] font-medium text-slate-700 dark:text-slate-300 mt-1 pl-0.5">
-                          📖 {ref.chapter}
-                        </div>
-                      )}
-
-                      {ref.classicCitation && (
-                        <div className="text-[10.5px] font-mono p-1.5 rounded-lg bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/10 text-slate-700 dark:text-slate-300 mt-1.5">
-                          <span className="font-bold text-amber-600 dark:text-amber-400">Landmark: </span>
-                          {ref.classicCitation}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
+          <div className="flex items-center gap-1.5 mb-1.5 text-[11px] font-extrabold uppercase tracking-wider text-teal-800 dark:text-[#00CED1]">
+            <Info size={12} className="stroke-[2.5]" />
+            <span>{language === "en" ? "System Description & Indication" : "คำอธิบายภาพรวมและข้อบ่งชี้"}</span>
           </div>
-        </div>,
-        document.body
+          <p className="m-0 text-black dark:text-slate-200 font-medium text-[12.5px] leading-relaxed">
+            {description}
+          </p>
+        </div>
       )}
     </div>
   );
@@ -1650,6 +1080,12 @@ export function DetailPanel({
     };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleOpen3D = () => setShow3DModal(true);
+    window.addEventListener("open-3d-modal", handleOpen3D);
+    return () => window.removeEventListener("open-3d-modal", handleOpen3D);
   }, []);
 
   // Derive active data
@@ -2241,9 +1677,6 @@ export function DetailPanel({
               <ClassificationTitleWithInfo
                 fullName={classSystem.fullName[language]}
                 description={classSystem.description[language]}
-                concept={classSystem.concept}
-                system={classSystem.system}
-                references={classSystem.references}
                 textColor={textColor}
                 mutedText={mutedText}
                 darkMode={darkMode}
@@ -2254,12 +1687,11 @@ export function DetailPanel({
 
               {/* Interactive Score Calculator for TLICS & SLIC */}
               {(classSystem.system.toLowerCase().includes("tlics") || classSystem.system.toLowerCase().includes("slic")) && (
-                <SpineScoreCalculatorWrapper
-                  classSystem={classSystem}
+                <SpineScoreCalculator
+                  key={classSystem.system}
+                  system={classSystem.system}
                   language={language}
                   darkMode={darkMode}
-                  selectedTypeIdx={selectedTypeIdx}
-                  onSelectType={onSelectType}
                 />
               )}              {/* Interactive Visual Guide */}
               <div style={{ marginBottom: 0 }}>
@@ -2459,6 +1891,8 @@ export function DetailPanel({
                   const hasNoImages = classSystem.types.every(t => !t.illustrationId || t.illustrationId === "none" || t.illustrationId === "");
 
                   if (hasNoImages) {
+                    const isSpineScore = classSystem.system.toLowerCase().includes("tlics") || classSystem.system.toLowerCase().includes("slic");
+
                     return (
                       <HorizontalScrollCardRow 
                         className="flex gap-2 overflow-x-auto pb-2 no-scrollbar items-center py-1"
@@ -2474,25 +1908,33 @@ export function DetailPanel({
                         arrowVariant="slim-rect"
                         scrollStep={140}
                       >
-                        {classSystem.types.map((t, i) => (
-                          <button
-                            key={t.type}
-                            onClick={() => onSelectType(i)}
-                            className="transition-all whitespace-nowrap flex-shrink-0 select-none"
-                            style={{
-                              padding: "8px 14px",
-                              borderRadius: 8,
-                              fontSize: 11.5,
-                              fontWeight: 800,
-                              cursor: "pointer",
-                              background: selectedTypeIdx === i ? (darkMode ? "#00CED1" : "#0F766E") : (darkMode ? "#1A2530" : "#E0F2FE"),
-                              border: selectedTypeIdx === i ? (darkMode ? "1.5px solid #00CED1" : "1.5px solid #0F766E") : `1.5px solid ${border}`,
-                              color: selectedTypeIdx === i ? (darkMode ? "#0F172A" : "#FFFFFF") : (darkMode ? "#E2E8F0" : "#1E293B"),
-                            }}
-                          >
-                            {t.type}
-                          </button>
-                        ))}
+                        {classSystem.types.map((t, i) => {
+                          const isSelected = selectedTypeIdx === i;
+                          const activeBg = isSpineScore ? "#2ECC71" : (darkMode ? "#00CED1" : "#0F766E");
+                          const activeBorder = isSpineScore ? "#2ECC71" : (darkMode ? "#00CED1" : "#0F766E");
+                          const activeColor = isSpineScore ? "#0F172A" : (darkMode ? "#0F172A" : "#FFFFFF");
+                          const activeShadow = isSpineScore && isSelected ? "0 2px 8px rgba(46, 204, 113, 0.3)" : "none";
+
+                          return (
+                            <button
+                              key={t.type}
+                              onClick={() => onSelectType(i)}
+                              className="transition-all whitespace-nowrap flex-shrink-0 select-none cursor-pointer active:scale-95"
+                              style={{
+                                padding: "8px 14px",
+                                borderRadius: 8,
+                                fontSize: 11.5,
+                                fontWeight: 800,
+                                background: isSelected ? activeBg : (darkMode ? "#1A2530" : "#F8FAFC"),
+                                border: isSelected ? `1.5px solid ${activeBorder}` : `1.5px solid ${border}`,
+                                color: isSelected ? activeColor : (darkMode ? "#E2E8F0" : "#1E293B"),
+                                boxShadow: activeShadow,
+                              }}
+                            >
+                              {t.type}
+                            </button>
+                          );
+                        })}
                       </HorizontalScrollCardRow>
                     );
                   }
@@ -2664,7 +2106,15 @@ export function DetailPanel({
           <Bone3DViewerModal
             modelUrl={bone.model3dUrl}
             boneName={bone.name[language]}
-            initialRegionId={region?.id || "femoral-neck"}
+            initialRegionId={
+              classSystem?.system?.toLowerCase().includes("pilon")
+                ? "pilon"
+                : (classSystem?.system?.toLowerCase().includes("essex") || region?.id === "calcaneus")
+                ? "calcaneus"
+                : (classSystem?.system?.toLowerCase().includes("hawkins") || region?.id === "talus" || bone?.id === "foot")
+                ? "talus"
+                : (region?.id || "femoral-neck")
+            }
             darkMode={darkMode}
             onClose={() => setShow3DModal(false)}
           />

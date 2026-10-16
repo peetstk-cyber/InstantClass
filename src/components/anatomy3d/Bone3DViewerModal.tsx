@@ -13,7 +13,7 @@ export interface ClassificationPreset {
   clinicalPearl: string;
   cutCenter?: [number, number, number];
   cutNormal?: [number, number, number];
-  partitionMode?: "bipartite" | "intertroch_comminuted" | "subtroch_bipartite" | "subtroch_lt" | "subtroch_fossa" | "subtroch_comminuted" | "shaft_bipartite" | "shaft_butterfly_small" | "shaft_butterfly_med" | "shaft_butterfly_large" | "shaft_segmental" | "distal_supracondylar" | "distal_unicondylar_lat" | "distal_hoffa" | "distal_bicondylar" | "neer_4part" | "neer_2part_gt" | "neer_2part_sn" | "neer_3part_gt" | "neer_3part_lt" | "humerus_shaft_bipartite" | "humerus_distal_supracondylar" | "humerus_distal_unicondylar_lat" | "humerus_distal_coronal_shear" | "humerus_distal_bicondylar" | "ac_joint_rockwood" | "clavicle_shaft_bipartite" | "clavicle_shaft_butterfly" | "clavicle_shaft_segmental" | "clavicle_distal_neer_v" | "patella_nondisplaced" | "patella_transverse" | "patella_pole" | "patella_vertical" | "patella_comminuted" | "patella_osteochondral" | "schatzker_1" | "schatzker_2" | "schatzker_3" | "schatzker_4" | "schatzker_5" | "schatzker_6" | "ankle_intact" | "lh_ser_1" | "lh_ser_2" | "lh_ser_3" | "lh_ser_4" | "lh_sa_1" | "lh_sa_2" | "lh_per_1" | "lh_per_2" | "lh_per_3" | "lh_per_4" | "lh_pa_1" | "lh_pa_2" | "lh_pa_3";
+  partitionMode?: "bipartite" | "intertroch_comminuted" | "subtroch_bipartite" | "subtroch_lt" | "subtroch_fossa" | "subtroch_comminuted" | "shaft_bipartite" | "shaft_butterfly_small" | "shaft_butterfly_med" | "shaft_butterfly_large" | "shaft_segmental" | "distal_supracondylar" | "distal_unicondylar_lat" | "distal_hoffa" | "distal_bicondylar" | "neer_4part" | "neer_2part_gt" | "neer_2part_sn" | "neer_3part_gt" | "neer_3part_lt" | "humerus_shaft_bipartite" | "humerus_distal_supracondylar" | "humerus_distal_unicondylar_lat" | "humerus_distal_coronal_shear" | "humerus_distal_bicondylar" | "ac_joint_rockwood" | "clavicle_shaft_bipartite" | "clavicle_shaft_butterfly" | "clavicle_shaft_segmental" | "clavicle_distal_neer_v" | "patella_nondisplaced" | "patella_transverse" | "patella_pole" | "patella_vertical" | "patella_comminuted" | "patella_osteochondral" | "schatzker_1" | "schatzker_2" | "schatzker_3" | "schatzker_4" | "schatzker_5" | "schatzker_6" | "ankle_intact" | "lh_ser_1" | "lh_ser_2" | "lh_ser_3" | "lh_ser_4" | "lh_sa_1" | "lh_sa_2" | "lh_per_1" | "lh_per_2" | "lh_per_3" | "lh_per_4" | "lh_pa_1" | "lh_pa_2" | "lh_pa_3" | "pilon_1" | "pilon_2" | "pilon_3" | "hawkins_1" | "hawkins_2" | "hawkins_3" | "hawkins_4" | "essex_tongue" | "essex_joint_depression" | "pelvis_intact" | "yb_apc1" | "yb_apc2" | "yb_apc3" | "yb_lc1" | "yb_lc2" | "yb_lc3" | "yb_vs" | "jl_pw" | "jl_pc" | "jl_aw" | "jl_ac" | "jl_transverse" | "jl_t_shaped" | "jl_pc_pw" | "jl_trans_pw" | "jl_acpht" | "jl_both_column";
   proximalRot: [number, number, number];
   proximalPosOffset: [number, number, number];
   distalRot: [number, number, number];
@@ -52,9 +52,149 @@ const getRadiographicViews = (
   isClavicle: boolean,
   isPatella: boolean,
   isTibia: boolean,
+  isPelvis: boolean,
   subregionId: string
 ): RadiographicViewConfig[] => {
+  if (isPelvis) {
+    if (subregionId === "acetabulum") {
+      return [
+        {
+          id: "ap",
+          label: "AP",
+          fullName: "AP Pelvis / Hip View",
+          description: "True AP projection profiling iliopectineal line, ilioischial line, anterior & posterior acetabular walls, and teardrop",
+          direction: [0.0, 0.0, 1.0],
+        },
+        {
+          id: "obturator",
+          label: "Obturator",
+          fullName: "Judet Obturator Oblique View (45° Roll)",
+          description: "45° internal roll profiling anterior column (iliopubic) and posterior acetabular wall rim with widely open obturator foramen",
+          direction: [-0.707, 0.0, 0.707],
+        },
+        {
+          id: "iliac",
+          label: "Iliac",
+          fullName: "Judet Iliac Oblique View (45° Roll)",
+          description: "45° external roll profiling posterior column (ilioischial) and anterior acetabular wall with full expanse of iliac wing",
+          direction: [0.707, 0.0, 0.707],
+        },
+      ];
+    }
+    return [
+      {
+        id: "ap",
+        label: "AP",
+        fullName: "AP Pelvis Radiograph",
+        description: "Standard coronal projection evaluating pelvic symmetry, pubic symphysis, sacroiliac joints, and Shenton's line",
+        direction: [0.0, 0.0, 1.0],
+      },
+      {
+        id: "inlet",
+        label: "Inlet",
+        fullName: "Pelvic Inlet View (40° Caudal Tilt)",
+        description: "Evaluates pelvic ring brim congruity, sacral wing impingement, posterior SI joint translation, and rotational displacement",
+        direction: [0.0, -0.64, 0.77],
+      },
+      {
+        id: "outlet",
+        label: "Outlet",
+        fullName: "Pelvic Outlet View (40° Cephalic Tilt)",
+        description: "Profiles vertical shear displacement, pubic rami shift, sacral neural foramina, and vertical hemipelvis migration",
+        direction: [0.0, 0.64, 0.77],
+      },
+      {
+        id: "obturator",
+        label: "Obturator",
+        fullName: "Judet Obturator Oblique View (45° Roll)",
+        description: "Profiles anterior column and posterior wall of acetabulum with open obturator ring",
+        direction: [-0.707, 0.0, 0.707],
+      },
+      {
+        id: "iliac",
+        label: "Iliac",
+        fullName: "Judet Iliac Oblique View (45° Roll)",
+        description: "Profiles posterior column and anterior wall of acetabulum with full expanse of iliac wing",
+        direction: [0.707, 0.0, 0.707],
+      },
+    ];
+  }
   if (isTibia) {
+    if (subregionId === "calcaneus") {
+      return [
+        {
+          id: "lat",
+          label: "Lat",
+          fullName: "Lateral Calcaneus View",
+          description: "Strict lateral view. Evaluates Bohler's angle (20-40°), Gissane angle (120-145°), and secondary fracture line",
+          direction: [-0.94, 0.05, -0.34],
+        },
+        {
+          id: "harris",
+          label: "Harris",
+          fullName: "Axial Harris View (45° Axial)",
+          description: "Profiles calcaneal tuberosity widening, varus/valgus deformity, and sustentacular fracture lines",
+          direction: [0.0, 0.71, -0.71],
+        },
+        {
+          id: "broden",
+          label: "Broden",
+          fullName: "Broden's Stress Oblique View",
+          description: "Visualizes posterior subtalar articular facet congruity and depression step-off",
+          direction: [-0.65, 0.35, 0.67],
+        },
+      ];
+    }
+    if (subregionId === "talus") {
+      return [
+        {
+          id: "lat",
+          label: "Lat",
+          fullName: "Lateral View",
+          description: "Evaluates subtalar congruity, tibiotalar mortise, and posterior body extrusion",
+          direction: [0.94, 0.05, 0.34],
+        },
+        {
+          id: "canale",
+          label: "Canale",
+          fullName: "Canale View (15° Pronation / 15° Cephalic)",
+          description: "Profiles talar neck without superposition to detect varus deformity and step-off",
+          direction: [0.26, 0.26, 0.93],
+        },
+        {
+          id: "ap",
+          label: "AP",
+          fullName: "AP Ankle / Foot View",
+          description: "Assesses ankle mortise alignment and talonavicular joint congruity",
+          direction: [-0.35, 0.05, 0.94],
+        },
+      ];
+    }
+    if (subregionId === "pilon") {
+      return [
+        {
+          id: "ap",
+          label: "AP",
+          fullName: "AP Plafond View",
+          description: "Coronal view profiling medial column cleavage and articular step-off",
+          direction: [-0.35, 0.05, 0.94],
+        },
+        {
+          id: "mortise",
+          label: "Mortise",
+          fullName: "Mortise Plafond View (15-20° Int Rot)",
+          description: "Assesses joint congruity and anterolateral Chaput fragment separation",
+          direction: [-0.68, 0.05, 0.73],
+        },
+        {
+          id: "lat",
+          label: "Lat",
+          fullName: "Lateral Plafond View",
+          description: "Evaluates posterior Volkmann column size and sagittal impaction",
+          direction: [-0.94, 0.05, -0.34],
+        },
+      ];
+    }
     if (subregionId === "distal") {
       return [
         {
@@ -1282,6 +1422,536 @@ const TIBIA_SUBREGIONS: SubregionConfig[] = [
       },
     ],
   },
+  {
+    id: "pilon",
+    name: "Pilon Fracture",
+    badge: "Rüedi-Allgöwer Types I–III",
+    cutCenter: [0.0, -145.0, 0.0],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [0.02, -0.98, 0.0],
+    cameraDistance: 2.05,
+    cameraDirection: [-0.35, 0.08, 0.93],
+    viewOffsetRatio: 0.07,
+    presets: [
+      {
+        id: "pilon_1",
+        name: "Type I",
+        badge: "Cleavage / Non-displaced",
+        clinicalTitle: "Type I (Cleavage / Non-displaced Plafond)",
+        clinicalPearl: "Intra-articular fracture of distal tibia without significant articular displacement\nArticular step-off and gap < 2 mm\nMetaphyseal cortex intact or minimally comminuted\nSoft tissue envelope remains intact with minimal swelling",
+        partitionMode: "pilon_1",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [-0.4, 0.1, 0.2],
+        ltRot: [0, 0, 0],
+        ltPosOffset: [0.4, 0.0, 0.0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+      },
+      {
+        id: "pilon_2",
+        name: "Type II",
+        badge: "Displaced without Impaction",
+        clinicalTitle: "Type II (Displaced without Central Impaction)",
+        clinicalPearl: "Significant displacement of the articular surface (> 2 mm step-off or gap)\nArticular surface fractures into large, distinct anatomical fragments (Anterolateral Chaput, Medial, and Posterior Volkmann fragments)\nNO severe central depression/crush of the weight-bearing subchondral bone\nFragments can be reduced anatomically like jigsaw puzzle pieces",
+        partitionMode: "pilon_2",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.08, -0.06, 0.05],
+        shardPosOffset: [-2.2, 0.6, 1.8],
+        ltRot: [0, 0, -0.08],
+        ltPosOffset: [2.4, 0.4, 0.0],
+        gtRot: [-0.09, 0.04, -0.03],
+        gtPosOffset: [-0.8, 1.8, -2.2],
+      },
+      {
+        id: "pilon_3",
+        name: "Type III",
+        badge: "Comminuted with Impaction",
+        clinicalTitle: "Type III (Comminuted with Central Impaction)",
+        clinicalPearl: "Severe intra-articular comminution with marked central impaction / crushing of the articular surface\nMultiple subchondral fragments driven into the metaphyseal cancellous bone\nMetaphyseal comminution, bone loss, and extensive soft tissue degloving (Tscherne closed soft tissue injury II–III)\nHigh risk of skin necrosis, wound breakdown, and post-traumatic arthritis",
+        partitionMode: "pilon_3",
+        proximalRot: [0.16, 0.06, -0.14],
+        proximalPosOffset: [0.0, 7.8, 0.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.22, -0.18, 0.16],
+        shardPosOffset: [-5.5, 2.6, 5.2],
+        ltRot: [0, 0, -0.20],
+        ltPosOffset: [5.8, 1.6, 0.0],
+        gtRot: [-0.26, 0.10, -0.08],
+        gtPosOffset: [-2.2, 5.2, -7.5],
+      },
+    ],
+  },
+  {
+    id: "talus",
+    name: "Talus Fracture",
+    badge: "Hawkins Types I–IV",
+    cutCenter: [8.51, -171.40, -5.48],
+    cutNormal: [0, 0, 1],
+    cameraTarget: [0.03, -1.18, 0.0],
+    cameraDistance: 1.95,
+    cameraDirection: [0.94, 0.05, 0.34],
+    viewOffsetRatio: 0.05,
+    presets: [
+      {
+        id: "hawkins_1",
+        name: "Type I",
+        badge: "Non-displaced (<2 mm)",
+        clinicalTitle: "Hawkins Type I (Non-displaced Talar Neck)",
+        clinicalPearl: "Non-displaced talar neck fracture line (<2 mm displacement)\nSubtalar, tibiotalar, and talonavicular joints remain INTACT and CONGRUENT\nPreserved blood supply through deltoid branches and sinus tarsi\nLow AVN risk (0-10%)",
+        partitionMode: "hawkins_1",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, -0.2],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0.2],
+      },
+      {
+        id: "hawkins_2",
+        name: "Type II",
+        badge: "Subtalar Subluxation",
+        clinicalTitle: "Hawkins Type II (Displaced with Subtalar Subluxation/Dislocation)",
+        clinicalPearl: "Displaced talar neck fracture WITH subluxation or dislocation of the Subtalar joint\nTibiotalar joint remains intact and aligned\nDisruption of sinus tarsi and canalis tarsi blood supply\nModerate AVN risk (20-50%)",
+        partitionMode: "hawkins_2",
+        proximalRot: [0.18, 0.0, 0.05],
+        proximalPosOffset: [0.5, 1.2, -2.8],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+      {
+        id: "hawkins_3",
+        name: "Type III",
+        badge: "Subtalar & Tibiotalar Dislocation",
+        clinicalTitle: "Hawkins Type III (Displaced with Subtalar + Tibiotalar Dislocation)",
+        clinicalPearl: "Displaced talar neck fracture WITH dislocation of BOTH Subtalar and Tibiotalar joints\nTalar body fragment is extruded posteriorly and medially behind medial malleolus\nDisruption of all major blood supplies except deltoid branches\nVERY HIGH AVN risk (80-100%)",
+        partitionMode: "hawkins_3",
+        proximalRot: [0.35, 0.40, -0.25],
+        proximalPosOffset: [12.0, 5.0, -18.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+      {
+        id: "hawkins_4",
+        name: "Type IV",
+        badge: "Triple Joint Dislocation",
+        clinicalTitle: "Hawkins Type IV (Subtalar + Tibiotalar + Talonavicular Dislocation)",
+        clinicalPearl: "Displaced talar neck fracture WITH dislocation of ALL THREE joints (Subtalar, Tibiotalar, and Talonavicular)\nTotal talar head and body dislocation\nComplete devascularization of talus\nExtremely high AVN risk (90-100%) and collapse rate",
+        partitionMode: "hawkins_4",
+        proximalRot: [0.35, 0.40, -0.25],
+        proximalPosOffset: [12.0, 5.0, -18.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [-0.22, 0.15, 0.18],
+        shardPosOffset: [-3.5, 4.5, 6.0],
+        ltRot: [-0.22, 0.15, 0.18],
+        ltPosOffset: [-3.5, 4.5, 6.0],
+      },
+    ],
+  },
+  {
+    id: "calcaneus",
+    name: "Calcaneus Fracture",
+    badge: "Essex-Lopresti",
+    cutCenter: [5.30, -183.46, -14.19],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [0.03, -1.24, -0.06],
+    cameraDistance: 1.85,
+    cameraDirection: [-0.94, 0.05, -0.34],
+    viewOffsetRatio: 0.06,
+    presets: [
+      {
+        id: "essex_tongue",
+        name: "Tongue Type",
+        badge: "Horizontal Lever (~25%)",
+        clinicalTitle: "Intra-Articular: Tongue Type",
+        clinicalPearl: "Primary fracture line: runs obliquely through the posterior facet of the calcaneus, dividing the bone into two primary parts: an anteromedial (sustentacular) constant fragment and a posterolateral (tuberosity) fragment.\nSecondary fracture line: exits out the back of the calcaneus, leaving the posterior facet fragment attached to the heel tuberosity fragment.\nDisplacement of this piece can stretch the skin in the back of the heel and may require urgent reduction if skin integrity is threatened.\nBohler's angle is REDUCED (<20°); amenable to percutaneous Steinmann pin leverage (Essex-Lopresti maneuver).",
+        partitionMode: "essex_tongue",
+        proximalRot: [0.22, 0, -0.03],
+        proximalPosOffset: [0, 4.0, -1.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [-0.04, 0, 0],
+        gtPosOffset: [0, -2.0, 0.5],
+        shardRot: [0.06, -0.08, 0.10],
+        shardPosOffset: [-3.0, -1.5, 2.0],
+      },
+      {
+        id: "essex_joint_depression",
+        name: "Joint-Depression",
+        badge: "Crushed Facet (~75%)",
+        clinicalTitle: "Intra-Articular: Joint-Depression Type",
+        clinicalPearl: "Primary fracture line: runs obliquely through the posterior facet of the calcaneus, dividing the bone into two primary parts: an anteromedial (sustentacular) constant fragment and a posterolateral (tuberosity) fragment.\nSecondary fracture line: runs directly behind the posterior facet, causing the facet articular surface to depress inward while separating from the tuberosity.\nMost common intra-articular pattern (~75%).\nBohler's angle is SEVERELY REDUCED or INVERTED (<0°); requires formal surgical elevation and subchondral bone grafting.",
+        partitionMode: "essex_joint_depression",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.16, 0, -0.06],
+        shardPosOffset: [0, -7.5, 0],
+        gtRot: [-0.12, 0.06, 0.05],
+        gtPosOffset: [1.5, 3.5, 3.5],
+        ltRot: [0.06, -0.08, 0.10],
+        ltPosOffset: [-3.0, -1.5, 2.0],
+      },
+    ],
+  },
+];
+
+const PELVIS_SUBREGIONS: SubregionConfig[] = [
+  {
+    id: "pelvic-ring",
+    name: "Pelvic Ring",
+    badge: "Young-Burgess / Tile",
+    cutCenter: [0.0, 0.0, 0.0],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [0.0, 0.0, 0.0],
+    cameraDistance: 4.6,
+    cameraDirection: [0.0, 0.0, 1.0],
+    viewOffsetRatio: 0.07,
+    presets: [
+      {
+        id: "pelvis_intact",
+        name: "Intact Ring",
+        badge: "Anatomical Ring",
+        clinicalTitle: "Intact Pelvic Ring Anatomy",
+        clinicalPearl:
+          "Normal stable pelvic ring with intact pubic symphysis, bilateral sacroiliac joints, and strong posterior sacroiliac ligamentous complex.\nTransmits axial body weight from the spine through the sacrum to the acetabula and lower extremities.",
+        partitionMode: "pelvis_intact",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_apc1",
+        name: "APC-I",
+        badge: "APC-I (Stable)",
+        clinicalTitle: "APC-I: Anteroposterior Compression I (Stable)",
+        clinicalPearl:
+          "Slight widening of pubic symphysis (< 2.5 cm)\nIntact anterior SI, sacrospinous, and sacrotuberous ligaments\nPelvic ring is STABLE\nMinimal blood loss risk",
+        partitionMode: "yb_apc1",
+        proximalRot: [0, -0.04, 0],
+        proximalPosOffset: [-0.8, 0, 0.4],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_apc2",
+        name: "APC-II",
+        badge: "APC-II (Open Book)",
+        clinicalTitle: "APC-II: Open Book Pelvis (Rotationally Unstable)",
+        clinicalPearl:
+          "Pubic symphysis diastasis > 2.5 cm ('Open Book' pelvis)\nTorn anterior SI, sacrospinous, and sacrotuberous ligaments\nIntact POSTERIOR SI ligaments (acts as a posterior hinge)\nRotationally UNSTABLE, Vertically STABLE\nSignificant pelvic volume expansion and internal hemorrhage risk",
+        partitionMode: "yb_apc2",
+        proximalRot: [0, -0.16, 0],
+        proximalPosOffset: [-2.5, 0, 1.2],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_apc3",
+        name: "APC-III",
+        badge: "APC-III (Floating Hemipelvis)",
+        clinicalTitle: "APC-III: Complete SI Disruption (Floating Hemipelvis)",
+        clinicalPearl:
+          "Complete disruption of pubic symphysis and ALL SI ligaments (anterior and posterior)\nComplete separation of hemipelvis (Floating hemipelvis)\nBoth Rotationally and Vertically UNSTABLE\nExtreme life-threatening internal hemorrhage risk (iliac vessel tear)",
+        partitionMode: "yb_apc3",
+        proximalRot: [0.06, -0.22, 0.08],
+        proximalPosOffset: [-6.0, 3.0, -8.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_lc1",
+        name: "LC-I",
+        badge: "LC-I (Sacral Crush)",
+        clinicalTitle: "LC-I: Lateral Compression I (Sacral Impaction)",
+        clinicalPearl:
+          "Sacral buckle/compression fracture on ipsilateral side of impact\nTransverse pubic rami fractures\nPelvic volume is REDUCED (no volume expansion)\nPelvic ring is STABLE\nLow hemorrhage risk",
+        partitionMode: "yb_lc1",
+        proximalRot: [0, 0.08, -0.02],
+        proximalPosOffset: [2.5, 0, -1.2],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+        ltRot: [0, 0, 0],
+        ltPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_lc2",
+        name: "LC-II",
+        badge: "LC-II (Crescent)",
+        clinicalTitle: "LC-II: Ipsilateral Crescent Fracture (Rotationally Unstable)",
+        clinicalPearl:
+          "Ipsilateral crescent fracture running obliquely across the iliac fossa into the SI joint\nInward medial displacement and internal rotation of the acetabular hemipelvis\nPosterior SI ligaments remain attached to the crescent fragment\nRotationally UNSTABLE, Vertically STABLE\nModerate internal hemorrhage risk",
+        partitionMode: "yb_lc2",
+        proximalRot: [-0.03, 0.16, -0.06],
+        proximalPosOffset: [7.0, -12.0, 4.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+        ltRot: [0, 0.02, 0],
+        ltPosOffset: [0.5, -0.5, 0.0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_lc3",
+        name: "LC-III",
+        badge: "LC-III (Windswept)",
+        clinicalTitle: "LC-III: Windswept Pelvis (Contralateral Open Book)",
+        clinicalPearl:
+          "Ipsilateral Lateral Compression (LC) injury with Crescent iliac fracture & transverse pubic rami fractures combined with CONTRALATERAL Open-Book (APC) injury ('Windswept Pelvis')\nIpsilateral hemipelvis internally rotated, Contralateral hemipelvis externally rotated\nComplete pubic symphysis diastasis rupture\nHigh-energy complex rotational and vertical instability\nHigh risk of massive retroperitoneal hemorrhage (iliac vessel tears)",
+        partitionMode: "yb_lc3",
+        proximalRot: [-0.03, 0.16, -0.06],
+        proximalPosOffset: [7.0, -12.0, 4.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0.20, 0],
+        gtPosOffset: [5.0, 0, 2.0],
+        ltRot: [0, 0.04, 0],
+        ltPosOffset: [1.5, -1.0, 0.5],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+      {
+        id: "yb_vs",
+        name: "VS",
+        badge: "VS (Vertical Shear)",
+        clinicalTitle: "VS: Vertical Shear (Completely Unstable)",
+        clinicalPearl:
+          "Complete vertical displacement of hemipelvis through SI joint, sacrum, or ilium\nVertical pubic rami step-off anteriorly\nComplete disruption of all pelvic ligaments\nRotationally and Vertically UNSTABLE\nHigh incidence of hypovolemic shock and soft tissue destruction",
+        partitionMode: "yb_vs",
+        proximalRot: [0.04, -0.08, 0.05],
+        proximalPosOffset: [-3.0, 14.0, 2.0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0, 0, 0],
+        gtPosOffset: [0, 0, 0],
+        ltRot: [0, 0, 0],
+        ltPosOffset: [0, 0, 0],
+        shardRot: [0, 0, 0],
+        shardPosOffset: [0, 0, 0],
+      },
+    ],
+  },
+  {
+    id: "acetabulum",
+    name: "Acetabulum",
+    badge: "Judet-Letournel",
+    cutCenter: [-70.4, -29.8, 26.5],
+    cutNormal: [0, 1, 0],
+    cameraTarget: [0.0, 0.0, 0.0],
+    cameraDistance: 4.6,
+    cameraDirection: [0.0, 0.0, 1.0],
+    viewOffsetRatio: 0.07,
+    presets: [
+      {
+        id: "acetabulum_intact",
+        name: "Intact Cotyloid",
+        badge: "Concentric Hip Joint",
+        clinicalTitle: "Right Acetabulum Anatomy",
+        clinicalPearl:
+          "Two-column anatomical concept of Judet & Letournel:\n- Anterior Column: Iliopubic column extending from iliac crest to pubic symphysis\n- Posterior Column: Ilioischial column extending from greater sciatic notch to ischial tuberosity\n- Anterior Wall & Posterior Wall buttress the femoral head against subluxation.",
+        partitionMode: "pelvis_intact",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+      },
+      {
+        id: "jl_pw",
+        name: "Posterior Wall",
+        badge: "Posterior Wall (Elementary #1)",
+        clinicalTitle: "Posterior Wall Fracture (Elementary #1)",
+        clinicalPearl:
+          "Elementary Type 1: Most common acetabular fracture pattern (~25% of cases)\nInvolves only the posterior articular wall rim\nFrequently associated with posterior hip dislocation\nHip stability depends on fragment size (>20-25% wall involvement)",
+        partitionMode: "jl_pw",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        shardRot: [0.03, -0.05, 0.02],
+        shardPosOffset: [-7.0, 1.5, -9.0],
+      },
+      {
+        id: "jl_pc",
+        name: "Posterior Column",
+        badge: "Posterior Column (Elementary #2)",
+        clinicalTitle: "Posterior Column Fracture (Elementary #2)",
+        clinicalPearl:
+          "Elementary Type 2: Vertical fracture separating the posterior column (ischial ramus & wall) from pelvis\nDisrupts the ilioischial line on AP view\nExtends through ischial tuberosity and greater sciatic notch",
+        partitionMode: "jl_pc",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0.02, 0.06, -0.03],
+        gtPosOffset: [5.0, -2.5, -7.0],
+      },
+      {
+        id: "jl_aw",
+        name: "Anterior Wall",
+        badge: "Anterior Wall (Elementary #3)",
+        clinicalTitle: "Anterior Wall Fracture (Elementary #3)",
+        clinicalPearl:
+          "Elementary Type 3: Isolated fracture of the anterior articular wall/rim\nDisrupts the middle portion of the iliopectineal line on AP view\nAssociated with anterior hip dislocation (rare)",
+        partitionMode: "jl_aw",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [-0.03, 0.05, 0.02],
+        ltPosOffset: [-7.0, -1.5, 9.0],
+      },
+      {
+        id: "jl_ac",
+        name: "Anterior Column",
+        badge: "Anterior Column (Elementary #4)",
+        clinicalTitle: "Anterior Column Fracture (Elementary #4)",
+        clinicalPearl:
+          "Elementary Type 4: Fracture involving the entire anterior column\nDisrupts the iliopectineal line on AP view\nExtends from superior pubic ramus up into iliac crest",
+        partitionMode: "jl_ac",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [0.03, -0.06, 0.03],
+        ltPosOffset: [6.0, -3.0, 7.0],
+      },
+      {
+        id: "jl_transverse",
+        name: "Transverse",
+        badge: "Transverse Acetabular (Elementary #5)",
+        clinicalTitle: "Transverse Acetabular Fracture (Elementary #5)",
+        clinicalPearl:
+          "Elementary Type 5: Horizontal fracture dividing acetabulum into superior (iliac) and inferior (ischial/pubic) halves\nDisrupts BOTH iliopectineal and ilioischial lines\nObturator foramen remains INTACT\nArticular weight-bearing dome is divided",
+        partitionMode: "jl_transverse",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [0.02, 0.04, -0.02],
+        ltPosOffset: [6.0, -4.0, -2.0],
+      },
+      {
+        id: "jl_t_shaped",
+        name: "T-Shaped",
+        badge: "T-Shaped (Associated #1)",
+        clinicalTitle: "T-Shaped Fracture (Associated #1)",
+        clinicalPearl:
+          "Associated Type 1: Transverse fracture line combined with a vertical stem fracture\nVertical stem extends inferiorly into the obturator foramen\nDisrupts iliopectineal line, ilioischial line, AND obturator ring\nSeparates ischial and pubic rami from each other",
+        partitionMode: "jl_t_shaped",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0.02, 0.05, -0.03],
+        gtPosOffset: [5.0, -3.5, -6.5],
+        ltRot: [-0.02, -0.04, 0.03],
+        ltPosOffset: [5.5, -2.0, 6.0],
+      },
+      {
+        id: "jl_pc_pw",
+        name: "PC + Wall",
+        badge: "PC + Posterior Wall (Associated #2)",
+        clinicalTitle: "Posterior Column + Posterior Wall (Associated #2)",
+        clinicalPearl:
+          "Associated Type 2: Combined posterior column vertical fracture AND posterior wall rim fracture\nHigh rate of posterior hip dislocation and sciatic nerve injury\nEntire posterior support of acetabulum is lost",
+        partitionMode: "jl_pc_pw",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        gtRot: [0.02, 0.05, -0.03],
+        gtPosOffset: [5.0, -2.0, -6.0],
+        shardRot: [0.03, -0.05, 0.02],
+        shardPosOffset: [-7.5, 2.0, -9.5],
+      },
+      {
+        id: "jl_trans_pw",
+        name: "Trans + PW",
+        badge: "Transverse + PW (Associated #3)",
+        clinicalTitle: "Transverse + Posterior Wall (Associated #3)",
+        clinicalPearl:
+          "Associated Type 3: Transverse acetabular fracture combined with a posterior wall rim fracture\nVery common associated pattern (~20% of acetabular fractures)\nDisrupts iliopectineal, ilioischial, and posterior wall rim lines\nHigh risk of hip instability and post-traumatic arthritis",
+        partitionMode: "jl_trans_pw",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [0.02, 0.04, -0.02],
+        ltPosOffset: [5.5, -3.5, -2.0],
+        shardRot: [0.03, -0.05, 0.02],
+        shardPosOffset: [-7.5, 2.0, -9.5],
+      },
+      {
+        id: "jl_acpht",
+        name: "ACPHT",
+        badge: "ACPHT (Associated #4)",
+        clinicalTitle: "Anterior Column/Wall + Posterior Hemitransverse (Associated #4)",
+        clinicalPearl:
+          "Associated Type 4: High anterior column/wall fracture combined with a horizontal posterior hemitransverse fracture line\nPosterior fracture line is lower and strictly transverse through the posterior column\nDisrupts iliopectineal line and posterior ilioischial line",
+        partitionMode: "jl_acpht",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [0.03, -0.05, 0.03],
+        ltPosOffset: [6.0, -2.5, 6.5],
+        gtRot: [0.02, 0.04, -0.02],
+        gtPosOffset: [4.5, -2.0, -5.0],
+      },
+      {
+        id: "jl_both_column",
+        name: "Both Columns",
+        badge: "Both Columns (Floating Acetabulum)",
+        clinicalTitle: "Both Columns Fracture (Associated #5)",
+        clinicalPearl:
+          "Associated Type 5: Most severe acetabular fracture pattern\nALL articular facets are completely disconnected from the posterior ilium (Floating Acetabulum)\nDisrupts iliopectineal line, ilioischial line, AND obturator foramen\nPathognomonic 'Spur Sign' visible on Iliac Oblique view",
+        partitionMode: "jl_both_column",
+        proximalRot: [0, 0, 0],
+        proximalPosOffset: [0, 0, 0],
+        distalRot: [0, 0, 0],
+        distalPosOffset: [0, 0, 0],
+        ltRot: [0.04, -0.06, 0.03],
+        ltPosOffset: [7.0, -3.5, 5.5],
+        gtRot: [0.03, 0.06, -0.03],
+        gtPosOffset: [6.0, -3.0, -6.5],
+        shardRot: [0.01, 0.03, 0.01],
+        shardPosOffset: [9.0, -1.5, 0.0],
+      },
+    ],
+  },
+];
+
+const FOOT_SUBREGIONS: SubregionConfig[] = [
+  TIBIA_SUBREGIONS[4], // Calcaneus Fracture (Essex-Lopresti)
+  TIBIA_SUBREGIONS[3], // Talus Fracture (Hawkins Types I–IV)
 ];
 
 const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
@@ -1314,8 +1984,8 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
         clinicalTitle: "AC Torn + CC Sprained (<25% Elevation)",
         clinicalPearl: "Torn AC ligament\nSprained CC ligaments\n<25% superior displacement of clavicle",
         partitionMode: "ac_joint_rockwood",
-        proximalRot: [0, 0, -0.05],
-        proximalPosOffset: [0, 3.5, 0],
+        proximalRot: [0, 0, -0.03],
+        proximalPosOffset: [0, 2.0, 0],
         distalRot: [0, 0, 0],
         distalPosOffset: [0, 0, 0],
       },
@@ -1326,8 +1996,8 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
         clinicalTitle: "AC & CC Torn (25%–100% Elevation)",
         clinicalPearl: "Torn AC and CC ligaments\n25% to 100% superior displacement of clavicle",
         partitionMode: "ac_joint_rockwood",
-        proximalRot: [0, 0, -0.15],
-        proximalPosOffset: [0, 11.5, 0],
+        proximalRot: [0, 0, -0.09],
+        proximalPosOffset: [0, 6.8, 0],
         distalRot: [0, 0, 0],
         distalPosOffset: [0, 0, 0],
       },
@@ -1350,8 +2020,8 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
         clinicalTitle: "Gross Superior Elevation (>100%–300%)",
         clinicalPearl: "Superior displacement >100% (often 100-300%)\nDisruption of deltotrapezial fascia",
         partitionMode: "ac_joint_rockwood",
-        proximalRot: [0, 0, -0.30],
-        proximalPosOffset: [0, 26.0, 0],
+        proximalRot: [0, 0, -0.18],
+        proximalPosOffset: [0, 15.0, 0],
         distalRot: [0, 0, 0],
         distalPosOffset: [0, 0, 0],
       },
@@ -1561,8 +2231,7 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
 
 interface LigamentBundle {
   group: THREE.Group;
-  cylGeom: THREE.CylinderGeometry;
-  coneGeom: THREE.ConeGeometry;
+  boxGeom: THREE.BoxGeometry;
   ligamentMat: THREE.MeshStandardMaterial;
   rupturedTipMat: THREE.MeshStandardMaterial;
   conoidIntact: THREE.Mesh;
@@ -1587,8 +2256,20 @@ interface LigamentBundle {
 const _scratchDir = new THREE.Vector3();
 const _scratchUp = new THREE.Vector3(0, 1, 0);
 const _scratchMid = new THREE.Vector3();
-const _scratchStart = new THREE.Vector3();
-const _scratchEnd = new THREE.Vector3();
+const _scratchBinormal = new THREE.Vector3();
+const _scratchNormal = new THREE.Vector3();
+const _scratchBasisMat = new THREE.Matrix4();
+
+// Dedicated scratch vectors for torn ligament kinematics (prevents variable clobbering)
+const _tornDir = new THREE.Vector3();
+const _stumpStartA = new THREE.Vector3();
+const _stumpEndA = new THREE.Vector3();
+const _tipStartA = new THREE.Vector3();
+const _tipEndA = new THREE.Vector3();
+const _stumpStartB = new THREE.Vector3();
+const _stumpEndB = new THREE.Vector3();
+const _tipStartB = new THREE.Vector3();
+const _tipEndB = new THREE.Vector3();
 
 // Exact clinical coordinates on Scapula (distalGroup stationary origin)
 const _conoidScapula = new THREE.Vector3(-38.32, 54.44, 15.46);
@@ -1622,12 +2303,19 @@ const _scratchZero = new THREE.Vector3(0, 0, 0);
 const _neerVShardCentroid = new THREE.Vector3(-42.1, 73.8, -13.5);
 const _scPivotCenter = new THREE.Vector3(70.0, 50.0, 60.0);
 
+// Default anatomical face normals for clavicle ligaments
+const _normCA = new THREE.Vector3(0, 0.7, 0.7);
+const _normAC = new THREE.Vector3(0, 0.6, 0.8);
+const _normConoid = new THREE.Vector3(0, 0.3, 0.95);
+const _normTrap = new THREE.Vector3(-0.4, 0.2, 0.89);
+
 function updateLigamentSegment(
   mesh: THREE.Mesh,
   start: THREE.Vector3,
   end: THREE.Vector3,
-  rx: number,
-  rz: number
+  width: number,
+  thickness: number,
+  faceNormal?: THREE.Vector3
 ) {
   _scratchDir.subVectors(end, start);
   const len = _scratchDir.length();
@@ -1639,8 +2327,25 @@ function updateLigamentSegment(
   _scratchMid.copy(start).addScaledVector(_scratchDir, 0.5);
   mesh.position.copy(_scratchMid);
   _scratchDir.normalize();
-  mesh.quaternion.setFromUnitVectors(_scratchUp, _scratchDir);
-  mesh.scale.set(rx, len, rz);
+
+  // Outward reference direction: project faceNormal perpendicular to tangent _scratchDir
+  let out = faceNormal ? faceNormal.clone().normalize() : _scratchUp;
+  if (Math.abs(_scratchDir.dot(out)) > 0.95) {
+    out = new THREE.Vector3(0, 0, 1);
+    if (Math.abs(_scratchDir.dot(out)) > 0.95) {
+      out = new THREE.Vector3(1, 0, 0);
+    }
+  }
+
+  // Binormal (width direction, local X) = tangent x out
+  _scratchBinormal.crossVectors(_scratchDir, out).normalize();
+  // True Normal (thickness direction, local Z) = binormal x tangent
+  _scratchNormal.crossVectors(_scratchBinormal, _scratchDir).normalize();
+
+  // Construct 3D basis matrix with columns [X=Binormal, Y=Tangent, Z=Normal]
+  _scratchBasisMat.makeBasis(_scratchBinormal, _scratchDir, _scratchNormal);
+  mesh.quaternion.setFromRotationMatrix(_scratchBasisMat);
+  mesh.scale.set(width, len, thickness);
 }
 
 function updateTornLigament(
@@ -1650,13 +2355,14 @@ function updateTornLigament(
   tipB: THREE.Mesh,
   origin: THREE.Vector3,
   target: THREE.Vector3,
-  rx: number,
-  rz: number,
+  width: number,
+  thickness: number,
   nominalStumpLen: number,
-  tipLen: number
+  capLen = 0.5,
+  faceNormal?: THREE.Vector3
 ) {
-  _scratchDir.subVectors(target, origin);
-  const totalLen = _scratchDir.length();
+  _tornDir.subVectors(target, origin);
+  const totalLen = _tornDir.length();
   if (totalLen < 0.001) {
     stumpA.visible = false;
     tipA.visible = false;
@@ -1664,32 +2370,32 @@ function updateTornLigament(
     tipB.visible = false;
     return;
   }
-  _scratchDir.normalize();
+  _tornDir.normalize();
 
   // Stump length is proportionally constrained to prevent collision and guarantee gap
-  const maxStump = totalLen * 0.36;
-  const stumpLen = Math.max(tipLen * 1.1, Math.min(nominalStumpLen, maxStump));
-  const shaftLen = Math.max(0.1, stumpLen - tipLen);
+  const maxStump = totalLen * 0.35;
+  const stumpLen = Math.max(capLen * 1.5, Math.min(nominalStumpLen, maxStump));
+  const shaftLen = Math.max(0.1, stumpLen - capLen);
 
   // --- Stump A (Origin / Scapula side) ---
-  _scratchStart.copy(origin);
-  _scratchEnd.copy(origin).addScaledVector(_scratchDir, shaftLen);
-  updateLigamentSegment(stumpA, _scratchStart, _scratchEnd, rx, rz);
+  _stumpStartA.copy(origin);
+  _stumpEndA.copy(origin).addScaledVector(_tornDir, shaftLen);
+  updateLigamentSegment(stumpA, _stumpStartA, _stumpEndA, width, thickness, faceNormal);
 
-  // Tip A (frayed red cone pointing toward gap)
-  _scratchStart.copy(_scratchEnd);
-  _scratchEnd.copy(origin).addScaledVector(_scratchDir, stumpLen);
-  updateLigamentSegment(tipA, _scratchStart, _scratchEnd, rx * 0.95, rz * 0.95);
+  // Red Cap A: razor-thin acute cross-section cap on the severed edge facing the gap
+  _tipStartA.copy(_stumpEndA);
+  _tipEndA.copy(origin).addScaledVector(_tornDir, stumpLen);
+  updateLigamentSegment(tipA, _tipStartA, _tipEndA, width * 1.01, thickness * 1.02, faceNormal);
 
   // --- Stump B (Target / Clavicle side) ---
-  _scratchStart.copy(target);
-  _scratchEnd.copy(target).addScaledVector(_scratchDir, -shaftLen);
-  updateLigamentSegment(stumpB, _scratchStart, _scratchEnd, rx, rz);
+  _stumpStartB.copy(target);
+  _stumpEndB.copy(target).addScaledVector(_tornDir, -shaftLen);
+  updateLigamentSegment(stumpB, _stumpStartB, _stumpEndB, width, thickness, faceNormal);
 
-  // Tip B (frayed red cone pointing toward gap)
-  _scratchStart.copy(_scratchEnd);
-  _scratchEnd.copy(target).addScaledVector(_scratchDir, -stumpLen);
-  updateLigamentSegment(tipB, _scratchStart, _scratchEnd, rx * 0.95, rz * 0.95);
+  // Red Cap B: razor-thin acute cross-section cap on the severed edge facing the gap
+  _tipStartB.copy(_stumpEndB);
+  _tipEndB.copy(target).addScaledVector(_tornDir, -stumpLen);
+  updateLigamentSegment(tipB, _tipStartB, _tipEndB, width * 1.01, thickness * 1.02, faceNormal);
 }
  
 export interface ForceVectorConfig {
@@ -1916,6 +2622,206 @@ function getForceVectorsForSubregion(
       });
 
       return vectors;
+    }
+    if (subId === "talus") {
+      if (!presetId || presetId === "hawkins_1") {
+        return [
+          {
+            id: "talus_dorsiflexion",
+            name: "Hyperdorsiflexion Vector",
+            shortName: "Dorsiflexion",
+            action: "Forced dorsiflexion impacting talar neck against anterior tibia",
+            color: "#EF4444",
+            colorHex: 0xEF4444,
+            parentTarget: "shard",
+            originOffset: [7.0, -165.0, 16.0],
+            direction: [0.0, -0.35, -0.94],
+            magnitude: 28.0,
+          },
+        ];
+      }
+      return [
+        {
+          id: "talus_dorsiflexion_high",
+          name: "Violent Axial Dorsiflexion Vector",
+          shortName: "Axial Dorsiflexion",
+          action: "High-energy axial compression and severe hyperdorsiflexion",
+          color: "#EF4444",
+          colorHex: 0xEF4444,
+          parentTarget: "shard",
+          originOffset: [7.0, -165.0, 16.0],
+          direction: [0.0, -0.35, -0.94],
+          magnitude: 35.0,
+        },
+        {
+          id: "talus_body_extrusion",
+          name: "Posteromedial Extrusion Vector",
+          shortName: "Body Extrusion",
+          action: "Talar body displaced out of mortise behind medial malleolus",
+          color: "#F59E0B",
+          colorHex: 0xF59E0B,
+          parentTarget: "proximal",
+          originOffset: [8.5, -171.0, -5.0],
+          direction: [0.55, 0.25, -0.80],
+          magnitude: 38.0,
+        },
+      ];
+    }
+    if (subId === "calcaneus") {
+      if (!presetId || presetId === "intact") {
+        return [
+          {
+            id: "calcaneus_achilles_resting",
+            name: "Gastrocnemius-Soleus Complex (Achilles Tendon)",
+            shortName: "Achilles Traction",
+            action: "Baseline upward tensile traction on posterior tuberosity",
+            color: "#10B981",
+            colorHex: 0x10B981,
+            parentTarget: "distal",
+            originOffset: [8.0, -188.0, -42.0],
+            direction: [0.0, 0.92, -0.38],
+            magnitude: 28.0,
+          },
+        ];
+      }
+      if (presetId === "essex_tongue") {
+        return [
+          {
+            id: "calcaneus_talar_wedge",
+            name: "Axial Talar Wedge Impaction",
+            shortName: "Talar Wedge",
+            action: "Axial ground-reaction load driving the lateral process of the talus downward into the posterior facet",
+            color: "#10B981",
+            colorHex: 0x10B981,
+            parentTarget: "distal",
+            originOffset: [4.0, -165.0, 0.0],
+            direction: [0.0, -1.0, 0.0],
+            magnitude: 40.0,
+          },
+          {
+            id: "calcaneus_achilles_tongue",
+            name: "Gastrocnemius-Soleus Pull (Tongue Elevation)",
+            shortName: "Achilles Pull",
+            action: "Upward pull levering the tongue fragment dorsally and creating critical posterior heel skin tenting",
+            color: "#10B981",
+            colorHex: 0x10B981,
+            parentTarget: "proximal",
+            originOffset: [8.0, -186.0, -42.0],
+            direction: [0.0, 0.90, -0.30],
+            magnitude: 42.0,
+          },
+          {
+            id: "calcaneus_lateral_splay",
+            name: "Lateral Wall Splay Vector",
+            shortName: "Lateral Splay",
+            action: "Outward blowout and splaying of the lateral cortical wall under axial wedge compression",
+            color: "#06B6D4",
+            colorHex: 0x06B6D4,
+            parentTarget: "shard",
+            originOffset: [-12.0, -185.0, 5.0],
+            direction: [-0.70, -0.50, 0.50],
+            magnitude: 32.0,
+          },
+        ];
+      }
+      if (presetId === "essex_joint_depression") {
+        return [
+          {
+            id: "calcaneus_facet_impaction",
+            name: "Axial Talar Wedge Impaction",
+            shortName: "Talar Wedge",
+            action: "Direct axial load shearing and crushing the isolated posterior facet downward into the cancellous body",
+            color: "#10B981",
+            colorHex: 0x10B981,
+            parentTarget: "shard",
+            originOffset: [4.0, -165.0, -4.0],
+            direction: [0.0, -1.0, 0.0],
+            magnitude: 40.0,
+          },
+          {
+            id: "calcaneus_tuberosity_traction",
+            name: "Achilles & Plantar Fascia Retraction",
+            shortName: "Tuberosity Shortening",
+            action: "Upward and anterior traction shortening and widening the tuberosity with loss of Bohler's angle (<0°)",
+            color: "#10B981",
+            colorHex: 0x10B981,
+            parentTarget: "gt",
+            originOffset: [8.0, -190.0, -32.0],
+            direction: [0.0, 0.85, 0.52],
+            magnitude: 38.0,
+          },
+          {
+            id: "calcaneus_lateral_splay_jd",
+            name: "Lateral Wall Splay Vector",
+            shortName: "Lateral Splay",
+            action: "Eccentric burst and outward splay of the lateral cortical wall",
+            color: "#06B6D4",
+            colorHex: 0x06B6D4,
+            parentTarget: "lt",
+            originOffset: [-12.0, -185.0, 5.0],
+            direction: [-0.70, -0.50, 0.50],
+            magnitude: 32.0,
+          },
+        ];
+      }
+      return [];
+    }
+    if (subId === "pilon") {
+      if (!presetId || presetId === "intact") return [];
+      if (presetId === "pilon_1") {
+        return [
+          {
+            id: "pilon_axial_low",
+            name: "Axial Compression Vector",
+            shortName: "Axial Load",
+            action: "Low-to-moderate energy axial loading",
+            color: "#3B82F6",
+            colorHex: 0x3B82F6,
+            parentTarget: "distal",
+            originOffset: [4.0, -172.0, 0.0],
+            direction: [0, 1, 0],
+            magnitude: 26.0,
+          },
+        ];
+      }
+      return [
+        {
+          id: "pilon_axial_high",
+          name: "Axial Compression Vector",
+          shortName: "Axial Impact",
+          action: "High-energy axial compression crushing plafond",
+          color: "#EF4444",
+          colorHex: 0xEF4444,
+          parentTarget: "distal",
+          originOffset: [4.0, -174.0, 0.0],
+          direction: [0, 1, 0],
+          magnitude: 38.0,
+        },
+        {
+          id: "pilon_lateral_splay",
+          name: "Lateral Column Splay Vector",
+          shortName: "Lateral Splay",
+          action: "Tillaux-Chaput & fibular column displacement",
+          color: "#06B6D4",
+          colorHex: 0x06B6D4,
+          parentTarget: "shard",
+          originOffset: [-14.0, -155.0, 4.0],
+          direction: [-0.85, 0.20, 0.48],
+          magnitude: 32.0,
+        },
+        {
+          id: "pilon_medial_shear",
+          name: "Medial Column Tension Shear",
+          shortName: "Medial Shear",
+          action: "Medial malleolar varus displacement",
+          color: "#F59E0B",
+          colorHex: 0xF59E0B,
+          parentTarget: "lt",
+          originOffset: [20.0, -150.0, 4.0],
+          direction: [0.92, 0.15, -0.36],
+          magnitude: 30.0,
+        },
+      ];
     }
     return [
       {
@@ -2460,6 +3366,34 @@ interface AnkleLigamentBundle {
   deltoidTornGroup: THREE.Group;
 }
 
+interface PelvicLigamentBundle {
+  group: THREE.Group;
+  mat: THREE.MeshStandardMaterial;
+  tornMat: THREE.MeshStandardMaterial;
+  cartilageMat: THREE.MeshStandardMaterial;
+  geometries: THREE.BufferGeometry[];
+  meshes: THREE.Mesh[];
+  symphysisMesh: THREE.Object3D;
+  asilRightMesh: THREE.Object3D;
+  asilLeftMesh: THREE.Object3D;
+  sslRightMesh: THREE.Object3D;
+  sslLeftMesh: THREE.Object3D;
+  stlRightMesh: THREE.Object3D;
+  stlLeftMesh: THREE.Object3D;
+  psilRightMesh: THREE.Object3D;
+  psilLeftMesh: THREE.Object3D;
+  symphysisStumps: THREE.Mesh[];
+  asilRightStumps: THREE.Mesh[];
+  asilLeftStumps: THREE.Mesh[];
+  sslRightStumps: THREE.Mesh[];
+  sslLeftStumps: THREE.Mesh[];
+  stlRightStumps: THREE.Mesh[];
+  stlLeftStumps: THREE.Mesh[];
+  psilRightStumps: THREE.Mesh[];
+  psilLeftStumps: THREE.Mesh[];
+  updateState: (visible: boolean, presetId: string) => void;
+}
+
 function createRibbonGeometry(
   points: THREE.Vector3[],
   width: number,
@@ -2955,6 +3889,951 @@ function createAnkleLigamentMeshes(): AnkleLigamentBundle {
   };
 }
 
+function createSheetGeometry(
+  curveA: THREE.Vector3[],
+  curveB: THREE.Vector3[],
+  stepsU = 12,
+  stepsV = 8,
+  thickness = 1.3,
+  camber = 1.8,
+  outwardDir: "anterior" | "posterior" | "auto" = "auto",
+  uRange: [number, number] = [0, 1],
+  vRange: [number, number] = [0, 1]
+): THREE.BufferGeometry {
+  const cA = new THREE.CatmullRomCurve3(curveA);
+  const cB = new THREE.CatmullRomCurve3(curveB);
+
+  const positions: number[] = [];
+  const normals: number[] = [];
+  const indices: number[] = [];
+
+  const grid: THREE.Vector3[][] = [];
+  const normGrid: THREE.Vector3[][] = [];
+
+  for (let i = 0; i <= stepsU; i++) {
+    const uFrac = i / stepsU;
+    const u = uRange[0] + (uRange[1] - uRange[0]) * uFrac;
+    const clampedU = Math.max(0, Math.min(1, u));
+    const pA = cA.getPoint(clampedU);
+    const pB = cB.getPoint(clampedU);
+
+    const eps = 0.02;
+    const uNext = Math.min(1, clampedU + eps);
+    const uPrev = Math.max(0, clampedU - eps);
+    const dirU = cA.getPoint(uNext).sub(cA.getPoint(uPrev)).normalize();
+    const dirV = pB.clone().sub(pA).normalize();
+    let normal = new THREE.Vector3().crossVectors(dirU, dirV).normalize();
+    if (normal.lengthSq() < 0.1) normal.set(0, 0, 1);
+
+    if (outwardDir === "anterior" && normal.z < 0) normal.negate();
+    if (outwardDir === "posterior" && normal.z > 0) normal.negate();
+
+    grid[i] = [];
+    normGrid[i] = [];
+    for (let j = 0; j <= stepsV; j++) {
+      const vFrac = j / stepsV;
+      const v = vRange[0] + (vRange[1] - vRange[0]) * vFrac;
+      const pt = new THREE.Vector3().lerpVectors(pA, pB, v);
+      const arch = Math.sin(Math.PI * vFrac) * camber;
+      pt.addScaledVector(normal, arch);
+      grid[i][j] = pt;
+      normGrid[i][j] = normal.clone();
+    }
+  }
+
+  const halfT = thickness / 2;
+  const vOffsetBottom = (stepsU + 1) * (stepsV + 1);
+
+  // Top surface
+  for (let i = 0; i <= stepsU; i++) {
+    for (let j = 0; j <= stepsV; j++) {
+      const p = grid[i][j].clone().addScaledVector(normGrid[i][j], halfT);
+      positions.push(p.x, p.y, p.z);
+      normals.push(normGrid[i][j].x, normGrid[i][j].y, normGrid[i][j].z);
+    }
+  }
+
+  // Bottom surface
+  for (let i = 0; i <= stepsU; i++) {
+    for (let j = 0; j <= stepsV; j++) {
+      const p = grid[i][j].clone().addScaledVector(normGrid[i][j], -halfT);
+      positions.push(p.x, p.y, p.z);
+      normals.push(-normGrid[i][j].x, -normGrid[i][j].y, -normGrid[i][j].z);
+    }
+  }
+
+  // Top faces
+  for (let i = 0; i < stepsU; i++) {
+    for (let j = 0; j < stepsV; j++) {
+      const a = i * (stepsV + 1) + j;
+      const b = (i + 1) * (stepsV + 1) + j;
+      const c = (i + 1) * (stepsV + 1) + (j + 1);
+      const d = i * (stepsV + 1) + (j + 1);
+      indices.push(a, b, c);
+      indices.push(a, c, d);
+    }
+  }
+
+  // Bottom faces
+  for (let i = 0; i < stepsU; i++) {
+    for (let j = 0; j < stepsV; j++) {
+      const a = vOffsetBottom + i * (stepsV + 1) + j;
+      const b = vOffsetBottom + (i + 1) * (stepsV + 1) + j;
+      const c = vOffsetBottom + (i + 1) * (stepsV + 1) + (j + 1);
+      const d = vOffsetBottom + i * (stepsV + 1) + (j + 1);
+      indices.push(a, c, b);
+      indices.push(a, d, c);
+    }
+  }
+
+  // Side edge caps
+  function addWall(i1: number, j1: number, i2: number, j2: number) {
+    const top1 = i1 * (stepsV + 1) + j1;
+    const top2 = i2 * (stepsV + 1) + j2;
+    const bot1 = vOffsetBottom + top1;
+    const bot2 = vOffsetBottom + top2;
+    indices.push(top1, bot1, top2);
+    indices.push(bot1, bot2, top2);
+  }
+
+  for (let i = 0; i < stepsU; i++) {
+    addWall(i, 0, i + 1, 0);
+    addWall(i + 1, stepsV, i, stepsV);
+  }
+  for (let j = 0; j < stepsV; j++) {
+    addWall(0, j + 1, 0, j);
+    addWall(stepsU, j, stepsU, j + 1);
+  }
+
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+  geom.setAttribute("normal", new THREE.Float32BufferAttribute(normals, 3));
+  geom.setIndex(indices);
+  geom.computeVertexNormals();
+  return geom;
+}
+
+function createPelvicLigamentMeshes(
+  proximalPivotGroup: THREE.Group,
+  gtPivotGroup: THREE.Group,
+  distalGroup: THREE.Group,
+  ltPivotGroup?: THREE.Group
+): PelvicLigamentBundle {
+  const group = new THREE.Group();
+  group.name = "pelvicLigamentGroup";
+
+  // Anatomical model collagen slate material matching reference specimen
+  const mat = new THREE.MeshStandardMaterial({
+    color: 0x8FA4B5,
+    roughness: 0.38,
+    metalness: 0.04,
+    transparent: true,
+    opacity: 0.94,
+    depthWrite: true,
+    side: THREE.DoubleSide,
+  });
+
+  // Interpubic fibrocartilage disc material (solid clean white anatomical joint body)
+  const cartilageMat = new THREE.MeshStandardMaterial({
+    color: 0xF8FAFC,
+    roughness: 0.28,
+    metalness: 0.02,
+    depthWrite: true,
+    side: THREE.DoubleSide,
+  });
+
+  // Acute traumatic hematoma rupture stump material
+  const tornMat = new THREE.MeshStandardMaterial({
+    color: 0xDC2626,
+    emissive: 0x991B1B,
+    emissiveIntensity: 0.45,
+    roughness: 0.35,
+    depthWrite: true,
+    side: THREE.DoubleSide,
+  });
+
+  const geometries: THREE.BufferGeometry[] = [];
+  const meshes: THREE.Mesh[] = [];
+
+  const proxPivotCenter = new THREE.Vector3(-49.14, 39.22, -46.77);
+  const gtCentroid = new THREE.Vector3(50.47, 37.55, -47.18);
+
+  const createSheetMesh = (
+    name: string,
+    curveA: THREE.Vector3[],
+    curveB: THREE.Vector3[],
+    options?: {
+      stepsU?: number;
+      stepsV?: number;
+      thickness?: number;
+      camber?: number;
+      outwardDir?: "anterior" | "posterior" | "auto";
+      customMat?: THREE.Material;
+    }
+  ): THREE.Mesh => {
+    const geom = createSheetGeometry(
+      curveA,
+      curveB,
+      options?.stepsU ?? 10,
+      options?.stepsV ?? 6,
+      options?.thickness ?? 1.3,
+      options?.camber ?? 1.8,
+      options?.outwardDir ?? "auto"
+    );
+    geometries.push(geom);
+    const mesh = new THREE.Mesh(geom, options?.customMat || mat);
+    mesh.name = name;
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
+    meshes.push(mesh);
+    return mesh;
+  };
+
+  const addSheetStump = (
+    name: string,
+    curveA: THREE.Vector3[],
+    curveB: THREE.Vector3[],
+    parentGroup: THREE.Group,
+    localOffset: THREE.Vector3,
+    vRange: [number, number],
+    options?: {
+      stepsU?: number;
+      stepsV?: number;
+      thickness?: number;
+      camber?: number;
+      outwardDir?: "anterior" | "posterior" | "auto";
+      customMat?: THREE.Material;
+    }
+  ): THREE.Mesh => {
+    const localA = curveA.map((p) => p.clone().sub(localOffset));
+    const localB = curveB.map((p) => p.clone().sub(localOffset));
+    const geom = createSheetGeometry(
+      localA,
+      localB,
+      options?.stepsU ?? 8,
+      options?.stepsV ?? 4,
+      options?.thickness ?? 1.3,
+      options?.camber ?? 1.5,
+      options?.outwardDir ?? "auto",
+      [0, 1],
+      vRange
+    );
+    geometries.push(geom);
+    const mesh = new THREE.Mesh(geom, options?.customMat || mat);
+    mesh.name = name;
+    mesh.visible = false;
+    parentGroup.add(mesh);
+    meshes.push(mesh);
+    return mesh;
+  };
+
+  // =========================================================================
+  // 1. PUBIC SYMPHYSIS COMPLEX
+  // Anatomical fibrocartilaginous joint body accurately lofted across the
+  // 5.7 mm interpubic gap (X in [-2.85, +2.85]) flush with pubic articular facets,
+  // reinforced by Superior Pubic, Arcuate Pubic, and Anterior Pubic ligament sheets.
+  // =========================================================================
+  const symphysisMesh = new THREE.Group();
+  symphysisMesh.name = "lig_symphysis";
+  group.add(symphysisMesh);
+
+  // Closed 2D anatomical sagittal contour matching the pubic articular facet
+  const symphysisContourYZ = [
+    new THREE.Vector2(-50.6, 59.6), // 0: Top-anterior (crest to anterior transition)
+    new THREE.Vector2(-52.5, 61.2), // 1: Upper anterior face
+    new THREE.Vector2(-55.5, 61.8), // 2: Mid-upper anterior face
+    new THREE.Vector2(-59.0, 58.5), // 3: Mid anterior face
+    new THREE.Vector2(-63.0, 50.5), // 4: Lower anterior face
+    new THREE.Vector2(-66.2, 44.0), // 5: Anterior subpubic arch
+    new THREE.Vector2(-67.5, 42.0), // 6: Inferior subpubic apex (arcuate margin)
+    new THREE.Vector2(-65.8, 42.8), // 7: Posterior subpubic arch
+    new THREE.Vector2(-63.5, 44.5), // 8: Lower posterior / pelvic face
+    new THREE.Vector2(-58.0, 48.6), // 9: Mid posterior / pelvic brim face
+    new THREE.Vector2(-54.0, 51.5), // 10: Upper posterior / pectineal margin
+    new THREE.Vector2(-51.5, 54.5), // 11: Top-posterior (superior pubic margin)
+  ];
+
+  const createPubicSymphysisVolume = (
+    xStart: number,
+    xEnd: number,
+    stepsX = 8,
+    closeStart = true,
+    closeEnd = true,
+    localOffset?: THREE.Vector3
+  ): THREE.BufferGeometry => {
+    const numPts = symphysisContourYZ.length;
+    const positions: number[] = [];
+    const indices: number[] = [];
+
+    let midY = 0, midZ = 0;
+    for (const pt of symphysisContourYZ) { midY += pt.x; midZ += pt.y; }
+    midY /= numPts; midZ /= numPts;
+
+    const offX = localOffset?.x || 0;
+    const offY = localOffset?.y || 0;
+    const offZ = localOffset?.z || 0;
+
+    for (let ix = 0; ix <= stepsX; ix++) {
+      const t = ix / stepsX;
+      const x = xStart + (xEnd - xStart) * t;
+      const normDist = Math.abs(x) / 2.85;
+      const scale = 0.94 + 0.06 * Math.min(1, normDist);
+
+      for (let ip = 0; ip < numPts; ip++) {
+        const pt = symphysisContourYZ[ip];
+        const y = midY + (pt.x - midY) * scale;
+        const z = midZ + (pt.y - midZ) * scale;
+        positions.push(x - offX, y - offY, z - offZ);
+      }
+    }
+
+    for (let ix = 0; ix < stepsX; ix++) {
+      const r0 = ix * numPts;
+      const r1 = (ix + 1) * numPts;
+      for (let ip = 0; ip < numPts; ip++) {
+        const ipNext = (ip + 1) % numPts;
+        const a = r0 + ip;
+        const b = r0 + ipNext;
+        const c = r1 + ipNext;
+        const d = r1 + ip;
+        indices.push(a, b, c);
+        indices.push(a, c, d);
+      }
+    }
+
+    if (closeStart) {
+      // Facing -X (Right outer facet against right pubis)
+      const capStartIdx = positions.length / 3;
+      positions.push(xStart - offX, midY - offY, midZ - offZ);
+      const scale = 0.94 + 0.06 * Math.min(1, Math.abs(xStart) / 2.85);
+      for (let ip = 0; ip < numPts; ip++) {
+        const pt = symphysisContourYZ[ip];
+        const y = midY + (pt.x - midY) * scale;
+        const z = midZ + (pt.y - midZ) * scale;
+        positions.push(xStart - offX, y - offY, z - offZ);
+      }
+      for (let ip = 0; ip < numPts; ip++) {
+        const nextIp = (ip + 1) % numPts;
+        indices.push(capStartIdx, capStartIdx + 1 + nextIp, capStartIdx + 1 + ip);
+      }
+    }
+
+    if (closeEnd) {
+      // Facing +X (Left outer facet against left pubis)
+      const capEndIdx = positions.length / 3;
+      positions.push(xEnd - offX, midY - offY, midZ - offZ);
+      const scale = 0.94 + 0.06 * Math.min(1, Math.abs(xEnd) / 2.85);
+      for (let ip = 0; ip < numPts; ip++) {
+        const pt = symphysisContourYZ[ip];
+        const y = midY + (pt.x - midY) * scale;
+        const z = midZ + (pt.y - midZ) * scale;
+        positions.push(xEnd - offX, y - offY, z - offZ);
+      }
+      for (let ip = 0; ip < numPts; ip++) {
+        const nextIp = (ip + 1) % numPts;
+        indices.push(capEndIdx, capEndIdx + 1 + ip, capEndIdx + 1 + nextIp);
+      }
+    }
+
+    const geom = new THREE.BufferGeometry();
+    geom.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+    geom.setIndex(indices);
+    geom.computeVertexNormals();
+    return geom;
+  };
+
+  // A. Central Anatomical Fibrocartilaginous Joint Body (Single solid white bar across interpubic gap)
+  const symphVolumeGeom = createPubicSymphysisVolume(-2.85, 2.85, 8, true, true);
+  geometries.push(symphVolumeGeom);
+  const symphVolumeMesh = new THREE.Mesh(symphVolumeGeom, cartilageMat);
+  symphVolumeMesh.name = "lig_symphysis";
+  symphVolumeMesh.castShadow = true;
+  symphVolumeMesh.receiveShadow = true;
+  meshes.push(symphVolumeMesh);
+  symphysisMesh.add(symphVolumeMesh);
+
+  // Right Fibrocartilage Disc Stump (attached to right hemipelvis proximalPivotGroup for APC-II, APC-III, VS)
+  const rightDiscGeom = createPubicSymphysisVolume(-2.85, 0.0, 6, true, true, proxPivotCenter);
+  geometries.push(rightDiscGeom);
+  const rightDiscMesh = new THREE.Mesh(rightDiscGeom, cartilageMat);
+  rightDiscMesh.name = "lig_symphysis";
+  rightDiscMesh.visible = false;
+  proximalPivotGroup.add(rightDiscMesh);
+  meshes.push(rightDiscMesh);
+
+  // Right Fibrocartilage Disc Stump for Pubic Rami Fragment (attached to ltPivotGroup for LC-III)
+  let rightDiscMeshRami: THREE.Mesh | null = null;
+  if (ltPivotGroup) {
+    const ltCentroid = new THREE.Vector3(-21.29, -69.44, 44.68);
+    const rightDiscRamiGeom = createPubicSymphysisVolume(-2.85, 0.0, 6, true, true, ltCentroid);
+    geometries.push(rightDiscRamiGeom);
+    rightDiscMeshRami = new THREE.Mesh(rightDiscRamiGeom, cartilageMat);
+    rightDiscMeshRami.name = "lig_symphysis";
+    rightDiscMeshRami.visible = false;
+    ltPivotGroup.add(rightDiscMeshRami);
+    meshes.push(rightDiscMeshRami);
+  }
+
+  // Left Fibrocartilage Disc Stump (attached to left hemipelvis gtPivotGroup)
+  const leftDiscGeom = createPubicSymphysisVolume(0.0, 2.85, 6, true, true, gtCentroid);
+  geometries.push(leftDiscGeom);
+  const leftDiscMesh = new THREE.Mesh(leftDiscGeom, cartilageMat);
+  leftDiscMesh.name = "lig_symphysis";
+  leftDiscMesh.visible = false;
+  gtPivotGroup.add(leftDiscMesh);
+  meshes.push(leftDiscMesh);
+
+  // Symphysis Ruptured Stumps Array (cleanly separated solid white cartilage blocks during diastasis)
+  const symphysisStumps: THREE.Mesh[] = [
+    rightDiscMesh,
+    ...(rightDiscMeshRami ? [rightDiscMeshRami] : []),
+    leftDiscMesh,
+  ];
+
+  // 2. Anterior Sacroiliac Ligaments (ASIL) — Continuous Broad Fan Sheet
+  const asilSacrumRight = [
+    new THREE.Vector3(-46.2, 37.4, -2.6),
+    new THREE.Vector3(-47.9, 28.6, -1.3),
+    new THREE.Vector3(-44.9, 15.2, -10.0),
+    new THREE.Vector3(-44.0, 11.5, -16.8),
+  ];
+  const asilIliumRight = [
+    new THREE.Vector3(-55.9, 35.6, -12.4),
+    new THREE.Vector3(-49.6, 27.3, -15.0),
+    new THREE.Vector3(-45.2, 18.4, -17.8),
+    new THREE.Vector3(-45.5, 7.8, -27.9),
+  ];
+
+  const asilRightMesh = createSheetMesh(
+    "lig_asil",
+    asilSacrumRight,
+    asilIliumRight,
+    { stepsU: 14, stepsV: 8, thickness: 1.4, camber: 2.2, outwardDir: "anterior" }
+  );
+  group.add(asilRightMesh);
+
+  const asilRightStumps: THREE.Mesh[] = [
+    // Sacral Sheet Stump (in distalGroup)
+    addSheetStump(
+      "lig_asil",
+      asilSacrumRight,
+      asilIliumRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.42],
+      { stepsU: 10, stepsV: 5, thickness: 1.4, camber: 1.8, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_asil",
+      asilSacrumRight,
+      asilIliumRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.38, 0.45],
+      { stepsU: 10, stepsV: 3, thickness: 1.6, camber: 1.8, outwardDir: "anterior", customMat: tornMat }
+    ),
+    // Iliac Sheet Stump (in proximalPivotGroup)
+    addSheetStump(
+      "lig_asil",
+      asilSacrumRight,
+      asilIliumRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.58, 1.0],
+      { stepsU: 10, stepsV: 5, thickness: 1.4, camber: 1.8, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_asil",
+      asilSacrumRight,
+      asilIliumRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.55, 0.62],
+      { stepsU: 10, stepsV: 3, thickness: 1.6, camber: 1.8, outwardDir: "anterior", customMat: tornMat }
+    ),
+  ];
+
+  // ASIL Left (Symmetrical)
+  const asilSacrumLeft = asilSacrumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+  const asilIliumLeft = asilIliumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+
+  const asilLeftMesh = createSheetMesh(
+    "lig_asil",
+    asilSacrumLeft,
+    asilIliumLeft,
+    { stepsU: 14, stepsV: 8, thickness: 1.4, camber: 2.2, outwardDir: "anterior" }
+  );
+  group.add(asilLeftMesh);
+
+  const asilLeftStumps: THREE.Mesh[] = [
+    addSheetStump(
+      "lig_asil",
+      asilSacrumLeft,
+      asilIliumLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.42],
+      { stepsU: 10, stepsV: 5, thickness: 1.4, camber: 1.8, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_asil",
+      asilSacrumLeft,
+      asilIliumLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.38, 0.45],
+      { stepsU: 10, stepsV: 3, thickness: 1.6, camber: 1.8, outwardDir: "anterior", customMat: tornMat }
+    ),
+    addSheetStump(
+      "lig_asil",
+      asilSacrumLeft,
+      asilIliumLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.58, 1.0],
+      { stepsU: 10, stepsV: 5, thickness: 1.4, camber: 1.8, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_asil",
+      asilSacrumLeft,
+      asilIliumLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.55, 0.62],
+      { stepsU: 10, stepsV: 3, thickness: 1.6, camber: 1.8, outwardDir: "anterior", customMat: tornMat }
+    ),
+  ];
+
+
+  // 4. Sacrospinous Ligaments (SSL) — Broad Triangular Fan Sheet
+  const sslSacrumRight = [
+    new THREE.Vector3(-14.5, -45.8, -55.1),
+    new THREE.Vector3(-16.3, -49.9, -55.1),
+    new THREE.Vector3(-12.7, -54.6, -55.7),
+  ];
+  const sslSpineRight = [
+    new THREE.Vector3(-44.2, -35.5, -31.0),
+    new THREE.Vector3(-45.0, -36.1, -30.5),
+    new THREE.Vector3(-44.5, -37.2, -30.2),
+  ];
+
+  const sslRightMesh = createSheetMesh(
+    "lig_ssl",
+    sslSacrumRight,
+    sslSpineRight,
+    { stepsU: 10, stepsV: 6, thickness: 1.2, camber: 1.2, outwardDir: "anterior" }
+  );
+  group.add(sslRightMesh);
+
+  const sslRightStumps: THREE.Mesh[] = [
+    // Sacral Base Stump (in distalGroup)
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumRight,
+      sslSpineRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.45],
+      { stepsU: 8, stepsV: 4, thickness: 1.2, camber: 1.0, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumRight,
+      sslSpineRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.48],
+      { stepsU: 8, stepsV: 3, thickness: 1.4, camber: 1.0, outwardDir: "anterior", customMat: tornMat }
+    ),
+    // Spine Apex Stump (in proximalPivotGroup)
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumRight,
+      sslSpineRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.55, 1.0],
+      { stepsU: 8, stepsV: 4, thickness: 1.2, camber: 1.0, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumRight,
+      sslSpineRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.52, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.4, camber: 1.0, outwardDir: "anterior", customMat: tornMat }
+    ),
+  ];
+
+  const sslSacrumLeft = sslSacrumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+  const sslSpineLeft = sslSpineRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+
+  const sslLeftMesh = createSheetMesh(
+    "lig_ssl",
+    sslSacrumLeft,
+    sslSpineLeft,
+    { stepsU: 10, stepsV: 6, thickness: 1.2, camber: 1.2, outwardDir: "anterior" }
+  );
+  group.add(sslLeftMesh);
+
+  const sslLeftStumps: THREE.Mesh[] = [
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumLeft,
+      sslSpineLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.45],
+      { stepsU: 8, stepsV: 4, thickness: 1.2, camber: 1.0, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumLeft,
+      sslSpineLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.48],
+      { stepsU: 8, stepsV: 3, thickness: 1.4, camber: 1.0, outwardDir: "anterior", customMat: tornMat }
+    ),
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumLeft,
+      sslSpineLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.55, 1.0],
+      { stepsU: 8, stepsV: 4, thickness: 1.2, camber: 1.0, outwardDir: "anterior" }
+    ),
+    addSheetStump(
+      "lig_ssl",
+      sslSacrumLeft,
+      sslSpineLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.52, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.4, camber: 1.0, outwardDir: "anterior", customMat: tornMat }
+    ),
+  ];
+
+  // 5. Sacrotuberous Ligaments (STL) — Broad Heavy Strap Sheet
+  const stlSacrumRight = [
+    new THREE.Vector3(-28.4, -22.7, -46.2),
+    new THREE.Vector3(-15.8, -47.7, -54.8),
+    new THREE.Vector3(-8.6, -61.8, -56.6),
+  ];
+  const stlTuberosityRight = [
+    new THREE.Vector3(-43.6, -90.6, -25.4),
+    new THREE.Vector3(-42.0, -92.5, -24.0),
+    new THREE.Vector3(-40.5, -94.4, -22.6),
+  ];
+
+  const stlRightMesh = createSheetMesh(
+    "lig_stl",
+    stlSacrumRight,
+    stlTuberosityRight,
+    { stepsU: 12, stepsV: 7, thickness: 1.6, camber: 2.2, outwardDir: "posterior" }
+  );
+  group.add(stlRightMesh);
+
+  const stlRightStumps: THREE.Mesh[] = [
+    // Sacral Strap Stump (in distalGroup)
+    addSheetStump(
+      "lig_stl",
+      stlSacrumRight,
+      stlTuberosityRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.44],
+      { stepsU: 8, stepsV: 5, thickness: 1.6, camber: 1.8, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_stl",
+      stlSacrumRight,
+      stlTuberosityRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.47],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.8, outwardDir: "posterior", customMat: tornMat }
+    ),
+    // Tuberosity Strap Stump (in proximalPivotGroup)
+    addSheetStump(
+      "lig_stl",
+      stlSacrumRight,
+      stlTuberosityRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.56, 1.0],
+      { stepsU: 8, stepsV: 5, thickness: 1.6, camber: 1.8, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_stl",
+      stlSacrumRight,
+      stlTuberosityRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.53, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.8, outwardDir: "posterior", customMat: tornMat }
+    ),
+  ];
+
+  const stlSacrumLeft = stlSacrumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+  const stlTuberosityLeft = stlTuberosityRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+
+  const stlLeftMesh = createSheetMesh(
+    "lig_stl",
+    stlSacrumLeft,
+    stlTuberosityLeft,
+    { stepsU: 12, stepsV: 7, thickness: 1.6, camber: 2.2, outwardDir: "posterior" }
+  );
+  group.add(stlLeftMesh);
+
+  const stlLeftStumps: THREE.Mesh[] = [
+    addSheetStump(
+      "lig_stl",
+      stlSacrumLeft,
+      stlTuberosityLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.44],
+      { stepsU: 8, stepsV: 5, thickness: 1.6, camber: 1.8, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_stl",
+      stlSacrumLeft,
+      stlTuberosityLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.47],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.8, outwardDir: "posterior", customMat: tornMat }
+    ),
+    addSheetStump(
+      "lig_stl",
+      stlSacrumLeft,
+      stlTuberosityLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.56, 1.0],
+      { stepsU: 8, stepsV: 5, thickness: 1.6, camber: 1.8, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_stl",
+      stlSacrumLeft,
+      stlTuberosityLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.53, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.8, outwardDir: "posterior", customMat: tornMat }
+    ),
+  ];
+
+  // 6. Posterior Sacroiliac Ligaments (PSIL) — Dense Layered Dorsal Sheet Complex
+  const psilSacrumRight = [
+    new THREE.Vector3(-32.0, 18.0, -54.0),
+    new THREE.Vector3(-33.0, 31.0, -48.0),
+    new THREE.Vector3(-30.0, 40.0, -46.0),
+  ];
+  const psilIliumRight = [
+    new THREE.Vector3(-38.0, 22.0, -56.0),
+    new THREE.Vector3(-36.0, 36.0, -54.0),
+    new THREE.Vector3(-34.0, 44.0, -57.0),
+  ];
+
+  const psilRightMesh = createSheetMesh(
+    "lig_psil",
+    psilSacrumRight,
+    psilIliumRight,
+    { stepsU: 10, stepsV: 6, thickness: 1.6, camber: 1.5, outwardDir: "posterior" }
+  );
+  group.add(psilRightMesh);
+
+  const psilRightStumps: THREE.Mesh[] = [
+    addSheetStump(
+      "lig_psil",
+      psilSacrumRight,
+      psilIliumRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.45],
+      { stepsU: 8, stepsV: 4, thickness: 1.6, camber: 1.2, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumRight,
+      psilIliumRight,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.48],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.2, outwardDir: "posterior", customMat: tornMat }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumRight,
+      psilIliumRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.55, 1.0],
+      { stepsU: 8, stepsV: 4, thickness: 1.6, camber: 1.2, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumRight,
+      psilIliumRight,
+      proximalPivotGroup,
+      proxPivotCenter,
+      [0.52, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.2, outwardDir: "posterior", customMat: tornMat }
+    ),
+  ];
+
+  const psilSacrumLeft = psilSacrumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+  const psilIliumLeft = psilIliumRight.map((p) => new THREE.Vector3(-p.x, p.y, p.z));
+
+  const psilLeftMesh = createSheetMesh(
+    "lig_psil",
+    psilSacrumLeft,
+    psilIliumLeft,
+    { stepsU: 10, stepsV: 6, thickness: 1.6, camber: 1.5, outwardDir: "posterior" }
+  );
+  group.add(psilLeftMesh);
+
+  const psilLeftStumps: THREE.Mesh[] = [
+    addSheetStump(
+      "lig_psil",
+      psilSacrumLeft,
+      psilIliumLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.0, 0.45],
+      { stepsU: 8, stepsV: 4, thickness: 1.6, camber: 1.2, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumLeft,
+      psilIliumLeft,
+      distalGroup,
+      new THREE.Vector3(0, 0, 0),
+      [0.40, 0.48],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.2, outwardDir: "posterior", customMat: tornMat }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumLeft,
+      psilIliumLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.55, 1.0],
+      { stepsU: 8, stepsV: 4, thickness: 1.6, camber: 1.2, outwardDir: "posterior" }
+    ),
+    addSheetStump(
+      "lig_psil",
+      psilSacrumLeft,
+      psilIliumLeft,
+      gtPivotGroup,
+      gtCentroid,
+      [0.52, 0.60],
+      { stepsU: 8, stepsV: 3, thickness: 1.8, camber: 1.2, outwardDir: "posterior", customMat: tornMat }
+    ),
+  ];
+
+
+  const allStumpMeshes = [
+    ...symphysisStumps,
+    ...asilRightStumps,
+    ...asilLeftStumps,
+    ...sslRightStumps,
+    ...sslLeftStumps,
+    ...stlRightStumps,
+    ...stlLeftStumps,
+    ...psilRightStumps,
+    ...psilLeftStumps,
+  ];
+
+  const updateState = (visible: boolean, presetId: string) => {
+    if (!visible) {
+      group.visible = false;
+      for (const m of allStumpMeshes) m.visible = false;
+      return;
+    }
+    group.visible = true;
+
+    const isSymphysisTorn = presetId === "yb_apc2" || presetId === "yb_apc3" || presetId === "yb_lc3" || presetId === "yb_vs";
+    const isRightAntSiTorn = presetId === "yb_apc2" || presetId === "yb_apc3" || presetId === "yb_vs";
+    const isRightPostSiTorn = presetId === "yb_apc3" || presetId === "yb_vs";
+    const isLeftAntSiTorn = presetId === "yb_lc3";
+    const isLeftPostSiTorn = false;
+
+    // Symphysis
+    symphysisMesh.visible = !isSymphysisTorn;
+    const isRamiDisc = presetId === "yb_lc3";
+    rightDiscMesh.visible = isSymphysisTorn && !isRamiDisc;
+    if (rightDiscMeshRami) {
+      rightDiscMeshRami.visible = isSymphysisTorn && isRamiDisc;
+    }
+    leftDiscMesh.visible = isSymphysisTorn;
+
+    // Right ASIL
+    asilRightMesh.visible = !isRightAntSiTorn;
+    for (const m of asilRightStumps) m.visible = isRightAntSiTorn;
+
+    // Left ASIL
+    asilLeftMesh.visible = !isLeftAntSiTorn;
+    for (const m of asilLeftStumps) m.visible = isLeftAntSiTorn;
+
+    // Right SSL
+    sslRightMesh.visible = !isRightAntSiTorn;
+    for (const m of sslRightStumps) m.visible = isRightAntSiTorn;
+
+    // Left SSL
+    sslLeftMesh.visible = !isLeftAntSiTorn;
+    for (const m of sslLeftStumps) m.visible = isLeftAntSiTorn;
+
+    // Right STL
+    stlRightMesh.visible = !isRightAntSiTorn;
+    for (const m of stlRightStumps) m.visible = isRightAntSiTorn;
+
+    // Left STL
+    stlLeftMesh.visible = !isLeftAntSiTorn;
+    for (const m of stlLeftStumps) m.visible = isLeftAntSiTorn;
+
+    // Right PSIL (STAYS INTACT IN APC-II as the posterior mechanical hinge!)
+    psilRightMesh.visible = !isRightPostSiTorn;
+    for (const m of psilRightStumps) m.visible = isRightPostSiTorn;
+
+    // Left PSIL
+    psilLeftMesh.visible = !isLeftPostSiTorn;
+    for (const m of psilLeftStumps) m.visible = isLeftPostSiTorn;
+  };
+
+  return {
+    group,
+    mat,
+    tornMat,
+    cartilageMat,
+    geometries,
+    meshes,
+    symphysisMesh,
+    asilRightMesh,
+    asilLeftMesh,
+    sslRightMesh,
+    sslLeftMesh,
+    stlRightMesh,
+    stlLeftMesh,
+    psilRightMesh,
+    psilLeftMesh,
+    symphysisStumps,
+    asilRightStumps,
+    asilLeftStumps,
+    sslRightStumps,
+    sslLeftStumps,
+    stlRightStumps,
+    stlLeftStumps,
+    psilRightStumps,
+    psilLeftStumps,
+    updateState,
+  };
+}
+
 interface Bone3DViewerModalProps {
   modelUrl: string;
   boneName: string;
@@ -2967,7 +4846,7 @@ export interface PickedStructureInfo {
   titleEn: string;
   category: "ligament" | "fracture_fragment" | "bone" | "muscle_force";
   badge: string;
-  badgeColor?: "teal" | "rose" | "amber" | "indigo" | "cyan" | "purple";
+  badgeColor?: "teal" | "rose" | "amber" | "indigo" | "cyan" | "purple" | "emerald";
   details?: string;
   screenX: number;
   screenY: number;
@@ -2977,7 +4856,7 @@ export interface PickedStructureInfo {
 export interface HoveredStructureInfo {
   titleEn: string;
   category: "ligament" | "fracture_fragment" | "bone" | "muscle_force";
-  badgeColor?: "teal" | "rose" | "amber" | "indigo" | "cyan" | "purple";
+  badgeColor?: "teal" | "rose" | "amber" | "indigo" | "cyan" | "purple" | "emerald";
   screenX: number;
   screenY: number;
 }
@@ -2997,6 +4876,7 @@ function resolvePickedStructure(
   isHumerus?: boolean,
   isClavicle?: boolean,
   isPatella?: boolean,
+  isPelvis?: boolean,
   proximalMesh?: THREE.Mesh | null,
   distalMesh?: THREE.Mesh | null,
   gtMesh?: THREE.Mesh | null,
@@ -3212,11 +5092,73 @@ function resolvePickedStructure(
           badgeColor: "cyan",
           details: "Forms the osseoligamentous coracoacromial arch, preventing superior migration and subluxation of the humeral head.",
         };
+      case "lig_symphysis": {
+        const pId = activePreset?.id || "";
+        const isTorn = pId === "yb_apc2" || pId === "yb_apc3" || pId === "yb_lc3" || pId === "yb_vs";
+        return {
+          titleEn: "Pubic Symphysis (Fibrocartilaginous Disc)",
+          category: "ligament",
+          badge: isTorn ? "RUPTURED (>2.5 cm Diastasis)" : "Anterior Ring Restraint (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Central fibrocartilaginous interpubic disc bridging the articular facets of the pubic bones across the midline. Diastasis >2.5 cm indicates disruption of anterior SI and sacrospinous ligaments (APC-II Open Book).",
+        };
+      }
+      case "lig_asil": {
+        const pId = activePreset?.id || "";
+        const isRightTorn = pId === "yb_apc2" || pId === "yb_apc3" || pId === "yb_vs";
+        const isLeftTorn = pId === "yb_lc3";
+        const isTorn = isRightTorn || isLeftTorn;
+        return {
+          titleEn: "Anterior Sacroiliac Ligament (ASIL)",
+          category: "ligament",
+          badge: isTorn ? "RUPTURED (Open Book / Shear)" : "Anterior SI Stabilizer (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Broad flat ligament bridging the anterior sacral ala to the anterior margin of the auricular surface of the ilium. Primary restraint resisting external rotation of the hemipelvis; torn in APC-II, APC-III, and VS injuries.",
+        };
+      }
+      case "lig_ssl": {
+        const pId = activePreset?.id || "";
+        const isRightTorn = pId === "yb_apc2" || pId === "yb_apc3" || pId === "yb_vs";
+        const isLeftTorn = pId === "yb_lc3";
+        const isTorn = isRightTorn || isLeftTorn;
+        return {
+          titleEn: "Sacrospinous Ligament (SSL)",
+          category: "ligament",
+          badge: isTorn ? "RUPTURED (Rotational Failure)" : "Pelvic Floor Restraint (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Thin triangular ligament running from the lateral border of the lower sacrum and coccyx to the ischial spine. Divides the sciatic notch into greater and lesser sciatic foramina; essential secondary restraint against rotational open-book opening.",
+        };
+      }
+      case "lig_stl": {
+        const pId = activePreset?.id || "";
+        const isRightTorn = pId === "yb_apc2" || pId === "yb_apc3" || pId === "yb_vs";
+        const isLeftTorn = pId === "yb_lc3";
+        const isTorn = isRightTorn || isLeftTorn;
+        return {
+          titleEn: "Sacrotuberous Ligament (STL)",
+          category: "ligament",
+          badge: isTorn ? "RUPTURED (Vertical / Rotational Failure)" : "Vertical Stability Restraint (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Extremely strong fan-shaped ligament running from the posterior iliac spines and lateral sacrum/coccyx to the ischial tuberosity. Primary restraint against vertical shear translation and upward tilting of the lower sacrum.",
+        };
+      }
+      case "lig_psil": {
+        const pId = activePreset?.id || "";
+        const isTorn = pId === "yb_apc3" || pId === "yb_vs";
+        const isHinge = pId === "yb_apc2";
+        return {
+          titleEn: "Posterior Sacroiliac Ligament Complex (PSIL)",
+          category: "ligament",
+          badge: isTorn ? "RUPTURED (Floating Hemipelvis)" : (isHinge ? "Posterior Hinge (Intact in APC-II)" : "Posterior SI Tension Band (Intact)"),
+          badgeColor: isTorn ? "rose" : (isHinge ? "amber" : "cyan"),
+          details: "Strongest ligament complex in the human body, comprising short and long posterior sacroiliac ligaments and the dense interosseous sacroiliac ligament. Acts as the intact posterior mechanical hinge in APC-II open-book injuries; completely disrupted in APC-III and Vertical Shear.",
+        };
+      }
     }
   }
 
   // 3. Check Individual Ankle & Hindfoot Bones
-  if (isTibia && activeSubregion.id === "distal" && hit.object === distalMesh) {
+  if ((isTibia || isFoot) && (activeSubregion.id === "distal" || activeSubregion.id === "pilon" || activeSubregion.id === "talus" || activeSubregion.id === "calcaneus") && hit.object === distalMesh) {
     if (hit.faceIndex != null) {
       const vertIdx = hit.faceIndex * 3;
       const matched = boneRanges.find((r) => vertIdx >= r.start && vertIdx < r.end);
@@ -3276,6 +5218,203 @@ function resolvePickedStructure(
     }
   }
 
+  // 3b. Check Pelvis Multi-Bone Assembly Components
+  if (isPelvis) {
+    if (activeSubregion.id === "acetabulum") {
+      const pId = activePreset?.id || "";
+      if (hit.object === shardMesh) {
+        if (pId === "jl_both_column") {
+          return {
+            titleEn: "Central Roof / Quadrilateral Plate Fragment",
+            category: "fracture_fragment",
+            badge: "Floating Articular Vault",
+            badgeColor: "rose",
+            details: "Disconnected acetabular weight-bearing roof and quadrilateral plate, subject to medial impaction and central dislocation.",
+          };
+        }
+        return {
+          titleEn: "Posterior Wall Rim Fragment",
+          category: "fracture_fragment",
+          badge: "Posterior Articular Wall",
+          badgeColor: "purple",
+          details: "Detached posterosuperior articular wall rim fragment, causing posterior hip instability and vulnerability to sciatic nerve stretching.",
+        };
+      }
+      if (hit.object === gtMesh) {
+        if (pId === "jl_t_shaped") {
+          return {
+            titleEn: "Posterior Column / Ischial Fragment",
+            category: "fracture_fragment",
+            badge: "Ischial Pillar (T-Stem)",
+            badgeColor: "amber",
+            details: "Posterior half of the divided ischiopubic segment separated by the vertical stem fracture through the obturator foramen.",
+          };
+        }
+        if (pId === "jl_acpht") {
+          return {
+            titleEn: "Posterior Hemitransverse Fragment",
+            category: "fracture_fragment",
+            badge: "Low Posterior Column",
+            badgeColor: "amber",
+            details: "Strictly transverse fracture component crossing the posterior column below the intact superior dome.",
+          };
+        }
+        return {
+          titleEn: "Posterior Column (Ilioischial Pillar) Fragment",
+          category: "fracture_fragment",
+          badge: "Ilioischial Column",
+          badgeColor: "amber",
+          details: "Vertical column comprising the greater sciatic notch, ischial spine, posterior acetabulum, and ischial tuberosity.",
+        };
+      }
+      if (hit.object === ltMesh) {
+        if (pId === "jl_aw") {
+          return {
+            titleEn: "Anterior Wall Rim Fragment",
+            category: "fracture_fragment",
+            badge: "Anterior Articular Wall",
+            badgeColor: "cyan",
+            details: "Detached anterosuperior articular rim disrupting the middle iliopectineal line on AP and obturator oblique views.",
+          };
+        }
+        if (pId === "jl_transverse" || pId === "jl_trans_pw") {
+          return {
+            titleEn: "Inferior Ischiopubic Fragment",
+            category: "fracture_fragment",
+            badge: "Conjoint Ischiopubic Unit",
+            badgeColor: "cyan",
+            details: "Inferior articular half maintaining an intact obturator foramen, displaced medially under the intact superior iliac dome.",
+          };
+        }
+        if (pId === "jl_t_shaped") {
+          return {
+            titleEn: "Anterior Column / Pubic Fragment",
+            category: "fracture_fragment",
+            badge: "Pubic Pillar (T-Stem)",
+            badgeColor: "cyan",
+            details: "Anterior half of the divided ischiopubic segment separated by the vertical stem fracture into the obturator ring.",
+          };
+        }
+        return {
+          titleEn: "Anterior Column (Iliopubic Pillar) Fragment",
+          category: "fracture_fragment",
+          badge: "Iliopubic Column",
+          badgeColor: "cyan",
+          details: "Anterior column extending from the anterior iliac crest/ASIS down across the pelvic brim to the superior pubic ramus.",
+        };
+      }
+      if (hit.object === proximalMesh) {
+        if (pId === "jl_both_column") {
+          return {
+            titleEn: "Intact Posterior Ilium with Pathognomonic Spur Sign",
+            category: "fracture_fragment",
+            badge: "Spur Sign (Sacroiliac Anchor)",
+            badgeColor: "teal",
+            details: "Posterior iliac wing remaining anchored to the sacrum; its prominent lower projection forms the pathognomonic Spur Sign on iliac oblique view.",
+          };
+        }
+        if (pId === "jl_transverse" || pId === "jl_t_shaped" || pId === "jl_trans_pw") {
+          return {
+            titleEn: "Superior Iliac Dome & SI Anchor",
+            category: "fracture_fragment",
+            badge: "Intact Weight-Bearing Roof",
+            badgeColor: "teal",
+            details: "Superior ilium and weight-bearing acetabular roof anchored stably to the sacrum above the transverse fracture line.",
+          };
+        }
+        if (pId === "jl_pc" || pId === "jl_pc_pw") {
+          return {
+            titleEn: "Intact Anterior Column & Superior Ilium",
+            category: "fracture_fragment",
+            badge: "Intact Iliopubic Unit",
+            badgeColor: "teal",
+            details: "Intact anterior column, pelvic brim, and iliac crest remaining attached to the axial skeleton.",
+          };
+        }
+        if (pId === "jl_ac" || pId === "jl_acpht") {
+          return {
+            titleEn: "Intact Posterior Column & Sacroiliac Pillar",
+            category: "fracture_fragment",
+            badge: "Intact Ilioischial Unit",
+            badgeColor: "teal",
+            details: "Intact posterior column and posterior iliac wing remaining anchored to the sacrum.",
+          };
+        }
+        return {
+          titleEn: "Right Hemipelvis with Acetabular Rim Defect",
+          category: "fracture_fragment",
+          badge: "Pelvic Ring Foundation",
+          badgeColor: "teal",
+          details: "Main hemipelvis and intact column structure surrounding the detached articular wall rim.",
+        };
+      }
+      if (hit.object === distalMesh) {
+        return {
+          titleEn: "Pelvic Foundation (Left Hemipelvis & Sacrum)",
+          category: "bone",
+          badge: "Stable Axial Base",
+          badgeColor: "indigo",
+          details: "Contralateral left hemipelvis and sacrum providing the stable anatomical foundation for acetabular joint analysis.",
+        };
+      }
+    }
+    if (hit.object === shardMesh) {
+      return {
+        titleEn: "Iliac Crescent Fragment (Posterior SI Hinge)",
+        category: "fracture_fragment",
+        badge: "Crescent Fracture (Day Type II)",
+        badgeColor: "purple",
+        details: "Posterosuperior iliac wing fragment containing the PSIS and SI joint articulation that remains anchored to the sacrum via intact posterior sacroiliac ligaments while the anterior hemipelvis internally rotates.",
+      };
+    }
+    if (hit.object === ltMesh) {
+      return {
+        titleEn: "Pubic Rami Fragment (Superior & Inferior Rami)",
+        category: "fracture_fragment",
+        badge: "Transverse Pubic Rami Fracture",
+        badgeColor: "rose",
+        details: "Transverse fracture through the superior and inferior pubic rami resulting from lateral compression (LC-I/LC-II/LC-III) force vectors.",
+      };
+    }
+    if (hit.object === proximalMesh) {
+      const pId = activePreset?.id || "";
+      if (pId === "yb_lc2" || pId === "yb_lc3") {
+        return {
+          titleEn: "Main Anterior Hemipelvis (Internally Rotated)",
+          category: "fracture_fragment",
+          badge: "Internally Rotated Hemipelvis",
+          badgeColor: "rose",
+          details: "Anterior iliac wing, acetabulum, and ischium internally rotated away from the stationary posterior crescent fragment, narrowing pelvic volume.",
+        };
+      }
+      return {
+        titleEn: "Right Hemipelvis (Ilium, Ischium & Pubis)",
+        category: "fracture_fragment",
+        badge: "Right Innominant Bone",
+        badgeColor: "teal",
+        details: "Articulates posteriorly with the sacrum at the sacroiliac (SI) joint and anteriorly with the contralateral pubic bone at the pubic symphysis to form the closed pelvic ring.",
+      };
+    }
+    if (hit.object === gtMesh) {
+      return {
+        titleEn: "Left Hemipelvis (Ilium, Ischium & Pubis)",
+        category: "fracture_fragment",
+        badge: "Left Innominant Bone",
+        badgeColor: "teal",
+        details: "Composed of three fused bones: ilium (superior wing & crest), ischium (posteroinferior body & tuberosity), and pubis (anteroinferior body & rami meeting at the symphysis).",
+      };
+    }
+    if (hit.object === distalMesh) {
+      return {
+        titleEn: "Sacrum (S1–S5 Fused Vertebrae & Sacral Ala)",
+        category: "bone",
+        badge: "Pelvic Keystone",
+        badgeColor: "indigo",
+        details: "Triangular keystone anchored between the two iliac wings by the dense posterior sacroiliac ligamentous complex, transmitting axial spinal loads across the pelvis to the lower extremities.",
+      };
+    }
+  }
+
   // 4. Check Fractured Bone Fragments
   const isHitProximal = hit.object === proximalMesh;
   const isHitDistal = hit.object === distalMesh;
@@ -3284,7 +5423,34 @@ function resolvePickedStructure(
   const isHitShard = hit.object === shardMesh;
 
   if (isHitProximal) {
-    if (isTibia) {
+    if (isTibia || isFoot) {
+      if (activeSubregion.id === "calcaneus") {
+        return {
+          titleEn: "Tongue Fragment (Posterior Facet & Dorsal Tuberosity)",
+          category: "fracture_fragment",
+          badge: "Essex-Lopresti Tongue Type",
+          badgeColor: "amber",
+          details: "Continuous rigid fragment comprising the posterior subtalar facet and dorsal tuberosity. Secondary fracture line exits horizontally out the back of the calcaneus. Levered upward dorsally by Achilles tendon tension, tenting and threatening posterior heel skin integrity.",
+        };
+      }
+      if (activeSubregion.id === "talus") {
+        return {
+          titleEn: "Talar Body Fragment",
+          category: "fracture_fragment",
+          badge: "Talar Dome & Posterior Facet",
+          badgeColor: "emerald",
+          details: "Body of the talus comprising the trochlea and posterior calcaneal articular facet. Subject to posterior/posteromedial extrusion and high risk of avascular necrosis (AVN).",
+        };
+      }
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Central Die-Punch Articular Fragment",
+          category: "fracture_fragment",
+          badge: "Central Impaction",
+          badgeColor: "rose",
+          details: "Multiple subchondral fragments driven into the metaphyseal cancellous bone from high-energy axial loading.",
+        };
+      }
       if (activeSubregion.id === "distal") {
         const pId = activePreset?.id || "";
         if (pId === "lh_ser_4") {
@@ -3360,6 +5526,15 @@ function resolvePickedStructure(
           details: "Wedge-shaped articular keystone transmitting body weight from the tibial plafond to the calcaneus and navicular. ~60% covered by articular cartilage with no direct muscular attachments.",
         };
       }
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Central Die-Punch Articular Fragment",
+          category: "fracture_fragment",
+          badge: "Central Impaction",
+          badgeColor: "amber",
+          details: "Multiple subchondral fragments driven into the metaphyseal cancellous bone from high-energy axial loading.",
+        };
+      }
       const mode = activePreset?.partitionMode || "";
       if (mode === "schatzker_2" || mode === "schatzker_3") {
         return {
@@ -3425,7 +5600,35 @@ function resolvePickedStructure(
   }
 
   if (isHitDistal) {
-    if (isTibia) {
+    if (isTibia || isFoot) {
+      if (activeSubregion.id === "calcaneus") {
+        const pt = hit.point;
+        if (pt.x > 6 && pt.y > -195 && pt.z > -18) {
+          return {
+            titleEn: "Sustentaculum Tali (Constant Fragment)",
+            category: "bone",
+            badge: "Anteromedial Constant Fragment",
+            badgeColor: "teal",
+            details: "Anteromedial sustentacular fragment created by the primary oblique fracture line through the posterior facet. Firmly anchored to the talus via the deltoid and talocalcaneal interosseous ligaments; serves as the anatomically stable reference foundation for surgical reduction.",
+          };
+        }
+        return {
+          titleEn: "Calcaneus (Plantar Body & Anterior Process)",
+          category: "bone",
+          badge: "Hindfoot Foundation",
+          badgeColor: "teal",
+          details: "Inferior heel body and anterior process articulating with the cuboid at the calcaneocuboid joint.",
+        };
+      }
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Tibial Shaft & Metaphyseal Foundation",
+          category: "fracture_fragment",
+          badge: "Tibia",
+          badgeColor: "teal",
+          details: "Metaphyseal cylinder and proximal diaphysis of the tibia intact above the articular fracture lines.",
+        };
+      }
       if (activeSubregion.id === "distal") {
         const pt = hit.point;
         if (pt.x < -10 && pt.y > -145) {
@@ -3491,25 +5694,48 @@ function resolvePickedStructure(
   }
 
   if (isHitGt) {
-    if (isTibia && activeSubregion.id === "distal") {
-      const pId = activePreset?.id || "";
-      if (pId === "lh_pa_3") {
+    if (isTibia || isFoot) {
+      if (activeSubregion.id === "calcaneus") {
+        const isTongue = activePreset?.id === "essex_tongue";
         return {
-          titleEn: "Comminuted Fibular Butterfly Shard (Weber C)",
+          titleEn: isTongue ? "Plantar Tuberosity Fragment" : "Calcaneal Tuberosity Fragment",
           category: "fracture_fragment",
-          badge: "Lauge-Hansen PA III (Lateral Butterfly)",
-          badgeColor: "cyan",
-          details: "Lateral cortical butterfly wedge fragment shattered off the fibular diaphysis from eccentric compression and bending stress in pronation-abduction (Weber C).",
+          badge: isTongue ? "Plantar Heel Fragment" : "Achilles Insertion / Heel Pillar",
+          badgeColor: "amber",
+          details: isTongue
+            ? "Plantar tuberosity separated beneath the horizontal secondary fracture line, opening a horizontal fracture cleft at the posterior heel."
+            : "Posterior calcaneal tuberosity separated from the depressed facet by the secondary fracture line running directly behind the facet. Pulled upward and forward by the Achilles tendon, shortening the heel and inverting Böhler's angle (<0°).",
         };
       }
-      const isPer4 = pId === "lh_per_4";
-      return {
-        titleEn: "Posterior Malleolus (Volkmann's Fragment)",
-        category: "fracture_fragment",
-        badge: isPer4 ? "Lauge-Hansen PER IV (Volkmann's Triangle)" : "Lauge-Hansen SER III–IV (Volkmann's Triangle)",
-        badgeColor: isPer4 ? "purple" : "rose",
-        details: "Posterolateral distal tibial articular lip avulsed by the posterior inferior tibiofibular ligament (PITFL). Fixation indicated if involving >25% of the articular surface or demonstrating >2mm residual step-off after fibular reduction.",
-      };
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Posterior Volkmann Fragment",
+          category: "fracture_fragment",
+          badge: "Posterior Column",
+          badgeColor: "purple",
+          details: "Posterior articular plafond fragment (Volkmann) attached to the posterior inferior tibiofibular ligament (PITFL).",
+        };
+      }
+      if (activeSubregion.id === "distal") {
+        const pId = activePreset?.id || "";
+        if (pId === "lh_pa_3") {
+          return {
+            titleEn: "Comminuted Fibular Butterfly Shard (Weber C)",
+            category: "fracture_fragment",
+            badge: "Lauge-Hansen PA III (Lateral Butterfly)",
+            badgeColor: "cyan",
+            details: "Lateral cortical butterfly wedge fragment shattered off the fibular diaphysis from eccentric compression and bending stress in pronation-abduction (Weber C).",
+          };
+        }
+        const isPer4 = pId === "lh_per_4";
+        return {
+          titleEn: "Posterior Malleolus (Volkmann's Fragment)",
+          category: "fracture_fragment",
+          badge: isPer4 ? "Lauge-Hansen PER IV (Volkmann's Triangle)" : "Lauge-Hansen SER III–IV (Volkmann's Triangle)",
+          badgeColor: isPer4 ? "purple" : "rose",
+          details: "Posterolateral distal tibial articular lip avulsed by the posterior inferior tibiofibular ligament (PITFL). Fixation indicated if involving >25% of the articular surface or demonstrating >2mm residual step-off after fibular reduction.",
+        };
+      }
     }
     if (isHumerus) {
       return {
@@ -3530,42 +5756,71 @@ function resolvePickedStructure(
   }
 
   if (isHitLt) {
-    if (isTibia && activeSubregion.id === "distal") {
-      const pId = activePreset?.id || "";
-      if (pId === "lh_sa_2") {
+    if (isTibia || isFoot) {
+      if (activeSubregion.id === "calcaneus") {
         return {
-          titleEn: "Medial Malleolus Vertical Shear Fragment",
+          titleEn: "Lateral Wall & Anterior Process Fragment",
           category: "fracture_fragment",
-          badge: "Lauge-Hansen SA II (Vertical Shear)",
-          badgeColor: "rose",
-          details: "Vertical or steeply oblique shear fracture propagating upward into the distal metaphyseal cortex from talar adduction impaction. Prone to shear displacement; requires horizontal lag screws and medial anti-glide buttress plate.",
-        };
-      }
-      if (pId.startsWith("lh_per_")) {
-        return {
-          titleEn: "Medial Malleolus Transverse Avulsion Fragment",
-          category: "fracture_fragment",
-          badge: "Lauge-Hansen PER I–IV (Medial Avulsion)",
-          badgeColor: "purple",
-          details: "Transverse tension avulsion fracture across the base of the medial malleolus at or below the plafond resulting from pronation-external rotation torque.",
-        };
-      }
-      if (pId.startsWith("lh_pa_")) {
-        return {
-          titleEn: "Medial Malleolus Transverse Avulsion Fragment",
-          category: "fracture_fragment",
-          badge: "Lauge-Hansen PA I–III (Medial Avulsion)",
+          badge: "Lateral Cortical Blowout",
           badgeColor: "cyan",
-          details: "Transverse tension avulsion fracture across the base of the medial malleolus at or below the plafond resulting from pronation-abduction torque.",
+          details: "Lateral cortical wall splayed outward and downward by axial talar wedge impaction, causing lateral hindfoot widening and peroneal tendon impingement.",
         };
       }
-      return {
-        titleEn: "Medial Malleolus Transverse Avulsion Fragment",
-        category: "fracture_fragment",
-        badge: "Lauge-Hansen SER IV (Trimalleolar)",
-        badgeColor: "rose",
-        details: "Transverse tensile avulsion fracture across the base of the medial malleolus at or below the plafond. Accompanied by talar lateral shift and medial clear space widening.",
-      };
+      if (activeSubregion.id === "talus") {
+        return {
+          titleEn: "Navicular Bone (Dislocated)",
+          category: "fracture_fragment",
+          badge: "Talonavicular Dislocation",
+          badgeColor: "amber",
+          details: "Navicular bone articulating with the displaced talar head in Hawkins Type IV triple-joint fracture-dislocation.",
+        };
+      }
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Medial Plafond Fragment",
+          category: "fracture_fragment",
+          badge: "Medial Column",
+          badgeColor: "amber",
+          details: "Medial articular column fragment comprising the medial malleolus and adjacent weight-bearing tibial plafond.",
+        };
+      }
+      if (activeSubregion.id === "distal") {
+        const pId = activePreset?.id || "";
+        if (pId === "lh_sa_2") {
+          return {
+            titleEn: "Medial Malleolus Vertical Shear Fragment",
+            category: "fracture_fragment",
+            badge: "Lauge-Hansen SA II (Vertical Shear)",
+            badgeColor: "rose",
+            details: "Vertical or steeply oblique shear fracture propagating upward into the distal metaphyseal cortex from talar adduction impaction. Prone to shear displacement; requires horizontal lag screws and medial anti-glide buttress plate.",
+          };
+        }
+        if (pId.startsWith("lh_per_")) {
+          return {
+            titleEn: "Medial Malleolus Transverse Avulsion Fragment",
+            category: "fracture_fragment",
+            badge: "Lauge-Hansen PER I–IV (Medial Avulsion)",
+            badgeColor: "purple",
+            details: "Transverse tension avulsion fracture across the base of the medial malleolus at or below the plafond resulting from pronation-external rotation torque.",
+          };
+        }
+        if (pId.startsWith("lh_pa_")) {
+          return {
+            titleEn: "Medial Malleolus Transverse Avulsion Fragment",
+            category: "fracture_fragment",
+            badge: "Lauge-Hansen PA I–III (Medial Avulsion)",
+            badgeColor: "cyan",
+            details: "Transverse tension avulsion fracture across the base of the medial malleolus at or below the plafond resulting from pronation-abduction torque.",
+          };
+        }
+        return {
+          titleEn: "Medial Malleolus Transverse Avulsion Fragment",
+          category: "fracture_fragment",
+          badge: "Lauge-Hansen SER IV (Trimalleolar)",
+          badgeColor: "rose",
+          details: "Transverse tensile avulsion fracture across the base of the medial malleolus at or below the plafond. Accompanied by talar lateral shift and medial clear space widening.",
+        };
+      }
     }
     if (isHumerus) {
       return {
@@ -3586,7 +5841,44 @@ function resolvePickedStructure(
   }
 
   if (isHitShard) {
-    if (isTibia) {
+    if (isTibia || isFoot) {
+      if (activeSubregion.id === "calcaneus") {
+        const isTongue = activePreset?.id === "essex_tongue";
+        if (isTongue) {
+          return {
+            titleEn: "Lateral Wall & Anterior Process Fragment",
+            category: "fracture_fragment",
+            badge: "Lateral Cortical Blowout",
+            badgeColor: "cyan",
+            details: "Lateral cortical wall blown outward by axial wedge impaction of the lateral process of the talus.",
+          };
+        }
+        return {
+          titleEn: "Depressed Posterior Articular Facet Block",
+          category: "fracture_fragment",
+          badge: "Subchondral Joint Depression",
+          badgeColor: "rose",
+          details: "Isolated subchondral articular facet sheared and crushed deep into the cancellous body of the calcaneus (Böhler's angle < 0°). The secondary fracture line runs directly behind the facet, completely separating it from the tuberosity. Requires surgical elevation and subchondral bone grafting.",
+        };
+      }
+      if (activeSubregion.id === "talus") {
+        return {
+          titleEn: "Talar Head & Neck Fragment",
+          category: "fracture_fragment",
+          badge: "Anterior Articular Segment",
+          badgeColor: "emerald",
+          details: "Anterior talar neck and head articulating with the navicular and anterior/middle calcaneal facets. In Type IV, dislocated from the talonavicular joint.",
+        };
+      }
+      if (activeSubregion.id === "pilon") {
+        return {
+          titleEn: "Anterolateral Chaput Fragment",
+          category: "fracture_fragment",
+          badge: "Anterolateral Column",
+          badgeColor: "cyan",
+          details: "Anterolateral articular plafond fragment (Tillaux-Chaput) at the insertion of the anterior inferior tibiofibular ligament (AITFL), accompanied by distal fibular fracture.",
+        };
+      }
       if (activeSubregion.id === "distal") {
         const pId = activePreset?.id || "";
         if (pId.startsWith("lh_ser_")) {
@@ -3672,11 +5964,17 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const [loading, setLoading] = useState(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  const isTibia = modelUrl.toLowerCase().includes("tibia") || boneName.toLowerCase().includes("tibia");
-  const isHumerus = modelUrl.toLowerCase().includes("humerus") || boneName.toLowerCase().includes("humerus");
-  const isClavicle = modelUrl.toLowerCase().includes("clavicle") || boneName.toLowerCase().includes("clavicle");
-  const isPatella = modelUrl.toLowerCase().includes("patella") || boneName.toLowerCase().includes("patella");
-  const availableSubregions = isTibia
+  const isPelvis = modelUrl.toLowerCase().includes("pelvis") || boneName.toLowerCase().includes("pelvis") || boneName.toLowerCase().includes("เชิงกราน");
+  const isFoot = !isPelvis && (modelUrl.toLowerCase().includes("foot") || boneName.toLowerCase().includes("foot") || boneName.toLowerCase().includes("talus") || boneName.toLowerCase().includes("calcaneus") || boneName.includes("เท้า"));
+  const isTibia = !isPelvis && !isFoot && (modelUrl.toLowerCase().includes("tibia") || boneName.toLowerCase().includes("tibia") || boneName.includes("หน้าแข้ง"));
+  const isHumerus = !isPelvis && (modelUrl.toLowerCase().includes("humerus") || boneName.toLowerCase().includes("humerus"));
+  const isClavicle = !isPelvis && (modelUrl.toLowerCase().includes("clavicle") || boneName.toLowerCase().includes("clavicle"));
+  const isPatella = !isPelvis && (modelUrl.toLowerCase().includes("patella") || boneName.toLowerCase().includes("patella"));
+  const availableSubregions = isPelvis
+    ? PELVIS_SUBREGIONS
+    : isFoot
+    ? FOOT_SUBREGIONS
+    : isTibia
     ? TIBIA_SUBREGIONS
     : isPatella
     ? PATELLA_SUBREGIONS
@@ -3730,10 +6028,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       const match = availableSubregions.find(
         (s) =>
           s.id === initialRegionId ||
+          (s.id === "calcaneus" && (initialRegionId === "calcaneus" || initialRegionId === "essex" || initialRegionId === "essex-lopresti")) ||
+          (s.id === "talus" && (initialRegionId === "talus" || initialRegionId === "foot" || initialRegionId === "talar-neck" || initialRegionId === "hawkins")) ||
           (s.id === "ac-joint" && (initialRegionId === "ac-joint" || initialRegionId === "ac_joint")) ||
           (s.id === "distal" && (initialRegionId === "distal" || initialRegionId === "ankle" || initialRegionId === "distal-femur" || initialRegionId === "distal-humerus" || initialRegionId === "distal-clavicle")) ||
           (s.id === "proximal" && (initialRegionId === "proximal" || initialRegionId === "proximal-humerus")) ||
-          (s.id === "shaft" && (initialRegionId === "shaft" || initialRegionId === "humeral-shaft" || initialRegionId === "femoral-shaft" || initialRegionId === "clavicle-shaft"))
+          (s.id === "shaft" && (initialRegionId === "shaft" || initialRegionId === "humeral-shaft" || initialRegionId === "femoral-shaft" || initialRegionId === "clavicle-shaft")) ||
+          (s.id === "pilon" && (initialRegionId === "pilon" || initialRegionId === "plafond" || initialRegionId === "tibial-plafond"))
       );
       if (match) return match.id;
     }
@@ -3744,7 +6045,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
 
   // Classification Type selection state within active subregion ("intact" or preset.id)
   const [selectedPresetId, setSelectedPresetId] = useState<string>(() => {
-    return activeSubregion.presets[0]?.id ?? "intact";
+    return isPelvis ? "intact" : (activeSubregion.presets[0]?.id ?? "intact");
   });
 
   const selectedPresetIdRef = useRef(selectedPresetId);
@@ -3753,11 +6054,19 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const activePreset = activeSubregion.presets.find((p) => p.id === selectedPresetId);
 
   // Lauge-Hansen hierarchical mechanism group selection (null = show groups, "ser" | "sa" | "per" | "pa" = show stages)
-  const isAnkleDistal = isTibia && activeSubregion.id === "distal";
+  const isAnkleDistal = (isTibia || isFoot) && activeSubregion.id === "distal";
   const [selectedMechanismGroup, setSelectedMechanismGroup] = useState<"ser" | "sa" | "per" | "pa" | null>(null);
 
+  // Young-Burgess hierarchical mechanism group selection (null = show groups, "apc" | "lc" | "vs" | null)
+  const isPelvisRing = isPelvis && activeSubregion.id === "pelvic-ring";
+  const [selectedPelvisGroup, setSelectedPelvisGroup] = useState<"apc" | "lc" | "vs" | null>(null);
+
+  // Judet-Letournel hierarchical classification group selection (null = show groups, "elementary" | "associated" | null)
+  const isPelvisAcetabulum = isPelvis && activeSubregion.id === "acetabulum";
+  const [selectedAcetabulumGroup, setSelectedAcetabulumGroup] = useState<"elementary" | "associated" | null>(null);
+
   // Dynamic Clinical Ligament Disruption Status (Rockwood Classification)
-  const isPresetIntact = selectedPresetId === "intact" || selectedPresetId === "ankle_intact";
+  const isPresetIntact = selectedPresetId === "intact" || selectedPresetId === "ankle_intact" || selectedPresetId === "pelvis_intact" || selectedPresetId === "acetabulum_intact";
   const isPresetType1 = selectedPresetId === "rockwood_type1";
   const isPresetType2 = selectedPresetId === "rockwood_type2";
   const isACTorn = !isPresetIntact && !isPresetType1;
@@ -3765,11 +6074,23 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const isPerPreset = selectedPresetId.startsWith("lh_per_");
   const isPaPreset = selectedPresetId.startsWith("lh_pa_");
   const isSaPreset = selectedPresetId.startsWith("lh_sa_");
+  const isPilonPreset = selectedPresetId.startsWith("pilon_");
+  const isHawkinsPreset = selectedPresetId.startsWith("hawkins_");
+  const isEssexPreset = selectedPresetId.startsWith("essex_") || activeSubregion.id === "calcaneus";
+
+  // Dynamic Pelvic Ligament Disruption Status (Young-Burgess Classification)
+  const isPelvisPresetSymphysisTorn = selectedPresetId === "yb_apc2" || selectedPresetId === "yb_apc3" || selectedPresetId === "yb_lc3" || selectedPresetId === "yb_vs";
+  const isPelvisPresetAntSiTorn = selectedPresetId === "yb_apc2" || selectedPresetId === "yb_apc3" || selectedPresetId === "yb_vs";
+  const isPelvisPresetPostSiTorn = selectedPresetId === "yb_apc3" || selectedPresetId === "yb_vs";
 
   // Structured bullet points for clinical description (strictly description, no physical exam or management)
   const pearlBullets = useMemo(() => {
     const raw = isPresetIntact
-      ? (activePreset?.clinicalPearl || "Normal anatomical alignment with intact cortical continuity and no fracture line.")
+      ? (activePreset?.clinicalPearl || (isPelvis && activeSubregion.id === "pelvic-ring"
+          ? "Normal stable pelvic ring with intact pubic symphysis, bilateral sacroiliac joints, and strong posterior sacroiliac ligamentous complex.\nTransmits axial body weight from the spine through the sacrum to the acetabula and lower extremities."
+          : (isPelvis && activeSubregion.id === "acetabulum"
+          ? "Two-column anatomical concept of Judet & Letournel:\n- Anterior Column: Iliopubic column extending from iliac crest to pubic symphysis\n- Posterior Column: Ilioischial column extending from greater sciatic notch to ischial tuberosity\n- Anterior Wall & Posterior Wall buttress the femoral head against subluxation."
+          : "Normal anatomical alignment with intact cortical continuity and no fracture line.")))
       : (activePreset?.clinicalPearl || "");
     if (!raw) return [];
     return raw
@@ -3782,6 +6103,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   // Reference for 3D ligament group and pre-allocated meshes
   const ligamentBundleRef = useRef<LigamentBundle | null>(null);
   const ankleLigamentBundleRef = useRef<AnkleLigamentBundle | null>(null);
+  const pelvicLigamentBundleRef = useRef<PelvicLigamentBundle | null>(null);
 
   // Smooth Entry & Exit transition states
   const [isEntering, setIsEntering] = useState(true);
@@ -3823,7 +6145,8 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const tibiaVertexCountRef = useRef<number>(0);
   const fibulaVertexCountRef = useRef<number>(0);
 
-  // Centroid base positions for multi-fragment comminution
+  // Centroid base positions for proximal and multi-fragment comminution
+  const proxBasePosRef = useRef(new THREE.Vector3(0, 0, 0));
   const gtBasePosRef = useRef(new THREE.Vector3(0, 0, 0));
   const ltBasePosRef = useRef(new THREE.Vector3(0, 0, 0));
   const shardBasePosRef = useRef(new THREE.Vector3(0, 0, 0));
@@ -3857,10 +6180,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   isWholeBoneViewRef.current = isWholeBoneView;
 
   // Radiographic Quick-Snap Views state
-  const [activeSnapView, setActiveSnapView] = useState<string | null>("ap");
+  const [activeSnapView, setActiveSnapView] = useState<string | null>(() => {
+    return (selectedSubregionId === "talus" || selectedSubregionId === "calcaneus") ? "lat" : "ap";
+  });
   const radiographicViews = useMemo(
-    () => getRadiographicViews(isHumerus, isClavicle, isPatella, isTibia, selectedSubregionId),
-    [isHumerus, isClavicle, isPatella, isTibia, selectedSubregionId]
+    () => getRadiographicViews(isHumerus, isClavicle, isPatella, isTibia || isFoot, isPelvis, selectedSubregionId),
+    [isHumerus, isClavicle, isPatella, isTibia, isFoot, isPelvis, selectedSubregionId]
   );
   const activeViewInfo = radiographicViews.find((v) => v.id === activeSnapView);
 
@@ -3884,6 +6209,10 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     rStart?: number;
     rEnd?: number;
     qRot?: THREE.Quaternion;
+    phiStart?: number;
+    phiEnd?: number;
+    thetaStart?: number;
+    dTheta?: number;
   } | null>(null);
 
   // Trigger camera focus & ~40% zoom directly on the targeted subregion (upper 3/4 screen)
@@ -3908,7 +6237,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     let uEnd: THREE.Vector3;
     if (subregion.cameraDirection) {
       uEnd = new THREE.Vector3(...subregion.cameraDirection).normalize();
-      if (subregion.id === "distal" && isTibia) {
+      if ((subregion.id === "distal" || subregion.id === "pilon") && (isTibia || isFoot)) {
+        setActiveSnapView("ap");
+      } else if (subregion.id === "talus" || subregion.id === "calcaneus") {
+        setActiveSnapView("lat");
+      } else if (isPelvis) {
         setActiveSnapView("ap");
       }
     } else {
@@ -3922,6 +6255,15 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     const h = container.clientHeight || window.innerHeight;
     const startOffset = currentYOffsetRef.current;
     const endOffset = Math.round(h * (subregion.viewOffsetRatio ?? 0.20));
+
+    // Spherical angles for natural horizontal orbit (sweeping around the bone, preventing pole-flipping)
+    const phiStart = Math.acos(Math.max(-1, Math.min(1, uStart.y)));
+    const thetaStart = Math.atan2(uStart.z, uStart.x);
+    const phiEnd = Math.acos(Math.max(-1, Math.min(1, uEnd.y)));
+    const thetaEnd = Math.atan2(uEnd.z, uEnd.x);
+    let dTheta = thetaEnd - thetaStart;
+    while (dTheta > Math.PI) dTheta -= 2 * Math.PI;
+    while (dTheta < -Math.PI) dTheta += 2 * Math.PI;
 
     cameraTransitionRef.current = {
       active: true,
@@ -3939,8 +6281,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       rStart: rStart,
       rEnd: rEnd,
       qRot: qRot,
+      phiStart,
+      phiEnd,
+      thetaStart,
+      dTheta,
     };
-  }, [isTibia]);
+  }, [isTibia, isFoot, isPelvis]);
 
   // Trigger viewing the entire femur bone (head down to distal condyles)
   const triggerWholeBoneFocus = useCallback((duration = 480) => {
@@ -3960,7 +6306,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     const currentDist = offset.length();
     const dir = currentDist > 0.001 ? offset.normalize() : new THREE.Vector3(0, 0, 1);
 
-    const targetDist = isPatella ? 2.35 : (isClavicle ? 4.2 : (isHumerus ? 4.6 : (isTibia ? 5.2 : 5.3)));
+    const targetDist = isPelvis ? 4.6 : (isPatella ? 2.35 : (isClavicle ? 4.2 : (isHumerus ? 4.6 : ((isTibia || isFoot) ? 5.2 : 5.3))));
     const targetCamPos = targetVec.clone().addScaledVector(dir, targetDist);
 
     const h = container.clientHeight || window.innerHeight;
@@ -3978,7 +6324,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       startTime: performance.now(),
       duration: duration,
     };
-  }, [isHumerus, isClavicle, isPatella, isTibia]);
+  }, [isHumerus, isClavicle, isPatella, isTibia, isFoot, isPelvis]);
 
   // Trigger snapping camera to a standard radiographic projection (AP, Lat, Axillary, etc.)
   const triggerQuickSnap = useCallback(
@@ -4002,7 +6348,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       const uStart = startOffsetVec.clone().normalize();
 
       const targetDist = isWholeBoneView
-        ? (isPatella ? 2.35 : (isClavicle ? 4.2 : (isHumerus ? 4.6 : (isTibia ? 5.2 : 5.3))))
+        ? (isPelvis ? 4.6 : (isPatella ? 2.35 : (isClavicle ? 4.2 : (isHumerus ? 4.6 : ((isTibia || isFoot) ? 5.2 : 5.3)))))
         : (activeSubregion.cameraDistance ?? 3.0);
 
       const uEnd = new THREE.Vector3(...view.direction).normalize();
@@ -4016,6 +6362,14 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       const endOffset = isWholeBoneView
         ? Math.round(h * 0.07)
         : Math.round(h * (activeSubregion.viewOffsetRatio ?? 0.20));
+
+      const phiStart = Math.acos(Math.max(-1, Math.min(1, uStart.y)));
+      const thetaStart = Math.atan2(uStart.z, uStart.x);
+      const phiEnd = Math.acos(Math.max(-1, Math.min(1, uEnd.y)));
+      const thetaEnd = Math.atan2(uEnd.z, uEnd.x);
+      let dTheta = thetaEnd - thetaStart;
+      while (dTheta > Math.PI) dTheta -= 2 * Math.PI;
+      while (dTheta < -Math.PI) dTheta += 2 * Math.PI;
 
       cameraTransitionRef.current = {
         active: true,
@@ -4033,9 +6387,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         rStart: rStart,
         rEnd: rEnd,
         qRot: qRot,
+        phiStart,
+        phiEnd,
+        thetaStart,
+        dTheta,
       };
     },
-    [isWholeBoneView, activeSubregion, isPatella, isClavicle, isHumerus, isTibia]
+    [isWholeBoneView, activeSubregion, isPatella, isClavicle, isHumerus, isTibia, isFoot, isPelvis]
   );
 
   // Handle clicking a subregion button: switch subregion and center/magnify it
@@ -4203,7 +6561,22 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       geom.setAttribute("position", new THREE.BufferAttribute(combinedPos, 3));
       geom.addGroup(0, pos.length / 3, 0);
       geom.addGroup(pos.length / 3, capPos.length / 3, 1);
-      geom.computeVertexNormals();
+
+      if (norm.length === pos.length) {
+        const capGeom = new THREE.BufferGeometry();
+        capGeom.setAttribute("position", new THREE.Float32BufferAttribute(capPos, 3));
+        capGeom.computeVertexNormals();
+        const capNormAttr = capGeom.getAttribute("normal");
+        const combinedNorm = new Float32Array(pos.length + capPos.length);
+        combinedNorm.set(norm, 0);
+        if (capNormAttr) {
+          combinedNorm.set(capNormAttr.array as Float32Array, pos.length);
+        }
+        capGeom.dispose();
+        geom.setAttribute("normal", new THREE.BufferAttribute(combinedNorm, 3));
+      } else {
+        geom.computeVertexNormals();
+      }
 
       const mesh = new THREE.Mesh(geom, [mat, capMat]);
       mesh.position.copy(meshOffset);
@@ -4212,8 +6585,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     } else {
       const geom = new THREE.BufferGeometry();
       geom.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-      if (norm.length) geom.setAttribute("normal", new THREE.Float32BufferAttribute(norm, 3));
-      geom.computeVertexNormals();
+      if (norm.length === pos.length) {
+        geom.setAttribute("normal", new THREE.Float32BufferAttribute(norm, 3));
+      } else {
+        geom.computeVertexNormals();
+      }
 
       const mesh = new THREE.Mesh(geom, mat);
       mesh.position.copy(meshOffset);
@@ -4236,12 +6612,14 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
 
     const centerArr = preset?.cutCenter ?? subregion.cutCenter;
     const normalArr = preset?.cutNormal ?? subregion.cutNormal;
-    const isDistalFemurOrHumerus = !isClavicle && !isPatella && !isTibia && (
+    const isDistalFemurOrHumerus = !isPelvis && !isClavicle && !isPatella && !isTibia && (
       subregion.id === "distal" || subregion.id === "distal-femur" || subregion.id === "distal-humerus"
     );
     const effectiveMode = preset?.partitionMode ?? (
-      isTibia
-        ? (subregion.id === "distal" ? "ankle_intact" : "schatzker_1")
+      isPelvis
+        ? "pelvis_intact"
+        : (isTibia || isFoot)
+        ? (subregion.id === "calcaneus" ? "essex_tongue" : subregion.id === "talus" ? "hawkins_1" : subregion.id === "distal" ? "ankle_intact" : (subregion.id === "pilon" ? "pilon_1" : "schatzker_1"))
         : isPatella
         ? "patella_nondisplaced"
         : isClavicle
@@ -4290,6 +6668,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     const shardPos: number[] = [];
     const shardNorm: number[] = [];
 
+    const csgHnCap: number[] = [];
+    const csgGtCap: number[] = [];
+    const csgDistCap: number[] = [];
+    const csgLtCap: number[] = [];
+    const csgShardCap: number[] = [];
+
     const pushTri = (targetP: number[], targetN: number[], i: number) => {
       targetP.push(
         rawVerts[i].x, rawVerts[i].y, rawVerts[i].z,
@@ -4305,527 +6689,1127 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       }
     };
 
-    for (let i = 0; i < rawVerts.length; i += 3) {
-      const vA = rawVerts[i];
-      const vB = rawVerts[i + 1];
-      const vC = rawVerts[i + 2];
+    const pushRange = (targetP: number[], targetN: number[], startIdx: number, endIdx: number) => {
+      const limit = Math.min(endIdx, rawVerts.length);
+      for (let i = Math.max(0, startIdx); i < limit; i += 3) {
+        pushTri(targetP, targetN, i);
+      }
+    };
 
-      const centroid = new THREE.Vector3().add(vA).add(vB).add(vC).divideScalar(3);
-      const isAbove = plane.distanceToPoint(centroid) > 0;
+    // Dynamic multi-bone range resolver: immune to Loop-Taubin mesh subdivision
+    const getBoneRange = (keyword: string, fallbackIndex: number, fallbackStart: number, fallbackEnd: number): [number, number] => {
+      const ranges = boneVertexRangesRef.current;
+      const byName = ranges.find((r) => r.name.includes(keyword));
+      if (byName) return [byName.start, byName.end];
+      if (ranges[fallbackIndex]) return [ranges[fallbackIndex].start, ranges[fallbackIndex].end];
+      return [fallbackStart, Math.min(fallbackEnd, rawVerts.length)];
+    };
 
-      if (isHumerus) {
-        const isProx = centroid.y >= 95;
-        const isLT = isProx && centroid.z > 6 && centroid.x < 34 && centroid.y <= 134;
-        const isGT = isProx && !isLT && (centroid.x <= 24 || (centroid.y > 135 && centroid.x <= 26));
+    // Universal Exact CSG Triangle Slicing & Shortest-3D-Chord Cancellous Cap Engine
+    type Pt3 = [number, number, number];
+    type CortTri = { v0: Pt3; v1: Pt3; v2: Pt3; n0: Pt3; n1: Pt3; n2: Pt3 };
+    type CapTri = [Pt3, Pt3, Pt3];
+    type BoneSolid = { cort: CortTri[]; cap: CapTri[] };
 
-        if (effectiveMode === "neer_2part_gt") {
-          if (isGT) pushTri(gtPos, gtNorm, i);
-          else if (isProx) pushTri(hnPos, hnNorm, i);
-          else pushTri(distPos, distNorm, i);
-        } else if (effectiveMode === "neer_2part_sn") {
-          if (isProx) pushTri(hnPos, hnNorm, i);
-          else pushTri(distPos, distNorm, i);
-        } else if (effectiveMode === "neer_3part_gt") {
-          if (!isProx) pushTri(distPos, distNorm, i);
-          else if (isGT) pushTri(gtPos, gtNorm, i);
-          else pushTri(hnPos, hnNorm, i);
-        } else if (effectiveMode === "neer_3part_lt") {
-          if (!isProx) pushTri(distPos, distNorm, i);
-          else if (isLT) pushTri(ltPos, ltNorm, i);
-          else pushTri(hnPos, hnNorm, i);
-        } else if (effectiveMode === "neer_4part") {
-          if (!isProx) pushTri(distPos, distNorm, i);
-          else if (isLT) pushTri(ltPos, ltNorm, i);
-          else if (isGT) pushTri(gtPos, gtNorm, i);
-          else pushTri(hnPos, hnNorm, i);
-        } else if (effectiveMode === "humerus_distal_supracondylar") {
-          if (centroid.y > -120) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "humerus_distal_unicondylar_lat") {
-          if (centroid.y <= -120 && centroid.x <= -18) {
-            pushTri(shardPos, shardNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "humerus_distal_coronal_shear") {
-          if (centroid.y <= -120 && centroid.x <= -18 && centroid.z > -6) {
-            pushTri(shardPos, shardNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "humerus_distal_bicondylar") {
-          if (centroid.y > -120) {
-            pushTri(hnPos, hnNorm, i);
-          } else if (centroid.x > -18) {
-            pushTri(distPos, distNorm, i);
-          } else {
-            pushTri(shardPos, shardNorm, i);
-          }
-        } else {
-          // humerus_shaft_bipartite or default bipartite cut
-          if (isAbove) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        }
-      } else if (effectiveMode === "intertroch_comminuted") {
-        // Evans 5-fragment intertrochanteric comminution
-        if (isAbove) {
-          if (centroid.x <= -32) {
-            pushTri(gtPos, gtNorm, i);
-          } else {
-            pushTri(hnPos, hnNorm, i);
-          }
-        } else {
-          if (centroid.x > -22 && centroid.x < 2 && centroid.y > 128 && centroid.y < 156 && centroid.z < -3) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (centroid.x <= -28 && centroid.y > 140 && centroid.y < 182) {
-            pushTri(shardPos, shardNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        }
-      } else if (effectiveMode === "subtroch_comminuted") {
-        // Russell-Taylor Type IIB: 5-fragment subtrochanteric comminution
-        const isLT = centroid.x > -22 && centroid.x < 2 && centroid.y > 128 && centroid.y < 156 && centroid.z < -3;
-        if (isLT) {
-          pushTri(ltPos, ltNorm, i);
-        } else if (isAbove) {
-          if (centroid.x <= -32) {
-            pushTri(gtPos, gtNorm, i);
-          } else {
-            pushTri(hnPos, hnNorm, i);
-          }
-        } else {
-          if (centroid.x <= -16 && centroid.y >= 92 && centroid.y <= 124) {
-            pushTri(shardPos, shardNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        }
-      } else if (effectiveMode === "subtroch_lt") {
-        // Russell-Taylor Type IB: Lesser trochanter avulsion
-        const isLT = centroid.x > -22 && centroid.x < 2 && centroid.y > 128 && centroid.y < 156 && centroid.z < -3;
-        if (isLT) {
-          pushTri(ltPos, ltNorm, i);
-        } else if (isAbove) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "subtroch_fossa") {
-        // Russell-Taylor Type IIA: Extension into Piriformis Fossa / GT split
-        if (isAbove) {
-          if (centroid.x <= -32) {
-            pushTri(gtPos, gtNorm, i);
-          } else {
-            pushTri(hnPos, hnNorm, i);
-          }
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "shaft_butterfly_small") {
-        // Winquist Type I: small lateral butterfly wedge
-        if (centroid.x <= -14 && centroid.y >= -20 && centroid.y <= 0) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (isAbove) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "shaft_butterfly_med") {
-        // Winquist Type II: moderate lateral butterfly wedge (up to 50% width)
-        if (centroid.x <= -12 && centroid.y >= -25 && centroid.y <= 5) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (isAbove) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "shaft_butterfly_large") {
-        // Winquist Type III: large butterfly fragment (>50% width)
-        if ((centroid.x <= -10 || centroid.z >= 16) && centroid.y >= -28 && centroid.y <= 8) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (isAbove) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "shaft_segmental") {
-        // Winquist Type IV: segmental intercalary cylinder (0% cortical contact)
-        if (centroid.y >= -26 && centroid.y <= 6) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (centroid.y > 6) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "distal_supracondylar") {
-        // AO 33-A: Supracondylar metaphysis fracture above condyles
-        if (centroid.y > -170) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "distal_unicondylar_lat") {
-        // AO 33-B1: Unicondylar Sagittal Lateral Split
-        if (centroid.y <= -170 && centroid.x <= 12) {
-          pushTri(shardPos, shardNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "distal_hoffa") {
-        // AO 33-B3: Coronal Shear Hoffa Fracture of lateral condyle
-        if (centroid.y <= -170 && centroid.x <= 12 && centroid.z <= -2) {
-          pushTri(shardPos, shardNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "distal_bicondylar") {
-        // AO 33-C: Bicondylar complete articular T/Y split
-        if (centroid.y > -170) {
-          pushTri(hnPos, hnNorm, i);
-        } else if (centroid.x > 12) {
-          pushTri(distPos, distNorm, i);
-        } else {
-          pushTri(shardPos, shardNorm, i);
-        }
-      } else if (effectiveMode === "ac_joint_rockwood") {
-        // Rockwood AC Joint injury: Clavicle (hnPos) vs Scapula (distPos)
-        const clCount = clavicleVertexCountRef.current || 3438;
-        if (i < clCount) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "clavicle_shaft_butterfly") {
-        // Clavicle Midshaft with Inferior Butterfly Wedge (Robinson 2B2) or Vertical Z-fragment
-        const clCount = clavicleVertexCountRef.current || 3438;
-        if (i >= clCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.x >= 3.0 && centroid.x <= 17.0 && centroid.y <= 66.0) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (centroid.x > 10.0) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "clavicle_shaft_segmental") {
-        // Clavicle Midshaft Segmental Diaphyseal Double Fracture (AO 15.2C)
-        const clCount = clavicleVertexCountRef.current || 3438;
-        if (i >= clCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.x >= -2.0 && centroid.x <= 22.0) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (centroid.x > 22.0) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "clavicle_shaft_bipartite") {
-        // Clavicle Shaft 2-Part Fracture (Midshaft Robinson 2A/2B1 or Medial Third Allman III)
-        const clCount = clavicleVertexCountRef.current || 3438;
-        const cutX = centerArr[0];
-        if (i >= clCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.x > cutX) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "clavicle_distal_neer_v") {
-        // Neer Type V: Comminuted 3-fragment with inferior CC avulsion shard
-        const clCount = clavicleVertexCountRef.current || 3438;
-        if (i >= clCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.x >= -48.0 && centroid.x <= -33.0 && centroid.y <= 75.0) {
-          pushTri(shardPos, shardNorm, i);
-        } else if (centroid.x > -28.0) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_nondisplaced") {
-        // Nondisplaced hairline fracture: hairline equatorial cut with 0 displacement
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i); // Stationary Femur & Tibia
-        } else if (centroid.y > 9.7) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_transverse") {
-        // Displaced Transverse: proximal body pulled proximally by quadriceps
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 9.7) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_pole") {
-        // Inferior Pole Avulsion: main body retracted superiorly, small inferior pole fragment at tendon
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 0.0) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_vertical") {
-        // Vertical / Sagittal Cut: medial fragment (hnPos) vs lateral fragment (distPos)
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.x > -4.2) {
-          pushTri(hnPos, hnNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_comminuted") {
-        // Multifragmented Stellate: proximal, distal, and lateral/central comminuted shard
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 13.0) {
-          pushTri(hnPos, hnNorm, i);
-        } else if (centroid.x < -7.5 && centroid.y <= 13.0 && centroid.y >= -1.0) {
-          pushTri(shardPos, shardNorm, i);
-        } else {
-          pushTri(distPos, distNorm, i);
-        }
-      } else if (effectiveMode === "patella_osteochondral") {
-        // Osteochondral Shear: tangential facet shard displaced into joint
-        const ptCount = patellaVertexCountRef.current || 10308;
-        if (i >= ptCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.z < 26.0 && centroid.x > -4.0 && centroid.y < 12.0) {
-          pushTri(shardPos, shardNorm, i);
-        } else {
-          pushTri(hnPos, hnNorm, i);
-        }
-      } else if (effectiveMode === "schatzker_1") {
-        // Schatzker I: Pure lateral plateau split wedge without central depression
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        if (i >= tbCount) {
-          pushTri(distPos, distNorm, i); // Fibula remains stationary with intact shaft
-        } else if (centroid.y > 165.0 && centroid.x < -10.0) {
-          pushTri(shardPos, shardNorm, i); // Lateral split wedge
-        } else {
-          pushTri(distPos, distNorm, i); // Intact medial plateau and shaft
-        }
-      } else if (effectiveMode === "schatzker_2") {
-        // Schatzker II: Split-depression of lateral plateau
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        if (i >= tbCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 165.0 && centroid.x < -18.0) {
-          pushTri(shardPos, shardNorm, i); // Lateral split wedge displaced laterally
-        } else if (centroid.y > 170.0 && centroid.x >= -18.0 && centroid.x <= -2.5) {
-          pushTri(hnPos, hnNorm, i); // Depressed central articular facet sinking >15mm!
-        } else {
-          pushTri(distPos, distNorm, i); // Intact medial plateau & shaft
-        }
-      } else if (effectiveMode === "schatzker_3") {
-        // Schatzker III: Pure central articular depression (intact peripheral lateral rim)
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        if (i >= tbCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 172.0 && centroid.x >= -23.0 && centroid.x <= -2.5) {
-          pushTri(hnPos, hnNorm, i); // Sunken central articular saucer deep crater
-        } else {
-          pushTri(distPos, distNorm, i); // Intact outer lateral cortical rim (X < -23), medial plateau, and shaft
-        }
-      } else if (effectiveMode === "schatzker_4") {
-        // Schatzker IV: Medial plateau fracture-dislocation (high energy)
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        if (i >= tbCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 162.0 && centroid.x > 2.0) {
-          pushTri(hnPos, hnNorm, i); // Medial plateau condylar block
-        } else {
-          pushTri(distPos, distNorm, i); // Intact lateral plateau and shaft
-        }
-      } else if (effectiveMode === "schatzker_5") {
-        // Schatzker V: Bicondylar plateau split with intact shaft spine
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        if (i >= tbCount) {
-          pushTri(distPos, distNorm, i);
-        } else if (centroid.y > 165.0 && centroid.x > 4.0) {
-          pushTri(hnPos, hnNorm, i); // Medial condyle
-        } else if (centroid.y > 165.0 && centroid.x < -8.0) {
-          pushTri(shardPos, shardNorm, i); // Lateral condyle
-        } else {
-          pushTri(distPos, distNorm, i); // Central intercondylar spine and diaphysis
-        }
-      } else if (effectiveMode === "schatzker_6") {
-        // Schatzker VI: Metaphyseal-diaphyseal dissociation
-        if (centroid.y > 155.0) {
-          if (centroid.x >= 0.0) {
-            pushTri(hnPos, hnNorm, i); // Medial articular plateau block
-          } else {
-            pushTri(shardPos, shardNorm, i); // Lateral articular plateau block
-          }
-        } else {
-          pushTri(distPos, distNorm, i); // Dissociated lower leg shaft (tibia + fibula)
-        }
-      } else if (isTibia && subregion.id === "distal") {
-        const tbCount = tibiaVertexCountRef.current || 5040;
-        const fbCount = fibulaVertexCountRef.current || 3432;
-        const fbEnd = tbCount + fbCount;
-        const isTibiaBone = i < tbCount;
-        const isFibula = i >= tbCount && i < fbEnd;
-        const isFoot = i >= fbEnd;
+    const lerpPt = (a: Pt3, b: Pt3, t: number): Pt3 => [
+      a[0] + (b[0] - a[0]) * t,
+      a[1] + (b[1] - a[1]) * t,
+      a[2] + (b[2] - a[2]) * t,
+    ];
+    const lerpNorm = (a: Pt3, b: Pt3, t: number): Pt3 => {
+      const nx = a[0] + (b[0] - a[0]) * t;
+      const ny = a[1] + (b[1] - a[1]) * t;
+      const nz = a[2] + (b[2] - a[2]) * t;
+      const len = Math.hypot(nx, ny, nz) || 1;
+      return [nx / len, ny / len, nz / len];
+    };
+    const distSq3 = (a: Pt3, b: Pt3) =>
+      (a[0] - b[0]) * (a[0] - b[0]) + (a[1] - b[1]) * (a[1] - b[1]) + (a[2] - b[2]) * (a[2] - b[2]);
 
-        if (effectiveMode === "lh_ser_2") {
-          // SER Stage II: Spiral fracture of lateral malleolus
-          const isSerFib = isFibula && (centroid.y + 0.55 * centroid.z <= -152.5);
-          if (isSerFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+    const chainAndTriangulateCutSegs = (segs: [Pt3, Pt3][], maxEdgeMm = 24.0): CapTri[] => {
+      if (segs.length < 3) return [];
+      const vKey = (p: Pt3) => `${Math.round(p[0] * 40)},${Math.round(p[1] * 40)},${Math.round(p[2] * 40)}`;
+      const startMap = new Map<string, number[]>();
+      for (let idx = 0; idx < segs.length; idx++) {
+        const [s, e] = segs[idx];
+        const ks = vKey(s);
+        const ke = vKey(e);
+        if (ks === ke) continue;
+        const list = startMap.get(ks);
+        if (list) list.push(idx);
+        else startMap.set(ks, [idx]);
+      }
+      const used = new Uint8Array(segs.length);
+      const capOut: CapTri[] = [];
+      const maxSq = maxEdgeMm * maxEdgeMm;
+
+      for (let idx = 0; idx < segs.length; idx++) {
+        if (used[idx]) continue;
+        const [s0, e0] = segs[idx];
+        const startK = vKey(s0);
+        let curK = vKey(e0);
+        if (startK === curK) continue;
+        used[idx] = 1;
+        const loop: Pt3[] = [s0, e0];
+        while (curK !== startK) {
+          const cands = startMap.get(curK);
+          let nextIdx = -1;
+          if (cands) {
+            for (let k = 0; k < cands.length; k++) {
+              if (!used[cands[k]]) {
+                nextIdx = cands[k];
+                break;
+              }
+            }
           }
-        } else if (effectiveMode === "lh_ser_3") {
-          // SER Stage III: SER II + Large Posterior Malleolus (Volkmann's fragment)
-          const isSerFib = isFibula && (centroid.y + 0.55 * centroid.z <= -152.5);
-          const isVolkmann = isTibiaBone && (centroid.x <= 14.0 && centroid.y <= -130.0 && (centroid.y + 1.5 * centroid.z <= -154.0));
-          if (isSerFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isVolkmann) {
-            pushTri(gtPos, gtNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+          if (nextIdx < 0) break;
+          used[nextIdx] = 1;
+          const ne = segs[nextIdx][1];
+          loop.push(ne);
+          curK = vKey(ne);
+        }
+        if (loop.length >= 3 && vKey(loop[loop.length - 1]) === startK) {
+          loop.pop();
+        }
+        if (loop.length < 3) continue;
+
+        // Shortest-3D-chord ear clipping bounded by cortical thickness so caps never bridge across hollow sockets
+        const idxs = loop.map((_, i) => i);
+        while (idxs.length > 3) {
+          const m = idxs.length;
+          let bestI = 0;
+          let bestD = Infinity;
+          for (let i = 0; i < m; i++) {
+            const ia = idxs[(i - 1 + m) % m];
+            const ic = idxs[(i + 1) % m];
+            const d = distSq3(loop[ia], loop[ic]);
+            if (d < bestD) {
+              bestD = d;
+              bestI = i;
+            }
           }
-        } else if (effectiveMode === "lh_ser_4") {
-          // SER Stage IV: Trimalleolar (Fibula spiral + Large Volkmann + Medial Malleolus transverse avulsion + Talar shift)
-          const isSerFib = isFibula && (centroid.y + 0.55 * centroid.z <= -152.5);
-          const isVolkmann = isTibiaBone && (centroid.x <= 14.0 && centroid.y <= -130.0 && (centroid.y + 1.5 * centroid.z <= -154.0));
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isSerFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isVolkmann) {
-            pushTri(gtPos, gtNorm, i);
-          } else if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+          const ia = idxs[(bestI - 1 + m) % m];
+          const ib = idxs[bestI];
+          const ic = idxs[(bestI + 1) % m];
+          const a = loop[ia];
+          const b = loop[ib];
+          const c = loop[ic];
+          if (Math.max(distSq3(a, b), distSq3(b, c), distSq3(c, a)) <= maxSq) {
+            capOut.push([a, b, c]);
           }
-        } else if (effectiveMode === "lh_sa_1") {
-          // SA Stage I: Transverse infrasyndesmotic fibula avulsion
-          const isSaFib = isFibula && (centroid.y <= -156.0);
-          if (isSaFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+          idxs.splice(bestI, 1);
+        }
+        if (idxs.length === 3) {
+          const a = loop[idxs[0]];
+          const b = loop[idxs[1]];
+          const c = loop[idxs[2]];
+          if (Math.max(distSq3(a, b), distSq3(b, c), distSq3(c, a)) <= maxSq) {
+            capOut.push([a, b, c]);
           }
-        } else if (effectiveMode === "lh_sa_2") {
-          // SA Stage II: SA I + Vertical shear fracture of medial malleolus
-          const isSaFib = isFibula && (centroid.y <= -156.0);
-          const isSaMedMal = isTibiaBone && (centroid.x >= 14.5 && centroid.y <= -136.0 && centroid.y <= -158.7 + (centroid.x - 14.5) * 15);
-          if (isSaFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isSaMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "lh_per_1" || effectiveMode === "lh_per_2") {
-          // PER Stage I & II: Medial malleolus transverse avulsion (PER II adds AITFL rupture)
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "lh_per_3") {
-          // PER Stage III: Medial avulsion + High spiral suprasyndesmotic fibula fracture (Weber C)
-          const isPerFib = isFibula && (centroid.y + 0.45 * centroid.z <= -124.0);
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isPerFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "lh_per_4") {
-          // PER Stage IV: Medial avulsion + High spiral fibula + Large Volkmann posterior malleolus + Talar shift
-          const isPerFib = isFibula && (centroid.y + 0.45 * centroid.z <= -124.0);
-          const isVolkmann = isTibiaBone && (centroid.x <= 14.0 && centroid.y <= -130.0 && (centroid.y + 1.5 * centroid.z <= -154.0));
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isPerFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isVolkmann) {
-            pushTri(gtPos, gtNorm, i);
-          } else if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "lh_pa_1" || effectiveMode === "lh_pa_2") {
-          // PA Stage I & II: Medial malleolus transverse avulsion (PA II adds syndesmotic failure)
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
-          }
-        } else if (effectiveMode === "lh_pa_3") {
-          // PA Stage III: Medial avulsion + High suprasyndesmotic fibula bending fracture (~5-7cm above joint) + Comminuted lateral butterfly shard + Talar valgus tilt
-          const isPaButterfly = isFibula && (centroid.y >= -122.0 && centroid.y <= -96.0 && centroid.x <= -17.5);
-          const isPaDistalFib = isFibula && (centroid.y <= -108.0) && !isPaButterfly;
-          const isMedMal = isTibiaBone && (centroid.x >= 16.0 && centroid.y <= -149.0);
-          if (isPaButterfly) {
-            pushTri(gtPos, gtNorm, i);
-          } else if (isPaDistalFib) {
-            pushTri(shardPos, shardNorm, i);
-          } else if (isMedMal) {
-            pushTri(ltPos, ltNorm, i);
-          } else if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+        }
+      }
+      return capOut;
+    };
+
+    const splitBoneSolid = (
+      solid: BoneSolid,
+      fn: (x: number, y: number, z: number) => number,
+      maxCapEdgeMm = 24.0
+    ): [BoneSolid, BoneSolid] => {
+      const negCort: CortTri[] = [];
+      const posCort: CortTri[] = [];
+      const negCap: CapTri[] = [];
+      const posCap: CapTri[] = [];
+      const cutSegs: [Pt3, Pt3][] = [];
+
+      for (let i = 0; i < solid.cort.length; i++) {
+        const t = solid.cort[i];
+        let d0 = fn(t.v0[0], t.v0[1], t.v0[2]);
+        let d1 = fn(t.v1[0], t.v1[1], t.v1[2]);
+        let d2 = fn(t.v2[0], t.v2[1], t.v2[2]);
+        if (Math.abs(d0) < 1e-6) d0 = 0;
+        if (Math.abs(d1) < 1e-6) d1 = 0;
+        if (Math.abs(d2) < 1e-6) d2 = 0;
+
+        if (d0 <= 0 && d1 <= 0 && d2 <= 0) {
+          negCort.push(t);
+          continue;
+        }
+        if (d0 >= 0 && d1 >= 0 && d2 >= 0) {
+          posCort.push(t);
+          continue;
+        }
+
+        let vA = t.v0, vB = t.v1, vC = t.v2;
+        let nA = t.n0, nB = t.n1, nC = t.n2;
+        let dA = d0, dB = d1, dC = d2;
+        const s0 = d0 < 0, s1 = d1 < 0, s2 = d2 < 0;
+        if (s1 !== s0 && s1 !== s2) {
+          vA = t.v1; vB = t.v2; vC = t.v0;
+          nA = t.n1; nB = t.n2; nC = t.n0;
+          dA = d1; dB = d2; dC = d0;
+        } else if (s2 !== s0 && s2 !== s1) {
+          vA = t.v2; vB = t.v0; vC = t.v1;
+          nA = t.n2; nB = t.n0; nC = t.n1;
+          dA = d2; dB = d0; dC = d1;
+        }
+
+        const tAB = Math.abs(dA - dB) > 1e-9 ? dA / (dA - dB) : 0.5;
+        const tAC = Math.abs(dA - dC) > 1e-9 ? dA / (dA - dC) : 0.5;
+        const vAB = lerpPt(vA, vB, tAB);
+        const vAC = lerpPt(vA, vC, tAC);
+        const nAB = lerpNorm(nA, nB, tAB);
+        const nAC = lerpNorm(nA, nC, tAC);
+
+        const tSolo: CortTri = { v0: vA, v1: vAB, v2: vAC, n0: nA, n1: nAB, n2: nAC };
+        const tP1: CortTri = { v0: vAB, v1: vB, v2: vC, n0: nAB, n1: nB, n2: nC };
+        const tP2: CortTri = { v0: vAB, v1: vC, v2: vAC, n0: nAB, n1: nC, n2: nAC };
+
+        if (dA < 0) {
+          negCort.push(tSolo);
+          posCort.push(tP1, tP2);
+          cutSegs.push([vAB, vAC]);
+        } else {
+          posCort.push(tSolo);
+          negCort.push(tP1, tP2);
+          cutSegs.push([vAC, vAB]);
+        }
+      }
+
+      for (let i = 0; i < solid.cap.length; i++) {
+        const [v0, v1, v2] = solid.cap[i];
+        let d0 = fn(v0[0], v0[1], v0[2]);
+        let d1 = fn(v1[0], v1[1], v1[2]);
+        let d2 = fn(v2[0], v2[1], v2[2]);
+        if (Math.abs(d0) < 1e-6) d0 = 0;
+        if (Math.abs(d1) < 1e-6) d1 = 0;
+        if (Math.abs(d2) < 1e-6) d2 = 0;
+
+        if (d0 <= 0 && d1 <= 0 && d2 <= 0) {
+          negCap.push([v0, v1, v2]);
+          continue;
+        }
+        if (d0 >= 0 && d1 >= 0 && d2 >= 0) {
+          posCap.push([v0, v1, v2]);
+          continue;
+        }
+
+        let vA = v0, vB = v1, vC = v2;
+        let dA = d0, dB = d1, dC = d2;
+        const s0 = d0 < 0, s1 = d1 < 0, s2 = d2 < 0;
+        if (s1 !== s0 && s1 !== s2) {
+          vA = v1; vB = v2; vC = v0;
+          dA = d1; dB = d2; dC = d0;
+        } else if (s2 !== s0 && s2 !== s1) {
+          vA = v2; vB = v0; vC = v1;
+          dA = d2; dB = d0; dC = d1;
+        }
+
+        const tAB = Math.abs(dA - dB) > 1e-9 ? dA / (dA - dB) : 0.5;
+        const tAC = Math.abs(dA - dC) > 1e-9 ? dA / (dA - dC) : 0.5;
+        const vAB = lerpPt(vA, vB, tAB);
+        const vAC = lerpPt(vA, vC, tAC);
+
+        if (dA < 0) {
+          negCap.push([vA, vAB, vAC]);
+          posCap.push([vAB, vB, vC], [vAB, vC, vAC]);
+          cutSegs.push([vAB, vAC]);
+        } else {
+          posCap.push([vA, vAB, vAC]);
+          negCap.push([vAB, vB, vC], [vAB, vC, vAC]);
+          cutSegs.push([vAC, vAB]);
+        }
+      }
+
+      const newCaps = chainAndTriangulateCutSegs(cutSegs, maxCapEdgeMm);
+      for (let i = 0; i < newCaps.length; i++) {
+        const [a, b, c] = newCaps[i];
+        posCap.push([a, b, c]);
+        negCap.push([a, c, b]);
+      }
+
+      return [
+        { cort: negCort, cap: negCap },
+        { cort: posCort, cap: posCap },
+      ];
+    };
+
+    const extractBoneSolid = (startIdx: number, endIdx: number): BoneSolid => {
+      const initCort: CortTri[] = [];
+      const limit = Math.min(endIdx, rawVerts.length);
+      for (let i = Math.max(0, startIdx); i < limit; i += 3) {
+        const v0: Pt3 = [rawVerts[i].x, rawVerts[i].y, rawVerts[i].z];
+        const v1: Pt3 = [rawVerts[i + 1].x, rawVerts[i + 1].y, rawVerts[i + 1].z];
+        const v2: Pt3 = [rawVerts[i + 2].x, rawVerts[i + 2].y, rawVerts[i + 2].z];
+        const n0: Pt3 = hasNorms ? [rawNorms[i].x, rawNorms[i].y, rawNorms[i].z] : [0, 1, 0];
+        const n1: Pt3 = hasNorms ? [rawNorms[i + 1].x, rawNorms[i + 1].y, rawNorms[i + 1].z] : [0, 1, 0];
+        const n2: Pt3 = hasNorms ? [rawNorms[i + 2].x, rawNorms[i + 2].y, rawNorms[i + 2].z] : [0, 1, 0];
+        initCort.push({ v0, v1, v2, n0, n1, n2 });
+      }
+      return { cort: initCort, cap: [] };
+    };
+
+    const translateBoneSolid = (solid: BoneSolid, dx: number, dy: number, dz: number): BoneSolid => ({
+      cort: solid.cort.map((t) => ({
+        v0: [t.v0[0] + dx, t.v0[1] + dy, t.v0[2] + dz],
+        v1: [t.v1[0] + dx, t.v1[1] + dy, t.v1[2] + dz],
+        v2: [t.v2[0] + dx, t.v2[1] + dy, t.v2[2] + dz],
+        n0: t.n0,
+        n1: t.n1,
+        n2: t.n2,
+      })),
+      cap: solid.cap.map(([a, b, c]) => [
+        [a[0] + dx, a[1] + dy, a[2] + dz],
+        [b[0] + dx, b[1] + dy, b[2] + dz],
+        [c[0] + dx, c[1] + dy, c[2] + dz],
+      ]),
+    });
+
+    const emitSolid = (solid: BoneSolid, outPos: number[], outNorm: number[], outCap: number[]) => {
+      for (let i = 0; i < solid.cort.length; i++) {
+        const t = solid.cort[i];
+        outPos.push(
+          t.v0[0], t.v0[1], t.v0[2],
+          t.v1[0], t.v1[1], t.v1[2],
+          t.v2[0], t.v2[1], t.v2[2]
+        );
+        outNorm.push(
+          t.n0[0], t.n0[1], t.n0[2],
+          t.n1[0], t.n1[1], t.n1[2],
+          t.n2[0], t.n2[1], t.n2[2]
+        );
+      }
+      for (let i = 0; i < solid.cap.length; i++) {
+        const [a, b, c] = solid.cap[i];
+        outCap.push(
+          a[0], a[1], a[2],
+          b[0], b[1], b[2],
+          c[0], c[1], c[2]
+        );
+      }
+    };
+
+    // Multi-scale 3D gyroid/harmonic organic cortical fracture relief (produces natural non-linear interlocking fracture lines with 0.000mm jigsaw fit)
+    const fOrganic = (x: number, y: number, z: number, amp = 1.15, phase = 0.0) => {
+      const w1 = Math.sin(x * 0.16 + y * 0.13 + phase) * Math.cos(z * 0.18 - y * 0.11 - phase * 0.7);
+      const w2 = 0.52 * Math.sin(y * 0.36 - z * 0.28 + 1.3 + phase) * Math.cos(x * 0.31 + z * 0.23);
+      const w3 = 0.24 * Math.sin(x * 0.68 + z * 0.63 - 0.7 - phase);
+      return amp * (w1 + w2 + w3);
+    };
+
+    // Negative when point is above the active cut plane (plane.distanceToPoint(p) >= 0)
+    const fPlaneAbove = (x: number, y: number, z: number, amp = 1.15, phase = 0.5) =>
+      -(plane.normal.x * x + plane.normal.y * y + plane.normal.z * z + plane.constant) + fOrganic(x, y, z, amp, phase);
+
+    if (isPelvis) {
+      const [leftStart, leftEnd] = getBoneRange("left", 0, 0, 27768);
+      const [, rightEnd] = getBoneRange("right", 1, leftEnd, 56256);
+
+      // 1. Left Hemipelvis -> distPos (in Acetabulum mode) or gtPos (in Pelvic Ring mode)
+      const leftTargetP = subregion.id === "acetabulum" ? distPos : gtPos;
+      const leftTargetN = subregion.id === "acetabulum" ? distNorm : gtNorm;
+      pushRange(leftTargetP, leftTargetN, leftStart, leftEnd);
+
+      // 2. Sacrum -> distPos (stationary axial foundation)
+      pushRange(distPos, distNorm, rightEnd, rawVerts.length);
+
+      // 3. Right Hemipelvis: Exact CSG Triangle Slicing & Shortest-Chord Cancellous Cap Generation
+      const isRightIntact =
+        effectiveMode === "pelvis_intact" ||
+        effectiveMode === "yb_apc1" ||
+        effectiveMode === "yb_apc2" ||
+        effectiveMode === "yb_apc3" ||
+        effectiveMode === "yb_vs";
+
+      if (isRightIntact) {
+        pushRange(hnPos, hnNorm, leftEnd, rightEnd);
+      } else {
+        const rightSolid = extractBoneSolid(leftEnd, rightEnd);
+
+        // Continuous anatomical level-set surfaces with natural cortical fracture relief (negative = detached target fragment)
+        const fPW = (x: number, y: number, z: number) =>
+          (x - (-84.0)) * 0.80 + (z - (-1.0)) * 0.60 + Math.pow((y - (-29.0)) / 17.5, 2) * 12.0 + fOrganic(x, y, z, 1.15, 0.4);
+        const fAW = (x: number, y: number, z: number) =>
+          (x - (-86.5)) * 0.80 - (z - 29.0) * 0.60 + Math.pow((y - (-26.5)) / 16.0, 2) * 12.0 + fOrganic(x, y, z, 1.15, 1.2);
+        const fTrans = (x: number, y: number, z: number) =>
+          (y + 30.0) - 0.15 * (z - 20.0) + fOrganic(x, y, z, 1.75, 2.1);
+        const fStem = (x: number, y: number, z: number) =>
+          z - (14.0 + 0.08 * (y + 30.0)) + fOrganic(x, y, z, 1.55, 3.3);
+        const fPC = (x: number, y: number, z: number) => {
+          const w = fOrganic(x, y, z, 1.65, 0.8);
+          const zCut = y >= -30.0 ? 14.0 - 0.65 * (y + 30.0) : 14.0 + 0.06 * (y + 30.0);
+          return Math.max(z - zCut + w, y - 14.0 + w * 0.85);
+        };
+        const fAC = (x: number, y: number, z: number) => {
+          const w = fOrganic(x, y, z, 1.75, 1.9);
+          const zCut = y >= -30.0 ? 14.0 + 0.09 * (y + 30.0) : 14.0 + 0.06 * (y + 30.0);
+          return zCut - z + w;
+        };
+        const fPHT = (x: number, y: number, z: number) =>
+          (y + 30.0) - 0.10 * (z - 14.0) + fOrganic(x, y, z, 1.60, 2.7);
+        const fSpur = (x: number, y: number, z: number) =>
+          14.0 - y + fOrganic(x, y, z, 1.85, 4.1);
+        const fQuad = (x: number, y: number, z: number) => {
+          const w = fOrganic(x, y, z, 1.25, 5.0);
+          return Math.max(
+            -76.0 - x + w,
+            Math.pow((y - (-20.0)) / 24.0, 2) * 14.0 - 10.0 + w * 0.6,
+            Math.pow((z - 7.0) / 15.0, 2) * 14.0 - 10.0 + w * 0.6
+          );
+        };
+        const fCrescent = (x: number, y: number, z: number) => {
+          const w = fOrganic(x, y, z, 2.10, 1.5);
+          const cutDist = (x - (-86.5)) * 0.615 + (y - 58.0) * 0.789;
+          return Math.max(-cutDist + w, 18.0 - y + w * 0.8);
+        };
+        const fRami = (x: number, y: number, z: number) => {
+          const w = fOrganic(x, y, z, 1.45, 3.8);
+          return Math.max(-36.0 - x + w, y - (-48.0) + w * 0.7, 22.0 - z + w * 0.7);
+        };
+
+        if (subregion.id === "acetabulum") {
+          if (effectiveMode === "jl_pw") {
+            const [pw, main] = splitBoneSolid(rightSolid, fPW);
+            emitSolid(pw, shardPos, shardNorm, csgShardCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_pc") {
+            const [pc, main] = splitBoneSolid(rightSolid, fPC);
+            emitSolid(pc, gtPos, gtNorm, csgGtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_aw") {
+            const [aw, main] = splitBoneSolid(rightSolid, fAW);
+            emitSolid(aw, ltPos, ltNorm, csgLtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_ac") {
+            const [ac, main] = splitBoneSolid(rightSolid, fAC);
+            emitSolid(ac, ltPos, ltNorm, csgLtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_transverse") {
+            const [inf, sup] = splitBoneSolid(rightSolid, fTrans);
+            emitSolid(inf, ltPos, ltNorm, csgLtCap);
+            emitSolid(sup, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_t_shaped") {
+            const [inf, sup] = splitBoneSolid(rightSolid, fTrans);
+            const [isch, pub] = splitBoneSolid(inf, fStem);
+            emitSolid(sup, hnPos, hnNorm, csgHnCap);
+            emitSolid(isch, gtPos, gtNorm, csgGtCap);
+            emitSolid(pub, ltPos, ltNorm, csgLtCap);
+          } else if (effectiveMode === "jl_pc_pw") {
+            const [pw, rest1] = splitBoneSolid(rightSolid, fPW);
+            const [pc, main] = splitBoneSolid(rest1, fPC);
+            emitSolid(pw, shardPos, shardNorm, csgShardCap);
+            emitSolid(pc, gtPos, gtNorm, csgGtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_trans_pw") {
+            const [pw, rest1] = splitBoneSolid(rightSolid, fPW);
+            const [inf, sup] = splitBoneSolid(rest1, fTrans);
+            emitSolid(pw, shardPos, shardNorm, csgShardCap);
+            emitSolid(inf, ltPos, ltNorm, csgLtCap);
+            emitSolid(sup, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_acpht") {
+            const [ac, rest1] = splitBoneSolid(rightSolid, fAC);
+            const [pht, main] = splitBoneSolid(rest1, fPHT);
+            emitSolid(ac, ltPos, ltNorm, csgLtCap);
+            emitSolid(pht, gtPos, gtNorm, csgGtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "jl_both_column") {
+            const [ac, rest1] = splitBoneSolid(rightSolid, fAC);
+            const [spur, rest2] = splitBoneSolid(rest1, fSpur);
+            const [quad, pc] = splitBoneSolid(rest2, fQuad);
+            emitSolid(ac, ltPos, ltNorm, csgLtCap);
+            emitSolid(spur, hnPos, hnNorm, csgHnCap);
+            emitSolid(quad, shardPos, shardNorm, csgShardCap);
+            emitSolid(pc, gtPos, gtNorm, csgGtCap);
           }
         } else {
-          // ankle_intact or lh_ser_1 (bones intact)
-          if (isFoot) {
-            pushTri(hnPos, hnNorm, i);
-          } else {
-            pushTri(distPos, distNorm, i);
+          if (effectiveMode === "yb_lc1") {
+            const [rami, main] = splitBoneSolid(rightSolid, fRami);
+            emitSolid(rami, ltPos, ltNorm, csgLtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
+          } else if (effectiveMode === "yb_lc2" || effectiveMode === "yb_lc3") {
+            const [crescent, rest1] = splitBoneSolid(rightSolid, fCrescent);
+            const [rami, main] = splitBoneSolid(rest1, fRami);
+            emitSolid(crescent, shardPos, shardNorm, csgShardCap);
+            emitSolid(rami, ltPos, ltNorm, csgLtCap);
+            emitSolid(main, hnPos, hnNorm, csgHnCap);
           }
+        }
+      }
+    } else if (isTibia || isFoot) {
+      // Dynamic vertex ranges for tibia.glb (Tibia, Fibula, Talus, Calcaneus, Navicular, Cuboid)
+      const [tbStart, tbEnd] = getBoneRange("tibia", 0, 0, tibiaVertexCountRef.current || 5040);
+      const [fbStart, fbEnd] = getBoneRange("fibula", 1, tbEnd, tbEnd + (fibulaVertexCountRef.current || 3432));
+      const [tlStart, tlEnd] = getBoneRange("talus", 2, fbEnd, 12600);
+      const [clStart, clEnd] = getBoneRange("calcaneus", 3, tlEnd, 16374);
+      const [nvStart, nvEnd] = getBoneRange("navicular", 4, clEnd, 18468);
+      const [cbStart, cbEnd] = getBoneRange("cuboid", 5, nvEnd, rawVerts.length);
+
+      if (subregion.id === "talus") {
+        if (preset?.id === "intact") {
+          pushRange(distPos, distNorm, 0, rawVerts.length);
+        } else {
+          // Stationary mortise & hindfoot foundation: Tibia, Fibula, Calcaneus, Cuboid
+          pushRange(distPos, distNorm, tbStart, fbEnd);
+          pushRange(distPos, distNorm, clStart, clEnd);
+          pushRange(distPos, distNorm, cbStart, cbEnd);
+
+          // Navicular: follows talar head in Hawkins IV, else stationary foundation
+          if (effectiveMode === "hawkins_4") {
+            pushRange(ltPos, ltNorm, nvStart, nvEnd);
+          } else {
+            pushRange(distPos, distNorm, nvStart, nvEnd);
+          }
+
+          // Talus: Exact CSG coronal cut through talar neck at Z = 8.0 mm
+          const tlSolid = extractBoneSolid(tlStart, tlEnd);
+          const fTalusNeck = (x: number, y: number, z: number) => z - 8.0 + fOrganic(x, y, z, 0.90, 1.1);
+          const [talarBody, talarHead] = splitBoneSolid(tlSolid, fTalusNeck, 20.0);
+          emitSolid(talarBody, hnPos, hnNorm, csgHnCap);
+          emitSolid(talarHead, shardPos, shardNorm, csgShardCap);
+        }
+      } else if (subregion.id === "calcaneus") {
+        if (preset?.id === "intact" || (effectiveMode !== "essex_tongue" && effectiveMode !== "essex_joint_depression")) {
+          pushRange(distPos, distNorm, 0, rawVerts.length);
+        } else {
+          // Stationary Tibia, Fibula, Talus, Navicular, Cuboid in distalGroup foundation
+          pushRange(distPos, distNorm, tbStart, tlEnd);
+          pushRange(distPos, distNorm, nvStart, cbEnd);
+
+          const clSolid = extractBoneSolid(clStart, clEnd);
+          // Primary fracture line: runs obliquely through posterior facet, separating anteromedial sustentacular fragment
+          const fSustentacular = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.90, 0.8);
+            return Math.max(4.0 - (x - 0.75 * z) + w, 6.0 - x + w, -18.0 - z + w);
+          };
+          const [sustentaculum, calcRest1] = splitBoneSolid(clSolid, fSustentacular, 20.0);
+          emitSolid(sustentaculum, distPos, distNorm, csgDistCap);
+
+          if (effectiveMode === "essex_tongue") {
+            const fTongue = (x: number, y: number, z: number) => {
+              const w = fOrganic(x, y, z, 0.90, 1.6);
+              return Math.max(z - 3.0 + w, (-195.0 + 0.12 * z) - y + w);
+            };
+            const fPlantarTub = (x: number, y: number, z: number) =>
+              z - (-12.0) + fOrganic(x, y, z, 0.90, 2.4);
+            const fLatWallTongue = (x: number, y: number, z: number) => {
+              const w = fOrganic(x, y, z, 0.85, 3.2);
+              return Math.max(x - 4.0 + w, -z + w);
+            };
+            const [tongue, calcRest2] = splitBoneSolid(calcRest1, fTongue, 20.0);
+            const [plantarTub, calcRest3] = splitBoneSolid(calcRest2, fPlantarTub, 20.0);
+            const [latWall, antProc] = splitBoneSolid(calcRest3, fLatWallTongue, 20.0);
+            emitSolid(tongue, hnPos, hnNorm, csgHnCap);
+            emitSolid(plantarTub, gtPos, gtNorm, csgGtCap);
+            emitSolid(latWall, shardPos, shardNorm, csgShardCap);
+            emitSolid(antProc, distPos, distNorm, csgDistCap);
+          } else {
+            // essex_joint_depression
+            const fDepFacet = (x: number, y: number, z: number) => {
+              const w = fOrganic(x, y, z, 0.90, 1.7);
+              return Math.max(-16.0 - z + w, z - 3.0 + w, -189.0 - y + w);
+            };
+            const fTuberosity = (x: number, y: number, z: number) =>
+              z - (-16.0) + fOrganic(x, y, z, 0.90, 2.6);
+            const fLatWallJD = (x: number, y: number, z: number) =>
+              x - 6.0 + fOrganic(x, y, z, 0.85, 3.5);
+            const [depFacet, calcRest2] = splitBoneSolid(calcRest1, fDepFacet, 20.0);
+            const [tuberosity, calcRest3] = splitBoneSolid(calcRest2, fTuberosity, 20.0);
+            const [latWall, antProc] = splitBoneSolid(calcRest3, fLatWallJD, 20.0);
+            emitSolid(depFacet, shardPos, shardNorm, csgShardCap);
+            emitSolid(tuberosity, gtPos, gtNorm, csgGtCap);
+            emitSolid(latWall, ltPos, ltNorm, csgLtCap);
+            emitSolid(antProc, distPos, distNorm, csgDistCap);
+          }
+        }
+      } else if (subregion.id === "distal") {
+        // Ankle Lauge-Hansen: Foot (Talus, Calcaneus, Navicular, Cuboid) in hnPos
+        pushRange(hnPos, hnNorm, fbEnd, rawVerts.length);
+
+        const isAnkleIntact =
+          preset?.id === "intact" ||
+          preset?.id === "ankle_intact" ||
+          effectiveMode === "ankle_intact" ||
+          effectiveMode === "lh_ser_1";
+
+        if (isAnkleIntact) {
+          pushRange(distPos, distNorm, tbStart, fbEnd);
+        } else {
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fbSolid = extractBoneSolid(fbStart, fbEnd);
+
+          const fSerFib = (x: number, y: number, z: number) =>
+            (y + 0.55 * z) - (-152.5) + fOrganic(x, y, z, 0.90, 0.6);
+          const fSaFib = (x: number, y: number, z: number) =>
+            y - (-156.0) + fOrganic(x, y, z, 0.90, 1.2);
+          const fPerFib = (x: number, y: number, z: number) =>
+            (y + 0.45 * z) - (-124.0) + fOrganic(x, y, z, 0.90, 1.9);
+          const fPaButterfly = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.80, 2.4);
+            return Math.max(-122.0 - y + w, y - (-96.0) + w, x - (-17.5) + w);
+          };
+          const fPaDistalFib = (x: number, y: number, z: number) =>
+            y - (-108.0) + fOrganic(x, y, z, 0.90, 3.1);
+
+          const fVolkmann = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.00, 1.4);
+            return Math.max(x - 14.0 + w, y - (-130.0) + w, (y + 1.5 * z) - (-154.0) + w);
+          };
+          const fMedMal = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.95, 2.2);
+            return Math.max(16.0 - x + w, y - (-149.0) + w);
+          };
+          const fSaMedMal = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.95, 2.9);
+            return Math.max(14.5 - x + w, y - (-136.0) + w, (y - (-158.7 + (x - 14.5) * 15.0)) / 15.0 + w);
+          };
+
+          if (effectiveMode === "lh_ser_2") {
+            const [serFib, fibMain] = splitBoneSolid(fbSolid, fSerFib, 16.0);
+            emitSolid(serFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(tbSolid, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_ser_3") {
+            const [serFib, fibMain] = splitBoneSolid(fbSolid, fSerFib, 16.0);
+            const [volk, tbMain] = splitBoneSolid(tbSolid, fVolkmann, 20.0);
+            emitSolid(serFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(volk, gtPos, gtNorm, csgGtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_ser_4") {
+            const [serFib, fibMain] = splitBoneSolid(fbSolid, fSerFib, 16.0);
+            const [volk, tbRest] = splitBoneSolid(tbSolid, fVolkmann, 20.0);
+            const [medMal, tbMain] = splitBoneSolid(tbRest, fMedMal, 18.0);
+            emitSolid(serFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(volk, gtPos, gtNorm, csgGtCap);
+            emitSolid(medMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_sa_1") {
+            const [saFib, fibMain] = splitBoneSolid(fbSolid, fSaFib, 16.0);
+            emitSolid(saFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(tbSolid, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_sa_2") {
+            const [saFib, fibMain] = splitBoneSolid(fbSolid, fSaFib, 16.0);
+            const [saMedMal, tbMain] = splitBoneSolid(tbSolid, fSaMedMal, 18.0);
+            emitSolid(saFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(saMedMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_per_1" || effectiveMode === "lh_per_2" || effectiveMode === "lh_pa_1" || effectiveMode === "lh_pa_2") {
+            const [medMal, tbMain] = splitBoneSolid(tbSolid, fMedMal, 18.0);
+            emitSolid(medMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+            emitSolid(fbSolid, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_per_3") {
+            const [perFib, fibMain] = splitBoneSolid(fbSolid, fPerFib, 16.0);
+            const [medMal, tbMain] = splitBoneSolid(tbSolid, fMedMal, 18.0);
+            emitSolid(perFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(medMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_per_4") {
+            const [perFib, fibMain] = splitBoneSolid(fbSolid, fPerFib, 16.0);
+            const [volk, tbRest] = splitBoneSolid(tbSolid, fVolkmann, 20.0);
+            const [medMal, tbMain] = splitBoneSolid(tbRest, fMedMal, 18.0);
+            emitSolid(perFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(volk, gtPos, gtNorm, csgGtCap);
+            emitSolid(medMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else if (effectiveMode === "lh_pa_3") {
+            const [paButterfly, fbRest] = splitBoneSolid(fbSolid, fPaButterfly, 14.0);
+            const [paDistFib, fibMain] = splitBoneSolid(fbRest, fPaDistalFib, 16.0);
+            const [medMal, tbMain] = splitBoneSolid(tbSolid, fMedMal, 18.0);
+            emitSolid(paButterfly, gtPos, gtNorm, csgGtCap);
+            emitSolid(paDistFib, shardPos, shardNorm, csgShardCap);
+            emitSolid(fibMain, distPos, distNorm, csgDistCap);
+            emitSolid(medMal, ltPos, ltNorm, csgLtCap);
+            emitSolid(tbMain, distPos, distNorm, csgDistCap);
+          } else {
+            emitSolid(tbSolid, distPos, distNorm, csgDistCap);
+            emitSolid(fbSolid, distPos, distNorm, csgDistCap);
+          }
+        }
+      } else if (subregion.id === "pilon") {
+        // Rüedi-Allgöwer Pilon I-III: Foot stationary in distPos
+        pushRange(distPos, distNorm, fbEnd, rawVerts.length);
+
+        if (preset?.id === "intact") {
+          pushRange(distPos, distNorm, tbStart, fbEnd);
+        } else if (effectiveMode === "pilon_1") {
+          pushRange(distPos, distNorm, fbStart, fbEnd);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fP1Dist = (x: number, y: number, z: number) => y - (-136.0) + fOrganic(x, y, z, 1.05, 0.8);
+          const fP1Med = (x: number, y: number, z: number) => 14.0 - x + fOrganic(x, y, z, 1.00, 1.7);
+          const [plafond, shaft] = splitBoneSolid(tbSolid, fP1Dist, 22.0);
+          const [medCol, latCol] = splitBoneSolid(plafond, fP1Med, 20.0);
+          emitSolid(medCol, ltPos, ltNorm, csgLtCap);
+          emitSolid(latCol, shardPos, shardNorm, csgShardCap);
+          emitSolid(shaft, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "pilon_2") {
+          const fbSolid = extractBoneSolid(fbStart, fbEnd);
+          const fP2Fib = (x: number, y: number, z: number) => y - (-140.0) + fOrganic(x, y, z, 0.90, 1.1);
+          const [distFib, proxFib] = splitBoneSolid(fbSolid, fP2Fib, 16.0);
+          emitSolid(distFib, shardPos, shardNorm, csgShardCap);
+          emitSolid(proxFib, distPos, distNorm, csgDistCap);
+
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fP2Dist = (x: number, y: number, z: number) => y - (-136.0) + fOrganic(x, y, z, 1.05, 0.8);
+          const fP2Med = (x: number, y: number, z: number) => 14.0 - x + fOrganic(x, y, z, 1.00, 1.7);
+          const fP2Volk = (x: number, y: number, z: number) => z - 1.0 + fOrganic(x, y, z, 1.00, 2.5);
+          const [plafond, shaft] = splitBoneSolid(tbSolid, fP2Dist, 22.0);
+          const [medCol, latPlaf] = splitBoneSolid(plafond, fP2Med, 20.0);
+          const [volkmann, chaput] = splitBoneSolid(latPlaf, fP2Volk, 20.0);
+          emitSolid(medCol, ltPos, ltNorm, csgLtCap);
+          emitSolid(volkmann, gtPos, gtNorm, csgGtCap);
+          emitSolid(chaput, shardPos, shardNorm, csgShardCap);
+          emitSolid(shaft, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "pilon_3") {
+          const fbSolid = extractBoneSolid(fbStart, fbEnd);
+          const fP3Fib = (x: number, y: number, z: number) => y - (-130.0) + fOrganic(x, y, z, 0.90, 1.3);
+          const [distFib, proxFib] = splitBoneSolid(fbSolid, fP3Fib, 16.0);
+          emitSolid(distFib, shardPos, shardNorm, csgShardCap);
+          emitSolid(proxFib, distPos, distNorm, csgDistCap);
+
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fDiePunch = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.85, 0.5);
+            return Math.max(y - (-138.0) + w, -6.0 - x + w, x - 18.0 + w, Math.abs(z) - 12.0 + w);
+          };
+          const fAntMeta = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.95, 2.1);
+            return Math.max(-138.0 - y + w, y - (-120.0) + w, 1.5 - z + w, x - 16.0 + w);
+          };
+          const fP3Cut = (x: number, y: number, z: number) => y - (-132.0) + fOrganic(x, y, z, 1.10, 2.8);
+          const fP3Med = (x: number, y: number, z: number) => 16.0 - x + fOrganic(x, y, z, 1.00, 3.4);
+          const fP3Volk = (x: number, y: number, z: number) => z + fOrganic(x, y, z, 1.00, 4.1);
+
+          const [diePunch, rest1] = splitBoneSolid(tbSolid, fDiePunch, 18.0);
+          const [antDie, postDie] = splitBoneSolid(diePunch, (x, y, z) => -2.0 - z + fOrganic(x, y, z, 0.70, 1.9), 16.0);
+          emitSolid(translateBoneSolid(antDie, 0.6, 1.8, 1.2), hnPos, hnNorm, csgHnCap);
+          emitSolid(translateBoneSolid(postDie, -0.4, -0.8, -0.6), hnPos, hnNorm, csgHnCap);
+
+          const [antMeta, rest2] = splitBoneSolid(rest1, fAntMeta, 18.0);
+          emitSolid(translateBoneSolid(antMeta, -2.2, 1.4, 3.6), shardPos, shardNorm, csgShardCap);
+
+          const [plafond3, shaft3] = splitBoneSolid(rest2, fP3Cut, 22.0);
+          const [medCol3, latPlaf3] = splitBoneSolid(plafond3, fP3Med, 20.0);
+          const [volkmann3, chaput3] = splitBoneSolid(latPlaf3, fP3Volk, 20.0);
+          emitSolid(medCol3, ltPos, ltNorm, csgLtCap);
+          emitSolid(volkmann3, gtPos, gtNorm, csgGtCap);
+          emitSolid(chaput3, shardPos, shardNorm, csgShardCap);
+          emitSolid(shaft3, distPos, distNorm, csgDistCap);
+        } else {
+          pushRange(distPos, distNorm, tbStart, fbEnd);
         }
       } else {
-        // Bipartite mode (Femoral neck, Evans V, Type IA, AFF, Shaft Type 0)
-        if (isAbove) {
-          pushTri(hnPos, hnNorm, i);
+        // Proximal Tibia (Schatzker I-VI) or Tibia Shaft
+        if (preset?.id === "intact") {
+          pushRange(distPos, distNorm, 0, rawVerts.length);
+        } else if (effectiveMode === "schatzker_1") {
+          pushRange(distPos, distNorm, tbEnd, rawVerts.length);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fS1 = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.10, 0.4);
+            return Math.max(165.0 - y + w, x - (-10.0) + w);
+          };
+          const [wedge, main] = splitBoneSolid(tbSolid, fS1, 22.0);
+          emitSolid(wedge, shardPos, shardNorm, csgShardCap);
+          emitSolid(main, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "schatzker_2") {
+          pushRange(distPos, distNorm, tbEnd, rawVerts.length);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fS2Wedge = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.10, 0.7);
+            return Math.max(165.0 - y + w, x - (-18.0) + w);
+          };
+          const fS2Dep = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.00, 1.8);
+            return Math.max(170.0 - y + w, -18.0 - x + w, x - (-2.5) + w);
+          };
+          const [wedge, rest1] = splitBoneSolid(tbSolid, fS2Wedge, 22.0);
+          const [dep, main] = splitBoneSolid(rest1, fS2Dep, 20.0);
+          emitSolid(wedge, shardPos, shardNorm, csgShardCap);
+          emitSolid(dep, hnPos, hnNorm, csgHnCap);
+          emitSolid(main, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "schatzker_3") {
+          pushRange(distPos, distNorm, tbEnd, rawVerts.length);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fS3 = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.00, 2.3);
+            return Math.max(172.0 - y + w, -23.0 - x + w, x - (-2.5) + w);
+          };
+          const [dep, main] = splitBoneSolid(tbSolid, fS3, 20.0);
+          emitSolid(dep, hnPos, hnNorm, csgHnCap);
+          emitSolid(main, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "schatzker_4") {
+          pushRange(distPos, distNorm, tbEnd, rawVerts.length);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fS4 = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.15, 1.1);
+            return Math.max(162.0 - y + w, 2.0 - x + w);
+          };
+          const [med, main] = splitBoneSolid(tbSolid, fS4, 22.0);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(main, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "schatzker_5") {
+          pushRange(distPos, distNorm, tbEnd, rawVerts.length);
+          const tbSolid = extractBoneSolid(tbStart, tbEnd);
+          const fS5Med = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.10, 0.9);
+            return Math.max(165.0 - y + w, 4.0 - x + w);
+          };
+          const fS5Lat = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 1.10, 2.1);
+            return Math.max(165.0 - y + w, x - (-8.0) + w);
+          };
+          const [med, rest1] = splitBoneSolid(tbSolid, fS5Med, 22.0);
+          const [lat, main] = splitBoneSolid(rest1, fS5Lat, 22.0);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, shardPos, shardNorm, csgShardCap);
+          emitSolid(main, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "schatzker_6") {
+          pushRange(distPos, distNorm, fbEnd, rawVerts.length);
+          const tbFbSolid = extractBoneSolid(tbStart, fbEnd);
+          const fS6Meta = (x: number, y: number, z: number) => 155.0 - y + fOrganic(x, y, z, 1.25, 1.5);
+          const fS6Split = (x: number, y: number, z: number) => -x + fOrganic(x, y, z, 1.10, 2.8);
+          const [prox, shaft] = splitBoneSolid(tbFbSolid, fS6Meta, 24.0);
+          const [med, lat] = splitBoneSolid(prox, fS6Split, 22.0);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, shardPos, shardNorm, csgShardCap);
+          emitSolid(shaft, distPos, distNorm, csgDistCap);
         } else {
-          pushTri(distPos, distNorm, i);
+          // Tibia shaft bipartite
+          pushRange(distPos, distNorm, fbEnd, rawVerts.length);
+          const tbFbSolid = extractBoneSolid(tbStart, fbEnd);
+          const [prox, dist] = splitBoneSolid(tbFbSolid, (x, y, z) => fPlaneAbove(x, y, z, 1.15, 0.5), 22.0);
+          emitSolid(prox, hnPos, hnNorm, csgHnCap);
+          emitSolid(dist, distPos, distNorm, csgDistCap);
         }
+      }
+    } else if (isClavicle) {
+      const [clStart, clEnd] = getBoneRange("clavicle", 0, 0, clavicleVertexCountRef.current || 13752);
+      // Scapula remains stationary in distPos
+      pushRange(distPos, distNorm, clEnd, rawVerts.length);
+
+      if (effectiveMode === "ac_joint_rockwood") {
+        pushRange(hnPos, hnNorm, clStart, clEnd);
+      } else {
+        const clavSolid = extractBoneSolid(clStart, clEnd);
+        if (effectiveMode === "clavicle_shaft_butterfly") {
+          const fShard = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.85, 0.7);
+            return Math.max(3.0 - x + w, x - 17.0 + w, y - 66.0 + w);
+          };
+          const [shard, rest] = splitBoneSolid(clavSolid, fShard, 16.0);
+          const [med, lat] = splitBoneSolid(rest, (x, y, z) => 10.0 - x + fOrganic(x, y, z, 0.90, 1.8), 16.0);
+          emitSolid(shard, shardPos, shardNorm, csgShardCap);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "clavicle_shaft_segmental") {
+          const fSeg = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.90, 1.1);
+            return Math.max(-2.0 - x + w, x - 22.0 + w);
+          };
+          const [seg, rest] = splitBoneSolid(clavSolid, fSeg, 16.0);
+          const [med, lat] = splitBoneSolid(rest, (x, y, z) => 22.0 - x + fOrganic(x, y, z, 0.90, 2.2), 16.0);
+          emitSolid(seg, shardPos, shardNorm, csgShardCap);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, distPos, distNorm, csgDistCap);
+        } else if (effectiveMode === "clavicle_distal_neer_v") {
+          const fShard = (x: number, y: number, z: number) => {
+            const w = fOrganic(x, y, z, 0.80, 1.4);
+            return Math.max(-48.0 - x + w, x - (-33.0) + w, y - 75.0 + w);
+          };
+          const [shard, rest] = splitBoneSolid(clavSolid, fShard, 16.0);
+          const [med, lat] = splitBoneSolid(rest, (x, y, z) => -28.0 - x + fOrganic(x, y, z, 0.90, 2.5), 16.0);
+          emitSolid(shard, shardPos, shardNorm, csgShardCap);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, distPos, distNorm, csgDistCap);
+        } else {
+          // clavicle_shaft_bipartite
+          const cutX = centerArr[0];
+          const [med, lat] = splitBoneSolid(clavSolid, (x, y, z) => cutX - x + fOrganic(x, y, z, 0.90, 0.9), 16.0);
+          emitSolid(med, hnPos, hnNorm, csgHnCap);
+          emitSolid(lat, distPos, distNorm, csgDistCap);
+        }
+      }
+    } else if (isPatella) {
+      const [ptStart, ptEnd] = getBoneRange("patella", 0, 0, patellaVertexCountRef.current || 10308);
+      // Stationary Femur & Tibia in distPos
+      pushRange(distPos, distNorm, ptEnd, rawVerts.length);
+      const ptSolid = extractBoneSolid(ptStart, ptEnd);
+
+      if (effectiveMode === "patella_nondisplaced" || effectiveMode === "patella_transverse") {
+        const [sup, inf] = splitBoneSolid(ptSolid, (x, y, z) => 9.7 - y + fOrganic(x, y, z, 0.65, 0.6), 18.0);
+        emitSolid(sup, hnPos, hnNorm, csgHnCap);
+        emitSolid(inf, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "patella_pole") {
+        const [sup, inf] = splitBoneSolid(ptSolid, (x, y, z) => 0.0 - y + fOrganic(x, y, z, 0.65, 1.2), 18.0);
+        emitSolid(sup, hnPos, hnNorm, csgHnCap);
+        emitSolid(inf, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "patella_vertical") {
+        const [med, lat] = splitBoneSolid(ptSolid, (x, y, z) => -4.2 - x + fOrganic(x, y, z, 0.65, 1.8), 18.0);
+        emitSolid(med, hnPos, hnNorm, csgHnCap);
+        emitSolid(lat, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "patella_comminuted") {
+        const [sup, rest] = splitBoneSolid(ptSolid, (x, y, z) => 13.0 - y + fOrganic(x, y, z, 0.65, 0.9), 18.0);
+        const [shard, inf] = splitBoneSolid(
+          rest,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 0.60, 2.1);
+            return Math.max(x - (-7.5) + w, -1.0 - y + w);
+          },
+          18.0
+        );
+        emitSolid(sup, hnPos, hnNorm, csgHnCap);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(inf, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "patella_osteochondral") {
+        const [shard, main] = splitBoneSolid(
+          ptSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 0.55, 1.5);
+            return Math.max(z - 26.0 + w, -4.0 - x + w, y - 12.0 + w);
+          },
+          18.0
+        );
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(main, hnPos, hnNorm, csgHnCap);
+      } else {
+        const [sup, inf] = splitBoneSolid(ptSolid, (x, y, z) => fPlaneAbove(x, y, z, 0.65, 0.5), 18.0);
+        emitSolid(sup, hnPos, hnNorm, csgHnCap);
+        emitSolid(inf, distPos, distNorm, csgDistCap);
+      }
+    } else if (isHumerus) {
+      const humSolid = extractBoneSolid(0, rawVerts.length);
+      const fProx = (x: number, y: number, z: number) => 95.0 - y + fOrganic(x, y, z, 1.05, 0.6);
+      const fLT = (x: number, y: number, z: number) => {
+        const w = fOrganic(x, y, z, 0.90, 1.4);
+        return Math.max(6.0 - z + w, x - 34.0 + w, y - 134.0 + w);
+      };
+      const fGT = (x: number, y: number, z: number) => {
+        const w = fOrganic(x, y, z, 1.00, 2.2);
+        return Math.min(x - 24.0 + w, Math.max(135.0 - y + w, x - 26.0 + w));
+      };
+
+      if (effectiveMode === "neer_2part_gt") {
+        const [prox, shaft] = splitBoneSolid(humSolid, fProx, 22.0);
+        const [lt, rest] = splitBoneSolid(prox, fLT, 18.0);
+        const [gt, head] = splitBoneSolid(rest, fGT, 20.0);
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(lt, hnPos, hnNorm, csgHnCap);
+        emitSolid(head, hnPos, hnNorm, csgHnCap);
+        emitSolid(shaft, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "neer_2part_sn") {
+        const [prox, shaft] = splitBoneSolid(humSolid, fProx, 22.0);
+        emitSolid(prox, hnPos, hnNorm, csgHnCap);
+        emitSolid(shaft, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "neer_3part_gt") {
+        const [prox, shaft] = splitBoneSolid(humSolid, fProx, 22.0);
+        const [lt, rest] = splitBoneSolid(prox, fLT, 18.0);
+        const [gt, head] = splitBoneSolid(rest, fGT, 20.0);
+        emitSolid(shaft, distPos, distNorm, csgDistCap);
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(lt, hnPos, hnNorm, csgHnCap);
+        emitSolid(head, hnPos, hnNorm, csgHnCap);
+      } else if (effectiveMode === "neer_3part_lt") {
+        const [prox, shaft] = splitBoneSolid(humSolid, fProx, 22.0);
+        const [lt, head] = splitBoneSolid(prox, fLT, 18.0);
+        emitSolid(shaft, distPos, distNorm, csgDistCap);
+        emitSolid(lt, ltPos, ltNorm, csgLtCap);
+        emitSolid(head, hnPos, hnNorm, csgHnCap);
+      } else if (effectiveMode === "neer_4part") {
+        const [prox, shaft] = splitBoneSolid(humSolid, fProx, 22.0);
+        const [lt, rest] = splitBoneSolid(prox, fLT, 18.0);
+        const [gt, head] = splitBoneSolid(rest, fGT, 20.0);
+        emitSolid(shaft, distPos, distNorm, csgDistCap);
+        emitSolid(lt, ltPos, ltNorm, csgLtCap);
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(head, hnPos, hnNorm, csgHnCap);
+      } else if (effectiveMode === "humerus_distal_supracondylar") {
+        const [prox, dist] = splitBoneSolid(humSolid, (x, y, z) => -120.0 - y + fOrganic(x, y, z, 1.05, 0.8), 22.0);
+        emitSolid(prox, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "humerus_distal_unicondylar_lat") {
+        const [shard, main] = splitBoneSolid(
+          humSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 0.95, 1.3);
+            return Math.max(y - (-120.0) + w, x - (-18.0) + w);
+          },
+          20.0
+        );
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(main, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "humerus_distal_coronal_shear") {
+        const [shard, main] = splitBoneSolid(
+          humSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 0.85, 1.9);
+            return Math.max(y - (-120.0) + w, x - (-18.0) + w, -6.0 - z + w);
+          },
+          18.0
+        );
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(main, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "humerus_distal_bicondylar") {
+        const [prox, condyles] = splitBoneSolid(humSolid, (x, y, z) => -120.0 - y + fOrganic(x, y, z, 1.05, 0.8), 22.0);
+        const [medCond, latCond] = splitBoneSolid(condyles, (x, y, z) => -18.0 - x + fOrganic(x, y, z, 0.95, 2.1), 20.0);
+        emitSolid(prox, hnPos, hnNorm, csgHnCap);
+        emitSolid(medCond, distPos, distNorm, csgDistCap);
+        emitSolid(latCond, shardPos, shardNorm, csgShardCap);
+      } else {
+        const [prox, dist] = splitBoneSolid(humSolid, (x, y, z) => fPlaneAbove(x, y, z, 1.05, 0.5), 20.0);
+        emitSolid(prox, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      }
+    } else {
+      // Femur (Proximal, Intertrochanteric, Subtrochanteric, Shaft, Distal) & generic Bipartite
+      const femSolid = extractBoneSolid(0, rawVerts.length);
+      const fFemLT = (x: number, y: number, z: number) => {
+        const w = fOrganic(x, y, z, 0.95, 1.4);
+        return Math.max(-22.0 - x + w, x - 2.0 + w, 128.0 - y + w, y - 156.0 + w, z - (-3.0) + w);
+      };
+      const fFemGT = (x: number, y: number, z: number) =>
+        x - (-32.0) + fOrganic(x, y, z, 1.15, 2.2);
+
+      if (effectiveMode === "intertroch_comminuted") {
+        const [above, below] = splitBoneSolid(femSolid, (x, y, z) => fPlaneAbove(x, y, z, 1.25, 0.5), 24.0);
+        const [gt, hn] = splitBoneSolid(above, fFemGT, 22.0);
+        const [lt, belowRest] = splitBoneSolid(below, fFemLT, 18.0);
+        const [shard, dist] = splitBoneSolid(
+          belowRest,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.05, 3.1);
+            return Math.max(x - (-28.0) + w, 140.0 - y + w, y - 182.0 + w);
+          },
+          20.0
+        );
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(lt, ltPos, ltNorm, csgLtCap);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "subtroch_comminuted") {
+        const [lt, rest1] = splitBoneSolid(femSolid, fFemLT, 18.0);
+        const [above, below] = splitBoneSolid(rest1, (x, y, z) => fPlaneAbove(x, y, z, 1.25, 0.5), 24.0);
+        const [gt, hn] = splitBoneSolid(above, fFemGT, 22.0);
+        const [shard, dist] = splitBoneSolid(
+          below,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.05, 2.8);
+            return Math.max(x - (-16.0) + w, 92.0 - y + w, y - 124.0 + w);
+          },
+          20.0
+        );
+        emitSolid(lt, ltPos, ltNorm, csgLtCap);
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "subtroch_lt") {
+        const [lt, rest1] = splitBoneSolid(femSolid, fFemLT, 18.0);
+        const [hn, dist] = splitBoneSolid(rest1, (x, y, z) => fPlaneAbove(x, y, z, 1.25, 0.5), 24.0);
+        emitSolid(lt, ltPos, ltNorm, csgLtCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "subtroch_fossa") {
+        const [above, dist] = splitBoneSolid(femSolid, (x, y, z) => fPlaneAbove(x, y, z, 1.25, 0.5), 24.0);
+        const [gt, hn] = splitBoneSolid(above, fFemGT, 22.0);
+        emitSolid(gt, gtPos, gtNorm, csgGtCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "shaft_butterfly_small") {
+        const [shard, rest] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.00, 1.2);
+            return Math.max(x - (-14.0) + w, -20.0 - y + w, y - 0.0 + w);
+          },
+          20.0
+        );
+        const [hn, dist] = splitBoneSolid(rest, (x, y, z) => fPlaneAbove(x, y, z, 1.15, 0.5), 22.0);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "shaft_butterfly_med") {
+        const [shard, rest] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.05, 1.6);
+            return Math.max(x - (-12.0) + w, -25.0 - y + w, y - 5.0 + w);
+          },
+          20.0
+        );
+        const [hn, dist] = splitBoneSolid(rest, (x, y, z) => fPlaneAbove(x, y, z, 1.15, 0.5), 22.0);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "shaft_butterfly_large") {
+        const [shard, rest] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.10, 2.1);
+            return Math.max(Math.min(x - (-10.0) + w, 16.0 - z + w), -28.0 - y + w, y - 8.0 + w);
+          },
+          22.0
+        );
+        const [hn, dist] = splitBoneSolid(rest, (x, y, z) => fPlaneAbove(x, y, z, 1.15, 0.5), 22.0);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "shaft_segmental") {
+        const [shard, rest] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.15, 1.4);
+            return Math.max(-26.0 - y + w, y - 6.0 + w);
+          },
+          22.0
+        );
+        const [hn, dist] = splitBoneSolid(rest, (x, y, z) => 6.0 - y + fOrganic(x, y, z, 1.15, 2.5), 22.0);
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "distal_supracondylar") {
+        const [hn, dist] = splitBoneSolid(femSolid, (x, y, z) => -170.0 - y + fOrganic(x, y, z, 1.25, 0.9), 24.0);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "distal_unicondylar_lat") {
+        const [shard, dist] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.15, 1.5);
+            return Math.max(y - (-170.0) + w, x - 12.0 + w);
+          },
+          24.0
+        );
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "distal_hoffa") {
+        const [shard, dist] = splitBoneSolid(
+          femSolid,
+          (x, y, z) => {
+            const w = fOrganic(x, y, z, 1.05, 2.0);
+            return Math.max(y - (-170.0) + w, x - 12.0 + w, z - (-2.0) + w);
+          },
+          22.0
+        );
+        emitSolid(shard, shardPos, shardNorm, csgShardCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
+      } else if (effectiveMode === "distal_bicondylar") {
+        const [hn, condyles] = splitBoneSolid(femSolid, (x, y, z) => -170.0 - y + fOrganic(x, y, z, 1.25, 0.9), 24.0);
+        const [medCond, latCond] = splitBoneSolid(condyles, (x, y, z) => 12.0 - x + fOrganic(x, y, z, 1.15, 2.3), 24.0);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(medCond, distPos, distNorm, csgDistCap);
+        emitSolid(latCond, shardPos, shardNorm, csgShardCap);
+      } else {
+        // Default bipartite mode (Femoral neck Garden I-IV, Evans, etc.)
+        const [hn, dist] = splitBoneSolid(femSolid, (x, y, z) => fPlaneAbove(x, y, z, 1.15, 0.5), 24.0);
+        emitSolid(hn, hnPos, hnNorm, csgHnCap);
+        emitSolid(dist, distPos, distNorm, csgDistCap);
       }
     }
 
@@ -4844,35 +7828,75 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       ? (p1: [number, number, number], p2: [number, number, number]) => Math.abs(p1[1]) < 60 && Math.abs(p2[1]) < 60
       : undefined;
 
-    const hnCap = !isIntact ? extractBoundaryCaps(hnPos, patellaFilter) : undefined;
-    const gtCap = !isIntact ? extractBoundaryCaps(gtPos, patellaFilter) : undefined;
-    const distCap = !isIntact ? extractBoundaryCaps(distPos, patellaFilter) : undefined;
-    const ltCap = !isIntact ? extractBoundaryCaps(ltPos, patellaFilter) : undefined;
-    const shardCap = !isIntact ? extractBoundaryCaps(shardPos, patellaFilter) : undefined;
+    const hnCap = !isIntact
+      ? (isPelvis ? (csgHnCap.length > 0 ? csgHnCap : extractBoundaryCaps(hnPos)) : extractBoundaryCaps(hnPos, patellaFilter))
+      : undefined;
+    const gtCap = !isIntact
+      ? (isPelvis ? (csgGtCap.length > 0 ? csgGtCap : extractBoundaryCaps(gtPos)) : extractBoundaryCaps(gtPos, patellaFilter))
+      : undefined;
+    const distCap = (!isIntact && !isPelvis)
+      ? extractBoundaryCaps(distPos, patellaFilter)
+      : undefined;
+    const ltCap = !isIntact
+      ? (isPelvis ? (csgLtCap.length > 0 ? csgLtCap : extractBoundaryCaps(ltPos)) : extractBoundaryCaps(ltPos, patellaFilter))
+      : undefined;
+    const shardCap = !isIntact
+      ? (isPelvis ? (csgShardCap.length > 0 ? csgShardCap : extractBoundaryCaps(shardPos)) : extractBoundaryCaps(shardPos, patellaFilter))
+      : undefined;
 
-    // 1. Proximal Fragment (Head & Neck or Talus/Hindfoot in Ankle)
+    // 1. Proximal Fragment (Head & Neck or Talus/Hindfoot in Ankle or Central Die-Punch in Pilon or Talar Body in Talus)
     const isClavicleSCFulcrum = isClavicle && (
       effectiveMode.startsWith("clavicle_shaft") ||
       effectiveMode.startsWith("clavicle_distal") ||
       subregion.id === "shaft" ||
       subregion.id === "distal"
     );
-    const proxPivotCenter = isClavicleSCFulcrum
+    const isTibiaPilonDiePunch = isTibia && subregion.id === "pilon";
+    const isTalusBody = (isTibia || isFoot) && subregion.id === "talus";
+    const isCalcaneusTongue = (isTibia || isFoot) && subregion.id === "calcaneus";
+    const proxPivotCenter = isPelvis
+      ? (subregion.id === "acetabulum"
+          ? (effectiveMode === "jl_both_column"
+              ? new THREE.Vector3(-59.04, 54.79, -33.53)
+              : new THREE.Vector3(-83.10, 24.87, 0.38))
+          : new THREE.Vector3(-49.14, 39.22, -46.77))
+      : isClavicleSCFulcrum
       ? new THREE.Vector3(70.0, 50.0, 60.0)
+      : isTibiaPilonDiePunch
+      ? new THREE.Vector3(9.95, -148.59, -1.98)
+      : isTalusBody
+      ? new THREE.Vector3(8.51, -171.40, -5.48)
+      : isCalcaneusTongue
+      ? new THREE.Vector3(5.30, -183.46, -14.19)
       : cutCenter;
+    proxBasePosRef.current.copy(proxPivotCenter);
     proximalPivotGroup.position.copy(proxPivotCenter);
     updateGroupMesh(proximalPivotGroup, proximalMeshRef, hnPos, hnNorm, activeMat, proxPivotCenter.clone().negate(), hnCap, capMat);
 
-    // 2. Greater Trochanter / Fossa / Volkmann Posterior Malleolus / PA III Butterfly Shard
-    const gtCentroid = (isTibia && subregion.id === "distal")
+    // 2. Greater Trochanter / Fossa / Volkmann Posterior Malleolus / PA III Butterfly Shard / Calcaneus Tuberosity
+    const gtCentroid = isPelvis
+      ? (subregion.id === "acetabulum"
+          ? (effectiveMode === "jl_t_shaped"
+              ? new THREE.Vector3(-61.40, -66.09, -13.24)
+              : (effectiveMode === "jl_acpht"
+                  ? new THREE.Vector3(-61.18, -61.64, -14.39)
+                  : new THREE.Vector3(-63.30, -50.00, -14.51)))
+          : new THREE.Vector3(50.47, 37.55, -47.18))
+      : (isTibia && subregion.id === "distal")
       ? (effectiveMode === "lh_pa_3"
           ? new THREE.Vector3(-22.05, -109.25, -8.62)
           : new THREE.Vector3(-1.01, -145.41, -15.09))
+      : (isTibia && subregion.id === "pilon")
+      ? new THREE.Vector3(-2.8, -145.6, -12.8)
+      : ((isTibia || isFoot) && subregion.id === "calcaneus")
+      ? (effectiveMode === "essex_tongue"
+          ? new THREE.Vector3(8.5, -204.0, -32.0)
+          : new THREE.Vector3(10.16, -183.87, -28.51))
       : isHumerus
       ? new THREE.Vector3(11.16, 136.28, -1.11)
       : new THREE.Vector3(-43.3, 194.6, -7.4);
 
-    if (isTibia && subregion.id === "distal") {
+    if (isPelvis || ((isTibia || isFoot) && (subregion.id === "distal" || subregion.id === "pilon" || subregion.id === "calcaneus"))) {
       gtBasePosRef.current.copy(gtCentroid.clone().sub(distBase));
     } else {
       gtBasePosRef.current.copy(gtCentroid.clone().sub(cutCenter));
@@ -4884,12 +7908,32 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     distalGroup.position.copy(distBase);
     updateGroupMesh(distalGroup, distalMeshRef, distPos, distNorm, activeMat, distBase.clone().negate(), distCap, capMat);
 
-    // 4. Lesser Trochanter / Tuberosity / Medial Malleolus Fragment
+    // 4. Lesser Trochanter / Tuberosity / Medial Malleolus Fragment / Navicular (Hawkins IV) / Calcaneus Lateral Wall / Pubic Rami
     let ltCentroid: THREE.Vector3;
-    if (isTibia && subregion.id === "distal") {
+    if (isPelvis) {
+      if (subregion.id === "acetabulum") {
+        if (effectiveMode === "jl_aw") {
+          ltCentroid = new THREE.Vector3(-92.98, -24.40, 33.20);
+        } else if (effectiveMode === "jl_transverse" || effectiveMode === "jl_trans_pw") {
+          ltCentroid = new THREE.Vector3(-49.45, -60.73, 13.87);
+        } else if (effectiveMode === "jl_t_shaped") {
+          ltCentroid = new THREE.Vector3(-37.10, -55.20, 41.90);
+        } else {
+          ltCentroid = new THREE.Vector3(-53.44, -43.53, 38.70);
+        }
+      } else {
+        ltCentroid = new THREE.Vector3(-21.29, -69.44, 44.68);
+      }
+    } else if ((isTibia || isFoot) && subregion.id === "calcaneus") {
+      ltCentroid = new THREE.Vector3(-12.0, -185.0, 5.0);
+    } else if ((isTibia || isFoot) && subregion.id === "talus") {
+      ltCentroid = new THREE.Vector3(22.0, -168.0, 34.0);
+    } else if (isTibia && subregion.id === "distal") {
       ltCentroid = effectiveMode === "lh_sa_2"
         ? new THREE.Vector3(24.09, -150.30, 6.62)
         : new THREE.Vector3(23.88, -153.32, 7.23);
+    } else if (isTibia && subregion.id === "pilon") {
+      ltCentroid = new THREE.Vector3(23.4, -150.1, 6.6);
     } else if (isHumerus) {
       ltCentroid = new THREE.Vector3(20.09, 124.84, 17.14);
     } else {
@@ -4903,9 +7947,25 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     ltPivotGroup.position.copy(ltBasePosRef.current);
     updateGroupMesh(ltPivotGroup, ltMeshRef, ltPos, ltNorm, activeMat, ltCentroid.clone().negate(), ltCap, capMat);
 
-    // 5. Lateral Wall Butterfly Shard / Lateral Malleolus Fragment
+    // 5. Lateral Wall Butterfly Shard / Lateral Malleolus Fragment / Talar Head & Neck / Calcaneus Depressed Facet / Iliac Crescent Fragment
     let shardCentroid: THREE.Vector3;
-    if (isTibia && subregion.id === "distal") {
+    if (isPelvis) {
+      if (subregion.id === "acetabulum") {
+        if (effectiveMode === "jl_both_column") {
+          shardCentroid = new THREE.Vector3(-64.10, -29.10, 9.20);
+        } else {
+          shardCentroid = new THREE.Vector3(-93.59, -29.72, -6.63);
+        }
+      } else {
+        shardCentroid = new THREE.Vector3(-66.22, 66.07, -31.16);
+      }
+    } else if ((isTibia || isFoot) && subregion.id === "calcaneus") {
+      shardCentroid = effectiveMode === "essex_tongue"
+        ? new THREE.Vector3(-12.0, -185.0, 5.0)
+        : new THREE.Vector3(3.87, -182.04, -4.66);
+    } else if ((isTibia || isFoot) && subregion.id === "talus") {
+      shardCentroid = new THREE.Vector3(6.75, -167.10, 18.30);
+    } else if (isTibia && subregion.id === "distal") {
       if (effectiveMode === "lh_per_3" || effectiveMode === "lh_per_4") {
         shardCentroid = new THREE.Vector3(-18.50, -148.00, -12.50);
       } else if (effectiveMode === "lh_pa_3") {
@@ -4915,6 +7975,8 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       } else {
         shardCentroid = new THREE.Vector3(-16.91, -165.43, -14.17);
       }
+    } else if (isTibia && subregion.id === "pilon") {
+      shardCentroid = new THREE.Vector3(-14.8, -159.4, -7.5);
     } else if (effectiveMode === "clavicle_distal_neer_v") {
       shardCentroid = new THREE.Vector3(-42.1, 73.8, -13.5);
     } else if (effectiveMode === "clavicle_shaft_segmental") {
@@ -4943,20 +8005,25 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     shardBasePosRef.current.copy(shardCentroid.clone().sub(distBase));
     shardPivotGroup.position.copy(shardBasePosRef.current);
     updateGroupMesh(shardPivotGroup, shardMeshRef, shardPos, shardNorm, activeMat, shardCentroid.clone().negate(), shardCap, capMat);
-  }, [updateGroupMesh, extractBoundaryCaps, isHumerus, isClavicle, isPatella, isTibia]);
+  }, [updateGroupMesh, extractBoundaryCaps, isHumerus, isClavicle, isPatella, isTibia, isFoot, isPelvis]);
 
   // When subregion changes, re-partition bone, reset preset, and glide camera to focused subregion (+40% zoom)
   useEffect(() => {
     const firstPreset = activeSubregion.presets[0];
-    setSelectedPresetId(firstPreset?.id ?? "intact");
+    const initialPresetId = (isPelvis && (firstPreset?.id === "pelvis_intact" || firstPreset?.id === "acetabulum_intact"))
+      ? "intact"
+      : (firstPreset?.id ?? "intact");
+    setSelectedPresetId(initialPresetId);
     setSelectedMechanismGroup(null);
+    setSelectedPelvisGroup(null);
+    setSelectedAcetabulumGroup(null);
     setIsPearlExpanded(false);
     setSelectedStructure(null);
     setHoveredStructure(null);
     if (markerMeshRef.current) markerMeshRef.current.visible = false;
-    partitionBoneMesh(activeSubregion, firstPreset);
+    partitionBoneMesh(activeSubregion, initialPresetId === "intact" ? undefined : firstPreset);
     triggerCameraFocus(activeSubregion);
-  }, [selectedSubregionId, activeSubregion, partitionBoneMesh, triggerCameraFocus]);
+  }, [selectedSubregionId, activeSubregion, partitionBoneMesh, triggerCameraFocus, isPelvis]);
 
   // Update target displacement/angulation and partition plane when preset changes
   useEffect(() => {
@@ -5026,7 +8093,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       }
     });
 
-    // Clavicle & Ankle ligaments: completely hidden in X-ray mode to simulate radiolucent soft tissue
+    // Clavicle, Ankle & Pelvic ligaments: completely hidden in X-ray mode to simulate radiolucent soft tissue
     if (ligamentBundleRef.current) {
       ligamentBundleRef.current.group.visible = !isXRayMode && showLigamentsRef.current;
     }
@@ -5034,7 +8101,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       const isDistalAnkle = isTibia && activeSubregionRef.current?.id === "distal";
       ankleLigamentBundleRef.current.group.visible = !isXRayMode && isDistalAnkle && showLigamentsRef.current;
     }
-  }, [isXRayMode, isTibia]);
+    if (pelvicLigamentBundleRef.current) {
+      const isPelvicRing = isPelvis && activeSubregionRef.current?.id === "pelvic-ring";
+      const shouldShow = !isXRayMode && isPelvicRing && showLigamentsRef.current;
+      pelvicLigamentBundleRef.current.updateState(shouldShow, selectedPresetIdRef.current);
+    }
+  }, [isXRayMode, isTibia, isPelvis]);
 
 
   // Factory to create a 3D force vector mesh instance (shaft + head cone + anchor sphere + label sprite)
@@ -5099,7 +8171,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       return;
     }
 
-    const configs = getForceVectorsForSubregion(subId, isClavicle, isHumerus, isPatella, isTibia, presetId);
+    const configs = getForceVectorsForSubregion(subId, isClavicle, isHumerus, isPatella, isTibia || isFoot, presetId);
     activeForceConfigsRef.current = configs || [];
     if (!configs || configs.length === 0) return;
 
@@ -5112,7 +8184,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       }
     });
     forceVectorInstancesRef.current = newInstances;
-  }, [isClavicle, isHumerus, isPatella, isTibia, createForceVectorInstance]);
+  }, [isClavicle, isHumerus, isPatella, isTibia, isFoot, createForceVectorInstance]);
 
   // Synchronize force vectors whenever subregion or preset changes
   useEffect(() => {
@@ -5295,6 +8367,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       if (!isXRayModeRef.current && ligamentBundleRef.current?.group && ligamentBundleRef.current.group.visible) {
         candidates.push(ligamentBundleRef.current.group);
       }
+      if (!isXRayModeRef.current && pelvicLigamentBundleRef.current) {
+        for (const m of pelvicLigamentBundleRef.current.meshes) {
+          if (m.visible) candidates.push(m);
+        }
+      }
       if (forceVectorsGroupRef.current) candidates.push(forceVectorsGroupRef.current);
 
       const intersects = raycaster.intersectObjects(candidates, true);
@@ -5305,10 +8382,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
           activeSubregionRef.current,
           activePresetRef.current,
           boneVertexRangesRef.current,
-          isTibia,
+          isTibia || isFoot,
           isHumerus,
           isClavicle,
           isPatella,
+          isPelvis,
           proximalMeshRef.current,
           distalMeshRef.current,
           gtMeshRef.current,
@@ -5458,7 +8536,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     proximalPivotGroupRef.current = proximalPivotGroup;
 
     const gtPivotGroup = new THREE.Group();
-    if (isTibia) {
+    if (isTibia || isFoot || isPelvis) {
       distalGroup.add(gtPivotGroup);
     } else {
       proximalPivotGroup.add(gtPivotGroup);
@@ -5478,13 +8556,15 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     shardPivotGroupRef.current = shardPivotGroup;
 
     // Anatomical Ligament Bundle Setup (Acromioclavicular & Coracoclavicular System)
-    const cylGeom = new THREE.CylinderGeometry(1, 1, 1, 16);
-    const coneGeom = new THREE.ConeGeometry(1, 1, 16);
+    const boxGeom = new THREE.BoxGeometry(1, 1, 1);
 
     const ligamentMat = new THREE.MeshStandardMaterial({
-      color: 0xF1F5F9,
+      color: 0xE2E8F0,
       roughness: 0.38,
-      metalness: 0.06,
+      metalness: 0.05,
+      transparent: true,
+      opacity: 0.72,
+      depthWrite: false,
       side: THREE.DoubleSide,
     });
 
@@ -5493,8 +8573,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       roughness: 0.45,
       metalness: 0.08,
       emissive: 0x991B1B,
-      emissiveIntensity: 0.35,
+      emissiveIntensity: 0.45,
       side: THREE.DoubleSide,
+      polygonOffset: true,
+      polygonOffsetFactor: -1,
+      polygonOffsetUnits: -1,
     });
 
     const ligamentGroup = new THREE.Group();
@@ -5510,26 +8593,25 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
 
     ligamentBundleRef.current = {
       group: ligamentGroup,
-      cylGeom,
-      coneGeom,
+      boxGeom,
       ligamentMat,
       rupturedTipMat,
-      conoidIntact: createLigMesh(cylGeom, ligamentMat),
-      conoidStumpA: createLigMesh(cylGeom, ligamentMat),
-      conoidTipA: createLigMesh(coneGeom, rupturedTipMat),
-      conoidStumpB: createLigMesh(cylGeom, ligamentMat),
-      conoidTipB: createLigMesh(coneGeom, rupturedTipMat),
-      trapIntact: createLigMesh(cylGeom, ligamentMat),
-      trapStumpA: createLigMesh(cylGeom, ligamentMat),
-      trapTipA: createLigMesh(coneGeom, rupturedTipMat),
-      trapStumpB: createLigMesh(cylGeom, ligamentMat),
-      trapTipB: createLigMesh(coneGeom, rupturedTipMat),
-      acIntact: createLigMesh(cylGeom, ligamentMat),
-      acStumpA: createLigMesh(cylGeom, ligamentMat),
-      acTipA: createLigMesh(coneGeom, rupturedTipMat),
-      acStumpB: createLigMesh(cylGeom, ligamentMat),
-      acTipB: createLigMesh(coneGeom, rupturedTipMat),
-      caIntact: createLigMesh(cylGeom, ligamentMat),
+      conoidIntact: createLigMesh(boxGeom, ligamentMat),
+      conoidStumpA: createLigMesh(boxGeom, ligamentMat),
+      conoidTipA: createLigMesh(boxGeom, rupturedTipMat),
+      conoidStumpB: createLigMesh(boxGeom, ligamentMat),
+      conoidTipB: createLigMesh(boxGeom, rupturedTipMat),
+      trapIntact: createLigMesh(boxGeom, ligamentMat),
+      trapStumpA: createLigMesh(boxGeom, ligamentMat),
+      trapTipA: createLigMesh(boxGeom, rupturedTipMat),
+      trapStumpB: createLigMesh(boxGeom, ligamentMat),
+      trapTipB: createLigMesh(boxGeom, rupturedTipMat),
+      acIntact: createLigMesh(boxGeom, ligamentMat),
+      acStumpA: createLigMesh(boxGeom, ligamentMat),
+      acTipA: createLigMesh(boxGeom, rupturedTipMat),
+      acStumpB: createLigMesh(boxGeom, ligamentMat),
+      acTipB: createLigMesh(boxGeom, rupturedTipMat),
+      caIntact: createLigMesh(boxGeom, ligamentMat),
     };
 
     if (isTibia) {
@@ -5537,6 +8619,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       ankleBundle.group.visible = false;
       distalGroup.add(ankleBundle.group);
       ankleLigamentBundleRef.current = ankleBundle;
+    }
+
+    if (isPelvis) {
+      const pelvicBundle = createPelvicLigamentMeshes(proximalPivotGroup, gtPivotGroup, distalGroup, ltPivotGroup);
+      pelvicBundle.group.visible = false;
+      distalGroup.add(pelvicBundle.group);
+      pelvicLigamentBundleRef.current = pelvicBundle;
     }
 
     // Dynamic Musculoskeletal Force Vectors Group Setup
@@ -5603,17 +8692,18 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
           const normAttr = geom.attributes.normal;
           const normalMatrix = new THREE.Matrix3().getNormalMatrix(m.matrixWorld);
 
+          const meshName = (m.name || child.name || m.parent?.name || "").toLowerCase();
           boneRanges.push({
-            name: (m.name || child.name || "").toLowerCase(),
+            name: meshName,
             start: currentVertOffset,
             end: currentVertOffset + posAttr.count,
           });
           currentVertOffset += posAttr.count;
 
-          const isClavicleChild = m.name.toLowerCase().includes("clavicle");
-          const isPatellaChild = m.name.toLowerCase().includes("patella");
-          const isTibiaChild = (m.name || child.name || "").toLowerCase().includes("tibia");
-          const isFibulaChild = (m.name || child.name || "").toLowerCase().includes("fibula");
+          const isClavicleChild = meshName.includes("clavicle");
+          const isPatellaChild = meshName.includes("patella");
+          const isTibiaChild = meshName.includes("tibia");
+          const isFibulaChild = meshName.includes("fibula");
 
           for (let i = 0; i < posAttr.count; i++) {
             const v = new THREE.Vector3().fromBufferAttribute(posAttr, i).applyMatrix4(m.matrixWorld);
@@ -5672,7 +8762,9 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       controls.target.copy(initTarget);
       controls.update();
 
-      if (isTibia && activeSubregionRef.current?.id === "distal") {
+      if (activeSubregionRef.current?.id === "talus" || activeSubregionRef.current?.id === "calcaneus") {
+        setActiveSnapView("lat");
+      } else if (isPelvis || (isTibia && (activeSubregionRef.current?.id === "distal" || activeSubregionRef.current?.id === "pilon"))) {
         setActiveSnapView("ap");
       }
 
@@ -5746,6 +8838,41 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
 
         if (
           camTransition.isSpherical &&
+          camTransition.thetaStart != null &&
+          camTransition.dTheta != null &&
+          camTransition.phiStart != null &&
+          camTransition.phiEnd != null &&
+          camTransition.rStart != null &&
+          camTransition.rEnd != null
+        ) {
+          const curCenter = new THREE.Vector3().lerpVectors(
+            camTransition.startTarget,
+            camTransition.endTarget,
+            ease
+          );
+          const curDist = THREE.MathUtils.lerp(
+            camTransition.rStart,
+            camTransition.rEnd,
+            ease
+          );
+          const curPhi = THREE.MathUtils.lerp(
+            camTransition.phiStart,
+            camTransition.phiEnd,
+            ease
+          );
+          const curTheta = camTransition.thetaStart + camTransition.dTheta * ease;
+          const sinPhi = Math.sin(curPhi);
+          const curDir = new THREE.Vector3(
+            sinPhi * Math.cos(curTheta),
+            Math.cos(curPhi),
+            sinPhi * Math.sin(curTheta)
+          ).normalize();
+
+          camera.position.copy(curCenter).addScaledVector(curDir, curDist);
+          controls.target.copy(curCenter);
+          camera.lookAt(controls.target);
+        } else if (
+          camTransition.isSpherical &&
           camTransition.uStart &&
           camTransition.qRot &&
           camTransition.rStart != null &&
@@ -5797,19 +8924,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         proxPivot.rotation.y = THREE.MathUtils.lerp(proxPivot.rotation.y, currentProximalRot.current.y, 0.12);
         proxPivot.rotation.z = THREE.MathUtils.lerp(proxPivot.rotation.z, currentProximalRot.current.z, 0.12);
 
-        // Smooth translation (cutCenter + offset)
-        const isClavicleSCFulcrum = isClavicle && (
-          activePresetRef.current?.partitionMode?.startsWith("clavicle_shaft") ||
-          activePresetRef.current?.partitionMode?.startsWith("clavicle_distal") ||
-          activeSubregionRef.current.id === "shaft" ||
-          activeSubregionRef.current.id === "distal"
-        );
-        const basePivot = isClavicleSCFulcrum
-          ? [70.0, 50.0, 60.0]
-          : (activePresetRef.current?.cutCenter ?? activeSubregionRef.current.cutCenter);
-        const targetX = basePivot[0] + currentProximalPos.current.x;
-        const targetY = basePivot[1] + currentProximalPos.current.y;
-        const targetZ = basePivot[2] + currentProximalPos.current.z;
+        // Smooth translation (proxBasePosRef + offset)
+        const basePivot = proxBasePosRef.current;
+        const targetX = basePivot.x + currentProximalPos.current.x;
+        const targetY = basePivot.y + currentProximalPos.current.y;
+        const targetZ = basePivot.z + currentProximalPos.current.z;
 
         proxPivot.position.x = THREE.MathUtils.lerp(proxPivot.position.x, targetX, 0.12);
         proxPivot.position.y = THREE.MathUtils.lerp(proxPivot.position.y, targetY, 0.12);
@@ -5910,10 +9029,10 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             _curAcClavicle.copy(_acClavicleRaw).applyQuaternion(qDist).add(pDist);
 
             // All ligaments intact in midshaft fractures
-            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 2.8, 1.6);
-            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 2.8, 1.8);
-            updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
-            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 3.5, 1.8);
+            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 7.5, 2.2, _normCA);
+            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 6.5, 2.4, _normAC);
+            updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 8.0, 2.6, _normConoid);
+            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 8.5, 2.6, _normTrap);
 
             bundle.acStumpA.visible = false;
             bundle.acTipA.visible = false;
@@ -5944,11 +9063,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             _curCaAcromion.copy(_caAcromion).applyQuaternion(qDist).add(pDist);
 
             // 1. CA Ligament is always intact
-            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 2.8, 1.6);
+            updateLigamentSegment(bundle.caIntact, _curCaCoracoid, _curCaAcromion, 7.5, 2.2, _normCA);
 
             // 2. AC Ligament: intact across distal fragment and acromion
             _curAcClavicle.copy(_acClavicleRaw).applyQuaternion(qDist).add(pDist);
-            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 2.8, 1.8);
+            updateLigamentSegment(bundle.acIntact, _curAcScapula, _curAcClavicle, 6.5, 2.4, _normAC);
             bundle.acStumpA.visible = false;
             bundle.acTipA.visible = false;
             bundle.acStumpB.visible = false;
@@ -5962,7 +9081,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             } else {
               _curTrapClavicle.copy(_trapClavicleRaw).applyQuaternion(qDist).add(pDist);
             }
-            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 3.5, 1.8);
+            updateLigamentSegment(bundle.trapIntact, _curTrapScapula, _curTrapClavicle, 8.5, 2.6, _normTrap);
             bundle.trapStumpA.visible = false;
             bundle.trapTipA.visible = false;
             bundle.trapStumpB.visible = false;
@@ -5980,7 +9099,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 bundle.conoidStumpA, bundle.conoidTipA,
                 bundle.conoidStumpB, bundle.conoidTipB,
                 _curConoidScapula, _curConoidClavicle,
-                3.2, 2.4, 12.0, 2.2
+                8.0, 2.6, 7.5, 0.5, _normConoid
               );
             } else if (isNeer5 && shardPivotGroupRef.current) {
               // Neer V: Conoid attached to inferior avulsion shard
@@ -5992,7 +9111,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               bundle.conoidTipA.visible = false;
               bundle.conoidStumpB.visible = false;
               bundle.conoidTipB.visible = false;
-              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
+              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 8.0, 2.6, _normConoid);
             } else {
               // Neer I, IIA, III, IV: Conoid is intact
               _curConoidClavicle.copy(_conoidClavicleRaw).applyQuaternion(qDist).add(pDist);
@@ -6001,7 +9120,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               bundle.conoidTipA.visible = false;
               bundle.conoidStumpB.visible = false;
               bundle.conoidTipB.visible = false;
-              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 3.2, 2.4);
+              updateLigamentSegment(bundle.conoidIntact, _curConoidScapula, _curConoidClavicle, 8.0, 2.6, _normConoid);
             }
           } else {
             // AC Joint (Rockwood) / Distal Clavicle mode:
@@ -6021,11 +9140,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             _acClavicle.copy(_acClavicleRaw).sub(_cutCenterVec).applyQuaternion(q).add(p);
 
             // 1. Coracoacromial (CA) Ligament: always intact arch
-            updateLigamentSegment(bundle.caIntact, _caCoracoid, _caAcromion, 2.8, 1.6);
+            updateLigamentSegment(bundle.caIntact, _caCoracoid, _caAcromion, 7.5, 2.2, _normCA);
 
             // 2. Acromioclavicular (AC) Ligament
             if (!isActTorn) {
-              updateLigamentSegment(bundle.acIntact, _acScapula, _acClavicle, 2.8, 1.8);
+              updateLigamentSegment(bundle.acIntact, _acScapula, _acClavicle, 6.5, 2.4, _normAC);
               bundle.acStumpA.visible = false;
               bundle.acTipA.visible = false;
               bundle.acStumpB.visible = false;
@@ -6036,13 +9155,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 bundle.acStumpA, bundle.acTipA,
                 bundle.acStumpB, bundle.acTipB,
                 _acScapula, _acClavicle,
-                2.8, 1.8, 2.8, 1.0
+                6.5, 2.4, 2.0, 0.4, _normAC
               );
             }
 
             // 3. Conoid Ligament
             if (!isCcTorn) {
-              updateLigamentSegment(bundle.conoidIntact, _conoidScapula, _conoidClavicle, 3.2, 2.4);
+              updateLigamentSegment(bundle.conoidIntact, _conoidScapula, _conoidClavicle, 8.0, 2.6, _normConoid);
               bundle.conoidStumpA.visible = false;
               bundle.conoidTipA.visible = false;
               bundle.conoidStumpB.visible = false;
@@ -6053,13 +9172,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 bundle.conoidStumpA, bundle.conoidTipA,
                 bundle.conoidStumpB, bundle.conoidTipB,
                 _conoidScapula, _conoidClavicle,
-                3.2, 2.4, 12.0, 2.2
+                8.0, 2.6, 7.5, 0.5, _normConoid
               );
             }
 
             // 4. Trapezoid Ligament
             if (!isCcTorn) {
-              updateLigamentSegment(bundle.trapIntact, _trapScapula, _trapClavicle, 3.5, 1.8);
+              updateLigamentSegment(bundle.trapIntact, _trapScapula, _trapClavicle, 8.5, 2.6, _normTrap);
               bundle.trapStumpA.visible = false;
               bundle.trapTipA.visible = false;
               bundle.trapStumpB.visible = false;
@@ -6070,7 +9189,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 bundle.trapStumpA, bundle.trapTipA,
                 bundle.trapStumpB, bundle.trapTipB,
                 _trapScapula, _trapClavicle,
-                3.5, 1.8, 14.0, 2.2
+                8.5, 2.6, 8.0, 0.5, _normTrap
               );
             }
           }
@@ -6101,7 +9220,13 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         }
       }
 
-      // Dynamic Musculoskeletal Force Vectors animation
+      // Pelvis ligaments visibility toggle and rupture state staging
+      if (pelvicLigamentBundleRef.current) {
+        const isPelvicRing = isPelvis && activeSubregionRef.current?.id === "pelvic-ring";
+        const bundle = pelvicLigamentBundleRef.current;
+        const shouldShow = isPelvicRing && showLigamentsRef.current && !isXRayModeRef.current;
+        bundle.updateState(shouldShow, selectedPresetIdRef.current);
+      }
       try {
         const shouldShowForces = showForcesRef.current && selectedPresetIdRef.current !== "intact";
         if (forceVectorsGroupRef.current) {
@@ -6240,8 +9365,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       forceVectorsGroupRef.current = null;
 
       if (ligamentBundleRef.current) {
-        ligamentBundleRef.current.cylGeom.dispose();
-        ligamentBundleRef.current.coneGeom.dispose();
+        ligamentBundleRef.current.boxGeom.dispose();
         ligamentBundleRef.current.ligamentMat.dispose();
         ligamentBundleRef.current.rupturedTipMat.dispose();
         ligamentBundleRef.current = null;
@@ -6251,6 +9375,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
         ankleLigamentBundleRef.current.mat.dispose();
         ankleLigamentBundleRef.current.tornMat.dispose();
         ankleLigamentBundleRef.current = null;
+      }
+      if (pelvicLigamentBundleRef.current) {
+        pelvicLigamentBundleRef.current.geometries.forEach((g) => g.dispose());
+        pelvicLigamentBundleRef.current.mat.dispose();
+        pelvicLigamentBundleRef.current.tornMat.dispose();
+        pelvicLigamentBundleRef.current = null;
       }
       scene.clear();
       cameraRef.current = null;
@@ -6314,174 +9444,272 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
           : undefined,
       }}
     >
-      {/* Discreet Minimal Floating Header: Bone Name + Close Button */}
+      {/* Floating Header & Toolbar: Safe-area aware, responsive layout */}
       <header 
-        className={`absolute top-0 inset-x-0 z-20 flex items-center justify-between px-5 pt-5 pb-3 pointer-events-none transition-all duration-250 ease-out ${
+        className={`absolute top-0 inset-x-0 z-20 flex flex-col pointer-events-none transition-all duration-250 ease-out px-3 sm:px-5 pt-[max(0.75rem,env(safe-area-inset-top,0px))] gap-1.5 sm:gap-2 ${
           isEntering || isClosing
             ? "-translate-y-6 opacity-0"
             : "translate-y-0 opacity-100"
         }`}
       >
-        {/* Bone Title */}
-        <div className="flex items-center gap-2.5 pointer-events-auto">
-          <h1 className="text-base font-black tracking-tight text-slate-100 drop-shadow-md">
-            {boneName}
-          </h1>
-        </div>
+        {/* Row 1: Title + Desktop Tools + Close Button */}
+        <div className="flex items-center justify-between w-full">
+          {/* Bone Title */}
+          <div className="flex items-center gap-2 pointer-events-auto min-w-0 pr-2">
+            <h1 className="text-sm sm:text-base font-black tracking-tight text-slate-100 drop-shadow-md truncate">
+              {boneName}
+            </h1>
+          </div>
 
-        {/* Actions: Forces Toggle + Ligaments Toggle (Clavicle) + Whole Bone View Toggle + Minimal Close Button */}
-        <div className="flex items-center gap-2 pointer-events-auto">
-          {/* Dynamic Muscle Deforming Forces Toggle */}
-          <button
-            onClick={() => setShowForces(!showForces)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
-              showForces
-                ? "bg-slate-700/60 text-slate-100 border-slate-400/50 shadow-slate-900/50"
-                : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
-            }`}
-            title={showForces ? "Hide Muscle Deforming Forces" : "Show Dynamic Muscle Deforming Forces"}
-          >
-            <Zap size={12} className={showForces ? "text-slate-200 fill-slate-300" : "text-slate-400"} />
-            <span>Forces</span>
-          </button>
-
-          {!isXRayMode && (isClavicle || (isTibia && activeSubregion.id === "distal")) && (
+          {/* Desktop Actions: Visible on md+ */}
+          <div className="hidden md:flex items-center gap-2 pointer-events-auto">
+            {/* Dynamic Muscle Deforming Forces Toggle */}
             <button
-              onClick={() => setShowLigaments(!showLigaments)}
+              onClick={() => setShowForces(!showForces)}
               className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
-                showLigaments
-                  ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                showForces
+                  ? "bg-slate-700/60 text-slate-100 border-slate-400/50 shadow-slate-900/50"
                   : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
               }`}
-              title={showLigaments ? "Hide Ligaments" : "Show Anatomical Ligaments"}
+              title={showForces ? "Hide Muscle Deforming Forces" : "Show Dynamic Muscle Deforming Forces"}
             >
-              <Activity size={12} className={showLigaments ? "text-teal-300" : "text-slate-400"} />
-              <span>Ligaments</span>
+              <Zap size={12} className={showForces ? "text-slate-200 fill-slate-300" : "text-slate-400"} />
+              <span>Forces</span>
             </button>
-          )}
 
-          {/* Translucent X-Ray Film Mode Toggle */}
-          <button
-            onClick={() => setIsXRayMode(!isXRayMode)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
-              isXRayMode
-                ? "bg-cyan-500/25 text-cyan-200 border-cyan-400/60 shadow-cyan-950/50 ring-1 ring-cyan-400/40"
-                : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
-            }`}
-            title={isXRayMode ? "Disable Translucent X-Ray Film Mode" : "Enable Translucent X-Ray Film Mode"}
-          >
-            <Scan size={12} className={isXRayMode ? "text-cyan-300 animate-pulse" : "text-slate-400"} />
-            <span>X-Ray</span>
-          </button>
-
-
-          {/* Pan / Rotate Mouse Mode Toggle */}
-          <button
-            onClick={() => setIsPanMode(!isPanMode)}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
-              isPanMode
-                ? "bg-amber-500/25 text-amber-200 border-amber-400/60 shadow-amber-950/50 ring-1 ring-amber-400/40"
-                : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
-            }`}
-            title={
-              isPanMode
-                ? "Pan Mode active: Left-click drags to pan/move. Click to switch to Rotate."
-                : "Rotate Mode active: Left-click drags to rotate. Right-click or toggle to Pan."
-            }
-          >
-            <Move size={12} className={isPanMode ? "text-amber-300" : "text-slate-400"} />
-            <span>{isPanMode ? "Pan" : "Rotate"}</span>
-          </button>
-
-          <button
-            onClick={() => {
-              if (isWholeBoneView) {
-                triggerCameraFocus(activeSubregion);
-              } else {
-                triggerWholeBoneFocus();
-              }
-            }}
-            className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
-              isWholeBoneView
-                ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
-                : "bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80"
-            }`}
-            title={isWholeBoneView ? "Zoom back in to active subregion" : "View entire bone"}
-          >
-            {isWholeBoneView ? (
-              <Minimize2 size={12} className="text-teal-300" />
-            ) : (
-              <Maximize2 size={12} className="text-slate-300" />
+            {!isXRayMode && (isClavicle || (isTibia && activeSubregion.id === "distal") || (isPelvis && activeSubregion.id === "pelvic-ring")) && (
+              <button
+                onClick={() => setShowLigaments(!showLigaments)}
+                className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
+                  showLigaments
+                    ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                    : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+                }`}
+                title={showLigaments ? "Hide Ligaments" : "Show Anatomical Ligaments"}
+              >
+                <Activity size={12} className={showLigaments ? "text-teal-300" : "text-slate-400"} />
+                <span>Ligaments</span>
+              </button>
             )}
-            <span>{isWholeBoneView ? "Focus View" : "Whole Bone"}</span>
-          </button>
 
-          {/* Minimal Close Button */}
-          <button
-            onClick={handleAnimatedClose}
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90 border backdrop-blur-md bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80 shadow-lg cursor-pointer"
-            title="Close (Esc)"
-            aria-label="Close"
-          >
-            <X size={18} />
-          </button>
+            {/* Translucent X-Ray Film Mode Toggle */}
+            <button
+              onClick={() => setIsXRayMode(!isXRayMode)}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
+                isXRayMode
+                  ? "bg-cyan-500/25 text-cyan-200 border-cyan-400/60 shadow-cyan-950/50 ring-1 ring-cyan-400/40"
+                  : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+              }`}
+              title={isXRayMode ? "Disable Translucent X-Ray Film Mode" : "Enable Translucent X-Ray Film Mode"}
+            >
+              <Scan size={12} className={isXRayMode ? "text-cyan-300 animate-pulse" : "text-slate-400"} />
+              <span>X-Ray</span>
+            </button>
+
+            {/* Pan / Rotate Mouse Mode Toggle */}
+            <button
+              onClick={() => setIsPanMode(!isPanMode)}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
+                isPanMode
+                  ? "bg-amber-500/25 text-amber-200 border-amber-400/60 shadow-amber-950/50 ring-1 ring-amber-400/40"
+                  : "bg-slate-900/60 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+              }`}
+              title={
+                isPanMode
+                  ? "Pan Mode active: Left-click drags to pan/move. Click to switch to Rotate."
+                  : "Rotate Mode active: Left-click drags to rotate. Right-click or toggle to Pan."
+              }
+            >
+              <Move size={12} className={isPanMode ? "text-amber-300" : "text-slate-400"} />
+              <span>{isPanMode ? "Pan" : "Rotate"}</span>
+            </button>
+
+            {/* Whole Bone View Toggle */}
+            <button
+              onClick={() => {
+                if (isWholeBoneView) {
+                  triggerCameraFocus(activeSubregion);
+                } else {
+                  triggerWholeBoneFocus();
+                }
+              }}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1.5 cursor-pointer active:scale-95 shadow-md ${
+                isWholeBoneView
+                  ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                  : "bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80"
+              }`}
+              title={isWholeBoneView ? "Zoom back in to active subregion" : "View entire bone"}
+            >
+              {isWholeBoneView ? (
+                <Minimize2 size={12} className="text-teal-300" />
+              ) : (
+                <Maximize2 size={12} className="text-slate-300" />
+              )}
+              <span>{isWholeBoneView ? "Focus View" : "Whole Bone"}</span>
+            </button>
+
+            {/* Minimal Close Button */}
+            <button
+              onClick={handleAnimatedClose}
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90 border backdrop-blur-md bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80 shadow-lg cursor-pointer"
+              title="Close (Esc)"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+          </div>
+
+          {/* Mobile Right Actions: Focus/Whole Toggle + Close Button */}
+          <div className="flex md:hidden items-center gap-1.5 pointer-events-auto shrink-0">
+            <button
+              onClick={() => {
+                if (isWholeBoneView) {
+                  triggerCameraFocus(activeSubregion);
+                } else {
+                  triggerWholeBoneFocus();
+                }
+              }}
+              className={`px-2.5 py-1 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1 cursor-pointer active:scale-95 shadow-md ${
+                isWholeBoneView
+                  ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                  : "bg-slate-900/70 border-white/15 text-slate-300 hover:text-white hover:bg-slate-800/80"
+              }`}
+              title={isWholeBoneView ? "Zoom back in to active subregion" : "View entire bone"}
+            >
+              {isWholeBoneView ? (
+                <Minimize2 size={12} className="text-teal-300" />
+              ) : (
+                <Maximize2 size={12} className="text-slate-300" />
+              )}
+              <span>{isWholeBoneView ? "Focus" : "Whole"}</span>
+            </button>
+
+            <button
+              onClick={handleAnimatedClose}
+              className="w-8 h-8 rounded-full flex items-center justify-center transition-all active:scale-90 border backdrop-blur-md bg-slate-900/80 border-white/20 text-slate-200 hover:text-white hover:bg-slate-800 shadow-lg cursor-pointer"
+              title="Close (Esc)"
+              aria-label="Close"
+            >
+              <X size={16} />
+            </button>
+          </div>
+        </div>
+
+        {/* Row 2: Controls Toolbar */}
+        {/* On Mobile: Left = X-ray views (ชิดซ้าย), Right = Forces + Separate X-Ray toggle button (ชิดขวา) */}
+        {/* On Desktop: Left = X-ray views (Desktop actions are already in Row 1) */}
+        <div className="flex flex-col items-start gap-1 pointer-events-none w-full">
+          <div className="flex items-center justify-between w-full pointer-events-none gap-2">
+            {/* Left: Radiographic Views (X-Ray views ขึ้นก่อน ชิดซ้าย) */}
+            <div 
+              className="flex items-center gap-1 p-1 rounded-2xl border backdrop-blur-xl shadow-xl pointer-events-auto overflow-x-auto no-scrollbar max-w-full"
+              style={{
+                background: "rgba(15, 23, 42, 0.88)",
+                borderColor: "rgba(255, 255, 255, 0.15)",
+                WebkitOverflowScrolling: "touch",
+              }}
+            >
+              {/* Micro Icon Badge for Views */}
+              <div className="flex items-center gap-1 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-slate-300 border-r border-white/10 select-none shrink-0">
+                <span className="text-xs leading-none">🩻</span>
+                <span className="hidden sm:inline">Views</span>
+              </div>
+
+              {/* Radiographic Snap Buttons */}
+              {radiographicViews.map((view) => {
+                const isActive = activeSnapView === view.id;
+                return (
+                  <button
+                    key={view.id}
+                    onClick={() => triggerQuickSnap(view)}
+                    className={`px-2.5 sm:px-3 py-1 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1 shrink-0 ${
+                      isActive
+                        ? "bg-teal-500 text-slate-950 font-black shadow-md shadow-teal-500/30"
+                        : "text-slate-300 hover:text-white hover:bg-white/10"
+                    }`}
+                    title={view.description ? `${view.fullName} (${view.description})` : view.fullName}
+                  >
+                    {view.label}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Mobile Right Tools: Forces (icon-only if ligaments present) + Ligaments + Separate X-Ray on/off button (ชิดขวา) */}
+            <div className="flex md:hidden items-center gap-1.5 pointer-events-auto shrink-0">
+              {/* Dynamic Muscle Deforming Forces Toggle: Icon-only when ligaments are present to preserve X-Ray view space */}
+              {!isXRayMode && (isClavicle || (isTibia && activeSubregion.id === "distal") || (isPelvis && activeSubregion.id === "pelvic-ring")) ? (
+                <>
+                  <button
+                    onClick={() => setShowForces(!showForces)}
+                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-all border backdrop-blur-md cursor-pointer active:scale-95 shadow-md ${
+                      showForces
+                        ? "bg-slate-700/80 text-slate-100 border-slate-400/50 shadow-slate-900/50"
+                        : "bg-slate-900/80 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+                    }`}
+                    title={showForces ? "Hide Muscle Deforming Forces" : "Show Dynamic Muscle Deforming Forces"}
+                    aria-label="Forces"
+                  >
+                    <Zap size={12} className={showForces ? "text-slate-200 fill-slate-300" : "text-slate-400"} />
+                  </button>
+
+                  <button
+                    onClick={() => setShowLigaments(!showLigaments)}
+                    className={`px-2 py-1 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1 shrink-0 cursor-pointer active:scale-95 shadow-md ${
+                      showLigaments
+                        ? "bg-teal-500/25 text-teal-200 border-teal-500/50 shadow-teal-500/20"
+                        : "bg-slate-900/80 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+                    }`}
+                    title={showLigaments ? "Hide Ligaments" : "Show Anatomical Ligaments"}
+                  >
+                    <Activity size={11} className={showLigaments ? "text-teal-300" : "text-slate-400"} />
+                    <span>Ligaments</span>
+                  </button>
+                </>
+              ) : (
+                <button
+                  onClick={() => setShowForces(!showForces)}
+                  className={`px-2.5 py-1 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1 shrink-0 cursor-pointer active:scale-95 shadow-md ${
+                    showForces
+                      ? "bg-slate-700/80 text-slate-100 border-slate-400/50 shadow-slate-900/50"
+                      : "bg-slate-900/80 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+                  }`}
+                  title={showForces ? "Hide Muscle Deforming Forces" : "Show Dynamic Muscle Deforming Forces"}
+                >
+                  <Zap size={11} className={showForces ? "text-slate-200 fill-slate-300" : "text-slate-400"} />
+                  <span>Forces</span>
+                </button>
+              )}
+
+              {/* Separate X-Ray Mode Toggle Button (ชิดขวา) */}
+              <button
+                onClick={() => setIsXRayMode(!isXRayMode)}
+                className={`px-2.5 py-1 rounded-full text-xs font-bold transition-all border backdrop-blur-md flex items-center gap-1 shrink-0 cursor-pointer active:scale-95 shadow-md ${
+                  isXRayMode
+                    ? "bg-cyan-500/25 text-cyan-200 border-cyan-400/60 ring-1 ring-cyan-400/40 shadow-cyan-950/50"
+                    : "bg-slate-900/80 border-white/15 text-slate-400 hover:text-slate-200 hover:bg-slate-800/80"
+                }`}
+                title={isXRayMode ? "Disable Translucent X-Ray Film Mode" : "Enable Translucent X-Ray Film Mode"}
+              >
+                <Scan size={11} className={isXRayMode ? "text-cyan-300 animate-pulse" : "text-slate-400"} />
+                <span>X-Ray</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Dynamic View Hint Badge */}
+          {activeViewInfo && activeSnapView && (
+            <div className="px-2.5 py-0.5 rounded-md bg-slate-900/80 border border-white/10 backdrop-blur-md text-[10px] font-semibold text-teal-300 tracking-wide select-none pointer-events-none shadow-sm truncate max-w-[calc(100vw-1.75rem)]">
+              {activeViewInfo.fullName}
+            </div>
+          )}
         </div>
       </header>
-
-      {/* Radiographic Quick-Snap Views Floating Bar (แถบปุ่มลัดสแนปมุมมองมาตรฐานทางรังสีวิทยา) */}
-      <div 
-        className={`absolute top-16 left-4 sm:left-5 z-20 flex flex-col items-start gap-1 pointer-events-none transition-all duration-250 ease-out ${
-          isEntering || isClosing
-            ? "-translate-y-4 opacity-0"
-            : "translate-y-0 opacity-100"
-        }`}
-      >
-        <div 
-          className="flex items-center gap-1 p-1 rounded-2xl border backdrop-blur-xl shadow-xl pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100vw-2rem)]"
-          style={{
-            background: "rgba(15, 23, 42, 0.88)",
-            borderColor: "rgba(255, 255, 255, 0.15)",
-          }}
-        >
-          {/* Micro Icon Badge */}
-          <div className="flex items-center gap-1 px-2 py-1 text-[10px] font-black uppercase tracking-wider text-slate-300 border-r border-white/10 select-none">
-            <span className="text-xs leading-none">🩻</span>
-            <span className="hidden sm:inline">Views</span>
-          </div>
-
-          {/* Radiographic Snap Buttons */}
-          {radiographicViews.map((view) => {
-            const isActive = activeSnapView === view.id;
-            return (
-              <button
-                key={view.id}
-                onClick={() => triggerQuickSnap(view)}
-                className={`px-3 py-1 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1 ${
-                  isActive
-                    ? "bg-teal-500 text-slate-950 font-black shadow-md shadow-teal-500/30"
-                    : "text-slate-300 hover:text-white hover:bg-white/10"
-                }`}
-                title={view.description ? `${view.fullName} (${view.description})` : view.fullName}
-              >
-                {view.label}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Dynamic View Hint Badge */}
-        {activeViewInfo && activeSnapView && (
-          <div className="px-2.5 py-0.5 rounded-md bg-slate-900/80 border border-white/10 backdrop-blur-md text-[10px] font-semibold text-teal-300 tracking-wide select-none pointer-events-none shadow-sm">
-            {activeViewInfo.fullName}
-          </div>
-        )}
-
-      </div>
 
       {/* Top-Left Selected Structure Clinical Info Window (คลิกเพื่อแสดงข้อมูลที่หน้าต่างข้อมูลแยกแถบซ้ายบน) */}
       {selectedStructure && (
         <div
-          className={`absolute top-[120px] sm:top-[128px] left-4 sm:left-5 z-30 pointer-events-auto transition-all duration-200 ease-out max-w-[320px] sm:max-w-[350px] w-[calc(100vw-2rem)] ${
+          className={`absolute top-[calc(max(0.75rem,env(safe-area-inset-top,0px))+6.5rem)] sm:top-[128px] left-3.5 sm:left-5 z-30 pointer-events-auto transition-all duration-200 ease-out max-w-[320px] sm:max-w-[350px] w-[calc(100vw-1.75rem)] sm:w-[calc(100vw-2rem)] ${
             isEntering || isClosing ? "opacity-0 -translate-x-4" : "opacity-100 translate-x-0"
           }`}
         >
@@ -6491,7 +9719,9 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               <div className="flex items-center gap-1.5">
                 <span
                   className={`px-2.5 py-0.5 rounded-lg text-[10px] font-black uppercase tracking-wider ${
-                    selectedStructure.badgeColor === "purple"
+                    selectedStructure.badgeColor === "emerald"
+                      ? "bg-emerald-500/25 text-emerald-300 border border-emerald-500/40"
+                      : selectedStructure.badgeColor === "purple"
                       ? "bg-purple-500/25 text-purple-300 border border-purple-500/40"
                       : selectedStructure.badgeColor === "rose"
                       ? "bg-rose-500/25 text-rose-300 border border-rose-500/40"
@@ -6634,14 +9864,20 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       </div>
 
       {/* 2-Tier Hierarchical Control Deck: Subregions + Classification Types */}
-      <div className="absolute bottom-5 inset-x-0 z-20 flex flex-col items-center gap-2 pointer-events-none px-3">
+      <div className="absolute bottom-[max(0.75rem,env(safe-area-inset-bottom,0px))] inset-x-0 z-20 flex flex-col items-center gap-1.5 sm:gap-2 pointer-events-none px-3">
         {/* Tier 1: Clinical Pearl Card */}
         <div 
-          className="max-w-md w-full px-4 py-2 rounded-2xl border backdrop-blur-xl shadow-xl pointer-events-auto text-center transition-all duration-300"
+          className="max-w-md w-full px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-2xl border backdrop-blur-xl shadow-xl pointer-events-auto text-center transition-all duration-300"
           style={{
             background: "rgba(15, 23, 42, 0.92)",
             borderColor: isPresetIntact 
               ? "rgba(45, 212, 191, 0.35)" 
+              : isEssexPreset
+              ? "rgba(245, 158, 11, 0.45)"
+              : isHawkinsPreset
+              ? "rgba(16, 185, 129, 0.45)"
+              : isPilonPreset
+              ? "rgba(14, 165, 233, 0.45)"
               : isPerPreset
               ? "rgba(168, 85, 247, 0.45)"
               : isPaPreset
@@ -6651,6 +9887,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               : "rgba(239, 68, 68, 0.45)",
             boxShadow: isPresetIntact
               ? "0 6px 20px rgba(0, 0, 0, 0.3)"
+              : isEssexPreset
+              ? "0 8px 24px rgba(245, 158, 11, 0.22)"
+              : isHawkinsPreset
+              ? "0 8px 24px rgba(16, 185, 129, 0.22)"
+              : isPilonPreset
+              ? "0 8px 24px rgba(14, 165, 233, 0.22)"
               : isPerPreset
               ? "0 8px 24px rgba(168, 85, 247, 0.22)"
               : isPaPreset
@@ -6665,6 +9907,12 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               className={`w-1.5 h-1.5 rounded-full shrink-0 ${
                 isPresetIntact
                   ? "bg-teal-400"
+                  : isEssexPreset
+                  ? "bg-amber-400"
+                  : isHawkinsPreset
+                  ? "bg-emerald-400"
+                  : isPilonPreset
+                  ? "bg-sky-400"
                   : isPerPreset
                   ? "bg-purple-400"
                   : isPaPreset
@@ -6675,19 +9923,25 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               }`} 
             />
             <span className="text-[10px] font-black uppercase tracking-wider text-slate-300">
-              {isPresetIntact ? "Intact Bone" : activePreset?.badge}
+              {isPresetIntact ? (isPelvis && activeSubregion.id === "pelvic-ring" ? "Anatomical Ring" : (isPelvis && activeSubregion.id === "acetabulum" ? "Concentric Hip Joint" : "Intact Bone")) : activePreset?.badge}
             </span>
           </div>
           <h3 className="text-xs font-black text-slate-100 leading-tight">
-            {isPresetIntact ? `Normal ${activeSubregion.name} Alignment` : activePreset?.clinicalTitle}
+            {isPresetIntact ? (isPelvis && activeSubregion.id === "pelvic-ring" ? "Intact Pelvic Ring Anatomy" : (isPelvis && activeSubregion.id === "acetabulum" ? "Right Acetabulum Anatomy" : `Normal ${activeSubregion.name} Alignment`)) : activePreset?.clinicalTitle}
           </h3>
           {/* Collapsible Clinical Explanation (Full text when expanded — Left-aligned bullet list) */}
           {isPearlExpanded && (
-            <div className="mt-2 mb-1 px-2 text-left">
+            <div className="mt-2 mb-1 px-1 sm:px-2 text-left max-h-[28vh] overflow-y-auto no-scrollbar">
               <ul
                 className={`space-y-1.5 text-[11px] font-medium text-slate-200 leading-relaxed list-disc list-outside pl-4 text-left ${
                   isPresetIntact
                     ? "marker:text-teal-400"
+                    : isEssexPreset
+                    ? "marker:text-amber-400"
+                    : isHawkinsPreset
+                    ? "marker:text-emerald-400"
+                    : isPilonPreset
+                    ? "marker:text-sky-400"
                     : isPerPreset
                     ? "marker:text-purple-400"
                     : isPaPreset
@@ -6777,14 +10031,36 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               )}
             </div>
           )}
+
+          {/* Dynamic Pelvis Ligament Integrity Indicator (Sleek Single-Line) */}
+          {isPelvis && showLigaments && !isXRayMode && activeSubregion.id === "pelvic-ring" && (
+            <div className="mt-1 pt-1 border-t border-white/10 flex items-center justify-center gap-2 text-[10px] text-slate-300 flex-wrap">
+              <span className="text-slate-400 font-bold text-[9px] uppercase tracking-wider">Ligaments:</span>
+              <span className="inline-flex items-center gap-1 font-medium">
+                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isPelvisPresetSymphysisTorn ? "bg-rose-500 animate-pulse" : "bg-emerald-400"}`} />
+                Symphysis: <strong className={isPelvisPresetSymphysisTorn ? "text-rose-300 font-bold" : "text-emerald-300 font-medium"}>{isPelvisPresetSymphysisTorn ? "Ruptured" : "Intact"}</strong>
+              </span>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1 font-medium">
+                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isPelvisPresetAntSiTorn ? "bg-rose-500 animate-pulse" : (selectedPresetId === "yb_lc3" ? "bg-amber-400 animate-pulse" : "bg-emerald-400")}`} />
+                ASIL/SSL/STL: <strong className={isPelvisPresetAntSiTorn ? "text-rose-300 font-bold" : (selectedPresetId === "yb_lc3" ? "text-amber-300 font-bold" : "text-emerald-300 font-medium")}>{isPelvisPresetAntSiTorn ? "Torn (R)" : (selectedPresetId === "yb_lc3" ? "Torn (L)" : "Intact")}</strong>
+              </span>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <span className="inline-flex items-center gap-1 font-medium">
+                <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${isPelvisPresetPostSiTorn ? "bg-rose-500 animate-pulse" : (selectedPresetId === "yb_apc2" ? "bg-amber-400" : "bg-emerald-400")}`} />
+                PSIL: <strong className={isPelvisPresetPostSiTorn ? "text-rose-300 font-bold" : (selectedPresetId === "yb_apc2" ? "text-amber-300 font-bold" : "text-emerald-300 font-medium")}>{isPelvisPresetPostSiTorn ? "Torn" : (selectedPresetId === "yb_apc2" ? "Intact (Hinge)" : "Intact")}</strong>
+              </span>
+            </div>
+          )}
         </div>
 
         {/* Tier 2: Classification Types — Hierarchical for Ankle (Lauge-Hansen), Flat for Others */}
         <div 
-          className="flex items-center gap-1 p-1 rounded-full border backdrop-blur-xl shadow-xl pointer-events-auto overflow-x-auto no-scrollbar max-w-full"
+          className="flex items-center gap-1 p-1 rounded-full border backdrop-blur-xl shadow-xl pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100vw-1.5rem)] sm:max-w-full"
           style={{
             background: "rgba(15, 23, 42, 0.90)",
             borderColor: "rgba(255, 255, 255, 0.12)",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {isAnkleDistal ? (
@@ -6987,6 +10263,309 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                   })}
               </>
             )
+          ) : isPelvisRing ? (
+            /* ── Pelvis Hierarchical Young-Burgess Picker (APC, LC, VS) ── */
+            selectedPelvisGroup === null ? (
+              /* Level 1: Mechanism Group Selector */
+              <>
+                {/* Normal Anatomy button */}
+                <button
+                  onClick={() => {
+                    const normalPreset = activeSubregion.presets.find(p => p.id === "pelvis_intact");
+                    setSelectedPresetId(normalPreset?.id ?? "intact");
+                    setSelectedPelvisGroup(null);
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    isPresetIntact
+                      ? "bg-teal-500/25 text-teal-200 border border-teal-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Normal pelvic ring with intact symphysis and SI joints"
+                >
+                  <RotateCcw size={11} className={isPresetIntact ? "text-teal-300" : "text-slate-400"} />
+                  Normal
+                </button>
+
+                <div className="w-px h-3.5 bg-white/15 mx-0.5" />
+
+                {/* APC Mechanism Group */}
+                <button
+                  onClick={() => {
+                    setSelectedPelvisGroup("apc");
+                    if (!selectedPresetId.startsWith("yb_apc")) {
+                      const firstApc = activeSubregion.presets.find(p => p.id === "yb_apc1");
+                      if (firstApc) setSelectedPresetId(firstApc.id);
+                    }
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    selectedPresetId.startsWith("yb_apc")
+                      ? "bg-rose-500/25 text-rose-200 border border-rose-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Anteroposterior Compression (APC) — 3 progressive stages (Open Book)"
+                >
+                  {selectedPresetId.startsWith("yb_apc") && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-rose-400" />
+                  )}
+                  APC
+                  <span className="text-[9px] text-slate-500 font-medium">(I→III)</span>
+                  <ChevronRight size={12} className="text-slate-500" />
+                </button>
+
+                {/* LC Mechanism Group */}
+                <button
+                  onClick={() => {
+                    setSelectedPelvisGroup("lc");
+                    if (!selectedPresetId.startsWith("yb_lc")) {
+                      const firstLc = activeSubregion.presets.find(p => p.id === "yb_lc1");
+                      if (firstLc) setSelectedPresetId(firstLc.id);
+                    }
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    selectedPresetId.startsWith("yb_lc")
+                      ? "bg-amber-500/25 text-amber-200 border border-amber-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Lateral Compression (LC) — 3 progressive stages (Internal rotation & crescent fracture)"
+                >
+                  {selectedPresetId.startsWith("yb_lc") && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  )}
+                  LC
+                  <span className="text-[9px] text-slate-500 font-medium">(I→III)</span>
+                  <ChevronRight size={12} className="text-slate-500" />
+                </button>
+
+                {/* VS Mechanism Group */}
+                <button
+                  onClick={() => {
+                    setSelectedPelvisGroup("vs");
+                    setSelectedPresetId("yb_vs");
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    selectedPresetId === "yb_vs"
+                      ? "bg-purple-500/25 text-purple-200 border border-purple-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Vertical Shear (VS) — Completely unstable vertical displacement"
+                >
+                  {selectedPresetId === "yb_vs" && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                  )}
+                  VS
+                  <ChevronRight size={12} className="text-slate-500" />
+                </button>
+              </>
+            ) : (
+              /* Level 2: Stage Progression within Selected Pelvis Group */
+              <>
+                {/* Back button to return to mechanism groups & reset to intact */}
+                <button
+                  onClick={() => {
+                    const normalPreset = activeSubregion.presets.find(p => p.id === "pelvis_intact");
+                    setSelectedPresetId(normalPreset?.id ?? "intact");
+                    setSelectedPelvisGroup(null);
+                    setSelectedStructure(null);
+                    if (markerMeshRef.current) markerMeshRef.current.visible = false;
+                  }}
+                  className="px-2.5 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1 text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  title="Back to mechanism groups and reset to normal anatomy"
+                >
+                  <ChevronLeft size={13} className="text-slate-400" />
+                  <span>Groups</span>
+                </button>
+
+                <div className="w-px h-3.5 bg-white/15 mx-0.5" />
+
+                {/* Mechanism group label */}
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 px-1 select-none">
+                  {selectedPelvisGroup?.toUpperCase()}
+                </span>
+
+                {/* Stage buttons with progression arrows */}
+                {activeSubregion.presets
+                  .filter(p => {
+                    if (selectedPelvisGroup === "apc") return p.id.startsWith("yb_apc");
+                    if (selectedPelvisGroup === "lc") return p.id.startsWith("yb_lc");
+                    if (selectedPelvisGroup === "vs") return p.id === "yb_vs";
+                    return false;
+                  })
+                  .map((preset, idx) => {
+                    const isSelected = selectedPresetId === preset.id;
+                    const activeColorClasses = selectedPelvisGroup === "apc"
+                      ? "bg-rose-500/25 text-rose-200 border border-rose-500/50 shadow-sm"
+                      : selectedPelvisGroup === "lc"
+                      ? "bg-amber-500/25 text-amber-200 border border-amber-500/50 shadow-sm"
+                      : "bg-purple-500/25 text-purple-200 border border-purple-500/50 shadow-sm";
+
+                    const dotColorClass = selectedPelvisGroup === "apc"
+                      ? "bg-rose-400"
+                      : selectedPelvisGroup === "lc"
+                      ? "bg-amber-400"
+                      : "bg-purple-400";
+
+                    return (
+                      <React.Fragment key={preset.id}>
+                        {idx > 0 && (
+                          <span className="text-slate-400/80 text-xs font-bold select-none px-0.5">→</span>
+                        )}
+                        <button
+                          onClick={() => setSelectedPresetId(preset.id)}
+                          className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                            isSelected
+                              ? activeColorClasses
+                              : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                          }`}
+                          title={preset.clinicalTitle}
+                        >
+                          {isSelected && (
+                            <span className={`w-1.5 h-1.5 rounded-full ${dotColorClass}`} />
+                          )}
+                          {preset.name}
+                        </button>
+                      </React.Fragment>
+                    );
+                  })}
+              </>
+            )
+          ) : isPelvisAcetabulum ? (
+            /* ── Pelvis Hierarchical Judet & Letournel Picker (Elementary vs Associated) ── */
+            selectedAcetabulumGroup === null ? (
+              /* Level 1: Elementary vs Associated Group Selector */
+              <>
+                {/* Normal Anatomy button */}
+                <button
+                  onClick={() => {
+                    const normalPreset = activeSubregion.presets.find(p => p.id === "acetabulum_intact");
+                    setSelectedPresetId(normalPreset?.id ?? "intact");
+                    setSelectedAcetabulumGroup(null);
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    isPresetIntact
+                      ? "bg-teal-500/25 text-teal-200 border border-teal-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Concentric hip joint with intact columns, dome, and acetabular walls"
+                >
+                  <RotateCcw size={11} className={isPresetIntact ? "text-teal-300" : "text-slate-400"} />
+                  Normal
+                </button>
+
+                <div className="w-px h-3.5 bg-white/15 mx-0.5" />
+
+                {/* Elementary Group */}
+                <button
+                  onClick={() => {
+                    setSelectedAcetabulumGroup("elementary");
+                    if (!selectedPresetId.startsWith("jl_pw") && !selectedPresetId.startsWith("jl_pc") && !selectedPresetId.startsWith("jl_aw") && !selectedPresetId.startsWith("jl_ac") && selectedPresetId !== "jl_transverse") {
+                      setSelectedPresetId("jl_pw");
+                    }
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    (selectedPresetId === "jl_pw" || selectedPresetId === "jl_pc" || selectedPresetId === "jl_aw" || selectedPresetId === "jl_ac" || selectedPresetId === "jl_transverse")
+                      ? "bg-sky-500/25 text-sky-200 border border-sky-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Elementary Types (5): Isolated single column, wall, or simple transverse fracture"
+                >
+                  {(selectedPresetId === "jl_pw" || selectedPresetId === "jl_pc" || selectedPresetId === "jl_aw" || selectedPresetId === "jl_ac" || selectedPresetId === "jl_transverse") && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-sky-400" />
+                  )}
+                  Elementary
+                  <span className="text-[9px] text-slate-500 font-medium">(5)</span>
+                  <ChevronRight size={12} className="text-slate-500" />
+                </button>
+
+                {/* Associated Group */}
+                <button
+                  onClick={() => {
+                    setSelectedAcetabulumGroup("associated");
+                    if (selectedPresetId !== "jl_t_shaped" && selectedPresetId !== "jl_pc_pw" && selectedPresetId !== "jl_trans_pw" && selectedPresetId !== "jl_acpht" && selectedPresetId !== "jl_both_column") {
+                      setSelectedPresetId("jl_t_shaped");
+                    }
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                    (selectedPresetId === "jl_t_shaped" || selectedPresetId === "jl_pc_pw" || selectedPresetId === "jl_trans_pw" || selectedPresetId === "jl_acpht" || selectedPresetId === "jl_both_column")
+                      ? "bg-purple-500/25 text-purple-200 border border-purple-500/50 shadow-sm"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  }`}
+                  title="Associated Types (5): Multi-column, T-shaped, hemitransverse, or both-column fractures"
+                >
+                  {(selectedPresetId === "jl_t_shaped" || selectedPresetId === "jl_pc_pw" || selectedPresetId === "jl_trans_pw" || selectedPresetId === "jl_acpht" || selectedPresetId === "jl_both_column") && (
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                  )}
+                  Associated
+                  <span className="text-[9px] text-slate-500 font-medium">(5)</span>
+                  <ChevronRight size={12} className="text-slate-500" />
+                </button>
+              </>
+            ) : (
+              /* Level 2: Presets within Selected Group */
+              <>
+                {/* Back button */}
+                <button
+                  onClick={() => {
+                    const normalPreset = activeSubregion.presets.find(p => p.id === "acetabulum_intact");
+                    setSelectedPresetId(normalPreset?.id ?? "intact");
+                    setSelectedAcetabulumGroup(null);
+                    setSelectedStructure(null);
+                    if (markerMeshRef.current) markerMeshRef.current.visible = false;
+                  }}
+                  className="px-2.5 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1 text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                  title="Back to classification groups and reset to normal anatomy"
+                >
+                  <ChevronLeft size={13} className="text-slate-400" />
+                  <span>Groups</span>
+                </button>
+
+                <div className="w-px h-3.5 bg-white/15 mx-0.5" />
+
+                {/* Group label */}
+                <span className="text-[9px] font-black uppercase tracking-wider text-slate-400 px-1 select-none">
+                  {selectedAcetabulumGroup?.toUpperCase()}
+                </span>
+
+                {/* Preset buttons */}
+                {activeSubregion.presets
+                  .filter(p => {
+                    if (selectedAcetabulumGroup === "elementary") {
+                      return p.id === "jl_pw" || p.id === "jl_pc" || p.id === "jl_aw" || p.id === "jl_ac" || p.id === "jl_transverse";
+                    }
+                    if (selectedAcetabulumGroup === "associated") {
+                      return p.id === "jl_t_shaped" || p.id === "jl_pc_pw" || p.id === "jl_trans_pw" || p.id === "jl_acpht" || p.id === "jl_both_column";
+                    }
+                    return false;
+                  })
+                  .map((preset) => {
+                    const isSelected = selectedPresetId === preset.id;
+                    const activeColorClasses = selectedAcetabulumGroup === "elementary"
+                      ? "bg-sky-500/25 text-sky-200 border border-sky-500/50 shadow-sm"
+                      : "bg-purple-500/25 text-purple-200 border border-purple-500/50 shadow-sm";
+
+                    const dotColorClass = selectedAcetabulumGroup === "elementary"
+                      ? "bg-sky-400"
+                      : "bg-purple-400";
+
+                    return (
+                      <button
+                        key={preset.id}
+                        onClick={() => setSelectedPresetId(preset.id)}
+                        className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                          isSelected
+                            ? activeColorClasses
+                            : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                        }`}
+                        title={preset.clinicalTitle}
+                      >
+                        {isSelected && (
+                          <span className={`w-1.5 h-1.5 rounded-full ${dotColorClass}`} />
+                        )}
+                        {preset.name}
+                      </button>
+                    );
+                  })}
+              </>
+            )
           ) : (
             /* ── Non-Ankle: Original Flat Preset Picker ── */
             <>
@@ -6994,48 +10573,58 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               <button
                 onClick={() => setSelectedPresetId("intact")}
                 className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
-                  selectedPresetId === "intact"
+                  isPresetIntact
                     ? "bg-teal-500/25 text-teal-200 border border-teal-500/50 shadow-sm"
                     : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
                 }`}
                 title="Revert to unbroken intact bone"
               >
-                <RotateCcw size={11} className={selectedPresetId === "intact" ? "text-teal-300" : "text-slate-400"} />
+                <RotateCcw size={11} className={isPresetIntact ? "text-teal-300" : "text-slate-400"} />
                 Intact
               </button>
 
               <div className="w-px h-3.5 bg-white/15 mx-0.5" />
 
-              {/* Classification Specific Buttons (e.g. Garden I, II, III, IV or Evans) */}
-              {activeSubregion.presets.map((preset) => {
+              {/* Classification Specific Buttons (Filtered to prevent duplicate Intact buttons) */}
+              {activeSubregion.presets.filter((p) => p.id !== "pelvis_intact" && p.id !== "acetabulum_intact").map((preset) => {
                 const isSelected = selectedPresetId === preset.id;
-                return (
-                  <button
-                    key={preset.id}
-                    onClick={() => setSelectedPresetId(preset.id)}
-                    className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
-                      isSelected
-                        ? "bg-rose-500/25 text-rose-200 border border-rose-500/50 shadow-sm"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
-                    }`}
-                  >
-                    {isSelected && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-pulse" />
-                    )}
-                    {preset.name}
-                  </button>
-                );
+                    const activeClass = isEssexPreset
+                      ? "bg-amber-500/25 text-amber-200 border border-amber-500/50 shadow-sm"
+                      : isHawkinsPreset
+                      ? "bg-emerald-500/25 text-emerald-200 border border-emerald-500/50 shadow-sm"
+                      : isPilonPreset
+                      ? "bg-sky-500/25 text-sky-200 border border-sky-500/50 shadow-sm"
+                      : "bg-rose-500/25 text-rose-200 border border-rose-500/50 shadow-sm";
+                    const dotClass = isEssexPreset ? "bg-amber-400" : isHawkinsPreset ? "bg-emerald-400" : isPilonPreset ? "bg-sky-400" : "bg-rose-400";
+                    return (
+                      <button
+                        key={preset.id}
+                        onClick={() => setSelectedPresetId(preset.id)}
+                        className={`px-3 py-1 rounded-full text-xs font-bold transition-all whitespace-nowrap cursor-pointer active:scale-95 flex items-center gap-1.5 ${
+                          isSelected
+                            ? activeClass
+                            : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                        }`}
+                      >
+                        {isSelected && (
+                          <span className={`w-1.5 h-1.5 rounded-full ${dotClass}`} />
+                        )}
+                        {preset.name}
+                      </button>
+                    );
               })}
             </>
           )}
         </div>
 
-        {/* Tier 3: Subregions Selector (Femoral Neck, Intertrochanter, Subtrochanter) */}
+        {/* Tier 3: Subregions Selector (Only rendered when multiple subregions exist) */}
+        {availableSubregions.length > 1 && (
         <div 
-          className="flex items-center gap-1 p-1 rounded-2xl border backdrop-blur-xl shadow-2xl pointer-events-auto overflow-x-auto no-scrollbar max-w-full"
+          className="flex items-center gap-1 p-1 rounded-2xl border backdrop-blur-xl shadow-2xl pointer-events-auto overflow-x-auto no-scrollbar max-w-[calc(100vw-1.5rem)] sm:max-w-full"
           style={{
             background: "rgba(10, 15, 26, 0.95)",
             borderColor: "rgba(255, 255, 255, 0.15)",
+            WebkitOverflowScrolling: "touch",
           }}
         >
           {availableSubregions.map((subregion) => {
@@ -7055,6 +10644,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             );
           })}
         </div>
+        )}
       </div>
     </div>
   );

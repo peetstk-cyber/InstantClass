@@ -10,6 +10,7 @@ export const footBone: BoneData = {
     "en": "Foot bones",
     "th": "กระดูกเท้า"
   },
+  "model3dUrl": "/models/bones/tibia/tibia.glb",
   "pediatric": false,
   "regions": [
     {

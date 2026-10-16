@@ -15,6 +15,15 @@ It ensures anatomical fidelity to clinical orthopedic classifications (such as E
 
 ---
 
+## CRITICAL RULE: Strict Existing Data Sourcing & Verbatim Descriptions
+- **Mandatory Source of Truth**: All clinical titles, classification system names, type names, and clinical descriptions (`clinicalPearl`, `clinicalTitle`, `description`) used in 3D presets and anatomy inspector cards **MUST be extracted verbatim from the existing data files** (`src/data/bones/<bone>.ts` or `src/data/bones.ts`).
+- **No Extrapolation or Invented Text**: DO NOT invent, generate, extrapolate, or add custom descriptions on your own. Copy the existing `description.en` / `fullName.en` / `types[].description.en` word-for-word, line-by-line.
+- **Classification System Exclusivity**: Use only the classification system(s) already present in the bone data file (e.g., if only Rüedi-Allgöwer is present in `tibia.ts`, use exclusively Rüedi-Allgöwer; DO NOT introduce extra classification systems like AO/OTA or others unless they already exist in the bone data).
+- **Pure Descriptive Focus**: Keep 3D preset descriptions strictly focused on anatomical and fracture morphology (e.g., displacement, comminution, impaction, column involvement). Do not inject surgical management, operative fixation implants, or physical exam signs into 3D cards unless explicitly part of the existing source description.
+- **Zero Thai Text in 3D Viewer**: Badges, titles, descriptions, and inspector tooltips in the 3D viewer must be in English with zero Thai text.
+
+---
+
 ## 1. 3D Coordinate Space & Medical Mesh Normalization
 
 When loading raw anatomical bone meshes (such as OBJ/GLTF files from CT reconstructions or anatomical scans):
@@ -462,6 +471,8 @@ camera.setViewOffset(width, height, 0, yOffset, width, height);
   - **Proximal Humerus**: `[ AP ]` (`[0, 0, 1]`, True AP / Grashey View).
   - **AC Joint / Clavicle**: `[ AP ]` (`[0, 0, 1]`), `[ Axillary ]` (`[0, 0.88, 0.47]`, Superior-Inferior Axial to diagnose Rockwood IV posterior displacement), `[ Lat ]` (`[-1, 0, 0]`).
   - **Patella**: `[ AP ]` (`[0, 0, 1]`), `[ Lat ]` (`[-1, 0, 0]`), `[ Skyline ]` (`[0, -0.86, 0.51]`, Tangential Merchant axial view scooped from below).
+  - **Pelvic Ring**: `[ AP ]` (`[0, 0, 1]`), `[ Inlet ]` (`[0, -0.64, 0.77]`), `[ Outlet ]` (`[0, 0.64, 0.77]`), `[ Obturator ]` (`[-0.707, 0, 0.707]`), `[ Iliac ]` (`[0.707, 0, 0.707]`).
+  - **Acetabulum**: `[ AP ]` (`[0, 0, 1]`), `[ Obturator ]` (`[-0.707, 0, 0.707]`), `[ Iliac ]` (`[0.707, 0, 0.707]`), perfectly aligned with Pelvis framing (`cameraTarget: [0, 0, 0]`, `cameraDistance: 4.6`, `viewOffsetRatio: 0.12`).
 - **Spherical Slerp Camera Animation**: Uses quaternion great-circle slerp over 480ms with cubic ease-out so the camera rotates seamlessly around the orbital sphere without plunging into or cutting through the bone mesh.
 - **Interactive Yielding**: OrbitControls `start` event listener immediately stops camera transition and resets the active snap view highlight when user begins manual finger rotation.
 
@@ -791,6 +802,258 @@ Lauge-Hansen classification categorizes rotational ankle fractures based on foot
   - Contrasts against the smooth ivory white cortical bone (`#F7F4EC`) in solid 3D mode.
   - Automatically hidden (`visible: false`) when X-Ray film mode is enabled to preserve realistic, clutter-free radiographic translucency.
 
+---
 
+## 12. Complete Rüedi-Allgöwer Plafond (Pilon Fracture Types I–III) 3D Presets
 
+Pilon fractures (tibial plafond fractures) result from high-energy axial loading that drives the talar dome vertically into the distal tibial articular surface, often accompanied by rotational shear and fibular fracture.
 
+### Mathematical Partitioning Boundaries & Slicing Planes:
+- **Tibial Plafond Joint Surface**: $Y \approx -152.7$ (range $-158.72$ to $-135.0$).
+- **Distal Fibular Column**: $X \le -12.0$, $Y \le -130.0$.
+- **Medial Column (`ltMesh`)**: `centroid.x >= 16.0 && centroid.y <= -132.0` (centroid `[23.4, -150.1, 6.6]`).
+- **Posterior Volkmann Column (`gtMesh`)**: `centroid.z < 0.0 && centroid.y <= -132.0` (centroid `[-2.8, -145.6, -12.8]`).
+- **Anterolateral Chaput Column & Fibula (`shardMesh`)**: `centroid.y <= -132.0` plus Fibula `centroid.y <= -130.0` (centroid `[-14.8, -159.4, -7.5]`).
+- **Blown-out Anterior Metaphyseal Cortical Comminution (Type III Butterfly Shard)**: `centroid.y > -138.0 && centroid.y <= -120.0 && centroid.z >= 1.5 && centroid.x < 16.0` (extruded anterolaterally `dx = -2.2, dy = 1.4, dz = 3.6` opening an anterior window into the impaction crater).
+- **Central Die-Punch Fragment (`hnMesh` / `proxPivot` in Type III)**: `centroid.y <= -138.0 && centroid.x >= -6.0 && centroid.x <= 18.0 && Math.abs(centroid.z) <= 12.0` (centroid `[9.95, -148.59, -1.98]`), shattered into multi-level stepped anterior and posterior subchondral fragments.
+- **Metaphyseal Vault / Diaphysis (`distalMesh`)**: Remaining proximal tibial shaft providing stable structural foundation.
+
+### Complete 3D Classification Presets Database:
+
+| Preset ID | Classification | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `pilon_1` | Rüedi-Allgöwer Type I | Type I (Cleavage) | `pilon_1` | Cleavage fracture of the distal tibia without significant displacement of the articular surface (< 2 mm step-off). Hairline cleavage crack with 0.4mm separation (`ltPos: [0.4, 0, 0]`, `shardPos: [-0.4, 0.1, 0.2]`) exposing grayish-flesh cancellous cut-face caps (`#8C7A73`). |
+| `pilon_2` | Rüedi-Allgöwer Type II | Type II (Displaced) | `pilon_2` | Displaced fracture of the articular surface with incongruity (> 2 mm step-off), but without central impaction or severe comminution. Calibrated 3-part column displacement (~2.4–2.9 mm step-off): Medial (`ltPos: [2.4, 0.4, 0]`, `ltRot: [0, 0, -0.08]`), Posterior Volkmann (`gtPos: [-0.8, 1.8, -2.2]`, `gtRot: [-0.09, 0.04, -0.03]`), Anterolateral Chaput & Fibula (`shardPos: [-2.2, 0.6, 1.8]`, `shardRot: [0.08, -0.06, 0.05]`). Clean jigsaw puzzle reduction alignment. |
+| `pilon_3` | Rüedi-Allgöwer Type III | Type III (Comminuted) | `pilon_3` | Severe intra-articular comminution with marked central impaction / crushing of the articular surface. Multi-fragment stepped subchondral die-punch pieces driven $+7.8\text{ mm}$ proximally into metaphyseal cancellous vault (`proximalPosOffset: [0, 7.8, 0]`, `proximalRot: [0.16, 0.06, -0.14]`), anterior metaphyseal cortical wall blown open with extruded comminuted butterfly shard, widely splayed Medial Column (`ltPos: [5.8, 1.6, 0]`, `ltRot: [0, 0, -0.20]`), Posterior Volkmann (`gtPos: [-2.2, 5.2, -7.5]`, `gtRot: [-0.26, 0.10, -0.08]`), and Chaput & Fibula (`shardPos: [-5.5, 2.6, 5.2]`, `shardRot: [0.22, -0.18, 0.16]`). |
+
+### Radiographic Snap Views for Pilon Subregion:
+- **AP Plafond** (`[-0.35, 0.05, 0.94]`): Profiles overall coronal alignment, medial and lateral column splay, and plafond step-off.
+- **Mortise Plafond 15–20°** (`[-0.68, 0.05, 0.73]`): Profiles anterolateral Chaput fragment and distal fibular column without superposition.
+- **Lateral Plafond** (`[-0.94, 0.05, -0.34]`): True sagittal projection revealing central die-punch impaction depth and posterior Volkmann fragment displacement.
+
+### Clinical & Visual Integrity Constraints:
+- **Verbatim Text Only**: Descriptions strictly mirror `src/data/bones/tibia.ts` for Rüedi-Allgöwer Types I–III without extrapolation.
+- **No Thai Text**: Strictly English in badges, clinical titles, pearls, and anatomy inspector tooltips.
+- **Solid Indicator Dots**: Non-pulsing sky-blue indicator dots (`bg-sky-400`).
+- **Universal Grayish-Flesh Cancellous Cut-Face Caps**: Applied to all cleavage cuts and auto-hidden (`visible: false`) when X-Ray film mode is activated.
+
+---
+
+## 13. Complete Hawkins Classification (Talar Neck Fracture Types I–IV) 3D Presets
+
+Talar neck fractures occur through the narrow neck between the talar body (trochlea) and talar head, typically from severe forced dorsiflexion of the ankle with axial compression (e.g. foot wedged against the brake pedal during a high-speed collision). Classified under Hawkins' classic paradigm based on fracture displacement and dislocation of surrounding joints (Subtalar, Tibiotalar, and Talonavicular), directly correlating with retrograde arterial devascularization and avascular necrosis (AVN) risk.
+
+### Mathematical Partitioning Boundaries & Slicing Planes:
+Reuses the multi-bone assembly from `public/models/bones/tibia/tibia.glb` (21,264 vertices across 7,084 triangles):
+- **Tibia Diaphysis & Plafond**: `[0, 5040)` (1,680 triangles, $Y \in [-199.5, 199.5]$)
+- **Fibula Diaphysis & Lateral Malleolus**: `[5040, 8472)` (1,144 triangles, $Y \in [-187.3, 172.5]$)
+- **Talus (`[8472, 12600)`)**: 1,376 triangles ($X \in [-11.5, 28.1], Y \in [-183.7, -150.2], Z \in [-23.5, 32.5]$)
+  - **Coronal Vertical Cut Plane**: $Z = 8.0\text{ mm}$
+  - **Talar Body Fragment (`hnMesh` / `proxPivot`)**: `centroid.z <= 8.0` (692 triangles, centroid `[8.51, -171.40, -5.48]`). Articulates with the tibial plafond mortise and posterior calcaneal facet.
+  - **Talar Head & Neck Fragment (`shardMesh` / `shardPivot`)**: `centroid.z > 8.0` (684 triangles, centroid `[6.75, -167.10, 18.30]`). Articulates anteriorly with the navicular socket and middle/anterior calcaneal facets.
+- **Calcaneus (`[12600, 16374)`)**: 1,258 triangles ($Y \in [-220.9, -172.0]$), provides hindfoot subtalar foundation.
+- **Navicular (`[16374, 18468)`)**: 698 triangles ($Z \in [21.9, 48.1]$, centroid `[22.0, -168.0, 34.0]`). Follows talar head displacement in Hawkins IV (`ltMesh` / `ltPivot`).
+- **Cuboid (`[18468, 21264)`)**: 932 triangles, lateral column foundation.
+
+### Complete 3D Classification Presets Database:
+
+| Preset ID | Classification | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `hawkins_1` | Hawkins Type I | Non-displaced (<2 mm) | `hawkins_1` | **Non-displaced Talar Neck Fracture (<2 mm displacement)**: Subtalar, tibiotalar, and talonavicular joints remain INTACT and CONGRUENT. Preserved blood supply through deltoid branches and sinus tarsi; low AVN risk (0–10%). Hairline separation (0.4 mm) exposing organic grayish-flesh cancellous cut-face caps (`hnPos: [0, 0, -0.2]`, `shardPos: [0, 0, 0.2]`). |
+| `hawkins_2` | Hawkins Type II | Subtalar Subluxation | `hawkins_2` | **Displaced with Subtalar Subluxation/Dislocation**: Displaced talar neck fracture WITH subluxation or dislocation of the Subtalar joint. Tibiotalar joint remains intact and aligned. Disruption of sinus tarsi and canalis tarsi blood supply; moderate AVN risk (20–50%). Talar body tilts in equinus with posterior subluxation (`proximalRot: [0.18, 0, 0.05]`, `proximalPosOffset: [0.5, 1.2, -2.8]`). |
+| `hawkins_3` | Hawkins Type III | Subtalar & Tibiotalar Dislocation | `hawkins_3` | **Displaced with Subtalar + Tibiotalar Dislocation**: Displaced talar neck fracture WITH dislocation of BOTH Subtalar and Tibiotalar joints. Talar body fragment is extruded posteriorly and medially behind medial malleolus (`proximalRot: [0.35, 0.40, -0.25]`, `proximalPosOffset: [12.0, 5.0, -18.0]`). Disruption of all major blood supplies except deltoid branches; VERY HIGH AVN risk (80–100%). Empty ankle mortise. |
+| `hawkins_4` | Hawkins Type IV | Triple Joint Dislocation | `hawkins_4` | **Displaced with Subtalar + Tibiotalar + Talonavicular Dislocation**: Displaced talar neck fracture WITH dislocation of ALL THREE joints (Subtalar, Tibiotalar, and Talonavicular). Total talar head and body dislocation (`shardRot: [-0.22, 0.15, 0.18]`, `shardPosOffset: [-3.5, 4.5, 6.0]`, `ltRot: [-0.22, 0.15, 0.18]`, `ltPosOffset: [-3.5, 4.5, 6.0]`). Complete devascularization of talus; extremely high AVN risk (90–100%) and collapse rate. |
+
+### Radiographic Snap Views for Talus Subregion:
+- **Lateral View (Default Initial Snap View)** (`[0.94, 0.05, 0.34]`): 180° rotated lateral view profiling the medial aspect of the talar neck, subtalar joint, and clearly visualizing the posteromedially extruded talar body fragment behind the medial malleolus in Hawkins Types II–IV. Set as the default initial starting position.
+- **Canale View** (`[0.26, 0.26, 0.93]`): 15° foot pronation (eversion) with 15° cephalic tube angle. Essential projection profiling the talar neck without superposition to detect subtle varus deformity, shortening, and articular step-off.
+- **AP Ankle / Foot View** (`[-0.35, 0.05, 0.94]`): True AP projection verifying ankle mortise alignment, medial clear space, and talonavicular articulation.
+
+### Dynamic Musculoskeletal Force Vectors:
+- **Hyperdorsiflexion Vector** (`[0.0, -0.35, -0.94]`, magenta `#EC4899`, magnitude `35.0`): Axial ground-reaction load forced against the anterior tibial margin, impinging and shearing the talar neck.
+- **Posteromedial Extrusion Vector** (`[0.55, 0.25, -0.80]`, amber `#F59E0B`, magnitude `38.0`): Posteromedial displacement vector pushing the talar body out of the ankle mortise behind the medial malleolus into the flexor tendon compartment.
+
+### Clinical & Visual Integrity Constraints:
+- **Verbatim Text Only**: All descriptions, titles, badges, and clinical pearls strictly mirror `src/data/bones/foot.ts` word-for-word.
+- **Strictly English UI**: English in badges, clinical titles, pearls, and inspector tooltips.
+- **Solid Indicator Dots**: Non-pulsing emerald indicator dots (`bg-emerald-400`).
+- **Universal Grayish-Flesh Cancellous Cut-Face Caps**: Applied to all neck cut cross-sections (`#8C7A73`, roughness `0.88`, double-sided) and automatically suppressed in X-Ray radiographic mode.
+
+---
+
+## 14. Complete Essex-Lopresti Calcaneus Fracture Classification 3D Presets
+
+Calcaneus fractures result from high-energy axial loading across the hindfoot (falls from height or motor vehicle accidents) driving the wedge-shaped lateral process of the talus downward into the posterior facet of the calcaneus. Classified under Essex-Lopresti's classic radiograph-based paradigm according to the exit trajectory of the secondary fracture line into **Tongue-Type** (~25%) vs **Joint-Depression Type** (~75%).
+
+### Primary & Secondary Fracture Line Concepts:
+1. **Primary Fracture Line**:
+   - Runs obliquely through the posterior facet of the calcaneus, dividing the bone into two primary parts:
+     - **Anteromedial (sustentacular) fragment**: The "constant fragment" anchored to the talus via the deltoid and interosseous ligaments (`distalGroup`).
+     - **Posterolateral (tuberosity) fragment**: Subject to secondary cleavage and displacement.
+   - Slicing plane equation: `(centroid.x - 0.75 * centroid.z > 4.0) && centroid.x > 6.0 && centroid.z > -18.0`.
+2. **Secondary Fracture Lines**:
+   - **Tongue-Type**: The secondary fracture line exits straight out the back of the calcaneus, leaving the posterior facet fragment attached to the dorsal heel tuberosity. Displacement of this piece levers the tuberosity upward, which can stretch the skin in the back of the heel and may require urgent reduction if skin integrity is threatened.
+     - Tongue fragment: `centroid.z <= 3.0 && centroid.y >= (-195.0 + 0.12 * centroid.z)` (`hnPos`).
+     - Plantar tuberosity fragment: `centroid.z <= -12.0` (`gtPos`).
+     - Lateral wall splay: `centroid.x < 4.0 && centroid.z > 0` (`shardPos`).
+   - **Joint-Depression Type**: The secondary fracture line runs directly behind the posterior facet, causing the facet articular surface to depress inward into the cancellous body while separating from the tuberosity.
+     - Depressed facet block: `centroid.z >= -16.0 && centroid.z <= 3.0 && centroid.y >= -189.0` (`shardPos`).
+     - Posterior tuberosity: `centroid.z < -16.0` (`gtPos`).
+     - Lateral wall / anterior process: `centroid.x < 6.0` (`ltPos`).
+
+### Mathematical Partitioning Boundaries & Slicing Coordinates:
+Reuses the multi-bone assembly from `public/models/bones/tibia/tibia.glb` (calcaneus vertex range `[12600, 16374)`, 1,258 triangles across 3,774 vertices):
+- **Calcaneus Bounding Box**: $X \in [-22.53, 33.49]$, $Y \in [-221.11, -171.84]$, $Z \in [-48.50, 21.66]\text{ mm}$.
+- **Subtalar Posterior Facet**: $X \in [-19.3, 22.7]$, $Y \in [-185.0, -172.6]$, $Z \in [-17.9, 5.0]$, centroid `[5.26, -179.46, -2.60]`.
+- **Posterior Tuberosity**: $Z < -18.0$, $Y \in [-221.1, -182.0]$.
+- **Cruciate Angle of Gissane / Sulcus**: $Z \approx 2.0\text{ mm}$, $Y \approx -180.0\text{ mm}$.
+
+### Complete 3D Classification Presets Database:
+
+| Preset ID | Classification | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `essex_tongue` | Tongue Type | Horizontal Lever (~25%) | `essex_tongue` | **Intra-Articular: Tongue Type**: Primary fracture line runs obliquely through posterior facet, dividing into anteromedial constant fragment and posterolateral fragment. Secondary fracture line exits out the back of the calcaneus, leaving posterior facet attached to dorsal heel tuberosity. Levers upward posteriorly (`proximalRot.x = +0.22`), causing skin tenting in the back of the heel (urgent reduction indicated if skin compromised). Bohler's angle is reduced (<20°). Reduced percutaneously with Steinmann pin leverage (Essex-Lopresti maneuver). |
+| `essex_joint_depression` | Joint-Depression | Crushed Facet (~75%) | `essex_joint_depression` | **Intra-Articular: Joint-Depression Type**: Primary fracture line runs obliquely through posterior facet. Secondary fracture line runs directly behind posterior facet, isolating the articular facet and driving it deep downward into the cancellous body (`shardPosOffset.y = -7.5 mm`). Tuberosity tilts upward and forward (`gtPosOffset = [1.5, 3.5, 3.5]`), causing heel shortening and inverting Bohler's angle (<0°). Lateral wall blows outward (`ltPosOffset = [-3.0, -1.5, 2.0]`). |
+
+### Radiographic Snap Views for Calcaneus Subregion:
+- **Lateral Calcaneus View (Default Initial Snap View)** (`[-0.94, 0.05, -0.34]`): Strict lateral view essential for measuring Bohler's angle (normal 20–40°, <20° indicates depression), Critical Angle of Gissane (120–145°), and classifying Tongue vs Joint-Depression pattern. Set as the default initial starting camera view.
+- **Axial Harris View (45° Axial View)** (`[0.0, -0.71, -0.71]`): Profiles calcaneal tuberosity widening, varus/valgus deformity, and sustentacular fracture lines.
+- **Broden's Stress Oblique View** (`[-0.65, 0.35, 0.67]`): Oblique view profiling posterior subtalar articular facet congruity and depression step-off before and during surgery.
+
+### Genuine Biomechanical Deformity Forces (Exact AO Diagrams):
+- **Axial Talar Wedge Impaction** (`[0.0, -1.0, 0.0]`, Green `#10B981`, magnitude `40.0`): Axial ground-reaction load driving the lateral process of the talus downward like a chisel into the sulcus calcanei / posterior facet.
+- **Gastrocnemius-Soleus Pull (Tongue / Tuberosity Traction)** (`[0.0, 0.90, -0.30]`, Green `#10B981`, magnitude `38.0`–`42.0`):
+  - In Tongue Type: Upward pull levering the dorsal tongue fragment upward and creating critical posterior heel skin tenting.
+  - In Joint-Depression: Upward and anterior traction on the tuberosity causing heel shortening and loss of Bohler's angle.
+- **Lateral Wall Splay Vector** (`[-0.70, -0.50, 0.50]`, Cyan `#06B6D4`, magnitude `32.0`): Eccentric blowout and outward splaying of the lateral cortical wall beneath the talar lateral process, leading to peroneal impingement.
+
+### Clinical & Visual Integrity Constraints:
+- **Strict Verbatim Texts**: Descriptions, titles, badges, and clinical pearls strictly mirror `src/data/bones/foot.ts` lines 525–780.
+---
+
+## 15. Pelvis & Acetabulum Multi-Bone Assembly Protocol & Radiographic Views
+
+The pelvis model (`public/models/bones/pelvis/pelvis.glb`, ~507 KB indexed GLB) is constructed from a segmented clinical pelvic CT scan with Loop-Taubin volume-preserving subdivision and smooth area-weighted vertex normals:
+- `left_pelvis` (9,256 triangles / 27,768 unpacked vertices): Left hemipelvis (ilium, ischium, pubis, and acetabulum).
+- `right_pelvis` (9,496 triangles / 28,488 unpacked vertices): Right hemipelvis (ilium, ischium, pubis, and acetabulum).
+- `sacrum` (9,922 triangles / 29,766 unpacked vertices): Sacrum (S1–S5 vertebrae, sacral ala, and foramina).
+
+### Multi-Bone CT Spatial Fitting:
+- **Sacroiliac (SI) Joints**:
+  - Right SI Joint gap: $0.31\text{ mm}$
+  - Left SI Joint gap: $0.97\text{ mm}$
+- **Pubic Symphysis Gap**: $6.76\text{ mm}$ at midline (anatomical adult cartilage normal range $4\text{--}7\text{ mm}$).
+- **Femoral Head Congruity**: Acetabular socket articulates directly with `femur.glb` femoral head with $1.45\text{ mm}$ joint space.
+
+### Normalized Anatomical Coordinate Space (Assembled `pelvis.glb`):
+- **Cranial-Caudal (Superior-Inferior)**: $+Y$ is Superior (Iliac crests $Y \approx +103\text{ mm}$), $-Y$ is Inferior (Ischial tuberosities $Y \approx -103\text{ mm}$). Height: $206.0\text{ mm}$.
+- **Medial-Lateral**: $+X$ is Patient Left ($X \in [2.89, 144.90]\text{ mm}$), $-X$ is Patient Right ($X \in [-144.90, -2.82]\text{ mm}$). Width: $289.8\text{ mm}$.
+- **Anterior-Posterior**: $+Z$ is Anterior (Pubic symphysis & ASIS $Z \approx +73\text{ mm}$), $-Z$ is Posterior (Sacrum $Z \approx -73\text{ mm}$). Depth: $146.3\text{ mm}$.
+- **Origin**: Centered at $[0.00, 0.00, 0.00]$.
+
+### Subregions & Presets:
+1. **Pelvic Ring (`pelvic-ring`)**:
+   - Camera target: `[0.0, 0.0, 0.0]`, distance: `4.6`, direction: `[0.0, 0.15, 0.98]`.
+   - **Hierarchical Young-Burgess Mechanism Grouping** (matches Lauge-Hansen design):
+     - **Level 1 (Mechanism Groups)**: `Normal` (Intact) | `APC (I→III)` | `LC (I→III)` | `VS`
+     - **Level 2 (Stages)**:
+       - `APC`: `APC-I` $\to$ `APC-II` $\to$ `APC-III` (Open Book diastasis progression)
+       - `LC`: `LC-I` $\to$ `LC-II` $\to$ `LC-III` (Internal compression & crescent progression)
+       - `VS`: `VS` (Complete vertical shear disruption)
+   - Complete Young-Burgess Presets Database: `pelvis_intact`, `yb_apc1`, `yb_apc2`, `yb_apc3`, `yb_lc1`, `yb_lc2`, `yb_lc3`, `yb_vs`.
+2. **Acetabulum (`acetabulum`)**:
+   - Camera target: `[-0.73, -0.31, 0.27]`, distance: `2.2`, direction: `[-0.55, 0.15, 0.82]`.
+   - Preset: `acetabulum_intact` (Right Acetabulum, Judet-Letournel anterior & posterior columns).
+
+### Complete Young-Burgess Pelvic Ring 3D Presets Database:
+
+| Preset ID | Classification | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- |
+| `pelvis_intact` | Normal Anatomy | Anatomical Ring | `pelvis_intact` | Normal stable pelvic ring with intact pubic symphysis, bilateral sacroiliac joints, and strong posterior sacroiliac ligamentous complex. Transmits axial body weight from the spine through the sacrum to the acetabula and lower extremities. |
+| `yb_apc1` | APC-I | APC-I (Stable) | `yb_apc1` | Slight widening of pubic symphysis (< 2.5 cm). Intact anterior SI, sacrospinous, and sacrotuberous ligaments. Pelvic ring is STABLE; minimal blood loss risk (`proximalRot: [0, -0.04, 0]`, `proximalPosOffset: [-0.8, 0, 0.4]`). |
+| `yb_apc2` | APC-II | APC-II (Open Book) | `yb_apc2` | Pubic symphysis diastasis > 2.5 cm ('Open Book' pelvis). Torn anterior SI, sacrospinous, and sacrotuberous ligaments. **Intact POSTERIOR SI ligaments (acts as a posterior hinge)**. Rotationally UNSTABLE, Vertically STABLE. Significant pelvic volume expansion and internal hemorrhage risk (`proximalRot: [0, -0.16, 0]`, `proximalPosOffset: [-2.5, 0, 1.2]`). |
+| `yb_apc3` | APC-III | APC-III (Floating Hemipelvis) | `yb_apc3` | Complete disruption of pubic symphysis and ALL SI ligaments (anterior and posterior). Complete separation of hemipelvis (**Floating hemipelvis**). Both Rotationally and Vertically UNSTABLE. Extreme life-threatening internal hemorrhage risk (`proximalRot: [0.06, -0.22, 0.08]`, `proximalPosOffset: [-6.0, 3.0, -8.0]`). |
+| `yb_lc1` | LC-I | LC-I (Sacral Crush) | `yb_lc1` | **LC-I (Sacral Buckle & Transverse Pubic Rami Fractures)**: Ipsilateral transverse fractures through superior and inferior pubic rami (`ltPos`, centroid `[-21.29, -69.44, 44.68]`). Main hemipelvis (`hnPos`) internally rotates (`proximalRot: [0, 0.08, -0.02]`, `proximalPosOffset: [2.5, 0, -1.2]`) while pubic rami fragment remains with intact symphysis pubis, opening the transverse rami fracture gap. Stable ring, reduced pelvic volume, low hemorrhage risk. |
+| `yb_lc2` | LC-II | LC-II (Crescent) | `yb_lc2` | **LC-II (Ipsilateral Crescent Iliac Fossa Fracture)**: Classic anatomical **Crescent fracture** running diagonally across the iliac fossa from the lateral iliac crest into the sacroiliac joint (`shardPos`, centroid `[-66.22, 66.07, -31.16]`). Posterosuperior crescent fragment remains anchored to the sacrum via intact posterior SI ligaments (`shardPosOffset: [0, 0, 0]`), while the inferior hemipelvis (acetabulum & anterior column) is driven medially and internally (`proximalRot: [-0.03, 0.16, -0.06]`, `proximalPosOffset: [7.0, -12.0, 4.0]`), opening an unmistakable, daylight-visible 12 mm gaping diagonal fracture gap across both cortices of the iliac wing and transverse pubic rami fractures anteriorly (`ltPosOffset: [0.5, -0.5, 0.0]`). Rotationally UNSTABLE, Vertically STABLE. |
+| `yb_lc3` | LC-III | LC-III (Windswept) | `yb_lc3` | **LC-III (Windswept Pelvis - Contralateral Open Book)**: Ipsilateral LC-II injury with diagonal crescent iliac wing fracture (`shardPos`, centroid `[-66.22, 66.07, -31.16]`), medial internal rotation of acetabular hemipelvis (`proximalRot: [-0.03, 0.16, -0.06]`, `proximalPosOffset: [7.0, -12.0, 4.0]`), and **transverse right pubic rami fracture** (`ltPos`, centroid `[-21.29, -69.44, 44.68]`, `ltRot: [0, 0.04, 0]`, `ltPosOffset: [1.5, -1.0, 0.5]`, opening a 15.4 mm rami fracture gap). Combined with CONTRALATERAL external rotation Open-Book injury (`gtRot: [0, 0.20, 0]`, `gtPosOffset: [5.0, 0, 2.0]`) and complete **pubic symphysis diastasis rupture** (23.6 mm gap), with the right fibrocartilage disc stump (`rightDiscMeshRami`) welded flush to the medial facet of the right pubic rami fragment (`ltMesh`), ensuring zero floating cartilage. High-energy multidirectional instability with massive retroperitoneal hemorrhage risk. |
+| `yb_vs` | VS | VS (Vertical Shear) | `yb_vs` | **Vertical Shear (Completely Unstable)**: Complete vertical dissociation through SI joint and anterior pubic ring. Massive **Vertical Pubic Step-off** with 14 mm cranial hemipelvis translation (`proximalRot: [0.04, -0.08, 0.05]`, `proximalPosOffset: [-3.0, 14.0, 2.0]`). Complete rupture of all anterior and posterior pelvic ligaments. High incidence of hypovolemic shock. |
+
+### Anatomical Pelvic Ligament Complex Specification:
+
+The pelvic ligament bundle models the essential biomechanical stabilizers of the pelvic ring using organic, continuous 3D volumetric **Sheet Geometries (`createSheetGeometry`)** with thickness, natural camber, and edge caps directly anchored to bone landmarks, matching anatomical specimens:
+1. **Pubic Symphysis (`lig_symphysis`)**:
+   - *Anatomical Joint Volume*: Single solid, watertight white fibrocartilage bar (`cartilageMat`, `0xF8FAFC`) lofted across the 5.7 mm interpubic gap ($X \in [-2.85, +2.85]$) following the true sagittal pelvic brim contour from the pubic crest ($Y = -50.6, Z = 59.6$) down to the subpubic arch ($Y = -67.5, Z = 42.0$) and posterior pelvic brim, flush with the cortical medial pubic facets. Fully capped with watertight end faces and features a subtle central waist ($0.94\times$ scale) simulating the natural physiological hourglass constriction of the interpubic disc.
+   - *Clean Anatomical Simplification*: Extraneous gray ligament sheets, ribbons, and ragged edges have been completely removed, ensuring a clean, uncluttered clinical model matching high-grade medical anatomical specimens ("เอาแค่แท่งสีขาวอันเดียว").
+   - *Disruption & Diastasis Rupture*: In APC-II, APC-III, LC-III, and VS, the joint ruptures cleanly into right and left solid white cartilage blocks attached to `proximalPivotGroup` and `gtPivotGroup` respectively, dynamically separating as the hemipelvis rotates open (diastasis $>2.5\text{ cm}$) or shears vertically without any floating red plates or ragged prongs.
+2. **Anterior Sacroiliac Ligaments (ASIL) (`lig_asil`)**:
+   - Continuous broad anatomical fan sheet bridging anterior SI joint from sacral ala ($[-46.2, 37.4, -2.6] \to [-44, 11.5, -16.8]$) to iliac auricular margin ($[-55.9, 35.6, -12.4] \to [-45.5, 7.8, -27.9]$), bilateral (thickness $1.4\text{ mm}$, camber $2.2\text{ mm}$).
+   - Disruption: Ruptured on ipsilateral side in APC-II, APC-III, and VS; ruptured on contralateral side in LC-III windswept pelvis.
+3. **Sacrospinous Ligaments (SSL) (`lig_ssl`)**:
+   - Flat triangular fan sheet running from the lateral border of lower sacrum and coccyx ($[-14.5, -45.8, -55.1] \to [-12.7, -54.6, -55.7]$) converging to the sharp tip of the Ischial Spine ($[-45.0, -36.1, -30.5]$), thickness $1.2\text{ mm}$.
+   - Function: Primary rotational restraint resisting external rotation opening.
+4. **Sacrotuberous Ligaments (STL) (`lig_stl`)**:
+   - Broad heavy strap sheet (width ~12–14 mm, thickness $1.6\text{ mm}$) running from the posterior iliac spines, lateral sacrum, and coccyx ($[-28.4, -22.7, -46.2] \to [-8.6, -61.8, -56.6]$) down to the medial lip of the Ischial Tuberosity ($[-43.6, -90.6, -25.4] \to [-40.5, -94.4, -22.6]$).
+   - Function: Primary passive restraint against vertical shear displacement and upward tilting of the sacrum.
+5. **Posterior Sacroiliac Ligaments (PSIL) (`lig_psil`)**:
+   - Strongest ligament complex in the human body; dense dorsal multi-laminar sheet connecting the intermediate sacral crests ($[-32, 18, -54] \to [-30, 40, -46]$) to the PSIS and posterior iliac crest ($[-38, 22, -56] \to [-34, 44, -57]$), thickness $1.6\text{ mm}$.
+   - **Crucial Kinematic Rule**: In APC-II, the Right PSIL **remains strictly INTACT**, acting as the mechanical hinge around which the hemipelvis rotates open. In APC-III and VS, the PSIL is completely torn, resulting in a floating hemipelvis and vertical instability.
+
+### Radiographic Snap Views for Pelvis:
+- **AP Pelvis (`[0, 0, 1]`)**: Coronal projection evaluating pelvic symmetry, pubic symphysis, sacroiliac joints, iliopectineal & ilioischial lines, teardrop, and Shenton's line.
+- **Pelvic Inlet View (`[0, -0.64, 0.77]`)**: 40° caudal beam tilt evaluating pelvic ring brim congruity, sacral wing impingement, and posterior SI joint translational displacement.
+- **Pelvic Outlet View (`[0, 0.64, 0.77]`)**: 40° cephalic beam tilt profiling vertical shear displacement, pubic rami shift, sacral neural foramina, and vertical hemipelvis migration.
+- **Judet Obturator Oblique View (`[-0.707, 0, 0.707]`)**: 45° roll profiling anterior column (iliopubic) and posterior acetabular wall rim with widely open obturator foramen.
+- **Judet Iliac Oblique View (`[0.707, 0, 0.707]`)**: 45° roll profiling posterior column (ilioischial) and anterior acetabular wall with full expanse of iliac wing.
+
+---
+
+## 15.2 Complete Judet & Letournel Acetabulum 3D Presets & Column Architecture
+
+The Judet & Letournel classification categorizes all acetabular fractures into **5 Elementary Types** (isolated single column, wall, or simple transverse) and **5 Associated Types** (complex combinations of both columns, vertical T-stems, or hemitransverse lines).
+
+### Two-Column Biomechanical Architecture:
+- **Cotyloid Fossa Center**: `[-82.0, -29.0, 20.8]` in Three.js right hemipelvis model coordinates.
+- **Anterior Column (Iliopubic Pillar)**: Extends from the anterior iliac crest (ASIS, AIIS) down along the pelvic brim (iliopectineal line) and anterior acetabulum to the superior pubic ramus. Centroid: `[-53.44, -43.53, 38.70]`.
+- **Posterior Column (Ilioischial Pillar)**: Extends from the greater sciatic notch down through the posterior articular surface, ischial spine, and ischial tuberosity (ilioischial line). Centroid: `[-63.30, -50.00, -14.51]`.
+- **Anterior Wall Rim**: Anterosuperior rim of acetabulum. Centroid: `[-92.98, -24.40, 33.20]`.
+- **Posterior Wall Rim**: Posterosuperior rim of acetabulum (~20–25% rim area). Centroid: `[-93.59, -29.72, -6.63]`.
+- **Inferior Ischiopubic Unit**: Conjoint ischium and pubis with intact obturator foramen in transverse fractures. Centroid: `[-49.45, -60.73, 13.87]`.
+- **Central Roof / Quadrilateral Plate Wafer**: Medial acetabular wall / quadrilateral plate fragment in Both-Column fractures. Centroid: `[-64.10, -29.10, 9.20]`.
+- **Pathognomonic Spur Sign**: Posterosuperior intact iliac bone spur jutting out above displaced columns in Both-Column fractures. Centroid: `[-59.04, 54.79, -33.53]`.
+
+> [!IMPORTANT]
+> **Exact CSG Triangle Slicing & Per-Plane Shortest-Chord Cancellous Caps (`splitPelvisSolid`)**: All Pelvis (`yb_lc1`, `yb_lc2`, `yb_lc3`) and Acetabulum (`jl_*`) fractures use exact edge-interpolated triangle slicing (`splitPelvisSolid`) rather than whole-triangle centroid sorting, preserving smooth vertex normals on outer cortical bone while generating per-plane shortest-3D-chord ear-clipped cancellous caps (`maxEdge <= 24 mm`) that stay strictly within the cortical bone thickness and never bridge across the hollow acetabular cup or obturator foramen.
+
+### Complete Judet & Letournel 3D Presets:
+
+| Type ID | Display Name | Category | Badge | Partition Mode | Clinical Characteristics & 3D Deformity |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| `acetabulum_intact` | Intact Cotyloid | Normal | Concentric Hip Joint | `pelvis_intact` | Concentric hip joint with intact columns, dome, and acetabular walls. Transmits axial body weight across the hip joint. |
+| `jl_pw` | Posterior Wall | Elementary #1 | Posterior Wall | `jl_pw` | **Posterior Wall Rim Fracture (~25% of cases)**: Isolated detachment of the posterosuperior articular rim (`shardPos`, centroid `[-93.59, -29.72, -6.63]`). Displaces posterolaterally (`shardPosOffset: [-7.0, 1.5, -9.0]`, `shardRot: [0.03, -0.05, 0.02]`), opening a clean, daylight-visible rim defect with zero overlapping or tangled mesh. |
+| `jl_pc` | Posterior Column | Elementary #2 | Posterior Column | `jl_pc` | **Posterior Column Fracture**: Vertical fracture traversing the greater sciatic notch, posterior acetabulum, and ischial tuberosity (`gtPos`, centroid `[-63.30, -50.00, -14.51]`). Disrupts ilioischial line on AP view. Detached column rotates internally and translates medially/posteriorly (`gtPosOffset: [5.0, -2.5, -7.0]`, `gtRot: [0.02, 0.06, -0.03]`). Intact anterior pillar (`hnPos`). |
+| `jl_aw` | Anterior Wall | Elementary #3 | Anterior Wall | `jl_aw` | **Anterior Wall Fracture**: Isolated fracture of the anterosuperior articular rim (`ltPos`, centroid `[-92.98, -24.40, 33.20]`). Disrupts middle portion of iliopectineal line on AP and obturator views. Displaces anterolaterally (`ltPosOffset: [-7.0, -1.5, 9.0]`, `ltRot: [-0.03, 0.05, 0.02]`). |
+| `jl_ac` | Anterior Column | Elementary #4 | Anterior Column | `jl_ac` | **Anterior Column Fracture**: High pillar fracture extending from anterior iliac crest down through pelvic brim to superior pubic ramus (`ltPos`, centroid `[-53.44, -43.53, 38.70]`). Complete disruption of iliopectineal line. Displaces anteromedially and rotates (`ltPosOffset: [6.0, -3.0, 7.0]`, `ltRot: [0.03, -0.06, 0.03]`). |
+| `jl_transverse` | Transverse | Elementary #5 | Transverse Acetabular | `jl_transverse` | **Transverse Fracture**: Horizontal fracture dividing the acetabulum into superior (iliac dome) and inferior (ischiopubic) halves (`ltPos`, centroid `[-49.45, -60.73, 13.87]`). Disrupts BOTH iliopectineal and ilioischial lines while **obturator foramen remains strictly INTACT**. Displaces medially and downward under the intact dome (`ltPosOffset: [6.0, -4.0, -2.0]`, `ltRot: [0.02, 0.04, -0.02]`). |
+| `jl_t_shaped` | T-Shaped | Associated #1 | T-Shaped | `jl_t_shaped` | **T-Shaped Fracture**: Transverse fracture combined with a vertical stem extending inferiorly into the obturator foramen. Separates the lower unit into a displaced **Posterior Ischial Fragment** (`gtPos`, centroid `[-61.40, -66.09, -13.24]`, `gtPosOffset: [5.0, -3.5, -6.5]`) and an **Anterior Pubic Fragment** (`ltPos`, centroid `[-37.10, -55.20, 41.90]`, `ltPosOffset: [5.5, -2.0, 6.0]`). Widens both the horizontal transverse gap and the vertical obturator ring gap. |
+| `jl_pc_pw` | PC + Wall | Associated #2 | PC + Posterior Wall | `jl_pc_pw` | **Combined Posterior Column + Posterior Wall**: High-energy injury with detached posterior column (`gtPos`, centroid `[-63.30, -50.00, -14.51]`, `gtPosOffset: [5.0, -2.0, -6.0]`) and separate detached posterior wall rim shard (`shardPos`, centroid `[-93.59, -29.72, -6.63]`, `shardPosOffset: [-7.5, 2.0, -9.5]`). Entire posterior support is lost; extreme posterior hip dislocation risk. |
+| `jl_trans_pw` | Trans + PW | Associated #3 | Transverse + PW | `jl_trans_pw` | **Transverse + Detached Posterior Wall (~20% of cases)**: Two-column transverse fracture (`ltPos`, centroid `[-49.45, -60.73, 13.87]`, `ltPosOffset: [5.5, -3.5, -2.0]`) combined with separate detached posterior wall rim shard (`shardPos`, centroid `[-93.59, -29.72, -6.63]`, `shardPosOffset: [-7.5, 2.0, -9.5]`). |
+| `jl_acpht` | ACPHT | Associated #4 | ACPHT | `jl_acpht` | **Anterior Column/Wall + Posterior Hemitransverse**: High anterior column fracture (`ltPos`, centroid `[-53.44, -43.53, 38.70]`, `ltPosOffset: [6.0, -2.5, 6.5]`) combined with a lower horizontal posterior hemitransverse line (`gtPos`, centroid `[-61.18, -61.64, -14.39]`, `gtPosOffset: [4.5, -2.0, -5.0]`). Common in elderly osteoporotic falls. |
+| `jl_both_column` | Both Columns | Associated #5 | Both Columns (Floating) | `jl_both_column` | **Both Columns Fracture (Floating Acetabulum)**: All articular facets are completely detached from the sacroiliac joint. Unfractured posterior ilium forms the pathognomonic **Spur Sign** (`hnPos`, centroid `[-59.04, 54.79, -33.53]`), while the Anterior Column (`ltPos`, `ltPosOffset: [7.0, -3.5, 5.5]`), Posterior Column (`gtPos`, `gtPosOffset: [6.0, -3.0, -6.5]`), and Central Roof / Quadrilateral Plate (`shardPos`, `shardPosOffset: [9.0, -1.5, 0.0]`) displace medially (central hip dislocation). |
+
+---
+
+## 16. Mesh Subdivision CLI, Smooth Normals & Multi-Scale Organic Cortical Fracture Relief (`fOrganic`)
+
+See companion skill **`ortho-3d-mesh-slicing`** (`.agents/skills/ortho-3d-mesh-slicing/SKILL.md`) and its CLI tool `.agents/skills/ortho-3d-mesh-slicing/scripts/upgrade_bone_mesh.py` for automated mesh auditing, Loop-Taubin volume-preserving subdivision, and indexed GLB packing.
+
+### Multi-Scale 3D Organic Cortical Fracture Relief (`fOrganic`):
+To prevent fracture lines from looking artificially ruler-straight (like an osteotomy saw cut) while avoiding low-poly jagged triangle steps, continuous fracture level-set functions $f(x, y, z) = 0$ incorporate a deterministic 3-octave gyroid/harmonic spatial perturbation:
+```typescript
+const fOrganic = (x: number, y: number, z: number, amp = 1.65, phase = 0.0) => {
+  const w1 = Math.sin(x * 0.16 + y * 0.13 + phase) * Math.cos(z * 0.18 - y * 0.11 - phase * 0.7);
+  const w2 = 0.52 * Math.sin(y * 0.36 - z * 0.28 + 1.3 + phase) * Math.cos(x * 0.31 + z * 0.23);
+  const w3 = 0.24 * Math.sin(x * 0.68 + z * 0.63 - 0.7 - phase);
+  return amp * (w1 + w2 + w3);
+};
+```
+Because both opposing bone fragments are sliced along the exact zero-crossing of $f_{\text{base}}(x, y, z) + f_{\text{organic}}(x, y, z) = 0$, the cortical edges undulate naturally and interlock with **0.000 mm jigsaw precision** when reduced.

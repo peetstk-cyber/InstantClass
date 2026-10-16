@@ -11,6 +11,7 @@ export const pelvisBone: BoneData = {
     "th": "กระดูกเชิงกรานและเบ้าสะโพก รวมถึงวงกระดูกเชิงกรานและเบ้าข้อสะโพก"
   },
   "pediatric": false,
+  "model3dUrl": "/models/bones/pelvis/pelvis.glb",
   "regions": [
     {
       "id": "pelvic-ring",
@@ -167,8 +168,8 @@ export const pelvisBone: BoneData = {
                 "th": "APC1 (แรงอัดหน้าหลัง Stage 1): Pubic symphysis แยก <2.5 ซม.; เอ็น SI สมบูรณ์; มั่นคง (Tile A)"
               },
               {
-                "en": "APC2 / APC3: Open-book pelvis with pubic diastasis ≥2.5 cm and posterior SI ligament disruption (APC2 partial, APC3 complete); rotationally ± vertically unstable (Tile B1 / C1).",
-                "th": "APC2 / APC3: Open-book pelvis โดย Pubic diastasis ≥2.5 ซม. ร่วมกับเอ็น SI ด้านหลังฉีกขาด; ไม่มั่นคงการหมุน ± แนวตั้ง (Tile B1 / C1)"
+                "en": "APC2 / APC3: Open-book pelvis with pubic diastasis ≥2.5 cm. APC2 disrupts ST, SSp, and anterior SI ligaments (posterior SI intact, vertically stable / Tile B1); APC3 completely disrupts posterior SI ligaments (vertically unstable / Tile C1).",
+                "th": "APC2 / APC3: Open-book pelvis โดย Pubic diastasis ≥2.5 ซม.; APC2 มีการฉีกขาดของเอ็น ST, SSp และ Anterior SI (เอ็น Posterior SI ยังสมบูรณ์ มั่นคงแนวดิ่ง / Tile B1); ส่วน APC3 เอ็น Posterior SI ขาดสมบูรณ์ (ไม่มั่นคงแนวดิ่ง / Tile C1)"
               },
               {
                 "en": "VS (Vertical Shear): Complete disruption of anterior and posterior pelvic ring with vertical displacement of hemipelvis; vertically and rotationally unstable (Tile C).",
@@ -815,8 +816,8 @@ export const pelvisBone: BoneData = {
                 "th": "เกณฑ์รักษาแบบไม่ผ่าตัด (Matta Criteria): ผิวข้อเหลื่อม <2 มม. บริเวณโดมรับน้ำหนัก, มุมหลังคาเบ้าสมบูรณ์ (Roof arc angle >45° ใน 3 ท่า Judet views), และผนังหลังหัก <20%"
               },
               {
-                "en": "Both-Column Fracture Signature: Characterized by complete floating articular surface with the pathognomonic 'Spur Sign' on iliac oblique view.",
-                "th": "ลักษณะเฉพาะ Both-Column Fracture: ผิวข้อหลุดลอยแยกจากกระดูกเชิงกรานทั้งหมด ร่วมกับพบ 'Spur Sign' ในท่าเอกซเรย์ Iliac oblique view"
+                "en": "Both-Column Fracture Signature: Characterized by complete floating articular surface with the pathognomonic 'Spur Sign' on obturator oblique view.",
+                "th": "ลักษณะเฉพาะ Both-Column Fracture: ผิวข้อหลุดลอยแยกจากกระดูกเชิงกรานทั้งหมด ร่วมกับพบ 'Spur Sign' ในท่าเอกซเรย์ Obturator oblique view"
               }
             ],
             "clinicalSignificance": [

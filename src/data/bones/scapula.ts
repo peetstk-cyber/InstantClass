@@ -2420,7 +2420,7 @@ export const scapulaBone: BoneData = {
                 "th": "Type III (กล้ามเนื้อ/กระดูกหลุดฉีก + หลอดเลือดใหญ่ขาด - ผ่าตัดฉุกเฉินด่วนที่สุด)"
               },
               "description": {
-                "en": "Musculoskeletal disruption combined with COMPLETE TRANSECTION or thrombosis of Subclavian / Axillary artery and vein\nIncludes combined neurovascular injury (Type III = Vascular ± Nerve)\nLIFE-THREATENING EMERGENCY due to massive retroperitoneal/chest hemorrhage or acute limb ischemia\nHigh mortality rate (~20-50%)",
+                "en": "Musculoskeletal disruption combined with COMPLETE TRANSECTION or thrombosis of Subclavian / Axillary artery and vein\nIncludes combined neurovascular injury (Type III = Vascular ± Nerve)\nLIFE-THREATENING EMERGENCY due to massive intrathoracic/chest hemorrhage or acute limb ischemia\nHigh mortality rate (~20-50%)",
                 "th": "การฉีกขาดของกล้ามเนื้อและกระดูก **ร่วมกับหลอดเลือดแดง/ดำ Subclavian ขาดฉีกสมบูรณ์**\nภาวะฉุกเฉินอันตรายถึงชีวิต (Life-threatening emergency) จากการเสียเลือดรุนแรงในช่องอก หรือแขนขาดเลือดฉุกเฉิน\nอัตราการเสียชีวิตสูงมาก (~20-50%)"
               },
               "moi": {

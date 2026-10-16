@@ -97,6 +97,9 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
   const mutedText = darkMode ? "#94A3B8" : "#64748B";
   const cardBg = darkMode ? "#1E293B" : "#F8FAFC";
   const border = darkMode ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)";
+  const themeGreen = "#2ECC71";
+  const textGreen = darkMode ? "#2ECC71" : "#15803D";
+  const selectedBg = darkMode ? "rgba(46, 204, 113, 0.15)" : "rgba(46, 204, 113, 0.10)";
 
   const badgeSystemText = isSLIC ? "SLIC SYSTEM (VACCARO ET AL. 2007)" : "TLICS SYSTEM (VACCARO ET AL. 2005)";
   const systemHeaderTitle = isSLIC
@@ -111,17 +114,17 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
     <div
       style={{
         background: darkMode ? "#0F172A" : "#FFFFFF",
-        border: `1.5px solid ${border}`,
+        border: `1.5px solid ${darkMode ? "rgba(46, 204, 113, 0.25)" : "rgba(46, 204, 113, 0.2)"}`,
         borderRadius: 14,
         padding: "16px",
         marginBottom: "16px",
-        boxShadow: darkMode ? "0 4px 20px rgba(0,0,0,0.4)" : "0 4px 20px rgba(0,0,0,0.05)",
+        boxShadow: darkMode ? "0 4px 20px rgba(0,0,0,0.4)" : "0 4px 20px rgba(46,204,113,0.06)",
       }}
     >
       {/* Title & Live Score Badge */}
-      <div className="flex items-center justify-between mb-4 border-b pb-3" style={{ borderColor: border }}>
+      <div className="flex items-center justify-between mb-4 border-b pb-3" style={{ borderColor: darkMode ? "rgba(46, 204, 113, 0.15)" : "rgba(46, 204, 113, 0.2)" }}>
         <div>
-          <div style={{ color: "#A855F7", fontSize: 10, fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2 }}>
+          <div style={{ color: textGreen, fontSize: 10, fontWeight: 800, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: 2 }}>
             {badgeSystemText}
           </div>
           <h3 style={{ color: textColor, fontSize: 16, fontWeight: 800, margin: 0 }}>
@@ -139,7 +142,7 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
               ? "rgba(243, 156, 18, 0.15)"
               : "rgba(231, 76, 60, 0.15)",
             border: totalScore < 4
-              ? "1.5px solid #2ECC71"
+              ? `1.5px solid ${themeGreen}`
               : totalScore === 4
               ? "1.5px solid #F39C12"
               : "1.5px solid #E74C3C",
@@ -150,7 +153,7 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
           </span>
           <span
             style={{
-              color: totalScore < 4 ? "#2ECC71" : totalScore === 4 ? "#F39C12" : "#E74C3C",
+              color: totalScore < 4 ? themeGreen : totalScore === 4 ? "#F39C12" : "#E74C3C",
               fontSize: 22,
               fontWeight: 900,
               lineHeight: 1,
@@ -163,7 +166,7 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
 
       {/* Category 1: Fracture Morphology */}
       <div style={{ marginBottom: 14 }}>
-        <label style={{ color: "#38BDF8", fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
+        <label style={{ color: textGreen, fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
           1. {language === "en" ? "Fracture Morphology" : "ลักษณะทางกายวิภาคของรอยหัก (Morphology)"}
         </label>
         <div className="flex flex-col gap-1.5">
@@ -174,11 +177,11 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                 key={idx}
                 type="button"
                 onClick={() => setMorphologyIdx(idx)}
-                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer"
+                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer hover:border-emerald-500/40"
                 style={{
-                  background: isSelected ? (darkMode ? "rgba(56, 189, 248, 0.16)" : "#E0F2FE") : cardBg,
-                  border: isSelected ? "1.5px solid #38BDF8" : `1px solid ${border}`,
-                  color: isSelected ? (darkMode ? "#38BDF8" : "#0284C7") : textColor,
+                  background: isSelected ? selectedBg : cardBg,
+                  border: isSelected ? `1.5px solid ${themeGreen}` : `1px solid ${border}`,
+                  color: isSelected ? textGreen : textColor,
                   fontSize: 12,
                   fontWeight: isSelected ? 700 : 500,
                 }}
@@ -189,8 +192,8 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                     width: 14,
                     height: 14,
                     borderRadius: "50%",
-                    border: isSelected ? "4px solid #38BDF8" : `1.5px solid ${mutedText}`,
-                    background: isSelected ? "#FFFFFF" : "transparent",
+                    border: isSelected ? `4px solid ${themeGreen}` : `1.5px solid ${mutedText}`,
+                    background: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : "transparent",
                     flexShrink: 0,
                   }}
                 />
@@ -202,7 +205,7 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
 
       {/* Category 2: Ligamentous Complex (DLC or PLC) */}
       <div style={{ marginBottom: 14 }}>
-        <label style={{ color: "#A855F7", fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
+        <label style={{ color: textGreen, fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
           2. {ligamentHeaderLabel[language]}
         </label>
         <div className="flex flex-col gap-1.5">
@@ -213,11 +216,11 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                 key={idx}
                 type="button"
                 onClick={() => setLigamentIdx(idx)}
-                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer"
+                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer hover:border-emerald-500/40"
                 style={{
-                  background: isSelected ? (darkMode ? "rgba(168, 85, 247, 0.16)" : "#F3E8FF") : cardBg,
-                  border: isSelected ? "1.5px solid #A855F7" : `1px solid ${border}`,
-                  color: isSelected ? (darkMode ? "#C084FC" : "#7E22CE") : textColor,
+                  background: isSelected ? selectedBg : cardBg,
+                  border: isSelected ? `1.5px solid ${themeGreen}` : `1px solid ${border}`,
+                  color: isSelected ? textGreen : textColor,
                   fontSize: 12,
                   fontWeight: isSelected ? 700 : 500,
                 }}
@@ -228,8 +231,8 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                     width: 14,
                     height: 14,
                     borderRadius: "50%",
-                    border: isSelected ? "4px solid #A855F7" : `1.5px solid ${mutedText}`,
-                    background: isSelected ? "#FFFFFF" : "transparent",
+                    border: isSelected ? `4px solid ${themeGreen}` : `1.5px solid ${mutedText}`,
+                    background: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : "transparent",
                     flexShrink: 0,
                   }}
                 />
@@ -241,7 +244,7 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
 
       {/* Category 3: Neurological Status */}
       <div style={{ marginBottom: 14 }}>
-        <label style={{ color: "#F59E0B", fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
+        <label style={{ color: textGreen, fontSize: 11, fontWeight: 800, textTransform: "uppercase", letterSpacing: "0.04em", display: "block", marginBottom: 6 }}>
           3. {language === "en" ? "Neurological Status" : "ภาวะทางระบบประสาท (Neurological Status)"}
         </label>
         <div className="flex flex-col gap-1.5">
@@ -252,11 +255,11 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                 key={idx}
                 type="button"
                 onClick={() => setNeuroIdx(idx)}
-                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer"
+                className="flex items-center justify-between text-left transition-all px-3 py-2 rounded-lg cursor-pointer hover:border-emerald-500/40"
                 style={{
-                  background: isSelected ? (darkMode ? "rgba(245, 158, 11, 0.16)" : "#FEF3C7") : cardBg,
-                  border: isSelected ? "1.5px solid #F59E0B" : `1px solid ${border}`,
-                  color: isSelected ? (darkMode ? "#FBBF24" : "#B45309") : textColor,
+                  background: isSelected ? selectedBg : cardBg,
+                  border: isSelected ? `1.5px solid ${themeGreen}` : `1px solid ${border}`,
+                  color: isSelected ? textGreen : textColor,
                   fontSize: 12,
                   fontWeight: isSelected ? 700 : 500,
                 }}
@@ -267,8 +270,8 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                     width: 14,
                     height: 14,
                     borderRadius: "50%",
-                    border: isSelected ? "4px solid #F59E0B" : `1.5px solid ${mutedText}`,
-                    background: isSelected ? "#FFFFFF" : "transparent",
+                    border: isSelected ? `4px solid ${themeGreen}` : `1.5px solid ${mutedText}`,
+                    background: isSelected ? (darkMode ? "#0F172A" : "#FFFFFF") : "transparent",
                     flexShrink: 0,
                   }}
                 />
@@ -283,16 +286,16 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
             <button
               type="button"
               onClick={() => setHasPersistentCordCompression(!hasPersistentCordCompression)}
-              className="flex items-center justify-between text-left transition-all px-3 py-2.5 rounded-lg cursor-pointer w-full"
+              className="flex items-center justify-between text-left transition-all px-3 py-2.5 rounded-lg cursor-pointer w-full hover:border-emerald-500/40"
               style={{
                 background: hasPersistentCordCompression
-                  ? (darkMode ? "rgba(239, 68, 68, 0.2)" : "#FEE2E2")
+                  ? selectedBg
                   : cardBg,
                 border: hasPersistentCordCompression
-                  ? "1.5px solid #EF4444"
+                  ? `1.5px solid ${themeGreen}`
                   : `1px dashed ${border}`,
                 color: hasPersistentCordCompression
-                  ? (darkMode ? "#FCA5A5" : "#DC2626")
+                  ? textGreen
                   : textColor,
                 fontSize: 12,
                 fontWeight: hasPersistentCordCompression ? 700 : 500,
@@ -301,8 +304,8 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
               <div className="flex items-center gap-2">
                 <span
                   style={{
-                    background: hasPersistentCordCompression ? "#EF4444" : mutedText,
-                    color: "#FFFFFF",
+                    background: hasPersistentCordCompression ? themeGreen : mutedText,
+                    color: hasPersistentCordCompression ? "#0F172A" : "#FFFFFF",
                     fontSize: 9,
                     fontWeight: 900,
                     padding: "2px 6px",
@@ -324,13 +327,13 @@ export const SpineScoreCalculator: React.FC<SpineScoreCalculatorProps> = ({
                   width: 16,
                   height: 16,
                   borderRadius: 4,
-                  border: hasPersistentCordCompression ? "2px solid #EF4444" : `1.5px solid ${mutedText}`,
-                  background: hasPersistentCordCompression ? "#EF4444" : "transparent",
+                  border: hasPersistentCordCompression ? `2px solid ${themeGreen}` : `1.5px solid ${mutedText}`,
+                  background: hasPersistentCordCompression ? themeGreen : "transparent",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   flexShrink: 0,
-                  color: "#FFFFFF",
+                  color: "#0F172A",
                   fontSize: 11,
                   fontWeight: 900,
                 }}
