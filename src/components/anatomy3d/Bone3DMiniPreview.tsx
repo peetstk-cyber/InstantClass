@@ -8,8 +8,17 @@ interface Bone3DMiniPreviewProps {
   modelUrl: string;
   darkMode: boolean;
   onOpenFull: () => void;
+  boneId?: string;
   regionId?: string;
   className?: string;
+}
+
+interface SubregionPivotConfig {
+  pivot: [number, number, number];
+  distance: number;
+  tiltX?: number;
+  tiltY?: number;
+  tiltZ?: number;
 }
 
 /**
@@ -37,13 +46,6 @@ const _caAcromion = new THREE.Vector3(-65.93, 76.69, 7.51);
 const _conoidClavicleRaw = new THREE.Vector3(-35.38, 76.52, -16.13);
 const _trapClavicleRaw = new THREE.Vector3(-45.41, 75.94, -15.63);
 const _acClavicleRaw = new THREE.Vector3(-54.91, 76.63, -5.44);
-
-// Exact AC Joint center midpoint between distal clavicle and acromion
-const _acJointCenterRaw = new THREE.Vector3(
-  (-56.05 + -54.91) / 2,
-  (75.92 + 76.63) / 2,
-  (-5.08 + -5.44) / 2
-);
 
 function createLigamentSegment(
   start: THREE.Vector3,
@@ -83,6 +85,106 @@ function createLigamentSegment(
 }
 
 /**
+ * Returns the exact 3D anatomical pivot coordinate (in centered mm space)
+ * and camera zoom/tilt configuration for any targeted bone subregion.
+ */
+function getSubregionConfig(boneId?: string, regionId?: string): SubregionPivotConfig {
+  const b = (boneId || "").toLowerCase();
+  const r = (regionId || "").toLowerCase().replace(/_/g, "-");
+
+  // Clavicle Subregions
+  if (b.includes("clavicle")) {
+    if (r.includes("ac") || r.includes("rockwood")) {
+      return { pivot: [-55.5, 76.3, -5.3], distance: 1.85, tiltX: 0.06, tiltZ: -0.02 };
+    }
+    if (r.includes("shaft") || r.includes("robinson")) {
+      return { pivot: [10.0, 65.0, 37.0], distance: 2.10, tiltX: 0.08, tiltZ: -0.04 };
+    }
+    if (r.includes("distal") || r.includes("neer")) {
+      return { pivot: [-28.0, 72.0, -10.0], distance: 1.90, tiltX: 0.06, tiltZ: -0.02 };
+    }
+  }
+
+  // Femur Subregions
+  if (b.includes("femur")) {
+    if (r.includes("neck") || r.includes("garden")) {
+      return { pivot: [-12.5, 206.0, 0.0], distance: 1.80, tiltX: 0.04, tiltY: 0.15 };
+    }
+    if (r.includes("intertroch") || r.includes("evans")) {
+      return { pivot: [-29.0, 162.0, -10.0], distance: 1.80, tiltX: 0.04, tiltY: 0.15 };
+    }
+    if (r.includes("subtroch") || r.includes("seinsheimer")) {
+      return { pivot: [-18.0, 120.0, 0.0], distance: 1.90, tiltX: 0.04, tiltY: 0.10 };
+    }
+    if (r.includes("shaft") || r.includes("winquist")) {
+      return { pivot: [-10.0, -10.0, 10.0], distance: 2.30, tiltX: 0.06, tiltZ: -0.03 };
+    }
+    if (r.includes("distal") || r.includes("supracondylar") || r.includes("hoffa")) {
+      return { pivot: [10.0, -170.0, 0.0], distance: 1.85, tiltX: 0.08, tiltY: -0.05 };
+    }
+  }
+
+  // Humerus Subregions
+  if (b.includes("humerus")) {
+    if (r.includes("proximal") || r.includes("neer")) {
+      return { pivot: [15.0, 95.0, 3.0], distance: 1.75, tiltX: 0.05, tiltY: -0.20 };
+    }
+    if (r.includes("shaft")) {
+      return { pivot: [-6.9, 0.0, -4.7], distance: 2.10, tiltX: 0.06, tiltZ: -0.03 };
+    }
+    if (r.includes("distal")) {
+      return { pivot: [-23.3, -120.0, -11.8], distance: 1.75, tiltX: 0.08, tiltY: 0.0 };
+    }
+  }
+
+  // Patella Subregion
+  if (b.includes("patella")) {
+    return { pivot: [-4.2, 9.7, 32.8], distance: 1.65, tiltX: 0.10, tiltY: 0.0 };
+  }
+
+  // Tibia Subregions
+  if (b.includes("tibia")) {
+    if (r.includes("proximal") || r.includes("schatzker") || r.includes("plateau")) {
+      return { pivot: [0.0, 175.0, 0.0], distance: 1.85, tiltX: 0.18, tiltY: 0.0 };
+    }
+    if (r.includes("pilon")) {
+      return { pivot: [0.0, -145.0, 0.0], distance: 1.60, tiltX: 0.10, tiltY: -0.20 };
+    }
+    if (r.includes("distal") || r.includes("ankle") || r.includes("mortise")) {
+      return { pivot: [0.0, -155.0, 0.0], distance: 1.65, tiltX: 0.08, tiltY: -0.30 };
+    }
+    if (r.includes("shaft")) {
+      return { pivot: [0.0, 0.0, 0.0], distance: 2.25, tiltX: 0.06, tiltZ: -0.02 };
+    }
+  }
+
+  // Foot Subregions
+  if (b.includes("foot")) {
+    if (r.includes("talus") || r.includes("hawkins")) {
+      return { pivot: [8.51, -171.40, -5.48], distance: 1.50, tiltX: 0.06, tiltY: 0.80 };
+    }
+    if (r.includes("calcaneus") || r.includes("essex")) {
+      return { pivot: [5.30, -183.46, -14.19], distance: 1.45, tiltX: 0.06, tiltY: -0.80 };
+    }
+    if (r.includes("fifth") || r.includes("metatarsal")) {
+      return { pivot: [-15.0, -185.0, -15.0], distance: 1.55, tiltX: 0.15, tiltY: -0.40 };
+    }
+    return { pivot: [0.0, -180.0, -10.0], distance: 1.60, tiltX: 0.15 };
+  }
+
+  // Pelvis Subregions
+  if (b.includes("pelvis")) {
+    if (r.includes("acetabulum") || r.includes("judet")) {
+      return { pivot: [-70.4, -29.8, 26.5], distance: 1.90, tiltX: 0.10, tiltY: 0.30 };
+    }
+    return { pivot: [0.0, 0.0, 0.0], distance: 2.60, tiltX: 0.15, tiltY: 0.0 };
+  }
+
+  // Fallback: Geometric Center
+  return { pivot: [0.0, 0.0, 0.0], distance: 2.60, tiltX: 0.08, tiltZ: -0.04 };
+}
+
+/**
  * Minimalist Glassmorphic 3D Bone Mini Preview
  * - Clean Gray Canvas background for high anatomical contrast
  * - Pure minimalism: No descriptions or labels
@@ -90,13 +192,14 @@ function createLigamentSegment(
  * - Top-right expand icon button only (no signals or status dots)
  * - In-theme hover effect (subtle green glow & gentle speedup)
  * - Drag-to-rotate support with click-to-expand disambiguation
- * - Support for rotating around the AC Joint for Rockwood classification
+ * - Support for rotating dynamically around the active subregion pivot across all bones
  * - Automatic medical coordinate alignment & scale normalization
  */
 export function Bone3DMiniPreview({
   modelUrl,
   darkMode,
   onOpenFull,
+  boneId,
   regionId,
   className = "",
 }: Bone3DMiniPreviewProps) {
@@ -137,7 +240,9 @@ export function Bone3DMiniPreview({
     let scene: THREE.Scene | null = null;
 
     try {
-      const isAcJoint = regionId === "ac-joint" || regionId?.toLowerCase().includes("ac");
+      const subCfg = getSubregionConfig(boneId, regionId);
+      const isAcJoint = (boneId || "").toLowerCase().includes("clavicle") &&
+        ((regionId || "").toLowerCase().includes("ac") || (regionId || "").toLowerCase().includes("rockwood"));
 
       // 1. Scene & Camera Setup
       scene = new THREE.Scene();
@@ -146,12 +251,7 @@ export function Bone3DMiniPreview({
       const height = container.clientHeight || 176;
 
       const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
-      if (isAcJoint) {
-        // Zoom comfortably into the AC joint (anchored at 0, 0, 0)
-        camera.position.set(0, 0.05, 1.85);
-      } else {
-        camera.position.set(0, 0.1, 4.3);
-      }
+      camera.position.set(0, 0.05, subCfg.distance);
       camera.lookAt(0, 0, 0);
 
       // 2. Renderer with solid Gray background matching user request
@@ -246,12 +346,11 @@ export function Bone3DMiniPreview({
           // Step E: Wrapper group for rotation pivot & scale normalization
           const wrapper = new THREE.Group();
 
-          // When Rockwood (ac-joint) is active, anchor the rotation pivot directly at the AC Joint!
-          // Since loadedObj is centered at (0, 0, 0), the AC Joint is at _acJointCenterRaw.
-          // Subtracting _acJointCenterRaw shifts the AC Joint to (0, 0, 0) of wrapper!
-          if (isAcJoint) {
-            loadedObj.position.sub(_acJointCenterRaw);
-          }
+          // Anchor the rotation pivot directly at the active subregion!
+          // Since loadedObj is centered at (0, 0, 0), subtracting subCfg.pivot shifts
+          // that exact anatomical subregion to (0, 0, 0) of wrapper.
+          const pivotVec = new THREE.Vector3(...subCfg.pivot);
+          loadedObj.position.sub(pivotVec);
           wrapper.add(loadedObj);
 
           // Normalize scale so largest dimension is exactly 2.6 units
@@ -264,14 +363,10 @@ export function Bone3DMiniPreview({
 
           modelGroup.add(wrapper);
 
-          // Subtle initial anatomical tilt
-          if (isAcJoint) {
-            modelGroup.rotation.x = 0.06;
-            modelGroup.rotation.z = -0.02;
-          } else {
-            modelGroup.rotation.x = 0.08;
-            modelGroup.rotation.z = -0.04;
-          }
+          // Subtle initial anatomical tilt from subregion config
+          modelGroup.rotation.x = subCfg.tiltX ?? 0.08;
+          modelGroup.rotation.y = subCfg.tiltY ?? 0.0;
+          modelGroup.rotation.z = subCfg.tiltZ ?? (isAcJoint ? -0.02 : -0.04);
 
           setLoading(false);
         } catch (e) {
@@ -379,7 +474,7 @@ export function Bone3DMiniPreview({
       setHasError(true);
       setLoading(false);
     }
-  }, [modelUrl, darkMode, regionId]);
+  }, [modelUrl, darkMode, boneId, regionId]);
 
   if (hasError) {
     return null;

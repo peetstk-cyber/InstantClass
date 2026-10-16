@@ -4882,7 +4882,8 @@ function resolvePickedStructure(
   gtMesh?: THREE.Mesh | null,
   ltMesh?: THREE.Mesh | null,
   shardMesh?: THREE.Mesh | null,
-  forceConfigs: ForceVectorConfig[] = []
+  forceConfigs: ForceVectorConfig[] = [],
+  isFoot?: boolean
 ): Omit<PickedStructureInfo, "screenX" | "screenY" | "isPinned"> | null {
   // 1. Check Muscle Forces
   let obj: THREE.Object3D | null = hit.object;
@@ -8450,7 +8451,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
           activeSubregionRef.current,
           activePresetRef.current,
           boneVertexRangesRef.current,
-          isTibia || isFoot,
+          isTibia,
           isHumerus,
           isClavicle,
           isPatella,
@@ -8460,7 +8461,8 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
           gtMeshRef.current,
           ltMeshRef.current,
           shardMeshRef.current,
-          activeForceConfigsRef.current
+          activeForceConfigsRef.current,
+          isFoot
         );
 
         if (info) {

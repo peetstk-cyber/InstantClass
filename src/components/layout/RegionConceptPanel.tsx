@@ -379,13 +379,14 @@ export function RegionConceptPanel({
         </div>
       </div>
 
-      {/* ── Minimalist Glassmorphic 3D Mini Preview (Desktop only, for clavicle) ── */}
-      {isDesktop && boneId === "clavicle" && model3dUrl && (
+      {/* ── Minimalist Glassmorphic 3D Mini Preview (Desktop only, for all bones with 3D models) ── */}
+      {isDesktop && model3dUrl && (
         <ErrorBoundary fallback={null}>
           <Bone3DMiniPreview
             modelUrl={model3dUrl}
             darkMode={darkMode}
             onOpenFull={() => onOpen3D?.()}
+            boneId={boneId}
             regionId={regionId}
           />
         </ErrorBoundary>
