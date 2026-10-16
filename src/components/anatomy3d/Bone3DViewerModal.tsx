@@ -1961,9 +1961,9 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
     badge: "Rockwood Types I–VI",
     cutCenter: [65.0, 45.0, 65.0],
     cutNormal: [0, 1, 0],
-    cameraTarget: [-0.85, 1.10, 0.10],
-    cameraDistance: 2.30,
-    viewOffsetRatio: 0.10,
+    cameraTarget: [-0.55, 0.95, 0.10],
+    cameraDistance: 3.30,
+    viewOffsetRatio: 0.08,
     presets: [
       {
         id: "rockwood_type1",
@@ -2045,9 +2045,9 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
     badge: "Robinson / Allman / AO 15.2",
     cutCenter: [10.0, 65.0, 37.0],
     cutNormal: [1, 0, 0],
-    cameraTarget: [0.15, 1.12, 0.55],
-    cameraDistance: 2.70,
-    viewOffsetRatio: 0.10,
+    cameraTarget: [0.15, 1.05, 0.55],
+    cameraDistance: 3.60,
+    viewOffsetRatio: 0.08,
     presets: [
       {
         id: "shaft_robinson_2a_undisplaced",
@@ -2141,9 +2141,9 @@ const CLAVICLE_SUBREGIONS: SubregionConfig[] = [
     badge: "Neer Classification (Types I–V)",
     cutCenter: [-28.0, 72.0, -10.0],
     cutNormal: [1, 0, 0],
-    cameraTarget: [-0.60, 1.15, 0.15],
-    cameraDistance: 2.45,
-    viewOffsetRatio: 0.10,
+    cameraTarget: [-0.55, 1.05, 0.15],
+    cameraDistance: 3.35,
+    viewOffsetRatio: 0.08,
     presets: [
       {
         id: "neer_type1_distal",
@@ -5061,36 +5061,57 @@ function resolvePickedStructure(
         };
       }
       case "lig_conoid":
+      case "lig_conoid_stump_a":
+      case "lig_conoid_stump_b":
+      case "lig_conoid_tip_a":
+      case "lig_conoid_tip_b": {
+        const pId = activePreset?.id || "";
+        const isTorn = pId !== "intact" && pId !== "rockwood_type1" && pId !== "rockwood_type2";
         return {
           titleEn: "Conoid Ligament (CC Complex)",
           category: "ligament",
-          badge: "Coracoclavicular Complex",
-          badgeColor: "cyan",
-          details: "Inverted cone-shaped medial component of the coracoclavicular complex, inserting into the conoid tubercle. Primary restraint against superior and anterior clavicular displacement.",
+          badge: isTorn ? "RUPTURED (CC Disruption)" : "Coracoclavicular Complex (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Inverted cone-shaped posteromedial component of the coracoclavicular complex, inserting into the conoid tubercle. Primary restraint against superior and anterior clavicular displacement.",
         };
+      }
       case "lig_trapezoid":
+      case "lig_trapezoid_stump_a":
+      case "lig_trapezoid_stump_b":
+      case "lig_trapezoid_tip_a":
+      case "lig_trapezoid_tip_b": {
+        const pId = activePreset?.id || "";
+        const isTorn = pId !== "intact" && pId !== "rockwood_type1" && pId !== "rockwood_type2";
         return {
           titleEn: "Trapezoid Ligament (CC Complex)",
           category: "ligament",
-          badge: "Coracoclavicular Complex",
-          badgeColor: "cyan",
-          details: "Lateral quadrilateral component of the coracoclavicular complex, resisting axial compression of the clavicle toward the acromion.",
+          badge: isTorn ? "RUPTURED (CC Disruption)" : "Coracoclavicular Complex (Intact)",
+          badgeColor: isTorn ? "rose" : "cyan",
+          details: "Anterolateral quadrilateral component of the coracoclavicular complex inserting along the trapezoid line, resisting axial compression of the clavicle toward the acromion.",
         };
+      }
       case "lig_ac":
+      case "lig_ac_stump_a":
+      case "lig_ac_stump_b":
+      case "lig_ac_tip_a":
+      case "lig_ac_tip_b": {
+        const pId = activePreset?.id || "";
+        const isTorn = pId !== "intact" && pId !== "rockwood_type1";
         return {
           titleEn: "Acromioclavicular (AC) Ligament",
           category: "ligament",
-          badge: "AC Joint Capsule",
-          badgeColor: "cyan",
+          badge: isTorn ? "RUPTURED (AC Separation)" : (pId === "rockwood_type1" ? "SPRAINED (Intact AC Fibers)" : "AC Joint Capsule (Intact)"),
+          badgeColor: isTorn ? "rose" : (pId === "rockwood_type1" ? "amber" : "cyan"),
           details: "Capsular ligament reinforcing the acromioclavicular articulation, providing anteroposterior horizontal stability; disrupted in Rockwood injuries.",
         };
+      }
       case "lig_ca":
         return {
           titleEn: "Coracoacromial (CA) Ligament",
           category: "ligament",
-          badge: "Coracoacromial Arch",
+          badge: "Coracoacromial Arch (Intact)",
           badgeColor: "cyan",
-          details: "Forms the osseoligamentous coracoacromial arch, preventing superior migration and subluxation of the humeral head.",
+          details: "Strong triangular ligament spanning from the coracoid process to the acromion, forming the protective osseoligamentous arch above the humeral head.",
         };
       case "lig_symphysis": {
         const pId = activePreset?.id || "";
@@ -5572,6 +5593,15 @@ function resolvePickedStructure(
       };
     }
     if (isClavicle) {
+      if (activeSubregion.id === "ac-joint") {
+        return {
+          titleEn: "Clavicle (Collarbone)",
+          category: "bone",
+          badge: "Shoulder Girdle Strut",
+          badgeColor: "amber",
+          details: "S-shaped tubular bone connecting the sternum at the SC joint to the scapular acromion at the AC joint. Acts as a mechanical strut suspending the upper extremity.",
+        };
+      }
       return {
         titleEn: "Proximal Clavicular Segment",
         category: "fracture_fragment",
@@ -5666,6 +5696,44 @@ function resolvePickedStructure(
       };
     }
     if (isClavicle) {
+      if (activeSubregion.id === "ac-joint") {
+        const localPt = hit.object ? hit.object.worldToLocal(hit.point.clone()) : hit.point;
+        if (localPt.z > 14 || (localPt.y < 65 && localPt.z > 8)) {
+          return {
+            titleEn: "Coracoid Process (Scapula)",
+            category: "bone",
+            badge: "Anterior Scapular Landmark",
+            badgeColor: "amber",
+            details: "Hook-like anterior scapular projection serving as the origin for the coracoclavicular (conoid and trapezoid) and coracoacromial (CA) ligaments.",
+          };
+        }
+        if (localPt.y > 66 && localPt.x < -46) {
+          return {
+            titleEn: "Acromion (Scapula)",
+            category: "bone",
+            badge: "Lateral Shoulder Summit",
+            badgeColor: "amber",
+            details: "Lateral continuation of the scapular spine articulating with the clavicle at the AC joint; forms the bony roof of the subacromial space.",
+          };
+        }
+        return {
+          titleEn: "Scapula (Shoulder Blade & Glenoid)",
+          category: "bone",
+          badge: "Posterior Shoulder Foundation",
+          badgeColor: "amber",
+          details: "Triangular flat bone providing the stable articular foundation for the glenohumeral joint and shoulder girdle articulation.",
+        };
+      }
+      const localPt = hit.object ? hit.object.worldToLocal(hit.point.clone()) : hit.point;
+      if (localPt.x < -60 || localPt.y < 45) {
+        return {
+          titleEn: "Scapula (Shoulder Foundation)",
+          category: "bone",
+          badge: "Stable Scapular Base",
+          badgeColor: "indigo",
+          details: "Intact shoulder blade providing the stationary anatomical foundation for the upper extremity girdle.",
+        };
+      }
       return {
         titleEn: "Distal Clavicular Segment",
         category: "fracture_fragment",
@@ -8481,6 +8549,11 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     renderer.domElement.addEventListener("pointerdown", handlePointerDown);
     renderer.domElement.addEventListener("pointerup", handlePointerUp);
 
+    container.addEventListener("pointermove", handlePointerMove);
+    container.addEventListener("pointerleave", handlePointerLeave);
+    container.addEventListener("pointerdown", handlePointerDown);
+    container.addEventListener("pointerup", handlePointerUp);
+
     // 5. Realistic 3-point clinical lighting
     const ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.85);
     scene.add(ambientLight);
@@ -8584,9 +8657,10 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
     ligamentGroup.name = "ligamentGroup";
     modelWrapper.add(ligamentGroup);
 
-    const createLigMesh = (geom: THREE.BufferGeometry, mat: THREE.Material) => {
+    const createLigMesh = (geom: THREE.BufferGeometry, mat: THREE.Material, name?: string) => {
       const m = new THREE.Mesh(geom, mat);
       m.visible = false;
+      if (name) m.name = name;
       ligamentGroup.add(m);
       return m;
     };
@@ -8596,22 +8670,22 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       boxGeom,
       ligamentMat,
       rupturedTipMat,
-      conoidIntact: createLigMesh(boxGeom, ligamentMat),
-      conoidStumpA: createLigMesh(boxGeom, ligamentMat),
-      conoidTipA: createLigMesh(boxGeom, rupturedTipMat),
-      conoidStumpB: createLigMesh(boxGeom, ligamentMat),
-      conoidTipB: createLigMesh(boxGeom, rupturedTipMat),
-      trapIntact: createLigMesh(boxGeom, ligamentMat),
-      trapStumpA: createLigMesh(boxGeom, ligamentMat),
-      trapTipA: createLigMesh(boxGeom, rupturedTipMat),
-      trapStumpB: createLigMesh(boxGeom, ligamentMat),
-      trapTipB: createLigMesh(boxGeom, rupturedTipMat),
-      acIntact: createLigMesh(boxGeom, ligamentMat),
-      acStumpA: createLigMesh(boxGeom, ligamentMat),
-      acTipA: createLigMesh(boxGeom, rupturedTipMat),
-      acStumpB: createLigMesh(boxGeom, ligamentMat),
-      acTipB: createLigMesh(boxGeom, rupturedTipMat),
-      caIntact: createLigMesh(boxGeom, ligamentMat),
+      conoidIntact: createLigMesh(boxGeom, ligamentMat, "lig_conoid"),
+      conoidStumpA: createLigMesh(boxGeom, ligamentMat, "lig_conoid_stump_a"),
+      conoidTipA: createLigMesh(boxGeom, rupturedTipMat, "lig_conoid_tip_a"),
+      conoidStumpB: createLigMesh(boxGeom, ligamentMat, "lig_conoid_stump_b"),
+      conoidTipB: createLigMesh(boxGeom, rupturedTipMat, "lig_conoid_tip_b"),
+      trapIntact: createLigMesh(boxGeom, ligamentMat, "lig_trapezoid"),
+      trapStumpA: createLigMesh(boxGeom, ligamentMat, "lig_trapezoid_stump_a"),
+      trapTipA: createLigMesh(boxGeom, rupturedTipMat, "lig_trapezoid_tip_a"),
+      trapStumpB: createLigMesh(boxGeom, ligamentMat, "lig_trapezoid_stump_b"),
+      trapTipB: createLigMesh(boxGeom, rupturedTipMat, "lig_trapezoid_tip_b"),
+      acIntact: createLigMesh(boxGeom, ligamentMat, "lig_ac"),
+      acStumpA: createLigMesh(boxGeom, ligamentMat, "lig_ac_stump_a"),
+      acTipA: createLigMesh(boxGeom, rupturedTipMat, "lig_ac_tip_a"),
+      acStumpB: createLigMesh(boxGeom, ligamentMat, "lig_ac_stump_b"),
+      acTipB: createLigMesh(boxGeom, rupturedTipMat, "lig_ac_tip_b"),
+      caIntact: createLigMesh(boxGeom, ligamentMat, "lig_ca"),
     };
 
     if (isTibia) {
@@ -9338,6 +9412,10 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
       renderer.domElement.removeEventListener("pointerleave", handlePointerLeave);
       renderer.domElement.removeEventListener("pointerdown", handlePointerDown);
       renderer.domElement.removeEventListener("pointerup", handlePointerUp);
+      container.removeEventListener("pointermove", handlePointerMove);
+      container.removeEventListener("pointerleave", handlePointerLeave);
+      container.removeEventListener("pointerdown", handlePointerDown);
+      container.removeEventListener("pointerup", handlePointerUp);
       if (markerMeshRef.current) {
         markerGeom.dispose();
         markerMat.dispose();

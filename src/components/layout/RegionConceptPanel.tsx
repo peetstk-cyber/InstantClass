@@ -39,6 +39,7 @@ interface RegionConceptPanelProps {
   boneId?: string;
   model3dUrl?: string;
   onOpen3D?: () => void;
+  regionId?: string;
 }
 
 export function RegionConceptPanel({
@@ -54,6 +55,7 @@ export function RegionConceptPanel({
   boneId,
   model3dUrl,
   onOpen3D,
+  regionId,
 }: RegionConceptPanelProps) {
   const bg = darkMode ? "#161B27" : "#FFFFFF";
   const border = darkMode ? "#252F42" : "#E2E8F0";
@@ -384,6 +386,7 @@ export function RegionConceptPanel({
             modelUrl={model3dUrl}
             darkMode={darkMode}
             onOpenFull={() => onOpen3D?.()}
+            regionId={regionId}
           />
         </ErrorBoundary>
       )}

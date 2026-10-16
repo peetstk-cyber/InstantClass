@@ -8,6 +8,7 @@ interface Bone3DMiniPreviewProps {
   modelUrl: string;
   darkMode: boolean;
   onOpenFull: () => void;
+  regionId?: string;
   className?: string;
 }
 
@@ -26,21 +27,77 @@ function isWebGLAvailable(): boolean {
   }
 }
 
+// Exact anatomical AC joint coordinates on Scapula & Clavicle (untransformed base positions)
+const _conoidScapula = new THREE.Vector3(-38.32, 54.44, 15.46);
+const _trapScapula = new THREE.Vector3(-47.06, 59.64, 27.65);
+const _acScapula = new THREE.Vector3(-56.05, 75.92, -5.08);
+const _caCoracoid = new THREE.Vector3(-44.69, 53.22, 31.92);
+const _caAcromion = new THREE.Vector3(-65.93, 76.69, 7.51);
+
+const _conoidClavicleRaw = new THREE.Vector3(-35.38, 76.52, -16.13);
+const _trapClavicleRaw = new THREE.Vector3(-45.41, 75.94, -15.63);
+const _acClavicleRaw = new THREE.Vector3(-54.91, 76.63, -5.44);
+
+// Exact AC Joint center midpoint between distal clavicle and acromion
+const _acJointCenterRaw = new THREE.Vector3(
+  (-56.05 + -54.91) / 2,
+  (75.92 + 76.63) / 2,
+  (-5.08 + -5.44) / 2
+);
+
+function createLigamentSegment(
+  start: THREE.Vector3,
+  end: THREE.Vector3,
+  width: number,
+  thickness: number,
+  mat: THREE.Material,
+  faceNormal?: THREE.Vector3
+): THREE.Mesh {
+  const boxGeom = new THREE.BoxGeometry(1, 1, 1);
+  const mesh = new THREE.Mesh(boxGeom, mat);
+
+  const dir = new THREE.Vector3().subVectors(end, start);
+  const len = dir.length();
+  if (len < 0.001) return mesh;
+
+  const mid = new THREE.Vector3().copy(start).addScaledVector(dir, 0.5);
+  mesh.position.copy(mid);
+  dir.normalize();
+
+  let out = faceNormal ? faceNormal.clone().normalize() : new THREE.Vector3(0, 1, 0);
+  if (Math.abs(dir.dot(out)) > 0.95) {
+    out = new THREE.Vector3(0, 0, 1);
+    if (Math.abs(dir.dot(out)) > 0.95) {
+      out = new THREE.Vector3(1, 0, 0);
+    }
+  }
+
+  const binormal = new THREE.Vector3().crossVectors(dir, out).normalize();
+  const normal = new THREE.Vector3().crossVectors(binormal, dir).normalize();
+
+  const basis = new THREE.Matrix4().makeBasis(binormal, dir, normal);
+  mesh.quaternion.setFromRotationMatrix(basis);
+  mesh.scale.set(width, len, thickness);
+
+  return mesh;
+}
+
 /**
  * Minimalist Glassmorphic 3D Bone Mini Preview
- * Displays a slowly auto-rotating 3D bone model with zero clutter.
+ * - Clean Gray Canvas background for high anatomical contrast
  * - Pure minimalism: No descriptions or labels
  * - Strict White & Green (Teal/Emerald) theme
  * - Top-right expand icon button only (no signals or status dots)
  * - In-theme hover effect (subtle green glow & gentle speedup)
  * - Drag-to-rotate support with click-to-expand disambiguation
- * - Automatic medical coordinate alignment & bounding-box framing
- * - Robust error handling & safe WebGL disposal
+ * - Support for rotating around the AC Joint for Rockwood classification
+ * - Automatic medical coordinate alignment & scale normalization
  */
 export function Bone3DMiniPreview({
   modelUrl,
   darkMode,
   onOpenFull,
+  regionId,
   className = "",
 }: Bone3DMiniPreviewProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -56,11 +113,11 @@ export function Bone3DMiniPreview({
 
   // Three.js refs
   const modelGroupRef = useRef<THREE.Group | null>(null);
-  const rotSpeedRef = useRef(0.006);
-  const targetSpeedRef = useRef(0.006);
+  const rotSpeedRef = useRef(0.0012);
+  const targetSpeedRef = useRef(0.0012);
 
   useEffect(() => {
-    targetSpeedRef.current = isHovered ? 0.012 : 0.006;
+    targetSpeedRef.current = isHovered ? 0.0028 : 0.0012;
   }, [isHovered]);
 
   useEffect(() => {
@@ -80,54 +137,63 @@ export function Bone3DMiniPreview({
     let scene: THREE.Scene | null = null;
 
     try {
+      const isAcJoint = regionId === "ac-joint" || regionId?.toLowerCase().includes("ac");
+
       // 1. Scene & Camera Setup
       scene = new THREE.Scene();
 
       const width = container.clientWidth || 300;
       const height = container.clientHeight || 176;
 
-      const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
-      camera.position.set(0, 0, 5);
+      const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+      if (isAcJoint) {
+        // Zoom comfortably into the AC joint (anchored at 0, 0, 0)
+        camera.position.set(0, 0.05, 1.85);
+      } else {
+        camera.position.set(0, 0.1, 4.3);
+      }
+      camera.lookAt(0, 0, 0);
 
-      // 2. Renderer with transparent background
+      // 2. Renderer with solid Gray background matching user request
       renderer = new THREE.WebGLRenderer({
         canvas,
-        alpha: true,
+        alpha: false,
         antialias: true,
         powerPreference: "high-performance",
       });
       renderer.setSize(width, height, false);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-      renderer.setClearColor(0x000000, 0);
+      // Solid medical gray background
+      renderer.setClearColor(darkMode ? 0x1E293B : 0xE2E8F0, 1);
 
-      // 3. Clean Biological Lighting (Strictly White & Green/Teal theme)
-      const ambientLight = new THREE.AmbientLight(0xffffff, darkMode ? 0.75 : 0.85);
+      // 3. 3-Point Lighting for crisp anatomical contrast
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.95);
       scene.add(ambientLight);
 
-      const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
-      keyLight.position.set(3, 6, 5);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.25);
+      keyLight.position.set(4, 7, 5);
       scene.add(keyLight);
 
-      const fillLight = new THREE.DirectionalLight(0xffffff, 0.35);
+      const fillLight = new THREE.DirectionalLight(0xffffff, 0.5);
       fillLight.position.set(-4, -2, 3);
       scene.add(fillLight);
 
-      // Subtle in-theme rim light (Emerald/Cyan)
-      const rimLight = new THREE.DirectionalLight(darkMode ? 0x00CED1 : 0x0F766E, 0.25);
+      // Subtle in-theme rim light (Teal/Emerald)
+      const rimLight = new THREE.DirectionalLight(darkMode ? 0x00CED1 : 0x0F766E, 0.35);
       rimLight.position.set(0, 4, -4);
       scene.add(rimLight);
 
-      // 4. Model Container Group
+      // 4. Model Container Group (handles turntable rotation around its (0, 0, 0) origin)
       const modelGroup = new THREE.Group();
       scene.add(modelGroup);
       modelGroupRef.current = modelGroup;
 
-      // 5. Model Setup Callback
+      // 5. Model Setup Callback with Normalized Scale and Centered Wrapper
       const handleModelReady = (loadedObj: THREE.Object3D) => {
         if (isDisposed || !scene) return;
 
         try {
-          // Reorient medical coordinate system if model is Z-up
+          // Step A: Reorient medical coordinate system if model is Z-up (DICOM/CT convention)
           const initBox = new THREE.Box3().setFromObject(loadedObj);
           const initSize = initBox.getSize(new THREE.Vector3());
           if (initSize.z > initSize.y && initSize.z > initSize.x) {
@@ -135,11 +201,18 @@ export function Bone3DMiniPreview({
           }
           loadedObj.updateMatrixWorld(true);
 
-          // Custom organic bone material adhering to White theme
+          // Step B: Center geometric center to (0, 0, 0) so all anatomical coordinates match
+          const geomBox = new THREE.Box3().setFromObject(loadedObj);
+          const geomCenter = geomBox.getCenter(new THREE.Vector3());
+          const geomSize = geomBox.getSize(new THREE.Vector3());
+          loadedObj.position.sub(geomCenter);
+          loadedObj.updateMatrixWorld(true);
+
+          // Step C: Pure white organic cortical bone material
           const boneMat = new THREE.MeshStandardMaterial({
-            color: darkMode ? 0xF1F5F9 : 0xFDFBF7,
-            roughness: 0.36,
-            metalness: 0.02,
+            color: 0xFFFFFF,
+            roughness: 0.30,
+            metalness: 0.04,
             side: THREE.DoubleSide,
           });
 
@@ -152,27 +225,53 @@ export function Bone3DMiniPreview({
             }
           });
 
-          // Center model at (0, 0, 0)
-          const box = new THREE.Box3().setFromObject(loadedObj);
-          const center = box.getCenter(new THREE.Vector3());
-          const size = box.getSize(new THREE.Vector3());
+          // Step D: If AC Joint (Rockwood), add intact anatomical ligaments in centered space
+          if (isAcJoint) {
+            const ligamentMat = new THREE.MeshStandardMaterial({
+              color: darkMode ? 0xCBD5E1 : 0x94A3B8,
+              roughness: 0.35,
+              metalness: 0.05,
+              transparent: true,
+              opacity: 0.85,
+              depthWrite: false,
+              side: THREE.DoubleSide,
+            });
 
-          loadedObj.position.sub(center);
-          loadedObj.updateMatrixWorld(true);
-          modelGroup.add(loadedObj);
-
-          // Optimal camera distance to fit within view
-          const maxDim = Math.max(size.x, size.y, size.z);
-          if (maxDim > 0) {
-            const fovRad = (camera.fov * Math.PI) / 360;
-            const fitDistance = (maxDim / 2) / Math.tan(fovRad) * 1.35;
-            camera.position.set(0, maxDim * 0.08, fitDistance);
-            camera.lookAt(0, 0, 0);
+            loadedObj.add(createLigamentSegment(_conoidScapula, _conoidClavicleRaw, 8.0, 2.6, ligamentMat, new THREE.Vector3(0, 0.3, 0.95)));
+            loadedObj.add(createLigamentSegment(_trapScapula, _trapClavicleRaw, 8.5, 2.6, ligamentMat, new THREE.Vector3(-0.4, 0.2, 0.89)));
+            loadedObj.add(createLigamentSegment(_acScapula, _acClavicleRaw, 6.5, 2.4, ligamentMat, new THREE.Vector3(0, 0.6, 0.8)));
+            loadedObj.add(createLigamentSegment(_caCoracoid, _caAcromion, 7.5, 2.2, ligamentMat, new THREE.Vector3(0, 0.7, 0.7)));
           }
 
-          // Subtle initial tilt for anatomical elegance
-          modelGroup.rotation.x = 0.08;
-          modelGroup.rotation.z = -0.04;
+          // Step E: Wrapper group for rotation pivot & scale normalization
+          const wrapper = new THREE.Group();
+
+          // When Rockwood (ac-joint) is active, anchor the rotation pivot directly at the AC Joint!
+          // Since loadedObj is centered at (0, 0, 0), the AC Joint is at _acJointCenterRaw.
+          // Subtracting _acJointCenterRaw shifts the AC Joint to (0, 0, 0) of wrapper!
+          if (isAcJoint) {
+            loadedObj.position.sub(_acJointCenterRaw);
+          }
+          wrapper.add(loadedObj);
+
+          // Normalize scale so largest dimension is exactly 2.6 units
+          const maxDim = Math.max(geomSize.x, geomSize.y, geomSize.z);
+          if (maxDim > 0) {
+            const targetDim = 2.6;
+            const scale = targetDim / maxDim;
+            wrapper.scale.setScalar(scale);
+          }
+
+          modelGroup.add(wrapper);
+
+          // Subtle initial anatomical tilt
+          if (isAcJoint) {
+            modelGroup.rotation.x = 0.06;
+            modelGroup.rotation.z = -0.02;
+          } else {
+            modelGroup.rotation.x = 0.08;
+            modelGroup.rotation.z = -0.04;
+          }
 
           setLoading(false);
         } catch (e) {
@@ -280,7 +379,7 @@ export function Bone3DMiniPreview({
       setHasError(true);
       setLoading(false);
     }
-  }, [modelUrl, darkMode]);
+  }, [modelUrl, darkMode, regionId]);
 
   if (hasError) {
     return null;
@@ -317,6 +416,12 @@ export function Bone3DMiniPreview({
     onOpenFull();
   };
 
+  // Gray theme background styles requested by user
+  const grayBg = darkMode ? "#1E293B" : "#E2E8F0";
+  const grayBorder = isHovered
+    ? (darkMode ? "rgba(0, 206, 209, 0.45)" : "rgba(15, 118, 110, 0.45)")
+    : (darkMode ? "#334155" : "#CBD5E1");
+
   return (
     <div
       ref={containerRef}
@@ -331,15 +436,11 @@ export function Bone3DMiniPreview({
         isDraggingRef.current = false;
       }}
       style={{
-        background: darkMode ? "rgba(22, 27, 39, 0.65)" : "rgba(255, 255, 255, 0.75)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-        borderColor: isHovered
-          ? (darkMode ? "rgba(0, 206, 209, 0.45)" : "rgba(15, 118, 110, 0.4)")
-          : (darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.08)"),
+        background: grayBg,
+        borderColor: grayBorder,
         boxShadow: isHovered
           ? (darkMode ? "0 6px 24px rgba(0, 206, 209, 0.16)" : "0 6px 24px rgba(15, 118, 110, 0.12)")
-          : (darkMode ? "0 4px 18px rgba(0, 0, 0, 0.22)" : "0 4px 18px rgba(0, 0, 0, 0.03)"),
+          : (darkMode ? "0 2px 10px rgba(0, 0, 0, 0.25)" : "0 2px 8px rgba(0, 0, 0, 0.04)"),
       }}
       className={`relative w-full h-44 rounded-2xl border overflow-hidden cursor-pointer select-none group transition-all duration-300 ease-out flex-shrink-0 ${className}`}
       title="Click to view full 3D"
@@ -361,11 +462,12 @@ export function Bone3DMiniPreview({
       <div
         className="absolute top-2.5 right-2.5 z-20 w-6 h-6 rounded-md flex items-center justify-center transition-all duration-200"
         style={{
-          background: darkMode ? "rgba(255, 255, 255, 0.06)" : "rgba(0, 0, 0, 0.04)",
-          border: `1px solid ${darkMode ? "rgba(255, 255, 255, 0.08)" : "rgba(0, 0, 0, 0.06)"}`,
+          background: darkMode ? "rgba(255, 255, 255, 0.08)" : "#FFFFFF",
+          border: `1px solid ${darkMode ? "rgba(255, 255, 255, 0.12)" : "#CBD5E1"}`,
           color: isHovered
             ? (darkMode ? "#00CED1" : "#0F766E")
             : (darkMode ? "#94A3B8" : "#64748B"),
+          boxShadow: "0 1px 3px rgba(0,0,0,0.06)",
         }}
       >
         <Maximize2

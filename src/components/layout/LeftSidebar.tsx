@@ -116,6 +116,7 @@ export function LeftSidebar({
           boneId={selectedBone.id}
           model3dUrl={selectedBone.model3dUrl}
           onOpen3D={onOpen3D}
+          regionId={currentRegion.id}
         />
       ) : (
         /* Display default Bone List */
