@@ -243,6 +243,30 @@ function App() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Fix iOS Safari / PWA Standalone bottom bar calculation bug on cold start
+  useEffect(() => {
+    const handleViewportSync = () => {
+      if (typeof window === "undefined") return;
+      window.scrollTo(0, 0);
+    };
+
+    handleViewportSync();
+    window.addEventListener("resize", handleViewportSync);
+    window.addEventListener("orientationchange", () => {
+      setTimeout(handleViewportSync, 100);
+      setTimeout(handleViewportSync, 300);
+    });
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") {
+        handleViewportSync();
+      }
+    });
+
+    return () => {
+      window.removeEventListener("resize", handleViewportSync);
+    };
+  }, []);
+
   const handleSelectBone = useCallback((bone: BoneData | null, regionId?: string) => {
     setSelectedBone(bone);
     setSelectedTypeIdx(0);
@@ -266,7 +290,7 @@ function App() {
   }, []);
 
   return (
-    <div className={`flex flex-col h-full h-[100dvh] max-h-[100dvh] w-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
+    <div className={`flex flex-col fixed inset-0 w-full h-full overflow-hidden transition-colors duration-300 ${darkMode ? "bg-[#0E1117] text-slate-100" : "bg-[#EAECEF] text-[#101828]"}`}>
       {/* ── Header ── */}
       <TopNavBar
         darkMode={darkMode}
@@ -468,7 +492,13 @@ function App() {
 
       {/* ── Mobile Standing Vertical Floating Action Icons (Visible when no bone detail sheet is open) ── */}
       {!selectedBone && activeCategory === "all_bones" && (
-        <div className="fixed bottom-4 right-4 z-40 md:hidden flex flex-col items-center gap-2.5 select-none">
+        <div 
+          style={{
+            bottom: "calc(16px + env(safe-area-inset-bottom, 0px))",
+            right: "16px",
+          }}
+          className="fixed z-40 md:hidden flex flex-col items-center gap-2.5 select-none"
+        >
           {/* Top Icon: Search Classification */}
           <button
             type="button"

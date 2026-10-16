@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
-import { X, Loader2, RotateCcw, Maximize2, Minimize2, Activity, ChevronDown, ChevronUp, ChevronRight, ChevronLeft, Zap, Scan, Move, Maximize, Minimize } from "lucide-react";
+import { X, Loader2, RotateCcw, Maximize2, Minimize2, Activity, ChevronDown, ChevronUp, ChevronRight, ChevronLeft, Zap, Scan, Move } from "lucide-react";
 
 export interface ClassificationPreset {
   id: string;
@@ -6081,43 +6081,6 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
   const isPanModeRef = useRef(isPanMode);
   isPanModeRef.current = isPanMode;
 
-  // Browser native fullscreen state & handler
-  const [isBrowserFullscreen, setIsBrowserFullscreen] = useState(false);
-
-  useEffect(() => {
-    const handleFsChange = () => {
-      const doc = document as any;
-      setIsBrowserFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement));
-    };
-    document.addEventListener("fullscreenchange", handleFsChange);
-    document.addEventListener("webkitfullscreenchange", handleFsChange);
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFsChange);
-      document.removeEventListener("webkitfullscreenchange", handleFsChange);
-    };
-  }, []);
-
-  const toggleBrowserFullscreen = async () => {
-    try {
-      const doc = document as any;
-      const elem = document.documentElement as any;
-      if (!doc.fullscreenElement && !doc.webkitFullscreenElement) {
-        if (elem.requestFullscreen) {
-          await elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) {
-          await elem.webkitRequestFullscreen();
-        }
-      } else {
-        if (doc.exitFullscreen) {
-          await doc.exitFullscreen();
-        } else if (doc.webkitExitFullscreen) {
-          await doc.webkitExitFullscreen();
-        }
-      }
-    } catch (e) {
-      console.warn("Browser fullscreen error:", e);
-    }
-  };
 
   // Material references for zero-lag dynamic hot-swapping
   const solidBoneMatRef = useRef<THREE.MeshStandardMaterial | null>(null);
@@ -9665,16 +9628,6 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
               <span>{isWholeBoneView ? "Focus View" : "Whole Bone"}</span>
             </button>
 
-            {/* Native Fullscreen Toggle */}
-            <button
-              onClick={toggleBrowserFullscreen}
-              className="w-9 h-9 rounded-full flex items-center justify-center transition-all active:scale-90 border backdrop-blur-md bg-slate-900/60 border-white/15 text-slate-200 hover:text-white hover:bg-slate-800/80 shadow-lg cursor-pointer"
-              title={isBrowserFullscreen ? "Exit Fullscreen" : "Enter Fullscreen"}
-              aria-label="Fullscreen"
-            >
-              {isBrowserFullscreen ? <Minimize size={16} /> : <Maximize size={16} />}
-            </button>
-
             {/* Minimal Close Button */}
             <button
               onClick={handleAnimatedClose}
@@ -9686,7 +9639,7 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
             </button>
           </div>
 
-          {/* Mobile Right Actions: Focus/Whole Toggle + Fullscreen Toggle + Close Button */}
+          {/* Mobile Right Actions: Focus/Whole Toggle + Close Button */}
           <div className="flex md:hidden items-center gap-1.5 pointer-events-auto shrink-0">
             <button
               onClick={() => {
@@ -9709,16 +9662,6 @@ export const Bone3DViewerModal: React.FC<Bone3DViewerModalProps> = ({
                 <Maximize2 size={12} className="text-slate-300" />
               )}
               <span>{isWholeBoneView ? "Focus" : "Whole"}</span>
-            </button>
-
-            {/* Mobile Native Fullscreen Toggle */}
-            <button
-              onClick={toggleBrowserFullscreen}
-              className="w-8 h-8 rounded-full flex items-center justify-center transition-all active:scale-90 border backdrop-blur-md bg-slate-900/80 border-white/20 text-slate-200 hover:text-white hover:bg-slate-800 shadow-lg cursor-pointer"
-              title={isBrowserFullscreen ? "Exit Fullscreen" : "Fullscreen"}
-              aria-label="Fullscreen"
-            >
-              {isBrowserFullscreen ? <Minimize size={14} /> : <Maximize size={14} />}
             </button>
 
             <button

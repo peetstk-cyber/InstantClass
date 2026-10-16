@@ -1497,11 +1497,11 @@ export function DetailPanel({
               </div>
             )}
 
-            {/* 3D Model Button (Desktop & Mobile) */}
+            {/* Desktop 3D Model Button */}
             {bone?.model3dUrl && (
               <button
                 onClick={() => setShow3DModal(true)}
-                className="flex items-center gap-1.5 h-6 px-2 rounded-lg text-xs font-bold transition-all border cursor-pointer active:scale-95"
+                className="hidden md:flex items-center gap-1.5 h-6 px-2 rounded-lg text-xs font-bold transition-all border cursor-pointer active:scale-95"
                 style={{
                   background: darkMode ? "rgba(20,184,166,0.12)" : "rgba(13,148,136,0.08)",
                   borderColor: darkMode ? "rgba(20,184,166,0.3)" : "rgba(13,148,136,0.2)",
@@ -2082,10 +2082,6 @@ export function DetailPanel({
                 darkMode={darkMode}
                 language={language}
                 isDesktop={false}
-                boneId={bone.id}
-                model3dUrl={bone.model3dUrl}
-                regionId={region.id}
-                onOpen3D={() => setShow3DModal(true)}
               />
             </div>
           )}
