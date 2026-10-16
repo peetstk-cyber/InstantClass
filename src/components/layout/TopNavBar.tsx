@@ -45,19 +45,9 @@ export function TopNavBar({
   const clickCountRef = useRef<number>(0);
   const clickTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const isStandalone = typeof window !== "undefined" && (
-    window.matchMedia("(display-mode: standalone)").matches ||
-    (window.navigator as any).standalone === true
-  );
-
   // Fullscreen state & event listener
   const [isFullscreen, setIsFullscreen] = useState<boolean>(() => {
     if (typeof document !== "undefined") {
-      const isStandaloneNow = typeof window !== "undefined" && (
-        window.matchMedia("(display-mode: standalone)").matches ||
-        (window.navigator as any).standalone === true
-      );
-      if (isStandaloneNow) return true;
       const doc = document as any;
       return !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement);
     }
@@ -67,10 +57,7 @@ export function TopNavBar({
   useEffect(() => {
     const handleFullscreenChange = () => {
       const doc = document as any;
-      setIsFullscreen(
-        isStandalone ||
-        !!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement)
-      );
+      setIsFullscreen(!!(doc.fullscreenElement || doc.webkitFullscreenElement || doc.mozFullScreenElement || doc.msFullscreenElement));
     };
 
     document.addEventListener("fullscreenchange", handleFullscreenChange);
@@ -84,17 +71,11 @@ export function TopNavBar({
       document.removeEventListener("mozfullscreenchange", handleFullscreenChange);
       document.removeEventListener("MSFullscreenChange", handleFullscreenChange);
     };
-  }, [isStandalone]);
+  }, []);
 
   const [showIosTip, setShowIosTip] = useState<boolean>(false);
 
   const toggleFullscreen = async () => {
-    if (isStandalone) {
-      setShowIosTip(true);
-      setTimeout(() => setShowIosTip(false), 4000);
-      return;
-    }
-
     try {
       const doc = document as any;
       const elem = document.documentElement as any;
@@ -411,11 +392,7 @@ export function TopNavBar({
           className="animate-fade-up shadow-xl"
         >
           <div className="font-extrabold flex items-center justify-between gap-2 mb-1 text-teal-700 dark:text-[#00CED1]">
-            <span>
-              📱 {isStandalone 
-                ? (language === "en" ? "Fullscreen App Active" : "โหมดแอปเต็มหน้าจอ") 
-                : (language === "en" ? "Fullscreen on iPhone" : "วิธีเปิดเต็มหน้าจอบน iPhone")}
-            </span>
+            <span>📱 {language === "en" ? "Fullscreen on iPhone" : "วิธีเปิดเต็มหน้าจอบน iPhone"}</span>
             <button
               type="button"
               onClick={() => setShowIosTip(false)}
@@ -425,13 +402,9 @@ export function TopNavBar({
             </button>
           </div>
           <div className="text-[11.5px] font-medium text-slate-600 dark:text-slate-300">
-            {isStandalone
-              ? (language === "en"
-                  ? "InstantClass is already running in Fullscreen Standalone App mode! ✨"
-                  : "InstantClass กำลังเปิดใช้งานในโหมดแอปเต็มหน้าจอ (Home Screen) เรียบร้อยแล้วครับ ✨")
-              : (language === "en"
-                  ? "Apple Safari requires adding to Home Screen: Tap the Share button at the bottom of Safari, then select 'Add to Home Screen' to launch as a standalone fullscreen app."
-                  : "Safari บน iPhone ไม่อนุญาตให้ซ่อน URL โดยตรง: แตะปุ่มแชร์ (Share ⎋) ที่แถบล่าง Safari แล้วเลือก 'เพิ่มไปยังหน้าจอโฮม' เพื่อเปิดใช้งานเต็มหน้าจอ 100% ไร้แถบ URL")}
+            {language === "en"
+              ? "Apple Safari requires adding to Home Screen: Tap the Share button at the bottom of Safari, then select 'Add to Home Screen' to launch as a standalone fullscreen app."
+              : "Safari บน iPhone ไม่อนุญาตให้ซ่อน URL โดยตรง: แตะปุ่มแชร์ (Share ⎋) ที่แถบล่าง Safari แล้วเลือก 'เพิ่มไปยังหน้าจอโฮม' เพื่อเปิดใช้งานเต็มหน้าจอ 100% ไร้แถบ URL"}
           </div>
         </div>
       )}
