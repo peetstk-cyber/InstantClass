@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, Suspense, lazy } from "react";
 import { bonesData } from "./data/bones";
 import type { BoneData } from "./types";
 import type { UserProfile } from "./types/auth";
@@ -8,6 +8,12 @@ import { SkeletonCanvas } from "./components/canvas/SkeletonCanvas";
 import { DetailPanel } from "./components/detail/DetailPanel";
 import { AdminImageUploader } from "./components/admin/AdminImageUploader";
 import { AuthModal } from "./components/auth/AuthModal";
+
+const FractureAtlasStudio = lazy(() =>
+  import("./components/admin/FractureAtlasStudio").then((m) => ({
+    default: m.FractureAtlasStudio,
+  }))
+);
 import { 
   Search,
   HelpCircle, 
@@ -110,6 +116,13 @@ function App() {
   const [activeCategory, setActiveCategory] = useState<string>("all_bones");
   const [hoveredBoneId, setHoveredBoneId] = useState<string | null>(null);
   const [showAdmin, setShowAdmin] = useState(false);
+  const [showAtlasStudio, setShowAtlasStudio] = useState<boolean>(() => {
+    try {
+      return new URLSearchParams(window.location.search).get("studio") === "1";
+    } catch {
+      return false;
+    }
+  });
   const [showAuthModal, setShowAuthModal] = useState(false);
 
   // Mobile Modals State
@@ -231,16 +244,25 @@ function App() {
     }
   }, [darkMode]);
 
-  // Secret keyboard shortcut: Ctrl+Shift+U or Cmd+Shift+U
+  // Secret keyboard shortcut: Ctrl+Shift+U (Admin) or Ctrl+Shift+K (Fracture Atlas Studio)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === "U" || e.key === "u")) {
         e.preventDefault();
         setShowAdmin(prev => !prev);
       }
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === "K" || e.key === "k")) {
+        e.preventDefault();
+        setShowAtlasStudio(prev => !prev);
+      }
     };
+    const handleOpenStudio = () => setShowAtlasStudio(true);
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("open-fracture-studio", handleOpenStudio);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("open-fracture-studio", handleOpenStudio);
+    };
   }, []);
 
   const handleSelectBone = useCallback((bone: BoneData | null, regionId?: string) => {
@@ -887,6 +909,13 @@ function App() {
           bones={bonesData}
           onClose={() => setShowAdmin(false)}
         />
+      )}
+
+      {/* ── Secret Fracture Atlas Illustration Studio (Cmd+Shift+K) ── */}
+      {showAtlasStudio && (
+        <Suspense fallback={null}>
+          <FractureAtlasStudio onClose={() => setShowAtlasStudio(false)} />
+        </Suspense>
       )}
 
       {/* ── Real Feedback & Cloud Database Modal ── */}

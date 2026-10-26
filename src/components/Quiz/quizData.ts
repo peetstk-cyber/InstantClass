@@ -1950,6 +1950,652 @@ export const HIGH_YIELD_QUESTIONS: HighYieldQuestion[] = [
     boneId: "femur",
     regionId: "intertrochanteric",
   },
+  // ── Proximal Radius Shaft — Thompson Approach & Posterior Interosseous Nerve (PIN) Protection ──
+  {
+    id: "hy-radius-thompson-pin-protection",
+    category: "upper",
+    tag: { en: "SURGICAL APPROACH • PROXIMAL RADIUS", th: "ทางเข้าผ่าตัด • กระดูกปลายแขนเรเดียสส่วนต้น" },
+    scenario: {
+      en: "A 32-year-old male mechanic sustains a displaced fracture of the proximal third of the radial diaphysis following a crush injury. The orthopedic trauma team elects to perform open reduction and internal fixation utilizing a dorsolateral (Thompson) approach. After incising the deep fascia, the surgical interval is developed down to the proximal radius, exposing the supinator muscle with the posterior interosseous nerve (PIN) traversing obliquely within its substance. Which internervous plane is developed, and what combination of forearm rotational positioning and direction of supinator subperiosteal detachment is required to safely mobilize the muscle and prevent iatrogenic PIN injury?",
+      th: "ผู้ป่วยชายอายุ 32 ปี อาชีพช่างยนต์ ได้รับบาดเจ็บกระดูกปลายแขนเรเดียสส่วนต้นหักชนิดเคลื่อนที่ (Displaced proximal radial shaft fracture) จากอุบัติเหตุเครื่องจักรหนีบ ทีมศัลยแพทย์กระดูกและข้อตัดสินใจผ่าตัดเปิดจัดแนวกระดูกและยึดตรึงด้วยแผ่นโลหะผ่านทางเข้าผ่าตัดด้านหลัง (Dorsolateral / Thompson approach) หลังเปิดแยกพังผืดชั้นลึกและแยกเข้าสู่ระนาบกล้ามเนื้อจนถึงผิวกระดูก พบกล้ามเนื้อ Supinator คลุมกระดูกเรเดียสส่วนต้นอยู่โดยมีเส้นประสาท Posterior Interosseous Nerve (PIN) ทอดตัวเฉียงอยู่ภายในเนื้อกล้ามเนื้อ การผ่าตัดนี้ใช้ระนาบ Internervous plane ใด และต้องจัดท่าหมุนปลายแขนร่วมกับทิศทางการเลาะกล้ามเนื้อ Supinator แบบใต้เยื่อหุ้มกระดูกอย่างไรเพื่อป้องกันการบาดเจ็บต่อเส้นประสาท PIN?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Internervous plane between extensor carpi radialis brevis and extensor digitorum communis, utilizing forearm pronation with lateral-to-medial supinator elevation",
+          th: "ระนาบระหว่าง Extensor carpi radialis brevis และ Extensor digitorum communis ร่วมกับคว่ำปลายแขนและเลาะกล้ามเนื้อ Supinator จากด้านนอกเข้าสู่ด้านใน",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Internervous plane between extensor carpi radialis brevis and extensor digitorum communis, utilizing forearm supination with medial-to-lateral supinator elevation",
+          th: "ระนาบระหว่าง Extensor carpi radialis brevis และ Extensor digitorum communis ร่วมกับหงายปลายแขนและเลาะกล้ามเนื้อ Supinator จากด้านในออกสู่ด้านนอก",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Internervous plane between brachioradialis and pronator teres muscular margins, utilizing forearm supination with medial-to-lateral supinator elevation",
+          th: "ระนาบระหว่าง Brachioradialis และ Pronator teres ร่วมกับการหงายปลายแขนและเลาะกล้ามเนื้อ Supinator จากด้านในออกสู่ด้านนอก",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Internervous plane between anconeus and extensor carpi ulnaris muscular margins, utilizing forearm pronation with lateral-to-medial supinator elevation",
+          th: "ระนาบระหว่าง Anconeus และ Extensor carpi ulnaris ร่วมกับการคว่ำปลายแขนและเลาะกล้ามเนื้อ Supinator จากด้านนอกเข้าสู่ด้านใน",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Thompson (dorsolateral) approach provides direct exposure to the proximal and middle thirds of the radial shaft along its dorsal cortex. The superficial internervous plane lies between the extensor carpi radialis brevis (ECRB, innervated directly by the radial nerve proper prior to its division or via its superficial motor branch) and the extensor digitorum communis (EDC, innervated by the posterior interosseous nerve [PIN]). Deep to this interval, the supinator muscle wraps around the proximal radius. The PIN enters the supinator through the fibrous arcade of Frohse and winds obliquely from anterior to posterior around the radial neck. To protect the PIN during subperiosteal exposure of the proximal radius, the forearm must be placed in PRONATION. Pronation displaces the PIN anteriorly and medially away from the dorsal incision and brings the insertion of the supinator onto the lateral/dorsomedial surface, allowing safe subperiosteal peeling from lateral to medial. Conversely, supinating the forearm brings the nerve dorsal and directly onto the surgical field, subjecting it to severe traction or transection. The plane between brachioradialis and pronator teres represents the anterior Henry approach, where forearm supination (not pronation) is used to peel the supinator from medial to lateral away from the bicipital tuberosity. The interval between anconeus and extensor carpi ulnaris defines the posterolateral Kocher approach, which is ideal for radial head/capitellar exposure but cannot be safely extended distally past the radial neck without risking PIN transection.",
+      th: "ทางเข้าผ่าตัด Thompson (Dorsolateral approach) เป็นทางเข้าผ่าตัดด้านหลังที่ช่วยให้มองเห็นและดามแผ่นโลหะบริเวณกระดูกเรเดียสส่วนต้นและส่วนกลางได้อย่างชัดเจน ระนาบ Internervous plane ชั้นตื้นอยู่ระหว่างกล้ามเนื้อ Extensor Carpi Radialis Brevis (ECRB ซึ่งเลี้ยงโดยแขนงตรงของ Radial nerve ก่อนการแยกแขนง) และ Extensor Digitorum Communis (EDC ซึ่งเลี้ยงโดย Posterior Interosseous Nerve [PIN]) ในชั้นลึก กล้ามเนื้อ Supinator จะโอบรอบกระดูกเรเดียสส่วนต้นไว้ โดยมีเส้นประสาท PIN ทอดผ่านเข้าสู่กล้ามเนื้อผ่านทางขอบพังผืด Arcade of Frohse แล้วทอดเฉียงจากด้านหน้าไปด้านหลังจากแนวคอกระดูกเรเดียส ในการผ่าตัดเลาะกล้ามเนื้อ Supinator ใต้เยื่อหุ้มกระดูก (Subperiosteal dissection) ต้องจัดท่าให้ ปลายแขนอยู่ในท่าคว่ำ (Pronation) เสมอ เนื่องจากการคว่ำปลายแขนจะช่วยเหวี่ยงเส้นประสาท PIN ให้เคลื่อนหลบไปทางด้านหน้าและด้านใน (Anteromedial) ห่างจากแนวแผลผ่าตัด และทำให้รอยเกาะของกล้ามเนื้อ Supinator พลิกมาอยู่ด้านนอก ทำให้สามารถเลาะแยกกล้ามเนื้อจากด้านนอกเข้าสู่ด้านใน (Lateral to medial) ได้อย่างปลอดภัย ตรงกันข้าม หากหงายปลายแขน เส้นประสาท PIN จะถูกดึงรั้งมาทางด้านหลังเข้าสู่แนวแผลและเสี่ยงต่อการขาดเสียหาย สำหรับระนาบระหว่าง Brachioradialis และ Pronator teres คือทางเข้าผ่าตัดด้านหน้าแบบ Henry (Volar Henry approach) ซึ่งต้อง 'หงายปลายแขน' เพื่อเลาะกล้ามเนื้อ Supinator จากด้านในออกด้านนอก และระนาบระหว่าง Anconeus กับ ECU คือ Kocher approach ซึ่งเหมาะสำหรับข้อศอกและหัวกระดูกเรเดียสแต่ไม่สามารถขยายลงมาทางส่วนปลายได้เนื่องจากจะตัดโดน PIN",
+    },
+    pearls: {
+      en: "In the Thompson dorsolateral approach to the proximal radius (ECRB-EDC plane), the forearm must be PRONATED to displace the PIN medially and anteriorly; in contrast, the anterior Henry approach requires forearm SUPINATION to protect the PIN.",
+      th: "ในทางเข้าผ่าตัด Thompson approach (ระนาบ ECRB-EDC) ต้อง 'คว่ำปลายแขน' (Pronate) เพื่อผลักเส้นประสาท PIN หลบไปทางด้านหน้าและด้านใน ซึ่งตรงข้ามกับ Henry approach ด้านหน้า ที่ต้อง 'หงายปลายแขน' (Supinate) เพื่อปกป้อง PIN",
+    },
+    boneId: "radius",
+    regionId: "proximal",
+  },
+  // ── Maisonneuve Fracture — Syndesmotic Diastasis & Lauge-Hansen PER Mechanism ──
+  {
+    id: "hy-fibula-maisonneuve-syndesmosis",
+    category: "lower",
+    tag: { en: "EMERGENCY DIAGNOSIS • ANKLE & FIBULA", th: "การวินิจฉัยฉุกเฉิน • ข้อเท้าและกระดูกฟิบูลา" },
+    scenario: {
+      en: "A 24-year-old male semi-professional soccer player sustains a severe twisting injury to his planted right lower extremity after an opponent slide-tackles him from the lateral side. In the emergency department, he presents with marked anteromedial ankle edema, ecchymosis, and acute tenderness over the deltoid ligament and syndesmosis, but is unable to bear weight. Physical examination additionally reveals localized palpation tenderness over the proximal fibular neck beneath the fibular head without peroneal nerve deficit. Initial standard ankle radiographs demonstrate an intact medial and lateral malleolus, a widened medial clear space of 6.5 mm on the mortise view, and tibiofibular clear space widening of 8.0 mm indicating complete syndesmotic diastasis. Which diagnostic step is the most critical next action to confirm the full extent of this injury, and what is the underlying Lauge-Hansen classification mechanism?",
+      th: "ผู้ป่วยชายอายุ 24 ปี นักฟุตบอลกึ่งอาชีพ ได้รับบาดเจ็บบิดหมุนรุนแรงที่ข้อเท้าขวาขณะลงน้ำหนักเท้ากับพื้นจากการถูกสไลด์สกัดจากด้านข้าง ในห้องฉุกเฉินตรวจพบข้อเท้าด้านหน้าและด้านในบวมตึง มีรอยฟกช้ำและกดเจ็บรุนแรงบริเวณเส้นเอ็น Deltoid และ Syndesmosis ไม่สามารถลงน้ำหนักได้ การตรวจร่างกายเพิ่มเติมพบอาการกดเจ็บเฉพาะที่บริเวณคอกระดูกฟิบูลาส่วนต้นใต้ต่อหัวกระดูกฟิบูลา (Fibular neck) โดยระบบประสาท Peroneal nerve ทำงานปกติ ภาพเอกซเรย์ข้อเท้าเบื้องต้นไม่พบกระดูกตาตุ่มในหรือตาตุ่มนอกหัก แต่พบช่องว่าง Medial Clear Space กว้างถึง 6.5 มม. ในท่ามอร์ทิส และระยะห่าง Tibiofibular clear space กว้าง 8.0 มม. ซึ่งบ่งชี้ว่าข้อต่อซินเดสโมซิสแยกหลุดอย่างสมบูรณ์ ข้อใดคือขั้นตอนการตรวจทางรังสีวิทยาถัดไปที่สำคัญที่สุดในการยืนยันขอบเขตการบาดเจ็บ และกลไกการบาดเจ็บตามระบบ Lauge-Hansen คือข้อใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Full-length tibia and fibula radiographs to identify a high fibular fracture resulting from a pronation-external rotation injury mechanism",
+          th: "การถ่ายภาพรังสีประเมินแนวกระดูกหน้าแข้งและกระดูกน่องตลอดความยาว เพื่อตรวจหากระดูกฟิบูลาส่วนบนหักจากกลไก Pronation-External Rotation",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Gravity external rotation stress ankle radiographs to evaluate deep deltoid ligament insufficiency resulting from a supination-external rotation injury mechanism",
+          th: "การถ่ายภาพรังสีท่า Gravity external rotation stress บริเวณข้อเท้า เพื่อประเมินการฉีกขาดของเส้นเอ็นเดลทอยด์จากกลไก Supination-External Rotation",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Bilateral standing weightbearing mortise ankle radiographs to evaluate distal syndesmotic widening resulting from a pronation-abduction stress injury mechanism",
+          th: "การถ่ายภาพรังสีขณะยืนลงน้ำหนักเปรียบเทียบข้อเท้าสองข้างในท่ามอร์ทิส เพื่อตรวจหาระยะห่างของข้อต่อซินเดสโมซิสจากกลไก Pronation-Abduction",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "High-resolution axial computed tomography scans to evaluate an occult posterior malleolar fracture resulting from a supination-adduction trauma injury mechanism",
+          th: "การตรวจเอกซเรย์คอมพิวเตอร์ความละเอียดสูงบริเวณข้อเท้าและกระดูกส้นเท้า เพื่อตรวจหากระดูกตาตุ่มหลังแตกหักจากกลไก Supination-Adduction",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "This clinical presentation represents a classic Maisonneuve fracture, originally described by French surgeon Jacques Gilles Maisonneuve in 1840. The injury is classified under the Lauge-Hansen system as a Pronation-External Rotation (PER) mechanism (AO/OTA 44-C3 / Danis-Weber C). In PER injuries, the foot is pronated and subjected to violent external rotation torque. The failure sequence progresses sequentially: Stage I involves rupture of the deltoid ligament or an avulsion fracture of the medial malleolus; Stage II involves rupture of the anterior inferior tibiofibular ligament (AITFL) and anterior syndesmosis; Stage III involves propagation of the energy proximally through the interosseous membrane (IOM) and interosseous ligament; and Stage IV culminates in a high oblique or spiral fracture of the proximal third of the fibular shaft or fibular neck, along with disruption of the posterior inferior tibiofibular ligament (PITFL) or posterior malleolus avulsion. If an inexperienced clinician only obtains standard ankle films, the high fibular fracture is missed, leading to unrecognized gross syndesmotic instability and chronic painful talar tilt. Palpation of the proximal fibula and obtaining full-length AP and lateral radiographs of the tibia and fibula are mandatory whenever unexplained medial clear space widening (>= 4 to 5 mm) or syndesmotic diastasis is seen without a local lateral malleolar fracture. Gravity or manual stress radiographs (Option 1) are utilized in Supination-External Rotation (SER) stage II vs IV to assess deep deltoid competence in the presence of a Weber B fibula fracture, not when syndesmotic diastasis is already obvious. Pronation-Abduction (PAB) injuries (Option 2) produce a transverse or comminuted butterfly fracture of the distal third of the fibula 5 to 8 cm above the joint line, and weightbearing views are contraindicated in acutely displaced fractures. Supination-Adduction (SAD) injuries (Option 3) cause a transverse distal fibular fracture below the joint line (Weber A) followed by a steep vertical medial malleolar shear fracture from talar impaction, without syndesmotic disruption.",
+      th: "อาการทางคลินิกนี้เป็นลักษณะคลาสสิกของกระดูกหักแบบเมซอนเนิฟ (Maisonneuve fracture) ซึ่งอธิบายครั้งแรกโดยศัลยแพทย์ชาวฝรั่งเศส Jacques Gilles Maisonneuve ในปี ค.ศ. 1840 จัดอยู่ในระบบ Lauge-Hansen ภายใต้กลไก Pronation-External Rotation (PER) หรือ Danis-Weber C (AO/OTA 44-C3) โดยการบาดเจ็บเริ่มต้นจากเท้าอยู่ในท่าคว่ำ (Pronation) แล้วได้รับแรงบิดหมุนออกด้านนอก (External rotation) ส่งผลให้เกิดการบาดเจ็บตามลำดับขั้นตอน: ระยะที่ 1 (PER I) เส้นเอ็นเดลทอยด์ (Deltoid ligament) ฉีกขาดหรือกระดูกตาตุ่มในหัก, ระยะที่ 2 (PER II) เส้นเอ็นยึดกระดูกหน้าแข้ง-น่องด้านหน้า (AITFL) และเยื่อหุ้มข้อด้านหน้าฉีกขาด, ระยะที่ 3 (PER III) แรงกระแทกวิ่งขึ้นไปตามแนวยาวฉีกทำลายแผ่นพังผืดระหว่างกระดูก (Interosseous membrane) ตลอดความยาวของขา, และระยะที่ 4 (PER IV) พลังงานระบายออกทำให้เกิดกระดูกฟิบูลาส่วนบนหรือคอกระดูกฟิบูลาหักแบบเกลียว (High proximal fibular fracture) ร่วมกับเอ็น PITFL หรือตาตุ่มหลังฉีกขาด หากแพทย์ถ่ายภาพรังสีเฉพาะบริเวณข้อเท้า จะพบเพียงช่องว่าง Medial clear space และ Syndesmosis กว้างผิดปกติโดยไม่เห็นกระดูกหัก ทำให้มองข้ามกระดูกฟิบูลาส่วนบนหักและความไม่มั่นคงของข้อเท้า การคลำกระดูกฟิบูลาตลอดความยาวและการส่งถ่ายภาพรังสี Full-length Tibia-Fibula จึงเป็นขั้นตอนสำคัญที่สุดที่ห้ามละเลย ส่วนภาพรังสีท่า Gravity stress (ตัวเลือกที่ 1) ใช้ประเมินเอ็น Deltoid ในกลุ่ม SER ที่มีกระดูกตาตุ่มนอกหักระดับ Weber B, กลไก Pronation-Abduction (ตัวเลือกที่ 2) จะทำให้กระดูกฟิบูลาส่วนล่างหักเหนือข้อเท้า 5-8 ซม. และห้ามยืนลงน้ำหนักในข้อเท้าที่หลุดหลวมเฉียบพลัน, และกลไก Supination-Adduction (ตัวเลือกที่ 3) จะทำให้กระดูกตาตุ่มนอกหักขวางใต้ระดับข้อ (Weber A) ร่วมกับตาตุ่มในหักในแนวดิ่ง (Vertical medial malleolus) โดยไม่มีข้อต่อซินเดสโมซิสฉีกขาด",
+    },
+    pearls: {
+      en: "In any ankle injury with unexplained medial clear space widening or syndesmotic diastasis without an ankle fracture, always palpate the proximal leg and obtain full-length tibia-fibula radiographs to rule out a Maisonneuve fracture (Lauge-Hansen PER).",
+      th: "ในผู้ป่วยข้อเท้าบาดเจ็บที่พบ Medial clear space กว้างหรือ Syndesmosis แยกหลุดโดยไม่มีกระดูกหักบริเวณข้อเท้า ต้องคลำกระดูกน่องส่วนบนและส่งตรวจภาพเอกซเรย์ Full-length Tibia-Fibula เสมอเพื่อวินิจฉัย Maisonneuve fracture (กลไก PER)",
+    },
+    boneId: "tibia",
+    regionId: "distal",
+  },
+  // ── Posterolateral Approach to Distal Tibia & Ankle — Internervous Plane & Sural Nerve ──
+  {
+    id: "hy-tibia-posterolateral-approach",
+    category: "lower",
+    tag: { en: "SURGICAL APPROACH • ANKLE", th: "ทางเข้าผ่าตัด • ข้อเท้า" },
+    scenario: {
+      en: "A 38-year-old construction worker falls from scaffolding and sustains a closed trimalleolar ankle fracture with an extensive Haraguchi Type I posterolateral malleolar fragment encompassing 30% of the tibial plafond. The surgical team elects to perform open reduction and internal fixation through a single-incision posterolateral approach to access both the posterior malleolus and the distal fibula. During the deep dissection to expose the posterior tibial plafond, between which two muscles is the true internervous plane developed, and which cutaneous sensory nerve must be identified and protected in the superficial subcutaneous plane?",
+      th: "ผู้ป่วยชายอายุ 38 ปี คนงานก่อสร้างตกจากนั่งร้าน ได้รับบาดเจ็บกระดูกข้อเท้าหักแบบ Trimalleolar ชนิดปิด โดยพบชิ้นกระดูกตาตุ่มหลังแตกขนาดใหญ่ (Haraguchi Type I) ครอบคลุมพื้นที่ผิวข้อ Tibial plafond ถึง 30% ทีมศัลยแพทย์ตัดสินใจทำผ่าตัดเปิดจัดกระดูกและยึดตรึงภายใน (ORIF) ผ่านทางเข้า Posterolateral approach แผลเดียวเพื่อจัดกระดูกทั้งตาตุ่มหลังและกระดูกฟิบูลาส่วนปลาย ในขั้นตอนการแหวกผ่านชั้นลึกเพื่อเปิดผิวข้อกระดูกหน้าแข้งด้านหลัง ระนาบ Internervous plane ที่แท้จริงอยู่ระหว่างกล้ามเนื้อคู่ใด และเส้นประสาทรับความรู้สึกเส้นใดในชั้นใต้ผิวหนังที่ต้องระมัดระวังปกป้องไม่ให้บาดเจ็บ?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Between peroneus brevis and flexor hallucis longus; sural nerve",
+          th: "ระหว่าง Peroneus brevis และ Flexor hallucis longus; Sural nerve",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Between tibialis posterior and flexor digitorum longus; saphenous nerve",
+          th: "ระหว่าง Tibialis posterior และ Flexor digitorum longus; Saphenous nerve",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Between extensor digitorum longus and peroneus tertius; superficial peroneal nerve",
+          th: "ระหว่าง Extensor digitorum longus และ Peroneus tertius; Superficial peroneal nerve",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Between gastrocnemius lateral head and soleus; lateral sural cutaneous nerve",
+          th: "ระหว่าง Gastrocnemius lateral head และ Soleus; Lateral sural cutaneous nerve",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The single-incision posterolateral approach to the ankle and distal tibia (described by Gatellier and Chastang, and popularized by Choi et al.) provides direct visual access to both the posterior malleolus (Volkmann's fragment) and the distal fibula. The internervous plane is established deeply between the peroneus brevis muscle, which is innervated by the superficial peroneal nerve (lateral compartment), and the flexor hallucis longus (FHL) muscle, which is innervated by the tibial nerve (deep posterior compartment). In the superficial subcutaneous plane, the sural nerve runs alongside the lesser (small) saphenous vein, crossing obliquely from proximal-medial to distal-lateral roughly midway between the lateral malleolus and the Achilles tendon. Careful mobilization and gentle retraction of the sural nerve are essential to avoid painful postoperative neuroma or permanent sensory loss over the lateral foot. Retracting the FHL tendon and muscle belly medially effectively shields and protects the tibial neurovascular bundle (tibial nerve and posterior tibial vessels) from direct surgical trauma. The interval between tibialis posterior and flexor digitorum longus (Option 1) is found on the posteromedial aspect of the ankle, where both muscles are innervated by the tibial nerve (not a true internervous plane), and the saphenous nerve runs anterior to the medial malleolus. The interval between extensor digitorum longus and peroneus tertius (Option 2) represents an anterior approach to the ankle, with both muscles supplied by the deep peroneal nerve. The interval between the gastrocnemius and soleus (Option 3) lies within the superficial posterior calf compartment, where both muscles share tibial nerve innervation.",
+      th: "ทางเข้า Posterolateral approach ของข้อเท้าและกระดูกหน้าแข้งส่วนปลาย (อธิบายโดย Gatellier and Chastang และพัฒนาต่อโดย Choi et al.) เป็นทางเข้าผ่าตัดที่ช่วยให้มองเห็นและจัดกระดูกได้ทั้งตาตุ่มหลัง (Posterior malleolus / Volkmann's fragment) และกระดูกฟิบูลาส่วนปลายผ่านแผลผ่าตัดเดียว โดยระนาบ Internervous plane ในชั้นลึกจะอยู่ระหว่างกล้ามเนื้อ Peroneus brevis ซึ่งเลี้ยงโดยเส้นประสาท Superficial Peroneal Nerve (กลุ่มกล้ามเนื้อ Lateral compartment) กับกล้ามเนื้อ Flexor Hallucis Longus (FHL) ซึ่งเลี้ยงโดยเส้นประสาท Tibial Nerve (กลุ่มกล้ามเนื้อ Deep posterior compartment) ส่วนในชั้นใต้ผิวหนัง (Subcutaneous plane) จะมีเส้นประสาท Sural nerve ทอดคู่กับเส้นเลือดดำ Lesser saphenous vein วิ่งเฉียงจากด้านในไปด้านนอกบริเวณกึ่งกลางระหว่างตาตุ่มนอกและเอ็นร้อยหวาย ซึ่งต้องทำการเลาะแยกและดึงรั้งอย่างนุ่มนวลเพื่อป้องกันการเกิด Neuroma หรือสูญเสียการรับความรู้สึกบริเวณขอบเท้าด้านนอก การดึงรั้งกล้ามเนื้อ FHL หลบไปทางด้านใน (Medially) ยังทำหน้าที่เป็นแผ่นกำบังช่วยปกป้องกลุ่มเส้นเลือดและเส้นประสาทใหญ่ Tibial neurovascular bundle ไม่ให้ได้รับอันตรายจากการผ่าตัดอีกด้วย ส่วนช่องระหว่าง Tibialis posterior และ FDL (ตัวเลือกที่ 1) เป็นทางเข้าด้าน Posteromedial ซึ่งทั้งคู่เลี้ยงโดย Tibial nerve และ Saphenous nerve อยู่หน้าตาตุ่มใน, ช่องระหว่าง EDL และ Peroneus tertius (ตัวเลือกที่ 2) เป็นทางเข้าด้านหน้าซึ่งทั้งคู่เลี้ยงโดย Deep peroneal nerve, และช่องระหว่าง Gastrocnemius กับ Soleus (ตัวเลือกที่ 3) อยู่ในชั้นตื้นของน่องซึ่งเลี้ยงโดย Tibial nerve ทั้งหมด",
+    },
+    pearls: {
+      en: "In the posterolateral approach to the ankle, the true internervous plane lies between peroneus brevis (superficial peroneal nerve) and flexor hallucis longus (tibial nerve); protect the sural nerve superficially and retract FHL medially to shield the tibial neurovascular bundle.",
+      th: "ในทางเข้า Posterolateral approach ของข้อเท้า ระนาบ Internervous plane ที่แท้จริงอยู่ระหว่าง Peroneus brevis (Superficial peroneal nerve) กับ Flexor hallucis longus (Tibial nerve) โดยต้องระวัง Sural nerve ในชั้นตื้น และดึงรั้ง FHL ไปทางด้านในเพื่อกำบังปกป้อง Tibial neurovascular bundle",
+    },
+    boneId: "tibia",
+    regionId: "distal",
+  },
+  // ── Knee Dial Test & Posterolateral Corner (PLC) Biomechanics ──
+  {
+    id: "hy-knee-dial-test-plc",
+    category: "lower",
+    tag: { en: "BIOMECHANICS & PHYSICAL EXAM • KNEE", th: "ชีวกลศาสตร์และการตรวจร่างกาย • ข้อเข่า" },
+    scenario: {
+      en: "A 26-year-old rugby player sustains a high-energy hyperextension and varus injury to his right knee during a tackle. In the outpatient clinic 3 weeks later, he complains of knee instability and hyperextension giving way during pivoting. Examination reveals 2+ lateral joint line gapping under varus stress at 30° of knee flexion. A prone Dial test (tibial external rotation) demonstrates 15° of increased external rotation of the injured tibia compared to the contralateral normal limb at 30° of knee flexion, but this external rotation asymmetry decreases to 2° when re-tested at 90° of knee flexion. Which structural injury pattern is demonstrated by these physical examination findings, and which specific triad of anatomical structures constitutes this functional complex?",
+      th: "ผู้ป่วยชายอายุ 26 ปี นักกีฬารักบี้ ได้รับบาดเจ็บที่เข่าขวาจากแรงกระแทกในท่าเหยียดเข่าเกิน (Hyperextension) ร่วมกับแรงโก่งเข้าใน (Varus force) ขณะถูกเข้าสกัด เมื่อมาตรวจที่แผนกผู้ป่วยนอก 3 สัปดาห์หลังการบาดเจ็บ มีอาการข้อเข่าไม่มั่นคงและรู้สึกเข่าทรุดขณะบิดหมุน การตรวจร่างกายพบข้อเข่าด้านข้างเปิดกว้างผิดปกติ (2+ lateral joint opening) เมื่อตรวจ Varus stress test ที่มุมงอเข่า 30 องศา การตรวจ Dial test ในท่านอนคว่ำพบการหมุนออกด้านนอกของกระดูกหน้าแข้ง (Tibial external rotation) เพิ่มขึ้น 15 องศาเมื่อเทียบกับข้างปกติที่มุมงอเข่า 30 องศา แต่ความแตกต่างของการหมุนลดลงเหลือเพียง 2 องศาเมื่อตรวจที่มุมงอเข่า 90 องศา ผลการตรวจร่างกายนี้บ่งชี้ถึงรูปแบบการบาดเจ็บของโครงสร้างใด และโครงสร้างสามชิ้นหลักที่ประกอบกันเป็นกลุ่มโครงสร้างนี้คืออะไร?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Isolated posterolateral corner ligamentous disruption involving the fibular collateral ligament, the popliteus tendon, and the popliteofibular ligament",
+          th: "การฉีกขาดเฉพาะจุดของ Posterolateral corner ที่ประกอบด้วย Fibular collateral ligament, Popliteus tendon และ Popliteofibular ligament",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Combined posterior cruciate ligament and posterolateral corner tear involving the posterior cruciate ligament, the popliteofibular ligament, and the arcuate ligament",
+          th: "การฉีกขาดร่วมกันของ Posterior cruciate ligament และ Posterolateral corner ที่ประกอบด้วย Posterior cruciate ligament, Popliteofibular ligament และ Arcuate ligament",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Isolated medial collateral ligamentous complex disruption involving the superficial medial collateral ligament, the deep medial collateral ligament, and the posterior oblique ligament",
+          th: "การฉีกขาดเฉพาะจุดของ Medial collateral ligament complex ที่ประกอบด้วย Superficial medial collateral ligament, Deep medial collateral ligament และ Posterior oblique ligament",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Combined anterior cruciate ligament and anterolateral complex tear involving the anterior cruciate ligament, the anterolateral ligament, and the anterior horn lateral meniscus",
+          th: "การฉีกขาดร่วมกันของ Anterior cruciate ligament และ Anterolateral complex ที่ประกอบด้วย Anterior cruciate ligament, Anterolateral ligament และ Lateral meniscus",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The tibial external rotation test (Dial test) is the primary physical examination tool to differentiate an isolated posterolateral corner (PLC) injury from a combined PLC and posterior cruciate ligament (PCL) disruption. Biomechanically, the PLC is the primary restraint to tibial external rotation and varus angulation at 30° of knee flexion. The three major static and dynamic anatomical stabilizers comprising the PLC are the fibular collateral ligament (FCL / LCL), the popliteus tendon, and the popliteofibular ligament (PFL). At 90° of knee flexion, the PCL functions as a secondary restraint against tibial external rotation. A side-to-side difference of greater than 10° of external rotation at 30° of knee flexion that normalizes (<10° difference) at 90° of flexion is diagnostic of an isolated PLC tear, because the intact PCL engages at 90° to halt pathologic external rotation. In contrast, if increased external rotation (>10°) is observed at BOTH 30° and 90° of flexion, it signifies a combined disruption of both the PLC and the PCL (Option 1). Injuries to the medial collateral ligament complex (Option 2) increase valgus laxity and produce anteromedial rotatory instability (AMRI), not isolated posterolateral rotatory laxity. Injuries involving the anterior cruciate ligament and anterolateral complex (Option 3) produce anterolateral rotatory instability (ALRI), manifested by a positive Lachman and pivot-shift test, without isolated external rotation asymmetry on the Dial test.",
+      th: "การตรวจการหมุนออกด้านนอกของกระดูกหน้าแข้ง (Tibial External Rotation หรือ Dial Test) เป็นการตรวจร่างกายหลักในการแยกการบาดเจ็บของ Posterolateral Corner (PLC) เดี่ยวๆ ออกจากการบาดเจ็บร่วมระหว่าง PLC และ Posterior Cruciate Ligament (PCL) ตามหลักชีวกลศาสตร์ ที่มุมงอเข่า 30 องศา กลุ่มเอ็น PLC จะทำหน้าที่เป็นตัวต้านทานหลัก (Primary restraint) ต่อแรงหมุนออกด้านนอก (External rotation) และแรงโก่งออก (Varus force) โดยมีโครงสร้างสำคัญ 3 ชิ้น ได้แก่ Fibular collateral ligament (FCL/LCL), Popliteus tendon และ Popliteofibular ligament (PFL) ในขณะที่มุมงอเข่า 90 องศา เส้นเอ็นไขว้หลัง (PCL) จะเข้ามาทำหน้าที่เป็นตัวต้านทานเสริม (Secondary restraint) ต่อการหมุนออกด้านนอก ดังนั้น หากตรวจพบการหมุนออกด้านนอกเพิ่มขึ้นมากกว่า 10 องศาเมื่อเทียบกับข้างปกติเฉพาะที่มุม 30 องศา และความแตกต่างลดลงกลับเป็นปกติที่มุม 90 องศา จะเป็นการวินิจฉัยภาวะ PLC ฉีกขาดเพียงอย่างเดียว (Isolated PLC injury) เนื่องจาก PCL ที่ยังปกติอยู่จะช่วยต้านการหมุนเมื่อเข่างอ 90 องศา แต่หากพบการหมุนออกด้านนอกเพิ่มขึ้นผิดปกติ (>10 องศา) ทั้งที่มุม 30 องศา และ 90 องศา จะบ่งชี้ว่ามีการฉีกขาดร่วมกันของทั้ง PLC และ PCL (ตัวเลือกที่ 1) ส่วนการบาดเจ็บของกลุ่มเอ็นด้านใน MCL complex (ตัวเลือกที่ 2) จะทำให้เข่าเปิดด้านในเมื่อตรวจ Valgus stress และทำให้เกิด Anteromedial rotatory instability, และการฉีกขาดของ ACL ร่วมกับ Anterolateral complex (ตัวเลือกที่ 3) จะตรวจพบผลบวกจากการตรวจ Lachman และ Pivot-shift test ซึ่งเป็น Anterolateral rotatory instability ไม่ใช่การหมุนออกด้านนอกที่พบใน Dial test",
+    },
+    pearls: {
+      en: "On the Dial test, increased tibial external rotation (>10°) at 30° that normalizes at 90° indicates an isolated posterolateral corner (PLC: FCL, popliteus, PFL) injury, whereas increased external rotation at both 30° and 90° indicates a combined PLC and PCL disruption.",
+      th: "การตรวจ Dial test หากพบการหมุนออกด้านนอก (>10°) ผิดปกติเฉพาะที่มุมงอ 30° และกลับเป็นปกติที่มุม 90° แสดงถึงการบาดเจ็บของ Posterolateral corner (FCL, Popliteus, PFL) เพียงอย่างเดียว แต่หากผิดปกติทั้งที่ 30° และ 90° บ่งชี้ว่ามี PCL ฉีกขาดร่วมด้วย",
+    },
+    boneId: "tibia",
+    regionId: "proximal",
+  },
+  // ── Direct Anterior Approach (DAA / Hueter Interval) to the Hip — Surgical Anatomy & Intervals ──
+  {
+    id: "hy-hip-anterior-hueter-approach",
+    category: "lower",
+    tag: { en: "SURGICAL APPROACH • HIP", th: "ทางเข้าผ่าตัด • ข้อสะโพก" },
+    scenario: {
+      en: "A 62-year-old active male with severe primary hip osteoarthritis undergoes total hip arthroplasty via a direct anterior approach (Hueter interval). The surgeon makes a longitudinal skin incision beginning 2 cm distal and 2 cm lateral to the anterior superior iliac spine (ASIS), angled toward the fibular head. During subcutaneous dissection and development of the deep muscular intervals down to the anterior hip capsule, which true internervous plane is developed superficially, which superficial cutaneous sensory nerve is at highest risk of iatrogenic traction or transection within the deep fascial layer, and which vascular bundle crossing the intermuscular plane must be reliably ligated?",
+      th: "ผู้ป่วยชายอายุ 62 ปี เป็นโรคข้อสะโพกเสื่อมรุนแรง เข้ารับการผ่าตัดเปลี่ยนข้อสะโพกเทียมผ่านทาง Direct Anterior Approach (Hueter interval) ศัลยแพทย์ลงมีดผ่าตัดตามแนวยาวเริ่มต้นที่ตำแหน่ง 2 ซม. ใต้ต่อและ 2 ซม. ด้านข้างต่อ Anterior Superior Iliac Spine (ASIS) ชี้ไปยังหัวกระดูกฟิบูลาร์ ในระหว่างการเลาะผ่านชั้นใต้ผิวหนังและแยกเข้าสู่ระนาบกล้ามเนื้อชั้นลึกจนถึงแคปซูลด้านหน้าข้อสะโพก การผ่าตัดนี้ใช้ระนาบ Internervous plane ใดในชั้นตื้น เส้นประสาทรับความรู้สึกชั้นผิวใดเสี่ยงต่อการถูกดึงรั้งหรือตัดขาดสูงสุด และกลุ่มหลอดเลือดใดที่ทอดข้ามระนาบกล้ามเนื้อซึ่งจำเป็นต้องผูกหรือจี้หยุดเลือดอย่างเคร่งครัด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Internervous plane between tensor fasciae latae and sartorius, with risk to the lateral femoral cutaneous nerve, requiring ligation of ascending branches of lateral femoral circumflex artery",
+          th: "ระนาบประสาทระหว่าง Tensor fasciae latae และ Sartorius เสี่ยงต่อเส้นประสาท Lateral femoral cutaneous nerve และต้องผูกแขนง Ascending branch ของ Lateral femoral circumflex artery",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Internervous plane between tensor fasciae latae and gluteus medius, with risk to the femoral cutaneous nerve branches, requiring ligation of transverse branches of lateral femoral circumflex artery",
+          th: "ระนาบประสาทระหว่าง Tensor fasciae latae และ Gluteus medius เสี่ยงต่อเส้นประสาท Femoral cutaneous nerve branches และต้องผูกแขนง Transverse branch ของ Lateral femoral circumflex artery",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Internervous plane between rectus femoris and vastus lateralis, with risk to the anterior femoral cutaneous nerve, requiring ligation of ascending branches of medial femoral circumflex artery",
+          th: "ระนาบประสาทระหว่าง Rectus femoris และ Vastus lateralis เสี่ยงต่อเส้นประสาท Anterior femoral cutaneous nerve และต้องผูกแขนง Ascending branch ของ Medial femoral circumflex artery",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Internervous plane between sartorius and rectus femoris, with risk to the ilioinguinal cutaneous nerve branches, requiring ligation of descending branches of lateral femoral circumflex artery",
+          th: "ระนาบประสาทระหว่าง Sartorius และ Rectus femoris เสี่ยงต่อเส้นประสาท Ilioinguinal cutaneous nerve branches และต้องผูกแขนง Descending branch ของ Lateral femoral circumflex artery",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The direct anterior approach (DAA) to the hip utilizes the modified Smith-Petersen / Hueter interval. Superficially, it exploits a true internervous plane between the tensor fasciae latae (TFL, innervated by the superior gluteal nerve) laterally and the sartorius (innervated by the femoral nerve) medially. Deeply, the dissection develops the interval between the rectus femoris (innervated by the femoral nerve) medially and the gluteus medius (innervated by the superior gluteal nerve) laterally down to the precapsular fat pad and anterior hip capsule.\n\nThe lateral femoral cutaneous nerve (LFCN, L2–L3) emerges medial to the anterior superior iliac spine (ASIS) beneath the inguinal ligament, piercing the fascia lata and branching over the anterior thigh. Its lateral branches frequently cross directly superficial to or within the medial fascial envelope of the TFL. To protect the LFCN, the superficial incision is placed 2 to 3 cm lateral to the ASIS, and the fascia over the TFL is incised over the lateral third of the muscular belly rather than through the intermuscular seam, maintaining a protective sleeve of fascia and lateralizing retractor placement.\n\nDeep within the interval between the TFL and rectus femoris, the ascending branch of the lateral femoral circumflex artery (LFCA) crosses transversely across the surgical field toward the vastus lateralis and greater trochanter. This vascular leash consists of 1 to 3 vessels that must be meticulously identified, coagulated or clipped, and transected. Failure to secure these vessels results in their retraction into deep tissues, causing rapid brisk bleeding and high rates of postoperative hematoma.\n\n• Option 1 is incorrect because the interval between TFL and gluteus medius is an intermuscular interval, NOT an internervous plane, as both muscles are innervated by the superior gluteal nerve (Watson-Jones approach).\n• Option 2 is incorrect because the interval between rectus femoris and vastus lateralis is not an internervous plane (both innervated by the femoral nerve), and the medial femoral circumflex artery courses posteriorly around the femoral neck.\n• Option 3 is incorrect because both the sartorius and rectus femoris are innervated by the femoral nerve (no internervous plane exists between them), and the descending branch of the LFCA travels inferiorly down the vastus lateralis rather than traversing the anterior hip interval.",
+      th: "การผ่าตัดเข้าข้อสะโพกทางด้านหน้าแบบ Direct Anterior Approach (DAA) ใช้ระนาบของ Hueter interval (Modified Smith-Petersen approach) โดยในชั้นตื้นอาศัยระนาบประสาทแท้จริง (True Internervous Plane) ระหว่างกล้ามเนื้อ Tensor Fasciae Latae (TFL เลี้ยงโดย Superior Gluteal Nerve) ด้านข้าง และกล้ามเนื้อ Sartorius (เลี้ยงโดย Femoral Nerve) ด้านใน จากนั้นในชั้นลึกจะแยกเข้าระหว่าง Rectus Femoris (เลี้ยงโดย Femoral Nerve) ด้านใน และ Gluteus Medius (เลี้ยงโดย Superior Gluteal Nerve) ด้านข้าง เข้าสู่ชั้นไขมันหน้าแคปซูลข้อสะโพก\n\nเส้นประสาท Lateral Femoral Cutaneous Nerve (LFCN, L2-L3) ลอดผ่านใต้ Inguinal Ligament บริเวณใกล้ ASIS แล้วเจาะผ่าน Fascia Lata ออกมายังชั้นผิว แขนงทางด้านข้างของเส้นประสาทนี้มักทอดผ่านหรือแนบชิดกับเยื่อหุ้ม Fascia ด้านในของ TFL การป้องกันการบาดเจ็บทำได้โดยการลงมีดผ่าตัดเยื้องไปทางด้านข้างต่อ ASIS ประมาณ 2 ถึง 3 ซม. และเปิดกรีดพังผืดคลุมกล้ามเนื้อ TFL ทางด้านข้าง (Lateral third) ของมัดกล้ามเนื้อ เพื่อใช้เนื้อเยื่อพังผืดช่วยปกป้องเส้นประสาทไว้\n\nในชั้นลึกระหว่าง TFL และ Rectus Femoris จะพบแขนง Ascending Branch ของ Lateral Femoral Circumflex Artery (LFCA) ซึ่งทอดตัวตามแนวขวางข้ามลานผ่าตัดไปยัง Greater Trochanter กลุ่มเส้นเลือดนี้ต้องได้รับการระบุตำแหน่ง ผูก หรือจี้ห้ามเลือดอย่างเคร่งครัด หากปล่อยให้ฉีกขาด เส้นเลือดจะหดร่นเข้าไปในเนื้อเยื่อส่วนลึก ทำให้เสียเลือดมากและเกิดก้อนเลือดคั่ง (Hematoma) หลังผ่าตัด\n\n• ตัวเลือกที่ 1 ไม่ถูกต้อง เนื่องจากช่องระหว่าง TFL และ Gluteus Medius เลี้ยงด้วย Superior Gluteal Nerve ทั้งคู่ (ทางเข้า Watson-Jones) จึงไม่ใช่ Internervous Plane\n• ตัวเลือกที่ 2 ไม่ถูกต้อง เนื่องจาก Rectus Femoris และ Vastus Lateralis เลี้ยงด้วย Femoral Nerve ทั้งคู่ และ Medial Femoral Circumflex Artery ทอดอยู่ทางด้านหลังของคอกระดูกต้นขา\n• ตัวเลือกที่ 3 ไม่ถูกต้อง เนื่องจาก Sartorius และ Rectus Femoris เลี้ยงด้วย Femoral Nerve ทั้งคู่ และแขนง Descending Branch ของ LFCA จะทอดตัวลงด้านล่างขนานกับ Vastus Lateralis ไม่ได้ทอดขวางผ่านทางเข้าข้อสะโพกด้านหน้า",
+    },
+    pearls: {
+      en: "The direct anterior approach (Hueter interval) exploits the internervous plane between the TFL (superior gluteal nerve) and sartorius (femoral nerve); always incise the TFL fascia laterally to shield the LFCN, and electrocoagulate the ascending branches of the LFCA.",
+      th: "ทางเข้า Direct anterior (Hueter interval) อาศัย Internervous plane ระหว่าง TFL (Superior gluteal n.) และ Sartorius (Femoral n.) โดยต้องเปิดพังผืด TFL ทางด้านข้างเพื่อปกป้อง LFCN และต้องจี้ผูกแขนง Ascending branch ของ LFCA เสมอ",
+    },
+    boneId: "femur",
+    regionId: "proximal",
+  },
+  // ── Comminuted Diaphyseal Fracture Plating — Perren's Strain Theory, Working Length & Screw Density ──
+  {
+    id: "hy-femur-bridge-plating-biomechanics",
+    category: "general",
+    tag: { en: "BIOMECHANICS & FIXATION • BONE HEALING", th: "ชีวกลศาสตร์และการยึดตรึง • การสมานของกระดูก" },
+    scenario: {
+      en: "A 34-year-old construction laborer sustains a closed, highly comminuted midshaft femoral fracture (AO/OTA 32-C3) after a heavy industrial pallet collapse. The orthopedic trauma team decides to treat the injury with closed indirect reduction and biological bridge plating using a pre-contoured 4.5 mm broad locking compression plate (LCP). The operative objective is to achieve secondary bone healing with robust periosteal callus formation while minimizing the risk of hardware fatigue failure or nonunion. According to Perren's interfragmentary strain theory and AO bridge plating principles, which construct architecture establishes the optimal mechanical environment for secondary bone healing?",
+      th: "ผู้ป่วยชายอายุ 34 ปี คนงานก่อสร้าง ได้รับบาดเจ็บกระดูกต้นขาหักแบบละเอียดหลายชิ้นบริเวณกึ่งกลางกระดูก (AO/OTA 32-C3) จากอุบัติเหตุพาเลทของหนักล้มทับ ทีมศัลยแพทย์กระดูกและข้อตัดสินใจรักษาด้วยการดึงจัดกระดูกแบบปิดโดยไม่เปิดแผลรอยหัก (Indirect closed reduction) และยึดตรึงด้วยวิธี Biological bridge plating โดยใช้แผ่นโลหะดามกระดูกแบบมีเกลียวล็อก 4.5 mm Broad LCP เป้าหมายของการผ่าตัดคือให้กระดูกสมานตัวแบบทุติยภูมิ (Secondary bone healing) ร่วมกับการเกิด Callus ที่แข็งแรง โดยลดความเสี่ยงต่อการเกิดโลหะล้าหัก (Fatigue failure) หรือกระดูกไม่ติด ตามทฤษฎี Interfragmentary Strain Theory ของ Perren และหลักการ Bridge Plating ของ AO โครงสร้างการยึดตรึงข้อใดสร้างสภาวะทางกลศาสตร์ที่เหมาะสมที่สุดต่อการสมานตัวของกระดูก?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Long plate with an extended working length and low screw density to distribute bending forces and maintain interfragmentary strain between 2% and 10%",
+          th: "แผ่นโลหะขนาดยาวที่มีระยะ Working length ยาวและความหนาแน่นสกรูต่ำ เพื่อกระจายแรงดัดและควบคุม Interfragmentary strain ให้อยู่ระหว่าง 2% ถึง 10%",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Short plate with a reduced working length and high screw density to distribute bending forces and maintain interfragmentary strain strictly below 2% levels",
+          th: "แผ่นโลหะขนาดสั้นที่มีระยะ Working length สั้นและความหนาแน่นสกรูสูง เพื่อกระจายแรงดัดและควบคุม Interfragmentary strain ให้อยู่ต่ำกว่าระดับ 2%",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Long plate with a reduced working length and high screw density to concentrate bending forces and maintain interfragmentary strain exceeding 15% critical threshold",
+          th: "แผ่นโลหะขนาดยาวที่มีระยะ Working length สั้นและความหนาแน่นสกรูสูง เพื่อรวมศูนย์แรงดัดและควบคุม Interfragmentary strain ให้สูงเกินกว่าระดับ 15%",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Short plate with an extended working length and low screw density to concentrate bending forces and maintain interfragmentary strain between 10% and 30%",
+          th: "แผ่นโลหะขนาดสั้นที่มีระยะ Working length ยาวและความหนาแน่นสกรูต่ำ เพื่อรวมศูนย์แรงดัดและควบคุม Interfragmentary strain ให้อยู่ระหว่าง 10% ถึง 30%",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "According to Perren's interfragmentary strain theory and modern AO principles of relative stability, bone healing requires a mechanical environment appropriate for the desired mode of repair. Strain (ε) is defined as the change in fracture gap displacement (ΔL) divided by the initial gap size (L) (ε = ΔL / L).\n\n• Strain < 2%: Produces absolute stability, leading to primary (direct) cortical bone healing through haversian remodeling (contact/gap healing) without external callus formation. This requires anatomical reduction and rigid interfragmentary compression (e.g., lag screws and neutralization plates for simple fractures).\n• Strain 2% to 10%: Produces relative (elastic) stability, which stimulates secondary (indirect) bone healing via enchondral ossification, forming robust bridging periosteal callus. This is the physiological target for comminuted fractures treated with bridging constructs (intramedullary nails, bridge plates, or external fixators).\n• Strain > 10% to 15%: Exceeds the mechanical tolerance of granulation tissue and osteoblasts, leading to resorption of fracture edges, fibrous pseudarthrosis, and nonunion.\n\nIn bridge plating of comminuted diaphyseal fractures, the plate functions as an extramedullary splint. To optimize fatigue life and promote callus:\n1. Plate Length & Working Length: A long plate should be chosen (plate length at least 3 times the fracture zone length in comminuted fractures). The working length—the distance between the innermost screws on either side of the comminuted zone—must be kept long by leaving several screw holes empty over the fracture site. A long working length decreases construct stiffness and distributes bending moments over a long flexible segment, avoiding localized stress concentration that causes plate fatigue breakage.\n2. Screw Density: The plate screw density (ratio of screws inserted to total screw holes in the plate) should be kept low, typically between 0.3 and 0.5 (fewer than half the holes filled). Adding more screws close to the fracture zone shortens the working length, concentrates bending strain, and increases the risk of plate failure without improving construct durability.\n\n• Option 1 is incorrect because a short plate with a short working length and high screw density creates a construct that is excessively stiff and prone to premature fatigue failure; furthermore, strain < 2% prevents the formation of secondary periosteal callus in comminuted non-anatomically reduced fractures.\n• Option 2 is incorrect because filling holes adjacent to the comminution creates a short working length, concentrating cyclical bending stress at the bridge margin and leading to implant fatigue breakage or nonunion.\n• Option 3 is incorrect because a short plate provides an insufficient lever arm to resist bending and torsional forces, and excessive strain (> 10%–15%) halts osteoblast differentiation, resulting in fibrous nonunion.",
+      th: "ตามทฤษฎี Interfragmentary Strain Theory ของ Perren และหลักการความมั่นคงสัมพัทธ์ (Relative Stability) ของ AO การสมานตัวของกระดูกขึ้นอยู่กับสภาวะกลศาสตร์ของรอยหัก โดยค่า Strain (ε) คำนวณจากการเคลื่อนที่ของรอยหัก (ΔL) หารด้วยความกว้างเดิมของรอยหัก (L) (ε = ΔL / L)\n\n• Strain < 2%: สภาวะความมั่นคงสัมบูรณ์ (Absolute stability) ทำให้กระดูกสมานแบบปฐมภูมิ (Primary direct healing) ผ่าน Haversian remodeling โดยไม่มี Callus ซึ่งต้องการการจัดกระดูกเข้าที่สนิทและการบดอัดรอยหัก (เช่น Lag screw + Neutralization plate ใน Simple fracture)\n• Strain 2% ถึง 10%: สภาวะความมั่นคงสัมพัทธ์ (Relative stability) ซึ่งกระตุ้นให้เกิดการสมานแบบทุติยภูมิ (Secondary indirect healing) ผ่านกระบวนการ Endochondral ossification เกิด Callus เชื่อมรอยหักที่แข็งแรง นี่คือเป้าหมายของการรักษา Comminuted fracture ด้วยเทคนิค Bridge plating หรือ Intramedullary nailing\n• Strain > 10% ถึง 15%: แรงเครียดสูงเกินขีดจำกัดของเนื้อเยื่อ จะทำให้เซลล์สร้างกระดูกไม่สามารถก่อตัว เกิดการละลายของขอบกระดูกและกลายเป็นกระดูกไม่ติด (Fibrous nonunion)\n\nในการทำ Bridge Plating สำหรับกระดูกลำตัวหักละเอียด แผ่นโลหะจะทำหน้าที่เป็น Splint ภายนอกกระดูก ซึ่งการออกแบบโครงสร้างต้องคำนึงถึง:\n1. ความยาวแผ่นโลหะและระยะ Working Length: ควรเลือกแผ่นโลหะที่ยาว (ความยาวแผ่นโลหะอย่างน้อย 3 เท่าของความยาวรอยหัก) และเว้นรูสกรูเหนือบริเวณรอยหักให้ว่าง เพื่อให้มี Working length ที่ยาว ซึ่งจะช่วยลดความแข็งตึง (Stiffness) และกระจายแรงดัด (Bending moment) ไปตามแนวยาวของแผ่นโลหะ ป้องกันการรวมศูนย์แรงเครียดที่จะทำให้แผ่นโลหะล้าและหัก\n2. ความหนาแน่นของสกรู (Screw Density): ควรใช้อัตราส่วนสกรูต่อรูแผ่นโลหะในระดับต่ำ (<0.4 ถึง 0.5) หรือใส่สกรูไม่เกินกึ่งหนึ่งของจำนวนรูทั้งหมด การใส่สกรูชิดรอยหักจะทำให้ระยะ Working length สั้นลง รวมศูนย์แรงเครียด และเสี่ยงต่อแผ่นโลหะหักมากขึ้น\n\n• ตัวเลือกที่ 1 ไม่ถูกต้อง เนื่องจากแผ่นโลหะสั้นที่มี Working length สั้นและสกรูหนาแน่น จะเกิดการรวมศูนย์แรงดัดจนแผ่นโลหะล้าหักง่าย และค่า Strain < 2% จะไม่กระตุ้นให้เกิด Callus ในกระดูกหักละเอียด\n• ตัวเลือกที่ 2 ไม่ถูกต้อง เนื่องจากการใส่สกรูชิดรอยหักจน Working length สั้น จะเพิ่มความเครียดเฉพาะจุดอย่างมหาศาล ทำให้แผ่นโลหะหักล้า\n• ตัวเลือกที่ 3 ไม่ถูกต้อง เนื่องจากแผ่นโลหะขนาดสั้นจะไม่สามารถต้านทานแรงบิดและแรงดัดได้อย่างเพียงพอ และหาก Strain เกิน 10% ถึง 15% จะยับยั้งการสร้างกระดูกและทำให้กระดูกไม่ติด",
+    },
+    pearls: {
+      en: "For comminuted fractures treated with bridge plating, relative stability (2%–10% strain) is maximized by choosing a long plate, maintaining a long working length, and using a low screw density (<0.4–0.5) to distribute bending stress and generate bridging callus.",
+      th: "การทำ Bridge plating ในกระดูกหักละเอียด ต้องอาศัยความมั่นคงสัมพัทธ์ (Strain 2%–10%) โดยใช้แผ่นโลหะยาว เว้นระยะ Working length ให้ยาว และควบคุม Screw density ให้ต่ำ (<0.4–0.5) เพื่อกระจายแรงดัดและกระตุ้นการสร้าง Callus",
+    },
+    boneId: "femur",
+    regionId: "shaft",
+  },
+  {
+    id: "hy-spine-cervical-facet-reduction",
+    category: "spine",
+    tag: { en: "EMERGENCY MANAGEMENT • SUBAXIAL CERVICAL SPINE", th: "การจัดการภาวะฉุกเฉิน • กระดูกสันหลังส่วนคอ" },
+    scenario: {
+      en: "A 26-year-old collegiate rugby player is brought to the emergency department on a rigid backboard with cervical collar after a head-down tackle. He is alert, oriented (GCS 15), and fully cooperative. Physical examination demonstrates Grade 3/5 motor strength in the C6-innervated wrist extensors, absent motor function below C6, and complete sensory loss below the C6 dermatome. Emergent cervical spine CT demonstrates a bilateral jumped/dislocated facet at C5-C6 with 50% anterior translation of the C5 vertebral body. What is the most appropriate next step in the emergency management of this patient?",
+      th: "นักกีฬารักบี้ชายอายุ 26 ปี ถูกนำส่งห้องฉุกเฉินบนกระดานดามหลังและใส่ปลอกคอแข็งหลังเกิดการชนในท่าก้มศีรษะ ผู้ป่วยรู้สึกตัวดี รู้เรื่อง ตอบคำถามได้ถูกต้องครบถ้วน (GCS 15) และให้ความร่วมมือดี ตรวจร่างกายพบกำลังกล้ามเนื้อข้อมือกระดก (C6) อยู่ในระดับ Grade 3/5 กล้ามเนื้อต่ำกว่าระดับ C6 เป็นอัมพาตทั้งหมด และสูญเสียการรับความรู้สึกต่ำกว่าระดับ C6 ลงไป ภาพเอกซเรย์คอมพิวเตอร์ (CT) แสดงข้อต่อด้านหลัง C5-C6 หลุดล็อกทั้งสองข้าง (Bilateral jumped facets) ร่วมกับลำตัวกระดูก C5 เลื่อนไปข้างหน้า 50% ขั้นตอนการรักษาฉุกเฉินที่เหมาะสมที่สุดในผู้ป่วยรายนี้คือข้อใด?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Initiate prompt closed skeletal tong traction with serial neurological examinations and incremental fluoroscopic assessments",
+          th: "เริ่มดึงถ่วงกระดูกกะโหลกศีรษะแบบปิดทันที พร้อมประเมินระบบประสาทและถ่ายภาพรังสีเป็นระยะอย่างใกล้ชิด",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Perform emergent cervical magnetic resonance imaging to assess intervertebral disc retropulsion before any reduction attempt",
+          th: "ส่งตรวจคลื่นแม่เหล็กไฟฟ้ากระดูกคอด่วน เพื่อประเมินหมอนรองกระดูกเคลื่อนทับไขสันหลังก่อนจัดกระดูก",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Administer immediate high-dose intravenous methylprednisolone sodium succinate protocol before undertaking operative or closed intervention",
+          th: "ให้ยาสเตียรอยด์เมทิลเพรดนิโซโลนขนาดสูงทางหลอดเลือดดำทันที ตามแนวทางสากลก่อนทำหัตถการใดๆ",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Proceed directly to emergent open anterior cervical discectomy and fusion in the operating room without closed reduction trial",
+          th: "นำผู้ป่วยเข้าห้องผ่าตัดฉุกเฉินทันที เพื่อผ่าตัดเปิดทางด้านหน้าตัดหมอนรองกระดูกและเชื่อมข้อโดยไม่ดึงจัดกระดูก",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In an alert, awake, and cooperative patient with a subaxial cervical spine bilateral facet dislocation and an incomplete or progressive neurological deficit, the gold-standard immediate management is emergent closed skeletal traction (e.g., using Gardner-Wells tongs or a halo ring) with serial neurological and radiographic examinations (AOSpine / CNS Guidelines). Prompt anatomical realignment restores spinal canal dimensions, relieves spinal cord compression, and optimizes neurological recovery. Delaying closed reduction to obtain an MRI in an alert patient is counterproductive and not indicated, because the patient's neurological status can be continuously evaluated during incremental weight addition (starting with 10–15 lbs and increasing by 5–10 lbs per level under fluoroscopy, up to approximately 50%–70% of body weight or 10 lbs per spinal level).\n\nWhy the distractors are incorrect:\n• Option 1 (Emergent MRI): While MRI is mandatory in obtunded, comatose, or uncooperative patients (to rule out a traumatic disc extrusion that could cause catastrophic cord compression during reduction), waiting for an MRI in an awake, alert patient unnecessarily delays cord decompression. If the patient develops neurological deterioration during closed traction, or if closed reduction fails, traction is immediately released and an emergent MRI is obtained prior to open reduction.\n• Option 2 (Methylprednisolone): High-dose methylprednisolone (NASCIS II/III protocols) is no longer recommended as standard of care by the Congress of Neurological Surgeons (CNS) and American Association of Neurological Surgeons (AANS) guidelines due to lack of proven long-term functional efficacy and significant risks of severe complications (sepsis, pneumonia, gastrointestinal bleeding).\n• Option 3 (Direct anterior surgery without closed reduction trial): Immediate open surgery without attempting closed reduction in the emergency/ICU setting needlessly subjects an awake patient to delayed decompression and operative morbidity. Closed reduction is successful in up to 70%–80% of bilateral facet dislocations and can be performed rapidly at the bedside.",
+      th: "ในผู้ป่วยที่รู้สึกตัวดี รู้เรื่อง และให้ความร่วมมือ (Alert and cooperative) ซึ่งได้รับการบาดเจ็บกระดูกคอหลุดแบบ Bilateral Facet Dislocation ร่วมกับมีภาวะการทำงานของระบบประสาทบกพร่อง (Neurologic deficit) แนวทางการรักษาฉุกเฉินมาตรฐาน (AOSpine / CNS Guidelines) คือการทำ Emergent Closed Skeletal Traction ทันที (เช่น การใช้ Gardner-Wells tongs หรือ Halo ring) โดยเริ่มถ่วงน้ำหนักและค่อยๆ เพิ่มน้ำหนักทีละน้อย (5–10 ปอนด์ต่อระดับกระดูกคอ) ภายใต้การตรวจเช็กระบบประสาทและถ่ายภาพรังสี/Fluoroscopy ติดตามอย่างใกล้ชิด การดึงจัดกระดูกให้กลับเข้าที่โดยเร็วที่สุดจะช่วยคลายการกดทับไขสันหลัง (Spinal canal decompression) และเพิ่มโอกาสฟื้นตัวของระบบประสาทได้ดีที่สุด\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1 (การส่งทำ MRI ทันที): การทำ MRI ก่อนดึงกระดูกเป็นข้อบ่งชี้ที่จำเป็นในผู้ป่วยที่ไม่รู้สึกตัว สับสน หรือไม่สามารถตรวจติดตามระบบประสาทได้ (เพื่อตรวจหา Traumatic disc herniation ที่อาจถูกดันเข้ามากดไขสันหลัง) แต่ในผู้ป่วยที่ตื่นดีและตรวจระบบประสาทได้ การรอทำ MRI จะทำให้การแก้ไขภาวะไขสันหลังขาดเลือดล่าช้าออกไปอย่างไม่จำเป็น (หากดึงจัดกระดูกแล้วระบบประสาทแย่ลง จึงหยุดดึงและส่ง MRI ด่วน)\n• ตัวเลือกที่ 2 (การให้ยา Methylprednisolone ขนาดสูง): ปัจจุบันแนวทางเวชปฏิบัติของ AANS/CNS ไม่แนะนำให้ใช้ Methylprednisolone ขนาดสูง (NASCIS protocol) เป็นมาตรฐานการรักษาอีกต่อไป เนื่องจากไม่มีหลักฐานประสิทธิผลทางคลินิกที่ชัดเจน แต่เพิ่มความเสี่ยงต่อภาวะแทรกซ้อนรุนแรง เช่น การติดเชื้อในปอดและทางเดินอาหาร\n• ตัวเลือกที่ 3 (การผ่าตัดเปิดทางด้านหน้าทันที): การนำผู้ป่วยไปผ่าตัดเปิดทันทีโดยไม่พยายามดึงจัดกระดูกแบบปิดที่ข้างเตียง จะทำให้ไขสันหลังได้รับการคลายการกดทับช้าลงโดยไม่จำเป็น ซึ่งการทำ Closed reduction มีอัตราความสำเร็จสูงถึง 70%–80%",
+    },
+    pearls: {
+      en: "In bilateral cervical facet dislocations, an awake, alert patient warrants immediate closed skeletal traction with serial neuro checks; obtain emergent MRI first ONLY if the patient is obtunded, unable to cooperate, or develops neurological worsening during reduction.",
+      th: "กระดูกคอหลุดแบบ Facet Dislocation ในผู้ป่วยที่รู้สติและสื่อสารได้ ให้เริ่มดึง Closed Skeletal Traction ทันทีโดยไม่ต้องรอ MRI แต่หากผู้ป่วยหมดสติหรือไม่ร่วมมือ ต้องทำ MRI ก่อนเสมอเพื่อระวัง Herniated Disc กดไขสันหลัง",
+    },
+    boneId: "spine",
+    regionId: "cervical",
+  },
+  {
+    id: "hy-pedi-tillaux-biomechanics",
+    category: "pedi",
+    tag: { en: "PEDIATRIC TRAUMA • ADOLESCENT ANKLE", th: "การบาดเจ็บในเด็ก • ข้อเท้าในวัยรุ่น" },
+    scenario: {
+      en: "A 14-year-old adolescent soccer player sustains an external rotation injury to her supinated right ankle after a slide tackle. Physical examination reveals focal swelling and point tenderness over the anterolateral distal tibia and syndesmosis, with no tenderness over the proximal fibula. Mortise radiography and CT imaging demonstrate a Salter-Harris Type III intra-articular fracture of the anterolateral distal tibial epiphysis with 3.5 mm of displacement. What developmental and biomechanical characteristic uniquely predisposes adolescents to this specific fracture pattern?",
+      th: "นักฟุตบอลหญิงอายุ 14 ปี ประสบอุบัติเหตุข้อเท้าขวาถูกบิดหมุนออกด้านนอก (External rotation) ในท่า Supination จากการเข้าสกัดบอล ตรวจร่างกายพบข้อเท้าบวมและกดเจ็บเฉพาะจุดบริเวณด้านหน้าและด้านนอกของกระดูกหน้าแข้งส่วนปลาย (Anterolateral distal tibia) บริเวณ Syndesmosis โดยไม่พบจุดกดเจ็บบริเวณส่วนต้นของกระดูกน่อง ภาพเอกซเรย์ Mortise view และ CT scan พบกระดูกหักเข้าข้อแบบ Salter-Harris Type III บริเวณ Anterolateral tibial epiphysis เคลื่อนที่ 3.5 มม. ลักษณะทางชีวกลศาสตร์และการเจริญเติบโตของกระดูกข้อใดที่ทำให้เกิดกระดูกหักรูปแบบเฉพาะนี้ในวัยรุ่น?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Asymmetric physeal closure progressing from medial to lateral, leaving the anterolateral physis vulnerable to avulsion by the anterior inferior tibiofibular ligament",
+          th: "การปิดของแผ่นการเจริญเติบโตจากด้านในไปด้านนอก ทำให้กระดูกส่วนหน้าด้านนอกเสี่ยงต่อการถูกกระชากหลุดโดย Anterior Inferior Tibiofibular Ligament",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Asymmetric physeal closure progressing from lateral to medial, leaving the anteromedial physis vulnerable to avulsion by the superficial deltoid ligament complex",
+          th: "การปิดของแผ่นการเจริญเติบโตจากด้านนอกไปด้านใน ทำให้กระดูกส่วนหน้าด้านในเสี่ยงต่อการถูกกระชากหลุดโดย Superficial Deltoid Ligament Complex",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Asymmetric physeal closure progressing from posterior to anterior, leaving the anterocentral physis vulnerable to avulsion by the transverse tibiofibular ligament complex",
+          th: "การปิดของแผ่นการเจริญเติบโตจากด้านหลังไปด้านหน้า ทำให้กระดูกส่วนหน้าตรงกลางเสี่ยงต่อการถูกกระชากหลุดโดย Transverse Tibiofibular Ligament Complex",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Centripetal physeal closure progressing from peripheral to central, leaving the posterolateral physis vulnerable to avulsion by the posterior inferior tibiofibular ligament",
+          th: "การปิดของแผ่นการเจริญเติบโตจากขอบรอบนอกเข้าสู่ศูนย์กลาง ทำให้กระดูกส่วนหลังด้านนอกเสี่ยงต่อการถูกกระชากหลุดโดย Posterior Inferior Tibiofibular Ligament",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "A juvenile Tillaux fracture is a transitional Salter-Harris Type III intra-articular avulsion fracture of the anterolateral distal tibial epiphysis (the pediatric equivalent of a Chaput tubercle avulsion). It occurs exclusively during a narrow developmental window in adolescence (typically ages 12–15) due to the physiological sequence of distal tibial physeal closure described by Kump. Physeal closure begins centrally, spreads anteromedially to the medial malleolus, and concludes at the anterolateral aspect. Consequently, when an adolescent sustains an external rotation or supination-external rotation injury during this transitional phase, the fused medial physis resists deformation, while the still-open anterolateral physis fails under tensile stress transmitted by the taut anterior inferior tibiofibular ligament (AITFL). Displacement > 2 mm requires anatomic reduction (closed reduction via internal rotation and direct compression, or open/percutaneous screw fixation strictly parallel to the joint without crossing the open physis) to restore articular congruity and prevent post-traumatic arthrosis.\n\nWhy the distractors are incorrect:\n• Option 1: The distal tibial physis never closes from lateral to medial. The lateral physis is the LAST part to fuse, not the first. The superficial deltoid ligament inserts into the medial malleolus and navicular/calcaneus and is involved in pronation-eversion injuries.\n• Option 2: The physis closes in an asymmetric mediolateral fashion, not posterior to anterior. The transverse tibiofibular ligament is a deep component of the posterior syndesmosis and does not insert on the anterolateral epiphyseal fragment.\n• Option 3: Physeal closure is not centripetal (periphery-to-center). Furthermore, avulsion of the posterolateral tibial fragment by the posterior inferior tibiofibular ligament (PITFL) corresponds to a Volkmann fracture (seen as the posterior metaphyseal spike in Triplane fractures), not the anterolateral Tillaux fragment.",
+      th: "กระดูกหักแบบ Juvenile Tillaux เป็นกระดูกหักเข้าข้อชนิด Salter-Harris Type III บริเวณ Anterolateral Distal Tibial Epiphysis ซึ่งจัดเป็น Transitional Fracture ที่เกิดขึ้นเฉพาะในวัยรุ่นช่วงอายุ 12–15 ปี เกิดขึ้นจากกระบวนการปิดตัวของแผ่นการเจริญเติบโต (Physeal closure) ตามรูปแบบของ Kump ซึ่งแผ่นการเจริญเติบโตของกระดูกหน้าแข้งส่วนปลายจะเริ่มเชื่อมปิดจากบริเวณศูนย์กลางก่อน แล้วลามไปทางด้านใน (Medial / Medial malleolus) และปิดส่วนหน้าด้านนอก (Anterolateral) เป็นลำดับสุดท้าย เมื่อมีแรงบิดหมุนข้อเท้าออกด้านนอก (External rotation) แรงตึงจะถูกส่งผ่านเอ็นยึดกระดูกหน้าแข้งและกระดูกน่องด้านหน้า (Anterior Inferior Tibiofibular Ligament: AITFL) กระชากดึงชิ้นกระดูกส่วนหน้าด้านนอกที่ยังไม่ปิดหลุดออกมา หากชิ้นกระดูกเคลื่อนตัวเกิน 2 มม. มีข้อบ่งชี้ในการจัดกระดูกให้เข้าที่อย่างสมบูรณ์ (Anatomic reduction) และยึดด้วยสกรูเกลียวเพื่อป้องกันผิวข้อเสื่อม\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1: แผ่นการเจริญเติบโตของกระดูกหน้าแข้งไม่ได้ปิดจากนอกเข้าใน ส่วนด้านนอกคือส่วนสุดท้ายที่ปิด และเอ็น Deltoid ligament อยู่ฝั่งด้านในของข้อเท้า\n• ตัวเลือกที่ 2: แผ่นการเจริญเติบโตไม่ได้ปิดจากหลังไปหน้า และเอ็น Transverse tibiofibular ligament เป็นเอ็นส่วนหลังลึก ไม่ได้เกาะที่ชิ้นกระดูก Tillaux\n• ตัวเลือกที่ 3: แผ่นการเจริญเติบโตไม่ได้ปิดจากขอบนอกเข้าหากึ่งกลาง และการดึงกระชากของเอ็น PITFL ทางด้านหลังจะทำให้เกิด Volkmann's fragment (พบใน Triplane fracture) ไม่ใช่ชิ้นกระดูก Tillaux",
+    },
+    pearls: {
+      en: "The distal tibial physis closes from central to medial and finishes laterally (Kump's pattern); external rotation during this transitional window avulses the open anterolateral epiphysis via the AITFL, creating the classic Salter-Harris III juvenile Tillaux fracture.",
+      th: "แผ่นเจริญเติบโตของกระดูกหน้าแข้งส่วนปลายจะปิดจากด้านในไปด้านนอกเป็นลำดับสุดท้าย แรงบิดหมุนออก (External rotation) จะส่งผ่านเอ็น AITFL กระชากกระดูกส่วนหน้าด้านนอกหลุดเกิดเป็น Juvenile Tillaux fracture (Salter-Harris III)",
+    },
+    boneId: "tibia",
+    regionId: "distal",
+  },
+  // ── Pelvic Ring Disruption — Emergent Pelvic Binder Placement & Biomechanical Hemodynamic Mechanism ──
+  {
+    id: "hy-pelvis-binder-trochanter",
+    category: "lower",
+    tag: { en: "EMERGENCY MANAGEMENT • PELVIC RING", th: "การจัดการภาวะฉุกเฉิน • วงแหวนเชิงกราน" },
+    scenario: {
+      en: "A 28-year-old male motorcyclist is brought to the trauma resuscitation bay following a head-on collision with a truck. On initial assessment, blood pressure is 78/48 mmHg, heart rate is 132 beats/min, and gentle manual compression reveals gross pelvic ring instability with extensive perineal ecchymosis. Focused assessment with sonography for trauma (FAST) demonstrates no free intraperitoneal fluid. An emergency bedside anteroposterior pelvic radiograph reveals an APC-III pelvic ring disruption with 4.5 cm of pubic symphyseal diastasis and complete disruption of the left sacroiliac joint. The trauma team prepares to immediately apply a commercial non-invasive pelvic circumferential compression device (pelvic binder) for emergent mechanical stabilization. At which anatomical level must the pelvic binder be centered, and what is the primary biomechanical mechanism by which it achieves hemodynamic stabilization?",
+      th: "ผู้ป่วยชายอายุ 28 ปี ขี่รถจักรยานยนต์ชนประสานงากับรถบรรทุก ถูกนำส่งห้องกู้ชีพฉุกเฉิน แรกรับความดันโลหิต 78/48 มม.ปรอท ชีพจร 132 ครั้ง/นาที การตรวจกดกระดูกเชิงกรานอย่างนุ่มนวลพบวงแหวนเชิงกรานหลวมคลอนผิดรูปชัดเจน (Gross instability) ร่วมกับมีรอยฟกช้ำขนาดใหญ่บริเวณฝีเย็บ ผลอัลตราซาวด์ FAST ไม่พบของเหลวอิสระในช่องท้อง ภาพเอกซเรย์เชิงกรานท่านอนหงาย (AP Pelvis) พบกระดูกเชิงกรานหักแบบ APC-III โดยมีรอยแยกของ Pubic symphysis กว้าง 4.5 ซม. และข้อต่อ Sacroiliac ด้านซ้ายฉีกขาดหลุดออกจากกันอย่างสมบูรณ์ ทีมศัลยแพทย์อุบัติเหตุเตรียมใส่สายรัดเชิงกรานสำเร็จรูป (Commercial pelvic binder) เพื่อช่วยชีวิตอย่างเร่งด่วน อุปกรณ์รัดเชิงกรานนี้ต้องอยู่ในระดับจุดสังเกตทางกายวิภาคใด และกลไกทางชีวกลศาสตร์หลักในการช่วยควบคุมการตกเลือดคืออะไร?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Centered over the bilateral greater trochanters, achieving optimal mechanical reduction of pelvic volume to tamponade bleeding retroperitoneal venous plexuses and cancellous surfaces",
+          th: "รัดกึ่งกลางที่ปุ่มกระดูก Greater Trochanter ทั้งสองข้าง เพื่อลดปริมาตรอุ้งเชิงกรานอย่างมีประสิทธิภาพสูงสุดและกดห้ามเลือดจากร่างแหหลอดเลือดดำและผิวหน้ากระดูก",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Centered over the bilateral anterior superior iliac spines, applying direct compressive force to occlude lacerated branches of the internal iliac arterial trunk",
+          th: "รัดกึ่งกลางที่ปุ่มกระดูก Anterior Superior Iliac Spine ทั้งสองข้าง เพื่อส่งแรงกดลงบนอุ้งเชิงกรานโดยตรงและอุดหลอดเลือดแดง Internal Iliac ที่ฉีกขาด",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Centered over the bilateral iliac crests, compressing the retroperitoneal compartment to elevate hydrostatic pressure and mechanically seal the superior gluteal artery",
+          th: "รัดกึ่งกลางที่ขอบกระดูกเชิงกราน Iliac Crest ทั้งสองข้าง เพื่อบีบอัดช่องว่างหลังเยื่อบุช่องท้องและเพิ่มแรงดันของเหลวเพื่อหยุดการตกเลือดจากหลอดเลือดแดง Superior Gluteal",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Centered over the bilateral proximal femoral shafts, generating internal rotation of the lower extremities to selectively compress the external iliac vascular bundle",
+          th: "รัดกึ่งกลางที่ก้านกระดูกต้นขา Proximal Femoral Shaft ทั้งสองข้าง เพื่อหมุนขาเข้าด้านในและกดปิดกลุ่มหลอดเลือดใหญ่ External Iliac ในช่องสามเหลี่ยมขาหนีบ",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "In open-book pelvic ring disruptions (Young-Burgess APC-II and APC-III), disruption of the anterior pubic symphysis combined with anterior (and in APC-III, complete posterior) sacroiliac ligament failure drastically expands pelvic volume, transforming the closed retroperitoneal space into an unconstrained reservoir for massive hemorrhage. More than 80% to 85% of acute pelvic hemorrhage originates from low-pressure sources: the extensive presacral and perivesical venous plexuses and raw cancellous bone fracture surfaces, rather than major arterial transections. Application of a non-invasive pelvic circumferential compression device (pelvic binder) provides immediate mechanical reduction and stabilization. Biomechanical and clinical trials (e.g., Bottlang et al., Krieg et al.) have definitively established that the binder MUST be centered directly over the greater trochanters. Positioning over the greater trochanters utilizes the femoral heads and necks as long mechanical moment arms relative to the sacroiliac axis, delivering maximal closing force to reapproximate both the symphysis and the SI joints. This volume reduction allows a small retroperitoneal hematoma to generate sufficient tissue tamponade pressure to halt venous and cancellous bleeding.\n\nWhy the distractors are incorrect:\n• Option 1: Positioning over the ASIS fails to provide adequate lever-arm mechanical advantage to close the symphysis. Furthermore, binders cannot generate sufficient localized pressure to occlude high-pressure arterial bleeding from the internal iliac artery or its branches (such as the pudendal or obturator arteries), which requires angiographic embolization or surgical preperitoneal pelvic packing.\n• Option 2: Placing the binder over the iliac crests is the most common clinical error. Biomechanically, compressive forces applied at the iliac crests squeeze the superior iliac wings inward while paradoxically springing OPEN the posterior sacroiliac joint through a fulcrum effect, worsening pelvic volume expansion and accelerating retroperitoneal exsanguination.\n• Option 3: Placing the binder over the proximal femoral shafts distal to the trochanters loses mechanical coupling with the pelvic skeleton, risks cutaneous pressure ulcers and femoral nerve compression, and fails to compress the retroperitoneal pelvic volume or close the pelvic ring.",
+      th: "ในภาวะกระดูกเชิงกรานหักแบบ Open-book (Young-Burgess APC-II และ APC-III) การฉีกขาดของรอยต่อ Pubic symphysis ร่วมกับเอ็นยึด Sacroiliac ด้านหน้า (และด้านหลังใน APC-III) จะทำให้ปริมาตรของช่องเชิงกรานขยายกว้างขึ้นอย่างมหาศาล ทำให้ช่องว่างหลังเยื่อบุช่องท้อง (Retroperitoneal space) ไม่สามารถกักเก็บแรงดันเพื่อห้ามเลือดได้ โดยมากกว่า 80-85% ของการตกเลือดในกระดูกเชิงกรานหักมาจากหลอดเลือดดำแรงดันต่ำ (Presacral และ Perivesical venous plexuses) ร่วมกับเลือดที่ซึมจากผิวหน้ากระดูกแตก ไม่ใช่จากหลอดเลือดแดงใหญ่ การใส่สายรัดเชิงกราน (Pelvic binder) จะช่วยดึงกระดูกเชิงกรานที่อ้าออกให้หุบเข้าที่อย่างรวดเร็ว โดยงานวิจัยทางชีวกลศาสตร์ (Bottlang et al., Krieg et al.) พิสูจน์ชัดเจนว่าตำแหน่งที่ถูกต้องตามหลักฟิสิกส์ต้องอยู่กึ่งกลางระดับ 'Greater trochanter' ทั้งสองข้าง เนื่องจากกระดูกคอและหัวกระดูกต้นขาจะทำหน้าที่เป็นคานงัดที่มีแขนของแรง (Moment arm) ยาวที่สุดในการส่งผ่านแรงบีบไปปิด Pubic symphysis และ SI joint ด้านหลัง ทำให้ปริมาตรเชิงกรานลดลงจนเกิด Retroperitoneal tamponade ห้ามเลือดจากหลอดเลือดดำและกระดูกได้สำเร็จ\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1: การรัดที่ระดับ ASIS ไม่มีแขนของคานงัดเพียงพอที่จะหุบข้อต่อด้านหน้าและด้านหลังเข้าหากัน อีกทั้งสายรัดภายนอกไม่สามารถสร้างแรงกดที่หยุดเลือดแดงแรงดันสูงจาก Internal iliac artery ได้ ซึ่งหากมีเลือดออกจากหลอดเลือดแดงจะต้องรักษาด้วยการฉีดสารอุดหลอดเลือด (Angioembolization) หรือการผ่าตัดยัดผ้าก๊อซก้นเชิงกราน (Preperitoneal pelvic packing)\n• ตัวเลือกที่ 2: การรัดที่ระดับ Iliac crest เป็นข้อผิดพลาดทางคลินิกที่พบบ่อยที่สุด แรงบีบที่ปีกกระดูกเชิงกรานด้านบนจะทำหน้าที่เป็นจุดหมุน (Fulcrum) งัดให้ข้อต่อ Sacroiliac ด้านหลัง 'อ้าเปิดกว้างขึ้น' ยิ่งเพิ่มปริมาตรอุ้งเชิงกรานและทำให้ผู้ป่วยเสียเลือดรุนแรงขึ้น\n• ตัวเลือกที่ 3: การรัดที่ก้านกระดูกต้นขาต่ำกว่า Trochanter จะสูญเสียแรงส่งผ่านไปยังวงแหวนเชิงกราน ไม่สามารถลดปริมาตรอุ้งเชิงกรานได้ และอาจเกิดภาวะแทรกซ้อนจากการกดทับเส้นประสาทและหลอดเลือดที่ขา",
+    },
+    pearls: {
+      en: "Pelvic binders must always be centered over the greater trochanters, not the iliac crests; trochanteric placement maximizes mechanical lever-arm closure of the pelvic ring to re-establish retroperitoneal venous tamponade.",
+      th: "สายรัดเชิงกราน (Pelvic binder) ต้องรัดให้กึ่งกลางอยู่ระดับ Greater Trochanter เสมอ ห้ามรัดที่ระดับ Iliac Crest เพราะจะทำให้ข้อต่อด้านหลังอ้าออกและตกเลือดรุนแรงขึ้น",
+    },
+    boneId: "pelvis",
+    regionId: "pelvic-ring",
+  },
+  // ── Calcaneus Joint-Depression Fracture — Extensile Lateral Approach & Full-Thickness Flap Technique ──
+  {
+    id: "hy-calcaneus-extensile-lateral-flap",
+    category: "lower",
+    tag: { en: "SURGICAL APPROACH • CALCANEUS", th: "ทางเข้าผ่าตัด • กระดูกส้นเท้า" },
+    scenario: {
+      en: "A 42-year-old carpenter sustains a closed, joint-depression intra-articular calcaneal fracture (Sanders Type IIB) after falling 12 feet from scaffolding. On day 14 post-injury, pre-existing edema and fracture blisters have completely resolved, and physical examination confirms a positive skin wrinkle sign over the lateral hindfoot. The orthopedic trauma surgeon schedules open reduction and internal fixation utilizing an extensile lateral approach. Which dissection technique and anatomical principle must be strictly adhered to during development of the L-shaped lateral flap to prevent iatrogenic flap necrosis and nerve injury?",
+      th: "ผู้ป่วยชายอายุ 42 ปี อาชีพช่างไม้ ได้รับบาดเจ็บกระดูกส้นเท้าหักเข้าข้อชนิดยุบตัว (Closed intra-articular Sanders Type IIB calcaneus fracture) จากการตกจากนั่งร้านสูง 12 ฟุต ในวันที่ 14 หลังการบาดเจ็บ อาการบวมและตุ่มน้ำพองยุบหายหมด ตรวจร่างกายพบรอยย่นของผิวหนัง (Positive skin wrinkle sign) บริเวณส้นเท้าด้านนอกชัดเจน ศัลยแพทย์กระดูกวางแผนผ่าตัดจัดแนวกระดูกและยึดตรึงด้วยแผ่นโลหะผ่านทางเข้าผ่าตัด Extensile lateral approach เทคนิคการผ่าตัดและหลักการทางกายวิภาคข้อใดที่ต้องปฏิบัติอย่างเคร่งครัดขณะเปิดแผ่นพังผืดรูปตัวแอล (L-shaped flap) เพื่อป้องกันภาวะเนื้อเยื่อขอบแผลตายและการบาดเจ็บต่อเส้นประสาท?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Development of a full-thickness subperiosteal flap elevated directly off the calcaneal lateral cortex, preserving the sural nerve and peroneal tendon sheath intact within the flap",
+          th: "การเลาะเปิดแผ่นผิวหนังแบบหนาเต็มชั้น (Full-thickness subperiosteal flap) ลึกถึงผิวกระดูก โดยเก็บรักษาเส้นประสาท Sural และปลอกหุ้มเอ็น Peroneal ไว้ภายในเนื้อแผ่นพังผืด",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Development of a superficial subcutaneous flap elevated above the lateral calcaneofibular ligament, isolating the sural nerve separately for posterior mobilization behind the fibula",
+          th: "การเลาะเปิดแผ่นผิวหนังเฉพาะชั้นตื้น (Superficial subcutaneous flap) เหนือต่อเส้นเอ็น Calcaneofibular โดยแยกเส้นประสาท Sural ออกมาเดี่ยวๆ เพื่อดึงหลบไปด้านหลังกระดูกน่อง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Development of an intermuscular plane split longitudinally between the peroneus longus and brevis, mobilizing the peroneal tendons individually while retracting the sural nerve anteriorly",
+          th: "การเลาะเปิดผ่านร่องระหว่างกล้ามเนื้อ (Intermuscular plane) แยกเอ็น Peroneus Longus และ Brevis ออกจากกัน พร้อมกับดึงรั้งเส้นประสาท Sural หลบไปทางด้านหน้าของข้อเท้า",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Development of a thin epifascial skin flap elevated superficial to the crural fascia, maintaining the peroneal tendon sheath firmly anchored against the lateral calcaneal wall",
+          th: "การเลาะเปิดแผ่นผิวหนังชั้นบน (Epifascial skin flap) เหนือต่อพังผืด Crural fascia โดยคงปลอกหุ้มเอ็น Peroneal ให้ยึดติดแน่นอยู่กับผนังกระดูกด้านนอกเพื่อป้องกันการเลื่อนหลุด",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The extensile lateral approach (described by Letournel, Benirschke, and Sangeorzan) is the workhorse exposure for displaced intra-articular calcaneus fractures. It provides direct, perpendicular visualization of the subtalar posterior facet, calcaneocuboid joint, and lateral calcaneal wall. However, wound healing complications (flap edge necrosis, deep infection) historically occur in up to 10% to 15% of cases if soft-tissue handling is faulty. The critical surgical rule is the mandatory development of a single, full-thickness subperiosteal flap. The scalpel is taken sharply straight down to the bone at all points along the vertical and horizontal limbs. The flap contains skin, subcutaneous fat, deep fascia, the lateral calcaneal artery (which provides the sole angiosome blood supply to the corner), the sural nerve, and the peroneal tendons enclosed within their calcaneofibular sheath. The periosteum is lifted directly off the lateral calcaneal cortical wall using a periosteal elevator in a strict 'no-touch' technique, retracting the flap using K-wires placed into the fibula, talus, and cuboid rather than handheld toothed retractors.\n\nWhy the distractors are incorrect:\n• Option 1: Elevating a superficial subcutaneous flap disrupts the delicate subdermal plexus and severs the perforating microvasculature from the lateral calcaneal artery, almost universally causing catastrophic ischemic full-thickness necrosis of the apical skin corner. Furthermore, attempting to dissect out and isolate the sural nerve damages its epineural blood supply and causes traction neurapraxia or painful neuroma formation.\n• Option 2: Splitting between the peroneus longus and brevis tendons violates the peroneal sheath, exposes the tendons to desiccation and scarring, destroys the integrity of the flap, and fails to expose the lateral calcaneal wall and subtalar joint subperiosteally.\n• Option 3: An epifascial flap leaving the peroneal sheath anchored to the bone shears the angiosome perforators supplying the overlying skin, and prevents mobilization of the soft-tissue envelope necessary to visualize the posterior facet and anterior process.",
+      th: "ทางเข้า Extensile lateral approach (พัฒนาโดย Letournel, Benirschke และ Sangeorzan) เป็นทางเข้าผ่าตัดมาตรฐานหลักสำหรับกระดูกส้นเท้าหักเข้าข้อชนิดเคลื่อนที่ เพราะช่วยให้มองเห็นผิวข้อ Subtalar posterior facet, ผิวข้อ Calcaneocuboid และผนังด้านนอกของกระดูกส้นเท้าได้อย่างสมบูรณ์ อย่างไรก็ดี แผลผ่าตัดนี้มีความเสี่ยงต่อภาวะขอบแผลตายและการติดเชื้อลึกสูงถึง 10-15% หากจัดการเนื้อเยื่อไม่ถูกต้อง หลักการสำคัญที่สุดที่ต้องยึดถืออย่างเคร่งครัดคือ การเปิดแผ่นเนื้อเยื่อแบบหนาเต็มชั้นถึงกระดูก (Full-thickness subperiosteal flap) ด้วยเทคนิค 'No-touch technique' โดยลงมีดกรีดตรงลงถึงกระดูกในคราวเดียวตลอดแนวแผลรูปตัวแอล แผ่นเนื้อเยื่อนี้จะต้องประกอบด้วยผิวหนัง, ไขมันใต้ผิวหนัง, พังผืดชั้นลึก, เส้นเลือด Lateral calcaneal artery (ซึ่งเป็นเส้นเลือดหลักเลี้ยงมุมแผล), เส้นประสาท Sural nerve และเอ็น Peroneal ทั้งหมดที่อยู่ในปลอกหุ้ม โดยใช้ K-wire ปักเข้ากระดูก Talus, Fibula และ Cuboid แล้วดัดงอเพื่อเกี่ยวรั้งแผ่นเนื้อเยื่อไว้แทนการใช้เครื่องมือเกี่ยวแผลที่มีฟันจับดึง เพื่อไม่ให้กระทบกระเทือนต่อระบบไหลเวียนโลหิต\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1: การเลาะแยกผิวหนังเฉพาะชั้นตื้นใต้ผิวหนังจะตัดทำลายแขนงเส้นเลือดฝอยที่ขึ้นมาจาก Lateral calcaneal artery ส่งผลให้มุมแผลขาดเลือดและเกิดเนื้อตายเน่าทั้งชั้น (Ischemic skin slough) อย่างแน่นอน และการพยายามเลาะหาเส้นประสาท Sural แยกออกมาเดี่ยวๆ จะทำลายเส้นเลือดเลี้ยงเส้นประสาทและเสี่ยงต่อการเกิด Painful neuroma เรื้อรัง\n• ตัวเลือกที่ 2: การผ่าแยกตรงกลางระหว่างเอ็น Peroneus longus และ brevis จะทำลายปลอกหุ้มเอ็น ทำให้เกิดพังผืดรัดเอ็น และไม่สามารถเปิดมองเห็นผนังกระดูกด้านนอกของส้นเท้าได้\n• ตัวเลือกที่ 3: การเปิดเฉพาะชั้น Epifascial โดยทิ้งปลอกเอ็นไว้ติดกระดูกจะตัดทำลายร่างแหเส้นเลือดที่ส่งไปเลี้ยงผิวหนัง และไม่สามารถเปิดรั้งเนื้อเยื่อเพื่อมองเห็นผิวข้อด้านหลังได้",
+    },
+    pearls: {
+      en: "The extensile lateral approach to the calcaneus requires an uncompromising full-thickness subperiosteal flap down to bone; dissecting superficial to the peroneal sheath or sural nerve devascularizes the flap and leads to catastrophic wound breakdown.",
+      th: "การผ่าตัด Extensile Lateral Approach ของกระดูกส้นเท้า ต้องเปิดแผ่นพังผืดแบบหนาเต็มชั้น (Full-thickness subperiosteal flap) ถึงผิวกระดูกเสมอ หากเลาะแยกชั้นตื้นเหนือปลอกเอ็น Peroneal หรือแยกเส้นประสาท Sural จะทำให้ขอบแผลขาดเลือดและเนื้อตายเน่า",
+    },
+    boneId: "calcaneus",
+    regionId: "hindfoot",
+  },
+  // ── First Carpometacarpal Fracture-Subluxation (Bennett Fracture) — Deforming Forces & Ligamentous Anatomy ──
+  {
+    id: "hy-hand-bennett-deforming-forces",
+    category: "upper",
+    tag: { en: "BIOMECHANICS & ANATOMY • 1ST METACARPAL", th: "ชีวกลศาสตร์และกายวิภาค • โคนกระดูกฝ่ามือนิ้วหัวแม่มือ" },
+    scenario: {
+      en: "A 26-year-old professional boxer strikes an opponent with an axial blow against a flexed thumb and presents with acute swelling, tenderness, and gross shortening at the base of the first ray. A true anteroposterior radiograph (Robert's view) demonstrates a two-part intra-articular fracture-subluxation of the first carpometacarpal joint (Bennett fracture). A small triangular volar-ulnar fragment remains anatomically aligned with the trapezium, whereas the large distal metacarpal shaft fragment is displaced proximally, dorsally, and radially with adduction. Which anatomical structure maintains the stability of the small volar-ulnar fragment, and which primary muscle-tendon unit exerts the deforming force causing proximal and radial displacement of the main metacarpal shaft?",
+      th: "นักมวยอาชีพชายอายุ 26 ปี ชกคู่ต่อสู้ด้วยหมัดตรงโดยนิ้วหัวแม่มืองออยู่ ได้รับบาดเจ็บบริเวณโคนนิ้วหัวแม่มือ บวม ปวดรุนแรง และเห็นแนวนิ้วสั้นลงชัดเจน ภาพเอกซเรย์ท่า True AP (Robert's view) พบกระดูกหักเข้าข้อสองชิ้นร่วมกับข้อเคลื่อนหลุดบริเวณรอยต่อ Trapeziometacarpal (Bennett fracture) โดยพบชิ้นกระดูกสามเหลี่ยมขนาดเล็กทางด้าน Volar-ulnar ยังคงวางตัวแนบสนิทอยู่กับกระดูก Trapezium ในขณะที่กระดูกชิ้นหลักส่วนก้าน Metacarpal เลื่อนหลุดไปทาง Proximal, Dorsal และ Radial ร่วมกับหุบเข้าด้านใน (Adduction) โครงสร้างเอ็นใดที่ยึดตรึงชิ้นกระดูก Volar-ulnar ให้คงอยู่ในตำแหน่งเดิม และเส้นเอ็นกล้ามเนื้อหลักมัดใดที่เป็นแรงดึงรั้งหลักทำให้ชิ้นกระดูกก้าน Metacarpal เคลื่อนหลุดขึ้นด้านบนและออกด้านข้าง?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "The anterior oblique ligament holds the volar-ulnar fragment, while the abductor pollicis longus exerts the deforming force on the shaft fragment",
+          th: "เส้นเอ็น Anterior oblique ligament ยึดตรึงชิ้นส่วนกระดูกด้าน Volar-ulnar ในขณะที่เอ็นกล้ามเนื้อ Abductor pollicis longus ทำหน้าที่ดึงรั้งชิ้นส่วนก้านกระดูก",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "The posterior oblique ligament holds the volar-ulnar fragment, while the extensor pollicis brevis exerts the deforming force on the shaft fragment",
+          th: "เส้นเอ็น Posterior oblique ligament ยึดตรึงชิ้นส่วนกระดูกด้าน Volar-ulnar ในขณะที่เอ็นกล้ามเนื้อ Extensor pollicis brevis ทำหน้าที่ดึงรั้งชิ้นส่วนก้านกระดูก",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "The dorsoradial capsular ligament holds the volar-ulnar fragment, while the flexor pollicis longus exerts the deforming force on the shaft fragment",
+          th: "เส้นเอ็น Dorsoradial capsular ligament ยึดตรึงชิ้นส่วนกระดูกด้าน Volar-ulnar ในขณะที่เอ็นกล้ามเนื้อ Flexor pollicis longus ทำหน้าที่ดึงรั้งชิ้นส่วนก้านกระดูก",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "The intermetacarpal transverse ligament holds the volar-ulnar fragment, while the opponens pollicis exerts the deforming force on the shaft fragment",
+          th: "เส้นเอ็น Intermetacarpal transverse ligament ยึดตรึงชิ้นส่วนกระดูกด้าน Volar-ulnar ในขณะที่เอ็นกล้ามเนื้อ Opponens pollicis ทำหน้าที่ดึงรั้งชิ้นส่วนก้านกระดูก",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "Bennett's fracture is an intra-articular two-part fracture-subluxation of the first carpometacarpal (trapeziometacarpal) joint caused by an axial load applied along a partially flexed thumb metacarpal. The hallmark pathophysiology is governed by a distinct dual-fragment dynamic: (1) The small triangular volar-ulnar fragment is held in anatomical articulation with the trapezium by the strong anterior oblique ligament (AOL), historically termed the 'volar beak ligament'. (2) The larger distal metacarpal shaft fragment is displaced proximally, dorsally, and radially by the unopposed proximal traction of the abductor pollicis longus (APL) tendon, which inserts into the dorsoradial base of the metacarpal. Simultaneously, the adductor pollicis muscle pulls the metacarpal head ulnarward into adduction, while the extensor pollicis longus (EPL) and brevis (EPB) further displace the shaft dorsally and proximally. Anatomical reduction requires longitudinal manual traction, palmar abduction, metacarpal pronation, and direct manual dorsal-to-volar pressure over the metacarpal base (Wagner maneuver), followed by percutaneous K-wire transfixation or open reduction internal fixation if articular step-off exceeds 1 to 2 mm.\n\nWhy the distractors are incorrect:\n• Option 1: The posterior oblique ligament (POL) is located dorsoulnarly; it does not secure the volar-ulnar fragment. The extensor pollicis brevis inserts onto the base of the proximal phalanx, contributing to MCP joint extension rather than acting as the primary driver of radial and proximal metacarpal shaft displacement.\n• Option 2: The dorsoradial ligament (DRL) is on the dorsal aspect of the CMC joint and is often torn or detached during dorsal subluxation of the shaft. The flexor pollicis longus traverses the carpal tunnel to insert on the distal phalanx and flexes the IP joint; it is not the primary driver of CMC subluxation.\n• Option 3: The intermetacarpal ligament connects the bases of the first and second metacarpals, but the volar beak fragment is specifically stabilized to the trapezium by the AOL. The opponens pollicis originates from the flexor retinaculum/trapezium and inserts along the radial border of the metacarpal shaft, promoting internal rotation rather than proximal and dorsal displacement.",
+      th: "กระดูกหักชนิด Bennett fracture เป็นการหักเข้าข้อแบบสองชิ้นร่วมกับข้อเคลื่อนหลุดของข้อต่อโคนนิ้วหัวแม่มือ (1st Carpometacarpal / Trapeziometacarpal joint) มักเกิดจากแรงกระแทกในแนวแกน (Axial load) ขณะที่นิ้วหัวแม่มืองออยู่ กลไกทางชีวกลศาสตร์ที่สำคัญประกอบด้วย 2 ส่วน:\n1. ชิ้นส่วนกระดูกรูปสามเหลี่ยมขนาดเล็กทางด้าน Volar-ulnar จะยังคงยึดติดอยู่กับกระดูก Trapezium ในตำแหน่งปกติ เนื่องจากมีเส้นเอ็น Anterior Oblique Ligament (AOL หรือ Volar Beak Ligament) ที่แข็งแรงมากยึดตรึงเอาไว้\n2. ชิ้นส่วนกระดูกก้าน Metacarpal ชิ้นใหญ่จะถูกดึงรั้งให้เคลื่อนหลุดไปทางด้านบน (Proximally), ด้านหลัง (Dorsally) และออกด้านนอก (Radially) โดยแรงดึงของเอ็นกล้ามเนื้อ Abductor Pollicis Longus (APL) ซึ่งเกาะอยู่ที่ฐานด้านหลังของกระดูก Metacarpal ชิ้นที่ 1 ร่วมกับแรงดึงของกล้ามเนื้อ Adductor Pollicis ที่ดึงหัวกระดูกให้หุบเข้าหาฝ่ามือ (Adduction) และเอ็น EPL/EPB ที่ช่วยเสริมแรงดึงขึ้นด้านบน\nการจัดแนวกระดูกแบบปิด (Wagner reduction maneuver) ทำได้โดยการดึงเหยียดตามแนวยาว (Axial traction) ร่วมกับการกางนิ้วออก (Palmar abduction), คว่ำนิ้วหัวแม่มือ (Pronation) และใช้นิ้วมือกดดันฐานกระดูก Metacarpal จากทางด้านหลังลงไปด้านหน้า แล้วจึงยึดตรึงด้วยลวด K-wire\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1: เส้นเอ็น Posterior oblique ligament อยู่ทางด้านหลัง ไม่ได้ทำหน้าที่ยึดชิ้นกระดูกด้าน Volar-ulnar และเอ็นกล้ามเนื้อ Extensor pollicis brevis เกาะที่โคนกระดูกนิ้วมือชิ้นต้น (Proximal phalanx) ทำหน้าที่เหยียดข้อ MCP ไม่ใช่แรงหลักที่ดึงกระดูกชิ้นใหญ่เลื่อนหลุด\n• ตัวเลือกที่ 2: เส้นเอ็น Dorsoradial ligament อยู่ทางด้านหลังและมักจะฉีกขาดเมื่อกระดูกเลื่อนหลุดไปด้านหลัง ส่วน Flexor pollicis longus ทอดไปเกาะที่กระดูกข้อนิ้วชิ้นปลาย ทำหน้างอนิ้ว ไม่ใช่ตัวการดึงรั้งโคนกระดูกข้อ CMC\n• ตัวเลือกที่ 3: เส้นเอ็น Intermetacarpal ligament ยึดระหว่างโคนกระดูกชิ้นที่ 1 และ 2 แต่ชิ้นกระดูก Volar fragment ยึดติดกับ Trapezium โดยตรงด้วย AOL ส่วนกล้ามเนื้อ Opponens pollicis ทำหน้าที่หมุนคว่ำนิ้ว ไม่ได้ทำให้กระดูกเคลื่อนหลุดขึ้นด้านบน",
+    },
+    pearls: {
+      en: "In Bennett fractures, the anterior oblique (beak) ligament keeps the volar-ulnar fragment anchored to the trapezium, while the abductor pollicis longus pulls the shaft proximally and radially; reduction requires traction, palmar abduction, pronation, and dorsal pressure.",
+      th: "ใน Bennett fracture เส้นเอ็น Anterior oblique (Beak) ligament จะยึดชิ้นกระดูก Volar-ulnar ไว้กับ Trapezium ในขณะที่เอ็น Abductor pollicis longus ดึงก้านกระดูกขึ้นบนและออกด้านนอก การจัดกระดูกต้องดึงเหยียด กางนิ้ว คว่ำนิ้ว และกดฐานกระดูกทางด้านหลัง",
+    },
+    boneId: "hand",
+    regionId: "first-metacarpal-base",
+  },
+  // ── Fifth Metatarsal Base Fracture (Lawrence & Botte Classification) — Zone 2 Jones Fracture & Watershed Vascularity ──
+  {
+    id: "hy-foot-lawrence-botte-zone2",
+    category: "lower",
+    tag: { en: "FRACTURE CLASSIFICATION & VASCULARITY • 5TH METATARSAL", th: "การจำแนกกระดูกหักและหลอดเลือด • โคนกระดูกฝ่าเท้านิ้วที่ 5" },
+    scenario: {
+      en: "A 22-year-old elite collegiate basketball player lands awkwardly on an inverted, plantarflexed foot during a game and develops acute, non-contact lateral midfoot pain and inability to bear weight. Physical examination reveals focal point tenderness and ecchymosis over the base of the fifth metatarsal without midfoot ligamentous laxity. Plain radiographs demonstrate a sharp transverse fracture located precisely at the metaphyseal-diaphyseal junction within 1.5 cm of the tuberosity, extending into the 4th-5th intermetatarsal articulation, with no intramedullary sclerosis. According to the Lawrence and Botte classification, which fracture zone is present, what anatomical vascular vulnerability predisposes this injury to delayed union, and what is the preferred definitive treatment for this competitive athlete?",
+      th: "นักกีฬาบาสเกตบอลระดับมหาวิทยาลัยอายุ 22 ปี กระโดดลงสู่พื้นโดยเท้าพลิกเข้าด้านในร่วมกับงอลง (Inversion and plantarflexion) มีอาการปวดแปลบเฉียบพลันบริเวณขอบเท้าด้านนอกทันทีและลงน้ำหนักไม่ได้ ตรวจร่างกายพบจุดกดเจ็บบริเวณโคนกระดูกฝ่าเท้านิ้วที่ 5 (Fifth metatarsal base) ชัดเจนและมีรอยเขียวคล้ำ เอกซเรย์พบรอยหักตามแนวขวางคมชัดบริเวณรอยต่อ Metaphyseal-diaphyseal ห่างจากปุ่มปลายกระดูกไม่เกิน 1.5 ซม. โดยแนวหักชี้เข้าสู่ข้อต่อระหว่างกระดูกฝ่าเท้าชิ้นที่ 4 และ 5 โดยไม่มีรอยตีบตันของโพรงกระดูก จากการจำแนกตาม Lawrence and Botte จัดเป็นกระดูกหักโซนใด ปัจจัยทางกายวิภาคของหลอดเลือดข้อใดทำให้เกิดภาวะกระดูกติดช้า และการรักษาขั้นสุดท้ายที่เหมาะสมที่สุดสำหรับนักกีฬารายนี้คืออะไร?",
+    },
+    options: [
+      {
+        id: 0,
+        text: {
+          en: "Zone 2 fracture involving a hypovascular watershed zone between nutrient and metaphyseal vessels, definitively treated with percutaneous intramedullary screw fixation",
+          th: "กระดูกหัก Zone 2 บริเวณรอยต่อหลอดเลือด Watershed ระหว่างแขนง Nutrient และ Metaphyseal รักษาขั้นสุดท้ายด้วยการใส่สกรูยึดในโพรงกระดูกผ่านผิวหนัง",
+        },
+        isCorrect: true,
+      },
+      {
+        id: 1,
+        text: {
+          en: "Zone 1 fracture involving an avascular apophyseal junction at the lateral cord insertional footprint, definitively treated with early weight-bearing in a rigid-soled boot",
+          th: "กระดูกหัก Zone 1 บริเวณรอยต่อกระดูกอ่อนจุดเกาะเส้นเอ็น Lateral cord ที่ขาดเลือด รักษาขั้นสุดท้ายด้วยการเริ่มลงน้ำหนักทันทีในรองเท้าพื้นแข็ง",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 2,
+        text: {
+          en: "Zone 3 fracture involving a chronic ischemic territory from microvascular thrombosis and canal obliteration, definitively treated with prolonged non-weight-bearing plaster casting",
+          th: "กระดูกหัก Zone 3 บริเวณเนื้อกระดูกขาดเลือดเรื้อรังจากลิ่มเลือดอุดตันและโพรงกระดูกตัน รักษาขั้นสุดท้ายด้วยการใส่เฝือกปูนและห้ามลงน้ำหนักเป็นเวลานาน",
+        },
+        isCorrect: false,
+      },
+      {
+        id: 3,
+        text: {
+          en: "Zone 2 fracture involving a disrupted periosteal capillary network across the cuboid metatarsal articulation, definitively treated with immediate weight-bearing in an elastic compression wrap",
+          th: "กระดูกหัก Zone 2 บริเวณร่างแหเส้นเลือดฝอยใต้เยื่อหุ้มกระดูกรอบข้อต่อฉีกขาด รักษาขั้นสุดท้ายด้วยการใช้ผ้ายืดพันกระชับและเริ่มลงน้ำหนักได้ทันที",
+        },
+        isCorrect: false,
+      },
+    ],
+    explanation: {
+      en: "The Lawrence and Botte classification divides fifth metatarsal base fractures into three distinct anatomical zones with profound prognostic and therapeutic differences:\n• Zone 1 (Tuberosity / Pseudo-Jones / Avulsion): Involves the proximal tuberosity and styloid process, caused by avulsion of the lateral cord of the plantar aponeurosis and peroneus brevis. This zone has a rich metaphyseal blood supply, rarely develops nonunion (>95% union rate), and is treated conservatively with symptomatic weight-bearing in a stiff-soled shoe or removable boot.\n• Zone 2 (True Jones Fracture): Occurs precisely at the metaphyseal-diaphyseal junction within 1.5 cm of the tuberosity, extending into the 4th-5th intermetatarsal joint. Microvascular injection studies (Smith et al., Foot Ankle 1992) demonstrated that this junction represents an anatomical 'watershed' region between the intramedullary nutrient artery (entering the mid-diaphysis) and the periosteal metaphyseal network. Conservative management with non-weight-bearing casting results in a delayed union or nonunion rate of 15% to 30% and prolonged time to heal (up to 16-20 weeks). In elite or competitive athletes, percutaneous intramedullary screw fixation (solid or cannulated partially threaded screw, typically 4.5 mm to 5.5 mm) is the standard of care, achieving union rates over 95% and permitting return to competitive play in approximately 6 to 8 weeks.\n• Zone 3 (Proximal Diaphyseal Stress Fracture): Located distal to the 4th-5th intermetatarsal articulation. It represents a fatigue stress injury characterized by prodromal pain, periosteal reaction, cortical hypertrophy, and intramedullary canal sclerosis. Non-weight-bearing casting fails in 30% to 50% of athletes, making intramedullary screw fixation (with or without bone grafting) the preferred definitive modality.\n\nWhy the distractors are incorrect:\n• Option 1: Zone 1 represents the tuberosity avulsion fracture, which has an abundant blood supply rather than an avascular junction, and does not match the described metaphyseal-diaphyseal junction entering the 4th-5th intermetatarsal articulation.\n• Option 2: Zone 3 describes proximal diaphyseal stress fractures distal to the 4th-5th intermetatarsal joint with radiographic signs of chronic canal sclerosis, and prolonged cast immobilization carries a high nonunion rate in athletes.\n• Option 3: While correctly identifying Zone 2, treatment with an elastic compression wrap and immediate weight-bearing is contraindicated; unprotected early weight-bearing in Zone 2 fractures dramatically increases displacement and nonunion rates exceeding 40% due to repetitive adduction and tension strains.",
+      th: "การจำแนกกระดูกโคนนิ้วก้อยเท้าหักตาม Lawrence and Botte แบ่งออกเป็น 3 โซนทางกายวิภาค ซึ่งมีการพยากรณ์โรคและการรักษาที่แตกต่างกันอย่างสิ้นเชิง:\n• Zone 1 (Tuberosity Avulsion / Pseudo-Jones): การหักของปุ่มปลายกระดูก Tuberosity เกิดจากแรงกระตุกของ Lateral cord of plantar aponeurosis และ Peroneus brevis บริเวณนี้มีเส้นเลือดเลี้ยงจาก Metaphyseal network สมบูรณ์มาก อัตรากระดูกติดสูงกว่า 95% รักษาด้วยการลงน้ำหนักตามทนไหวในรองเท้าพื้นแข็ง\n• Zone 2 (True Jones Fracture): การหักตามแนวขวางบริเวณรอยต่อ Metaphyseal-diaphyseal junction ห่างจากปุ่มปลายกระดูกไม่เกิน 1.5 ซม. โดยรอยหักชี้เข้าหาข้อต่อระหว่างกระดูกชิ้นที่ 4 และ 5 บริเวณนี้เป็นจุดรอยต่อหลอดเลือดขาดเลือด (Watershed zone) ระหว่างหลอดเลือดแดง Nutrient artery ที่ขึ้นมาจากก้านกระดูก และหลอดเลือด Metaphyseal ทำให้เลือดมาเลี้ยงน้อยมาก หากรักษาแบบไม่ผ่าตัดโดยใส่เฝือกห้ามลงน้ำหนัก จะมีอัตรากระดูกไม่ติด (Nonunion) สูงถึง 15-30% และใช้เวลานาน 16-20 สัปดาห์ ในกลุ่มนักกีฬาที่มีความต้องการใช้งานสูง การผ่าตัดยึดตรึงด้วยสกรูในโพรงกระดูกผ่านผิวหนัง (Percutaneous intramedullary screw fixation ขนาด 4.5-5.5 มม.) ถือเป็นวิธีมาตรฐานหลัก ช่วยให้อัตรากระดูกติดสูงกว่า 95% และกลับไปแข่งขันได้เร็วใน 6-8 สัปดาห์\n• Zone 3 (Proximal Diaphyseal Stress Fracture): รอยหักอยู่ต่ำกว่าข้อต่อระหว่างกระดูกชิ้นที่ 4 และ 5 มักเกิดจากแรงกระแทกซ้ำๆ (Stress fracture) โดยภาพถ่ายรังสีจะพบกระดูกหนาตัวผิดปกติและโพรงกระดูกตีบตัน (Sclerosis) การรักษาด้วยเฝือกมีอัตราล้มเหลวสูง\n\nเหตุผลที่ตัวเลือกอื่นไม่ถูกต้อง:\n• ตัวเลือกที่ 1: Zone 1 คือการหักของปุ่ม Tuberosity ซึ่งมีเส้นเลือดมาเลี้ยงสมบูรณ์ ไม่ใช่เขตขาดเลือด และไม่ตรงกับรอยหักที่รอยต่อ Metaphyseal-diaphyseal\n• ตัวเลือกที่ 2: Zone 3 เป็นกระดูกหักจากความล้าสะสมที่อยู่ต่ำกว่าข้อต่อ 4th-5th intermetatarsal ร่วมกับโพรงกระดูกตัน และการใส่เฝือกนานๆ ไม่ใช่วิธีรักษาที่เหมาะสมสำหรับนักกีฬาเนื่องจากอัตรากระดูกไม่ติดสูง\n• ตัวเลือกที่ 3: แม้จะระบุว่าเป็น Zone 2 แต่การรักษาด้วยผ้ายืดและการลงน้ำหนักทันทีเป็นข้อห้ามอย่างเด็ดขาด เพราะแรงดึงรั้งซ้ำๆ จะทำให้กระดูกเคลื่อนและเสี่ยงต่อกระดูกไม่ติดสูงกว่า 40%",
+    },
+    pearls: {
+      en: "True Jones fractures (Lawrence & Botte Zone 2) occur in a vascular watershed at the 4th-5th intermetatarsal junction; in athletes, immediate percutaneous intramedullary screw fixation dramatically lowers nonunion risk and accelerates return to sport compared to casting.",
+      th: "กระดูกหัก True Jones (Zone 2) เกิดที่รอยต่อ Watershed บริเวณข้อต่อ 4th-5th intermetatarsal junction ในนักกีฬาแนะนำให้ผ่าตัดใส่ Intramedullary screw ผ่านผิวหนังทันทีเพื่อป้องกันกระดูกไม่ติดและลดระยะเวลาพักฟื้น",
+    },
+    boneId: "foot",
+    regionId: "fifth-metatarsal-base",
+  },
 ];
 
 /**

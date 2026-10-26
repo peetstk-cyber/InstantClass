@@ -484,12 +484,24 @@ export function AdminImageUploader({
               </p>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
-          >
-            <X size={20} />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                onClose();
+                window.dispatchEvent(new CustomEvent("open-fracture-studio"));
+              }}
+              className="px-3 py-1.5 rounded-xl bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-400/40 text-cyan-600 dark:text-cyan-300 text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer"
+            >
+              <Sparkles size={14} />
+              <span>Open Fracture Atlas Studio (วาด SVG)</span>
+            </button>
+            <button
+              onClick={onClose}
+              className="w-8 h-8 rounded-lg flex items-center justify-center text-slate-400 hover:text-white hover:bg-slate-800 transition-all cursor-pointer"
+            >
+              <X size={20} />
+            </button>
+          </div>
         </div>
 
         {/* Global Notification Banner */}
